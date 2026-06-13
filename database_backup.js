@@ -15696,7 +15696,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "10:30 AM - 12:00 AM",
         "startDate": "2026-06-17",
         "endDate": "2026-09-17"
       },
@@ -15710,7 +15710,7 @@ window.migratedDatabase = {
           "Tue",
           "Thu"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "12:00 PM - 01:30 PM",
         "startDate": "2026-06-17",
         "endDate": "2026-09-17"
       },
@@ -15724,7 +15724,7 @@ window.migratedDatabase = {
           "Tue",
           "Thu"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "05:00 PM - 06:30 PM",
         "startDate": "2026-06-20",
         "endDate": "2026-08-20"
       },
@@ -15766,7 +15766,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "03:00 PM - 05:00 PM",
         "startDate": "2026-06-17",
         "endDate": "2026-09-15"
       },
@@ -15780,7 +15780,7 @@ window.migratedDatabase = {
           "Tue",
           "Thu"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "10:30 AM - 12:00 PM",
         "startDate": "2026-06-13",
         "endDate": "2026-09-05"
       },
@@ -15794,7 +15794,7 @@ window.migratedDatabase = {
           "Tue",
           "Thu"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "06:00 PM - 07:30 PM",
         "startDate": "2026-01-15",
         "endDate": "2026-04-15"
       },
@@ -15808,7 +15808,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "04:30 PM - 06:00 PM",
         "startDate": "2026-01-11",
         "endDate": "2026-04-11"
       },
@@ -15822,7 +15822,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "12:00 PM - 02:00 PM",
         "startDate": "2026-04-25",
         "endDate": "2026-07-25"
       },
@@ -15850,7 +15850,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "02:00 PM - 04:00 PM",
         "startDate": "2026-03-15",
         "endDate": "2026-06-15"
       },
@@ -15864,7 +15864,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "03:30 PM - 05:00 PM",
         "startDate": "2025-11-16",
         "endDate": "2026-02-16"
       },
@@ -15878,7 +15878,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "04:30 PM - 06:00 PM",
         "startDate": "2026-04-15",
         "endDate": "2026-07-15"
       },
@@ -15892,7 +15892,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "06:00 PM - 08:00 PM",
         "startDate": "2026-01-05",
         "endDate": "2026-04-05"
       },
@@ -15906,7 +15906,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "03:00 PM - 05:00 PM",
         "startDate": "2025-10-09",
         "endDate": "2025-12-20"
       },
@@ -15920,7 +15920,7 @@ window.migratedDatabase = {
           "Tue",
           "Thu"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "09:30 AM - 11:00 AM",
         "startDate": "2026-01-10",
         "endDate": "2026-03-31"
       },
@@ -15934,7 +15934,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "05:00 PM - 07:35 PM",
         "startDate": "2026-01-15",
         "endDate": "2026-04-15"
       },
@@ -15948,7 +15948,7 @@ window.migratedDatabase = {
           "Tue",
           "Thu"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "11:00 AM - 12:30 PM",
         "startDate": "2025-12-08",
         "endDate": "2026-02-08"
       },
@@ -15962,7 +15962,7 @@ window.migratedDatabase = {
           "Tue",
           "Thu"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "12:30 PM - 02:00 PM",
         "startDate": "2025-03-22",
         "endDate": "2025-06-22"
       },
@@ -15976,7 +15976,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "03:00 PM - 05:00 PM",
         "startDate": "2025-11-15",
         "endDate": "2026-02-15"
       },
@@ -15990,7 +15990,7 @@ window.migratedDatabase = {
           "Tue",
           "Thu"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "07:00 PM - 08:31 PM",
         "startDate": "2025-11-06",
         "endDate": "2026-02-06"
       },
@@ -16004,7 +16004,7 @@ window.migratedDatabase = {
           "Tue",
           "Thu"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "09:22 AM - 11:00 AM",
         "startDate": "2024-09-11",
         "endDate": "2024-12-11"
       },
@@ -16018,7 +16018,7 @@ window.migratedDatabase = {
           "Tue",
           "Thu"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "09:30 AM - 11:00 AM",
         "startDate": "2025-10-09",
         "endDate": "2025-11-26"
       },
@@ -16032,7 +16032,7 @@ window.migratedDatabase = {
           "Tue",
           "Thu"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "11:00 AM - 12:30 PM",
         "startDate": "2025-09-13",
         "endDate": "2025-11-10"
       },
@@ -16046,7 +16046,7 @@ window.migratedDatabase = {
           "Tue",
           "Thu"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "07:00 PM - 08:30 PM",
         "startDate": "2025-08-30",
         "endDate": "2025-11-30"
       },
@@ -16060,7 +16060,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "05:00 PM - 07:00 PM",
         "startDate": "2025-08-10",
         "endDate": "2025-11-10"
       },
@@ -16088,7 +16088,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "05:00 PM - 07:00 PM",
         "startDate": "2024-07-15",
         "endDate": "2024-10-15"
       },
@@ -16102,7 +16102,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "03:00 PM - 05:00 PM",
         "startDate": "2022-12-15",
         "endDate": "2023-03-15"
       },
@@ -16116,7 +16116,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "03:00 PM - 05:00 PM",
         "startDate": "2023-02-09",
         "endDate": "2023-05-09"
       },
@@ -16130,7 +16130,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "05:00 PM - 07:00 PM",
         "startDate": "2023-02-20",
         "endDate": "2023-05-20"
       },
@@ -16144,7 +16144,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "05:00 PM - 07:00 PM",
         "startDate": "2023-03-20",
         "endDate": "2023-06-20"
       },
@@ -16158,7 +16158,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "05:00 PM - 07:00 PM",
         "startDate": "2023-05-01",
         "endDate": "2023-08-01"
       },
@@ -16172,7 +16172,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "03:00 PM - 05:00 PM",
         "startDate": "2023-05-15",
         "endDate": "2023-08-15"
       },
@@ -16186,7 +16186,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "05:00 PM - 07:00 PM",
         "startDate": "2023-06-25",
         "endDate": "2023-09-25"
       },
@@ -16200,7 +16200,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "03:00 PM - 05:00 PM",
         "startDate": "2023-07-05",
         "endDate": "2023-10-05"
       },
@@ -16214,7 +16214,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "03:05 PM - 05:00 PM",
         "startDate": "2023-11-15",
         "endDate": "2024-02-15"
       },
@@ -16228,7 +16228,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "03:00 PM - 05:00 PM",
         "startDate": "2025-07-12",
         "endDate": "2025-10-12"
       },
@@ -16242,7 +16242,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "05:00 PM - 07:00 PM",
         "startDate": "2023-11-15",
         "endDate": "2024-02-15"
       },
@@ -16256,7 +16256,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "05:00 PM - 07:00 PM",
         "startDate": "2023-12-15",
         "endDate": "2024-03-15"
       },
@@ -16270,7 +16270,7 @@ window.migratedDatabase = {
           "Tue",
           "Thu"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "12:30 PM - 02:00 PM",
         "startDate": "2025-06-25",
         "endDate": "2025-09-25"
       },
@@ -16284,7 +16284,7 @@ window.migratedDatabase = {
           "Tue",
           "Thu"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "07:00 PM - 08:30 PM",
         "startDate": "2025-06-30",
         "endDate": "2025-09-30"
       },
@@ -16298,7 +16298,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "03:00 PM - 05:00 PM",
         "startDate": "2024-12-15",
         "endDate": "2025-03-15"
       },
@@ -16312,7 +16312,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "03:00 PM - 05:00 PM",
         "startDate": "2024-01-15",
         "endDate": "2024-04-15"
       },
@@ -16326,7 +16326,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "05:00 PM - 07:00 PM",
         "startDate": "2024-02-15",
         "endDate": "2024-05-15"
       },
@@ -16340,7 +16340,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "03:39 PM - 05:00 PM",
         "startDate": "2024-03-15",
         "endDate": "2024-06-15"
       },
@@ -16354,7 +16354,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "05:00 PM - 07:00 PM",
         "startDate": "2024-04-15",
         "endDate": "2024-07-15"
       },
@@ -16368,7 +16368,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "03:00 PM - 05:00 PM",
         "startDate": "2024-05-15",
         "endDate": "2024-08-15"
       },
@@ -16382,7 +16382,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "03:00 PM - 05:00 PM",
         "startDate": "2024-08-16",
         "endDate": "2024-11-16"
       },
@@ -16396,7 +16396,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "05:00 PM - 07:00 PM",
         "startDate": "2024-09-15",
         "endDate": "2024-12-15"
       },
@@ -16410,7 +16410,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "03:00 PM - 05:00 PM",
         "startDate": "2024-10-15",
         "endDate": "2025-01-15"
       },
@@ -16424,7 +16424,7 @@ window.migratedDatabase = {
           "Tue",
           "Thu"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "11:00 AM - 12:30 PM",
         "startDate": "2024-11-09",
         "endDate": "2025-02-09"
       },
@@ -16438,7 +16438,7 @@ window.migratedDatabase = {
           "Tue",
           "Thu"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "05:00 PM - 06:30 PM",
         "startDate": "2024-12-05",
         "endDate": "2025-03-05"
       },
@@ -16452,7 +16452,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "03:00 PM - 05:00 PM",
         "startDate": "2025-02-20",
         "endDate": "2025-05-20"
       },
@@ -16466,7 +16466,7 @@ window.migratedDatabase = {
           "Tue",
           "Thu"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "09:30 AM - 11:00 AM",
         "startDate": "2025-05-15",
         "endDate": "2025-08-15"
       },
@@ -16480,7 +16480,7 @@ window.migratedDatabase = {
           "Tue",
           "Thu"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "11:30 AM - 12:30 PM",
         "startDate": "2025-01-15",
         "endDate": "2025-04-15"
       },
@@ -16494,7 +16494,7 @@ window.migratedDatabase = {
           "Tue",
           "Thu"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "09:30 AM - 11:00 AM",
         "startDate": "2025-02-17",
         "endDate": "2025-05-17"
       },
@@ -16508,7 +16508,7 @@ window.migratedDatabase = {
           "Tue",
           "Thu"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "07:00 PM - 08:30 PM",
         "startDate": "2025-03-26",
         "endDate": "2025-06-26"
       },
@@ -16522,7 +16522,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "05:00 PM - 07:00 PM",
         "startDate": "2025-05-22",
         "endDate": "2025-08-22"
       },
@@ -16536,7 +16536,7 @@ window.migratedDatabase = {
           "Tue",
           "Thu"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "11:00 AM - 12:30 PM",
         "startDate": "2025-06-01",
         "endDate": "2025-09-01"
       },
@@ -16550,7 +16550,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "09:00 AM - 10:30 AM",
+        "time": "03:00 PM - 05:00 PM",
         "startDate": "2025-06-15",
         "endDate": "2025-09-15"
       }
