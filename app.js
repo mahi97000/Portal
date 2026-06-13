@@ -91,6 +91,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 6. Setup Certificate and Student ID Verification Portal
     setupVerificationPortal();
+
+    // 7. Setup Mobile Navigation Menu
+    const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (mobileNavToggle && navLinks) {
+        mobileNavToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileNavToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.className = 'fa-solid fa-xmark';
+            } else {
+                icon.className = 'fa-solid fa-bars';
+            }
+        });
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileNavToggle.querySelector('i');
+                if (icon) icon.className = 'fa-solid fa-bars';
+            });
+        });
+    }
 });
 
 // --- THEME MANAGEMENT ---

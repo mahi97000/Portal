@@ -1222,3 +1222,148 @@ select.form-control {
         font-weight: 700;
     }
 }
+
+/* --- MOBILE RESPONSIVENESS REFINEMENTS --- */
+@media (max-width: 768px) {
+    /* Main website mobile nav toggle */
+    #mobile-nav-toggle {
+        display: inline-flex !important;
+    }
+    .hide-mobile {
+        display: none !important;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: var(--surface-solid);
+        border-bottom: 1px solid var(--border-color);
+        padding: 1.5rem 0;
+        box-shadow: var(--shadow-lg);
+        z-index: 1000;
+        gap: 1.25rem;
+        align-items: center;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .hero-stats {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    /* Admin Mobile Layout adjustments */
+    .admin-sidebar {
+        width: 100%;
+        height: 65px;
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        left: 0;
+        flex-direction: row;
+        border-right: none;
+        border-top: 1px solid var(--border-color);
+        padding: 0 1rem;
+        align-items: center;
+        justify-content: space-around;
+        z-index: 1500;
+        background-color: var(--surface-solid);
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+    }
+    .admin-sidebar .sidebar-logo,
+    .admin-sidebar .sidebar-footer {
+        display: none !important;
+    }
+    .admin-sidebar .sidebar-menu {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        gap: 0;
+        height: 100%;
+    }
+    .admin-sidebar .sidebar-item {
+        margin: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+    }
+    .admin-sidebar .sidebar-item a {
+        flex-direction: column;
+        gap: 4px;
+        padding: 6px;
+        font-size: 0.75rem;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        color: var(--text-muted);
+    }
+    .admin-sidebar .sidebar-item.active a {
+        color: var(--primary);
+    }
+    .admin-sidebar .sidebar-item a i {
+        font-size: 1.25rem;
+        margin: 0;
+    }
+    .admin-sidebar .sidebar-item a span {
+        display: inline !important;
+    }
+    .admin-main {
+        margin-left: 0 !important;
+        padding: 1.5rem 1rem 85px 1rem !important; /* Bottom padding to clear the nav bar */
+    }
+
+    /* Admin top header layout on mobile */
+    .admin-header {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100%;
+        gap: 0.5rem;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    .admin-title-box h1 {
+        font-size: 1.5rem;
+    }
+    .admin-title-box p {
+        display: none; /* Hide subtitle to keep header compact */
+    }
+    
+    /* Responsive grids inside Admin views */
+    .batches-grid,
+    .books-grid,
+    .settings-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    /* General card list grids inside Admin */
+    .dashboard-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem;
+    }
+    .data-table-container {
+        overflow-x: auto;
+    }
+    
+    /* Modals size adjustment for mobile screen */
+    .modal-container {
+        width: 95% !important;
+        margin: 10px !important;
+        max-height: 90vh !important;
+        padding: 1.5rem !important;
+    }
+    
+    .modal-body {
+        padding: 1rem 0 !important;
+    }
+}

@@ -90,9 +90,10 @@
                     <h1 id="active-tab-title">Portal Dashboard</h1>
                     <p style="font-size: 0.9rem; color: var(--text-muted);" id="active-tab-subtitle">Welcome back, administrator.</p>
                 </div>
-                <div style="display: flex; gap: 1rem; align-items: center;">
-                    <a href="index.html" class="btn btn-secondary" target="_blank"><i class="fa-solid fa-globe"></i> View Website</a>
+                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <a href="index.html" class="btn btn-secondary" target="_blank"><i class="fa-solid fa-globe"></i> <span class="hide-mobile">View Website</span></a>
                     <button id="admin-theme-toggle" class="btn btn-secondary btn-icon-only" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+                    <button id="mobile-logout-btn" class="btn btn-secondary btn-icon-only mobile-logout-btn" style="display: none; color: var(--danger);" title="Log Out"><i class="fa-solid fa-sign-out-alt"></i></button>
                 </div>
             </header>
 
@@ -245,7 +246,7 @@
                     <button class="btn btn-secondary batch-course-btn" data-course="Spoken English"><i class="fa-solid fa-comments"></i> Spoken English</button>
                 </div>
 
-                <div style="display: grid; grid-template-columns: 280px 1fr; gap: 2rem; align-items: start;">
+                <div class="batches-grid" style="display: grid; grid-template-columns: 280px 1fr; gap: 2rem; align-items: start;">
                     <!-- Batch List Left Column -->
                     <div class="glass-card" style="padding: 1.5rem;">
                         <button class="btn btn-primary" id="batches-create-btn" style="width: 100%; margin-bottom: 1rem; display: none;"><i class="fa-solid fa-plus"></i> Create New Batch</button>
@@ -404,7 +405,7 @@
                     </div>
                 </div>
 
-                <div style="display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 2rem;">
+                <div class="books-grid" style="display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 2rem;">
                     <!-- Left: Stock Update Card -->
                     <div class="glass-card" style="padding: 1.5rem; height: fit-content;">
                         <h3 style="margin-bottom: 1.25rem;"><i class="fa-solid fa-plus"></i> Update Book Inventory</h3>
@@ -456,7 +457,7 @@
 
             <!-- --- TAB VIEW: SETTINGS --- -->
             <section id="tab-settings" class="tab-view" style="display: none;">
-                <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2.5rem;">
+                <div class="settings-grid" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2.5rem;">
                     
                     <div class="glass-card" style="padding: 2rem;">
                         <h3 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-landmark"></i> Institute Details</h3>

@@ -215,11 +215,14 @@ function setupAuthentication() {
         toggleAuthPwd.className = type === 'password' ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash';
     });
 
-    logoutBtn.addEventListener('click', () => {
+    const handleLogout = () => {
         sessionStorage.removeItem('ediz_admin_auth');
         sessionStorage.removeItem('ediz_active_user');
         window.location.reload();
-    });
+    };
+    if (logoutBtn) logoutBtn.addEventListener('click', handleLogout);
+    const mobileLogoutBtn = document.getElementById('mobile-logout-btn');
+    if (mobileLogoutBtn) mobileLogoutBtn.addEventListener('click', handleLogout);
 
     // --- PASSWORD RECOVERY LOGIC ---
     let generatedOTP = '';
