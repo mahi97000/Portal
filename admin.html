@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Ediz IT Institute Management Portal</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="background-color: var(--bg-primary);">
+
+    <!-- --- AUTH GATE OVERLAY --- -->
+    <div id="auth-gate" class="modal active" style="opacity: 1; pointer-events: auto;">
+        <div class="modal-backdrop" style="background-color: var(--bg-primary); opacity: 0.98; backdrop-filter: blur(20px);"></div>
+        <div class="modal-container glass-panel" style="max-width: 400px; transform: scale(1);">
+            <div class="modal-body" style="text-align: center; padding: 2.5rem 1.5rem;">
+                <img id="auth-logo" src="Logo-07.png" alt="Ediz IT Logo" style="height: 60px; margin-bottom: 1.5rem;">
+                <h3 style="margin-bottom: 0.5rem; font-family: var(--font-heading);">Portal Security Gate</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Input your credentials to access the management dashboard.</p>
+                
+                <form id="auth-form">
+                    <div class="form-group" style="text-align: left;">
+                        <label for="auth-email">Email Address</label>
+                        <input type="email" id="auth-email" class="form-control" placeholder="e.g. admin@edizit.com" required>
+                    </div>
+                    <div class="form-group" style="text-align: left;">
+                        <label for="auth-password">Password</label>
+                        <div style="position: relative;">
+                            <input type="password" id="auth-password" class="form-control" placeholder="••••••••" required style="padding-right: 2.5rem;">
+                            <i id="toggle-auth-pwd" class="fa-solid fa-eye" style="position: absolute; right: 15px; top: 12px; cursor: pointer; color: var(--text-muted);"></i>
+                        </div>
+                        <span id="auth-error" style="color: var(--danger); font-size: 0.75rem; font-weight: 600; margin-top: 0.5rem; display: none;"><i class="fa-solid fa-triangle-exclamation"></i> Invalid email or password.</span>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fa-solid fa-unlock-keyhole"></i> Unlock Portal</button>
+                </form>
+                <div style="margin-top: 1rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px dashed var(--border-color); padding-top: 1rem;">
+                    <p>Owner: <strong>owner@ediz.com</strong> | <strong>admin123</strong></p>
+                    <p style="margin-top: 0.25rem;">Staff: <strong>staff@ediz.com</strong> | <strong>staff123</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- MAIN PORTAL VIEW --- -->
+    <div id="portal-content" class="admin-layout" style="display: none;">
+        
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar glass-panel">
+            <div class="sidebar-logo">
+                <img id="sidebar-logo-img" src="Logo-07.png" alt="Ediz IT" style="height: 40px;">
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.25rem;">Ediz Portal</span>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li class="sidebar-item active" data-tab="dashboard">
+                    <a href="#dashboard"><i class="fa-solid fa-chart-pie"></i> <span>Dashboard</span></a>
+                </li>
+                <li class="sidebar-item" data-tab="students">
+                    <a href="#students"><i class="fa-solid fa-user-graduate"></i> <span>Students</span></a>
+                </li>
+                <li class="sidebar-item" data-tab="batches">
+                    <a href="#batches"><i class="fa-solid fa-users-viewfinder"></i> <span>Batch</span></a>
+                </li>
+                <li class="sidebar-item" data-tab="invoices">
+                    <a href="#invoices"><i class="fa-solid fa-receipt"></i> <span>Invoices</span></a>
+                </li>
+                <li class="sidebar-item" data-tab="certificates">
+                    <a href="#certificates"><i class="fa-solid fa-award"></i> <span>Certificates</span></a>
+                </li>
+                <li class="sidebar-item" data-tab="books">
+                    <a href="#books"><i class="fa-solid fa-book"></i> <span>Books Inventory</span></a>
+                </li>
+                <li class="sidebar-item" data-tab="settings">
+                    <a href="#settings"><i class="fa-solid fa-sliders"></i> <span>Settings</span></a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <button id="logout-btn" class="btn btn-secondary" style="width: 100%;"><i class="fa-solid fa-sign-out-alt"></i> <span>Log Out</span></button>
+            </div>
+        </aside>
+
+        <!-- MAIN WINDOW -->
+        <main class="admin-main">
+            <!-- Global Admin Topbar -->
+            <header class="admin-header">
+                <div class="admin-title-box">
+                    <h1 id="active-tab-title">Portal Dashboard</h1>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);" id="active-tab-subtitle">Welcome back, administrator.</p>
+                </div>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <a href="index.html" class="btn btn-secondary" target="_blank"><i class="fa-solid fa-globe"></i> View Website</a>
+                    <button id="admin-theme-toggle" class="btn btn-secondary btn-icon-only" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+                </div>
+            </header>
+
+            <!-- --- TAB VIEW: DASHBOARD --- -->
+            <section id="tab-dashboard" class="tab-view">
+                <!-- Stats Filter Bar -->
+                <div class="glass-panel" style="padding: 1.25rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between; align-items: center; border: 1px solid var(--border-color);">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                        <span style="font-weight: 600; color: var(--text-muted); font-size: 0.9rem;"><i class="fa-solid fa-filter"></i> Stats Filter:</span>
+                        <div class="btn-group" style="display: flex; gap: 0.5rem;" id="dashboard-filter-btn-group">
+                            <button class="btn btn-primary stat-filter-btn" data-range="all" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">All Time</button>
+                            <button class="btn btn-secondary stat-filter-btn" data-range="today" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">Today</button>
+                            <button class="btn btn-secondary stat-filter-btn" data-range="month" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">This Month</button>
+                            <button class="btn btn-secondary stat-filter-btn" data-range="year" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">This Year</button>
+                            <button class="btn btn-secondary stat-filter-btn" data-range="last-year" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">Last Year</button>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                        <span style="font-size: 0.85rem; color: var(--text-muted);">Custom Range:</span>
+                        <input type="date" id="stats-start-date" class="form-control" style="width: 135px; padding: 0.3rem 0.5rem; font-size: 0.8rem;">
+                        <span style="color: var(--text-muted); font-size: 0.85rem;">to</span>
+                        <input type="date" id="stats-end-date" class="form-control" style="width: 135px; padding: 0.3rem 0.5rem; font-size: 0.8rem;">
+                        <button class="btn btn-secondary" id="stats-custom-filter-btn" style="padding: 0.3rem 0.75rem; font-size: 0.8rem;"><i class="fa-solid fa-check"></i> Apply</button>
+                    </div>
+                </div>
+
+                <div class="admin-stats-grid">
+                    <div class="admin-stat-card glass-panel" style="border-left: 4px solid var(--primary);">
+                        <div class="stat-card-details">
+                            <h4>Total Students</h4>
+                            <p id="stat-total-students">0</p>
+                        </div>
+                        <div class="stat-card-icon" style="background-color: var(--primary-glow); color: var(--primary);"><i class="fa-solid fa-user-graduate"></i></div>
+                    </div>
+                    <div class="admin-stat-card glass-panel" style="border-left: 4px solid var(--success);">
+                        <div class="stat-card-details">
+                            <h4>Fees Collected</h4>
+                            <p id="stat-earnings">৳0</p>
+                        </div>
+                        <div class="stat-card-icon" style="background-color: rgba(16, 185, 129, 0.15); color: var(--success);"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                    </div>
+                    <div class="admin-stat-card glass-panel" style="border-left: 4px solid var(--danger);">
+                        <div class="stat-card-details">
+                            <h4>Dues Outstanding</h4>
+                            <p id="stat-dues">৳0</p>
+                        </div>
+                        <div class="stat-card-icon" style="background-color: rgba(239, 68, 68, 0.15); color: var(--danger);"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                    </div>
+                    <div class="admin-stat-card glass-panel" style="border-left: 4px solid var(--accent);">
+                        <div class="stat-card-details">
+                            <h4>Certificates Issued</h4>
+                            <p id="stat-certs">0</p>
+                        </div>
+                        <div class="stat-card-icon" style="background-color: rgba(139, 92, 246, 0.15); color: var(--accent);"><i class="fa-solid fa-award"></i></div>
+                    </div>
+                </div>
+
+                <div class="glass-card" style="padding: 2rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                        <h3>Recent Registrations</h3>
+                        <div style="display: flex; gap: 0.75rem;">
+                            <button class="btn btn-primary" id="dashboard-add-student-btn"><i class="fa-solid fa-plus"></i> New Registration</button>
+                            <button class="btn btn-secondary" id="dashboard-collect-due-btn"><i class="fa-solid fa-wallet"></i> Collect Due</button>
+                        </div>
+                    </div>
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Student ID</th>
+                                    <th>Name</th>
+                                    <th>Course</th>
+                                    <th>Reg. Date</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recent-enrollments-tbody">
+                                <tr>
+                                    <td colspan="6" style="text-align: center; color: var(--text-muted);">No student records found. Wait for registrations or add one.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- --- TAB VIEW: STUDENTS --- -->
+            <section id="tab-students" class="tab-view" style="display: none;">
+                <div class="glass-panel" style="padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+                    <div style="flex-grow: 1; min-width: 250px;">
+                        <input type="text" id="student-search" class="form-control" placeholder="Search by ID, Name, Phone (Student/Guardian)...">
+                    </div>
+                    <div>
+                        <select id="filter-course" class="form-control">
+                            <option value="">All Courses</option>
+                            <option value="Graphic Design">Graphic Design</option>
+                            <option value="Basic Computer">Basic Computer</option>
+                            <option value="Spoken English">Spoken English</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select id="filter-status" class="form-control">
+                            <option value="">All Payment Statuses</option>
+                            <option value="Paid">Paid</option>
+                            <option value="Partial">Partial</option>
+                            <option value="Unpaid">Unpaid</option>
+                        </select>
+                    </div>
+                    <div style="display: flex; gap: 0.75rem;">
+                        <button class="btn btn-primary" id="admin-add-student-btn"><i class="fa-solid fa-user-plus"></i> New Registration</button>
+                        <button class="btn btn-secondary" id="admin-collect-due-btn"><i class="fa-solid fa-wallet"></i> Collect Due</button>
+                    </div>
+                </div>
+
+                <div class="glass-card" style="padding: 2rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
+                        <h4 style="margin: 0; font-size: 1.1rem; color: var(--text-color); font-weight: 700;"><i class="fa-solid fa-users"></i> Registered Students</h4>
+                        <span id="student-registry-total" class="badge badge-primary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; border-radius: var(--radius-sm);">Total Students: 0</span>
+                    </div>
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Student ID</th>
+                                    <th>Name</th>
+                                    <th>Course</th>
+                                    <th>Mobile</th>
+                                    <th>Financials</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="students-tbody">
+                                <tr>
+                                    <td colspan="7" style="text-align: center; color: var(--text-muted);">No student records match the filters.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- --- TAB VIEW: BATCHES --- -->
+            <section id="tab-batches" class="tab-view" style="display: none;">
+                <div class="glass-panel" style="padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem; display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+                    <span style="font-weight: 600; color: var(--text-muted);">Batch Course:</span>
+                    <button class="btn btn-primary batch-course-btn active" data-course="Graphic Design"><i class="fa-solid fa-palette"></i> Graphic Design</button>
+                    <button class="btn btn-secondary batch-course-btn" data-course="Basic Computer"><i class="fa-solid fa-display"></i> Basic Computer</button>
+                    <button class="btn btn-secondary batch-course-btn" data-course="Spoken English"><i class="fa-solid fa-comments"></i> Spoken English</button>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 280px 1fr; gap: 2rem; align-items: start;">
+                    <!-- Batch List Left Column -->
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <button class="btn btn-primary" id="batches-create-btn" style="width: 100%; margin-bottom: 1rem; display: none;"><i class="fa-solid fa-plus"></i> Create New Batch</button>
+                        <input type="text" id="batch-search-input" class="form-control" placeholder="Search batch by name..." style="margin-bottom: 1rem;">
+                        
+                        <!-- Active/All Batch Toggle Buttons -->
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem; background: var(--bg-secondary); padding: 0.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                            <button id="batch-filter-active" class="btn btn-primary" style="flex: 1; padding: 0.35rem 0.5rem; font-size: 0.8rem; border-radius: var(--radius-sm); border: none; box-shadow: none; min-height: 28px; justify-content: center; gap: 0.25rem;"><i class="fa-solid fa-play" style="font-size:0.7rem;"></i> Active Batches</button>
+                            <button id="batch-filter-all" class="btn btn-secondary" style="flex: 1; padding: 0.35rem 0.5rem; font-size: 0.8rem; border-radius: var(--radius-sm); border: none; box-shadow: none; min-height: 28px; justify-content: center; gap: 0.25rem;"><i class="fa-solid fa-list" style="font-size:0.7rem;"></i> All Batches</button>
+                        </div>
+                        
+                        <h4 style="margin-bottom: 1rem; border-bottom: 1px dashed var(--border-color); padding-bottom: 0.5rem;"><i class="fa-solid fa-folder-open"></i> Available Batches</h4>
+                        <div id="batches-list-container" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <!-- Loaded Dynamically -->
+                            <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center; padding: 1rem;">No batches found.</p>
+                        </div>
+                    </div>
+
+                    <!-- Batch Student Roster Right Column -->
+                    <div class="glass-card" style="padding: 2rem;">
+                        <div id="active-batch-info-card" class="glass-panel" style="padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1.5rem; display: none; grid-template-columns: repeat(3, 1fr); gap: 1rem; font-size: 0.85rem; border: 1px solid var(--border-color);">
+                            <div><i class="fa-solid fa-calendar-days" style="color: var(--primary);"></i> <strong>Days:</strong> <span id="info-batch-schedule">---</span></div>
+                            <div><i class="fa-solid fa-clock" style="color: var(--primary);"></i> <strong>Time:</strong> <span id="info-batch-time">---</span></div>
+                            <div><i class="fa-solid fa-hourglass-start" style="color: var(--primary);"></i> <strong>Timeline:</strong> <span id="info-batch-timeline">---</span></div>
+                            <div><i class="fa-solid fa-tag" style="color: var(--primary);"></i> <strong>Fee:</strong> <span id="info-batch-fee">---</span></div>
+                            <div><i class="fa-solid fa-sack-dollar" style="color: var(--success);"></i> <strong>Net Income:</strong> <span id="info-batch-income">---</span></div>
+                            <div><i class="fa-solid fa-hand-holding-dollar" style="color: var(--danger);"></i> <strong>Total Due:</strong> <span id="info-batch-due">---</span></div>
+                            <div><i class="fa-solid fa-chart-line" style="color: var(--primary);"></i> <strong>Estimated Income:</strong> <span id="info-batch-est">---</span></div>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                            <h3>Batch Student Roster: <span id="active-batch-roster-title" style="color: var(--primary);">---</span></h3>
+                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                <span class="badge badge-primary" id="active-batch-roster-count">0 Students</span>
+                                <button class="btn btn-primary" id="batch-sms-btn" style="display: none; padding: 0.4rem 0.8rem; font-size: 0.85rem;"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+                                <button class="btn btn-secondary" id="batch-whatsapp-btn" style="display: none; padding: 0.4rem 0.8rem; font-size: 0.85rem; background-color: #25d366; color: white; border: none; align-items: center; gap: 0.35rem;"><i class="fa-brands fa-whatsapp"></i> WhatsApp Group</button>
+                            </div>
+                        </div>
+                        <div class="data-table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Student ID</th>
+                                        <th>Student Name</th>
+                                        <th>Mobile (Student/Guardian)</th>
+                                        <th>Parents</th>
+                                        <th>Financials</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="batch-roster-tbody">
+                                    <tr>
+                                        <td colspan="7" style="text-align: center; color: var(--text-muted);">Select a batch from the left list to view enrolled students.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- --- TAB VIEW: INVOICES --- -->
+            <section id="tab-invoices" class="tab-view" style="display: none;">
+                <div class="glass-panel" style="padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem; display: flex; gap: 1rem; align-items: center;">
+                    <div style="flex-grow: 1;">
+                        <input type="text" id="invoice-search" class="form-control" placeholder="Search invoices by Student ID, Name, Invoice ID...">
+                    </div>
+                </div>
+
+                <div class="glass-card" style="padding: 2rem;">
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Invoice ID</th>
+                                    <th>Student ID</th>
+                                    <th>Name</th>
+                                    <th>Payment Date</th>
+                                    <th>Amount Paid</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="invoices-tbody">
+                                <tr>
+                                    <td colspan="6" style="text-align: center; color: var(--text-muted);">No payment invoices generated yet.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- --- TAB VIEW: CERTIFICATES --- -->
+            <section id="tab-certificates" class="tab-view" style="display: none;">
+                <div class="glass-panel" style="padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem; display: flex; gap: 1rem; align-items: center;">
+                    <div style="flex-grow: 1;">
+                        <input type="text" id="cert-search" class="form-control" placeholder="Search students by Name, ID to manage certificates...">
+                    </div>
+                </div>
+
+                <div class="glass-card" style="padding: 2rem;">
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Student ID</th>
+                                    <th>Name</th>
+                                    <th>Course Completed</th>
+                                    <th>Status</th>
+                                    <th>Date Issued</th>
+                                    <th>Certificate</th>
+                                </tr>
+                            </thead>
+                            <tbody id="certs-tbody">
+                                <tr>
+                                    <td colspan="6" style="text-align: center; color: var(--text-muted);">No students registered.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- --- TAB VIEW: BOOKS INVENTORY --- -->
+            <section id="tab-books" class="tab-view" style="display: none;">
+                <!-- Stats Summary Row -->
+                <div class="admin-stats-grid" style="margin-bottom: 2rem;">
+                    <div class="admin-stat-card glass-panel" style="border-left: 4px solid var(--primary);">
+                        <div class="stat-card-details">
+                            <h4>Total Book Stock</h4>
+                            <p id="stat-book-total">0</p>
+                        </div>
+                        <div class="stat-card-icon" style="background-color: var(--primary-glow); color: var(--primary);"><i class="fa-solid fa-book"></i></div>
+                    </div>
+                    <div class="admin-stat-card glass-panel" style="border-left: 4px solid var(--success);">
+                        <div class="stat-card-details">
+                            <h4>Books Sold</h4>
+                            <p id="stat-book-sold">0</p>
+                        </div>
+                        <div class="stat-card-icon" style="background-color: rgba(16, 185, 129, 0.15); color: var(--success);"><i class="fa-solid fa-cart-shopping"></i></div>
+                    </div>
+                    <div class="admin-stat-card glass-panel" style="border-left: 4px solid var(--accent);">
+                        <div class="stat-card-details">
+                            <h4>Books Available</h4>
+                            <p id="stat-book-available">0</p>
+                        </div>
+                        <div class="stat-card-icon" style="background-color: rgba(245, 158, 11, 0.15); color: var(--accent);"><i class="fa-solid fa-warehouse"></i></div>
+                    </div>
+                    <div class="admin-stat-card glass-panel" style="border-left: 4px solid var(--success);">
+                        <div class="stat-card-details">
+                            <h4>Total Revenue</h4>
+                            <p id="stat-book-revenue">৳0</p>
+                        </div>
+                        <div class="stat-card-icon" style="background-color: rgba(16, 185, 129, 0.15); color: var(--success);"><i class="fa-solid fa-sack-dollar"></i></div>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 2rem;">
+                    <!-- Left: Stock Update Card -->
+                    <div class="glass-card" style="padding: 1.5rem; height: fit-content;">
+                        <h3 style="margin-bottom: 1.25rem;"><i class="fa-solid fa-plus"></i> Update Book Inventory</h3>
+                        <form id="book-stock-form">
+                            <div class="form-group">
+                                <label for="book-stock-input">New Total Book Stock</label>
+                                <input type="number" id="book-stock-input" class="form-control" placeholder="Enter total stock quantity (e.g. 50)" required min="0">
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">Update Inventory</button>
+                        </form>
+                    </div>
+
+                    <!-- Right: Book Allocation Ledger & Filters -->
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
+                            <h3><i class="fa-solid fa-list"></i> Book Allocation Ledger</h3>
+                            <div class="form-group" style="margin-bottom: 0; display: flex; align-items: center; gap: 0.5rem;">
+                                <label style="font-size: 0.8rem; margin: 0; color: var(--text-muted); white-space: nowrap;">Show Status:</label>
+                                <select id="book-filter-status" class="form-control" style="width: 150px; padding: 0.25rem 0.5rem; font-size: 0.8rem; height: auto;">
+                                    <option value="all">All Basic Computer</option>
+                                    <option value="taken">Book Taken (বই নিয়েছে)</option>
+                                    <option value="not-taken">Book Pending (বই নেয় নাই)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="data-table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Student ID</th>
+                                        <th>Student Name</th>
+                                        <th>Mobile</th>
+                                        <th>Batch</th>
+                                        <th>Book Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="books-tbody">
+                                    <tr>
+                                        <td colspan="6" style="text-align: center; color: var(--text-muted); padding: 1.5rem;">No student records found.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- --- TAB VIEW: SETTINGS --- -->
+            <section id="tab-settings" class="tab-view" style="display: none;">
+                <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2.5rem;">
+                    
+                    <div class="glass-card" style="padding: 2rem;">
+                        <h3 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-landmark"></i> Institute Details</h3>
+                        <form id="settings-details-form">
+                            <div class="form-group">
+                                <label for="settings-phone">Counselor Phone Number</label>
+                                <input type="text" id="settings-phone" class="form-control" placeholder="+880 1712-345678" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="settings-address">Institute Address</label>
+                                <input type="text" id="settings-address" class="form-control" placeholder="Jhautala, Comilla" required>
+                            </div>
+                            
+                            <h4 style="margin: 2rem 0 1rem;"><i class="fa-solid fa-tags"></i> Course Pricing Config (BDT)</h4>
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                                <div class="form-group">
+                                    <label for="settings-price-graphic">Graphic Design</label>
+                                    <input type="number" id="settings-price-graphic" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="settings-price-basic">Basic Computer</label>
+                                    <input type="number" id="settings-price-basic" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="settings-price-english">Spoken English</label>
+                                    <input type="number" id="settings-price-english" class="form-control" required>
+                                </div>
+                            </div>
+                            
+                            <h4 style="margin: 2rem 0 1rem;"><i class="fa-solid fa-image"></i> Logo File Config</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <label for="settings-logo-light">Light Mode Logo File</label>
+                                    <input type="text" id="settings-logo-light" class="form-control" placeholder="Logo-07.png" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="settings-logo-dark">Dark Mode Logo File</label>
+                                    <input type="text" id="settings-logo-dark" class="form-control" placeholder="Logo-03.png" required>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="margin-top: 1.5rem;"><i class="fa-solid fa-save"></i> Save Settings</button>
+                        </form>
+                    </div>
+
+                    <div class="glass-card" style="padding: 2rem; margin-top: 2rem;">
+                        <h3 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-users-rectangle"></i> Batch Management</h3>
+                        <div style="display: flex; justify-content: flex-start; margin-bottom: 1.5rem; border-bottom: 1px dashed var(--border-color); padding-bottom: 1.25rem;">
+                            <button type="button" class="btn btn-primary" id="settings-create-batch-btn"><i class="fa-solid fa-plus"></i> Create New Batch</button>
+                        </div>
+                        
+                        <h4 style="margin-bottom: 1rem;">Active Batches List</h4>
+                        <div class="data-table-container" style="max-height: 250px; overflow-y: auto;">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Course</th>
+                                        <th>Batch</th>
+                                        <th>Fee</th>
+                                        <th>Discount</th>
+                                        <th>Net Fee</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="settings-batches-tbody">
+                                    <tr>
+                                        <td colspan="6" style="text-align: center; color: var(--text-muted); padding: 1rem;">No custom batches configured.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
+                            <h3 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-key"></i> Credentials</h3>
+                            <form id="settings-password-form">
+                                <div class="form-group">
+                                    <label for="settings-pwd-current">Current Password</label>
+                                    <input type="password" id="settings-pwd-current" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="settings-pwd-new">New Password</label>
+                                    <input type="password" id="settings-pwd-new" class="form-control" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fa-solid fa-lock-open"></i> Update Password</button>
+                            </form>
+                        </div>
+
+                        <!-- SMS Gateway Config Card -->
+                        <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
+                            <h3 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-comment-sms"></i> SMS Gateway Config</h3>
+                            <form id="settings-sms-form" style="margin-bottom: 1.5rem; border-bottom: 1px dashed var(--border-color); padding-bottom: 1.5rem;">
+                                <div class="form-group">
+                                    <label for="settings-sms-api-key">API Key</label>
+                                    <div style="position: relative; display: flex; align-items: center;">
+                                        <input type="password" id="settings-sms-api-key" class="form-control" placeholder="Enter BulkSMSBD API Key" required style="padding-right: 2.5rem;">
+                                        <button type="button" id="toggle-api-key-btn" style="position: absolute; right: 0.75rem; background: none; border: none; color: var(--text-muted); cursor: pointer;"><i class="fa-solid fa-eye"></i></button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="settings-sms-sender-id">Sender ID</label>
+                                    <input type="text" id="settings-sms-sender-id" class="form-control" placeholder="e.g. 88018xxxxxx or Masking ID" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="settings-sms-template">Welcome SMS Template</label>
+                                    <textarea id="settings-sms-template" class="form-control" rows="4" placeholder="Dear {student_name}, your admission to {course_name} (Batch: {batch_name}) is confirmed..." required style="resize: vertical; line-height: 1.4; font-size: 0.85rem;"></textarea>
+                                    <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.35rem; line-height: 1.45;">
+                                        Variables: <code>{student_name}</code>, <code>{student_id}</code>, <code>{course_name}</code>, <code>{batch_name}</code>, <code>{start_date}</code>, <code>{class_time}</code>
+                                    </div>
+                                </div>
+                                <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1rem; cursor: pointer;">
+                                    <input type="checkbox" id="settings-sms-auto-send" checked style="width: auto; margin: 0; cursor: pointer;">
+                                    <label for="settings-sms-auto-send" style="margin: 0; font-size: 0.88rem; cursor: pointer; color: var(--text-muted);">Auto-send Welcome SMS on Admission</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fa-solid fa-save"></i> Save SMS Configuration</button>
+                            </form>
+
+                            <h4 style="margin-bottom: 0.75rem;">SMS Campaigns History</h4>
+                            <div class="data-table-container" style="max-height: 180px; overflow-y: auto;">
+                                <table class="data-table" style="font-size: 0.8rem;">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Batch</th>
+                                            <th>Recipients</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="settings-sms-history-tbody">
+                                        <tr>
+                                            <td colspan="4" style="text-align: center; color: var(--text-muted); padding: 1rem;">No SMS campaign history.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;" id="staff-management-card">
+                            <h3 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-user-shield"></i> Staff Accounts Directory</h3>
+                            <form id="add-staff-form" style="margin-bottom: 1.5rem; border-bottom: 1px dashed var(--border-color); padding-bottom: 1.5rem;">
+                                <div class="form-group">
+                                    <label for="staff-email-input">Staff Email</label>
+                                    <input type="email" id="staff-email-input" class="form-control" placeholder="e.g. manager@ediz.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="staff-pwd-input">Staff Password</label>
+                                    <input type="text" id="staff-pwd-input" class="form-control" placeholder="staff123" required>
+                                </div>
+                                
+                                <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-muted);">Set Permissions</label>
+                                <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem;">
+                                    <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: pointer;">
+                                        <input type="checkbox" id="perm-edit" checked> Can Edit Student Details
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: pointer;">
+                                        <input type="checkbox" id="perm-delete"> Can Delete Student Data
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: pointer;">
+                                        <input type="checkbox" id="perm-invoice" checked> Can Collect Fees / Invoices
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: pointer;">
+                                        <input type="checkbox" id="perm-cert" checked> Can Award Certificates
+                                    </label>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fa-solid fa-plus"></i> Create Staff Account</button>
+                            </form>
+
+                            <h4 style="margin-bottom: 0.75rem;">Active Staff Accounts</h4>
+                            <div class="data-table-container" style="max-height: 200px; overflow-y: auto;">
+                                <table class="data-table" style="font-size: 0.85rem;">
+                                    <thead>
+                                        <tr>
+                                            <th>Email</th>
+                                            <th>Permissions</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="settings-staff-tbody">
+                                        <tr>
+                                            <td colspan="3" style="text-align: center; color: var(--text-muted); padding: 1rem;">No staff accounts configured.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="glass-card" style="padding: 2rem;">
+                            <h3 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-database"></i> Database Utility</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Export your student registry, invoices, and settings as a file, or upload a backup file to restore records.</p>
+                            
+                            <button class="btn btn-secondary" id="db-export-btn" style="width: 100%; margin-bottom: 1rem;"><i class="fa-solid fa-download"></i> Export JSON Backup</button>
+                            
+                            <div style="border-top: 1px dashed var(--border-color); padding-top: 1.5rem;">
+                                <label class="btn btn-secondary" style="width: 100%; display: inline-flex; cursor: pointer;">
+                                    <i class="fa-solid fa-upload"></i> Restore JSON Backup
+                                    <input type="file" id="db-import-file" style="display: none;" accept=".json">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- --- ADMIN SIDE STUDENT REGISTRATION MODAL --- -->
+    <div id="student-modal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container glass-panel">
+            <div class="modal-header">
+                <h3 id="student-modal-title">Register Offline Student</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="student-form">
+                    <input type="hidden" id="student-id-field">
+                    <div id="single-course-group">
+                        <div class="form-group">
+                            <label for="student-course">Program Track</label>
+                            <select id="student-course" class="form-control" required>
+                                <option value="Graphic Design">Graphic Design</option>
+                                <option value="Basic Computer">Basic Computer</option>
+                                <option value="Spoken English">Spoken English</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="student-batch">Batch Selection</label>
+                            <select id="student-batch" class="form-control" required>
+                                <option value="" disabled selected>-- Select Course First --</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="multi-course-group" style="display: none;">
+                        <div class="form-group">
+                            <label style="font-weight: 600;">Select Enrolled Courses (একাধিক কোর্স সিলেক্ট করতে পারেন)</label>
+                            <div id="course-checkboxes-container" style="display: flex; flex-direction: column; gap: 0.5rem; padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 0.5rem;">
+                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-weight: 500; margin: 0;">
+                                    <input type="checkbox" class="course-checkbox" value="Graphic Design" style="width: 16px; height: 16px;"> Graphic Design
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-weight: 500; margin: 0;">
+                                    <input type="checkbox" class="course-checkbox" value="Basic Computer" style="width: 16px; height: 16px;"> Basic Computer
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-weight: 500; margin: 0;">
+                                    <input type="checkbox" class="course-checkbox" value="Spoken English" style="width: 16px; height: 16px;"> Spoken English
+                                </label>
+                            </div>
+                        </div>
+                        <div id="course-details-container" style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1rem;">
+                            <!-- Dynamically populated row per selected course -->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-name">Student Full Name</label>
+                        <input type="text" id="student-name" class="form-control" required placeholder="e.g. Kamal Uddin">
+                    </div>
+                    <div class="form-group">
+                        <label for="student-phone">Mobile Number <span style="color: var(--danger);">*</span></label>
+                        <input type="tel" id="student-phone" class="form-control" required placeholder="01XXXXXXXXX">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label for="student-father">Father's Name <span style="color: var(--danger);">*</span></label>
+                            <input type="text" id="student-father" class="form-control" placeholder="Father's name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="student-mother">Mother's Name</label>
+                            <input type="text" id="student-mother" class="form-control" placeholder="Mother's name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-guardian-phone">Guardian's Mobile Number <span style="color: var(--danger);">*</span></label>
+                        <input type="tel" id="student-guardian-phone" class="form-control" placeholder="01XXXXXXXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-address">Home Address</label>
+                        <textarea id="student-address" class="form-control" rows="2" placeholder="Full residential location (Optional)"></textarea>
+                    </div>
+                    
+                    <div id="student-financial-fields" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <!-- Hidden inputs to prevent javascript reference errors -->
+                        <div style="display: none;">
+                            <input type="number" id="student-fee-total" value="0">
+                            <input type="number" id="student-fee-discount" value="0">
+                            <input type="number" id="student-fee-net" value="0" disabled>
+                            <input type="number" id="student-fee-paid" value="0">
+                        </div>
+
+                        <!-- Visible Read-Only Summary Block -->
+                        <div id="student-financial-summary" style="grid-column: span 2; display: flex; gap: 1rem; padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--radius-sm); border: 1px solid var(--border-color); font-weight: 600; justify-content: space-around; font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-main);">
+                            <div>Total Net Payable: <span id="summary-total-net" style="color: var(--primary);">৳0</span></div>
+                            <div>Total Paid: <span id="summary-total-paid" style="color: var(--success);">৳0</span></div>
+                            <div>Total Due: <span id="summary-total-due" style="color: var(--danger);">৳0</span></div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 1.5rem;">
+                        <button type="button" class="btn btn-secondary modal-close-btn">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="student-form-submit-btn">Save Student</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- FEES BILLING / INVOICING MODAL --- -->
+    <div id="fees-modal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container glass-panel" style="max-width: 550px;">
+            <div class="modal-header">
+                <h3>Manage Student Fees & Bills</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+                    <div>
+                        <h4 id="fees-student-name" style="font-size: 1.1rem;">Student Name</h4>
+                        <p id="fees-student-id" style="font-size: 0.85rem; color: var(--text-muted);">ID: ---</p>
+                        <p id="fees-student-course" style="font-size: 0.85rem; font-weight: 600; color: var(--primary); margin-top: 0.25rem;">Course: ---</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <p>Total Fee: <strong id="fees-total-val">৳0</strong></p>
+                        <p style="color: var(--success);">Paid: <strong id="fees-paid-val">৳0</strong></p>
+                        <p style="color: var(--danger);">Due: <strong id="fees-due-val">৳0</strong></p>
+                    </div>
+                </div>
+
+                <!-- Record New Payment Form -->
+                <h4 style="margin-bottom: 0.75rem;">Record New Fee Collection</h4>
+                <form id="payment-form" style="display: flex; gap: 1rem; align-items: flex-end; margin-bottom: 2rem;">
+                    <div style="flex-grow: 1;">
+                        <label for="payment-amount" style="display: block; font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600;">Payment Amount (৳)</label>
+                        <input type="number" id="payment-amount" class="form-control" required placeholder="Enter amount to pay">
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-file-invoice"></i> Save Bill</button>
+                </form>
+
+                <!-- Billing History / Invoices generated -->
+                <h4 style="margin-bottom: 0.75rem;">Invoice Receipt Ledger</h4>
+                <div style="max-height: 200px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+                    <table class="data-table" style="font-size: 0.85rem;">
+                        <thead>
+                            <tr>
+                                <th>Invoice ID</th>
+                                <th>Date</th>
+                                <th>Paid</th>
+                                <th>Print</th>
+                            </tr>
+                        </thead>
+                        <tbody id="fees-ledger-tbody">
+                            <tr>
+                                <td colspan="4" style="text-align: center; color: var(--text-muted); padding: 1rem;">No payments registered.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; margin-top: 2rem;">
+                    <button class="btn btn-secondary modal-close-btn">Close Panel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- BATCH CREATION / EDIT MODAL --- -->
+    <div id="batch-modal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container glass-panel" style="max-width: 500px;">
+            <div class="modal-header">
+                <h3>Create New Batch</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="batch-form">
+                    <div class="form-group">
+                        <label for="batch-course">Select Course</label>
+                        <select id="batch-course" class="form-control" required>
+                            <option value="Graphic Design">Graphic Design</option>
+                            <option value="Basic Computer">Basic Computer</option>
+                            <option value="Spoken English">Spoken English</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="batch-name">Batch Name</label>
+                        <input type="text" id="batch-name" class="form-control" placeholder="e.g. GD-03" required readonly style="background-color: var(--bg-secondary); cursor: not-allowed; font-weight: bold; color: var(--primary);">
+                    </div>
+                    <div class="form-group">
+                        <label for="batch-time">Class Time / Shift</label>
+                        <input type="text" id="batch-time" class="form-control" placeholder="e.g. 09:00 AM - 10:30 AM" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Weekly Schedule (Select Days)</label>
+                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-top: 0.25rem;">
+                            <label style="display: flex; align-items: center; gap: 0.25rem; font-size: 0.85rem; cursor: pointer;">
+                                <input type="checkbox" name="batch-days" value="Sat" checked> Sat
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.25rem; font-size: 0.85rem; cursor: pointer;">
+                                <input type="checkbox" name="batch-days" value="Sun"> Sun
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.25rem; font-size: 0.85rem; cursor: pointer;">
+                                <input type="checkbox" name="batch-days" value="Mon" checked> Mon
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.25rem; font-size: 0.85rem; cursor: pointer;">
+                                <input type="checkbox" name="batch-days" value="Tue"> Tue
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.25rem; font-size: 0.85rem; cursor: pointer;">
+                                <input type="checkbox" name="batch-days" value="Wed" checked> Wed
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.25rem; font-size: 0.85rem; cursor: pointer;">
+                                <input type="checkbox" name="batch-days" value="Thu"> Thu
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.25rem; font-size: 0.85rem; cursor: pointer;">
+                                <input type="checkbox" name="batch-days" value="Fri"> Fri
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label for="batch-start-date">Start Date</label>
+                            <input type="date" id="batch-start-date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="batch-end-date">End Date</label>
+                            <input type="date" id="batch-end-date" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label for="batch-fee">Standard Fee (৳)</label>
+                            <input type="number" id="batch-fee" class="form-control" placeholder="e.g. 8000" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="batch-discount">Discount (৳)</label>
+                            <input type="number" id="batch-discount" class="form-control" value="0" required>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 1.5rem;">
+                        <button type="button" class="btn btn-secondary modal-close-btn">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Create Batch</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- STUDENT PROFILE VIEW MODAL --- -->
+    <div id="profile-modal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container glass-panel" style="max-width: 600px;">
+            <div class="modal-header">
+                <h3>Student Profile Details</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body" style="padding: 1.5rem 2rem;">
+                <div style="text-align: center; margin-bottom: 2rem; border-bottom: 1px dashed var(--border-color); padding-bottom: 1.5rem;">
+                    <h2 id="prof-name" style="margin-bottom: 0.25rem;">Kamal Uddin</h2>
+                    <p id="prof-id" style="font-weight: 700; color: var(--primary); font-size: 0.95rem;">EDIZ-GD-001</p>
+                    <span id="prof-status-badge" class="badge" style="margin-top: 0.5rem;">Paid</span>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+                    <div>
+                        <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.25rem;">Program & Track</h4>
+                        <p id="prof-course" style="font-weight: 600;">Graphic Design</p>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.25rem;">Enrolled Batch</h4>
+                        <p id="prof-batch" style="font-weight: 600;">GD-03</p>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.25rem;">Student Mobile</h4>
+                        <p id="prof-phone">01700000000</p>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.25rem;">Guardian Mobile</h4>
+                        <p id="prof-guardian">01800000000</p>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.25rem;">Father's Name</h4>
+                        <p id="prof-father">Father Name</p>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.25rem;">Mother's Name</h4>
+                        <p id="prof-mother">Mother Name</p>
+                    </div>
+                    <div style="grid-column: span 2;">
+                        <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.25rem;">Home Address</h4>
+                        <p id="prof-address" style="white-space: pre-line;">Full address details here</p>
+                    </div>
+                </div>
+
+                <div class="glass-panel" style="padding: 1.25rem; border-radius: var(--radius-md); margin-bottom: 2rem;">
+                    <h4 style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;"><i class="fa-solid fa-calculator"></i> Course Financial Summary</h4>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: center;">
+                        <div>
+                            <span style="font-size: 0.75rem; color: var(--text-muted);">Standard Fee</span>
+                            <p id="prof-fee-total" style="font-weight: 700; font-size: 1.1rem; margin-top: 0.25rem;">৳0</p>
+                        </div>
+                        <div>
+                            <span style="font-size: 0.75rem; color: var(--text-muted);">Discount Given</span>
+                            <p id="prof-fee-discount" style="font-weight: 700; font-size: 1.1rem; margin-top: 0.25rem; color: var(--accent);">৳0</p>
+                        </div>
+                        <div>
+                            <span style="font-size: 0.75rem; color: var(--text-muted);">Net Payable</span>
+                            <p id="prof-fee-net" style="font-weight: 700; font-size: 1.1rem; margin-top: 0.25rem; color: var(--text-main);">৳0</p>
+                        </div>
+                        <div style="grid-column: span 3; border-top: 1px dashed var(--border-color); margin-top: 0.5rem; padding-top: 0.75rem; display: flex; justify-content: space-around;">
+                            <div>
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">Total Paid</span>
+                                <p id="prof-fee-paid" style="font-weight: 700; color: var(--success); font-size: 1.1rem;">৳0</p>
+                            </div>
+                            <div>
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">Outstanding Due</span>
+                                <p id="prof-fee-due" style="font-weight: 700; color: var(--danger); font-size: 1.1rem;">৳0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+                    <button class="btn btn-secondary modal-close-btn">Close Profile</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- BATCH SMS SENDING MODAL --- -->
+    <div id="sms-modal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container glass-panel" style="max-width: 500px;">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-comment-sms"></i> Send Batch SMS</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="sms-campaign-form">
+                    <div style="margin-bottom: 1rem; font-size: 0.9rem; padding: 0.75rem; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color);">
+                        <div><strong>Target Course:</strong> <span id="sms-target-course" style="color: var(--primary);">---</span></div>
+                        <div style="margin-top: 0.25rem;"><strong>Target Batch:</strong> <span id="sms-target-batch" style="color: var(--primary);">---</span></div>
+                    </div>
+
+                    <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-muted);">Recipient Groups</label>
+                    <div style="display: flex; gap: 1.5rem; margin-bottom: 1.25rem; background: rgba(255,255,255,0.02); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: pointer;">
+                            <input type="checkbox" id="sms-target-student" checked> Students
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: pointer;">
+                            <input type="checkbox" id="sms-target-guardian"> Guardians
+                        </label>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <span style="font-size: 0.9rem; font-weight: 600;">Total Recipients: <span id="sms-recipient-count" style="color: var(--primary); font-size: 1rem;">0</span></span>
+                        <span id="sms-recipients-tooltip" style="font-size: 0.75rem; color: var(--text-muted); text-decoration: underline; cursor: pointer;">View Phone List</span>
+                    </div>
+
+                    <div id="sms-phone-list-container" style="display: none; max-height: 100px; overflow-y: auto; background: rgba(0,0,0,0.1); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.5rem; margin-bottom: 1rem; font-family: monospace; font-size: 0.8rem; word-break: break-all; color: var(--text-muted);">
+                        <!-- Loaded dynamically -->
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sms-message-text">Message Content</label>
+                        <textarea id="sms-message-text" class="form-control" rows="5" placeholder="Write your message here..." required style="resize: vertical; line-height: 1.4; font-size: 0.9rem;"></textarea>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.35rem;">
+                            <span id="sms-char-counter">0 characters</span>
+                            <span id="sms-parts-counter">0 / 1 SMS (Standard)</span>
+                        </div>
+                    </div>
+
+                    <div id="sms-sending-indicator" style="display: none; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--primary); margin-bottom: 1rem;">
+                        <i class="fa-solid fa-circle-notch fa-spin"></i> Sending campaign, please wait... Do not close window.
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 1.5rem;">
+                        <button type="button" class="btn btn-secondary modal-close-btn" id="sms-cancel-btn">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="sms-send-submit-btn"><i class="fa-solid fa-paper-plane"></i> Send SMS</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- BATCH WHATSAPP GROUP MODAL --- -->
+    <div id="whatsapp-group-modal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container glass-panel" style="max-width: 500px;">
+            <div class="modal-header">
+                <h3><i class="fa-brands fa-whatsapp" style="color: #25d366;"></i> WhatsApp Group Manager</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Group Info Header -->
+                <div style="margin-bottom: 1.5rem; font-size: 0.9rem; padding: 0.75rem; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color);">
+                    <div><strong>Course:</strong> <span id="wa-target-course" style="color: var(--primary);">---</span></div>
+                    <div style="margin-top: 0.25rem;"><strong>Batch:</strong> <span id="wa-target-batch" style="color: var(--primary);">---</span></div>
+                </div>
+
+                <!-- Step 1: Copy metadata to create group -->
+                <div class="glass-panel" style="padding: 1rem; margin-bottom: 1.5rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+                    <h4 style="margin-top: 0; margin-bottom: 0.75rem; font-size: 0.9rem; color: var(--primary); display: flex; align-items: center; gap: 0.4rem;">
+                        <span style="background: var(--primary); color: white; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: bold;">1</span> 
+                        Create Group in WhatsApp
+                    </h4>
+                    
+                    <!-- Suggested Group Name -->
+                    <div class="form-group" style="margin-bottom: 0.75rem;">
+                        <label style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.25rem; display: block; color: var(--text-muted);">Suggested Group Name</label>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <input type="text" id="wa-suggested-name" class="form-control" style="font-size: 0.85rem;" readonly>
+                            <button type="button" class="btn btn-secondary btn-sm" id="wa-copy-name-btn" style="white-space: nowrap; padding: 0.25rem 0.5rem; font-size: 0.75rem;"><i class="fa-solid fa-copy"></i> Copy</button>
+                        </div>
+                    </div>
+
+                    <!-- Student Numbers -->
+                    <div class="form-group" style="margin-bottom: 0.75rem;">
+                        <label style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.25rem; display: block; color: var(--text-muted);">Student Numbers (Comma-separated)</label>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <textarea id="wa-student-numbers" class="form-control" style="font-size: 0.8rem; font-family: monospace; height: 60px; resize: none;" readonly></textarea>
+                            <button type="button" class="btn btn-secondary btn-sm" id="wa-copy-numbers-btn" style="white-space: nowrap; align-self: flex-start; padding: 0.25rem 0.5rem; font-size: 0.75rem;"><i class="fa-solid fa-copy"></i> Copy</button>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp Web Link -->
+                    <div style="text-align: right; margin-top: 0.5rem;">
+                        <a href="https://web.whatsapp.com" target="_blank" class="btn btn-secondary btn-sm" style="font-size: 0.75rem; background: rgba(37, 211, 102, 0.15); color: #25d366; border: 1px solid #25d366;"><i class="fa-brands fa-whatsapp"></i> Open WhatsApp Web</a>
+                    </div>
+                </div>
+
+                <!-- Step 2: Paste link to save -->
+                <div class="glass-panel" style="padding: 1rem; margin-bottom: 1.5rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+                    <h4 style="margin-top: 0; margin-bottom: 0.75rem; font-size: 0.9rem; color: var(--primary); display: flex; align-items: center; gap: 0.4rem;">
+                        <span style="background: var(--primary); color: white; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: bold;">2</span>
+                        Save WhatsApp Group Invite Link
+                    </h4>
+                    <form id="wa-save-link-form">
+                        <div class="form-group" style="margin-bottom: 0.75rem;">
+                            <label for="wa-group-link" style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.25rem; display: block; color: var(--text-muted);">Group Invite Link</label>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <input type="url" id="wa-group-link" class="form-control" placeholder="https://chat.whatsapp.com/..." required style="font-size: 0.85rem;">
+                                <button type="submit" class="btn btn-primary btn-sm" style="white-space: nowrap; padding: 0.25rem 0.5rem; font-size: 0.75rem;"><i class="fa-solid fa-floppy-disk"></i> Save Link</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Step 3: SMS Invite -->
+                <div class="glass-panel" style="padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); display: none;" id="wa-sms-invite-panel">
+                    <h4 style="margin-top: 0; margin-bottom: 0.75rem; font-size: 0.9rem; color: var(--primary); display: flex; align-items: center; gap: 0.4rem;">
+                        <span style="background: var(--primary); color: white; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: bold;">3</span>
+                        Send Join Link to Students
+                    </h4>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.75rem;">This will send an SMS to all enrolled students with the WhatsApp Group invite link.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <button type="button" class="btn btn-primary" id="wa-send-sms-btn" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;"><i class="fa-solid fa-paper-plane"></i> Send Invite SMS</button>
+                    </div>
+                </div>
+
+                <!-- Step 4: WhatsApp Direct Invite (Individual) -->
+                <div class="glass-panel" style="padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); margin-top: 1.5rem; display: none;" id="wa-individual-invite-panel">
+                    <h4 style="margin-top: 0; margin-bottom: 0.75rem; font-size: 0.9rem; color: var(--primary); display: flex; align-items: center; gap: 0.4rem;">
+                        <span style="background: var(--primary); color: white; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: bold;">4</span>
+                        Invite via WhatsApp Direct (Free)
+                    </h4>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.75rem;">Click to chat and send the invite link directly to each student on WhatsApp.</p>
+                    <div style="max-height: 180px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: rgba(0,0,0,0.1);">
+                        <table class="data-table" style="font-size: 0.8rem;">
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="wa-individual-list-tbody">
+                                <!-- Loaded dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
+                    <button type="button" class="btn btn-secondary modal-close-btn">Close Manager</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- FEES LOOKUP / COLLECT DUE MODAL --- -->
+    <div id="due-lookup-modal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container glass-panel" style="max-width: 480px;">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-wallet"></i> Collect Due / Fees</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="due-lookup-form" style="margin-bottom: 1.5rem;">
+                    <div class="form-group">
+                        <label for="due-lookup-search">Search Student ID, Name, or Phone</label>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <input type="text" id="due-lookup-search" class="form-control" placeholder="Search by ID, Name, or Phone (Student/Guardian)..." required>
+                            <button type="submit" class="btn btn-primary" style="white-space: nowrap;"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+                        </div>
+                        <div id="due-lookup-error" style="color: var(--danger); font-size: 0.8rem; margin-top: 0.35rem; display: none;">Student not found. Please verify the ID, Name, or Phone number.</div>
+                    </div>
+                </form>
+
+                <h4 style="margin-bottom: 0.75rem; font-size: 0.9rem; color: var(--text-muted);"><i class="fa-solid fa-triangle-exclamation"></i> Students with Outstanding Dues</h4>
+                <div class="data-table-container" style="max-height: 200px; overflow-y: auto;">
+                    <table class="data-table" style="font-size: 0.85rem;">
+                        <thead>
+                            <tr>
+                                <th>Student</th>
+                                <th>Outstanding Due</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="due-lookup-list-tbody">
+                            <!-- Loaded dynamically with dueFee > 0 -->
+                            <tr>
+                                <td colspan="3" style="text-align: center; color: var(--text-muted); padding: 1rem;">No outstanding dues found.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
+                    <button type="button" class="btn btn-secondary modal-close-btn">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- REGISTRATION SUCCESS MODAL --- -->
+    <div id="reg-success-modal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container glass-panel" style="max-width: 450px; text-align: center;">
+            <div class="modal-body" style="padding: 2.5rem 2rem;">
+                <div style="width: 70px; height: 70px; border-radius: 50%; background-color: rgba(16, 185, 129, 0.15); color: var(--success); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 1.5rem;">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                
+                <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-main);">Registration Successful!</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">The student has been successfully enrolled in the registry.</p>
+                
+                <!-- Student Details Info Box -->
+                <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; text-align: left; margin-bottom: 2rem; font-size: 0.85rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span style="color: var(--text-muted);">Student ID:</span>
+                        <strong id="success-student-id" style="color: var(--primary);">---</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span style="color: var(--text-muted);">Student Name:</span>
+                        <strong id="success-student-name" style="color: var(--text-main);">---</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span style="color: var(--text-muted);">Course:</span>
+                        <span id="success-student-course" style="font-weight: 600;">---</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span style="color: var(--text-muted);">Batch:</span>
+                        <span id="success-student-batch" style="font-weight: 600;">---</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; border-top: 1px dashed var(--border-color); padding-top: 0.5rem; margin-top: 0.5rem;">
+                        <span style="color: var(--text-muted);">Total Paid:</span>
+                        <strong id="success-student-paid" style="color: var(--success);">৳0</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
+                        <span style="color: var(--text-muted);">Outstanding Due:</span>
+                        <strong id="success-student-due" style="color: var(--danger);">৳0</strong>
+                    </div>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <button type="button" id="success-print-btn" class="btn btn-primary" style="width: 100%; justify-content: center; gap: 0.5rem;">
+                        <i class="fa-solid fa-print"></i> Print Invoice Receipt
+                    </button>
+                    <button type="button" id="success-close-btn" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+                        Done / Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- HIDDEN PRINT AREA FOR A4 INVOICES AND CERTIFICATES --- -->
+    <div id="print-zone" class="print-area">
+        <!-- Rendered dynamically by javascript before printing -->
+    </div>
+
+    <!-- Script Entrypoint -->
+    <script src="admin.js"></script>
+</body>
+</html>
