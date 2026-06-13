@@ -523,9 +523,12 @@ function loadDatabase() {
     settingsLogoDark.value = settings.darkLogo;
 
     if (settingsAdminEmail && settings.users && settings.users.length > 0) {
-        const owner = settings.users.find(u => u.role === 'Owner') || settings.users[0];
-        settingsAdminEmail.value = owner.email;
-        if (settingsAdminRecoveryEmail) settingsAdminRecoveryEmail.value = owner.recoveryEmail || owner.email;
+        const activeUser = JSON.parse(sessionStorage.getItem('ediz_active_user'));
+        const dbUser = activeUser ? settings.users.find(u => u.email.toLowerCase() === activeUser.email.toLowerCase()) : null;
+        const targetUser = dbUser || settings.users.find(u => u.role === 'Owner') || settings.users[0];
+
+        settingsAdminEmail.value = targetUser.email || '';
+        if (settingsAdminRecoveryEmail) settingsAdminRecoveryEmail.value = targetUser.recoveryEmail || targetUser.email || '';
     }
 
     if (settingsEmailProvider) {
@@ -1312,6 +1315,61 @@ function setupDataOperations() {
         const curTheme = document.documentElement.getAttribute('data-theme');
         applyTheme(curTheme);
     });
+
+    // Settings credentials change (Email, Recovery Email & Password) without Current Password validation
+    if (settingsPasswordForm) {
+        settingsPasswordForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const emailVal = settingsAdminEmail.value.trim().toLowerCase();
+            const recoveryEmailVal = settingsAdminRecoveryEmail.value.trim().toLowerCase();
+            const newPwdVal = settingsPwdNew.value.trim();
+
+            const activeUser = JSON.parse(sessionStorage.getItem('ediz_active_user'));
+            if (!activeUser) {
+                alert("Error: No active user session found.");
+                return;
+            }
+
+            const dbUser = settings.users.find(u => u.email.toLowerCase() === activeUser.email.toLowerCase());
+            if (!dbUser) {
+                alert("Error: User account not found in database.");
+                return;
+            }
+
+            // Check if email is already taken by another user
+            const emailExists = settings.users.some(u => u.email.toLowerCase() === emailVal && u.id !== dbUser.id);
+            if (emailExists) {
+                alert(`Error: A user account with email "${emailVal}" already exists.`);
+                return;
+            }
+
+            // Update user details
+            dbUser.email = emailVal;
+            dbUser.recoveryEmail = recoveryEmailVal;
+            if (newPwdVal) {
+                dbUser.password = newPwdVal;
+                // Update global settings.adminPassword for backward compatibility if it's the Owner/first user
+                if (dbUser.role === 'Owner') {
+                    settings.adminPassword = newPwdVal;
+                }
+            }
+
+            saveDatabase();
+            
+            // Update the session storage active user
+            sessionStorage.setItem('ediz_active_user', JSON.stringify(dbUser));
+            
+            alert("Credentials updated successfully!");
+            settingsPasswordForm.reset();
+
+            // Re-populate the fields
+            settingsAdminEmail.value = dbUser.email;
+            settingsAdminRecoveryEmail.value = dbUser.recoveryEmail || dbUser.email;
+            
+            // Refresh settings user directory
+            renderSettingsStaff();
+        });
+    }
 
 
 
