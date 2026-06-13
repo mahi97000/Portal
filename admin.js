@@ -4357,12 +4357,18 @@ function renderMultiCourseRows() {
                     <input type="number" class="form-control course-paid-input" value="${previous ? previous.paid : 0}" style="padding: 0.25rem 0.4rem; font-size: 0.75rem; height: auto;">
                 </div>
             </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 0.5rem;">
                 <div class="form-group" style="margin-bottom: 0;">
                     <label style="font-size: 0.7rem; margin-bottom: 0.15rem; display: block; color: var(--text-muted);">Net Fee (৳)</label>
-                    <input type="number" class="form-control course-net-input" value="0" disabled style="padding: 0.25rem 0.4rem; font-size: 0.75rem; height: auto;">
+                    <input type="number" class="form-control course-net-input" value="0" disabled style="padding: 0.25rem 0.4rem; font-size: 0.75rem; height: auto; font-weight: 600;">
                 </div>
-                ${bookCheckboxHtml || '<div style="display:block;"></div>'}
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label style="font-size: 0.7rem; margin-bottom: 0.15rem; display: block; color: var(--text-muted);">Due Fee (৳)</label>
+                    <input type="number" class="form-control course-due-input" value="0" disabled style="padding: 0.25rem 0.4rem; font-size: 0.75rem; height: auto; font-weight: 600; color: var(--danger);">
+                </div>
+                <div style="display: flex; align-items: flex-end; justify-content: flex-end; height: 100%;">
+                    ${bookCheckboxHtml || '<div style="display:block;"></div>'}
+                </div>
             </div>
         `;
 
@@ -4372,18 +4378,24 @@ function renderMultiCourseRows() {
         const discInput = row.querySelector('.course-discount-input');
         const paidInput = row.querySelector('.course-paid-input');
         const netInput = row.querySelector('.course-net-input');
+        const dueInput = row.querySelector('.course-due-input');
         const batchSelect = row.querySelector('.course-batch-select');
         const bookCb = row.querySelector('.course-book-checkbox');
 
         function updateRowNet() {
             let fee = parseFloat(feeInput.value) || 0;
             const disc = parseFloat(discInput.value) || 0;
+            const paid = parseFloat(paidInput.value) || 0;
             
+            let net = fee - disc;
             if (bookCb && bookCb.checked) {
-                netInput.value = fee - disc + 200;
-            } else {
-                netInput.value = fee - disc;
+                net += 200;
             }
+            netInput.value = net;
+
+            const due = net - paid;
+            dueInput.value = due >= 0 ? due : 0;
+
             recalculateMultiCourseTotals();
         }
 
