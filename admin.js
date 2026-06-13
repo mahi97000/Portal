@@ -506,7 +506,7 @@ function loadDatabase() {
                 email: "owner@ediz.com", 
                 password: (settings.adminPassword || "admin123"), 
                 role: "Owner", 
-                permissions: { canEdit: true, canDelete: true, canInvoice: true, canCert: true },
+                permissions: { canEdit: true, canDelete: true, canInvoice: true, canCert: true, canCreateBatch: true },
                 recoveryEmail: "owner@ediz.com"
             },
             { 
@@ -514,7 +514,7 @@ function loadDatabase() {
                 email: "staff@ediz.com", 
                 password: "staff123", 
                 role: "Staff", 
-                permissions: { canEdit: true, canDelete: false, canInvoice: true, canCert: true } 
+                permissions: { canEdit: true, canDelete: false, canInvoice: true, canCert: true, canCreateBatch: true } 
             }
         ];
     } else {
@@ -524,6 +524,19 @@ function loadDatabase() {
                 owner.recoveryEmail = owner.email || "owner@ediz.com";
             }
         }
+    }
+
+    // Ensure all users have the canCreateBatch permission flag set
+    if (settings.users) {
+        settings.users = settings.users.map(u => {
+            if (!u.permissions) {
+                u.permissions = { canEdit: true, canDelete: false, canInvoice: true, canCert: true, canCreateBatch: true };
+            }
+            if (u.permissions.canCreateBatch === undefined) {
+                u.permissions.canCreateBatch = true;
+            }
+            return u;
+        });
     }
 
     // Set configuration inputs
@@ -1607,7 +1620,8 @@ function setupDataOperations() {
                 canEdit: true,
                 canDelete: true,
                 canInvoice: true,
-                canCert: true
+                canCert: true,
+                canCreateBatch: true
             };
 
             let phoneVal = "";
@@ -1619,7 +1633,8 @@ function setupDataOperations() {
                     canEdit: document.getElementById('perm-edit').checked,
                     canDelete: document.getElementById('perm-delete').checked,
                     canInvoice: document.getElementById('perm-invoice').checked,
-                    canCert: document.getElementById('perm-cert').checked
+                    canCert: document.getElementById('perm-cert').checked,
+                    canCreateBatch: document.getElementById('perm-create-batch').checked
                 };
             } else if (roleVal === 'Admin') {
                 const pVal = document.getElementById('user-phone-input').value.trim();
@@ -2188,6 +2203,11 @@ function renderSettingsBatches() {
 
 // --- DELETE BATCH CALL ---
 window.deleteBatch = function(index) {
+    const curUser = JSON.parse(sessionStorage.getItem('ediz_active_user')) || { role: 'Owner' };
+    if (curUser.role === 'Staff') {
+        alert("Permission Denied: Staff accounts cannot delete batches.");
+        return;
+    }
     if (confirm("Are you sure you want to delete this batch? It will no longer be available for new student enrollments.")) {
         if (!settings.batches) settings.batches = defaultBatches;
         settings.batches.splice(index, 1);
@@ -2201,17 +2221,25 @@ function applyUserPermissions(user) {
     const staffCard = document.getElementById('staff-management-card');
     const batchesCreateBtn = document.getElementById('batches-create-btn');
     const settingsCreateBatchBtn = document.getElementById('settings-create-batch-btn');
+    const bookStockUpdateCard = document.getElementById('book-stock-update-card');
+    const booksGrid = document.querySelector('.books-grid');
+    
+    const canCreateBatch = user.role === 'Owner' || user.role === 'Admin' || (user.permissions && user.permissions.canCreateBatch);
     
     if (user.role === 'Owner' || user.role === 'Admin') {
         if (settingsTab) settingsTab.style.display = 'block';
         if (staffCard) staffCard.style.display = 'block';
         if (batchesCreateBtn) batchesCreateBtn.style.display = 'inline-flex';
         if (settingsCreateBatchBtn) settingsCreateBatchBtn.style.display = 'inline-flex';
+        if (bookStockUpdateCard) bookStockUpdateCard.style.display = 'block';
+        if (booksGrid) booksGrid.style.gridTemplateColumns = '0.7fr 1.3fr';
     } else {
         if (settingsTab) settingsTab.style.display = 'none';
         if (staffCard) staffCard.style.display = 'none';
-        if (batchesCreateBtn) batchesCreateBtn.style.display = 'none';
-        if (settingsCreateBatchBtn) settingsCreateBatchBtn.style.display = 'none';
+        if (batchesCreateBtn) batchesCreateBtn.style.display = canCreateBatch ? 'inline-flex' : 'none';
+        if (settingsCreateBatchBtn) settingsCreateBatchBtn.style.display = canCreateBatch ? 'inline-flex' : 'none';
+        if (bookStockUpdateCard) bookStockUpdateCard.style.display = 'none';
+        if (booksGrid) booksGrid.style.gridTemplateColumns = '1fr';
         
         // If staff is on settings view, redirect to dashboard
         const activeTab = document.querySelector('.sidebar-item.active');
@@ -2250,6 +2278,7 @@ function renderSettingsStaff() {
                 if (u.permissions.canDelete) perms.push("Delete");
                 if (u.permissions.canInvoice) perms.push("Invoices");
                 if (u.permissions.canCert) perms.push("Certificates");
+                if (u.permissions.canCreateBatch) perms.push("Create Batches");
             }
             permString = perms.length > 0 ? perms.join(", ") : "None";
         }
@@ -4322,15 +4351,24 @@ window.renderBooksTab = function() {
         return;
     }
 
+    const curUser = JSON.parse(sessionStorage.getItem('ediz_active_user')) || { role: 'Owner' };
+
     tbody.innerHTML = displayStudents.map(st => {
         const isTaken = st.takenBook === true;
         const statusBadge = isTaken 
             ? `<span class="badge badge-success" style="font-size:0.75rem;">Book Taken</span>` 
             : `<span class="badge badge-danger" style="font-size:0.75rem;">Pending</span>`;
             
-        const actionButton = isTaken
-            ? `<button class="btn btn-secondary btn-sm" onclick="toggleBookAllocation('${st.id}', false)" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">Mark Pending</button>`
-            : `<button class="btn btn-primary btn-sm" onclick="toggleBookAllocation('${st.id}', true)" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">Give Book</button>`;
+        let actionButton = '';
+        if (isTaken) {
+            if (curUser.role === 'Owner' || curUser.role === 'Admin') {
+                actionButton = `<button class="btn btn-secondary btn-sm" onclick="toggleBookAllocation('${st.id}', false)" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">Mark Pending</button>`;
+            } else {
+                actionButton = `<span style="font-size: 0.75rem; color: var(--text-muted); font-style: italic;">Issued</span>`;
+            }
+        } else {
+            actionButton = `<button class="btn btn-primary btn-sm" onclick="toggleBookAllocation('${st.id}', true)" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">Give Book</button>`;
+        }
 
         return `
             <tr>
@@ -4346,6 +4384,11 @@ window.renderBooksTab = function() {
 };
 
 window.toggleBookAllocation = function(studentId, status) {
+    const curUser = JSON.parse(sessionStorage.getItem('ediz_active_user')) || { role: 'Owner' };
+    if (!status && curUser.role === 'Staff') {
+        alert("Permission Denied: Staff accounts cannot return books or mark allocations as pending.");
+        return;
+    }
     const st = students.find(s => s.id === studentId);
     if (!st) return;
 

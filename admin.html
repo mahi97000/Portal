@@ -490,7 +490,7 @@
 
                 <div class="books-grid" style="display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 2rem;">
                     <!-- Left: Stock Update Card -->
-                    <div class="glass-card" style="padding: 1.5rem; height: fit-content;">
+                    <div class="glass-card" id="book-stock-update-card" style="padding: 1.5rem; height: fit-content;">
                         <h3 style="margin-bottom: 1.25rem;"><i class="fa-solid fa-plus"></i> Update Book Inventory</h3>
                         <form id="book-stock-form">
                             <div class="form-group">
@@ -765,6 +765,9 @@
                                         </label>
                                         <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: pointer;">
                                             <input type="checkbox" id="perm-cert" checked> Can Award Certificates
+                                        </label>
+                                        <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: pointer;">
+                                            <input type="checkbox" id="perm-create-batch" checked> Can Create Batches
                                         </label>
                                     </div>
                                 </div>
