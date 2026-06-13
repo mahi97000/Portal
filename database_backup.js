@@ -15696,7 +15696,7 @@ window.migratedDatabase = {
           "Mon",
           "Wed"
         ],
-        "time": "10:30 AM - 12:00 AM",
+        "time": "10:30 AM - 12:00 PM",
         "startDate": "2026-06-17",
         "endDate": "2026-09-17"
       },

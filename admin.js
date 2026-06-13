@@ -450,10 +450,10 @@ if (adminThemeToggle) {
 // --- DATABASE ACCESS ---
 function loadDatabase() {
     // One-time automatic migration import from database_backup.js if present
-    if (!localStorage.getItem('ediz_students_migrated') && window.migratedDatabase) {
+    if (!localStorage.getItem('ediz_students_migrated_v3') && window.migratedDatabase) {
         localStorage.setItem('ediz_students', JSON.stringify(window.migratedDatabase.students));
         localStorage.setItem('ediz_settings', JSON.stringify(window.migratedDatabase.settings));
-        localStorage.setItem('ediz_students_migrated', 'true');
+        localStorage.setItem('ediz_students_migrated_v3', 'true');
     }
 
     students = JSON.parse(localStorage.getItem('ediz_students')) || [];
