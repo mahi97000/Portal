@@ -188,6 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupExportFeatures();
     setupDashboardSubTabs();
     setupDashboardSearch();
+    setupStudentNotesFeature();
 });
 
 // --- AUTHENTICATION GATE ---
@@ -581,6 +582,7 @@ function loadDatabase() {
     renderSettingsStaff();
     renderSmsHistory();
     renderBooksTab();
+    checkAndSendNextPaymentReminders();
 }
 
 function saveDatabase() {
@@ -924,7 +926,7 @@ function renderRecentDashboard() {
 }
 
 function renderStudentsTable() {
-    const sQuery = studentSearch.value.toLowerCase();
+    const sQuery = studentSearch.value.toLowerCase().trim();
     const courseVal = filterCourse.value;
     const statusVal = filterStatus.value;
 
@@ -935,14 +937,21 @@ function renderStudentsTable() {
 
     const cleanQuery = sQuery.replace(/\D/g, "");
 
-    const filtered = students.filter(st => {
+    // Prioritize exact ID match
+    const exactIdMatch = sQuery ? students.find(st => st.id.toLowerCase() === sQuery) : null;
+
+    const filtered = exactIdMatch ? [exactIdMatch] : students.filter(st => {
         const cleanPhone = st.phone ? st.phone.replace(/\D/g, "") : "";
         const cleanGuardian = st.guardianPhone ? st.guardianPhone.replace(/\D/g, "") : "";
 
-        const matchesSearch = st.id.toLowerCase().includes(sQuery) || 
+        // If query contains alphabetical letters, do not run numeric phone matches
+        const hasLetters = /[a-z]/i.test(sQuery);
+
+        const matchesSearch = !sQuery || 
+                              st.id.toLowerCase().includes(sQuery) || 
                               st.name.toLowerCase().includes(sQuery) || 
-                              (cleanQuery && cleanPhone.includes(cleanQuery)) ||
-                              (cleanQuery && cleanGuardian.includes(cleanQuery)) ||
+                              (!hasLetters && cleanQuery && cleanPhone.includes(cleanQuery)) ||
+                              (!hasLetters && cleanQuery && cleanGuardian.includes(cleanQuery)) ||
                               (st.batch && st.batch.toLowerCase().includes(sQuery));
         const matchesCourse = courseVal === "" || (st.course && st.course.includes(courseVal));
         const matchesStatus = statusVal === "" || st.status === statusVal;
@@ -974,45 +983,62 @@ function renderStudentsTable() {
         return;
     }
 
-    studentsTbody.innerHTML = filtered.map(st => `
-        <tr>
-            <td>
-                <strong>${st.id}</strong><br>
-                <span style="font-size: 0.75rem; color: var(--primary); font-weight: 600;">Batch: ${st.batch || 'N/A'}</span>
-            </td>
-            <td>
-                <div style="font-weight: 600;">${st.name}</div>
-                <div style="font-size: 0.75rem; color: var(--text-muted);">${st.address}</div>
-                <div style="font-size: 0.7rem; color: var(--text-muted); font-style: italic;">
-                    Parents: ${st.fatherName || 'N/A'} (F), ${st.motherName || 'N/A'} (M)
-                </div>
-            </td>
-            <td>
-                ${st.course}
-                ${st.takenBook ? `<br><span class="badge badge-success" style="font-size:0.65rem; padding: 1px 4px; margin-top: 2px; display: inline-block;">Book Taken</span>` : ''}
-            </td>
-            <td>
-                <div>Mob: ${st.phone}</div>
-                <div style="font-size: 0.75rem; color: var(--text-muted);">Grd: ${st.guardianPhone || 'N/A'}</div>
-            </td>
-            <td>
-                <div style="font-size: 0.85rem;">Gross: ৳${st.totalFee}</div>
-                <div style="font-size: 0.8rem; color: var(--accent);">Disc: ৳${st.discountFee || 0}</div>
-                <div style="font-size: 0.8rem; font-weight: 600;">Net: ৳${st.netFee !== undefined ? st.netFee : st.totalFee}</div>
-                <div style="font-size: 0.85rem; color: var(--success); font-weight: 500;">Paid: ৳${st.paidFee}</div>
-                <div style="font-size: 0.85rem; color: var(--danger); font-weight: 600;">Due: ৳${st.dueFee}</div>
-            </td>
-            <td><span class="badge badge-${st.status === 'Paid' ? 'success' : (st.status === 'Partial' ? 'warning' : 'danger')}">${st.status === 'Partial' ? 'Payment Due' : st.status}</span></td>
-            <td>
-                <div class="actions-cell">
-                    ${canInvoice ? `<button class="btn btn-secondary btn-icon-only" onclick="openPaymentModal('${st.id}')" title="Manage Fees"><i class="fa-solid fa-wallet"></i></button>` : ''}
-                    ${canEdit ? `<button class="btn btn-secondary btn-icon-only" onclick="openEditStudentModal('${st.id}')" title="Edit Student"><i class="fa-solid fa-edit"></i></button>` : ''}
-                    ${canDelete ? `<button class="btn btn-secondary btn-icon-only" style="color: var(--danger);" onclick="deleteStudent('${st.id}')" title="Delete Student"><i class="fa-solid fa-trash"></i></button>` : ''}
-                    ${!canInvoice && !canEdit && !canDelete ? '---' : ''}
-                </div>
-            </td>
-        </tr>
-    `).join('');
+    studentsTbody.innerHTML = filtered.map(st => {
+        const hasNextPay = st.nextPaymentDate ? true : false;
+        let nextPayHtml = "";
+        let isOverdue = false;
+        if (hasNextPay && st.dueFee > 0) {
+            const todayStr = new Date().toISOString().split('T')[0];
+            isOverdue = st.nextPaymentDate <= todayStr;
+            nextPayHtml = `<div style="font-size: 0.75rem; margin-top: 3px; font-weight: 600; color: ${isOverdue ? 'var(--danger)' : 'var(--success)'};">
+                <i class="fa-solid fa-calendar-day"></i> Next Payment: ${st.nextPaymentDate} ${isOverdue ? '<span class="badge badge-danger" style="font-size: 0.6rem; padding: 1px 3px; margin-left: 2px;">Overdue</span>' : ''}
+            </div>`;
+        }
+        const noteHtml = st.notes ? `<div style="font-size: 0.75rem; color: var(--accent); font-style: italic; margin-top: 3px;"><i class="fa-solid fa-sticky-note"></i> Note: ${st.notes}</div>` : '';
+        const rowStyle = isOverdue ? 'background-color: rgba(239, 68, 68, 0.05); border-left: 4px solid var(--danger);' : '';
+
+        return `
+            <tr style="${rowStyle}">
+                <td>
+                    <strong>${st.id}</strong><br>
+                    <span style="font-size: 0.75rem; color: var(--primary); font-weight: 600;">Batch: ${st.batch || 'N/A'}</span>
+                </td>
+                <td>
+                    <div style="font-weight: 600;">${st.name}</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">${st.address}</div>
+                    <div style="font-size: 0.7rem; color: var(--text-muted); font-style: italic;">
+                        Parents: ${st.fatherName || 'N/A'} (F), ${st.motherName || 'N/A'} (M)
+                    </div>
+                    ${nextPayHtml}
+                    ${noteHtml}
+                </td>
+                <td>
+                    ${st.course}
+                    ${st.takenBook ? `<br><span class="badge badge-success" style="font-size:0.65rem; padding: 1px 4px; margin-top: 2px; display: inline-block;">Book Taken</span>` : ''}
+                </td>
+                <td>
+                    <div>Mob: <a href="tel:${st.phone}" style="color: var(--primary); font-weight: 600; text-decoration: underline;">${st.phone}</a></div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">Grd: ${st.guardianPhone ? `<a href="tel:${st.guardianPhone}" style="color: inherit; text-decoration: underline;">${st.guardianPhone}</a>` : 'N/A'}</div>
+                </td>
+                <td>
+                    <div style="font-size: 0.85rem;">Gross: ৳${st.totalFee}</div>
+                    <div style="font-size: 0.8rem; color: var(--accent);">Disc: ৳${st.discountFee || 0}</div>
+                    <div style="font-size: 0.8rem; font-weight: 600;">Net: ৳${st.netFee !== undefined ? st.netFee : st.totalFee}</div>
+                    <div style="font-size: 0.85rem; color: var(--success); font-weight: 500;">Paid: ৳${st.paidFee}</div>
+                    <div style="font-size: 0.85rem; color: var(--danger); font-weight: 600;">Due: ৳${st.dueFee}</div>
+                </td>
+                <td><span class="badge badge-${st.status === 'Paid' ? 'success' : (st.status === 'Partial' ? 'warning' : 'danger')}">${st.status === 'Partial' ? 'Payment Due' : st.status}</span></td>
+                <td>
+                    <div class="actions-cell">
+                        ${canInvoice ? `<button class="btn btn-secondary btn-icon-only" onclick="openPaymentModal('${st.id}')" title="Manage Fees"><i class="fa-solid fa-wallet"></i></button>` : ''}
+                        ${canEdit ? `<button class="btn btn-secondary btn-icon-only" onclick="openEditStudentModal('${st.id}')" title="Edit Student"><i class="fa-solid fa-edit"></i></button>` : ''}
+                        <button class="btn btn-secondary btn-icon-only" style="color: var(--accent);" onclick="openStudentNotesModal('${st.id}')" title="Add/Edit Note & Next Payment"><i class="fa-solid fa-note-sticky"></i></button>
+                        ${canDelete ? `<button class="btn btn-secondary btn-icon-only" style="color: var(--danger);" onclick="deleteStudent('${st.id}')" title="Delete Student"><i class="fa-solid fa-trash"></i></button>` : ''}
+                    </div>
+                </td>
+            </tr>
+        `;
+    }).join('');
 }
 
 function renderInvoicesTable() {
@@ -2540,37 +2566,58 @@ function renderBatchRoster(course, batchName) {
         return;
     }
 
-    tbody.innerHTML = roster.map(st => `
-        <tr>
-            <td><strong>${st.id}</strong></td>
-            <td>
-                <div style="font-weight:600;">${st.name}</div>
-                <div style="font-size:0.75rem; color:var(--text-muted);">${st.address}</div>
-            </td>
-            <td>
-                <div>Mob: ${st.phone}</div>
-                <div style="font-size:0.75rem; color:var(--text-muted);">Grd: ${st.guardianPhone || 'N/A'}</div>
-            </td>
-            <td>
-                <div>Father: ${st.fatherName || 'N/A'}</div>
-                <div style="font-size:0.75rem; color:var(--text-muted);">Mother: ${st.motherName || 'N/A'}</div>
-            </td>
-            <td>
-                <div style="font-size:0.8rem;">Net: ৳${st.netFee !== undefined ? st.netFee : st.totalFee}</div>
-                <div style="font-size:0.75rem; color:var(--success);">Paid: ৳${st.paidFee}</div>
-                <div style="font-size:0.75rem; color:var(--danger);">Due: ৳${st.dueFee}</div>
-            </td>
-            <td>
-                <span class="badge badge-${st.status === 'Paid' ? 'success' : (st.status === 'Partial' ? 'warning' : 'danger')}">${st.status === 'Partial' ? 'Payment Due' : st.status}</span>
-            </td>
-            <td>
-                <div class="actions-cell">
-                    <button class="btn btn-secondary btn-icon-only" onclick="openProfileModal('${st.id}')" title="View Full Profile"><i class="fa-solid fa-eye"></i></button>
-                    <button class="btn btn-secondary btn-icon-only" onclick="openPaymentModal('${st.id}')" title="Manage Fees & Print"><i class="fa-solid fa-wallet"></i></button>
-                </div>
-            </td>
-        </tr>
-    `).join('');
+    tbody.innerHTML = roster.map(st => {
+        const hasNextPay = st.nextPaymentDate ? true : false;
+        let nextPayHtml = "";
+        let isOverdue = false;
+        if (hasNextPay && st.dueFee > 0) {
+            const todayStr = new Date().toISOString().split('T')[0];
+            isOverdue = st.nextPaymentDate <= todayStr;
+            nextPayHtml = `<div style="font-size: 0.75rem; margin-top: 3px; font-weight: 600; color: ${isOverdue ? 'var(--danger)' : 'var(--success)'};">
+                <i class="fa-solid fa-calendar-day"></i> Next Payment: ${st.nextPaymentDate} ${isOverdue ? '<span class="badge badge-danger" style="font-size: 0.6rem; padding: 1px 3px; margin-left: 2px;">Overdue</span>' : ''}
+            </div>`;
+        }
+        const noteHtml = st.notes ? `<div style="font-size: 0.75rem; color: var(--accent); font-style: italic; margin-top: 3px;"><i class="fa-solid fa-sticky-note"></i> Note: ${st.notes}</div>` : '';
+        const rowStyle = isOverdue ? 'background-color: rgba(239, 68, 68, 0.05); border-left: 4px solid var(--danger);' : '';
+
+        const curUser = JSON.parse(sessionStorage.getItem('ediz_active_user')) || { role: 'Owner' };
+        const canInvoice = curUser.role === 'Owner' || (curUser.permissions && curUser.permissions.canInvoice);
+
+        return `
+            <tr style="${rowStyle}">
+                <td><strong>${st.id}</strong></td>
+                <td>
+                    <div style="font-weight:600;">${st.name}</div>
+                    <div style="font-size:0.75rem; color:var(--text-muted);">${st.address}</div>
+                    ${nextPayHtml}
+                    ${noteHtml}
+                </td>
+                <td>
+                    <div>Mob: <a href="tel:${st.phone}" style="color: var(--primary); font-weight: 600; text-decoration: underline;">${st.phone}</a></div>
+                    <div style="font-size:0.75rem; color:var(--text-muted);">Grd: ${st.guardianPhone ? `<a href="tel:${st.guardianPhone}" style="color: inherit; text-decoration: underline;">${st.guardianPhone}</a>` : 'N/A'}</div>
+                </td>
+                <td>
+                    <div>Father: ${st.fatherName || 'N/A'}</div>
+                    <div style="font-size:0.75rem; color:var(--text-muted);">Mother: ${st.motherName || 'N/A'}</div>
+                </td>
+                <td>
+                    <div style="font-size:0.8rem;">Net: ৳${st.netFee !== undefined ? st.netFee : st.totalFee}</div>
+                    <div style="font-size:0.75rem; color:var(--success);">Paid: ৳${st.paidFee}</div>
+                    <div style="font-size:0.75rem; color:var(--danger);">Due: ৳${st.dueFee}</div>
+                </td>
+                <td>
+                    <span class="badge badge-${st.status === 'Paid' ? 'success' : (st.status === 'Partial' ? 'warning' : 'danger')}">${st.status === 'Partial' ? 'Payment Due' : st.status}</span>
+                </td>
+                <td>
+                    <div class="actions-cell">
+                        <button class="btn btn-secondary btn-icon-only" onclick="openProfileModal('${st.id}')" title="View Full Profile"><i class="fa-solid fa-eye"></i></button>
+                        ${canInvoice ? `<button class="btn btn-secondary btn-icon-only" onclick="openPaymentModal('${st.id}')" title="Manage Fees & Print"><i class="fa-solid fa-wallet"></i></button>` : ''}
+                        <button class="btn btn-secondary btn-icon-only" style="color: var(--accent);" onclick="openStudentNotesModal('${st.id}')" title="Add/Edit Note & Next Payment"><i class="fa-solid fa-note-sticky"></i></button>
+                    </div>
+                </td>
+            </tr>
+        `;
+    }).join('');
 }
 
 // --- STUDENT PROFILE DETAILS DIALOG ---
@@ -2582,8 +2629,14 @@ window.openProfileModal = function(id) {
     document.getElementById('prof-id').innerText = st.id;
     document.getElementById('prof-course').innerText = st.course;
     document.getElementById('prof-batch').innerText = st.batch || 'N/A';
-    document.getElementById('prof-phone').innerText = st.phone;
-    document.getElementById('prof-guardian').innerText = st.guardianPhone || 'N/A';
+    const profPhoneEl = document.getElementById('prof-phone');
+    if (profPhoneEl) {
+        profPhoneEl.innerHTML = `<a href="tel:${st.phone}" style="color: var(--primary); font-weight: 600; text-decoration: underline;">${st.phone}</a>`;
+    }
+    const profGuardianEl = document.getElementById('prof-guardian');
+    if (profGuardianEl) {
+        profGuardianEl.innerHTML = st.guardianPhone ? `<a href="tel:${st.guardianPhone}" style="color: inherit; text-decoration: underline;">${st.guardianPhone}</a>` : 'N/A';
+    }
     document.getElementById('prof-father').innerText = st.fatherName || 'N/A';
     document.getElementById('prof-mother').innerText = st.motherName || 'N/A';
     document.getElementById('prof-address').innerText = st.address || 'N/A';
@@ -3808,14 +3861,19 @@ function setupDashboardSearch() {
 
         const cleanQuery = query.replace(/\D/g, "");
 
-        const filtered = students.filter(st => {
+        // Prioritize exact ID match
+        const exactIdMatch = students.find(st => st.id.toLowerCase() === query);
+
+        const filtered = exactIdMatch ? [exactIdMatch] : students.filter(st => {
             const cleanPhone = st.phone ? st.phone.replace(/\D/g, "") : "";
             const cleanGuardian = st.guardianPhone ? st.guardianPhone.replace(/\D/g, "") : "";
 
+            const hasLetters = /[a-z]/i.test(query);
+
             return st.id.toLowerCase().includes(query) || 
                    st.name.toLowerCase().includes(query) || 
-                   (cleanQuery && cleanPhone.includes(cleanQuery)) ||
-                   (cleanQuery && cleanGuardian.includes(cleanQuery)) ||
+                   (!hasLetters && cleanQuery && cleanPhone.includes(cleanQuery)) ||
+                   (!hasLetters && cleanQuery && cleanGuardian.includes(cleanQuery)) ||
                    (st.batch && st.batch.toLowerCase().includes(query));
         });
 
@@ -3829,45 +3887,62 @@ function setupDashboardSearch() {
             return;
         }
 
-        dbSearchTbody.innerHTML = filtered.map(st => `
-            <tr>
-                <td>
-                    <strong>${st.id}</strong><br>
-                    <span style="font-size: 0.75rem; color: var(--primary); font-weight: 600;">Batch: ${st.batch || 'N/A'}</span>
-                </td>
-                <td>
-                    <div style="font-weight: 600;">${st.name}</div>
-                    <div style="font-size: 0.75rem; color: var(--text-muted);">${st.address}</div>
-                    <div style="font-size: 0.7rem; color: var(--text-muted); font-style: italic;">
-                        Parents: ${st.fatherName || 'N/A'} (F), ${st.motherName || 'N/A'} (M)
-                    </div>
-                </td>
-                <td>
-                    ${st.course}
-                    ${st.takenBook ? `<br><span class="badge badge-success" style="font-size:0.65rem; padding: 1px 4px; margin-top: 2px; display: inline-block;">Book Taken</span>` : ''}
-                </td>
-                <td>
-                    <div>Mob: ${st.phone}</div>
-                    <div style="font-size: 0.75rem; color: var(--text-muted);">Grd: ${st.guardianPhone || 'N/A'}</div>
-                </td>
-                <td>
-                    <div style="font-size: 0.85rem;">Gross: ৳${st.totalFee}</div>
-                    <div style="font-size: 0.8rem; color: var(--accent);">Disc: ৳${st.discountFee || 0}</div>
-                    <div style="font-size: 0.8rem; font-weight: 600;">Net: ৳${st.netFee !== undefined ? st.netFee : st.totalFee}</div>
-                    <div style="font-size: 0.85rem; color: var(--success); font-weight: 500;">Paid: ৳${st.paidFee}</div>
-                    <div style="font-size: 0.85rem; color: var(--danger); font-weight: 600;">Due: ৳${st.dueFee}</div>
-                </td>
-                <td><span class="badge badge-${st.status === 'Paid' ? 'success' : (st.status === 'Partial' ? 'warning' : 'danger')}">${st.status === 'Partial' ? 'Payment Due' : st.status}</span></td>
-                <td>
-                    <div class="actions-cell">
-                        ${canInvoice ? `<button class="btn btn-secondary btn-icon-only" onclick="openPaymentModal('${st.id}')" title="Manage Fees"><i class="fa-solid fa-wallet"></i></button>` : ''}
-                        ${canEdit ? `<button class="btn btn-secondary btn-icon-only" onclick="openEditStudentModal('${st.id}')" title="Edit Student"><i class="fa-solid fa-edit"></i></button>` : ''}
-                        ${canDelete ? `<button class="btn btn-secondary btn-icon-only" style="color: var(--danger);" onclick="deleteStudent('${st.id}')" title="Delete Student"><i class="fa-solid fa-trash"></i></button>` : ''}
-                        ${!canInvoice && !canEdit && !canDelete ? '---' : ''}
-                    </div>
-                </td>
-            </tr>
-        `).join('');
+        dbSearchTbody.innerHTML = filtered.map(st => {
+            const hasNextPay = st.nextPaymentDate ? true : false;
+            let nextPayHtml = "";
+            let isOverdue = false;
+            if (hasNextPay && st.dueFee > 0) {
+                const todayStr = new Date().toISOString().split('T')[0];
+                isOverdue = st.nextPaymentDate <= todayStr;
+                nextPayHtml = `<div style="font-size: 0.75rem; margin-top: 3px; font-weight: 600; color: ${isOverdue ? 'var(--danger)' : 'var(--success)'};">
+                    <i class="fa-solid fa-calendar-day"></i> Next Payment: ${st.nextPaymentDate} ${isOverdue ? '<span class="badge badge-danger" style="font-size: 0.6rem; padding: 1px 3px; margin-left: 2px;">Overdue</span>' : ''}
+                </div>`;
+            }
+            const noteHtml = st.notes ? `<div style="font-size: 0.75rem; color: var(--accent); font-style: italic; margin-top: 3px;"><i class="fa-solid fa-sticky-note"></i> Note: ${st.notes}</div>` : '';
+            const rowStyle = isOverdue ? 'background-color: rgba(239, 68, 68, 0.05); border-left: 4px solid var(--danger);' : '';
+
+            return `
+                <tr style="${rowStyle}">
+                    <td>
+                        <strong>${st.id}</strong><br>
+                        <span style="font-size: 0.75rem; color: var(--primary); font-weight: 600;">Batch: ${st.batch || 'N/A'}</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 600;">${st.name}</div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted);">${st.address}</div>
+                        <div style="font-size: 0.7rem; color: var(--text-muted); font-style: italic;">
+                            Parents: ${st.fatherName || 'N/A'} (F), ${st.motherName || 'N/A'} (M)
+                        </div>
+                        ${nextPayHtml}
+                        ${noteHtml}
+                    </td>
+                    <td>
+                        ${st.course}
+                        ${st.takenBook ? `<br><span class="badge badge-success" style="font-size:0.65rem; padding: 1px 4px; margin-top: 2px; display: inline-block;">Book Taken</span>` : ''}
+                    </td>
+                    <td>
+                        <div>Mob: <a href="tel:${st.phone}" style="color: var(--primary); font-weight: 600; text-decoration: underline;">${st.phone}</a></div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted);">Grd: ${st.guardianPhone ? `<a href="tel:${st.guardianPhone}" style="color: inherit; text-decoration: underline;">${st.guardianPhone}</a>` : 'N/A'}</div>
+                    </td>
+                    <td>
+                        <div style="font-size: 0.85rem;">Gross: ৳${st.totalFee}</div>
+                        <div style="font-size: 0.8rem; color: var(--accent);">Disc: ৳${st.discountFee || 0}</div>
+                        <div style="font-size: 0.8rem; font-weight: 600;">Net: ৳${st.netFee !== undefined ? st.netFee : st.totalFee}</div>
+                        <div style="font-size: 0.85rem; color: var(--success); font-weight: 500;">Paid: ৳${st.paidFee}</div>
+                        <div style="font-size: 0.85rem; color: var(--danger); font-weight: 600;">Due: ৳${st.dueFee}</div>
+                    </td>
+                    <td><span class="badge badge-${st.status === 'Paid' ? 'success' : (st.status === 'Partial' ? 'warning' : 'danger')}">${st.status === 'Partial' ? 'Payment Due' : st.status}</span></td>
+                    <td>
+                        <div class="actions-cell">
+                            ${canInvoice ? `<button class="btn btn-secondary btn-icon-only" onclick="openPaymentModal('${st.id}')" title="Manage Fees"><i class="fa-solid fa-wallet"></i></button>` : ''}
+                            ${canEdit ? `<button class="btn btn-secondary btn-icon-only" onclick="openEditStudentModal('${st.id}')" title="Edit Student"><i class="fa-solid fa-edit"></i></button>` : ''}
+                            <button class="btn btn-secondary btn-icon-only" style="color: var(--accent);" onclick="openStudentNotesModal('${st.id}')" title="Add/Edit Note & Next Payment"><i class="fa-solid fa-note-sticky"></i></button>
+                            ${canDelete ? `<button class="btn btn-secondary btn-icon-only" style="color: var(--danger);" onclick="deleteStudent('${st.id}')" title="Delete Student"><i class="fa-solid fa-trash"></i></button>` : ''}
+                        </div>
+                    </td>
+                </tr>
+            `;
+        }).join('');
     });
 }
 
@@ -4056,7 +4131,7 @@ function setupDueLookupFeature() {
                             <tr>
                                 <td>
                                     <div style="font-weight:600;">${st.name}</div>
-                                    <span style="font-size:0.75rem; color:var(--text-muted);">${st.id} | ${st.course} | Mob: ${st.phone} | Guardian: ${st.guardianPhone || 'N/A'}</span>
+                                    <span style="font-size:0.75rem; color:var(--text-muted);">${st.id} | ${st.course} | Mob: <a href="tel:${st.phone}" style="color: inherit; text-decoration: underline;">${st.phone}</a> | Guardian: ${st.guardianPhone ? `<a href="tel:${st.guardianPhone}" style="color: inherit; text-decoration: underline;">${st.guardianPhone}</a>` : 'N/A'}</span>
                                 </td>
                                 <td style="color:${st.dueFee > 0 ? 'var(--danger)' : 'var(--success)'}; font-weight:700;">
                                     ৳${st.dueFee.toLocaleString()}
@@ -4089,7 +4164,7 @@ function renderDueLookupList() {
         <tr>
             <td>
                 <div style="font-weight:600;">${st.name}</div>
-                <span style="font-size:0.75rem; color:var(--text-muted);">${st.id} | ${st.course} | Mob: ${st.phone} | Guardian: ${st.guardianPhone || 'N/A'}</span>
+                <span style="font-size:0.75rem; color:var(--text-muted);">${st.id} | ${st.course} | Mob: <a href="tel:${st.phone}" style="color: inherit; text-decoration: underline;">${st.phone}</a> | Guardian: ${st.guardianPhone ? `<a href="tel:${st.guardianPhone}" style="color: inherit; text-decoration: underline;">${st.guardianPhone}</a>` : 'N/A'}</span>
             </td>
             <td style="color:var(--danger); font-weight:700;">৳${st.dueFee.toLocaleString()}</td>
             <td>
@@ -4611,5 +4686,72 @@ async function sendGeneralSms(number, message, tag) {
         localStorage.setItem('ediz_settings', JSON.stringify(settings));
         renderSmsHistory();
         return false;
+    }
+}
+
+window.openStudentNotesModal = function(id) {
+    const st = students.find(s => s.id === id);
+    if (!st) return;
+
+    document.getElementById('note-student-id').value = st.id;
+    document.getElementById('note-student-name-display').innerText = st.name;
+    document.getElementById('note-student-id-display').innerText = st.id;
+    document.getElementById('student-notes-input').value = st.notes || '';
+    document.getElementById('student-next-payment-date-input').value = st.nextPaymentDate || '';
+
+    openModal(document.getElementById('student-notes-modal'));
+};
+
+function setupStudentNotesFeature() {
+    const form = document.getElementById('student-notes-form');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const id = document.getElementById('note-student-id').value;
+        const notes = document.getElementById('student-notes-input').value.trim();
+        const nextPaymentDate = document.getElementById('student-next-payment-date-input').value;
+
+        const stIdx = students.findIndex(s => s.id === id);
+        if (stIdx !== -1) {
+            students[stIdx].notes = notes;
+            students[stIdx].nextPaymentDate = nextPaymentDate || '';
+            
+            // If the next payment date is updated and has dues, check if it's already sent so we don't block future checks
+            const todayStr = new Date().toISOString().split('T')[0];
+            if (nextPaymentDate > todayStr) {
+                delete students[stIdx].lastReminderSentDate;
+            }
+
+            saveDatabase();
+            closeAllModals();
+            alert("Student notes and payment reminder date updated successfully!");
+        }
+    });
+}
+
+function checkAndSendNextPaymentReminders() {
+    const todayStr = new Date().toISOString().split('T')[0];
+    const adminPhone = "01798926897"; // Default admin phone
+    let databaseModified = false;
+
+    students.forEach(st => {
+        if (st.nextPaymentDate && st.nextPaymentDate <= todayStr && st.dueFee > 0 && st.lastReminderSentDate !== todayStr) {
+            // Send to student
+            const studentMsg = `Dear ${st.name}, your payment of ৳${st.dueFee} for course ${st.course} is due (scheduled: ${st.nextPaymentDate}). Please complete the payment. - EDIZ IT Institute`;
+            sendGeneralSms(st.phone, studentMsg, `Student Due Reminder (${st.id})`);
+
+            // Send to admin
+            const adminMsg = `Dear Admin, student ${st.name} (${st.id}) has a payment due of ৳${st.dueFee} for ${st.course}. This was scheduled to be collected on ${st.nextPaymentDate} (today or within these 2 days). Mob: ${st.phone}.`;
+            sendGeneralSms(adminPhone, adminMsg, `Admin Due Alert (${st.id})`);
+
+            // Mark as sent for today
+            st.lastReminderSentDate = todayStr;
+            databaseModified = true;
+        }
+    });
+
+    if (databaseModified) {
+        localStorage.setItem('ediz_students', JSON.stringify(students));
     }
 }
