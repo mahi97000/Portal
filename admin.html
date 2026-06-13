@@ -531,28 +531,6 @@
                     </div>
 
                     <div>
-                        <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
-                            <h3 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-key"></i> Admin Credentials</h3>
-                            <form id="settings-password-form">
-                                <div class="form-group">
-                                    <label for="settings-admin-email">Admin Email Address</label>
-                                    <input type="email" id="settings-admin-email" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="settings-admin-recovery-email">Admin Recovery Email (for Verification Code)</label>
-                                    <input type="email" id="settings-admin-recovery-email" class="form-control" placeholder="e.g. recovery@ediz.com" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="settings-pwd-new">New Password (leave blank to keep current)</label>
-                                    <input type="password" id="settings-pwd-new" class="form-control" placeholder="Enter new password">
-                                </div>
-                                <div class="form-group">
-                                    <label for="settings-pwd-current">Current Password (required to save changes)</label>
-                                    <input type="password" id="settings-pwd-current" class="form-control" required>
-                                </div>
-                                <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fa-solid fa-save"></i> Save Credentials</button>
-                            </form>
-                        </div>
 
                         <!-- Email Gateway Config Card -->
                         <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
@@ -636,49 +614,74 @@
                         </div>
 
                         <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;" id="staff-management-card">
-                            <h3 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-user-shield"></i> Staff Accounts Directory</h3>
+                            <h3 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-user-shield"></i> User Accounts Directory</h3>
                             <form id="add-staff-form" style="margin-bottom: 1.5rem; border-bottom: 1px dashed var(--border-color); padding-bottom: 1.5rem;">
                                 <div class="form-group">
-                                    <label for="staff-email-input">Staff Email</label>
+                                    <label for="staff-email-input">Account Email</label>
                                     <input type="email" id="staff-email-input" class="form-control" placeholder="e.g. manager@ediz.com" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="staff-pwd-input">Staff Password</label>
-                                    <input type="text" id="staff-pwd-input" class="form-control" placeholder="staff123" required>
+                                    <label for="staff-pwd-input">Account Password</label>
+                                    <input type="text" id="staff-pwd-input" class="form-control" placeholder="admin123" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="user-role-select">Account Role</label>
+                                    <select id="user-role-select" class="form-control" required>
+                                        <option value="Staff" selected>Staff (Limited Custom Permissions)</option>
+                                        <option value="Admin">Admin (Full Access / All Permissions)</option>
+                                    </select>
                                 </div>
                                 
-                                <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-muted);">Set Permissions</label>
-                                <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem;">
-                                    <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: pointer;">
-                                        <input type="checkbox" id="perm-edit" checked> Can Edit Student Details
-                                    </label>
-                                    <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: pointer;">
-                                        <input type="checkbox" id="perm-delete"> Can Delete Student Data
-                                    </label>
-                                    <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: pointer;">
-                                        <input type="checkbox" id="perm-invoice" checked> Can Collect Fees / Invoices
-                                    </label>
-                                    <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: pointer;">
-                                        <input type="checkbox" id="perm-cert" checked> Can Award Certificates
-                                    </label>
+                                <div id="admin-recovery-fields" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="user-phone-input">Recovery Phone (for SMS OTP)</label>
+                                        <input type="text" id="user-phone-input" class="form-control" placeholder="e.g. 017XXXXXXXX">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="user-question-input">Security Question</label>
+                                        <input type="text" id="user-question-input" class="form-control" placeholder="e.g. What is your birth city?">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="user-answer-input">Security Answer</label>
+                                        <input type="text" id="user-answer-input" class="form-control" placeholder="e.g. comilla">
+                                    </div>
+                                </div>
+
+                                <div id="user-permissions-section">
+                                    <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-muted);">Set Permissions</label>
+                                    <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem;">
+                                        <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: pointer;">
+                                            <input type="checkbox" id="perm-edit" checked> Can Edit Student Details
+                                        </label>
+                                        <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: pointer;">
+                                            <input type="checkbox" id="perm-delete"> Can Delete Student Data
+                                        </label>
+                                        <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: pointer;">
+                                            <input type="checkbox" id="perm-invoice" checked> Can Collect Fees / Invoices
+                                        </label>
+                                        <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: pointer;">
+                                            <input type="checkbox" id="perm-cert" checked> Can Award Certificates
+                                        </label>
+                                    </div>
                                 </div>
                                 
-                                <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fa-solid fa-plus"></i> Create Staff Account</button>
+                                <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fa-solid fa-plus"></i> Create Account</button>
                             </form>
 
-                            <h4 style="margin-bottom: 0.75rem;">Active Staff Accounts</h4>
+                            <h4 style="margin-bottom: 0.75rem;">Active User Accounts</h4>
                             <div class="data-table-container" style="max-height: 200px; overflow-y: auto;">
                                 <table class="data-table" style="font-size: 0.85rem;">
                                     <thead>
                                         <tr>
                                             <th>Email</th>
+                                            <th>Role</th>
                                             <th>Permissions</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody id="settings-staff-tbody">
                                         <tr>
-                                            <td colspan="3" style="text-align: center; color: var(--text-muted); padding: 1rem;">No staff accounts configured.</td>
+                                            <td colspan="4" style="text-align: center; color: var(--text-muted); padding: 1rem;">No user accounts configured.</td>
                                         </tr>
                                     </tbody>
                                 </table>

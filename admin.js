@@ -258,10 +258,10 @@ function setupAuthentication() {
     if (recoveryBtnNext) {
         recoveryBtnNext.addEventListener('click', () => {
             const email = recoveryEmail.value.trim().toLowerCase();
-            const owner = settings.users.find(u => u.role === 'Owner') || settings.users[0];
+            const matchedAdmin = settings.users.find(u => u.email.toLowerCase() === email && (u.role === 'Owner' || u.role === 'Admin'));
             
-            if (email === owner.email.toLowerCase()) {
-                targetOwner = owner;
+            if (matchedAdmin) {
+                targetOwner = matchedAdmin;
                 
                 // Show Step 2
                 recoveryStep1.style.display = 'none';
@@ -269,7 +269,7 @@ function setupAuthentication() {
                 
                 // Mask and display recovery email
                 if (maskedRecoveryEmail) {
-                    const recEmail = owner.recoveryEmail || owner.email;
+                    const recEmail = matchedAdmin.recoveryEmail || matchedAdmin.email;
                     maskedRecoveryEmail.innerText = maskEmail(recEmail);
                 }
             } else {
@@ -1313,34 +1313,7 @@ function setupDataOperations() {
         applyTheme(curTheme);
     });
 
-    // Settings credentials change (Email, Recovery Email & Password)
-    settingsPasswordForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const emailVal = settingsAdminEmail.value.trim();
-        const recoveryEmailVal = settingsAdminRecoveryEmail.value.trim();
-        const curPwd = settingsPwdCurrent.value;
-        const newPwd = settingsPwdNew.value;
 
-        const owner = settings.users.find(u => u.role === 'Owner') || settings.users[0];
-
-        if (curPwd === owner.password) {
-            owner.email = emailVal;
-            owner.recoveryEmail = recoveryEmailVal;
-            if (newPwd) {
-                owner.password = newPwd;
-                settings.adminPassword = newPwd;
-            }
-            saveDatabase();
-            alert("Credentials updated successfully!");
-            settingsPasswordForm.reset();
-
-            // Re-populate the fields
-            settingsAdminEmail.value = owner.email;
-            settingsAdminRecoveryEmail.value = owner.recoveryEmail;
-        } else {
-            alert("Error: Current password is incorrect.");
-        }
-    });
 
     // Database Export JSON
     dbExportBtn.addEventListener('click', () => {
@@ -1383,18 +1356,56 @@ function setupDataOperations() {
         reader.readAsText(file);
     });
 
-    // Settings Add Staff Save
+    // Settings Add User Account Save
     const addStaffForm = document.getElementById('add-staff-form');
     if (addStaffForm) {
+        const userRoleSelect = document.getElementById('user-role-select');
+        const userPermsSection = document.getElementById('user-permissions-section');
+        const adminRecoveryFields = document.getElementById('admin-recovery-fields');
+        if (userRoleSelect) {
+            userRoleSelect.addEventListener('change', () => {
+                if (userRoleSelect.value === 'Admin') {
+                    if (userPermsSection) userPermsSection.style.display = 'none';
+                    if (adminRecoveryFields) adminRecoveryFields.style.display = 'block';
+                } else {
+                    if (userPermsSection) userPermsSection.style.display = 'block';
+                    if (adminRecoveryFields) adminRecoveryFields.style.display = 'none';
+                }
+            });
+        }
+
         addStaffForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const emailVal = document.getElementById('staff-email-input').value.trim();
             const pwdVal = document.getElementById('staff-pwd-input').value.trim();
+            const roleVal = userRoleSelect ? userRoleSelect.value : 'Staff';
             
-            const pEdit = document.getElementById('perm-edit').checked;
-            const pDelete = document.getElementById('perm-delete').checked;
-            const pInvoice = document.getElementById('perm-invoice').checked;
-            const pCert = document.getElementById('perm-cert').checked;
+            let permissionsObj = {
+                canEdit: true,
+                canDelete: true,
+                canInvoice: true,
+                canCert: true
+            };
+
+            let phoneVal = "";
+            let questionVal = "What is your birth city?";
+            let answerVal = "comilla";
+
+            if (roleVal === 'Staff') {
+                permissionsObj = {
+                    canEdit: document.getElementById('perm-edit').checked,
+                    canDelete: document.getElementById('perm-delete').checked,
+                    canInvoice: document.getElementById('perm-invoice').checked,
+                    canCert: document.getElementById('perm-cert').checked
+                };
+            } else if (roleVal === 'Admin') {
+                const pVal = document.getElementById('user-phone-input').value.trim();
+                const qVal = document.getElementById('user-question-input').value.trim();
+                const aVal = document.getElementById('user-answer-input').value.trim();
+                if (pVal) phoneVal = pVal;
+                if (qVal) questionVal = qVal;
+                if (aVal) answerVal = aVal;
+            }
 
             if (settings.users.some(u => u.email === emailVal)) {
                 alert(`Error: A user account with email "${emailVal}" already exists.`);
@@ -1406,18 +1417,19 @@ function setupDataOperations() {
                 id: newStaffId,
                 email: emailVal,
                 password: pwdVal,
-                role: "Staff",
-                permissions: {
-                    canEdit: pEdit,
-                    canDelete: pDelete,
-                    canInvoice: pInvoice,
-                    canCert: pCert
-                }
+                role: roleVal,
+                permissions: permissionsObj,
+                phone: phoneVal,
+                securityQuestion: questionVal,
+                securityAnswer: answerVal
             });
 
             saveDatabase();
             addStaffForm.reset();
-            alert(`Staff account for "${emailVal}" created successfully!`);
+            if (userPermsSection) userPermsSection.style.display = 'block'; // Reset display to default
+            if (adminRecoveryFields) adminRecoveryFields.style.display = 'none'; // Reset display to default
+            renderSettingsStaff(); // Update active users table
+            alert(`Account for "${emailVal}" (${roleVal}) created successfully!`);
         });
     }
 }
@@ -1967,7 +1979,7 @@ function applyUserPermissions(user) {
     const batchesCreateBtn = document.getElementById('batches-create-btn');
     const settingsCreateBatchBtn = document.getElementById('settings-create-batch-btn');
     
-    if (user.role === 'Owner') {
+    if (user.role === 'Owner' || user.role === 'Admin') {
         if (settingsTab) settingsTab.style.display = 'block';
         if (staffCard) staffCard.style.display = 'block';
         if (batchesCreateBtn) batchesCreateBtn.style.display = 'inline-flex';
@@ -1989,46 +2001,72 @@ function applyUserPermissions(user) {
     renderAllLists();
 }
 
-// --- RENDER STAFF IN SETTINGS ---
+// --- RENDER USERS IN SETTINGS ---
 function renderSettingsStaff() {
     const tbody = document.getElementById('settings-staff-tbody');
     if (!tbody) return;
 
     const users = settings.users || [];
-    const staffUsers = users.filter(u => u.role === 'Staff');
 
-    if (staffUsers.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="3" style="text-align: center; color: var(--text-muted); padding: 1rem;">No staff accounts configured.</td></tr>`;
+    if (users.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: var(--text-muted); padding: 1rem;">No user accounts configured.</td></tr>`;
         return;
     }
 
-    tbody.innerHTML = staffUsers.map((u, index) => {
+    tbody.innerHTML = users.map((u) => {
         let perms = [];
-        if (u.permissions.canEdit) perms.push("Edit");
-        if (u.permissions.canDelete) perms.push("Delete");
-        if (u.permissions.canInvoice) perms.push("Invoices");
-        if (u.permissions.canCert) perms.push("Certificates");
+        let roleLabel = u.role === 'Owner' || u.role === 'Admin' ? 'Admin' : 'Staff';
+        let badgeClass = u.role === 'Owner' || u.role === 'Admin' ? 'badge-primary' : 'badge-secondary';
+        let permString = '';
 
-        const permString = perms.length > 0 ? perms.join(", ") : "None";
+        if (u.role === 'Owner' || u.role === 'Admin') {
+            permString = '<strong>Full Access (All Permissions)</strong>';
+        } else {
+            if (u.permissions) {
+                if (u.permissions.canEdit) perms.push("Edit");
+                if (u.permissions.canDelete) perms.push("Delete");
+                if (u.permissions.canInvoice) perms.push("Invoices");
+                if (u.permissions.canCert) perms.push("Certificates");
+            }
+            permString = perms.length > 0 ? perms.join(", ") : "None";
+        }
 
         return `
             <tr>
                 <td><strong>${u.email}</strong></td>
+                <td><span class="badge ${badgeClass}">${roleLabel}</span></td>
                 <td><span style="font-size: 0.75rem; color: var(--text-muted);">${permString}</span></td>
                 <td>
-                    <button class="btn btn-secondary btn-icon-only" style="color: var(--danger);" onclick="deleteStaff('${u.email}')" title="Delete Staff Account"><i class="fa-solid fa-trash"></i></button>
+                    <button class="btn btn-secondary btn-icon-only" style="color: var(--danger);" onclick="deleteStaff('${u.email}')" title="Delete Account"><i class="fa-solid fa-trash"></i></button>
                 </td>
             </tr>
         `;
     }).join('');
 }
 
-// --- DELETE STAFF ---
+// --- DELETE USER ACCOUNT ---
 window.deleteStaff = function(email) {
-    if (confirm(`Are you sure you want to permanently delete staff account "${email}"?`)) {
-        if (!settings.users) return;
+    const activeUser = JSON.parse(sessionStorage.getItem('ediz_active_user'));
+    if (activeUser && activeUser.email === email) {
+        alert("Error: You cannot delete your own active session account.");
+        return;
+    }
+
+    const targetUser = settings.users.find(u => u.email === email);
+    if (!targetUser) return;
+
+    if (targetUser.role === 'Owner' || targetUser.role === 'Admin') {
+        const admins = settings.users.filter(u => u.role === 'Owner' || u.role === 'Admin');
+        if (admins.length <= 1) {
+            alert("Error: To prevent lockout, there must be at least one Admin account in the system.");
+            return;
+        }
+    }
+
+    if (confirm(`Are you sure you want to permanently delete account "${email}"?`)) {
         settings.users = settings.users.filter(u => u.email !== email);
         saveDatabase();
+        renderSettingsStaff();
     }
 };
 
