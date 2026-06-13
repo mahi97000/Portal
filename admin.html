@@ -27,7 +27,10 @@
                         <input type="email" id="auth-email" class="form-control" placeholder="e.g. admin@edizit.com" required>
                     </div>
                     <div class="form-group" style="text-align: left;">
-                        <label for="auth-password">Password</label>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <label for="auth-password">Password</label>
+                            <a href="#" id="forgot-pwd-link" style="font-size: 0.75rem; color: var(--primary); font-weight: 600;">Forgot Password?</a>
+                        </div>
                         <div style="position: relative;">
                             <input type="password" id="auth-password" class="form-control" placeholder="••••••••" required style="padding-right: 2.5rem;">
                             <i id="toggle-auth-pwd" class="fa-solid fa-eye" style="position: absolute; right: 15px; top: 12px; cursor: pointer; color: var(--text-muted);"></i>
@@ -534,6 +537,18 @@
                                 <div class="form-group">
                                     <label for="settings-admin-email">Admin Email Address</label>
                                     <input type="email" id="settings-admin-email" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="settings-admin-phone">Admin Recovery Phone (for SMS OTP)</label>
+                                    <input type="text" id="settings-admin-phone" class="form-control" placeholder="e.g. 017XXXXXXXX">
+                                </div>
+                                <div class="form-group">
+                                    <label for="settings-admin-question">Security Question</label>
+                                    <input type="text" id="settings-admin-question" class="form-control" placeholder="e.g. What is your birth city?" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="settings-admin-answer">Security Answer</label>
+                                    <input type="text" id="settings-admin-answer" class="form-control" placeholder="Answer is case-insensitive" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="settings-pwd-new">New Password (leave blank to keep current)</label>
@@ -1244,6 +1259,67 @@
                     <button type="button" id="success-close-btn" class="btn btn-secondary" style="width: 100%; justify-content: center;">
                         Done / Close
                     </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- FORGOT PASSWORD RECOVERY MODAL --- -->
+    <div id="forgot-pwd-modal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container glass-panel" style="max-width: 450px;">
+            <div class="modal-header">
+                <h3 style="font-family: var(--font-heading);"><i class="fa-solid fa-unlock-keyhole"></i> Password Recovery</h3>
+                <button type="button" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body" style="padding: 2rem;">
+                <!-- Step 1: Input Email -->
+                <div id="recovery-step-1">
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Enter your Admin Email Address to begin the password recovery process.</p>
+                    <div class="form-group">
+                        <label for="recovery-email">Admin Email Address</label>
+                        <input type="email" id="recovery-email" class="form-control" placeholder="e.g. owner@ediz.com" required>
+                    </div>
+                    <button type="button" id="recovery-btn-next" class="btn btn-primary" style="width: 100%; justify-content: center;"><i class="fa-solid fa-arrow-right"></i> Continue</button>
+                </div>
+
+                <!-- Step 2: Verification (Security Question / SMS OTP) -->
+                <div id="recovery-step-2" style="display: none;">
+                    <!-- SMS OTP Option -->
+                    <div id="recovery-sms-option" style="display: none; border-bottom: 1px dashed var(--border-color); padding-bottom: 1.25rem; margin-bottom: 1.25rem;">
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Reset your password by receiving an SMS OTP on your recovery phone.</p>
+                        <button type="button" id="recovery-send-sms-btn" class="btn btn-accent" style="width: 100%; justify-content: center; margin-bottom: 1rem;"><i class="fa-solid fa-comment-sms"></i> Send Reset Code via SMS</button>
+                        <div id="recovery-otp-container" style="display: none;" class="form-group">
+                            <label for="recovery-otp">Enter 6-Digit OTP</label>
+                            <input type="text" id="recovery-otp" class="form-control" placeholder="e.g. 123456" maxlength="6">
+                        </div>
+                    </div>
+
+                    <!-- Security Question Option -->
+                    <div id="recovery-question-option">
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Answer your security question to reset your password.</p>
+                        <div class="form-group">
+                            <label id="recovery-question-label" style="font-weight: 700; color: var(--text-main); display: block; margin-bottom: 0.5rem;">Security Question:</label>
+                            <input type="text" id="recovery-answer-input" class="form-control" placeholder="Your Answer" required>
+                        </div>
+                    </div>
+
+                    <button type="button" id="recovery-verify-btn" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;"><i class="fa-solid fa-check"></i> Verify Identity</button>
+                </div>
+
+                <!-- Step 3: Set New Password -->
+                <div id="recovery-step-3" style="display: none;">
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Identity verified successfully. Enter your new password below.</p>
+                    <div class="form-group">
+                        <label for="recovery-pwd-new">New Password</label>
+                        <input type="password" id="recovery-pwd-new" class="form-control" placeholder="••••••••" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="recovery-pwd-confirm">Confirm New Password</label>
+                        <input type="password" id="recovery-pwd-confirm" class="form-control" placeholder="••••••••" required>
+                    </div>
+                    <span id="recovery-pwd-error" style="color: var(--danger); font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem; display: none;"><i class="fa-solid fa-triangle-exclamation"></i> Passwords do not match.</span>
+                    <button type="button" id="recovery-btn-save" class="btn btn-primary" style="width: 100%; justify-content: center;"><i class="fa-solid fa-save"></i> Save Password & Login</button>
                 </div>
             </div>
         </div>

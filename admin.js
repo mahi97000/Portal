@@ -116,8 +116,32 @@ const settingsBatchesTbody = document.getElementById('settings-batches-tbody');
 
 const settingsPasswordForm = document.getElementById('settings-password-form');
 const settingsAdminEmail = document.getElementById('settings-admin-email');
+const settingsAdminPhone = document.getElementById('settings-admin-phone');
+const settingsAdminQuestion = document.getElementById('settings-admin-question');
+const settingsAdminAnswer = document.getElementById('settings-admin-answer');
 const settingsPwdCurrent = document.getElementById('settings-pwd-current');
 const settingsPwdNew = document.getElementById('settings-pwd-new');
+
+// Recovery Modal Elements
+const forgotPwdLink = document.getElementById('forgot-pwd-link');
+const forgotPwdModal = document.getElementById('forgot-pwd-modal');
+const recoveryStep1 = document.getElementById('recovery-step-1');
+const recoveryStep2 = document.getElementById('recovery-step-2');
+const recoveryStep3 = document.getElementById('recovery-step-3');
+const recoveryEmail = document.getElementById('recovery-email');
+const recoveryBtnNext = document.getElementById('recovery-btn-next');
+const recoverySmsOption = document.getElementById('recovery-sms-option');
+const recoverySendSmsBtn = document.getElementById('recovery-send-sms-btn');
+const recoveryOtpContainer = document.getElementById('recovery-otp-container');
+const recoveryOtp = document.getElementById('recovery-otp');
+const recoveryQuestionOption = document.getElementById('recovery-question-option');
+const recoveryQuestionLabel = document.getElementById('recovery-question-label');
+const recoveryAnswerInput = document.getElementById('recovery-answer-input');
+const recoveryVerifyBtn = document.getElementById('recovery-verify-btn');
+const recoveryPwdNew = document.getElementById('recovery-pwd-new');
+const recoveryPwdConfirm = document.getElementById('recovery-pwd-confirm');
+const recoveryPwdError = document.getElementById('recovery-pwd-error');
+const recoveryBtnSave = document.getElementById('recovery-btn-save');
 
 // DB backup
 const dbExportBtn = document.getElementById('db-export-btn');
@@ -191,6 +215,170 @@ function setupAuthentication() {
         sessionStorage.removeItem('ediz_active_user');
         window.location.reload();
     });
+
+    // --- PASSWORD RECOVERY LOGIC ---
+    let generatedOTP = '';
+    let targetOwner = null;
+
+    if (forgotPwdLink) {
+        forgotPwdLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Reset recovery steps
+            recoveryStep1.style.display = 'block';
+            recoveryStep2.style.display = 'none';
+            recoveryStep3.style.display = 'none';
+            recoveryEmail.value = '';
+            recoveryAnswerInput.value = '';
+            if (recoveryOtp) recoveryOtp.value = '';
+            if (recoveryOtpContainer) recoveryOtpContainer.style.display = 'none';
+            recoveryPwdNew.value = '';
+            recoveryPwdConfirm.value = '';
+            recoveryPwdError.style.display = 'none';
+            generatedOTP = '';
+            
+            // Open modal
+            forgotPwdModal.classList.add('active');
+        });
+    }
+
+    // Step 1: Click Continue after entering email
+    if (recoveryBtnNext) {
+        recoveryBtnNext.addEventListener('click', () => {
+            const email = recoveryEmail.value.trim().toLowerCase();
+            const owner = settings.users.find(u => u.role === 'Owner') || settings.users[0];
+            
+            if (email === owner.email.toLowerCase()) {
+                targetOwner = owner;
+                
+                // Show Step 2
+                recoveryStep1.style.display = 'none';
+                recoveryStep2.style.display = 'block';
+                
+                // Check if recovery phone and SMS API are configured
+                const hasPhone = owner.phone && owner.phone.trim() !== "";
+                const hasSmsApi = settings.smsConfig && settings.smsConfig.apiKey && settings.smsConfig.apiKey.trim() !== "";
+                
+                if (hasPhone && hasSmsApi) {
+                    if (recoverySmsOption) recoverySmsOption.style.display = 'block';
+                } else {
+                    if (recoverySmsOption) recoverySmsOption.style.display = 'none';
+                }
+                
+                // Set security question label
+                if (recoveryQuestionLabel) {
+                    recoveryQuestionLabel.innerText = `Security Question: ${owner.securityQuestion || "What is your birth city?"}`;
+                }
+            } else {
+                alert("Error: Admin Email not found.");
+            }
+        });
+    }
+
+    // Send SMS OTP
+    if (recoverySendSmsBtn) {
+        recoverySendSmsBtn.addEventListener('click', () => {
+            if (!targetOwner || !targetOwner.phone) return;
+            
+            // Generate 6-digit OTP
+            generatedOTP = String(Math.floor(100000 + Math.random() * 900000));
+            
+            // Send SMS via BulkSMSBD API
+            const apiKey = settings.smsConfig.apiKey;
+            const senderId = settings.smsConfig.senderId;
+            const message = `Your Ediz Portal Password Recovery Code is: ${generatedOTP}`;
+            
+            const smsUrl = `https://api.bulksmsbd.net/api.php?api_key=${encodeURIComponent(apiKey)}&senderid=${encodeURIComponent(senderId)}&number=${encodeURIComponent(targetOwner.phone)}&message=${encodeURIComponent(message)}`;
+            
+            recoverySendSmsBtn.disabled = true;
+            recoverySendSmsBtn.innerText = "Sending SMS...";
+            
+            fetch(smsUrl)
+                .then(res => res.text())
+                .then(data => {
+                    alert("A 6-digit OTP recovery code has been sent to your phone number.");
+                    recoverySendSmsBtn.innerText = "Resend Code";
+                    recoverySendSmsBtn.disabled = false;
+                    if (recoveryOtpContainer) recoveryOtpContainer.style.display = 'block';
+                })
+                .catch(err => {
+                    alert("Error sending SMS. Please use the Security Question reset option below.");
+                    recoverySendSmsBtn.innerText = "Send Reset Code via SMS";
+                    recoverySendSmsBtn.disabled = false;
+                });
+        });
+    }
+
+    // Step 2: Verify Identity (OTP or Question)
+    if (recoveryVerifyBtn) {
+        recoveryVerifyBtn.addEventListener('click', () => {
+            if (!targetOwner) return;
+            
+            let verified = false;
+            
+            // Check OTP first if generated
+            const enteredOtp = recoveryOtp ? recoveryOtp.value.trim() : "";
+            if (generatedOTP && enteredOtp) {
+                if (enteredOtp === generatedOTP) {
+                    verified = true;
+                } else {
+                    alert("Error: Invalid OTP code.");
+                    return;
+                }
+            } else {
+                // Check Security Answer
+                const answer = recoveryAnswerInput.value.trim().toLowerCase();
+                const correctAns = (targetOwner.securityAnswer || "comilla").trim().toLowerCase();
+                
+                if (answer === correctAns) {
+                    verified = true;
+                } else {
+                    alert("Error: Incorrect answer to security question.");
+                    return;
+                }
+            }
+            
+            if (verified) {
+                // Show Step 3
+                recoveryStep2.style.display = 'none';
+                recoveryStep3.style.display = 'block';
+            }
+        });
+    }
+
+    // Step 3: Save Password
+    if (recoveryBtnSave) {
+        recoveryBtnSave.addEventListener('click', () => {
+            if (!targetOwner) return;
+            
+            const newPwd = recoveryPwdNew.value;
+            const confirmPwd = recoveryPwdConfirm.value;
+            
+            if (!newPwd || !confirmPwd) {
+                alert("Please fill in all password fields.");
+                return;
+            }
+            
+            if (newPwd !== confirmPwd) {
+                if (recoveryPwdError) recoveryPwdError.style.display = 'block';
+                return;
+            }
+            
+            if (recoveryPwdError) recoveryPwdError.style.display = 'none';
+            
+            // Update password
+            targetOwner.password = newPwd;
+            settings.adminPassword = newPwd;
+            saveDatabase();
+            
+            alert("Password reset successfully! You can now log in with your new password.");
+            
+            // Fill login form and close modal
+            document.getElementById('auth-email').value = targetOwner.email;
+            document.getElementById('auth-password').value = newPwd;
+            
+            forgotPwdModal.classList.remove('active');
+        });
+    }
 }
 
 function unlockDashboard() {
@@ -268,9 +456,31 @@ function loadDatabase() {
     // Load or initialize default user accounts
     if (!settings.users || settings.users.length === 0) {
         settings.users = [
-            { id: "USER-1", email: "owner@ediz.com", password: (settings.adminPassword || "admin123"), role: "Owner", permissions: { canEdit: true, canDelete: true, canInvoice: true, canCert: true } },
-            { id: "USER-2", email: "staff@ediz.com", password: "staff123", role: "Staff", permissions: { canEdit: true, canDelete: false, canInvoice: true, canCert: true } }
+            { 
+                id: "USER-1", 
+                email: "owner@ediz.com", 
+                password: (settings.adminPassword || "admin123"), 
+                role: "Owner", 
+                permissions: { canEdit: true, canDelete: true, canInvoice: true, canCert: true },
+                phone: "",
+                securityQuestion: "What is your birth city?",
+                securityAnswer: "comilla"
+            },
+            { 
+                id: "USER-2", 
+                email: "staff@ediz.com", 
+                password: "staff123", 
+                role: "Staff", 
+                permissions: { canEdit: true, canDelete: false, canInvoice: true, canCert: true } 
+            }
         ];
+    } else {
+        const owner = settings.users.find(u => u.role === 'Owner') || settings.users[0];
+        if (owner) {
+            if (owner.phone === undefined) owner.phone = "";
+            if (owner.securityQuestion === undefined) owner.securityQuestion = "What is your birth city?";
+            if (owner.securityAnswer === undefined) owner.securityAnswer = "comilla";
+        }
     }
 
     // Set configuration inputs
@@ -285,6 +495,9 @@ function loadDatabase() {
     if (settingsAdminEmail && settings.users && settings.users.length > 0) {
         const owner = settings.users.find(u => u.role === 'Owner') || settings.users[0];
         settingsAdminEmail.value = owner.email;
+        if (settingsAdminPhone) settingsAdminPhone.value = owner.phone || "";
+        if (settingsAdminQuestion) settingsAdminQuestion.value = owner.securityQuestion || "What is your birth city?";
+        if (settingsAdminAnswer) settingsAdminAnswer.value = owner.securityAnswer || "comilla";
     }
 
     const settingsSmsApiKey = document.getElementById('settings-sms-api-key');
@@ -1065,10 +1278,13 @@ function setupDataOperations() {
         applyTheme(curTheme);
     });
 
-    // Settings credentials change (Email & Password)
+    // Settings credentials change (Email, Phone, Security Question, Security Answer & Password)
     settingsPasswordForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const emailVal = settingsAdminEmail.value.trim();
+        const phoneVal = settingsAdminPhone.value.trim();
+        const questionVal = settingsAdminQuestion.value.trim();
+        const answerVal = settingsAdminAnswer.value.trim();
         const curPwd = settingsPwdCurrent.value;
         const newPwd = settingsPwdNew.value;
 
@@ -1076,6 +1292,9 @@ function setupDataOperations() {
 
         if (curPwd === owner.password) {
             owner.email = emailVal;
+            owner.phone = phoneVal;
+            owner.securityQuestion = questionVal;
+            owner.securityAnswer = answerVal;
             if (newPwd) {
                 owner.password = newPwd;
                 settings.adminPassword = newPwd;
@@ -1084,8 +1303,11 @@ function setupDataOperations() {
             alert("Credentials updated successfully!");
             settingsPasswordForm.reset();
 
-            // Re-populate the email field
+            // Re-populate the fields
             settingsAdminEmail.value = owner.email;
+            settingsAdminPhone.value = owner.phone;
+            settingsAdminQuestion.value = owner.securityQuestion;
+            settingsAdminAnswer.value = owner.securityAnswer;
         } else {
             alert("Error: Current password is incorrect.");
         }
