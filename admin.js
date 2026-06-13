@@ -20,6 +20,7 @@ let activeStudentForFees = null;
 let dashboardDateRange = { type: 'all', start: null, end: null };
 let bookStock = 0;
 let batchStatusFilter = 'active'; // Filter state: 'active' or 'all'
+let activeDashboardSubTab = 'registrations';
 
 
 // --- DOM ELEMENTS ---
@@ -185,6 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupBooksFeature();
     setupWhatsAppFeature();
     setupExportFeatures();
+    setupDashboardSubTabs();
 });
 
 // --- AUTHENTICATION GATE ---
@@ -662,6 +664,7 @@ function refreshStats() {
     statEarnings.innerText = `৳${stats.earnings.toLocaleString()}`;
     statDues.innerText = `৳${stats.dues.toLocaleString()}`;
     statCerts.innerText = stats.certs;
+    calculatePeriodEarnings();
 }
 
 // --- TAB ROUTING ---
@@ -724,29 +727,180 @@ function renderAllLists() {
 
 function renderRecentDashboard() {
     const stats = getFilteredStats();
-    const list = [...stats.studentsList].reverse();
-    const displayList = dashboardDateRange.type === 'all' ? list.slice(0, 5) : list;
 
-    if (displayList.length === 0) {
-        recentEnrollmentsTbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--text-muted); padding: 1.5rem;">No registrations found for the selected range.</td></tr>`;
-        return;
+    if (activeDashboardSubTab === 'registrations') {
+        const list = [...stats.studentsList].reverse();
+        const displayList = dashboardDateRange.type === 'all' ? list.slice(0, 5) : list;
+        const tbody = document.getElementById('recent-enrollments-tbody');
+        if (!tbody) return;
+
+        if (displayList.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--text-muted); padding: 1.5rem;">No registrations found for the selected range.</td></tr>`;
+            return;
+        }
+
+        const curUser = JSON.parse(sessionStorage.getItem('ediz_active_user')) || { role: 'Owner' };
+        const canInvoice = curUser.role === 'Owner' || (curUser.permissions && curUser.permissions.canInvoice);
+
+        tbody.innerHTML = displayList.map(st => `
+            <tr>
+                <td><strong>${st.id}</strong></td>
+                <td>${st.name}</td>
+                <td>${st.course}</td>
+                <td>${st.registrationDate}</td>
+                <td><span class="badge badge-${st.status === 'Paid' ? 'success' : (st.status === 'Partial' ? 'warning' : 'danger')}">${st.status}</span></td>
+                <td>
+                    ${canInvoice ? `<button class="btn btn-secondary btn-icon-only" onclick="openPaymentModal('${st.id}')" title="Payments"><i class="fa-solid fa-credit-card"></i></button>` : '---'}
+                </td>
+            </tr>
+        `).join('');
+
+    } else if (activeDashboardSubTab === 'payments') {
+        let allInvoices = [];
+        students.forEach(st => {
+            if (st.invoices) {
+                st.invoices.forEach(inv => {
+                    allInvoices.push({
+                        invId: inv.id,
+                        studentId: st.id,
+                        studentName: st.name,
+                        date: inv.date,
+                        amount: inv.amount
+                    });
+                });
+            }
+        });
+
+        if (dashboardDateRange.type !== 'all') {
+            let start = dashboardDateRange.start;
+            let end = dashboardDateRange.end;
+            if (dashboardDateRange.type === 'today') {
+                const todayStr = new Date().toISOString().split('T')[0];
+                start = new Date(todayStr + 'T00:00:00');
+                end = new Date(todayStr + 'T23:59:59');
+            } else if (dashboardDateRange.type === 'month') {
+                const now = new Date();
+                start = new Date(now.getFullYear(), now.getMonth(), 1);
+                end = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
+            } else if (dashboardDateRange.type === 'year') {
+                const now = new Date();
+                start = new Date(now.getFullYear(), 0, 1);
+                end = new Date(now.getFullYear(), 11, 31, 23, 59, 59);
+            } else if (dashboardDateRange.type === 'last-year') {
+                const now = new Date();
+                start = new Date(now.getFullYear() - 1, 0, 1);
+                end = new Date(now.getFullYear() - 1, 11, 31, 23, 59, 59);
+            } else if (dashboardDateRange.type === 'custom') {
+                if (start) start = new Date(start + 'T00:00:00');
+                if (end) end = new Date(end + 'T23:59:59');
+            }
+
+            allInvoices = allInvoices.filter(inv => {
+                if (!inv.date) return false;
+                const parsed = parseDateString(inv.date.split('T')[0]);
+                if (!parsed) return false;
+                if (start && parsed < start) return false;
+                if (end && parsed > end) return false;
+                return true;
+            });
+        }
+
+        allInvoices.sort((a, b) => new Date(b.date.split('T')[0]) - new Date(a.date.split('T')[0]));
+        const displayInvs = dashboardDateRange.type === 'all' ? allInvoices.slice(0, 5) : allInvoices;
+
+        const tbody = document.getElementById('recent-payments-tbody');
+        if (!tbody) return;
+
+        if (displayInvs.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--text-muted); padding: 1.5rem;">No recent payments found for the selected range.</td></tr>`;
+            return;
+        }
+
+        tbody.innerHTML = displayInvs.map(inv => `
+            <tr>
+                <td><strong>${inv.invId}</strong></td>
+                <td>${inv.studentId}</td>
+                <td>${inv.studentName}</td>
+                <td>${inv.date.split('T')[0]}</td>
+                <td style="color: var(--success); font-weight: 600;">৳${inv.amount.toLocaleString()}</td>
+                <td>
+                    <button class="btn btn-secondary btn-icon-only" onclick="openPaymentModal('${inv.studentId}')" title="Payments"><i class="fa-solid fa-credit-card"></i></button>
+                </td>
+            </tr>
+        `).join('');
+
+    } else if (activeDashboardSubTab === 'certificates') {
+        let allCerts = [];
+        students.forEach(st => {
+            if (st.certified) {
+                allCerts.push({
+                    studentId: st.id,
+                    studentName: st.name,
+                    course: st.course,
+                    certDate: st.certificateDate,
+                    certId: `CERT-${st.id.replace(/-/g, '')}`
+                });
+            }
+        });
+
+        if (dashboardDateRange.type !== 'all') {
+            let start = dashboardDateRange.start;
+            let end = dashboardDateRange.end;
+            if (dashboardDateRange.type === 'today') {
+                const todayStr = new Date().toISOString().split('T')[0];
+                start = new Date(todayStr + 'T00:00:00');
+                end = new Date(todayStr + 'T23:59:59');
+            } else if (dashboardDateRange.type === 'month') {
+                const now = new Date();
+                start = new Date(now.getFullYear(), now.getMonth(), 1);
+                end = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
+            } else if (dashboardDateRange.type === 'year') {
+                const now = new Date();
+                start = new Date(now.getFullYear(), 0, 1);
+                end = new Date(now.getFullYear(), 11, 31, 23, 59, 59);
+            } else if (dashboardDateRange.type === 'last-year') {
+                const now = new Date();
+                start = new Date(now.getFullYear() - 1, 0, 1);
+                end = new Date(now.getFullYear() - 1, 11, 31, 23, 59, 59);
+            } else if (dashboardDateRange.type === 'custom') {
+                if (start) start = new Date(start + 'T00:00:00');
+                if (end) end = new Date(end + 'T23:59:59');
+            }
+
+            allCerts = allCerts.filter(c => {
+                if (!c.certDate) return false;
+                const parsed = parseDateString(c.certDate);
+                if (!parsed) return false;
+                if (start && parsed < start) return false;
+                if (end && parsed > end) return false;
+                return true;
+            });
+        }
+
+        allCerts.sort((a, b) => new Date(b.certDate) - new Date(a.certDate));
+        const displayCerts = dashboardDateRange.type === 'all' ? allCerts.slice(0, 5) : allCerts;
+
+        const tbody = document.getElementById('recent-certs-tbody');
+        if (!tbody) return;
+
+        if (displayCerts.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--text-muted); padding: 1.5rem;">No certificates issued for the selected range.</td></tr>`;
+            return;
+        }
+
+        tbody.innerHTML = displayCerts.map(c => `
+            <tr>
+                <td><strong>${c.studentId}</strong></td>
+                <td>${c.studentName}</td>
+                <td>${c.course}</td>
+                <td>${c.certDate}</td>
+                <td style="color: var(--accent); font-weight: 600;">${c.certId}</td>
+                <td>
+                    <button class="btn btn-secondary btn-icon-only" onclick="printCertificate('${c.studentId}')" title="Print Certificate"><i class="fa-solid fa-print"></i></button>
+                </td>
+            </tr>
+        `).join('');
     }
-
-    const curUser = JSON.parse(sessionStorage.getItem('ediz_active_user')) || { role: 'Owner' };
-    const canInvoice = curUser.role === 'Owner' || (curUser.permissions && curUser.permissions.canInvoice);
-
-    recentEnrollmentsTbody.innerHTML = displayList.map(st => `
-        <tr>
-            <td><strong>${st.id}</strong></td>
-            <td>${st.name}</td>
-            <td>${st.course}</td>
-            <td>${st.registrationDate}</td>
-            <td><span class="badge badge-${st.status === 'Paid' ? 'success' : (st.status === 'Partial' ? 'warning' : 'danger')}">${st.status}</span></td>
-            <td>
-                ${canInvoice ? `<button class="btn btn-secondary btn-icon-only" onclick="openPaymentModal('${st.id}')" title="Payments"><i class="fa-solid fa-credit-card"></i></button>` : '---'}
-            </td>
-        </tr>
-    `).join('');
 }
 
 function renderStudentsTable() {
@@ -2826,6 +2980,127 @@ function renderSmsHistory() {
             </tr>
         `;
     }).join('');
+}
+
+// --- DASHBOARD ANALYTICS PERIOD EARNINGS ---
+function calculatePeriodEarnings() {
+    const today = new Date();
+    const todayStr = today.toISOString().split('T')[0];
+    
+    const currentYear = today.getFullYear();
+    const currentMonth = today.getMonth(); // 0-11
+    
+    let lastMonthYear = currentYear;
+    let lastMonth = currentMonth - 1;
+    if (lastMonth < 0) {
+        lastMonth = 11;
+        lastMonthYear = currentYear - 1;
+    }
+    
+    let todaySum = 0;
+    let todayCount = 0;
+    let monthSum = 0;
+    let monthCount = 0;
+    let lastMonthSum = 0;
+    let lastMonthCount = 0;
+    let yearSum = 0;
+    let yearCount = 0;
+    
+    students.forEach(st => {
+        if (st.invoices) {
+            st.invoices.forEach(inv => {
+                if (!inv.date) return;
+                
+                const cleanDateStr = inv.date.split('T')[0];
+                const parts = cleanDateStr.split('-');
+                const y = parseInt(parts[0], 10);
+                const m = parseInt(parts[1], 10) - 1;
+                
+                if (isNaN(y) || isNaN(m)) return;
+                
+                const amount = parseFloat(inv.amount) || 0;
+                
+                // 1. Today
+                if (cleanDateStr === todayStr) {
+                    todaySum += amount;
+                    todayCount++;
+                }
+                
+                // 2. This Month
+                if (y === currentYear && m === currentMonth) {
+                    monthSum += amount;
+                    monthCount++;
+                }
+                
+                // 3. Last Month
+                if (y === lastMonthYear && m === lastMonth) {
+                    lastMonthSum += amount;
+                    lastMonthCount++;
+                }
+                
+                // 4. This Year
+                if (y === currentYear) {
+                    yearSum += amount;
+                    yearCount++;
+                }
+            });
+        }
+    });
+    
+    const todayValEl = document.getElementById('calc-earnings-today');
+    const todayCountEl = document.getElementById('calc-count-today');
+    const monthValEl = document.getElementById('calc-earnings-month');
+    const monthCountEl = document.getElementById('calc-count-month');
+    const lastMonthValEl = document.getElementById('calc-earnings-lastmonth');
+    const lastMonthCountEl = document.getElementById('calc-count-lastmonth');
+    const yearValEl = document.getElementById('calc-earnings-year');
+    const yearCountEl = document.getElementById('calc-count-year');
+    
+    if (todayValEl) todayValEl.innerText = `৳${todaySum.toLocaleString()}`;
+    if (todayCountEl) todayCountEl.innerText = `${todayCount} payment${todayCount === 1 ? '' : 's'}`;
+    if (monthValEl) monthValEl.innerText = `৳${monthSum.toLocaleString()}`;
+    if (monthCountEl) monthCountEl.innerText = `${monthCount} payment${monthCount === 1 ? '' : 's'}`;
+    if (lastMonthValEl) lastMonthValEl.innerText = `৳${lastMonthSum.toLocaleString()}`;
+    if (lastMonthCountEl) lastMonthCountEl.innerText = `${lastMonthCount} payment${lastMonthCount === 1 ? '' : 's'}`;
+    if (yearValEl) yearValEl.innerText = `৳${yearSum.toLocaleString()}`;
+    if (yearCountEl) yearCountEl.innerText = `${yearCount} payment${yearCount === 1 ? '' : 's'}`;
+}
+
+// --- DASHBOARD RECENT VIEW SUB-TABS ---
+function setupDashboardSubTabs() {
+    const subTabs = document.querySelectorAll('.dashboard-sub-tab');
+    subTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            subTabs.forEach(t => {
+                t.className = "btn btn-secondary btn-sm dashboard-sub-tab";
+            });
+            tab.className = "btn btn-primary btn-sm dashboard-sub-tab";
+            
+            const subTabName = tab.getAttribute('data-subtab');
+            activeDashboardSubTab = subTabName;
+            
+            // Toggle view containers
+            document.querySelectorAll('.dashboard-table-view').forEach(view => {
+                view.style.display = 'none';
+            });
+            const targetView = document.getElementById(`dashboard-view-${subTabName}`);
+            if (targetView) targetView.style.display = 'block';
+            
+            // Update Title
+            const titleEl = document.getElementById('dashboard-list-title');
+            if (titleEl) {
+                if (subTabName === 'registrations') {
+                    titleEl.innerText = "Recent Registrations";
+                } else if (subTabName === 'payments') {
+                    titleEl.innerText = "Recent Fee Payments";
+                } else if (subTabName === 'certificates') {
+                    titleEl.innerText = "Recent Certificates Issued";
+                }
+            }
+            
+            renderRecentDashboard();
+        });
+    });
 }
 
 // --- EXCEL CSV EXPORT FEATURES ---

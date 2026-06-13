@@ -151,15 +151,52 @@
                     </div>
                 </div>
 
+                <!-- Period Earnings Breakdown Panel -->
+                <div class="glass-card" style="padding: 1.5rem; margin-bottom: 2rem;">
+                    <h4 style="margin-bottom: 1.25rem; font-weight: 700; color: var(--text-color);"><i class="fa-solid fa-chart-line"></i> Period Earnings & Collection Summary</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                        <div class="glass-panel" style="padding: 1rem; border-left: 4px solid #10b981; display: flex; flex-direction: column; justify-content: center;">
+                            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">Today's Collection</span>
+                            <div style="font-size: 1.4rem; font-weight: 700; color: var(--success); margin: 0.25rem 0;" id="calc-earnings-today">৳0</div>
+                            <span style="font-size: 0.72rem; color: var(--text-muted);" id="calc-count-today">0 payments</span>
+                        </div>
+                        <div class="glass-panel" style="padding: 1rem; border-left: 4px solid #3b82f6; display: flex; flex-direction: column; justify-content: center;">
+                            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">This Month (Current)</span>
+                            <div style="font-size: 1.4rem; font-weight: 700; color: var(--primary); margin: 0.25rem 0;" id="calc-earnings-month">৳0</div>
+                            <span style="font-size: 0.72rem; color: var(--text-muted);" id="calc-count-month">0 payments</span>
+                        </div>
+                        <div class="glass-panel" style="padding: 1rem; border-left: 4px solid #f59e0b; display: flex; flex-direction: column; justify-content: center;">
+                            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">Last Month (Previous)</span>
+                            <div style="font-size: 1.4rem; font-weight: 700; color: #f59e0b; margin: 0.25rem 0;" id="calc-earnings-lastmonth">৳0</div>
+                            <span style="font-size: 0.72rem; color: var(--text-muted);" id="calc-count-lastmonth">0 payments</span>
+                        </div>
+                        <div class="glass-panel" style="padding: 1rem; border-left: 4px solid #8b5cf6; display: flex; flex-direction: column; justify-content: center;">
+                            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">This Year (Current)</span>
+                            <div style="font-size: 1.4rem; font-weight: 700; color: var(--accent); margin: 0.25rem 0;" id="calc-earnings-year">৳0</div>
+                            <span style="font-size: 0.72rem; color: var(--text-muted);" id="calc-count-year">0 payments</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="glass-card" style="padding: 2rem;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
-                        <h3>Recent Registrations</h3>
+                        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                            <h3 style="margin: 0;" id="dashboard-list-title">Recent Registrations</h3>
+                            <!-- Sub-tabs for Dashboard Lists -->
+                            <div style="display: flex; gap: 0.25rem; background: var(--bg-secondary); padding: 0.2rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                                <button class="btn btn-primary btn-sm dashboard-sub-tab" data-subtab="registrations" style="padding: 0.25rem 0.6rem; font-size: 0.8rem; border-radius: var(--radius-sm); border: none; box-shadow: none; min-height: auto;">Registrations</button>
+                                <button class="btn btn-secondary btn-sm dashboard-sub-tab" data-subtab="payments" style="padding: 0.25rem 0.6rem; font-size: 0.8rem; border-radius: var(--radius-sm); border: none; box-shadow: none; min-height: auto;">Fee Payments</button>
+                                <button class="btn btn-secondary btn-sm dashboard-sub-tab" data-subtab="certificates" style="padding: 0.25rem 0.6rem; font-size: 0.8rem; border-radius: var(--radius-sm); border: none; box-shadow: none; min-height: auto;">Certificates Issued</button>
+                            </div>
+                        </div>
                         <div style="display: flex; gap: 0.75rem;">
                             <button class="btn btn-primary" id="dashboard-add-student-btn"><i class="fa-solid fa-plus"></i> New Registration</button>
                             <button class="btn btn-secondary" id="dashboard-collect-due-btn"><i class="fa-solid fa-wallet"></i> Collect Due</button>
                         </div>
                     </div>
-                    <div class="data-table-container">
+
+                    <!-- Container for Tables (Registrations) -->
+                    <div class="data-table-container dashboard-table-view" id="dashboard-view-registrations">
                         <table class="data-table">
                             <thead>
                                 <tr>
@@ -173,7 +210,49 @@
                             </thead>
                             <tbody id="recent-enrollments-tbody">
                                 <tr>
-                                    <td colspan="6" style="text-align: center; color: var(--text-muted);">No student records found. Wait for registrations or add one.</td>
+                                    <td colspan="6" style="text-align: center; color: var(--text-muted); padding: 1.5rem;">No student records found.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Container for Tables (Payments) -->
+                    <div class="data-table-container dashboard-table-view" id="dashboard-view-payments" style="display: none;">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Invoice ID</th>
+                                    <th>Student ID</th>
+                                    <th>Student Name</th>
+                                    <th>Payment Date</th>
+                                    <th>Amount Paid</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recent-payments-tbody">
+                                <tr>
+                                    <td colspan="6" style="text-align: center; color: var(--text-muted); padding: 1.5rem;">No payment records found.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Container for Tables (Certificates) -->
+                    <div class="data-table-container dashboard-table-view" id="dashboard-view-certificates" style="display: none;">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Student ID</th>
+                                    <th>Student Name</th>
+                                    <th>Course</th>
+                                    <th>Issue Date</th>
+                                    <th>Certificate ID</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recent-certs-tbody">
+                                <tr>
+                                    <td colspan="6" style="text-align: center; color: var(--text-muted); padding: 1.5rem;">No certificate records found.</td>
                                 </tr>
                             </tbody>
                         </table>
