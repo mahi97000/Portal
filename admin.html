@@ -212,7 +212,10 @@
                 <div class="glass-card" style="padding: 2rem;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
                         <h4 style="margin: 0; font-size: 1.1rem; color: var(--text-color); font-weight: 700;"><i class="fa-solid fa-users"></i> Registered Students</h4>
-                        <span id="student-registry-total" class="badge badge-primary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; border-radius: var(--radius-sm);">Total Students: 0</span>
+                        <div style="display: flex; gap: 0.75rem; align-items: center;">
+                            <button class="btn btn-secondary" id="students-export-all-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; background-color: #1d6f42; color: white; border: none; display: inline-flex; align-items: center; gap: 0.35rem;"><i class="fa-solid fa-file-excel"></i> Export All Excel</button>
+                            <span id="student-registry-total" class="badge badge-primary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; border-radius: var(--radius-sm);">Total Students: 0</span>
+                        </div>
                     </div>
                     <div class="data-table-container">
                         <table class="data-table">
@@ -279,8 +282,9 @@
 
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
                             <h3>Batch Student Roster: <span id="active-batch-roster-title" style="color: var(--primary);">---</span></h3>
-                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
                                 <span class="badge badge-primary" id="active-batch-roster-count">0 Students</span>
+                                <button class="btn btn-secondary" id="batch-export-btn" style="display: none; padding: 0.4rem 0.8rem; font-size: 0.85rem; background-color: #1d6f42; color: white; border: none; align-items: center; gap: 0.35rem;"><i class="fa-solid fa-file-excel"></i> Export Excel</button>
                                 <button class="btn btn-primary" id="batch-sms-btn" style="display: none; padding: 0.4rem 0.8rem; font-size: 0.85rem;"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
                                 <button class="btn btn-secondary" id="batch-whatsapp-btn" style="display: none; padding: 0.4rem 0.8rem; font-size: 0.85rem; background-color: #25d366; color: white; border: none; align-items: center; gap: 0.35rem;"><i class="fa-brands fa-whatsapp"></i> WhatsApp Group</button>
                             </div>

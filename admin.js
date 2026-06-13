@@ -184,6 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupDueLookupFeature();
     setupBooksFeature();
     setupWhatsAppFeature();
+    setupExportFeatures();
 });
 
 // --- AUTHENTICATION GATE ---
@@ -2330,6 +2331,11 @@ function renderBatchRoster(course, batchName) {
         whatsappBtn.style.display = roster.length > 0 ? 'inline-block' : 'none';
     }
 
+    const exportBtn = document.getElementById('batch-export-btn');
+    if (exportBtn) {
+        exportBtn.style.display = roster.length > 0 ? 'inline-flex' : 'none';
+    }
+
     if (roster.length === 0) {
         tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: var(--text-muted); padding: 2rem;">No students enrolled in this batch.</td></tr>`;
         return;
@@ -2820,6 +2826,182 @@ function renderSmsHistory() {
             </tr>
         `;
     }).join('');
+}
+
+// --- EXCEL CSV EXPORT FEATURES ---
+function setupExportFeatures() {
+    const batchExportBtn = document.getElementById('batch-export-btn');
+    if (batchExportBtn) {
+        batchExportBtn.addEventListener('click', () => {
+            if (!activeBatchForRoster) {
+                alert("Please select a batch first.");
+                return;
+            }
+            
+            const course = selectedCourseForBatches;
+            const batchName = activeBatchForRoster;
+            
+            // Filter roster
+            const roster = students.filter(s => s.course && s.course.includes(course) && s.batch && s.batch.includes(batchName));
+            
+            if (roster.length === 0) {
+                alert("No students in this batch to export.");
+                return;
+            }
+            
+            // Define headers
+            const headers = [
+                "Student ID",
+                "Name",
+                "Course",
+                "Batch",
+                "Father's Name",
+                "Mother's Name",
+                "Student Phone",
+                "Guardian Phone",
+                "Total Fee",
+                "Discount",
+                "Net Fee",
+                "Paid Amount",
+                "Due Amount",
+                "Status"
+            ];
+            
+            // Convert rows
+            const rows = roster.map(st => {
+                const net = st.netFee !== undefined ? st.netFee : (st.totalFee - (st.discountFee || 0));
+                return [
+                    st.id || "",
+                    st.name || "",
+                    st.course || "",
+                    st.batch || "",
+                    st.fatherName || "",
+                    st.motherName || "",
+                    st.phone || "",
+                    st.guardianPhone || "",
+                    st.totalFee || 0,
+                    st.discountFee || 0,
+                    net,
+                    st.paidFee || 0,
+                    st.dueFee || 0,
+                    st.status || ""
+                ];
+            });
+            
+            // Build CSV content
+            const csvContent = [
+                headers.join(","),
+                ...rows.map(row => row.map(val => {
+                    let str = String(val);
+                    if (str.includes(",") || str.includes('"') || str.includes("\n") || str.includes("\r")) {
+                        str = '"' + str.replace(/"/g, '""') + '"';
+                    }
+                    return str;
+                }).join(","))
+            ].join("\n");
+            
+            // Create Blob with UTF-8 BOM
+            const blob = new Blob(["\ufeff" + csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement("a");
+            
+            const sanitizedCourse = course.replace(/[^a-z0-9]/gi, '_');
+            const sanitizedBatch = batchName.replace(/[^a-z0-9]/gi, '_');
+            const fileName = `${sanitizedCourse}_${sanitizedBatch}_Roster.csv`;
+            
+            if (navigator.msSaveBlob) {
+                navigator.msSaveBlob(blob, fileName);
+            } else {
+                const url = URL.createObjectURL(blob);
+                link.setAttribute("href", url);
+                link.setAttribute("download", fileName);
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        });
+    }
+
+    const exportAllBtn = document.getElementById('students-export-all-btn');
+    if (exportAllBtn) {
+        exportAllBtn.addEventListener('click', () => {
+            if (students.length === 0) {
+                alert("No students registered to export.");
+                return;
+            }
+            
+            // Define headers
+            const headers = [
+                "Student ID",
+                "Name",
+                "Course",
+                "Batch",
+                "Father's Name",
+                "Mother's Name",
+                "Student Phone",
+                "Guardian Phone",
+                "Total Fee",
+                "Discount",
+                "Net Fee",
+                "Paid Amount",
+                "Due Amount",
+                "Status",
+                "Registration Date"
+            ];
+            
+            // Convert rows
+            const rows = students.map(st => {
+                const net = st.netFee !== undefined ? st.netFee : (st.totalFee - (st.discountFee || 0));
+                return [
+                    st.id || "",
+                    st.name || "",
+                    st.course || "",
+                    st.batch || "",
+                    st.fatherName || "",
+                    st.motherName || "",
+                    st.phone || "",
+                    st.guardianPhone || "",
+                    st.totalFee || 0,
+                    st.discountFee || 0,
+                    net,
+                    st.paidFee || 0,
+                    st.dueFee || 0,
+                    st.status || "",
+                    st.registrationDate || ""
+                ];
+            });
+            
+            // Build CSV content
+            const csvContent = [
+                headers.join(","),
+                ...rows.map(row => row.map(val => {
+                    let str = String(val);
+                    if (str.includes(",") || str.includes('"') || str.includes("\n") || str.includes("\r")) {
+                        str = '"' + str.replace(/"/g, '""') + '"';
+                    }
+                    return str;
+                }).join(","))
+            ].join("\n");
+            
+            // Create Blob with UTF-8 BOM
+            const blob = new Blob(["\ufeff" + csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement("a");
+            
+            const fileName = `Ediz_IT_All_Students_Roster.csv`;
+            
+            if (navigator.msSaveBlob) {
+                navigator.msSaveBlob(blob, fileName);
+            } else {
+                const url = URL.createObjectURL(blob);
+                link.setAttribute("href", url);
+                link.setAttribute("download", fileName);
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        });
+    }
 }
 
 // --- WHATSAPP BATCH GROUP FEATURE ---
