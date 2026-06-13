@@ -115,6 +115,7 @@ const batchDiscountInput = document.getElementById('batch-discount-input');
 const settingsBatchesTbody = document.getElementById('settings-batches-tbody');
 
 const settingsPasswordForm = document.getElementById('settings-password-form');
+const settingsAdminEmail = document.getElementById('settings-admin-email');
 const settingsPwdCurrent = document.getElementById('settings-pwd-current');
 const settingsPwdNew = document.getElementById('settings-pwd-new');
 
@@ -280,6 +281,11 @@ function loadDatabase() {
     settingsPriceEnglish.value = settings.courseFees["Spoken English"];
     settingsLogoLight.value = settings.lightLogo;
     settingsLogoDark.value = settings.darkLogo;
+
+    if (settingsAdminEmail && settings.users && settings.users.length > 0) {
+        const owner = settings.users.find(u => u.role === 'Owner') || settings.users[0];
+        settingsAdminEmail.value = owner.email;
+    }
 
     const settingsSmsApiKey = document.getElementById('settings-sms-api-key');
     const settingsSmsSenderId = document.getElementById('settings-sms-sender-id');
@@ -1059,17 +1065,27 @@ function setupDataOperations() {
         applyTheme(curTheme);
     });
 
-    // Settings password change
+    // Settings credentials change (Email & Password)
     settingsPasswordForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const curPwd = settingsPasswordForm.querySelector('#settings-pwd-current').value;
-        const newPwd = settingsPasswordForm.querySelector('#settings-pwd-new').value;
+        const emailVal = settingsAdminEmail.value.trim();
+        const curPwd = settingsPwdCurrent.value;
+        const newPwd = settingsPwdNew.value;
 
-        if (curPwd === (settings.adminPassword || 'admin123')) {
-            settings.adminPassword = newPwd;
+        const owner = settings.users.find(u => u.role === 'Owner') || settings.users[0];
+
+        if (curPwd === owner.password) {
+            owner.email = emailVal;
+            if (newPwd) {
+                owner.password = newPwd;
+                settings.adminPassword = newPwd;
+            }
             saveDatabase();
-            alert("Password updated successfully!");
+            alert("Credentials updated successfully!");
             settingsPasswordForm.reset();
+
+            // Re-populate the email field
+            settingsAdminEmail.value = owner.email;
         } else {
             alert("Error: Current password is incorrect.");
         }
