@@ -116,11 +116,17 @@ const settingsBatchesTbody = document.getElementById('settings-batches-tbody');
 
 const settingsPasswordForm = document.getElementById('settings-password-form');
 const settingsAdminEmail = document.getElementById('settings-admin-email');
-const settingsAdminPhone = document.getElementById('settings-admin-phone');
-const settingsAdminQuestion = document.getElementById('settings-admin-question');
-const settingsAdminAnswer = document.getElementById('settings-admin-answer');
+const settingsAdminRecoveryEmail = document.getElementById('settings-admin-recovery-email');
 const settingsPwdCurrent = document.getElementById('settings-pwd-current');
 const settingsPwdNew = document.getElementById('settings-pwd-new');
+
+// Email Gateway Settings Elements
+const settingsEmailForm = document.getElementById('settings-email-form');
+const settingsEmailProvider = document.getElementById('settings-email-provider');
+const emailjsFields = document.getElementById('emailjs-fields');
+const settingsEmailjsPublicKey = document.getElementById('settings-emailjs-public-key');
+const settingsEmailjsServiceId = document.getElementById('settings-emailjs-service-id');
+const settingsEmailjsTemplateId = document.getElementById('settings-emailjs-template-id');
 
 // Recovery Modal Elements
 const forgotPwdLink = document.getElementById('forgot-pwd-link');
@@ -130,13 +136,11 @@ const recoveryStep2 = document.getElementById('recovery-step-2');
 const recoveryStep3 = document.getElementById('recovery-step-3');
 const recoveryEmail = document.getElementById('recovery-email');
 const recoveryBtnNext = document.getElementById('recovery-btn-next');
-const recoverySmsOption = document.getElementById('recovery-sms-option');
-const recoverySendSmsBtn = document.getElementById('recovery-send-sms-btn');
+const recoveryEmailOption = document.getElementById('recovery-email-option');
+const recoverySendEmailBtn = document.getElementById('recovery-send-email-btn');
 const recoveryOtpContainer = document.getElementById('recovery-otp-container');
 const recoveryOtp = document.getElementById('recovery-otp');
-const recoveryQuestionOption = document.getElementById('recovery-question-option');
-const recoveryQuestionLabel = document.getElementById('recovery-question-label');
-const recoveryAnswerInput = document.getElementById('recovery-answer-input');
+const maskedRecoveryEmail = document.getElementById('masked-recovery-email');
 const recoveryVerifyBtn = document.getElementById('recovery-verify-btn');
 const recoveryPwdNew = document.getElementById('recovery-pwd-new');
 const recoveryPwdConfirm = document.getElementById('recovery-pwd-confirm');
@@ -175,6 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupBatchesView();
     setupBatchModal();
     setupSmsFeature();
+    setupEmailFeature();
     setupDashboardFilters();
     setupDueLookupFeature();
     setupBooksFeature();
@@ -220,6 +225,15 @@ function setupAuthentication() {
     let generatedOTP = '';
     let targetOwner = null;
 
+    const maskEmail = (email) => {
+        if (!email) return "";
+        const parts = email.split('@');
+        if (parts.length !== 2) return email;
+        const [user, domain] = parts;
+        if (user.length <= 2) return `${user[0]}*@${domain}`;
+        return `${user[0]}${'*'.repeat(user.length - 2)}${user[user.length - 1]}@${domain}`;
+    };
+
     if (forgotPwdLink) {
         forgotPwdLink.addEventListener('click', (e) => {
             e.preventDefault();
@@ -228,7 +242,6 @@ function setupAuthentication() {
             recoveryStep2.style.display = 'none';
             recoveryStep3.style.display = 'none';
             recoveryEmail.value = '';
-            recoveryAnswerInput.value = '';
             if (recoveryOtp) recoveryOtp.value = '';
             if (recoveryOtpContainer) recoveryOtpContainer.style.display = 'none';
             recoveryPwdNew.value = '';
@@ -254,19 +267,10 @@ function setupAuthentication() {
                 recoveryStep1.style.display = 'none';
                 recoveryStep2.style.display = 'block';
                 
-                // Check if recovery phone and SMS API are configured
-                const hasPhone = owner.phone && owner.phone.trim() !== "";
-                const hasSmsApi = settings.smsConfig && settings.smsConfig.apiKey && settings.smsConfig.apiKey.trim() !== "";
-                
-                if (hasPhone && hasSmsApi) {
-                    if (recoverySmsOption) recoverySmsOption.style.display = 'block';
-                } else {
-                    if (recoverySmsOption) recoverySmsOption.style.display = 'none';
-                }
-                
-                // Set security question label
-                if (recoveryQuestionLabel) {
-                    recoveryQuestionLabel.innerText = `Security Question: ${owner.securityQuestion || "What is your birth city?"}`;
+                // Mask and display recovery email
+                if (maskedRecoveryEmail) {
+                    const recEmail = owner.recoveryEmail || owner.email;
+                    maskedRecoveryEmail.innerText = maskEmail(recEmail);
                 }
             } else {
                 alert("Error: Admin Email not found.");
@@ -274,73 +278,99 @@ function setupAuthentication() {
         });
     }
 
-    // Send SMS OTP
-    if (recoverySendSmsBtn) {
-        recoverySendSmsBtn.addEventListener('click', () => {
-            if (!targetOwner || !targetOwner.phone) return;
+    // Send Email OTP
+    if (recoverySendEmailBtn) {
+        recoverySendEmailBtn.addEventListener('click', () => {
+            if (!targetOwner) return;
+            const recEmail = targetOwner.recoveryEmail || targetOwner.email;
             
             // Generate 6-digit OTP
             generatedOTP = String(Math.floor(100000 + Math.random() * 900000));
             
-            // Send SMS via BulkSMSBD API
-            const apiKey = settings.smsConfig.apiKey;
-            const senderId = settings.smsConfig.senderId;
-            const message = `Your Ediz Portal Password Recovery Code is: ${generatedOTP}`;
-            
-            const smsUrl = `https://api.bulksmsbd.net/api.php?api_key=${encodeURIComponent(apiKey)}&senderid=${encodeURIComponent(senderId)}&number=${encodeURIComponent(targetOwner.phone)}&message=${encodeURIComponent(message)}`;
-            
-            recoverySendSmsBtn.disabled = true;
-            recoverySendSmsBtn.innerText = "Sending SMS...";
-            
-            fetch(smsUrl)
-                .then(res => res.text())
-                .then(data => {
-                    alert("A 6-digit OTP recovery code has been sent to your phone number.");
-                    recoverySendSmsBtn.innerText = "Resend Code";
-                    recoverySendSmsBtn.disabled = false;
+            recoverySendEmailBtn.disabled = true;
+            recoverySendEmailBtn.innerText = "Sending Code...";
+
+            const showSimulatedOTP = () => {
+                recoverySendEmailBtn.disabled = false;
+                recoverySendEmailBtn.innerText = "Resend Code";
+                if (recoveryOtpContainer) recoveryOtpContainer.style.display = 'block';
+                
+                // Overlay/Alert popup for simulated OTP
+                alert(`[SIMULATION MODE]\nA verification email has been simulated to: ${recEmail}\n\nYour 6-digit verification code is: ${generatedOTP}`);
+            };
+
+            const sendRealEmail = () => {
+                const templateParams = {
+                    to_email: recEmail,
+                    otp_code: generatedOTP,
+                    admin_name: "Ediz IT Admin"
+                };
+
+                emailjs.send(
+                    settings.emailConfig.serviceId,
+                    settings.emailConfig.templateId,
+                    templateParams
+                ).then(() => {
+                    alert("A 6-digit verification code has been sent to your recovery email address.");
+                    recoverySendEmailBtn.disabled = false;
+                    recoverySendEmailBtn.innerText = "Resend Code";
                     if (recoveryOtpContainer) recoveryOtpContainer.style.display = 'block';
-                })
-                .catch(err => {
-                    alert("Error sending SMS. Please use the Security Question reset option below.");
-                    recoverySendSmsBtn.innerText = "Send Reset Code via SMS";
-                    recoverySendSmsBtn.disabled = false;
+                }).catch((err) => {
+                    console.error("EmailJS Error:", err);
+                    alert("Error sending email via EmailJS. Falling back to Simulation Mode.");
+                    showSimulatedOTP();
                 });
+            };
+
+            const provider = settings.emailConfig?.provider || 'simulation';
+            if (provider === 'emailjs') {
+                const publicKey = settings.emailConfig?.publicKey;
+                const serviceId = settings.emailConfig?.serviceId;
+                const templateId = settings.emailConfig?.templateId;
+
+                if (!publicKey || !serviceId || !templateId) {
+                    alert("EmailJS is not fully configured in settings. Falling back to Simulation Mode.");
+                    showSimulatedOTP();
+                    return;
+                }
+
+                // Load EmailJS SDK dynamically if not loaded
+                if (!window.emailjs) {
+                    const script = document.createElement('script');
+                    script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+                    script.onload = () => {
+                        emailjs.init(publicKey);
+                        sendRealEmail();
+                    };
+                    script.onerror = () => {
+                        console.error("Failed to load EmailJS SDK script.");
+                        alert("Could not load EmailJS SDK. Falling back to Simulation Mode.");
+                        showSimulatedOTP();
+                    };
+                    document.head.appendChild(script);
+                } else {
+                    emailjs.init(publicKey);
+                    sendRealEmail();
+                }
+            } else {
+                showSimulatedOTP();
+            }
         });
     }
 
-    // Step 2: Verify Identity (OTP or Question)
+    // Step 2: Verify Identity (OTP Code)
     if (recoveryVerifyBtn) {
         recoveryVerifyBtn.addEventListener('click', () => {
             if (!targetOwner) return;
             
-            let verified = false;
-            
-            // Check OTP first if generated
             const enteredOtp = recoveryOtp ? recoveryOtp.value.trim() : "";
-            if (generatedOTP && enteredOtp) {
-                if (enteredOtp === generatedOTP) {
-                    verified = true;
-                } else {
-                    alert("Error: Invalid OTP code.");
-                    return;
-                }
-            } else {
-                // Check Security Answer
-                const answer = recoveryAnswerInput.value.trim().toLowerCase();
-                const correctAns = (targetOwner.securityAnswer || "comilla").trim().toLowerCase();
-                
-                if (answer === correctAns) {
-                    verified = true;
-                } else {
-                    alert("Error: Incorrect answer to security question.");
-                    return;
-                }
-            }
             
-            if (verified) {
+            if (generatedOTP && enteredOtp === generatedOTP) {
                 // Show Step 3
                 recoveryStep2.style.display = 'none';
                 recoveryStep3.style.display = 'block';
+            } else {
+                alert("Error: Invalid verification code.");
             }
         });
     }
@@ -427,13 +457,15 @@ function loadDatabase() {
         courseFees: defaultFees,
         batches: defaultBatches,
         smsConfig: { apiKey: '', senderId: '', welcomeTemplate: '', autoSendWelcome: true },
-        smsHistory: []
+        smsHistory: [],
+        emailConfig: { provider: 'simulation', publicKey: '', serviceId: '', templateId: '' }
     };
 
     if (!settings.courseFees) settings.courseFees = defaultFees;
     if (!settings.batches) settings.batches = defaultBatches;
     if (!settings.smsConfig) settings.smsConfig = { apiKey: '', senderId: '', welcomeTemplate: '', autoSendWelcome: true };
     if (!settings.smsHistory) settings.smsHistory = [];
+    if (!settings.emailConfig) settings.emailConfig = { provider: 'simulation', publicKey: '', serviceId: '', templateId: '' };
 
     if (settings.smsConfig.welcomeTemplate === undefined) {
         settings.smsConfig.welcomeTemplate = "Dear {student_name}, your admission to {course_name} (Batch: {batch_name}) at EDIZ IT Institute is confirmed! Class starts on {start_date} at {class_time}. Website: https://edizit.com";
@@ -462,9 +494,7 @@ function loadDatabase() {
                 password: (settings.adminPassword || "admin123"), 
                 role: "Owner", 
                 permissions: { canEdit: true, canDelete: true, canInvoice: true, canCert: true },
-                phone: "",
-                securityQuestion: "What is your birth city?",
-                securityAnswer: "comilla"
+                recoveryEmail: "owner@ediz.com"
             },
             { 
                 id: "USER-2", 
@@ -477,9 +507,9 @@ function loadDatabase() {
     } else {
         const owner = settings.users.find(u => u.role === 'Owner') || settings.users[0];
         if (owner) {
-            if (owner.phone === undefined) owner.phone = "";
-            if (owner.securityQuestion === undefined) owner.securityQuestion = "What is your birth city?";
-            if (owner.securityAnswer === undefined) owner.securityAnswer = "comilla";
+            if (owner.recoveryEmail === undefined) {
+                owner.recoveryEmail = owner.email || "owner@ediz.com";
+            }
         }
     }
 
@@ -495,9 +525,14 @@ function loadDatabase() {
     if (settingsAdminEmail && settings.users && settings.users.length > 0) {
         const owner = settings.users.find(u => u.role === 'Owner') || settings.users[0];
         settingsAdminEmail.value = owner.email;
-        if (settingsAdminPhone) settingsAdminPhone.value = owner.phone || "";
-        if (settingsAdminQuestion) settingsAdminQuestion.value = owner.securityQuestion || "What is your birth city?";
-        if (settingsAdminAnswer) settingsAdminAnswer.value = owner.securityAnswer || "comilla";
+        if (settingsAdminRecoveryEmail) settingsAdminRecoveryEmail.value = owner.recoveryEmail || owner.email;
+    }
+
+    if (settingsEmailProvider) {
+        settingsEmailProvider.value = settings.emailConfig.provider || 'simulation';
+        if (settingsEmailjsPublicKey) settingsEmailjsPublicKey.value = settings.emailConfig.publicKey || '';
+        if (settingsEmailjsServiceId) settingsEmailjsServiceId.value = settings.emailConfig.serviceId || '';
+        if (settingsEmailjsTemplateId) settingsEmailjsTemplateId.value = settings.emailConfig.templateId || '';
     }
 
     const settingsSmsApiKey = document.getElementById('settings-sms-api-key');
@@ -1278,13 +1313,11 @@ function setupDataOperations() {
         applyTheme(curTheme);
     });
 
-    // Settings credentials change (Email, Phone, Security Question, Security Answer & Password)
+    // Settings credentials change (Email, Recovery Email & Password)
     settingsPasswordForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const emailVal = settingsAdminEmail.value.trim();
-        const phoneVal = settingsAdminPhone.value.trim();
-        const questionVal = settingsAdminQuestion.value.trim();
-        const answerVal = settingsAdminAnswer.value.trim();
+        const recoveryEmailVal = settingsAdminRecoveryEmail.value.trim();
         const curPwd = settingsPwdCurrent.value;
         const newPwd = settingsPwdNew.value;
 
@@ -1292,9 +1325,7 @@ function setupDataOperations() {
 
         if (curPwd === owner.password) {
             owner.email = emailVal;
-            owner.phone = phoneVal;
-            owner.securityQuestion = questionVal;
-            owner.securityAnswer = answerVal;
+            owner.recoveryEmail = recoveryEmailVal;
             if (newPwd) {
                 owner.password = newPwd;
                 settings.adminPassword = newPwd;
@@ -1305,9 +1336,7 @@ function setupDataOperations() {
 
             // Re-populate the fields
             settingsAdminEmail.value = owner.email;
-            settingsAdminPhone.value = owner.phone;
-            settingsAdminQuestion.value = owner.securityQuestion;
-            settingsAdminAnswer.value = owner.securityAnswer;
+            settingsAdminRecoveryEmail.value = owner.recoveryEmail;
         } else {
             alert("Error: Current password is incorrect.");
         }
@@ -3051,6 +3080,45 @@ function getFilteredStats() {
         certs,
         studentsList: filteredStudents
     };
+}
+
+function setupEmailFeature() {
+    if (!settingsEmailForm) return;
+
+    // Toggle EmailJS fields visibility based on provider choice
+    const toggleFields = () => {
+        if (settingsEmailProvider.value === 'emailjs') {
+            emailjsFields.style.display = 'block';
+            settingsEmailjsPublicKey.required = true;
+            settingsEmailjsServiceId.required = true;
+            settingsEmailjsTemplateId.required = true;
+        } else {
+            emailjsFields.style.display = 'none';
+            settingsEmailjsPublicKey.required = false;
+            settingsEmailjsServiceId.required = false;
+            settingsEmailjsTemplateId.required = false;
+        }
+    };
+
+    if (settingsEmailProvider) {
+        settingsEmailProvider.addEventListener('change', toggleFields);
+        // Initial toggle state
+        toggleFields();
+    }
+
+    settingsEmailForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        settings.emailConfig = {
+            provider: settingsEmailProvider.value,
+            publicKey: settingsEmailjsPublicKey.value.trim(),
+            serviceId: settingsEmailjsServiceId.value.trim(),
+            templateId: settingsEmailjsTemplateId.value.trim()
+        };
+        
+        saveDatabase();
+        alert("Email Gateway Configuration saved successfully!");
+    });
 }
 
 function setupDashboardFilters() {
