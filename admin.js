@@ -17,7 +17,7 @@ const defaultBatches = [
 let students = [];
 let settings = {};
 let activeStudentForFees = null;
-let dashboardDateRange = { type: 'all', start: null, end: null };
+let dashboardDateRange = { type: 'today', start: null, end: null };
 let bookStock = 0;
 let batchStatusFilter = 'active'; // Filter state: 'active' or 'all'
 let activeDashboardSubTab = 'registrations';
@@ -187,6 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupWhatsAppFeature();
     setupExportFeatures();
     setupDashboardSubTabs();
+    setupDashboardSearch();
 });
 
 // --- AUTHENTICATION GATE ---
@@ -736,6 +737,12 @@ function renderAllLists() {
     renderStudentsTable();
     renderInvoicesTable();
     renderCertificatesTable();
+    
+    // Sync dashboard quick search if active
+    const dbSearchInput = document.getElementById('dashboard-student-search');
+    if (dbSearchInput && dbSearchInput.value) {
+        dbSearchInput.dispatchEvent(new Event('input'));
+    }
 }
 
 function renderRecentDashboard() {
@@ -761,7 +768,7 @@ function renderRecentDashboard() {
                 <td>${st.name}</td>
                 <td>${st.course}</td>
                 <td>${st.registrationDate}</td>
-                <td><span class="badge badge-${st.status === 'Paid' ? 'success' : (st.status === 'Partial' ? 'warning' : 'danger')}">${st.status}</span></td>
+                <td><span class="badge badge-${st.status === 'Paid' ? 'success' : (st.status === 'Partial' ? 'warning' : 'danger')}">${st.status === 'Partial' ? 'Payment Due' : st.status}</span></td>
                 <td>
                     ${canInvoice ? `<button class="btn btn-secondary btn-icon-only" onclick="openPaymentModal('${st.id}')" title="Payments"><i class="fa-solid fa-credit-card"></i></button>` : '---'}
                 </td>
@@ -921,17 +928,6 @@ function renderStudentsTable() {
     const courseVal = filterCourse.value;
     const statusVal = filterStatus.value;
 
-    const activeTab = document.querySelector('.sidebar-item.active');
-    const isStudentsTab = activeTab && activeTab.getAttribute('data-tab') === 'students';
-    if (isStudentsTab && activeTabSubtitle) {
-        activeTabSubtitle.innerText = `View, manage and enroll students. Total Registered: ${students.length}`;
-    }
-
-    const registryTotalEl = document.getElementById('student-registry-total');
-    if (registryTotalEl) {
-        registryTotalEl.innerText = `Total Students: ${students.length}`;
-    }
-
     const curUser = JSON.parse(sessionStorage.getItem('ediz_active_user')) || { role: 'Owner' };
     const canEdit = curUser.role === 'Owner' || (curUser.permissions && curUser.permissions.canEdit);
     const canDelete = curUser.role === 'Owner' || (curUser.permissions && curUser.permissions.canDelete);
@@ -952,6 +948,26 @@ function renderStudentsTable() {
         const matchesStatus = statusVal === "" || st.status === statusVal;
         return matchesSearch && matchesCourse && matchesStatus;
     });
+
+    const activeTab = document.querySelector('.sidebar-item.active');
+    const isStudentsTab = activeTab && activeTab.getAttribute('data-tab') === 'students';
+    if (isStudentsTab && activeTabSubtitle) {
+        activeTabSubtitle.innerText = `View, manage and enroll students. Total Registered: ${students.length}`;
+    }
+
+    const registryTotalEl = document.getElementById('student-registry-total');
+    if (registryTotalEl) {
+        let statusLabel = "";
+        if (statusVal === "Paid") statusLabel = "Paid ";
+        else if (statusVal === "Partial") statusLabel = "Payment Due ";
+        else if (statusVal === "Unpaid") statusLabel = "Unpaid ";
+
+        let courseLabel = "";
+        if (courseVal) {
+            courseLabel = courseVal + " ";
+        }
+        registryTotalEl.innerText = `Total ${statusLabel}${courseLabel}Students: ${filtered.length}`;
+    }
 
     if (filtered.length === 0) {
         studentsTbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: var(--text-muted);">No matching student records.</td></tr>`;
@@ -986,7 +1002,7 @@ function renderStudentsTable() {
                 <div style="font-size: 0.85rem; color: var(--success); font-weight: 500;">Paid: ৳${st.paidFee}</div>
                 <div style="font-size: 0.85rem; color: var(--danger); font-weight: 600;">Due: ৳${st.dueFee}</div>
             </td>
-            <td><span class="badge badge-${st.status === 'Paid' ? 'success' : (st.status === 'Partial' ? 'warning' : 'danger')}">${st.status}</span></td>
+            <td><span class="badge badge-${st.status === 'Paid' ? 'success' : (st.status === 'Partial' ? 'warning' : 'danger')}">${st.status === 'Partial' ? 'Payment Due' : st.status}</span></td>
             <td>
                 <div class="actions-cell">
                     ${canInvoice ? `<button class="btn btn-secondary btn-icon-only" onclick="openPaymentModal('${st.id}')" title="Manage Fees"><i class="fa-solid fa-wallet"></i></button>` : ''}
@@ -2545,7 +2561,7 @@ function renderBatchRoster(course, batchName) {
                 <div style="font-size:0.75rem; color:var(--danger);">Due: ৳${st.dueFee}</div>
             </td>
             <td>
-                <span class="badge badge-${st.status === 'Paid' ? 'success' : (st.status === 'Partial' ? 'warning' : 'danger')}">${st.status}</span>
+                <span class="badge badge-${st.status === 'Paid' ? 'success' : (st.status === 'Partial' ? 'warning' : 'danger')}">${st.status === 'Partial' ? 'Payment Due' : st.status}</span>
             </td>
             <td>
                 <div class="actions-cell">
@@ -2583,7 +2599,7 @@ window.openProfileModal = function(id) {
     const badge = document.getElementById('prof-status-badge');
     if (badge) {
         badge.className = `badge badge-${st.status === 'Paid' ? 'success' : (st.status === 'Partial' ? 'warning' : 'danger')}`;
-        badge.innerText = st.status;
+        badge.innerText = st.status === 'Partial' ? 'Payment Due' : st.status;
     }
 
     openModal(document.getElementById('profile-modal'));
@@ -3767,6 +3783,92 @@ function setupDashboardFilters() {
             renderRecentDashboard();
         });
     }
+}
+
+function setupDashboardSearch() {
+    const dbSearchInput = document.getElementById('dashboard-student-search');
+    const dbResultsCard = document.getElementById('dashboard-search-results-card');
+    const dbSearchCount = document.getElementById('dash-search-count');
+    const dbSearchTbody = document.getElementById('dashboard-search-results-tbody');
+
+    if (!dbSearchInput || !dbResultsCard || !dbSearchTbody) return;
+
+    dbSearchInput.addEventListener('input', () => {
+        const query = dbSearchInput.value.trim().toLowerCase();
+        if (!query) {
+            dbResultsCard.style.display = 'none';
+            dbSearchTbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: var(--text-muted);">Type to search...</td></tr>`;
+            return;
+        }
+
+        const curUser = JSON.parse(sessionStorage.getItem('ediz_active_user')) || { role: 'Owner' };
+        const canEdit = curUser.role === 'Owner' || (curUser.permissions && curUser.permissions.canEdit);
+        const canDelete = curUser.role === 'Owner' || (curUser.permissions && curUser.permissions.canDelete);
+        const canInvoice = curUser.role === 'Owner' || (curUser.permissions && curUser.permissions.canInvoice);
+
+        const cleanQuery = query.replace(/\D/g, "");
+
+        const filtered = students.filter(st => {
+            const cleanPhone = st.phone ? st.phone.replace(/\D/g, "") : "";
+            const cleanGuardian = st.guardianPhone ? st.guardianPhone.replace(/\D/g, "") : "";
+
+            return st.id.toLowerCase().includes(query) || 
+                   st.name.toLowerCase().includes(query) || 
+                   (cleanQuery && cleanPhone.includes(cleanQuery)) ||
+                   (cleanQuery && cleanGuardian.includes(cleanQuery)) ||
+                   (st.batch && st.batch.toLowerCase().includes(query));
+        });
+
+        dbResultsCard.style.display = 'block';
+        if (dbSearchCount) {
+            dbSearchCount.innerText = filtered.length;
+        }
+
+        if (filtered.length === 0) {
+            dbSearchTbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: var(--text-muted);">No matching student records.</td></tr>`;
+            return;
+        }
+
+        dbSearchTbody.innerHTML = filtered.map(st => `
+            <tr>
+                <td>
+                    <strong>${st.id}</strong><br>
+                    <span style="font-size: 0.75rem; color: var(--primary); font-weight: 600;">Batch: ${st.batch || 'N/A'}</span>
+                </td>
+                <td>
+                    <div style="font-weight: 600;">${st.name}</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">${st.address}</div>
+                    <div style="font-size: 0.7rem; color: var(--text-muted); font-style: italic;">
+                        Parents: ${st.fatherName || 'N/A'} (F), ${st.motherName || 'N/A'} (M)
+                    </div>
+                </td>
+                <td>
+                    ${st.course}
+                    ${st.takenBook ? `<br><span class="badge badge-success" style="font-size:0.65rem; padding: 1px 4px; margin-top: 2px; display: inline-block;">Book Taken</span>` : ''}
+                </td>
+                <td>
+                    <div>Mob: ${st.phone}</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">Grd: ${st.guardianPhone || 'N/A'}</div>
+                </td>
+                <td>
+                    <div style="font-size: 0.85rem;">Gross: ৳${st.totalFee}</div>
+                    <div style="font-size: 0.8rem; color: var(--accent);">Disc: ৳${st.discountFee || 0}</div>
+                    <div style="font-size: 0.8rem; font-weight: 600;">Net: ৳${st.netFee !== undefined ? st.netFee : st.totalFee}</div>
+                    <div style="font-size: 0.85rem; color: var(--success); font-weight: 500;">Paid: ৳${st.paidFee}</div>
+                    <div style="font-size: 0.85rem; color: var(--danger); font-weight: 600;">Due: ৳${st.dueFee}</div>
+                </td>
+                <td><span class="badge badge-${st.status === 'Paid' ? 'success' : (st.status === 'Partial' ? 'warning' : 'danger')}">${st.status === 'Partial' ? 'Payment Due' : st.status}</span></td>
+                <td>
+                    <div class="actions-cell">
+                        ${canInvoice ? `<button class="btn btn-secondary btn-icon-only" onclick="openPaymentModal('${st.id}')" title="Manage Fees"><i class="fa-solid fa-wallet"></i></button>` : ''}
+                        ${canEdit ? `<button class="btn btn-secondary btn-icon-only" onclick="openEditStudentModal('${st.id}')" title="Edit Student"><i class="fa-solid fa-edit"></i></button>` : ''}
+                        ${canDelete ? `<button class="btn btn-secondary btn-icon-only" style="color: var(--danger);" onclick="deleteStudent('${st.id}')" title="Delete Student"><i class="fa-solid fa-trash"></i></button>` : ''}
+                        ${!canInvoice && !canEdit && !canDelete ? '---' : ''}
+                    </div>
+                </td>
+            </tr>
+        `).join('');
+    });
 }
 
 async function sendAutomatedWelcomeSms(studentObj) {
