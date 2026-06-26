@@ -1,0 +1,36 @@
+# ── EDIZ IT Admin Panel — Hostinger Config ──────────────────────
+
+# Protect sensitive files from direct browser access
+<Files "database.json">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+<Files "database_backup.js">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Enable GZIP compression for faster loading
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json
+</IfModule>
+
+# Browser caching for static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
+
+# Force HTTPS (Hostinger free SSL)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Default page
+DirectoryIndex index.html

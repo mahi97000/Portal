@@ -1,0 +1,14 @@
+# Backup & Local Temp Folders
+/New folder/
+/New folder (2)/
+/New folder (3)/
+/new updated/
+/scratch/
+
+# Built Zip Archives
+*.zip
+
+# OS Files
+Thumbs.db
+Desktop.ini
+.DS_Store

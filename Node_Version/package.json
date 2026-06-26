@@ -1,0 +1,16 @@
+{
+  "name": "ediz-portal-node",
+  "version": "1.0.0",
+  "description": "EDIZ IT Institute Admin Portal - Node.js Version",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "ediz-it",
+    "portal",
+    "node"
+  ],
+  "author": "EDIZ IT",
+  "license": "ISC"
+}

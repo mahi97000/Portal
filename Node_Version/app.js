@@ -1,3 +1,11 @@
+// --- UTILITY FOR LOCAL DATE STRING ---
+function getLocalDateString(date = new Date()) {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+}
+
 // --- DATASETS (SYLLABUS) ---
 const syllabusData = {
     graphic: {
@@ -67,6 +75,12 @@ const contactForm = document.getElementById('contact-form');
 
 // --- APP INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', () => {
+    // Force reset to original unmigrated IDs from database_backup.js if not already done
+    if (!localStorage.getItem('ediz_students_restored_v11') && window.migratedDatabase) {
+        localStorage.setItem('ediz_students', JSON.stringify(window.migratedDatabase.students));
+        localStorage.setItem('ediz_settings', JSON.stringify(window.migratedDatabase.settings));
+        localStorage.setItem('ediz_students_restored_v11', 'true');
+    }
     // 1. Initialize Theme from Local Storage
     const savedTheme = localStorage.getItem('ediz_theme') || 'light';
     setTheme(savedTheme);
@@ -114,7 +128,41 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+    // 8. Sync data with server
+    syncWithServer();
 });
+
+function syncWithServer() {
+    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const fetchUrl = isLocalhost ? 'database.json' : 'api.php';
+    fetch(fetchUrl)
+        .then(response => {
+            if (!response.ok) throw new Error("HTTP error");
+            return response.json();
+        })
+        .then(data => {
+            if (data && data.students) {
+                // Save to localStorage for client-side queries
+                localStorage.setItem('ediz_students', JSON.stringify(data.students));
+                localStorage.setItem('ediz_settings', JSON.stringify(data.settings));
+                localStorage.setItem('ediz_book_stock', data.bookStock || 0);
+                
+                // Reapply settings in UI
+                loadCustomSettings();
+                
+                // Update batch dropdowns if present
+                const enrollCourseSelect = document.getElementById('enroll-course');
+                const enrollBatchSelect = document.getElementById('enroll-batch');
+                if (enrollCourseSelect && enrollBatchSelect && enrollCourseSelect.value) {
+                    updateEnrollBatches(enrollCourseSelect.value, enrollBatchSelect);
+                }
+                console.log("Database synchronized with server.");
+            }
+        })
+        .catch(err => {
+            console.log("Offline mode or api.php not available. Using local cache:", err);
+        });
+}
 
 // --- THEME MANAGEMENT ---
 function setTheme(theme) {
@@ -123,8 +171,8 @@ function setTheme(theme) {
 
     // Get customized logo settings if any, otherwise use default
     const settings = JSON.parse(localStorage.getItem('ediz_settings')) || {};
-    const lightLogoName = settings.lightLogo || 'Logo-07.png';
-    const darkLogoName = settings.darkLogo || 'Logo-03.png';
+    const lightLogoName = settings.lightLogo || 'Logo-03.png';
+    const darkLogoName = settings.darkLogo || 'Logo-04.png';
 
     if (theme === 'dark') {
         if (themeIcon) {
@@ -258,27 +306,65 @@ function setupFormListeners() {
             // Retrieve database or create new
             const students = JSON.parse(localStorage.getItem('ediz_students')) || [];
             
-            // Generate prefix-based ID based on course track
+            // Generate prefix-based ID based on course track with legacy database compatibility
             let prefix = "EDIZ";
-            if (course === "Graphic Design") prefix = "EDIZ-GD";
-            else if (course === "Basic Computer") prefix = "EDIZ-BC";
-            else if (course === "Spoken English") prefix = "EDIZ-SP";
+            let prefixes = ["EDIZ"];
+            if (course === "Graphic Design") {
+                prefix = "GD";
+                prefixes = ["GD", "EDIZ-GD"];
+            } else if (course === "Basic Computer") {
+                prefix = "BC";
+                prefixes = ["BC", "EDIZ-BC"];
+            } else if (course === "Spoken English") {
+                prefix = "SE";
+                prefixes = ["SE", "EDIZ-SE", "EDIZ-SP", "IP", "SP"];
+            }
 
-            const matchingStudents = students.filter(s => s.id && s.id.startsWith(prefix + "-"));
             let maxNum = 0;
-            matchingStudents.forEach(s => {
-                const parts = s.id.split('-');
-                const lastPart = parts[parts.length - 1];
-                const num = parseInt(lastPart, 10);
-                if (!isNaN(num) && num > maxNum) {
-                    maxNum = num;
+            students.forEach(s => {
+                if (!s.id) return;
+                const isMatch = (s.course === course) || prefixes.some(p => s.id.startsWith(p + "-"));
+                if (isMatch) {
+                    const parts = s.id.split('-');
+                    const lastPart = parts[parts.length - 1];
+                    const num = parseInt(lastPart, 10);
+                    if (!isNaN(num) && num > maxNum) {
+                        maxNum = num;
+                    }
                 }
             });
             const nextNum = maxNum + 1;
-            const sequence = String(nextNum).padStart(3, '0');
+            const sequence = nextNum < 10 ? String(nextNum).padStart(2, '0') : String(nextNum);
             const studentId = `${prefix}-${sequence}`;
 
+            // Find if student already has a Registration ID
+            const cleanName = name.toLowerCase().trim().replace(/\s+/g, '');
+            const cleanPhone = phone.replace(/\D/g, '');
+            const existingStudent = students.find(s => {
+                const sName = (s.name || '').toLowerCase().trim().replace(/\s+/g, '');
+                const sPhone = (s.phone || '').replace(/\D/g, '');
+                return sName === cleanName && sPhone === cleanPhone && s.registrationId;
+            });
+
+            let registrationId;
+            if (existingStudent) {
+                registrationId = existingStudent.registrationId;
+            } else {
+                let maxRegId = 1000;
+                students.forEach(s => {
+                    if (s.registrationId) {
+                        const match = s.registrationId.match(/^REG-(\d+)$/);
+                        if (match) {
+                            const val = parseInt(match[1], 10);
+                            if (val > maxRegId) maxRegId = val;
+                        }
+                    }
+                });
+                registrationId = `REG-${maxRegId + 1}`;
+            }
+
             const newStudent = {
+                registrationId: registrationId,
                 id: studentId,
                 name: name,
                 phone: phone,
@@ -288,7 +374,7 @@ function setupFormListeners() {
                 address: address,
                 course: course,
                 batch: batchName,
-                registrationDate: new Date().toISOString().split('T')[0],
+                registrationDate: getLocalDateString(),
                 status: 'Unpaid', // Status: Unpaid, Paid, Partial
                 totalFee: baseFee,
                 discountFee: discountFee,
@@ -302,6 +388,30 @@ function setupFormListeners() {
 
             students.push(newStudent);
             localStorage.setItem('ediz_students', JSON.stringify(students));
+
+            // Sync new student registration to Hostinger PHP server database
+            const dbPayload = {
+                students: students,
+                settings: settings,
+                bookStock: parseInt(localStorage.getItem('ediz_book_stock')) || 0
+            };
+            fetch('api.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dbPayload)
+            })
+            .then(response => {
+                if (!response.ok) throw new Error("HTTP error saving database");
+                return response.json();
+            })
+            .then(res => {
+                console.log("Registration successfully synchronized to server:", res);
+            })
+            .catch(err => {
+                console.warn("Failed to synchronize registration to server:", err);
+            });
 
             // Show Confirmation
             alert(`Application Submitted Successfully!\nYour temporary registration ID is ${studentId}. Our admission desk will contact you soon.`);
@@ -339,6 +449,13 @@ function updateEnrollBatches(course, selectElem) {
     
     // Filter batches for selected course
     const courseBatches = batches.filter(b => b.course === course);
+
+    // Sort batches numerically descending (newest first)
+    courseBatches.sort((a, b) => {
+        const numA = parseInt((a.name.match(/\d+/) || [0])[0], 10);
+        const numB = parseInt((b.name.match(/\d+/) || [0])[0], 10);
+        return numB - numA;
+    });
     
     selectElem.innerHTML = '<option value="" disabled selected>-- Select Batch --</option>';
     if (courseBatches.length > 0) {
@@ -349,9 +466,9 @@ function updateEnrollBatches(course, selectElem) {
         });
     } else {
         const fallback = {
-            "Graphic Design": ["GD-01", "GD-02"],
-            "Basic Computer": ["BC-01", "BC-02"],
-            "Spoken English": ["SE-01", "SE-02"]
+            "Graphic Design": ["GD-02", "GD-01"],
+            "Basic Computer": ["BC-02", "BC-01"],
+            "Spoken English": ["SE-02", "SE-01"]
         };
         const list = fallback[course] || [];
         list.forEach(name => {
@@ -402,10 +519,20 @@ function setupVerificationPortal() {
         }
 
         // Load students database
-        const students = JSON.parse(localStorage.getItem('ediz_students')) || [];
-        const settings = JSON.parse(localStorage.getItem('ediz_settings')) || {};
+        let students = JSON.parse(localStorage.getItem('ediz_students')) || [];
+        let settings = JSON.parse(localStorage.getItem('ediz_settings')) || {};
+        
+        const localMatched = students.filter(s => s.id && isIdMatch(s.id, searchId));
+        let matched = localMatched;
+        
+        if (localMatched.length === 0 && window.migratedDatabase && window.migratedDatabase.students) {
+            matched = window.migratedDatabase.students.filter(s => s.id && isIdMatch(s.id, searchId));
+            if (matched.length > 0 && window.migratedDatabase.settings) {
+                settings = window.migratedDatabase.settings;
+            }
+        }
+        
         const batches = settings.batches || [];
-        const matched = students.filter(s => s.id && isIdMatch(s.id, searchId));
 
         verifyResultContainer.style.display = 'block';
 
@@ -426,15 +553,111 @@ function setupVerificationPortal() {
                 // Determine layout footer based on graduation status
                 let certFooterHTML = '';
                 if (isCertified) {
+                    const date = new Date(student.certificateDate || new Date());
+                    const day = date.getDate();
+                    const month = date.toLocaleString("en-GB", { month: "long" });
+                    const year = date.getFullYear();
+                    const suffix = day > 3 && day < 21 ? 'th' : ['st', 'nd', 'rd'][day % 10 - 1] || 'th';
+                    const formattedIssueDate = `${day}${suffix} ${month}, ${year}`;
+                    
+                    const formatCourseDate = (dateStr) => {
+                        if (!dateStr) return 'TBA';
+                        const d = new Date(dateStr);
+                        if (isNaN(d.getTime())) return dateStr.toUpperCase();
+                        const dy = d.getDate();
+                        const mth = d.toLocaleString("en-GB", { month: "long" });
+                        const yr = d.getFullYear();
+                        const sfx = dy > 3 && dy < 21 ? 'th' : ['st', 'nd', 'rd'][dy % 10 - 1] || 'th';
+                        return `${dy}${sfx} ${mth}, ${yr}`;
+                    };
+
+                    const fathersName = student.fatherName || '';
+                    const mothersName = student.motherName || '';
+                    const hasFather = fathersName && fathersName.toUpperCase() !== 'N/A';
+                    const hasMother = mothersName && mothersName.toUpperCase() !== 'N/A';
+                    
+                    let pronoun = "SON OF";
+                    if (student.gender && student.gender.toLowerCase() === 'female') {
+                        pronoun = "DAUGHTER OF";
+                    }
+                    
+                    let line1 = "";
+                    if (hasFather && hasMother) {
+                        line1 = `${pronoun} ${fathersName.toUpperCase()} & ${mothersName.toUpperCase()} HAS SUCCESSFULLY`;
+                    } else if (hasFather) {
+                        line1 = `${pronoun} ${fathersName.toUpperCase()} HAS SUCCESSFULLY`;
+                    } else if (hasMother) {
+                        line1 = `${pronoun} ${mothersName.toUpperCase()} HAS SUCCESSFULLY`;
+                    } else {
+                        line1 = `HAS SUCCESSFULLY`;
+                    }
+                    
+                    const line2 = `COMPLETED THE ${(student.course || '').toUpperCase()} COURSE HELD ON`;
+                    const line3 = `${formatCourseDate(batchObj ? batchObj.startDate : '')} TO ${formatCourseDate(batchObj ? batchObj.endDate : '')} AT EDIZ IT INSTITUTE`;
+
+                    const origin = window.location.origin;
+                    let verifyURL = '';
+                    if (origin === 'null' || !origin || origin.startsWith('file')) {
+                        verifyURL = 'verify.html?verify=' + student.id;
+                    } else {
+                        const basePath = window.location.pathname.replace('index.html', '').replace('verify.html', '');
+                        verifyURL = origin + (basePath.endsWith('/') ? basePath : basePath + '/') + 'verify.html?verify=' + student.id;
+                    }
+                    const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=${encodeURIComponent(verifyURL)}`;
+
+                    const coordinator = student.coordinator || "Mahi Rahman";
+                    let coordinatorSignPath = "Certificate/mahi-signature.png";
+                    if (coordinator.toLowerCase().includes("tariq")) {
+                        coordinatorSignPath = "Certificate/tariqsign.png";
+                    }
+                    
+                    let coordinatorTitle = "Instructor";
+                    let rightSideSubtitle = (student.course || '').toUpperCase();
+                    if (coordinator.toLowerCase().includes("mahi")) {
+                        coordinatorTitle = "Founder and CEO";
+                        rightSideSubtitle = "EDIZ IT INSTITUTE";
+                    }
+
+                    let replacedSvg = '';
+                    if (window.certificateSVGTemplate) {
+                        replacedSvg = window.certificateSVGTemplate
+                            .replace(/__NAME__/g, student.name.toUpperCase())
+                            .replace(/__ID__/g, student.id)
+                            .replace(/__ISSUE_DATE__/g, formattedIssueDate)
+                            .replace(/__LINE1__/g, line1)
+                            .replace(/__LINE2__/g, line2)
+                            .replace(/__LINE3__/g, line3)
+                            .replace(/__QR_CODE__/g, qrUrl)
+                            .replace(/__SIGNATURE__/g, coordinatorSignPath)
+                            .replace(/\/mijanursign.png/g, 'Certificate/mijanursign.png')
+                            .replace(/\.\/training.png/g, 'Certificate/training.png')
+                            .replace(/<text id="co-ordinator-title"[^>]*>.*?<\/text>/, `<text id="co-ordinator-title" x="515" y="500" font-size="9" fill="#000" text-anchor="middle">${coordinatorTitle}</text>`)
+                            .replace(/<text id="program_name"[^>]*>.*?<\/text>/, `<text id="program_name" x="515" y="511" font-size="9" fill="#000" text-anchor="middle">${rightSideSubtitle}</text>`)
+                            .replace(/<text id="co-ordinator"[^>]*>.*?<\/text>/, `<text id="co-ordinator" x="515" y="488" font-size="10" fill="#000" text-anchor="middle" font-weight="bold">${coordinator}</text>`);
+                    }
+
                     certFooterHTML = `
                         <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-color); padding-top: 1rem; width: 100%; grid-column: 1 / -1;">
                             <span style="color: var(--success); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.35rem;">
-                                <i class="fa-solid fa-circle-check"></i> Certificate is ready!
+                                <i class="fa-solid fa-circle-check"></i> Certificate is verified!
                             </span>
                             <button class="btn btn-primary" onclick="printStudentCertificate('${student.id}')" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">
-                                <i class="fa-solid fa-print"></i> Print Digital Certificate
+                                <i class="fa-solid fa-print"></i> Print or Download PDF
                             </button>
                         </div>
+                        
+                        ${replacedSvg ? `
+                        <div class="certificate-preview" style="margin-top: 1.5rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; background: #fff; width: 100%; grid-column: 1 / -1; box-shadow: var(--shadow-md);">
+                            <div style="background: var(--surface); padding: 0.75rem 1rem; border-bottom: 1px solid var(--border-color); font-weight: 600; font-size: 0.85rem; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fa-solid fa-eye" style="color: var(--primary);"></i> Online Certificate Preview
+                            </div>
+                            <div style="padding: 1rem; display: flex; justify-content: center; align-items: center; overflow-x: auto; background: #f8fafc;">
+                                <div style="width: 100%; max-width: 800px; aspect-ratio: 297/210; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); background: #fff;">
+                                    ${replacedSvg}
+                                </div>
+                            </div>
+                        </div>
+                        ` : ''}
                     `;
                 } else {
                     certFooterHTML = `
@@ -494,6 +717,14 @@ function setupVerificationPortal() {
             }).join('');
             
             verifyResultContainer.innerHTML = htmlContent;
+            
+            // Show verification modal popup
+            const verifyModal = document.getElementById('verification-modal');
+            const verifyModalBody = document.getElementById('verification-modal-body');
+            if (verifyModal && verifyModalBody) {
+                verifyModalBody.innerHTML = htmlContent;
+                verifyModal.classList.add('active');
+            }
         } else {
             verifyResultContainer.innerHTML = `
                 <div style="padding: 1.25rem; border-radius: var(--radius-md); background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.3); color: var(--danger); text-align: center; font-size: 0.9rem;">
@@ -520,11 +751,19 @@ function setupVerificationPortal() {
 
 // --- STUDENT SELF-PRINT CERTIFICATE ENGINE ---
 window.printStudentCertificate = function(studentId) {
-    const students = JSON.parse(localStorage.getItem('ediz_students')) || [];
-    const st = students.find(s => s.id === studentId);
+    let students = JSON.parse(localStorage.getItem('ediz_students')) || [];
+    let st = students.find(s => s.id === studentId);
+    
+    // Fallback to migratedDatabase
+    if (!st && window.migratedDatabase && window.migratedDatabase.students) {
+        st = window.migratedDatabase.students.find(s => s.id === studentId);
+    }
     if (!st) return;
 
-    const settings = JSON.parse(localStorage.getItem('ediz_settings')) || {};
+    let settings = JSON.parse(localStorage.getItem('ediz_settings')) || {};
+    if (Object.keys(settings).length === 0 && window.migratedDatabase && window.migratedDatabase.settings) {
+        settings = window.migratedDatabase.settings;
+    }
     const batches = settings.batches || [];
     const batchObj = batches.find(b => b.course === st.course && b.name === st.batch);
 
@@ -532,99 +771,178 @@ window.printStudentCertificate = function(studentId) {
         if (!dateStr) return 'TBA';
         const date = new Date(dateStr);
         if (isNaN(date.getTime())) return dateStr.toUpperCase();
-        const day = String(date.getDate()).padStart(2, '0');
-        const monthNames = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
-        const month = monthNames[date.getMonth()];
+        const day = date.getDate();
+        const month = date.toLocaleString("en-GB", { month: "long" });
         const year = date.getFullYear();
-        return `${day} ${month} ${year}`;
-    }
-
-    function formatIssueDate(dateStr) {
-        if (!dateStr) return 'TBA';
-        const date = new Date(dateStr);
-        if (isNaN(date.getTime())) return dateStr;
-        const day = String(date.getDate()).padStart(2, '0');
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const year = date.getFullYear();
-        return `${day}/${month}/${year}`;
+        const suffix = day > 3 && day < 21 ? 'th' : ['st', 'nd', 'rd'][day % 10 - 1] || 'th';
+        return `${day}${suffix} ${month}, ${year}`;
     }
 
     const origin = window.location.origin;
     let verifyURL = '';
     if (origin === 'null' || !origin || origin.startsWith('file')) {
-        verifyURL = 'https://edizit.com/index.html?verify=' + st.id;
+        verifyURL = 'verify.html?verify=' + st.id;
     } else {
-        verifyURL = origin + window.location.pathname.split('?')[0] + '?verify=' + st.id;
+        const basePath = window.location.pathname.replace('index.html', '').replace('verify.html', '');
+        verifyURL = origin + (basePath.endsWith('/') ? basePath : basePath + '/') + 'verify.html?verify=' + st.id;
     }
 
     const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=${encodeURIComponent(verifyURL)}`;
 
-    const printHTML = `
-        <style>
-            @page {
-                size: A4 landscape;
-                margin: 0;
-            }
-            body {
-                background: #fff !important;
-            }
-            @media print {
-                body > :not(#print-zone) {
-                    display: none !important;
-                }
-                html, body {
-                    width: 297mm;
-                    height: 210mm;
-                    background: #fff !important;
-                }
-                #print-zone {
-                    display: block !important;
-                    position: static !important;
-                    width: 297mm !important;
-                    height: 210mm !important;
-                    background: #fff !important;
-                }
-                .certificate-print {
-                    border: none !important;
-                    box-shadow: none !important;
-                }
-            }
-        </style>
-        <div class="certificate-print">
-            <div class="cert-dyn-id">${st.id}</div>
-            <div class="cert-dyn-issue-date">${formatIssueDate(st.certificateDate)}</div>
-            <div class="cert-dyn-qr">
-                <img src="${qrUrl}" class="cert-dyn-qr-image">
-            </div>
-            <div class="cert-dyn-name">${st.name}</div>
-            <div class="cert-dyn-description">
-                SON/DAUGHTER OF <strong>${(st.fatherName || '---').toUpperCase()}</strong> & <strong>${(st.motherName || '---').toUpperCase()}</strong> HAS SUCCESSFULLY COMPLETED THE <strong>${st.course.toUpperCase()}</strong> COURSE HELD ON <strong>${formatCourseDate(batchObj ? batchObj.startDate : '2026-06-01')} TO ${formatCourseDate(batchObj ? batchObj.endDate : '2026-08-31')}</strong> AT EDIZ IT INSTITUTE.
-            </div>
-        </div>
-    `;
+    // Get descriptive lines
+    const fathersName = st.fatherName || '';
+    const mothersName = st.motherName || '';
+    const hasFather = fathersName && fathersName.toUpperCase() !== 'N/A';
+    const hasMother = mothersName && mothersName.toUpperCase() !== 'N/A';
+    
+    let pronoun = "SON OF";
+    if (st.gender && st.gender.toLowerCase() === 'female') {
+        pronoun = "DAUGHTER OF";
+    }
+    
+    let line1 = "";
+    if (hasFather && hasMother) {
+        line1 = `${pronoun} ${fathersName.toUpperCase()} & ${mothersName.toUpperCase()} HAS SUCCESSFULLY`;
+    } else if (hasFather) {
+        line1 = `${pronoun} ${fathersName.toUpperCase()} HAS SUCCESSFULLY`;
+    } else if (hasMother) {
+        line1 = `${pronoun} ${mothersName.toUpperCase()} HAS SUCCESSFULLY`;
+    } else {
+        line1 = `HAS SUCCESSFULLY`;
+    }
+    
+    const line2 = `COMPLETED THE ${(st.course || '').toUpperCase()} COURSE HELD ON`;
+    const line3 = `${formatCourseDate(batchObj ? batchObj.startDate : '')} TO ${formatCourseDate(batchObj ? batchObj.endDate : '')} AT EDIZ IT INSTITUTE`;
+
+    const coordinator = st.coordinator || "Mahi Rahman";
+    let coordinatorSignPath = "Certificate/mahi-signature.png";
+    if (coordinator.toLowerCase().includes("tariq")) {
+        coordinatorSignPath = "Certificate/tariqsign.png";
+    }
 
     const printZone = document.getElementById('print-zone');
-    if (printZone) {
-        // Wait for both the background image and QR code to preload in memory
-        const bgPromise = new Promise((resolve) => {
+    if (!printZone) return;
+
+    function doPrint(svgTemplate) {
+        let coordinatorTitle = "Instructor";
+        let rightSideSubtitle = (st.course || '').toUpperCase();
+        if (coordinator.toLowerCase().includes("mahi")) {
+            coordinatorTitle = "Founder and CEO";
+            rightSideSubtitle = "EDIZ IT INSTITUTE";
+        }
+
+        // Replace placeholders in SVG
+        let replacedSvg = svgTemplate
+            .replace(/__NAME__/g, st.name.toUpperCase())
+            .replace(/__ID__/g, st.id)
+            .replace(/__ISSUE_DATE__/g, formatCourseDate(st.certificateDate))
+            .replace(/__LINE1__/g, line1)
+            .replace(/__LINE2__/g, line2)
+            .replace(/__LINE3__/g, line3)
+            .replace(/__QR_CODE__/g, qrUrl)
+            .replace(/__SIGNATURE__/g, coordinatorSignPath)
+            .replace(/\/mijanursign.png/g, 'Certificate/mijanursign.png')
+            .replace(/\.\/training.png/g, 'Certificate/training.png')
+            .replace(/<text id="co-ordinator-title"[^>]*>.*?<\/text>/, `<text id="co-ordinator-title" x="515" y="500" font-size="9" fill="#000" text-anchor="middle">${coordinatorTitle}</text>`)
+            .replace(/<text id="program_name"[^>]*>.*?<\/text>/, `<text id="program_name" x="515" y="511" font-size="9" fill="#000" text-anchor="middle">${rightSideSubtitle}</text>`)
+            .replace(/<text id="co-ordinator"[^>]*>.*?<\/text>/, `<text id="co-ordinator" x="515" y="488" font-size="10" fill="#000" text-anchor="middle" font-weight="bold">${coordinator}</text>`);
+
+        const printHTML = `
+            <style>
+                @page {
+                    size: A4 landscape;
+                    margin: 0;
+                }
+                body {
+                    background: #fff !important;
+                }
+                @media print {
+                    body > :not(#print-zone) {
+                        display: none !important;
+                    }
+                    html, body {
+                        width: 297mm;
+                        height: 210mm;
+                        background: #fff !important;
+                        overflow: hidden;
+                    }
+                    #print-zone {
+                        display: block !important;
+                        position: static !important;
+                        width: 297mm !important;
+                        height: 210mm !important;
+                        background: #fff !important;
+                    }
+                }
+                .certificate-container {
+                    width: 297mm;
+                    height: 210mm;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: #fff;
+                }
+                .certificate-container svg {
+                    width: 297mm;
+                    height: 210mm;
+                    display: block;
+                }
+            </style>
+            <div class="certificate-container">
+                ${replacedSvg}
+            </div>
+        `;
+
+        // Preload images to prevent printing blank components
+        const mijanurPromise = new Promise((resolve) => {
             const img = new Image();
-            img.onload = () => resolve();
-            img.onerror = () => resolve();
-            img.src = 'Certificate/Student Certificate.png';
+            img.onload = resolve;
+            img.onerror = resolve;
+            img.src = 'Certificate/mijanursign.png';
+        });
+
+        const coordPromise = new Promise((resolve) => {
+            const img = new Image();
+            img.onload = resolve;
+            img.onerror = resolve;
+            img.src = coordinatorSignPath;
+        });
+
+        const trainingPromise = new Promise((resolve) => {
+            const img = new Image();
+            img.onload = resolve;
+            img.onerror = resolve;
+            img.src = 'Certificate/training.png';
         });
 
         const qrPromise = new Promise((resolve) => {
             const img = new Image();
-            img.onload = () => resolve();
-            img.onerror = () => resolve();
+            img.onload = resolve;
+            img.onerror = resolve;
             img.src = qrUrl;
         });
 
-        Promise.all([bgPromise, qrPromise]).then(() => {
+        Promise.all([mijanurPromise, coordPromise, trainingPromise, qrPromise]).then(() => {
             printZone.innerHTML = printHTML;
             setTimeout(() => {
                 window.print();
             }, 250);
         });
+    }
+
+    if (window.certificateSVGTemplate) {
+        doPrint(window.certificateSVGTemplate);
+    } else {
+        // Fallback fetch if not preloaded yet
+        fetch('Certificate/certificate.svg')
+            .then(res => res.text())
+            .then(text => {
+                window.certificateSVGTemplate = text;
+                doPrint(text);
+            })
+            .catch(err => {
+                console.error("Failed to load certificate template:", err);
+                alert("Failed to print certificate: template could not be loaded.");
+            });
     }
 };
