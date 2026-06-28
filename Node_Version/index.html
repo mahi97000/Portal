@@ -30,22 +30,40 @@
                 <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Input your credentials to access the management dashboard.</p>
                 
                 <form id="auth-form">
-                    <div class="form-group" style="text-align: left;">
-                        <label for="auth-email">Email Address</label>
-                        <input type="email" id="auth-email" class="form-control" placeholder="e.g. admin@edizit.com" required>
-                    </div>
-                    <div class="form-group" style="text-align: left;">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <label for="auth-password">Password</label>
-                            <a href="#" id="forgot-pwd-link" style="font-size: 0.75rem; color: var(--primary); font-weight: 600;">Forgot Password?</a>
+                    <!-- Credentials Inputs -->
+                    <div id="auth-credentials-section">
+                        <div class="form-group" style="text-align: left;">
+                            <label for="auth-email">Email Address</label>
+                            <input type="email" id="auth-email" class="form-control" placeholder="e.g. admin@edizit.com" required>
                         </div>
-                        <div style="position: relative;">
-                            <input type="password" id="auth-password" autocomplete="new-password" class="form-control" placeholder="••••••••" required style="padding-right: 2.5rem;">
-                            <i id="toggle-auth-pwd" class="fa-solid fa-eye" style="position: absolute; right: 15px; top: 12px; cursor: pointer; color: var(--text-muted);"></i>
+                        <div class="form-group" style="text-align: left;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <label for="auth-password">Password</label>
+                                <a href="#" id="forgot-pwd-link" style="font-size: 0.75rem; color: var(--primary); font-weight: 600;">Forgot Password?</a>
+                            </div>
+                            <div style="position: relative;">
+                                <input type="password" id="auth-password" autocomplete="new-password" class="form-control" placeholder="••••••••" required style="padding-right: 2.5rem;">
+                                <i id="toggle-auth-pwd" class="fa-solid fa-eye" style="position: absolute; right: 15px; top: 12px; cursor: pointer; color: var(--text-muted);"></i>
+                            </div>
+                            <span id="auth-error" style="color: var(--danger); font-size: 0.75rem; font-weight: 600; margin-top: 0.5rem; display: none;"><i class="fa-solid fa-triangle-exclamation"></i> Invalid email or password.</span>
                         </div>
-                        <span id="auth-error" style="color: var(--danger); font-size: 0.75rem; font-weight: 600; margin-top: 0.5rem; display: none;"><i class="fa-solid fa-triangle-exclamation"></i> Invalid email or password.</span>
+                        <button type="submit" id="auth-submit-btn" class="btn btn-primary" style="width: 100%;"><i class="fa-solid fa-unlock-keyhole"></i> Unlock Portal</button>
+                        <button type="button" id="dev-bypass-btn" class="btn btn-secondary" style="width: 100%; margin-top: 1rem; display: none; justify-content: center; background: rgba(255, 255, 255, 0.05); border: 1px dashed var(--border-color); color: var(--text-primary);"><i class="fa-solid fa-code"></i> Dev Auto-Login (Bypass)</button>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fa-solid fa-unlock-keyhole"></i> Unlock Portal</button>
+
+                    <!-- OTP Verification Inputs -->
+                    <div id="auth-otp-section" style="display: none;">
+                        <div class="form-group" style="text-align: left;">
+                            <label for="auth-otp">Enter 6-Digit OTP Code (ওটিপি কোড)</label>
+                            <input type="text" id="auth-otp" class="form-control" placeholder="e.g. 123456" maxlength="6" style="text-align: center; letter-spacing: 0.3rem; font-size: 1.25rem; font-weight: bold;">
+                            <span id="otp-error" style="color: var(--danger); font-size: 0.75rem; font-weight: 600; margin-top: 0.5rem; display: none;"><i class="fa-solid fa-triangle-exclamation"></i> Incorrect verification code.</span>
+                            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.6rem; text-align: center; line-height: 1.4;">
+                                Verification code sent to: <span id="otp-phone-masked" style="font-weight: 700; color: var(--primary);">017*****897</span>
+                            </div>
+                        </div>
+                        <button type="button" id="auth-verify-btn" class="btn btn-success" style="width: 100%; justify-content: center; margin-bottom: 0.75rem;"><i class="fa-solid fa-shield-check"></i> Verify & Login</button>
+                        <button type="button" id="auth-back-btn" class="btn btn-secondary" style="width: 100%; justify-content: center;"><i class="fa-solid fa-arrow-left"></i> Back to Login</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -91,6 +109,9 @@
                 </li>
                 <li class="sidebar-item" data-tab="inquiries">
                     <a href="#inquiries"><i class="fa-solid fa-calendar-check"></i> <span>Inquiries & Tasks</span></a>
+                </li>
+                <li class="sidebar-item" data-tab="teacher-payouts">
+                    <a href="#teacher-payouts"><i class="fa-solid fa-wallet"></i> <span>Teacher Payouts</span></a>
                 </li>
                 <li class="sidebar-item" data-tab="settings">
                     <a href="#settings"><i class="fa-solid fa-sliders"></i> <span>Settings</span></a>
@@ -799,6 +820,9 @@
                             <div><i class="fa-solid fa-sack-dollar" style="color: var(--success);"></i> <strong>Net Income:</strong> <span id="info-batch-income">---</span></div>
                             <div><i class="fa-solid fa-hand-holding-dollar" style="color: var(--danger);"></i> <strong>Total Due:</strong> <span id="info-batch-due">---</span></div>
                             <div><i class="fa-solid fa-chart-line" style="color: var(--primary);"></i> <strong>Estimated Income:</strong> <span id="info-batch-est">---</span></div>
+                            <div><i class="fa-solid fa-chalkboard-user" style="color: var(--primary);"></i> <strong>Teacher:</strong> <span id="info-batch-teacher" style="font-weight: 600;">---</span></div>
+                            <div><i class="fa-solid fa-percent" style="color: var(--primary);"></i> <strong>Teacher Share:</strong> <span id="info-batch-teacher-pct">0%</span></div>
+                            <div><i class="fa-solid fa-wallet" style="color: var(--success);"></i> <strong>Teacher Payout:</strong> <span id="info-batch-teacher-payout" style="color: var(--success); font-weight: 700;">৳0</span></div>
                             <div style="grid-column: span 3; display: flex; justify-content: flex-end; margin-top: 0.25rem; border-top: 1px dashed var(--border-color); padding-top: 0.5rem;">
                                 <button type="button" class="btn btn-secondary btn-sm" id="edit-batch-info-btn" style="padding: 0.35rem 0.75rem; font-size: 0.8rem; height: auto; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-pen-to-square"></i> Edit Batch Details (ব্যাচ এডিট করুন)</button>
                             </div>
@@ -1322,6 +1346,98 @@
                 </div>
             </section>
 
+            <!-- --- TAB VIEW: TEACHER PAYOUTS --- -->
+            <section id="tab-teacher-payouts" class="tab-view" style="display: none; padding: 0.5rem 0 2rem 0;">
+                <div class="metrics-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 2rem;">
+                    <div class="metric-card glass-panel" style="padding: 1.25rem; border-radius: var(--radius-lg); position: relative; border: 1px solid var(--border-color);">
+                        <span style="font-size: 0.82rem; color: var(--text-muted); font-weight: 500;">Assigned Batches (মোট ব্যাচ)</span>
+                        <h3 id="metric-teacher-batches" style="margin-top: 0.25rem; font-size: 1.6rem; font-weight: 700;">0</h3>
+                        <i class="fa-solid fa-chalkboard-user" style="position: absolute; right: 1.25rem; bottom: 1.25rem; font-size: 1.6rem; color: var(--primary); opacity: 0.15;"></i>
+                    </div>
+                    <div class="metric-card glass-panel" style="padding: 1.25rem; border-radius: var(--radius-lg); position: relative; border: 1px solid var(--border-color);">
+                        <span style="font-size: 0.82rem; color: var(--text-muted); font-weight: 500;">Net Batch Income (মোট ইনকাম)</span>
+                        <h3 id="metric-teacher-net-income" style="margin-top: 0.25rem; font-size: 1.6rem; font-weight: 700;">৳0</h3>
+                        <i class="fa-solid fa-sack-dollar" style="position: absolute; right: 1.25rem; bottom: 1.25rem; font-size: 1.6rem; color: var(--success); opacity: 0.15;"></i>
+                    </div>
+                    <div class="metric-card glass-panel" style="padding: 1.25rem; border-radius: var(--radius-lg); position: relative; border: 1px solid var(--border-color);">
+                        <span style="font-size: 0.82rem; color: var(--text-muted); font-weight: 500;">Total Earned (মোট প্রাপ্য)</span>
+                        <h3 id="metric-teacher-earnings" style="margin-top: 0.25rem; font-size: 1.6rem; font-weight: 700; color: var(--success);">৳0</h3>
+                        <i class="fa-solid fa-wallet" style="position: absolute; right: 1.25rem; bottom: 1.25rem; font-size: 1.6rem; color: var(--success); opacity: 0.15;"></i>
+                    </div>
+                    <div class="metric-card glass-panel" style="padding: 1.25rem; border-radius: var(--radius-lg); position: relative; border: 1px solid var(--border-color);">
+                        <span style="font-size: 0.82rem; color: var(--text-muted); font-weight: 500;">Total Paid (মোট পরিশোধিত)</span>
+                        <h3 id="metric-teacher-paid" style="margin-top: 0.25rem; font-size: 1.6rem; font-weight: 700; color: var(--primary);">৳0</h3>
+                        <i class="fa-solid fa-hand-holding-dollar" style="position: absolute; right: 1.25rem; bottom: 1.25rem; font-size: 1.6rem; color: var(--primary); opacity: 0.15;"></i>
+                    </div>
+                    <div class="metric-card glass-panel" style="padding: 1.25rem; border-radius: var(--radius-lg); position: relative; border: 1px solid var(--border-color);">
+                        <span style="font-size: 0.82rem; color: var(--text-muted); font-weight: 500;">Balance Due (অবশিষ্ট বকেয়া)</span>
+                        <h3 id="metric-teacher-due" style="margin-top: 0.25rem; font-size: 1.6rem; font-weight: 700; color: var(--danger);">৳0</h3>
+                        <i class="fa-solid fa-file-invoice-dollar" style="position: absolute; right: 1.25rem; bottom: 1.25rem; font-size: 1.6rem; color: var(--danger); opacity: 0.15;"></i>
+                    </div>
+                </div>
+
+                <div class="glass-card" style="padding: 2rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                        <h3>Teacher Share Breakdown (শিক্ষক লভ্যাংশ বিবরণ)</h3>
+                        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                            <label for="filter-teacher-select" style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Teacher:</label>
+                            <select id="filter-teacher-select" class="form-control" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; width: auto; min-width: 160px; height: auto;">
+                                <option value="">-- All Teachers --</option>
+                            </select>
+                            <button class="btn btn-primary" id="btn-record-teacher-payout" style="padding: 0.45rem 1rem; font-size: 0.85rem; height: auto;"><i class="fa-solid fa-hand-holding-dollar"></i> Record Payout (পরিশোধ করুন)</button>
+                        </div>
+                    </div>
+                    
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Teacher Name</th>
+                                    <th>Course & Batch</th>
+                                    <th>Schedule & Time</th>
+                                    <th>Total Enrolled</th>
+                                    <th>Net Income (৳)</th>
+                                    <th>Share (%)</th>
+                                    <th>Earnings (৳)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="teacher-payouts-tbody">
+                                <tr>
+                                    <td colspan="7" style="text-align: center; color: var(--text-muted);">No records found.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="glass-card" style="padding: 2rem; margin-top: 2rem;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3>Payment History (পরিশোধের ইতিহাস)</h3>
+                    </div>
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Payout ID</th>
+                                    <th>Teacher Name</th>
+                                    <th>Payment Date</th>
+                                    <th>Payment Method</th>
+                                    <th>Amount (৳)</th>
+                                    <th>Recorded By</th>
+                                    <th>Status</th>
+                                    <th>Remarks</th>
+                                </tr>
+                            </thead>
+                            <tbody id="teacher-payments-history-tbody">
+                                <tr>
+                                    <td colspan="8" style="text-align: center; color: var(--text-muted);">No payment history found.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
             <!-- --- TAB VIEW: SETTINGS --- -->
             <section id="tab-settings" class="tab-view" style="display: none;">
                 <div class="settings-grid" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2.5rem;">
@@ -1495,6 +1611,45 @@
                                     <tbody id="settings-sms-history-tbody">
                                         <tr>
                                             <td colspan="4" style="text-align: center; color: var(--text-muted); padding: 1rem;">No SMS campaign history.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Teachers Directory Card -->
+                        <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;" id="teachers-management-card">
+                            <h3 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-chalkboard-user"></i> Teachers Directory (শিক্ষক ডিরেক্টরি)</h3>
+                            <form id="add-teacher-form" style="margin-bottom: 1.5rem; border-bottom: 1px dashed var(--border-color); padding-bottom: 1.5rem;">
+                                <div class="form-group">
+                                    <label for="teacher-name-input">Teacher Name (শিক্ষকের নাম)</label>
+                                    <input type="text" id="teacher-name-input" class="form-control" placeholder="e.g. Hasan Ali" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="teacher-phone-input">Phone Number (মোবাইল নম্বর)</label>
+                                    <input type="text" id="teacher-phone-input" class="form-control" placeholder="e.g. 017XXXXXXXX" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="teacher-email-input">Email Address (ঐচ্ছিক)</label>
+                                    <input type="email" id="teacher-email-input" class="form-control" placeholder="e.g. hasan@ediz.com">
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fa-solid fa-plus"></i> Add Teacher Account</button>
+                            </form>
+
+                            <h4 style="margin-bottom: 0.75rem;">Active Teachers</h4>
+                            <div class="data-table-container" style="max-height: 200px; overflow-y: auto;">
+                                <table class="data-table" style="font-size: 0.85rem;">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Phone</th>
+                                            <th>Email</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="settings-teachers-tbody">
+                                        <tr>
+                                            <td colspan="4" style="text-align: center; color: var(--text-muted); padding: 1rem;">No teachers registered.</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1902,6 +2057,19 @@
                         <div class="form-group">
                             <label for="batch-discount">Discount (৳)</label>
                             <input type="number" id="batch-discount" class="form-control" value="0" required>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label for="batch-teacher">Assign Teacher (শিক্ষক নির্বাচন)</label>
+                            <select id="batch-teacher" class="form-control">
+                                <option value="">-- No Teacher Assigned --</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="batch-teacher-pct">Teacher Share (%)</label>
+                            <input type="number" id="batch-teacher-pct" class="form-control" placeholder="30" min="0" max="100" value="30">
                         </div>
                     </div>
 
@@ -2374,6 +2542,53 @@
                 <div style="margin-top: 1rem; text-align: right;">
                     <button class="btn btn-secondary modal-close-btn">Close</button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- TEACHER PAYOUT RECORD MODAL --- -->
+    <div id="teacher-payout-modal" class="modal">
+        <div class="modal-backdrop" onclick="closeTeacherPayoutModal()"></div>
+        <div class="modal-container glass-panel" style="max-width: 480px; width: 95%;">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-hand-holding-dollar"></i> Record Teacher Payout</h3>
+                <button class="modal-close" onclick="closeTeacherPayoutModal()">&times;</button>
+            </div>
+            <div class="modal-body" style="padding: 1.5rem;">
+                <form id="teacher-payout-form">
+                    <div class="form-group">
+                        <label for="payout-teacher-select">Select Teacher (শিক্ষক নির্বাচন)</label>
+                        <select id="payout-teacher-select" class="form-control" required>
+                            <option value="">-- Select Teacher --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="payout-amount-input">Amount (পরিশোধের পরিমাণ)</label>
+                        <input type="number" id="payout-amount-input" class="form-control" min="1" placeholder="Enter Amount in ৳" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="payout-date-input">Payment Date (তারিখ)</label>
+                        <input type="date" id="payout-date-input" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="payout-method-select">Payment Method (মাধ্যম)</label>
+                        <select id="payout-method-select" class="form-control" required>
+                            <option value="Cash">Cash</option>
+                            <option value="Bkash">Bkash</option>
+                            <option value="Nagad">Nagad</option>
+                            <option value="Rocket">Rocket</option>
+                            <option value="Bank Transfer">Bank Transfer</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="payout-remarks-input">Remarks / Notes (মন্তব্য)</label>
+                        <input type="text" id="payout-remarks-input" class="form-control" placeholder="e.g., June payment, advance, etc.">
+                    </div>
+                    <div style="margin-top: 1.5rem; display: flex; justify-content: flex-end; gap: 0.75rem;">
+                        <button type="button" class="btn btn-secondary" onclick="closeTeacherPayoutModal()">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="payout-submit-btn"><i class="fa-solid fa-save"></i> Save Payment</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

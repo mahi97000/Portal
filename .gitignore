@@ -12,3 +12,7 @@
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# Node Dependencies
+node_modules/
+package-lock.json

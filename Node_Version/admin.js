@@ -223,6 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
     defaultCollectorInputs();
     setupHandoverBoardFeature();
     setupDuesExplorerListeners();
+    setupTeacherPayoutsFeature();
 
     // 5. New Requirements Listeners & Renders
     setupGlobalSearch();
@@ -260,14 +261,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // --- AUTHENTICATION GATE ---
 function setupAuthentication() {
-    authForm.addEventListener('submit', (e) => {
+    const authCredentialsSection = document.getElementById('auth-credentials-section');
+    const authOtpSection = document.getElementById('auth-otp-section');
+    const authOtpInput = document.getElementById('auth-otp');
+    const otpError = document.getElementById('otp-error');
+    const otpPhoneMasked = document.getElementById('otp-phone-masked');
+    const authVerifyBtn = document.getElementById('auth-verify-btn');
+    const authBackBtn = document.getElementById('auth-back-btn');
+
+    let currentOtp = null;
+    let pendingUser = null;
+
+    authForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const emailEl = document.getElementById('auth-email');
         const enteredEmail = emailEl ? emailEl.value.trim() : 'owner@ediz.com';
         const enteredPassword = authPassword.value;
 
         // Retrieve users from settings database
-        const users = settings.users || [];
+        let users = settings.users || [];
         let matchedUser = users.find(u => u.email === enteredEmail && u.password === enteredPassword);
 
         // Fallback check if credentials match owner@ediz.com and default adminPassword (or admin123)
@@ -283,6 +295,26 @@ function setupAuthentication() {
                 };
             }
         }
+
+        // If still not matched, fetch fresh database from server to update local storage
+        if (!matchedUser) {
+            try {
+                const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+                const fetchUrl = isLocalhost ? 'database.json' : 'api.php';
+                const res = await fetch(fetchUrl);
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data && data.settings) {
+                        settings = data.settings;
+                        localStorage.setItem('ediz_settings', JSON.stringify(settings));
+                        users = settings.users || [];
+                        matchedUser = users.find(u => u.email === enteredEmail && u.password === enteredPassword);
+                    }
+                }
+            } catch (err) {
+                console.warn("Failed to fetch fresh settings during login:", err);
+            }
+        }
         
         // Auto initialize settings users if missing
         if ((!settings.users || settings.users.length === 0) && matchedUser) {
@@ -295,23 +327,105 @@ function setupAuthentication() {
         }
 
         if (matchedUser) {
-            sessionStorage.setItem('ediz_admin_auth', 'true');
-            sessionStorage.setItem('ediz_active_user', JSON.stringify(matchedUser));
             authError.style.display = 'none';
-            unlockDashboard();
-            applyUserPermissions(matchedUser);
             
-            // Restore active tab
-            const savedTab = localStorage.getItem('ediz_active_tab') || 'dashboard';
-            const tabBtn = document.querySelector(`.sidebar-item[data-tab="${savedTab}"]`);
-            if (tabBtn) {
-                tabBtn.click();
+            const targetPhone = matchedUser.phone || settings.phone;
+            const hasSmsConfig = settings.smsConfig?.apiKey && settings.smsConfig?.senderId;
+
+            // If SMS is configured and user/institute has a phone number, trigger OTP
+            if (hasSmsConfig && targetPhone) {
+                const otpCode = Math.floor(100000 + Math.random() * 900000).toString();
+                currentOtp = otpCode;
+                pendingUser = matchedUser;
+
+                // Send OTP via SMS
+                const otpMsg = `EDIZ IT Portal verification code: ${otpCode}. Valid for 3 minutes.`;
+                sendGeneralSms(targetPhone, otpMsg, "Portal Login OTP Verification");
+
+                // Mask the phone
+                const maskPhone = (ph) => {
+                    const s = String(ph || '').trim();
+                    if (s.length < 6) return s;
+                    return s.substring(0, 3) + '*****' + s.substring(s.length - 3);
+                };
+                if (otpPhoneMasked) {
+                    otpPhoneMasked.innerText = maskPhone(targetPhone);
+                }
+
+                // Show OTP view
+                if (authCredentialsSection) authCredentialsSection.style.display = 'none';
+                if (authOtpSection) authOtpSection.style.display = 'block';
+                if (authOtpInput) {
+                    authOtpInput.value = '';
+                    authOtpInput.focus();
+                }
+                if (otpError) otpError.style.display = 'none';
+            } else {
+                // Bypass OTP if SMS configuration or phone is missing
+                completeLogin(matchedUser);
             }
         } else {
             authError.style.display = 'block';
             authPassword.value = '';
         }
     });
+
+    function completeLogin(user) {
+        sessionStorage.setItem('ediz_admin_auth', 'true');
+        sessionStorage.setItem('ediz_active_user', JSON.stringify(user));
+        unlockDashboard();
+        applyUserPermissions(user);
+        
+        // Restore active tab
+        const savedTab = localStorage.getItem('ediz_active_tab') || 'dashboard';
+        const tabBtn = document.querySelector(`.sidebar-item[data-tab="${savedTab}"]`);
+        if (tabBtn) {
+            tabBtn.click();
+        }
+    }
+
+    if (authVerifyBtn) {
+        authVerifyBtn.addEventListener('click', () => {
+            const enteredOtp = authOtpInput ? authOtpInput.value.trim() : '';
+            if (enteredOtp && enteredOtp === currentOtp) {
+                if (otpError) otpError.style.display = 'none';
+                completeLogin(pendingUser);
+            } else {
+                if (otpError) otpError.style.display = 'block';
+                if (authOtpInput) {
+                    authOtpInput.value = '';
+                    authOtpInput.focus();
+                }
+            }
+        });
+    }
+
+    if (authBackBtn) {
+        authBackBtn.addEventListener('click', () => {
+            currentOtp = null;
+            pendingUser = null;
+            if (authCredentialsSection) authCredentialsSection.style.display = 'block';
+            if (authOtpSection) authOtpSection.style.display = 'none';
+            authPassword.value = '';
+            authPassword.focus();
+        });
+    }
+
+    const devBypassBtn = document.getElementById('dev-bypass-btn');
+    if (devBypassBtn && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
+        devBypassBtn.style.display = 'inline-flex';
+        devBypassBtn.addEventListener('click', () => {
+            const usersList = settings.users || [];
+            const ownerUser = usersList.find(u => u.role === 'Owner') || {
+                id: "USER-1",
+                email: "owner@ediz.com",
+                password: "admin123",
+                role: "Owner",
+                permissions: { canEdit: true, canDelete: true, canInvoice: true, canCert: true, canCreateBatch: true }
+            };
+            completeLogin(ownerUser);
+        });
+    }
 
     toggleAuthPwd.addEventListener('click', () => {
         const type = authPassword.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -327,6 +441,7 @@ function setupAuthentication() {
     if (logoutBtn) logoutBtn.addEventListener('click', handleLogout);
     const mobileLogoutBtn = document.getElementById('mobile-logout-btn');
     if (mobileLogoutBtn) mobileLogoutBtn.addEventListener('click', handleLogout);
+}
 
     // Dues Waiving Listeners (Admins/Owners only)
     if (waiveSubmitBtn) {
@@ -597,7 +712,6 @@ function setupAuthentication() {
             forgotPwdModal.classList.remove('active');
         });
     }
-}
 
 function unlockDashboard() {
     authGate.classList.remove('active');
@@ -838,6 +952,7 @@ function loadDatabase() {
     renderAllLists();
     renderSettingsBatches();
     renderSettingsStaff();
+    renderSettingsTeachers();
     renderSmsHistory();
     renderBooksTab();
     checkAndSendNextPaymentReminders();
@@ -878,6 +993,7 @@ function syncWithServer() {
                 renderAllLists();
                 renderSettingsBatches();
                 renderSettingsStaff();
+                renderSettingsTeachers();
                 renderSmsHistory();
                 renderBooksTab();
                 
@@ -919,6 +1035,7 @@ function saveDatabase() {
     renderAllLists();
     renderSettingsBatches();
     renderSettingsStaff();
+    renderSettingsTeachers();
     renderSmsHistory();
     renderBooksTab();
     
@@ -1138,6 +1255,10 @@ function setupTabSwitching() {
                 activeTabSubtitle.innerText = "Manage walk-in candidate leads, follow-up reminders, and manager tasks.";
                 renderInquiries();
                 renderTasks();
+            } else if (tabName === 'teacher-payouts') {
+                activeTabTitle.innerText = "Teacher Payouts Report";
+                activeTabSubtitle.innerText = "Track and calculate teacher earnings based on net batch incomes.";
+                renderTeacherPayouts();
             }
         });
     });
@@ -1171,6 +1292,7 @@ function renderAllLists() {
     renderInquiries();
     renderTasks();
     checkInquiryReminders();
+    renderTeacherPayouts();
     
     // Sync dashboard quick search if active
     const dbSearchInput = document.getElementById('dashboard-student-search');
@@ -2414,6 +2536,7 @@ function setupDataOperations() {
             
             // Refresh settings user directory
             renderSettingsStaff();
+            renderSettingsTeachers();
         });
     }
 
@@ -2533,7 +2656,39 @@ function setupDataOperations() {
             if (userPermsSection) userPermsSection.style.display = 'block'; // Reset display to default
             if (adminRecoveryFields) adminRecoveryFields.style.display = 'none'; // Reset display to default
             renderSettingsStaff(); // Update active users table
+            renderSettingsTeachers();
             alert(`Account for "${emailVal}" (${roleVal}) created successfully!`);
+        });
+    }
+
+    // Settings Add Teacher Account Save
+    const addTeacherForm = document.getElementById('add-teacher-form');
+    if (addTeacherForm) {
+        addTeacherForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nameVal = document.getElementById('teacher-name-input').value.trim();
+            const phoneVal = document.getElementById('teacher-phone-input').value.trim();
+            const emailVal = document.getElementById('teacher-email-input').value.trim();
+
+            if (!settings.teachers) settings.teachers = [];
+
+            if (settings.teachers.some(t => t.name.toLowerCase() === nameVal.toLowerCase())) {
+                alert(`Error: A teacher named "${nameVal}" already exists.`);
+                return;
+            }
+
+            const newTeacherId = `TCH-${Date.now()}`;
+            settings.teachers.push({
+                id: newTeacherId,
+                name: nameVal,
+                phone: phoneVal,
+                email: emailVal
+            });
+
+            saveDatabase();
+            addTeacherForm.reset();
+            renderSettingsTeachers();
+            alert(`Teacher "${nameVal}" added successfully!`);
         });
     }
 }
@@ -3923,8 +4078,75 @@ window.deleteStaff = function(email) {
         settings.users = settings.users.filter(u => u.email !== email);
         saveDatabase();
         renderSettingsStaff();
+        renderSettingsTeachers();
     }
 };
+
+// --- RENDER TEACHERS IN SETTINGS ---
+function renderSettingsTeachers() {
+    const tbody = document.getElementById('settings-teachers-tbody');
+    if (!tbody) return;
+
+    if (!settings.teachers) settings.teachers = [];
+    const teachers = settings.teachers;
+
+    if (teachers.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: var(--text-muted); padding: 1rem;">No teachers registered. (কোনো শিক্ষক নিবন্ধিত নেই)</td></tr>`;
+        return;
+    }
+
+    tbody.innerHTML = teachers.map((t) => {
+        return `
+            <tr>
+                <td><strong>${t.name}</strong></td>
+                <td><a href="tel:${t.phone}" style="text-decoration: underline; color: inherit; font-weight:600;">${t.phone}</a></td>
+                <td>${t.email || '<span style="color:var(--text-muted); font-style:italic;">N/A</span>'}</td>
+                <td>
+                    <button class="btn btn-secondary btn-icon-only" style="color: var(--danger);" onclick="deleteTeacher('${t.id}')" title="Delete Teacher"><i class="fa-solid fa-trash"></i></button>
+                </td>
+            </tr>
+        `;
+    }).join('');
+}
+
+// --- DELETE TEACHER ---
+window.deleteTeacher = function(id) {
+    if (!settings.teachers) settings.teachers = [];
+    const target = settings.teachers.find(t => t.id === id);
+    if (!target) return;
+
+    if (confirm(`Are you sure you want to delete teacher "${target.name}"?`)) {
+        settings.teachers = settings.teachers.filter(t => t.id !== id);
+        saveDatabase();
+        renderSettingsTeachers();
+        
+        // Also refresh batch dropdown if open
+        const batchTeacherDropdown = document.getElementById('batch-teacher');
+        if (batchTeacherDropdown) {
+            populateBatchTeacherDropdown();
+        }
+    }
+};
+
+// --- HELPER TO POPULATE BATCH TEACHER DROPDOWN ---
+function populateBatchTeacherDropdown(selectedVal = "") {
+    const select = document.getElementById('batch-teacher');
+    if (!select) return;
+
+    if (!settings.teachers) settings.teachers = [];
+    const teachers = settings.teachers;
+
+    select.innerHTML = '<option value="">-- No Teacher Assigned --</option>';
+    teachers.forEach(t => {
+        const opt = document.createElement('option');
+        opt.value = t.name;
+        opt.textContent = t.name;
+        if (selectedVal && selectedVal === t.name) {
+            opt.selected = true;
+        }
+        select.appendChild(opt);
+    });
+}
 
 // --- BATCH VIEW TAB CONTROLLERS ---
 let selectedCourseForBatches = "Graphic Design";
@@ -4083,6 +4305,9 @@ window.selectActiveBatch = function(course, batchName) {
     const infoBatchIncome = document.getElementById('info-batch-income');
     const infoBatchDue = document.getElementById('info-batch-due');
     const infoBatchEst = document.getElementById('info-batch-est');
+    const infoBatchTeacher = document.getElementById('info-batch-teacher');
+    const infoBatchTeacherPct = document.getElementById('info-batch-teacher-pct');
+    const infoBatchTeacherPayout = document.getElementById('info-batch-teacher-payout');
 
     const batches = settings.batches || defaultBatches;
     const currentBatchObj = batches.find(b => b.course === course && b.name === batchName);
@@ -4107,6 +4332,14 @@ window.selectActiveBatch = function(course, batchName) {
         if (infoBatchIncome) infoBatchIncome.innerText = `৳${totalPaid.toLocaleString()}`;
         if (infoBatchDue) infoBatchDue.innerText = `৳${totalDue.toLocaleString()}`;
         if (infoBatchEst) infoBatchEst.innerText = `৳${totalEst.toLocaleString()}`;
+        
+        if (infoBatchTeacher) infoBatchTeacher.innerText = currentBatchObj.teacher || 'None';
+        if (infoBatchTeacherPct) infoBatchTeacherPct.innerText = `${currentBatchObj.teacherPercentage || 0}%`;
+        if (infoBatchTeacherPayout) {
+            const payout = Math.round(totalPaid * (currentBatchObj.teacherPercentage || 0) / 100);
+            infoBatchTeacherPayout.innerText = `৳${payout.toLocaleString()}`;
+        }
+
         activeBatchInfoCard.style.display = 'grid';
     } else if (activeBatchInfoCard) {
         activeBatchInfoCard.style.display = 'none';
@@ -4558,6 +4791,8 @@ function setupBatchModal() {
                 targetBatch.endDate = endDate;
                 targetBatch.fee = fee;
                 targetBatch.discount = discount;
+                targetBatch.teacher = document.getElementById('batch-teacher').value;
+                targetBatch.teacherPercentage = parseInt(document.getElementById('batch-teacher-pct').value) || 0;
 
                 // Log audit trail if Staff (neither Owner nor Admin)
                 const curUser = JSON.parse(sessionStorage.getItem('ediz_active_user')) || { role: 'Owner' };
@@ -4604,7 +4839,9 @@ function setupBatchModal() {
                     time: time,
                     schedule: checkedDays,
                     startDate: startDate,
-                    endDate: endDate
+                    endDate: endDate,
+                    teacher: document.getElementById('batch-teacher').value,
+                    teacherPercentage: parseInt(document.getElementById('batch-teacher-pct').value) || 0
                 });
                 
                 saveDatabase();
@@ -4638,6 +4875,20 @@ window.openBatchModal = function(editMode = false) {
     isEditBatchMode = editMode;
     batchForm.reset();
 
+    // Populate teacher dropdown
+    const teacherSelect = document.getElementById('batch-teacher');
+    if (teacherSelect) {
+        teacherSelect.innerHTML = '<option value="">-- No Teacher Assigned --</option>';
+        if (settings.teachers && settings.teachers.length > 0) {
+            settings.teachers.forEach(tch => {
+                const opt = document.createElement('option');
+                opt.value = tch.name;
+                opt.textContent = tch.name;
+                teacherSelect.appendChild(opt);
+            });
+        }
+    }
+
     const titleEl = document.getElementById('batch-modal-title');
     const submitBtn = document.getElementById('batch-submit-btn');
 
@@ -4663,6 +4914,9 @@ window.openBatchModal = function(editMode = false) {
         batchEndDate.value = activeBatchForEdit.endDate || '';
         batchFeeField.value = activeBatchForEdit.fee || 0;
         batchDiscountField.value = activeBatchForEdit.discount || 0;
+        if (teacherSelect) teacherSelect.value = activeBatchForEdit.teacher || '';
+        const pctField = document.getElementById('batch-teacher-pct');
+        if (pctField) pctField.value = activeBatchForEdit.teacherPercentage || 0;
 
         // Set checkboxes
         const schedule = activeBatchForEdit.schedule || [];
@@ -4698,6 +4952,10 @@ window.openBatchModal = function(editMode = false) {
                 cb.checked = false;
             }
         });
+
+        if (teacherSelect) teacherSelect.value = '';
+        const pctField = document.getElementById('batch-teacher-pct');
+        if (pctField) pctField.value = 0;
     }
 
     openModal(batchModal);
@@ -8446,7 +8704,28 @@ window.renderHandoverBoard = function() {
         });
     }
     
-    let combinedItems = [...groupedInvoices, ...auditList];
+    // Build teacher payouts list
+    let payoutsList = [];
+    if (settings.teacherPayouts) {
+        settings.teacherPayouts.forEach(po => {
+            payoutsList.push({
+                id: po.id,
+                date: po.date,
+                paymentType: 'Teacher Payout',
+                amount: po.amount || 0,
+                collectedBy: po.recordedBy || 'Admin',
+                receivedByAdmin: po.receivedByAdmin || false,
+                courses: ['Teacher Payout'],
+                studentIds: [po.teacherId],
+                studentNames: [po.teacherName || 'Teacher'],
+                details: `Paid ৳${(po.amount || 0).toLocaleString()} via ${po.paymentMethod}. Remarks: ${po.remarks || 'None'}`,
+                isAuditLog: false,
+                isTeacherPayout: true
+            });
+        });
+    }
+    
+    let combinedItems = [...groupedInvoices, ...auditList, ...payoutsList];
     
     // Determine filters
     const today = getLocalDateString();
@@ -8488,13 +8767,13 @@ window.renderHandoverBoard = function() {
         return (b.id || '').localeCompare(a.id || '');
     });
     
-    // Calculate totals (only from cash transactions)
+    // Calculate totals (only from cash transactions, excluding audit logs and teacher payouts)
     let totalCollected = 0;
     let totalVerified = 0;
     let totalPending = 0;
     
     filteredItems.forEach(item => {
-        if (!item.isAuditLog) {
+        if (!item.isAuditLog && !item.isTeacherPayout) {
             totalCollected += item.amount;
             if (item.receivedByAdmin) {
                 totalVerified += item.amount;
@@ -8633,6 +8912,8 @@ window.renderHandoverBoard = function() {
             typeBadgeClass = 'badge-success';
         } else if (pType === 'Batch Edit Verification') {
             typeBadgeClass = 'badge-danger';
+        } else if (pType === 'Teacher Payout') {
+            typeBadgeClass = 'badge-danger';
         }
         
         const studentInfoHtml = item.studentNames.map((name, i) => `${name} (<span style="font-weight:600; font-size:0.8rem; font-family:monospace; color:var(--primary);">${item.studentIds[i]}</span>)`).join(', ');
@@ -8649,6 +8930,8 @@ window.renderHandoverBoard = function() {
         let amountHtml = '';
         if (item.isAuditLog) {
             amountHtml = `<span style="color: var(--text-muted); font-size: 0.8rem;">Change Info:<br><span style="font-weight: 600; color: var(--danger); font-size: 0.75rem;">${item.details}</span></span>`;
+        } else if (item.isTeacherPayout) {
+            amountHtml = `<span style="color: var(--danger); font-weight: 700;">- ৳${item.amount.toLocaleString()}</span><br><span style="font-size:0.75rem; color:var(--text-muted);">${item.details}</span>`;
         } else {
             amountHtml = `৳${item.amount.toLocaleString()}`;
         }
@@ -8656,7 +8939,10 @@ window.renderHandoverBoard = function() {
         // Action column
         let actionBtn = '---';
         if (isOwnerOrAdmin && !item.receivedByAdmin) {
-            const btnLabel = item.isAuditLog ? 'অডিট নিশ্চিত করুন' : 'টাকা বুঝে পেয়েছি';
+            let btnLabel = item.isAuditLog ? 'অডিট নিশ্চিত করুন' : 'টাকা বুঝে পেয়েছি';
+            if (item.isTeacherPayout) {
+                btnLabel = 'পেমেন্ট নিশ্চিত করুন';
+            }
             actionBtn = `<button class="btn btn-success btn-sm" onclick="verifyHandoverFromBoard('${item.id}', '${item.studentIds[0]}')" style="padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 600; white-space: nowrap;"><i class="fa-solid fa-check"></i> ${btnLabel}</button>`;
         }
         
@@ -8677,6 +8963,23 @@ window.renderHandoverBoard = function() {
 };
 
 window.verifyHandoverFromBoard = function(id, studentId) {
+    if (id.startsWith('PAYOUT-')) {
+        if (settings.teacherPayouts) {
+            const targetPayout = settings.teacherPayouts.find(po => po.id === id);
+            if (targetPayout) {
+                targetPayout.receivedByAdmin = true;
+                saveDatabase();
+                alert(`Teacher payout ${id} verified successfully.`);
+                renderHandoverBoard();
+                renderTeacherPayouts();
+                refreshStats();
+                return;
+            }
+        }
+        alert("Teacher payout not found.");
+        return;
+    }
+
     if (id.startsWith('AUD-')) {
         let targetLog = null;
         let targetStudent = null;
@@ -8764,6 +9067,14 @@ window.verifyAllPendingHandovers = function() {
                     count++;
                 }
             }
+        } else if (item.isTeacherPayout) {
+            if (settings.teacherPayouts) {
+                const targetPayout = settings.teacherPayouts.find(po => po.id === item.id);
+                if (targetPayout) {
+                    targetPayout.receivedByAdmin = true;
+                    count++;
+                }
+            }
         } else {
             students.forEach(st => {
                 if (st.invoices) {
@@ -8782,6 +9093,7 @@ window.verifyAllPendingHandovers = function() {
     
     renderRecentDashboard();
     renderHandoverBoard();
+    renderTeacherPayouts();
     refreshStats();
 };
 
@@ -9865,4 +10177,277 @@ function checkInquiryReminders() {
         `;
     }).join('');
 }
+
+function setupTeacherPayoutsFeature() {
+    const filterSelect = document.getElementById('filter-teacher-select');
+    if (filterSelect) {
+        filterSelect.addEventListener('change', () => {
+            renderTeacherPayouts();
+        });
+    }
+
+    const btnRecordPayout = document.getElementById('btn-record-teacher-payout');
+    if (btnRecordPayout) {
+        btnRecordPayout.addEventListener('click', () => {
+            openTeacherPayoutModal();
+        });
+    }
+
+    const payoutForm = document.getElementById('teacher-payout-form');
+    if (payoutForm) {
+        payoutForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const teacherSelect = document.getElementById('payout-teacher-select');
+            const amountInput = document.getElementById('payout-amount-input');
+            const dateInput = document.getElementById('payout-date-input');
+            const methodSelect = document.getElementById('payout-method-select');
+            const remarksInput = document.getElementById('payout-remarks-input');
+
+            if (!teacherSelect || !amountInput || !dateInput || !methodSelect) return;
+
+            const selectedOption = teacherSelect.options[teacherSelect.selectedIndex];
+            const teacherId = selectedOption.value;
+            const teacherName = selectedOption.getAttribute('data-name');
+            const amount = parseInt(amountInput.value);
+            const date = dateInput.value;
+            const method = methodSelect.value;
+            const remarks = remarksInput ? remarksInput.value.trim() : '';
+
+            if (!teacherId || isNaN(amount) || amount <= 0 || !date) {
+                alert("Please fill in all required fields correctly.");
+                return;
+            }
+
+            if (!settings.teacherPayouts) settings.teacherPayouts = [];
+
+            // Generate payout ID
+            let maxIdNum = 1000;
+            settings.teacherPayouts.forEach(po => {
+                if (po.id && po.id.startsWith('PAYOUT-')) {
+                    const num = parseInt(po.id.replace('PAYOUT-', ''));
+                    if (!isNaN(num) && num > maxIdNum) maxIdNum = num;
+                }
+            });
+            const newId = `PAYOUT-${maxIdNum + 1}`;
+
+            const activeUser = JSON.parse(sessionStorage.getItem('ediz_active_user')) || {};
+            const recordedBy = activeUser.email || 'Admin';
+
+            // Check if current user is Owner/Admin. If so, auto-verify, otherwise start as unverified (pending).
+            const isOwnerOrAdmin = activeUser.role === 'Owner' || activeUser.role === 'Admin';
+            const receivedByAdmin = isOwnerOrAdmin; // auto-verify if recorded by admin
+
+            const newPayout = {
+                id: newId,
+                date: date,
+                teacherId: teacherId,
+                teacherName: teacherName,
+                amount: amount,
+                paymentMethod: method,
+                recordedBy: recordedBy,
+                receivedByAdmin: receivedByAdmin,
+                remarks: remarks
+            };
+
+            settings.teacherPayouts.push(newPayout);
+            saveDatabase();
+
+            alert(`Teacher payout recorded successfully! Payout ID: ${newId}.` + (receivedByAdmin ? "" : " (Pending Admin verification)"));
+            closeTeacherPayoutModal();
+            renderTeacherPayouts();
+            renderHandoverBoard();
+        });
+    }
+}
+
+window.openTeacherPayoutModal = function() {
+    const modal = document.getElementById('teacher-payout-modal');
+    const teacherSelect = document.getElementById('payout-teacher-select');
+    const amountInput = document.getElementById('payout-amount-input');
+    const dateInput = document.getElementById('payout-date-input');
+    const remarksInput = document.getElementById('payout-remarks-input');
+
+    if (!modal || !teacherSelect) return;
+
+    // Populate teachers dropdown
+    teacherSelect.innerHTML = '<option value="">-- Select Teacher --</option>';
+    if (settings.teachers && settings.teachers.length > 0) {
+        settings.teachers.forEach(tch => {
+            const opt = document.createElement('option');
+            opt.value = tch.id;
+            opt.setAttribute('data-name', tch.name);
+            opt.textContent = `${tch.name} (${tch.phone})`;
+            teacherSelect.appendChild(opt);
+        });
+    }
+
+    // Reset inputs
+    if (amountInput) amountInput.value = '';
+    if (dateInput) dateInput.value = getLocalDateString();
+    if (remarksInput) remarksInput.value = '';
+
+    modal.classList.add('active');
+};
+
+window.closeTeacherPayoutModal = function() {
+    const modal = document.getElementById('teacher-payout-modal');
+    if (modal) modal.classList.remove('active');
+};
+
+window.renderTeacherPayouts = function() {
+    const tbody = document.getElementById('teacher-payouts-tbody');
+    const filterSelect = document.getElementById('filter-teacher-select');
+    const historyTbody = document.getElementById('teacher-payments-history-tbody');
+    if (!tbody || !filterSelect) return;
+
+    // Save current selection
+    const selectedTeacher = filterSelect.value;
+
+    // Repopulate filter select with available teachers
+    filterSelect.innerHTML = '<option value="">-- All Teachers --</option>';
+    if (settings.teachers && settings.teachers.length > 0) {
+        settings.teachers.forEach(tch => {
+            const opt = document.createElement('option');
+            opt.value = tch.name;
+            opt.textContent = tch.name;
+            filterSelect.appendChild(opt);
+        });
+    }
+    filterSelect.value = selectedTeacher; // Restore selection if still exists
+
+    // Calculate payouts
+    const batches = settings.batches || defaultBatches;
+    let totalBatchesCount = 0;
+    let totalNetIncomeSum = 0;
+    let totalEarningsSum = 0;
+
+    tbody.innerHTML = '';
+    const escapeHtml = (str) => String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+    // Map to track earned totals per teacher
+    const teacherEarningsMap = {};
+
+    batches.forEach(b => {
+        // Skip if batch has no teacher assigned
+        if (!b.teacher) return;
+
+        // Calculate financials
+        const batchStudents = students.filter(st => st.course && st.course.includes(b.course) && st.batch && st.batch.includes(b.name));
+        let netIncome = 0;
+        batchStudents.forEach(st => {
+            netIncome += (st.paidFee || 0);
+        });
+
+        const sharePct = b.teacherPercentage || 0;
+        const earnings = Math.round(netIncome * sharePct / 100);
+
+        if (!teacherEarningsMap[b.teacher]) {
+            teacherEarningsMap[b.teacher] = 0;
+        }
+        teacherEarningsMap[b.teacher] += earnings;
+
+        // Skip if filtered by teacher
+        if (selectedTeacher && b.teacher !== selectedTeacher) return;
+
+        totalBatchesCount++;
+        totalNetIncomeSum += netIncome;
+        totalEarningsSum += earnings;
+
+        const scheduleStr = Array.isArray(b.schedule) ? b.schedule.join(', ') : (b.schedule || 'N/A');
+        const timeStr = b.time || 'N/A';
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td><strong>${escapeHtml(b.teacher)}</strong></td>
+            <td>
+                <span class="badge badge-primary">${escapeHtml(b.course)}</span>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">${escapeHtml(b.name)}</div>
+            </td>
+            <td>
+                <div style="font-size: 0.85rem; font-weight: 500;">${escapeHtml(scheduleStr)}</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">${escapeHtml(timeStr)}</div>
+            </td>
+            <td><span class="badge badge-secondary">${batchStudents.length} Students</span></td>
+            <td><strong>৳${netIncome.toLocaleString()}</strong></td>
+            <td><span class="badge badge-primary">${sharePct}%</span></td>
+            <td style="color: var(--success); font-weight: 700;">৳${earnings.toLocaleString()}</td>
+        `;
+        tbody.appendChild(tr);
+    });
+
+    if (totalBatchesCount === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: var(--text-muted); padding: 2rem;">No batches found for this selection.</td></tr>`;
+    }
+
+    // Now calculate payouts paid
+    let totalPaidSum = 0;
+    const payouts = settings.teacherPayouts || [];
+
+    if (historyTbody) {
+        historyTbody.innerHTML = '';
+        
+        const filteredPayouts = payouts.filter(po => {
+            const matchName = po.teacherName || '';
+            const matchTeacher = selectedTeacher ? (matchName === selectedTeacher) : true;
+            return matchTeacher;
+        });
+
+        filteredPayouts.forEach(po => {
+            // Count verified payouts in total paid sum
+            if (po.receivedByAdmin) {
+                totalPaidSum += (po.amount || 0);
+            }
+
+            const tr = document.createElement('tr');
+            const statusLabel = po.receivedByAdmin 
+                ? '<span style="background:rgba(22,163,74,0.1); color:#16a34a; border:1px solid rgba(22,163,74,0.2); font-weight:700; padding:0.2rem 0.55rem; font-size:0.75rem; border-radius:30px;"><i class="fa-solid fa-circle-check"></i> Verified</span>'
+                : '<span style="background:rgba(220,38,38,0.08); color:#dc2626; border:1px solid rgba(220,38,38,0.2); font-weight:700; padding:0.2rem 0.55rem; font-size:0.75rem; border-radius:30px;"><i class="fa-solid fa-clock"></i> Pending</span>';
+
+            tr.innerHTML = `
+                <td><strong style="font-family: monospace;">${escapeHtml(po.id)}</strong></td>
+                <td><strong>${escapeHtml(po.teacherName)}</strong></td>
+                <td>${escapeHtml(po.date)}</td>
+                <td><span class="badge badge-secondary">${escapeHtml(po.paymentMethod)}</span></td>
+                <td style="font-weight: 700;">৳${(po.amount || 0).toLocaleString()}</td>
+                <td><span style="font-size: 0.85rem; color: var(--text-muted);">${escapeHtml(po.recordedBy)}</span></td>
+                <td>${statusLabel}</td>
+                <td><span style="font-size: 0.85rem; color: var(--text-muted);">${escapeHtml(po.remarks || 'None')}</span></td>
+            `;
+            historyTbody.appendChild(tr);
+        });
+
+        if (filteredPayouts.length === 0) {
+            historyTbody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: var(--text-muted); padding: 2rem;">No payment history found.</td></tr>`;
+        }
+    }
+
+    // If no specific teacher is selected, we sum all earnings and all verified paid payouts globally
+    if (!selectedTeacher) {
+        totalEarningsSum = 0;
+        Object.keys(teacherEarningsMap).forEach(k => {
+            totalEarningsSum += teacherEarningsMap[k];
+        });
+        totalPaidSum = 0;
+        payouts.forEach(po => {
+            if (po.receivedByAdmin) {
+                totalPaidSum += (po.amount || 0);
+            }
+        });
+    }
+
+    const dueSum = totalEarningsSum - totalPaidSum;
+
+    // Update metrics cards
+    document.getElementById('metric-teacher-batches').innerText = totalBatchesCount;
+    document.getElementById('metric-teacher-net-income').innerText = `৳${totalNetIncomeSum.toLocaleString()}`;
+    document.getElementById('metric-teacher-earnings').innerText = `৳${totalEarningsSum.toLocaleString()}`;
+    
+    const metricPaid = document.getElementById('metric-teacher-paid');
+    const metricDue = document.getElementById('metric-teacher-due');
+    if (metricPaid) metricPaid.innerText = `৳${totalPaidSum.toLocaleString()}`;
+    if (metricDue) {
+        metricDue.innerText = `৳${dueSum.toLocaleString()}`;
+        metricDue.style.color = dueSum > 0 ? 'var(--danger)' : 'var(--success)';
+    }
+};
 
