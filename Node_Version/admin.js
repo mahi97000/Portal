@@ -40,6 +40,8 @@ let isInitialLoad = true;
 let inquiries = [];
 let tasks = [];
 let inquiriesFilter = 'all';
+let currentTaskFilter = 'all';
+let currentTaskAssigneeFilter = 'all';
 let activeBatchForEdit = null;
 let explorerSelectedMonth = '';
 let explorerSelectedBatchCourse = '';
@@ -8725,7 +8727,29 @@ window.renderHandoverBoard = function() {
         });
     }
     
-    let combinedItems = [...groupedInvoices, ...auditList, ...payoutsList];
+    let completedTasksList = [];
+    if (tasks) {
+        tasks.forEach(t => {
+            if (t.status === 'Completed') {
+                completedTasksList.push({
+                    id: t.id,
+                    date: t.completedAt ? t.completedAt.substring(0, 10) : (t.date || ''),
+                    paymentType: 'Task Completed',
+                    amount: 0,
+                    collectedBy: t.assignedTo || 'Staff',
+                    receivedByAdmin: t.receivedByAdmin || false,
+                    courses: ['Daily Tasks'],
+                    studentIds: ['N/A'],
+                    studentNames: ['N/A'],
+                    details: `Task Completed: ${t.description}`,
+                    isAuditLog: true,
+                    isTaskCompleted: true
+                });
+            }
+        });
+    }
+    
+    let combinedItems = [...groupedInvoices, ...auditList, ...payoutsList, ...completedTasksList];
     
     // Determine filters
     const today = getLocalDateString();
@@ -8813,6 +8837,7 @@ window.renderHandoverBoard = function() {
                 else if (pType === 'Profile Edit')            { typeColor='#38bdf8'; typeBg='rgba(56,189,248,0.1)'; typeBdr='rgba(56,189,248,0.25)'; }
                 else if (pType === 'Certificate Issued')      { typeColor='#10b981'; typeBg='rgba(16,185,129,0.12)'; typeBdr='rgba(16,185,129,0.25)'; }
                 else if (pType === 'Batch Edit Verification') { typeColor='#ef4444'; typeBg='rgba(239,68,68,0.1)'; typeBdr='rgba(239,68,68,0.25)'; }
+                else if (pType === 'Task Completed')          { typeColor='#38bdf8'; typeBg='rgba(56,189,248,0.1)'; typeBdr='rgba(56,189,248,0.25)'; }
 
                 const statusHTML = isVerified
                     ? `<span style="background:rgba(22,163,74,0.1); color:#16a34a; border:1px solid rgba(22,163,74,0.2); font-weight:700; padding:0.22rem 0.6rem; font-size:0.7rem; border-radius:30px;"><i class="fa-solid fa-circle-check"></i> Verified</span>`
@@ -8826,7 +8851,7 @@ window.renderHandoverBoard = function() {
                 ).join('');
 
                 const auditBlock = item.isAuditLog && item.details
-                    ? `<div style="margin-top:0.5rem; padding:0.45rem 0.65rem; background:rgba(239,68,68,0.06); border:1px dashed rgba(239,68,68,0.25); border-radius:6px; font-size:0.75rem; color:var(--danger);">${item.details}</div>`
+                    ? `<div style="margin-top:0.5rem; padding:0.45rem 0.65rem; background:${item.isTaskCompleted ? 'rgba(56,189,248,0.06)' : 'rgba(239,68,68,0.06)'}; border:1px dashed ${item.isTaskCompleted ? 'rgba(56,189,248,0.25)' : 'rgba(239,68,68,0.25)'}; border-radius:6px; font-size:0.75rem; color:${item.isTaskCompleted ? 'var(--info)' : 'var(--danger)'};">${item.details}</div>`
                     : '';
 
                 const amountBlock = item.isAuditLog
@@ -8835,7 +8860,7 @@ window.renderHandoverBoard = function() {
 
                 const verifyBtnAttr = isOAM && !isVerified ? `data-verify-key="${safeKey}"` : '';
                 const verifyBtn = isOAM && !isVerified
-                    ? `<button ${verifyBtnAttr} style="width:100%; margin-top:0.75rem; padding:0.55rem; font-size:0.82rem; font-weight:700; background:#16a34a; color:#fff; border:none; border-radius:var(--radius-sm); cursor:pointer; display:flex; align-items:center; justify-content:center; gap:0.4rem;"><i class="fa-solid fa-check"></i> ${item.isAuditLog ? 'অডিট নিশ্চিত করুন' : 'টাকা বুঝে পেয়েছি ✓'}</button>`
+                    ? `<button ${verifyBtnAttr} style="width:100%; margin-top:0.75rem; padding:0.55rem; font-size:0.82rem; font-weight:700; background:#16a34a; color:#fff; border:none; border-radius:var(--radius-sm); cursor:pointer; display:flex; align-items:center; justify-content:center; gap:0.4rem;"><i class="fa-solid fa-check"></i> ${item.id.startsWith('TSK-') ? 'টাস্ক নিশ্চিত করুন' : (item.isAuditLog ? 'অডিট নিশ্চিত করুন' : 'টাকা বুঝে পেয়েছি ✓')}</button>`
                     : '';
 
                 return `
@@ -8914,6 +8939,8 @@ window.renderHandoverBoard = function() {
             typeBadgeClass = 'badge-danger';
         } else if (pType === 'Teacher Payout') {
             typeBadgeClass = 'badge-danger';
+        } else if (pType === 'Task Completed') {
+            typeBadgeClass = 'badge-info';
         }
         
         const studentInfoHtml = item.studentNames.map((name, i) => `${name} (<span style="font-weight:600; font-size:0.8rem; font-family:monospace; color:var(--primary);">${item.studentIds[i]}</span>)`).join(', ');
@@ -8928,7 +8955,9 @@ window.renderHandoverBoard = function() {
         
         // Amount column rendering
         let amountHtml = '';
-        if (item.isAuditLog) {
+        if (item.isTaskCompleted) {
+            amountHtml = `<span style="color: var(--text-muted); font-size: 0.8rem;">Task Details:<br><span style="font-weight: 600; color: var(--info); font-size: 0.75rem;">${item.details}</span></span>`;
+        } else if (item.isAuditLog) {
             amountHtml = `<span style="color: var(--text-muted); font-size: 0.8rem;">Change Info:<br><span style="font-weight: 600; color: var(--danger); font-size: 0.75rem;">${item.details}</span></span>`;
         } else if (item.isTeacherPayout) {
             amountHtml = `<span style="color: var(--danger); font-weight: 700;">- ৳${item.amount.toLocaleString()}</span><br><span style="font-size:0.75rem; color:var(--text-muted);">${item.details}</span>`;
@@ -8942,6 +8971,8 @@ window.renderHandoverBoard = function() {
             let btnLabel = item.isAuditLog ? 'অডিট নিশ্চিত করুন' : 'টাকা বুঝে পেয়েছি';
             if (item.isTeacherPayout) {
                 btnLabel = 'পেমেন্ট নিশ্চিত করুন';
+            } else if (item.isTaskCompleted) {
+                btnLabel = 'টাস্ক নিশ্চিত করুন';
             }
             actionBtn = `<button class="btn btn-success btn-sm" onclick="verifyHandoverFromBoard('${item.id}', '${item.studentIds[0]}')" style="padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 600; white-space: nowrap;"><i class="fa-solid fa-check"></i> ${btnLabel}</button>`;
         }
@@ -8963,6 +8994,20 @@ window.renderHandoverBoard = function() {
 };
 
 window.verifyHandoverFromBoard = function(id, studentId) {
+    if (id.startsWith('TSK-')) {
+        const targetTask = tasks.find(t => t.id === id);
+        if (targetTask) {
+            targetTask.receivedByAdmin = true;
+            saveDatabase();
+            alert(`Task verification completed successfully.`);
+            renderHandoverBoard();
+            renderTasks();
+            return;
+        }
+        alert("Task not found.");
+        return;
+    }
+
     if (id.startsWith('PAYOUT-')) {
         if (settings.teacherPayouts) {
             const targetPayout = settings.teacherPayouts.find(po => po.id === id);
@@ -9075,6 +9120,12 @@ window.verifyAllPendingHandovers = function() {
                     count++;
                 }
             }
+        } else if (item.isTaskCompleted) {
+            const targetTask = tasks.find(t => t.id === item.id);
+            if (targetTask) {
+                targetTask.receivedByAdmin = true;
+                count++;
+            }
         } else {
             students.forEach(st => {
                 if (st.invoices) {
@@ -9094,6 +9145,7 @@ window.verifyAllPendingHandovers = function() {
     renderRecentDashboard();
     renderHandoverBoard();
     renderTeacherPayouts();
+    renderTasks();
     refreshStats();
 };
 
@@ -9519,6 +9571,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (specificYearSelect) {
         specificYearSelect.addEventListener('change', renderInquiries);
     }
+    const courseFilterSelect = document.getElementById('inquiry-course-filter-select');
+    if (courseFilterSelect) {
+        courseFilterSelect.addEventListener('change', renderInquiries);
+    }
+    const taskFilterDate = document.getElementById('task-filter-date');
+    if (taskFilterDate) {
+        taskFilterDate.addEventListener('change', renderTasks);
+    }
+    const taskFilterAssignee = document.getElementById('task-filter-assignee');
+    if (taskFilterAssignee) {
+        taskFilterAssignee.addEventListener('change', renderTasks);
+    }
 });
 
 // --- HELPER FOR AUTO-ADMISSION DETECTION ---
@@ -9554,6 +9618,10 @@ window.openInquiryModal = function(id = '') {
     // Clear checkboxes
     document.querySelectorAll('.inq-course-checkbox').forEach(cb => cb.checked = false);
     
+    // Clear checkbox for ignore auto admit
+    const ignoreCheckbox = document.getElementById('inq-ignore-auto-admit');
+    if (ignoreCheckbox) ignoreCheckbox.checked = false;
+    
     // Clear fees
     document.getElementById('inq-quoted-fee').value = '';
     document.getElementById('inq-offered-fee').value = '';
@@ -9586,6 +9654,11 @@ window.openInquiryModal = function(id = '') {
                     cb.checked = true;
                 }
             });
+            
+            // Handle ignore auto admit checkbox
+            if (ignoreCheckbox) {
+                ignoreCheckbox.checked = !!inq.ignoreAutoAdmit;
+            }
             
             // Handle fees
             document.getElementById('inq-quoted-fee').value = inq.quotedFee || '';
@@ -9624,6 +9697,10 @@ function saveInquiry(e) {
         return;
     }
     
+    // Read ignore database match checkbox
+    const ignoreCheckbox = document.getElementById('inq-ignore-auto-admit');
+    const ignoreAutoAdmitVal = ignoreCheckbox ? ignoreCheckbox.checked : false;
+    
     // Read fees
     const quotedFeeVal = parseInt(document.getElementById('inq-quoted-fee').value) || 0;
     const offeredFeeVal = parseInt(document.getElementById('inq-offered-fee').value) || 0;
@@ -9645,6 +9722,7 @@ function saveInquiry(e) {
                 address: addressVal,
                 courses: checkedCourses,
                 course: checkedCourses.join(', '),
+                ignoreAutoAdmit: ignoreAutoAdmitVal,
                 quotedFee: quotedFeeVal,
                 offeredFee: offeredFeeVal,
                 nextFollowUp: nextFollowUpVal,
@@ -9663,6 +9741,7 @@ function saveInquiry(e) {
             address: addressVal,
             courses: checkedCourses,
             course: checkedCourses.join(', '),
+            ignoreAutoAdmit: ignoreAutoAdmitVal,
             quotedFee: quotedFeeVal,
             offeredFee: offeredFeeVal,
             nextFollowUp: nextFollowUpVal,
@@ -9732,11 +9811,15 @@ function renderInquiries() {
     
     // 1. Calculate dynamic auto-admitted status from students database
     inquiries.forEach(item => {
-        const match = findMatchingStudent(item.phone, item.guardianPhone);
-        if (match) {
-            item.autoAdmitted = match;
-        } else {
+        if (item.ignoreAutoAdmit) {
             item.autoAdmitted = null;
+        } else {
+            const match = findMatchingStudent(item.phone, item.guardianPhone);
+            if (match) {
+                item.autoAdmitted = match;
+            } else {
+                item.autoAdmitted = null;
+            }
         }
     });
 
@@ -9790,6 +9873,16 @@ function renderInquiries() {
         if (targetYear) {
             filtered = filtered.filter(item => item.date && item.date.startsWith(targetYear));
         }
+    }
+
+    // 3.5. Filter inquiries by course filter dropdown
+    const courseFilterSelect = document.getElementById('inquiry-course-filter-select');
+    const courseFilterVal = courseFilterSelect ? courseFilterSelect.value : 'all';
+    if (courseFilterVal !== 'all') {
+        filtered = filtered.filter(item => {
+            const courses = item.courses || (item.course ? [item.course] : []);
+            return courses.includes(courseFilterVal);
+        });
     }
 
     // 4. Filter by text search bar
@@ -10000,14 +10093,17 @@ function addTask(e) {
     
     const descInput = document.getElementById('task-desc-input');
     const dateInput = document.getElementById('task-date-input');
+    const assignInput = document.getElementById('task-assign-input');
     
     if (!descInput || !dateInput) return;
+    
+    const assignedToVal = assignInput ? assignInput.value : 'Staff';
     
     const newTask = {
         id: 'TSK-' + Date.now(),
         date: dateInput.value,
         description: descInput.value.trim(),
-        assignedTo: 'Manager',
+        assignedTo: assignedToVal,
         status: 'Pending'
     };
     
@@ -10033,12 +10129,15 @@ window.toggleTaskStatus = function(id) {
             const mm = String(now.getMinutes()).padStart(2, '0');
             const ss = String(now.getSeconds()).padStart(2, '0');
             task.completedAt = `${y}-${m}-${d} ${hh}:${mm}:${ss}`;
+            task.receivedByAdmin = false;
         } else {
             task.status = 'Pending';
             delete task.completedAt;
+            delete task.receivedByAdmin;
         }
         saveDatabase();
         renderTasks();
+        renderHandoverBoard();
         renderInquiries(); // Refresh metrics cards
     }
 };
@@ -10048,6 +10147,7 @@ window.deleteTask = function(id) {
         tasks = tasks.filter(item => item.id !== id);
         saveDatabase();
         renderTasks();
+        renderHandoverBoard();
         renderInquiries(); // Refresh metrics cards
     }
 };
@@ -10058,8 +10158,38 @@ function renderTasks() {
     const completedContainer = document.getElementById('completed-tasks-log-container');
     if (!container) return;
     
-    const activeTasks = tasks.filter(t => t.status === 'Pending');
-    const completedTasks = tasks.filter(t => t.status === 'Completed');
+    const today = getLocalDateString();
+    
+    const dateFilterEl = document.getElementById('task-filter-date');
+    const dateFilter = dateFilterEl ? dateFilterEl.value : 'all';
+    
+    const assigneeFilterEl = document.getElementById('task-filter-assignee');
+    const assigneeFilter = assigneeFilterEl ? assigneeFilterEl.value : 'all';
+    
+    // Filter active & completed tasks
+    let activeTasks = tasks.filter(t => t.status === 'Pending');
+    let completedTasks = tasks.filter(t => t.status === 'Completed');
+    
+    // 1. Assignee filtering
+    if (assigneeFilter === 'staff') {
+        activeTasks = activeTasks.filter(t => t.assignedTo === 'Staff' || t.assignedTo === 'Manager');
+        completedTasks = completedTasks.filter(t => t.assignedTo === 'Staff' || t.assignedTo === 'Manager');
+    } else if (assigneeFilter === 'admin') {
+        activeTasks = activeTasks.filter(t => t.assignedTo === 'Admin');
+        completedTasks = completedTasks.filter(t => t.assignedTo === 'Admin');
+    }
+    
+    // 2. Date filtering for active tasks
+    if (dateFilter === 'today') {
+        activeTasks = activeTasks.filter(t => t.date === today);
+    } else if (dateFilter === 'tomorrow') {
+        const tomorrowObj = new Date();
+        tomorrowObj.setDate(tomorrowObj.getDate() + 1);
+        const tomorrow = getLocalDateString(tomorrowObj);
+        activeTasks = activeTasks.filter(t => t.date === tomorrow);
+    } else if (dateFilter === 'overdue') {
+        activeTasks = activeTasks.filter(t => t.date < today);
+    }
     
     // --- 1. RENDER ACTIVE TASKS ---
     if (activeTasks.length === 0) {
@@ -10076,10 +10206,15 @@ function renderTasks() {
         container.innerHTML = sortedDates.map(date => {
             const dateTasks = groups[date];
             const taskItemsHtml = dateTasks.map(t => {
+                const assigneeBadge = t.assignedTo === 'Admin'
+                    ? `<span class="badge" style="font-size:0.68rem; padding:0.1rem 0.35rem; margin-left:0.5rem; background:rgba(239,68,68,0.1); color:#ef4444; border:1px solid rgba(239,68,68,0.2);">Admin</span>`
+                    : `<span class="badge" style="font-size:0.68rem; padding:0.1rem 0.35rem; margin-left:0.5rem; background:rgba(56,189,248,0.1); color:#38bdf8; border:1px solid rgba(56,189,248,0.2);">Staff</span>`;
+                
                 return `
                     <div class="task-item">
                         <input type="checkbox" class="task-checkbox" onchange="toggleTaskStatus('${t.id}')">
                         <span class="task-text">${t.description}</span>
+                        ${assigneeBadge}
                         <button class="btn btn-icon-only btn-secondary" onclick="deleteTask('${t.id}')" title="Delete Task" style="height:26px; width:26px; font-size:0.75rem; color:var(--danger); border:none; background:transparent;"><i class="fa-solid fa-trash-can"></i></button>
                     </div>
                 `;
@@ -10115,13 +10250,25 @@ function renderTasks() {
         completedContainer.innerHTML = sortedCompleted.map(t => {
             const dateText = t.date || '';
             const compTimeText = t.completedAt ? t.completedAt.substring(0, 16) : 'N/A';
+            const isVerified = !!t.receivedByAdmin;
+            const verificationBadge = isVerified
+                ? `<span style="font-size:0.7rem; font-weight:700; color:#16a34a; background:rgba(22,163,74,0.1); padding:0.1rem 0.35rem; border-radius:4px; border:1px solid rgba(22,163,74,0.2); margin-left:0.5rem;"><i class="fa-solid fa-check"></i> Verified</span>`
+                : `<span style="font-size:0.7rem; font-weight:700; color:#dc2626; background:rgba(220,38,38,0.08); padding:0.1rem 0.35rem; border-radius:4px; border:1px solid rgba(220,38,38,0.2); margin-left:0.5rem;"><i class="fa-solid fa-clock"></i> Pending Verification</span>`;
+            
+            const assigneeBadge = t.assignedTo === 'Admin'
+                ? `<span class="badge" style="font-size:0.68rem; padding:0.1rem 0.35rem; margin-left:0.5rem; background:rgba(239,68,68,0.1); color:#ef4444; border:1px solid rgba(239,68,68,0.2);">Admin</span>`
+                : `<span class="badge" style="font-size:0.68rem; padding:0.1rem 0.35rem; margin-left:0.5rem; background:rgba(56,189,248,0.1); color:#38bdf8; border:1px solid rgba(56,189,248,0.2);">Staff</span>`;
             
             return `
                 <div class="task-item" style="opacity: 0.85; padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; gap: 0.5rem;">
                     <div style="display: flex; align-items: center; gap: 0.5rem; flex-grow: 1;">
                         <input type="checkbox" class="task-checkbox" checked onchange="toggleTaskStatus('${t.id}')">
                         <div style="display: flex; flex-direction: column; text-align: left;">
-                            <span class="task-text completed" style="font-size:0.85rem; text-decoration: line-through; color: var(--text-muted);">${t.description}</span>
+                            <div style="display:flex; align-items:center; flex-wrap:wrap; gap:0.25rem;">
+                                <span class="task-text completed" style="font-size:0.85rem; text-decoration: line-through; color: var(--text-muted);">${t.description}</span>
+                                ${assigneeBadge}
+                                ${verificationBadge}
+                            </div>
                             <span style="font-size:0.7rem; color: var(--text-muted);">
                                 <i class="fa-solid fa-calendar-check"></i> Assign: ${dateText} | Completed: ${compTimeText}
                             </span>
