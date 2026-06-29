@@ -3314,10 +3314,10 @@ window.printCertificate = function(id) {
     const origin = window.location.origin;
     let verifyURL = '';
     if (origin === 'null' || !origin || origin.startsWith('file')) {
-        verifyURL = 'verify.html?verify=' + st.id;
+        verifyURL = 'verify/index.html?verify=' + st.id;
     } else {
         const basePath = window.location.pathname.replace('index.html', '').replace('admin.html', '');
-        verifyURL = origin + (basePath.endsWith('/') ? basePath : basePath + '/') + 'verify.html?verify=' + st.id;
+        verifyURL = origin + (basePath.endsWith('/') ? basePath : basePath + '/') + 'verify/?verify=' + st.id;
     }
 
     const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=${encodeURIComponent(verifyURL)}`;

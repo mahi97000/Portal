@@ -134,7 +134,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function syncWithServer() {
     const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-    const fetchUrl = isLocalhost ? 'database.json' : 'api.php';
+    const isVerifyPath = window.location.pathname.includes('/verify/');
+    const prefix = isVerifyPath ? '../' : '';
+    const fetchUrl = isLocalhost ? (prefix + 'database.json') : (prefix + 'api.php');
     fetch(fetchUrl)
         .then(response => {
             if (!response.ok) throw new Error("HTTP error");
@@ -395,7 +397,9 @@ function setupFormListeners() {
                 settings: settings,
                 bookStock: parseInt(localStorage.getItem('ediz_book_stock')) || 0
             };
-            fetch('api.php', {
+            const isVerifyPath = window.location.pathname.includes('/verify/');
+            const apiPath = isVerifyPath ? '../api.php' : 'api.php';
+            fetch(apiPath, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -595,20 +599,27 @@ function setupVerificationPortal() {
                     const line2 = `COMPLETED THE ${(student.course || '').toUpperCase()} COURSE HELD ON`;
                     const line3 = `${formatCourseDate(batchObj ? batchObj.startDate : '')} TO ${formatCourseDate(batchObj ? batchObj.endDate : '')} AT EDIZ IT INSTITUTE`;
 
+                    const isVerifyPath = window.location.pathname.includes('/verify/');
+                    const certPrefix = isVerifyPath ? '../' : '';
+
                     const origin = window.location.origin;
                     let verifyURL = '';
                     if (origin === 'null' || !origin || origin.startsWith('file')) {
-                        verifyURL = 'verify.html?verify=' + student.id;
+                        verifyURL = certPrefix + 'verify/index.html?verify=' + student.id;
                     } else {
                         const basePath = window.location.pathname.replace('index.html', '').replace('verify.html', '');
-                        verifyURL = origin + (basePath.endsWith('/') ? basePath : basePath + '/') + 'verify.html?verify=' + student.id;
+                        let cleanPath = basePath.endsWith('/') ? basePath : (basePath + '/');
+                        if (isVerifyPath) {
+                            cleanPath = cleanPath.replace('verify/', '');
+                        }
+                        verifyURL = origin + cleanPath + 'verify/?verify=' + student.id;
                     }
                     const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=${encodeURIComponent(verifyURL)}`;
 
                     const coordinator = student.coordinator || "Mahi Rahman";
-                    let coordinatorSignPath = "Certificate/mahi-signature.png";
+                    let coordinatorSignPath = certPrefix + "Certificate/mahi-signature.png";
                     if (coordinator.toLowerCase().includes("tariq")) {
-                        coordinatorSignPath = "Certificate/tariqsign.png";
+                        coordinatorSignPath = certPrefix + "Certificate/tariqsign.png";
                     }
                     
                     let coordinatorTitle = "Instructor";
@@ -629,8 +640,8 @@ function setupVerificationPortal() {
                             .replace(/__LINE3__/g, line3)
                             .replace(/__QR_CODE__/g, qrUrl)
                             .replace(/__SIGNATURE__/g, coordinatorSignPath)
-                            .replace(/\/mijanursign.png/g, 'Certificate/mijanursign.png')
-                            .replace(/\.\/training.png/g, 'Certificate/training.png')
+                            .replace(/\/mijanursign.png/g, certPrefix + 'Certificate/mijanursign.png')
+                            .replace(/\.\/training.png/g, certPrefix + 'Certificate/training.png')
                             .replace(/<text id="co-ordinator-title"[^>]*>.*?<\/text>/, `<text id="co-ordinator-title" x="515" y="500" font-size="9" fill="#000" text-anchor="middle">${coordinatorTitle}</text>`)
                             .replace(/<text id="program_name"[^>]*>.*?<\/text>/, `<text id="program_name" x="515" y="511" font-size="9" fill="#000" text-anchor="middle">${rightSideSubtitle}</text>`)
                             .replace(/<text id="co-ordinator"[^>]*>.*?<\/text>/, `<text id="co-ordinator" x="515" y="488" font-size="10" fill="#000" text-anchor="middle" font-weight="bold">${coordinator}</text>`);
@@ -778,13 +789,20 @@ window.printStudentCertificate = function(studentId) {
         return `${day}${suffix} ${month}, ${year}`;
     }
 
+    const isVerifyPath = window.location.pathname.includes('/verify/');
+    const certPrefix = isVerifyPath ? '../' : '';
+
     const origin = window.location.origin;
     let verifyURL = '';
     if (origin === 'null' || !origin || origin.startsWith('file')) {
-        verifyURL = 'verify.html?verify=' + st.id;
+        verifyURL = certPrefix + 'verify/index.html?verify=' + st.id;
     } else {
         const basePath = window.location.pathname.replace('index.html', '').replace('verify.html', '');
-        verifyURL = origin + (basePath.endsWith('/') ? basePath : basePath + '/') + 'verify.html?verify=' + st.id;
+        let cleanPath = basePath.endsWith('/') ? basePath : (basePath + '/');
+        if (isVerifyPath) {
+            cleanPath = cleanPath.replace('verify/', '');
+        }
+        verifyURL = origin + cleanPath + 'verify/?verify=' + st.id;
     }
 
     const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=${encodeURIComponent(verifyURL)}`;
@@ -815,9 +833,9 @@ window.printStudentCertificate = function(studentId) {
     const line3 = `${formatCourseDate(batchObj ? batchObj.startDate : '')} TO ${formatCourseDate(batchObj ? batchObj.endDate : '')} AT EDIZ IT INSTITUTE`;
 
     const coordinator = st.coordinator || "Mahi Rahman";
-    let coordinatorSignPath = "Certificate/mahi-signature.png";
+    let coordinatorSignPath = certPrefix + "Certificate/mahi-signature.png";
     if (coordinator.toLowerCase().includes("tariq")) {
-        coordinatorSignPath = "Certificate/tariqsign.png";
+        coordinatorSignPath = certPrefix + "Certificate/tariqsign.png";
     }
 
     const printZone = document.getElementById('print-zone');
@@ -841,8 +859,8 @@ window.printStudentCertificate = function(studentId) {
             .replace(/__LINE3__/g, line3)
             .replace(/__QR_CODE__/g, qrUrl)
             .replace(/__SIGNATURE__/g, coordinatorSignPath)
-            .replace(/\/mijanursign.png/g, 'Certificate/mijanursign.png')
-            .replace(/\.\/training.png/g, 'Certificate/training.png')
+            .replace(/\/mijanursign.png/g, certPrefix + 'Certificate/mijanursign.png')
+            .replace(/\.\/training.png/g, certPrefix + 'Certificate/training.png')
             .replace(/<text id="co-ordinator-title"[^>]*>.*?<\/text>/, `<text id="co-ordinator-title" x="515" y="500" font-size="9" fill="#000" text-anchor="middle">${coordinatorTitle}</text>`)
             .replace(/<text id="program_name"[^>]*>.*?<\/text>/, `<text id="program_name" x="515" y="511" font-size="9" fill="#000" text-anchor="middle">${rightSideSubtitle}</text>`)
             .replace(/<text id="co-ordinator"[^>]*>.*?<\/text>/, `<text id="co-ordinator" x="515" y="488" font-size="10" fill="#000" text-anchor="middle" font-weight="bold">${coordinator}</text>`);
@@ -898,7 +916,7 @@ window.printStudentCertificate = function(studentId) {
             const img = new Image();
             img.onload = resolve;
             img.onerror = resolve;
-            img.src = 'Certificate/mijanursign.png';
+            img.src = certPrefix + 'Certificate/mijanursign.png';
         });
 
         const coordPromise = new Promise((resolve) => {
@@ -912,7 +930,7 @@ window.printStudentCertificate = function(studentId) {
             const img = new Image();
             img.onload = resolve;
             img.onerror = resolve;
-            img.src = 'Certificate/training.png';
+            img.src = certPrefix + 'Certificate/training.png';
         });
 
         const qrPromise = new Promise((resolve) => {
@@ -934,7 +952,7 @@ window.printStudentCertificate = function(studentId) {
         doPrint(window.certificateSVGTemplate);
     } else {
         // Fallback fetch if not preloaded yet
-        fetch('Certificate/certificate.svg')
+        fetch(certPrefix + 'Certificate/certificate.svg')
             .then(res => res.text())
             .then(text => {
                 window.certificateSVGTemplate = text;
