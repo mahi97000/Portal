@@ -96,8 +96,17 @@ const server = http.createServer((req, res) => {
         }
     }
 
-    // Default to index.html for root path
-    let filePath = path.join(__dirname, urlPath === '/' ? 'index.html' : urlPath);
+    // Default to index.html for root path or directories
+    let normalizedPath = urlPath;
+    if (normalizedPath.endsWith('/')) {
+        normalizedPath += 'index.html';
+    } else {
+        const absoluteTemp = path.join(__dirname, normalizedPath);
+        if (fs.existsSync(absoluteTemp) && fs.statSync(absoluteTemp).isDirectory()) {
+            normalizedPath += '/index.html';
+        }
+    }
+    let filePath = path.join(__dirname, normalizedPath === '/' ? 'index.html' : normalizedPath);
 
     // Prevent directory traversal attacks
     if (!filePath.startsWith(__dirname)) {
