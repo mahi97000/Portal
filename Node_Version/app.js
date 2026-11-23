@@ -39,6 +39,16 @@ const syllabusData = {
             { title: "Week 7: Job Interview Preparation & Interview Mock Tests", desc: "Answering standard interview questions, explaining achievements, roleplay interviews, and individual performance critiques." },
             { title: "Week 8: Final Assessments & Oral Certification Exams", desc: "Simulated real-world communication exams and comprehensive spoken assessments to measure fluency progress." }
         ]
+    },
+    ielts: {
+        title: "IELTS Preparation Course (3 Months)",
+        description: "Master all four modules of the IELTS exam (Listening, Reading, Writing, Speaking) and achieve your desired band score.",
+        timeline: [
+            { title: "Week 1-3: Introduction & Listening Module Foundations", desc: "Understanding test formats, question types, practice sessions for matching, multiple choice, labeling diagrams, and note completion." },
+            { title: "Week 4-6: Reading Module Strategies", desc: "Skimming and scanning techniques, true/false/not given questions, matching headings, paragraph selection, and time management drills." },
+            { title: "Week 7-9: Writing Module Task 1 & Task 2", desc: "Writing reports for charts, graphs, diagrams, maps (Academic Task 1), letters (General), and essay structuring with key vocabulary (Task 2)." },
+            { title: "Week 10-12: Speaking Module & Full Mock Tests", desc: "Practice sessions for Part 1, 2, and 3 of Speaking. Developing fluency, vocabulary expansion, and simulated mock exams with personal reviews." }
+        ]
     }
 };
 
@@ -46,7 +56,8 @@ const syllabusData = {
 const defaultFees = {
     "Graphic Design": 8000,
     "Basic Computer": 4000,
-    "Spoken English": 5000
+    "Spoken English": 5000,
+    "IELTS": 10000
 };
 
 const defaultBatches = [
@@ -55,7 +66,9 @@ const defaultBatches = [
     { course: "Basic Computer", name: "BC-01", fee: 4000, discount: 500, time: "11:00 AM - 12:30 PM", schedule: ["Sat", "Mon", "Wed"], startDate: "2026-06-01", endDate: "2026-07-31" },
     { course: "Basic Computer", name: "BC-02", fee: 4000, discount: 0, time: "02:30 PM - 04:00 PM", schedule: ["Sun", "Tue", "Thu"], startDate: "2026-06-01", endDate: "2026-07-31" },
     { course: "Spoken English", name: "SE-01", fee: 5000, discount: 800, time: "11:00 AM - 12:30 PM", schedule: ["Sat", "Mon", "Wed"], startDate: "2026-06-01", endDate: "2026-07-31" },
-    { course: "Spoken English", name: "SE-02", fee: 5000, discount: 0, time: "06:00 PM - 07:30 PM", schedule: ["Sun", "Tue", "Thu"], startDate: "2026-06-01", endDate: "2026-07-31" }
+    { course: "Spoken English", name: "SE-02", fee: 5000, discount: 0, time: "06:00 PM - 07:30 PM", schedule: ["Sun", "Tue", "Thu"], startDate: "2026-06-01", endDate: "2026-07-31" },
+    { course: "IELTS", name: "IELTS-01", fee: 10000, discount: 1500, time: "11:00 AM - 12:30 PM", schedule: ["Sat", "Mon", "Wed"], startDate: "2026-06-01", endDate: "2026-08-31" },
+    { course: "IELTS", name: "IELTS-02", fee: 10000, discount: 1000, time: "06:00 PM - 07:30 PM", schedule: ["Sun", "Tue", "Thu"], startDate: "2026-06-01", endDate: "2026-08-31" }
 ];
 
 // --- DOM ELEMENTS ---
@@ -74,7 +87,7 @@ const enrollmentForm = document.getElementById('enrollment-form');
 const contactForm = document.getElementById('contact-form');
 
 // --- APP INITIALIZATION ---
-document.addEventListener('DOMContentLoaded', () => {
+function initApp() {
     // Force reset to original unmigrated IDs from database_backup.js if not already done
     if (!localStorage.getItem('ediz_students_restored_v11') && window.migratedDatabase) {
         localStorage.setItem('ediz_students', JSON.stringify(window.migratedDatabase.students));
@@ -130,13 +143,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // 8. Sync data with server
     syncWithServer();
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initApp);
+} else {
+    initApp();
+}
 
 function syncWithServer() {
     const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const isVerifyDomain = window.location.hostname.includes('verify.edizit.com');
     const isVerifyPath = window.location.pathname.includes('/verify/');
-    const prefix = isVerifyPath ? '../' : '';
-    const fetchUrl = isLocalhost ? (prefix + 'database.json') : (prefix + 'api.php');
+    const prefix = isVerifyDomain ? 'https://admin.edizit.com/' : (isVerifyPath ? '../' : '');
+    const fetchUrl = isLocalhost ? (isVerifyDomain ? 'database.json' : prefix + 'database.json') : (prefix + 'api.php');
     fetch(fetchUrl)
         .then(response => {
             if (!response.ok) throw new Error("HTTP error");
@@ -213,6 +233,7 @@ function setupModalListeners() {
                 if (courseSelect === 'graphic') selectElement.value = 'Graphic Design';
                 else if (courseSelect === 'basic') selectElement.value = 'Basic Computer';
                 else if (courseSelect === 'english') selectElement.value = 'Spoken English';
+                else if (courseSelect === 'ielts') selectElement.value = 'IELTS';
                 selectElement.dispatchEvent(new Event('change'));
             }
             openModal(enrollmentModal);
@@ -289,6 +310,8 @@ function setupFormListeners() {
             const mother = document.getElementById('enroll-mother').value;
             const guardianPhone = document.getElementById('enroll-guardian-phone').value;
             const address = document.getElementById('enroll-address').value;
+            const genderEl = document.getElementById('enroll-gender');
+            const gender = genderEl ? genderEl.value : 'Male';
 
             // Load pricing settings if customized
             const settings = JSON.parse(localStorage.getItem('ediz_settings')) || {};
@@ -320,6 +343,9 @@ function setupFormListeners() {
             } else if (course === "Spoken English") {
                 prefix = "SE";
                 prefixes = ["SE", "EDIZ-SE", "EDIZ-SP", "IP", "SP"];
+            } else if (course === "IELTS") {
+                prefix = "IELTS";
+                prefixes = ["IELTS", "EDIZ-IELTS", "IE", "EDIZ-IE"];
             }
 
             let maxNum = 0;
@@ -345,7 +371,12 @@ function setupFormListeners() {
             const existingStudent = students.find(s => {
                 const sName = (s.name || '').toLowerCase().trim().replace(/\s+/g, '');
                 const sPhone = (s.phone || '').replace(/\D/g, '');
-                return sName === cleanName && sPhone === cleanPhone && s.registrationId;
+                if (sPhone === cleanPhone && s.registrationId) {
+                    if (sName.includes(cleanName) || cleanName.includes(sName)) {
+                        return true;
+                    }
+                }
+                return false;
             });
 
             let registrationId;
@@ -370,6 +401,7 @@ function setupFormListeners() {
                 id: studentId,
                 name: name,
                 phone: phone,
+                gender: gender,
                 fatherName: father,
                 motherName: mother,
                 guardianPhone: guardianPhone,
@@ -397,8 +429,9 @@ function setupFormListeners() {
                 settings: settings,
                 bookStock: parseInt(localStorage.getItem('ediz_book_stock')) || 0
             };
+            const isVerifyDomain = window.location.hostname.includes('verify.edizit.com');
             const isVerifyPath = window.location.pathname.includes('/verify/');
-            const apiPath = isVerifyPath ? '../api.php' : 'api.php';
+            const apiPath = isVerifyDomain ? 'https://admin.edizit.com/api.php' : (isVerifyPath ? '../api.php' : 'api.php');
             fetch(apiPath, {
                 method: 'POST',
                 headers: {
@@ -472,7 +505,8 @@ function updateEnrollBatches(course, selectElem) {
         const fallback = {
             "Graphic Design": ["GD-02", "GD-01"],
             "Basic Computer": ["BC-02", "BC-01"],
-            "Spoken English": ["SE-02", "SE-01"]
+            "Spoken English": ["SE-02", "SE-01"],
+            "IELTS": ["IELTS-02", "IELTS-01"]
         };
         const list = fallback[course] || [];
         list.forEach(name => {
@@ -489,9 +523,41 @@ function setupVerificationPortal() {
 
     if (!verifyForm || !verifyIdInput || !verifyResultContainer) return;
 
+    // Preload certificate SVG template immediately
+    const isVerifyDomain = window.location.hostname.includes('verify.edizit.com');
+    const isVerifyPath = window.location.pathname.includes('/verify/');
+    const certPrefix = isVerifyPath ? '../' : '';
+    fetch(certPrefix + 'Certificate/certificate.svg')
+        .then(res => res.text())
+        .then(text => {
+            window.certificateSVGTemplate = text;
+            
+            // If verification was auto-triggered by query parameter, re-trigger submit to render preview
+            const urlParams = new URLSearchParams(window.location.search);
+            const verifyId = urlParams.get('verify');
+            if (verifyId && verifyForm) {
+                verifyIdInput.value = verifyId;
+                verifyForm.dispatchEvent(new Event('submit'));
+            }
+        })
+        .catch(err => console.error("Failed to preload certificate SVG:", err));
+
     verifyForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const searchId = verifyIdInput.value.trim();
+        
+        // Get name input
+        const nameInput = document.getElementById('verify-name');
+        const searchName = nameInput ? nameInput.value.trim() : "";
+        
+        // Check if loaded via QR scan or direct link (has ?verify=ID parameter in URL)
+        const urlParams = new URLSearchParams(window.location.search);
+        const isQrScanOrDirectLink = urlParams.has('verify');
+        
+        if (!isQrScanOrDirectLink && !searchName) {
+            alert("Security Requirement: You must enter the student's full name to manually verify this record.");
+            return;
+        }
 
         // Helper functions for smart ID matching
         function normalizeIdForSearch(id) {
@@ -521,18 +587,27 @@ function setupVerificationPortal() {
             }
             return false;
         }
+        
+        function isNameMatch(studentName, inputName) {
+            if (isQrScanOrDirectLink) return true; // Bypass name match for QR codes and direct links
+            if (!inputName) return false;
+            const cleanStudent = studentName.toLowerCase().trim().replace(/\s+/g, '');
+            const cleanInput = inputName.toLowerCase().trim().replace(/\s+/g, '');
+            return cleanStudent === cleanInput || cleanStudent.includes(cleanInput) || cleanInput.includes(cleanStudent);
+        }
 
         // Load students database
         let students = JSON.parse(localStorage.getItem('ediz_students')) || [];
         let settings = JSON.parse(localStorage.getItem('ediz_settings')) || {};
         
-        const localMatched = students.filter(s => s.id && isIdMatch(s.id, searchId));
-        let matched = localMatched;
+        let matched = students.filter(s => s.id && isIdMatch(s.id, searchId) && isNameMatch(s.name || "", searchName));
         
-        if (localMatched.length === 0 && window.migratedDatabase && window.migratedDatabase.students) {
-            matched = window.migratedDatabase.students.filter(s => s.id && isIdMatch(s.id, searchId));
-            if (matched.length > 0 && window.migratedDatabase.settings) {
-                settings = window.migratedDatabase.settings;
+        if (matched.length === 0) {
+            if (window.migratedDatabase && window.migratedDatabase.students) {
+                matched = window.migratedDatabase.students.filter(s => s.id && isIdMatch(s.id, searchId) && isNameMatch(s.name || "", searchName));
+                if (matched.length > 0 && window.migratedDatabase.settings) {
+                    settings = window.migratedDatabase.settings;
+                }
             }
         }
         
@@ -599,20 +674,16 @@ function setupVerificationPortal() {
                     const line2 = `COMPLETED THE ${(student.course || '').toUpperCase()} COURSE HELD ON`;
                     const line3 = `${formatCourseDate(batchObj ? batchObj.startDate : '')} TO ${formatCourseDate(batchObj ? batchObj.endDate : '')} AT EDIZ IT INSTITUTE`;
 
+                    const isVerifyDomain = window.location.hostname.includes('verify.edizit.com');
                     const isVerifyPath = window.location.pathname.includes('/verify/');
                     const certPrefix = isVerifyPath ? '../' : '';
 
                     const origin = window.location.origin;
                     let verifyURL = '';
                     if (origin === 'null' || !origin || origin.startsWith('file')) {
-                        verifyURL = certPrefix + 'verify/index.html?verify=' + student.id;
+                        verifyURL = certPrefix + 'verify/index.html?verify=' + student.id + '&qr=true';
                     } else {
-                        const basePath = window.location.pathname.replace('index.html', '').replace('verify.html', '');
-                        let cleanPath = basePath.endsWith('/') ? basePath : (basePath + '/');
-                        if (isVerifyPath) {
-                            cleanPath = cleanPath.replace('verify/', '');
-                        }
-                        verifyURL = origin + cleanPath + 'verify/?verify=' + student.id;
+                        verifyURL = 'https://verify.edizit.com/?verify=' + student.id + '&qr=true';
                     }
                     const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=${encodeURIComponent(verifyURL)}`;
 
@@ -739,7 +810,7 @@ function setupVerificationPortal() {
         } else {
             verifyResultContainer.innerHTML = `
                 <div style="padding: 1.25rem; border-radius: var(--radius-md); background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.3); color: var(--danger); text-align: center; font-size: 0.9rem;">
-                    <i class="fa-solid fa-circle-exclamation"></i> <strong>Verification Failed:</strong> Student ID "${searchId}" was not found. Please verify the ID format and try again.
+                    <i class="fa-solid fa-circle-exclamation"></i> <strong>Verification Failed:</strong> Student ID "${searchId}" was not found, or the provided Student Name does not match our records.
                 </div>
             `;
         }
@@ -789,20 +860,16 @@ window.printStudentCertificate = function(studentId) {
         return `${day}${suffix} ${month}, ${year}`;
     }
 
+    const isVerifyDomain = window.location.hostname.includes('verify.edizit.com');
     const isVerifyPath = window.location.pathname.includes('/verify/');
     const certPrefix = isVerifyPath ? '../' : '';
 
     const origin = window.location.origin;
     let verifyURL = '';
     if (origin === 'null' || !origin || origin.startsWith('file')) {
-        verifyURL = certPrefix + 'verify/index.html?verify=' + st.id;
+        verifyURL = certPrefix + 'verify/index.html?verify=' + st.id + '&qr=true';
     } else {
-        const basePath = window.location.pathname.replace('index.html', '').replace('verify.html', '');
-        let cleanPath = basePath.endsWith('/') ? basePath : (basePath + '/');
-        if (isVerifyPath) {
-            cleanPath = cleanPath.replace('verify/', '');
-        }
-        verifyURL = origin + cleanPath + 'verify/?verify=' + st.id;
+        verifyURL = 'https://verify.edizit.com/?verify=' + st.id + '&qr=true';
     }
 
     const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=${encodeURIComponent(verifyURL)}`;

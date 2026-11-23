@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
+    <script>
+        window.onerror = function(message, source, lineno, colno, error) {
+            alert("GLOBAL ERROR:\n" + message + "\nSource: " + source + "\nLine: " + lineno + "\nCol: " + colno);
+            return false;
+        };
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard | Ediz IT Institute Management Portal</title>
@@ -48,7 +54,6 @@
                             <span id="auth-error" style="color: var(--danger); font-size: 0.75rem; font-weight: 600; margin-top: 0.5rem; display: none;"><i class="fa-solid fa-triangle-exclamation"></i> Invalid email or password.</span>
                         </div>
                         <button type="submit" id="auth-submit-btn" class="btn btn-primary" style="width: 100%;"><i class="fa-solid fa-unlock-keyhole"></i> Unlock Portal</button>
-                        <button type="button" id="dev-bypass-btn" class="btn btn-secondary" style="width: 100%; margin-top: 1rem; display: none; justify-content: center; background: rgba(255, 255, 255, 0.05); border: 1px dashed var(--border-color); color: var(--text-primary);"><i class="fa-solid fa-code"></i> Dev Auto-Login (Bypass)</button>
                     </div>
 
                     <!-- OTP Verification Inputs -->
@@ -57,9 +62,13 @@
                             <label for="auth-otp">Enter 6-Digit OTP Code (ওটিপি কোড)</label>
                             <input type="text" id="auth-otp" class="form-control" placeholder="e.g. 123456" maxlength="6" style="text-align: center; letter-spacing: 0.3rem; font-size: 1.25rem; font-weight: bold;">
                             <span id="otp-error" style="color: var(--danger); font-size: 0.75rem; font-weight: 600; margin-top: 0.5rem; display: none;"><i class="fa-solid fa-triangle-exclamation"></i> Incorrect verification code.</span>
+                            <div id="otp-timer-container" style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 0.6rem; font-weight: 600;">
+                                Time Remaining: <span id="otp-timer" style="color: var(--danger); font-weight: bold;">03:00</span>
+                            </div>
                             <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.6rem; text-align: center; line-height: 1.4;">
                                 Verification code sent to: <span id="otp-phone-masked" style="font-weight: 700; color: var(--primary);">017*****897</span>
                             </div>
+                            <button type="button" id="otp-resend-btn" style="display: block; margin: 0.5rem auto 0 auto; border: none; background: none; color: var(--primary); font-size: 0.78rem; font-weight: 700; cursor: pointer; padding: 0;" disabled>Resend OTP (ওটিপি পুনরায় পাঠান)</button>
                         </div>
                         <button type="button" id="auth-verify-btn" class="btn btn-success" style="width: 100%; justify-content: center; margin-bottom: 0.75rem;"><i class="fa-solid fa-shield-check"></i> Verify & Login</button>
                         <button type="button" id="auth-back-btn" class="btn btn-secondary" style="width: 100%; justify-content: center;"><i class="fa-solid fa-arrow-left"></i> Back to Login</button>
@@ -113,6 +122,9 @@
                 <li class="sidebar-item" data-tab="teacher-payouts">
                     <a href="#teacher-payouts"><i class="fa-solid fa-wallet"></i> <span>Teacher Payouts</span></a>
                 </li>
+                <li class="sidebar-item" data-tab="expenses">
+                    <a href="#expenses"><i class="fa-solid fa-coins"></i> <span>Expenses</span></a>
+                </li>
                 <li class="sidebar-item" data-tab="settings">
                     <a href="#settings"><i class="fa-solid fa-sliders"></i> <span>Settings</span></a>
                 </li>
@@ -146,6 +158,7 @@
 
                 <div style="display: flex; gap: 0.5rem; align-items: center;">
                     <span id="user-role-display" style="font-weight: 700; font-size: 0.85rem; padding: 0.35rem 0.75rem; background: var(--primary-glow); color: var(--primary); border-radius: var(--radius-sm); border: 1px solid var(--border-color); display: none; align-items: center; gap: 0.35rem; margin-right: 0.5rem;"></span>
+                    <button id="mobile-search-toggle" class="btn btn-secondary btn-icon-only" style="display: none;" title="Toggle Search"><i class="fa-solid fa-magnifying-glass"></i></button>
                     <a href="index.html" class="btn btn-secondary" target="_blank"><i class="fa-solid fa-globe"></i> <span class="hide-mobile">View Website</span></a>
                     <button id="admin-theme-toggle" class="btn btn-secondary btn-icon-only" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
                     <button id="mobile-logout-btn" class="btn btn-secondary btn-icon-only mobile-logout-btn" style="display: none; color: var(--danger);" title="Log Out"><i class="fa-solid fa-sign-out-alt"></i></button>
@@ -193,10 +206,56 @@
                     </div>
                 </div>
 
+                <!-- Today's Tasks Checklist Container -->
+                <div id="dashboard-tasks-container" class="glass-card" style="padding: 1.5rem; margin-bottom: 2rem; border-left: 4px solid #8b5cf6; display: none;">
+                    <h4 style="margin-bottom: 0.75rem; color: #8b5cf6; font-weight: 700;"><i class="fa-solid fa-list-check"></i> Today's Tasks Checklist (আজকের দায়িত্ব তালিকা)</h4>
+                    <div id="dashboard-tasks-list" style="display: flex; flex-direction: column; gap: 0.50rem;">
+                        <!-- Tasks checklist will be dynamically rendered here -->
+                    </div>
+                </div>
+
                 <div id="payment-reminders-alerts" class="glass-card" style="padding: 1.5rem; margin-bottom: 2rem; border-left: 4px solid var(--danger); display: none;">
                     <h4 style="margin-bottom: 0.75rem; color: var(--danger); font-weight: 700;"><i class="fa-solid fa-bell"></i> Today's Payment Reminders (আজকের পেমেন্ট রিমাইন্ডার)</h4>
                     <div id="payment-reminders-list" style="display: flex; flex-direction: column; gap: 0.50rem;">
                         <!-- Alerts will be dynamically rendered here -->
+                    </div>
+                </div>
+
+                <!-- Admin Excel & PDF Report Export Panel -->
+                <div class="report-export-panel glass-panel" style="padding: 1rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center; border: 1px solid var(--border-color); background: rgba(16, 185, 129, 0.04);">
+                    <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                        <span style="font-weight: 700; color: var(--text-primary); font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-solid fa-file-excel" style="color: var(--success); font-size: 1.15rem;"></i> <span>প্রতিষ্ঠানিক রিপোর্ট (Admin Report):</span>
+                        </span>
+                        <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
+                            <div style="display: flex; align-items: center; gap: 0.35rem;">
+                                <label style="font-size: 0.82rem; color: var(--text-muted); font-weight: 600;">Course:</label>
+                                <select class="form-control report-course-filter" style="padding: 0.25rem 0.5rem; font-size: 0.82rem; height: auto; min-width: 140px;">
+                                    <option value="all">All Courses (সব কোর্স)</option>
+                                    <option value="Graphic Design">Graphic Design</option>
+                                    <option value="Basic Computer">Basic Computer</option>
+                                    <option value="Spoken English">Spoken English</option>
+                                    <option value="IELTS">IELTS</option>
+                                </select>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.35rem;">
+                                <label style="font-size: 0.82rem; color: var(--text-muted); font-weight: 600;">From:</label>
+                                <input type="date" class="form-control report-from-date" style="padding: 0.2rem 0.4rem; font-size: 0.82rem; height: auto; width: 135px;" title="Admission Date From">
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.35rem;">
+                                <label style="font-size: 0.82rem; color: var(--text-muted); font-weight: 600;">To:</label>
+                                <input type="date" class="form-control report-to-date" style="padding: 0.2rem 0.4rem; font-size: 0.82rem; height: auto; width: 135px;" title="Admission Date To">
+                            </div>
+                            <button class="btn btn-secondary btn-sm report-reset-btn" type="button" style="padding: 0.25rem 0.6rem; font-size: 0.78rem; height: auto;" title="Reset Filters"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+                        <button type="button" class="btn btn-success btn-export-excel" style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700; padding: 0.45rem 1.1rem; font-size: 0.9rem; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25); cursor: pointer;">
+                            <i class="fa-solid fa-file-excel"></i> 📥 Excel রিপোর্ট ডাউনলোড
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-export-pdf" style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; padding: 0.45rem 0.9rem; font-size: 0.85rem; cursor: pointer;" title="প্রিন্ট অথবা PDF সংরক্ষণ">
+                            <i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> 📄 PDF রিপোর্ট
+                        </button>
                     </div>
                 </div>
 
@@ -283,6 +342,20 @@
                             <p id="stat-certs">0</p>
                         </div>
                         <div class="stat-card-icon" style="background-color: rgba(139, 92, 246, 0.15); color: var(--accent);"><i class="fa-solid fa-award"></i></div>
+                    </div>
+                    <div class="admin-stat-card glass-panel" style="border-left: 4px solid #ef4444;">
+                        <div class="stat-card-details">
+                            <h4>Total Expenses</h4>
+                            <p id="stat-total-expenses">৳0</p>
+                        </div>
+                        <div class="stat-card-icon" style="background-color: rgba(239, 68, 68, 0.15); color: #ef4444;"><i class="fa-solid fa-arrow-trend-down"></i></div>
+                    </div>
+                    <div class="admin-stat-card glass-panel" style="border-left: 4px solid #8b5cf6;">
+                        <div class="stat-card-details">
+                            <h4>Net Income</h4>
+                            <p id="stat-net-income">৳0</p>
+                        </div>
+                        <div class="stat-card-icon" style="background-color: rgba(139, 92, 246, 0.15); color: #8b5cf6;"><i class="fa-solid fa-scale-balanced"></i></div>
                     </div>
                 </div>
 
@@ -449,6 +522,7 @@
                             <option value="Graphic Design">Graphic Design</option>
                             <option value="Basic Computer">Basic Computer</option>
                             <option value="Spoken English">Spoken English</option>
+                            <option value="IELTS">IELTS</option>
                         </select>
                     </div>
                     <div>
@@ -542,6 +616,9 @@
                                 <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-weight: 500; margin: 0;">
                                     <input type="checkbox" class="reg-course-checkbox" value="Spoken English" style="width: 16px; height: 16px;"> Spoken English
                                 </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-weight: 500; margin: 0;">
+                                    <input type="checkbox" class="reg-course-checkbox" value="IELTS" style="width: 16px; height: 16px;"> IELTS
+                                </label>
                             </div>
                         </div>
                         <div id="reg-course-details-container" style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1rem;">
@@ -552,9 +629,18 @@
                             <label for="reg-student-name">Student Full Name</label>
                             <input type="text" id="reg-student-name" class="form-control" required placeholder="e.g. Kamal Uddin">
                         </div>
-                        <div class="form-group">
-                            <label for="reg-student-phone">Mobile Number <span style="color: var(--danger);">*</span></label>
-                            <input type="tel" id="reg-student-phone" class="form-control" required placeholder="01XXXXXXXXX">
+                        <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label for="reg-student-phone">Mobile Number <span style="color: var(--danger);">*</span></label>
+                                <input type="tel" id="reg-student-phone" class="form-control" required placeholder="01XXXXXXXXX">
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-student-gender">Gender <span style="color: var(--danger);">*</span></label>
+                                <select id="reg-student-gender" class="form-control" required>
+                                    <option value="Male" selected>Male (পুরুষ)</option>
+                                    <option value="Female">Female (নারী)</option>
+                                </select>
+                            </div>
                         </div>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                             <div class="form-group">
@@ -706,6 +792,7 @@
                                         <option value="Graphic Design">Graphic Design</option>
                                         <option value="Basic Computer">Basic Computer</option>
                                         <option value="Spoken English">Spoken English</option>
+                                        <option value="IELTS">IELTS</option>
                                     </select>
                                 </div>
                                 <div>
@@ -789,6 +876,7 @@
                     <button class="btn btn-primary batch-course-btn active" data-course="Graphic Design"><i class="fa-solid fa-palette"></i> Graphic Design</button>
                     <button class="btn btn-secondary batch-course-btn" data-course="Basic Computer"><i class="fa-solid fa-display"></i> Basic Computer</button>
                     <button class="btn btn-secondary batch-course-btn" data-course="Spoken English"><i class="fa-solid fa-comments"></i> Spoken English</button>
+                    <button class="btn btn-secondary batch-course-btn" data-course="IELTS"><i class="fa-solid fa-graduation-cap"></i> IELTS</button>
                 </div>
 
                 <div class="batches-grid" style="display: grid; grid-template-columns: 280px 1fr; gap: 2rem; align-items: start;">
@@ -947,9 +1035,34 @@
                             </tbody>
                         </table>
                     </div>
+                    <!-- Mobile List Container (Visible only on mobile screen) -->
+                    <div id="handover-mobile-list" style="display: none; flex-direction: column; gap: 1.25rem;"></div>
                 </div>
-                <!-- Mobile-only Handover List -->
-                <div id="handover-mobile-list" style="display: none; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem;"></div>
+                <!-- Daily Tasks Ledger Card -->
+                <div class="glass-panel" style="padding: 1.5rem; margin-bottom: 2rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
+                        <h4 style="margin: 0; font-size: 1.1rem; color: var(--text-color); font-weight: 700;"><i class="fa-solid fa-list-check"></i> Staff Daily Tasks Ledger (স্টাফদের দৈনিক দায়িত্ব খাতা)</h4>
+                    </div>
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Task Description</th>
+                                    <th>Assigned To</th>
+                                    <th>Status</th>
+                                    <th>Completion Time</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="handover-tasks-tbody">
+                                <tr>
+                                    <td colspan="6" style="text-align: center; color: var(--text-muted);">No tasks found. Select a date range to filter.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </section>
 
             <!-- --- TAB VIEW: INVOICES --- -->
@@ -987,6 +1100,44 @@
                             <p id="invoice-stat-count" style="font-size: 1.8rem; font-weight: 700; margin: 0;">0</p>
                         </div>
                         <div class="stat-card-icon" style="background-color: rgba(139, 92, 246, 0.15); color: var(--accent);"><i class="fa-solid fa-file-invoice"></i></div>
+                    </div>
+                </div>
+
+                <!-- Admin Excel & PDF Report Export Panel -->
+                <div class="report-export-panel glass-panel" style="padding: 1rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center; border: 1px solid var(--border-color); background: rgba(16, 185, 129, 0.04);">
+                    <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                        <span style="font-weight: 700; color: var(--text-primary); font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-solid fa-file-excel" style="color: var(--success); font-size: 1.15rem;"></i> <span>প্রতিষ্ঠানিক রিপোর্ট (Admin Report):</span>
+                        </span>
+                        <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
+                            <div style="display: flex; align-items: center; gap: 0.35rem;">
+                                <label style="font-size: 0.82rem; color: var(--text-muted); font-weight: 600;">Course:</label>
+                                <select class="form-control report-course-filter" style="padding: 0.25rem 0.5rem; font-size: 0.82rem; height: auto; min-width: 140px;">
+                                    <option value="all">All Courses (সব কোর্স)</option>
+                                    <option value="Graphic Design">Graphic Design</option>
+                                    <option value="Basic Computer">Basic Computer</option>
+                                    <option value="Spoken English">Spoken English</option>
+                                    <option value="IELTS">IELTS</option>
+                                </select>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.35rem;">
+                                <label style="font-size: 0.82rem; color: var(--text-muted); font-weight: 600;">From:</label>
+                                <input type="date" class="form-control report-from-date" style="padding: 0.2rem 0.4rem; font-size: 0.82rem; height: auto; width: 135px;" title="Admission Date From">
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.35rem;">
+                                <label style="font-size: 0.82rem; color: var(--text-muted); font-weight: 600;">To:</label>
+                                <input type="date" class="form-control report-to-date" style="padding: 0.2rem 0.4rem; font-size: 0.82rem; height: auto; width: 135px;" title="Admission Date To">
+                            </div>
+                            <button class="btn btn-secondary btn-sm report-reset-btn" type="button" style="padding: 0.25rem 0.6rem; font-size: 0.78rem; height: auto;" title="Reset Filters"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+                        <button type="button" class="btn btn-success btn-export-excel" style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700; padding: 0.45rem 1.1rem; font-size: 0.9rem; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25); cursor: pointer;">
+                            <i class="fa-solid fa-file-excel"></i> 📥 Excel রিপোর্ট ডাউনলোড
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-export-pdf" style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; padding: 0.45rem 0.9rem; font-size: 0.85rem; cursor: pointer;" title="প্রিন্ট অথবা PDF সংরক্ষণ">
+                            <i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> 📄 PDF রিপোর্ট
+                        </button>
                     </div>
                 </div>
 
@@ -1051,9 +1202,68 @@
 
             <!-- --- TAB VIEW: CERTIFICATES --- -->
             <section id="tab-certificates" class="tab-view" style="display: none;">
-                <div class="glass-panel" style="padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem; display: flex; gap: 1rem; align-items: center;">
-                    <div style="flex-grow: 1;">
-                        <input type="text" id="cert-search" class="form-control" placeholder="Search students by Name, ID to manage certificates...">
+                <!-- Certificates Stats Grid -->
+                <div class="admin-stats-grid" style="margin-bottom: 2rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                    <div class="admin-stat-card glass-panel cert-filter-card" data-filter="today" style="border-left: 4px solid var(--success); cursor: pointer;">
+                        <div class="stat-card-details">
+                            <h4>Issued Today</h4>
+                            <p id="cert-stat-today">0</p>
+                        </div>
+                    </div>
+                    <div class="admin-stat-card glass-panel cert-filter-card" data-filter="yesterday" style="border-left: 4px solid var(--info); cursor: pointer;">
+                        <div class="stat-card-details">
+                            <h4>Issued Yesterday</h4>
+                            <p id="cert-stat-yesterday">0</p>
+                        </div>
+                    </div>
+                    <div class="admin-stat-card glass-panel cert-filter-card" data-filter="month" style="border-left: 4px solid var(--warning); cursor: pointer;">
+                        <div class="stat-card-details">
+                            <h4>Issued This Month</h4>
+                            <p id="cert-stat-month">0</p>
+                        </div>
+                    </div>
+                    <div class="admin-stat-card glass-panel cert-filter-card" data-filter="year" style="border-left: 4px solid var(--primary); cursor: pointer;">
+                        <div class="stat-card-details">
+                            <h4>Issued This Year</h4>
+                            <p id="cert-stat-year">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel" style="padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem; display: flex; flex-direction: column; gap: 1rem;">
+                    <!-- First Row: Search and Course/Batch selection -->
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; width: 100%;">
+                        <div style="flex: 1; min-width: 250px;">
+                            <input type="text" id="cert-search" class="form-control" placeholder="Search students by Name, ID to manage certificates...">
+                        </div>
+                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; flex: 2; justify-content: flex-end;">
+                            <select id="cert-course-filter" class="form-control" style="width: auto; min-width: 160px;">
+                                <option value="all">All Courses</option>
+                                <option value="Graphic Design">Graphic Design</option>
+                                <option value="Basic Computer">Basic Computer</option>
+                                <option value="Spoken English">Spoken English</option>
+                                <option value="IELTS">IELTS</option>
+                            </select>
+                            <select id="cert-batch-filter" class="form-control" style="width: auto; min-width: 140px;">
+                                <option value="all">All Batches</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Second Row: Status, Date Filter, and Reset Buttons -->
+                    <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; justify-content: flex-end; border-top: 1px dashed var(--border-color); padding-top: 1rem;">
+                        <select id="cert-status-filter" class="form-control" style="width: auto; min-width: 140px;">
+                            <option value="all">All Status</option>
+                            <option value="issued">Issued Only</option>
+                            <option value="in_progress">In Progress</option>
+                        </select>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; background: var(--bg-secondary); padding: 0.25rem 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+                            <label for="cert-date-filter" style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted); white-space: nowrap;"><i class="fa-solid fa-calendar-days"></i> Date:</label>
+                            <input type="date" id="cert-date-filter" class="form-control" style="padding: 0.25rem; font-size: 0.85rem; border: none; background: transparent; box-shadow: none; min-height: auto; width: 125px;">
+                            <button id="cert-clear-date" class="btn btn-secondary btn-icon-only" style="padding: 0.25rem 0.5rem; min-height: auto; font-size: 0.8rem;" title="Clear Date">&times;</button>
+                        </div>
+                        <button id="cert-bulk-award" class="btn btn-success btn-sm" style="padding: 0.5rem 1rem; display: none; background: var(--success); border-color: var(--success);"><i class="fa-solid fa-graduation-cap"></i> Award Certificates</button>
+                        <button id="cert-reset-filters" class="btn btn-secondary btn-sm" style="padding: 0.5rem 1rem; display: none;">Show All</button>
                     </div>
                 </div>
 
@@ -1235,7 +1445,7 @@
                 </div>
 
                 <!-- Main Columns Layout -->
-                <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem; align-items: start;" class="inquiries-tasks-grid">
+                <div style="display: flex; flex-direction: column; gap: 2rem;" class="inquiries-tasks-grid">
                     <!-- LEFT COLUMN: WALK-IN INQUIRIES -->
                     <div class="glass-card" style="padding: 2rem;">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
@@ -1287,6 +1497,7 @@
                                     <option value="Graphic Design">Graphic Design</option>
                                     <option value="Basic Computer">Basic Computer</option>
                                     <option value="Spoken English">Spoken English</option>
+                                    <option value="IELTS">IELTS</option>
                                     <option value="Other">Other</option>
                                 </select>
                             </div>
@@ -1328,49 +1539,66 @@
                         </div>
 
                         <!-- Inline Quick Add Task Form -->
-                        <form id="task-add-form" style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; padding: 1.25rem; border-radius: var(--radius-md); background: var(--bg-secondary); border: 1px solid var(--border-color);">
-                            <div style="font-weight: 700; font-size: 0.85rem; color: var(--text-main); margin-bottom: 0.25rem;"><i class="fa-solid fa-circle-plus"></i> Assign New Task</div>
-                            <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr auto; gap: 0.5rem; align-items: end;">
+                        <form id="task-add-form" style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; padding: 1.5rem; border-radius: var(--radius-md); background: var(--bg-secondary); border: 1px solid var(--border-color);">
+                            <div style="font-weight: 700; font-size: 0.9rem; color: var(--text-main); margin-bottom: 0.25rem;"><i class="fa-solid fa-circle-plus"></i> Assign New Daily Task (নতুন কাজ বরাদ্দ করুন)</div>
+                            
+                            <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                                <label for="task-desc-input" style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Description (কাজের বিবরণ - বিস্তারিত লিখতে পারেন)</label>
+                                <textarea id="task-desc-input" class="form-control" rows="3" placeholder="Describe the task in detail..." required style="resize: vertical; font-size: 0.9rem; padding: 0.6rem;"></textarea>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                                 <div style="display: flex; flex-direction: column; gap: 0.25rem;">
-                                    <label for="task-desc-input" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Description (কাজের বিবরণ)</label>
-                                    <input type="text" id="task-desc-input" class="form-control" placeholder="What needs to be done?" required style="height: 38px;">
-                                </div>
-                                <div style="display: flex; flex-direction: column; gap: 0.25rem;">
-                                    <label for="task-assignee-select" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Assign To (কার জন্য)</label>
-                                    <select id="task-assignee-select" class="form-control" style="height: 38px;">
+                                    <label for="task-assign-input" style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Assign To (কার জন্য)</label>
+                                    <select id="task-assign-input" class="form-control" style="height: 38px;">
                                         <option value="Staff">Staff</option>
                                         <option value="Admin">Admin</option>
                                     </select>
                                 </div>
                                 <div style="display: flex; flex-direction: column; gap: 0.25rem;">
-                                    <label for="task-date-input" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Due Date (তারিখ)</label>
+                                    <label for="task-date-input" style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Task Date (কাজের তারিখ)</label>
                                     <input type="date" id="task-date-input" class="form-control" required style="height: 38px;">
                                 </div>
-                                <button type="submit" class="btn btn-primary" style="height: 38px; width: 80px; justify-content: center;"><i class="fa-solid fa-plus"></i> Assign</button>
+                            </div>
+                            
+                            <div style="display: flex; justify-content: flex-end; margin-top: 0.5rem;">
+                                <button type="submit" class="btn btn-primary" style="height: 38px; padding: 0 1.5rem;"><i class="fa-solid fa-plus"></i> Assign Task</button>
                             </div>
                         </form>
 
-                        <!-- Tasks Filter Bar -->
-                        <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; background: rgba(255, 255, 255, 0.02); padding: 0.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);" id="task-filters-container">
-                            <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted);"><i class="fa-solid fa-filter"></i> Filter Date:</span>
-                            <select id="task-filter-date" class="form-control" style="width: auto; padding: 0.2rem 0.5rem; font-size: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--surface); color: var(--text-main); height: 30px;">
-                                <option value="all">All Tasks</option>
-                                <option value="today">Today</option>
-                                <option value="tomorrow">Tomorrow</option>
-                                <option value="overdue">Overdue</option>
-                            </select>
+                        <!-- Tasks Calendar Header -->
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; background: rgba(255, 255, 255, 0.02); padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);" id="task-calendar-controls">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <button id="calendar-prev-btn" class="btn btn-secondary btn-icon-only" style="height: 32px; width: 32px;" title="Previous Month"><i class="fa-solid fa-chevron-left"></i></button>
+                                <h4 id="calendar-month-year" style="margin: 0; font-weight: 700; font-size: 1.05rem; color: var(--primary); min-width: 140px; text-align: center;">Month Year</h4>
+                                <button id="calendar-next-btn" class="btn btn-secondary btn-icon-only" style="height: 32px; width: 32px;" title="Next Month"><i class="fa-solid fa-chevron-right"></i></button>
+                                <button id="calendar-today-btn" class="btn btn-secondary" style="height: 32px; padding: 0 0.75rem; font-size: 0.8rem;">Today</button>
+                            </div>
                             
-                            <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted); margin-left: 1rem;"><i class="fa-solid fa-user"></i> Assignee:</span>
-                            <select id="task-filter-assignee" class="form-control" style="width: auto; padding: 0.2rem 0.5rem; font-size: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--surface); color: var(--text-main); height: 30px;">
-                                <option value="all">All Roles</option>
-                                <option value="staff">For Staff</option>
-                                <option value="admin">For Admin</option>
-                            </select>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted);"><i class="fa-solid fa-user"></i> Filter Assignee:</span>
+                                <select id="task-calendar-assignee" class="form-control" style="width: auto; padding: 0.2rem 0.5rem; font-size: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--surface); color: var(--text-main); height: 32px;">
+                                    <option value="all">All Roles</option>
+                                    <option value="staff">For Staff</option>
+                                    <option value="admin">For Admin</option>
+                                </select>
+                            </div>
                         </div>
 
-                        <!-- Tasks List -->
-                        <div id="tasks-list-container" style="display: flex; flex-direction: column; gap: 1.25rem; max-height: 400px; overflow-y: auto; padding-right: 0.25rem; margin-bottom: 2rem;">
-                            <!-- Tasks render here grouped by date -->
+                        <!-- Calendar Grid Wrapper -->
+                        <div id="tasks-calendar-grid-container" style="margin-bottom: 2rem;">
+                            <!-- Will contain .calendar-grid with header and cells generated in admin.js -->
+                        </div>
+
+                        <!-- Selected Date Task Drawer Details -->
+                        <div id="selected-date-tasks-container" class="glass-panel" style="padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 2rem; display: none;">
+                            <h4 style="margin: 0 0 1rem 0; font-weight: 700; font-size: 0.9rem; color: var(--primary); display: flex; align-items: center; gap: 0.4rem; justify-content: space-between;">
+                                <span><i class="fa-solid fa-calendar-day"></i> Tasks for <span id="selected-calendar-date-str">Selected Date</span></span>
+                                <span id="selected-date-tasks-count" style="font-size: 0.75rem; color: var(--text-muted);">0 tasks</span>
+                            </h4>
+                            <div id="selected-date-tasks-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                <!-- Detailed checklist of tasks for the selected date -->
+                            </div>
                         </div>
 
                         <!-- Completed Tasks Log -->
@@ -1478,6 +1706,127 @@
                 </div>
             </section>
 
+            <!-- --- TAB VIEW: EXPENSES --- -->
+            <section id="tab-expenses" class="tab-view" style="display: none; padding: 0.5rem 0 2rem 0;">
+                <!-- Expense Period Filter Control -->
+                <div class="glass-panel" style="padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                        <span style="font-weight: 600; font-size: 0.9rem; color: var(--text-color);"><i class="fa-solid fa-calendar-days"></i> Period Filter:</span>
+                        <select id="expense-period-select" class="form-control" style="width: 170px; height: 38px; padding: 0.25rem 0.5rem; font-size: 0.85rem;">
+                            <option value="this-month" selected>This Month (এ মাস)</option>
+                            <option value="today">Today (আজকে)</option>
+                            <option value="this-year">This Year (এ বছর)</option>
+                            <option value="all-time">All Time (সর্বমোট)</option>
+                            <option value="custom">Custom Date Range</option>
+                        </select>
+                        
+                        <div id="expense-custom-dates" style="display: none; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                            <input type="date" id="expense-custom-start" class="form-control" style="width: auto; height: 38px; font-size: 0.8rem; padding: 0.25rem 0.5rem;">
+                            <span style="color: var(--text-muted);">to</span>
+                            <input type="date" id="expense-custom-end" class="form-control" style="width: auto; height: 38px; font-size: 0.8rem; padding: 0.25rem 0.5rem;">
+                        </div>
+                    </div>
+                    
+                    <!-- Expense Quick Breakdown Badges -->
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <div class="glass-card" style="padding: 0.5rem 1rem; display: flex; align-items: center; gap: 0.5rem; background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.15); border-radius: var(--radius-sm);">
+                            <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Today (আজ)</span>
+                            <strong id="breakdown-expense-today" style="color: #ef4444; font-size: 0.9rem;">৳0</strong>
+                        </div>
+                        <div class="glass-card" style="padding: 0.5rem 1rem; display: flex; align-items: center; gap: 0.5rem; background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.15); border-radius: var(--radius-sm);">
+                            <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">This Month (চলতি মাস)</span>
+                            <strong id="breakdown-expense-month" style="color: #ef4444; font-size: 0.9rem;">৳0</strong>
+                        </div>
+                        <div class="glass-card" style="padding: 0.5rem 1rem; display: flex; align-items: center; gap: 0.5rem; background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.15); border-radius: var(--radius-sm);">
+                            <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">This Year (চলতি বছর)</span>
+                            <strong id="breakdown-expense-year" style="color: #ef4444; font-size: 0.9rem;">৳0</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary Metrics cards -->
+                <div class="metrics-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                    <div class="metric-card glass-panel" style="padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: space-between;">
+                        <div>
+                            <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase;">Total Income (মোট আয়)</span>
+                            <h3 id="metric-expenses-total-income" style="margin-top: 0.25rem; font-size: 1.75rem; color: var(--success); font-weight: 700;">৳0</h3>
+                        </div>
+                        <div class="stat-card-icon" style="background-color: rgba(16, 185, 129, 0.15); color: var(--success);"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                    </div>
+                    <div class="metric-card glass-panel" style="padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: space-between;">
+                        <div>
+                            <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase;">Total Expenses (মোট খরচ)</span>
+                            <h3 id="metric-expenses-total-cost" style="margin-top: 0.25rem; font-size: 1.75rem; color: #ef4444; font-weight: 700;">৳0</h3>
+                        </div>
+                        <div class="stat-card-icon" style="background-color: rgba(239, 68, 68, 0.15); color: #ef4444;"><i class="fa-solid fa-arrow-trend-down"></i></div>
+                    </div>
+                    <div class="metric-card glass-panel" style="padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: space-between;">
+                        <div>
+                            <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase;">Net Income (নিট লভ্যাংশ)</span>
+                            <h3 id="metric-expenses-net-income" style="margin-top: 0.25rem; font-size: 1.75rem; color: #8b5cf6; font-weight: 700;">৳0</h3>
+                        </div>
+                        <div class="stat-card-icon" style="background-color: rgba(139, 92, 246, 0.15); color: #8b5cf6;"><i class="fa-solid fa-scale-balanced"></i></div>
+                    </div>
+                </div>
+
+                <!-- Main Layout -->
+                <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; align-items: start;" class="expenses-main-grid">
+                    <!-- LEFT COLUMN: ADD EXPENSE FORM -->
+                    <div class="glass-card" style="padding: 2rem;">
+                        <h3 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-file-invoice-dollar"></i> Add Expense</h3>
+                        <form id="expense-add-form" style="display: flex; flex-direction: column; gap: 1.25rem;">
+                            <div class="form-group">
+                                <label for="expense-date" style="font-weight: 600;">Date</label>
+                                <input type="date" id="expense-date" class="form-control" required style="height: 42px;">
+                            </div>
+                            <div class="form-group">
+                                <label for="expense-amount" style="font-weight: 600;">Amount (৳)</label>
+                                <input type="number" id="expense-amount" class="form-control" placeholder="e.g. 500" required min="1" style="height: 42px;">
+                            </div>
+                            <div class="form-group">
+                                <label for="expense-description" style="font-weight: 600;">Description/Details</label>
+                                <textarea id="expense-description" class="form-control" rows="3" placeholder="What was this expense for?" required style="padding: 0.6rem; resize: vertical;"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" onclick="addExpense(event)" style="height: 42px; justify-content: center; margin-top: 0.5rem;"><i class="fa-solid fa-plus"></i> Record Expense</button>
+                        </form>
+                    </div>
+
+                    <!-- RIGHT COLUMN: EXPENSES HISTORY & FILTER -->
+                    <div class="glass-card" style="padding: 2rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                            <h3 style="margin: 0;"><i class="fa-solid fa-list"></i> Expense Ledger</h3>
+                            
+                            <!-- Date & Text Filters -->
+                            <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+                                <input type="text" id="expense-search-input" class="form-control" placeholder="Search description, date..." style="width: 180px; height: 36px; padding: 0.35rem 0.5rem; font-size: 0.8rem;">
+                                <input type="date" id="expense-filter-date" class="form-control" style="width: auto; height: 36px; padding: 0.35rem 0.5rem; font-size: 0.8rem;">
+                                <button type="button" class="btn btn-secondary btn-sm" id="expense-clear-filter-btn" style="height: 36px;">Clear</button>
+                            </div>
+                        </div>
+
+                        <!-- Expenses Table -->
+                        <div style="overflow-x: auto;">
+                            <table class="data-table" style="width: 100%; border-collapse: collapse;">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Description</th>
+                                        <th>Amount (৳)</th>
+                                        <th>Recorded By</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="expenses-table-tbody">
+                                    <tr>
+                                        <td colspan="5" style="text-align: center; color: var(--text-muted); padding: 2rem;">No expenses recorded yet.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- --- TAB VIEW: SETTINGS --- -->
             <section id="tab-settings" class="tab-view" style="display: none;">
                 <div class="settings-grid" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2.5rem;">
@@ -1495,7 +1844,7 @@
                             </div>
                             
                             <h4 style="margin: 2rem 0 1rem;"><i class="fa-solid fa-tags"></i> Course Pricing Config (BDT)</h4>
-                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
                                 <div class="form-group">
                                     <label for="settings-price-graphic">Graphic Design</label>
                                     <input type="number" id="settings-price-graphic" class="form-control" required>
@@ -1507,6 +1856,10 @@
                                 <div class="form-group">
                                     <label for="settings-price-english">Spoken English</label>
                                     <input type="number" id="settings-price-english" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="settings-price-ielts">IELTS</label>
+                                    <input type="number" id="settings-price-ielts" class="form-control" required>
                                 </div>
                             </div>
                             
@@ -1567,6 +1920,10 @@
                                 <div class="form-group">
                                     <label for="settings-admin-recovery-email">Admin Recovery Email (for Verification Code)</label>
                                     <input type="email" id="settings-admin-recovery-email" class="form-control" placeholder="e.g. recovery@ediz.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="settings-admin-phone">Mobile Number for OTP Verification</label>
+                                    <input type="text" id="settings-admin-phone" class="form-control" placeholder="e.g. 01798926897" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="settings-pwd-new">New Password (leave blank to keep current)</label>
@@ -1633,6 +1990,10 @@
                                 <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1rem; cursor: pointer;">
                                     <input type="checkbox" id="settings-sms-auto-send" checked style="width: auto; margin: 0; cursor: pointer;">
                                     <label for="settings-sms-auto-send" style="margin: 0; font-size: 0.88rem; cursor: pointer; color: var(--text-muted);">Auto-send Welcome SMS on Admission</label>
+                                </div>
+                                <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" id="settings-sms-auto-reminders" style="width: auto; margin: 0; cursor: pointer;">
+                                    <label for="settings-sms-auto-reminders" style="margin: 0; font-size: 0.88rem; cursor: pointer; color: var(--text-muted);">Enable Automatic SMS Payment Reminders</label>
                                 </div>
                                 <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fa-solid fa-save"></i> Save SMS Configuration</button>
                             </form>
@@ -1813,6 +2174,7 @@
                                 <option value="Graphic Design">Graphic Design</option>
                                 <option value="Basic Computer">Basic Computer</option>
                                 <option value="Spoken English">Spoken English</option>
+                                <option value="IELTS">IELTS</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -1835,6 +2197,9 @@
                                 <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-weight: 500; margin: 0;">
                                     <input type="checkbox" class="course-checkbox" value="Spoken English" style="width: 16px; height: 16px;"> Spoken English
                                 </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-weight: 500; margin: 0;">
+                                    <input type="checkbox" class="course-checkbox" value="IELTS" style="width: 16px; height: 16px;"> IELTS
+                                </label>
                             </div>
                         </div>
                         <div id="course-details-container" style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1rem;">
@@ -1845,9 +2210,18 @@
                         <label for="student-name">Student Full Name</label>
                         <input type="text" id="student-name" class="form-control" required placeholder="e.g. Kamal Uddin">
                     </div>
-                    <div class="form-group">
-                        <label for="student-phone">Mobile Number <span style="color: var(--danger);">*</span></label>
-                        <input type="tel" id="student-phone" class="form-control" required placeholder="01XXXXXXXXX">
+                    <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label for="student-phone">Mobile Number <span style="color: var(--danger);">*</span></label>
+                            <input type="tel" id="student-phone" class="form-control" required placeholder="01XXXXXXXXX">
+                        </div>
+                        <div class="form-group">
+                            <label for="student-gender">Gender <span style="color: var(--danger);">*</span></label>
+                            <select id="student-gender" class="form-control" required>
+                                <option value="Male">Male (পুরুষ)</option>
+                                <option value="Female">Female (নারী)</option>
+                            </select>
+                        </div>
                     </div>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                         <div class="form-group">
@@ -2040,6 +2414,7 @@
                             <option value="Graphic Design">Graphic Design</option>
                             <option value="Basic Computer">Basic Computer</option>
                             <option value="Spoken English">Spoken English</option>
+                            <option value="IELTS">IELTS</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -2530,7 +2905,7 @@
                     <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Enter your Admin Email Address to begin the password recovery process.</p>
                     <div class="form-group">
                         <label for="recovery-email">Admin Email Address</label>
-                        <input type="email" id="recovery-email" class="form-control" placeholder="e.g. owner@ediz.com" required>
+                        <input type="email" id="recovery-email" class="form-control" placeholder="e.g. mail@example.com" required>
                     </div>
                     <button type="button" id="recovery-btn-next" class="btn btn-primary" style="width: 100%; justify-content: center;"><i class="fa-solid fa-arrow-right"></i> Continue</button>
                 </div>
@@ -2673,6 +3048,7 @@
                             <label style="display:flex; align-items:center; gap:0.4rem; font-size:0.88rem; cursor:pointer; color:var(--text-main);"><input type="checkbox" name="inq-courses" value="Graphic Design" class="inq-course-checkbox"> Graphic Design</label>
                             <label style="display:flex; align-items:center; gap:0.4rem; font-size:0.88rem; cursor:pointer; color:var(--text-main);"><input type="checkbox" name="inq-courses" value="Basic Computer" class="inq-course-checkbox"> Basic Computer</label>
                             <label style="display:flex; align-items:center; gap:0.4rem; font-size:0.88rem; cursor:pointer; color:var(--text-main);"><input type="checkbox" name="inq-courses" value="Spoken English" class="inq-course-checkbox"> Spoken English</label>
+                            <label style="display:flex; align-items:center; gap:0.4rem; font-size:0.88rem; cursor:pointer; color:var(--text-main);"><input type="checkbox" name="inq-courses" value="IELTS" class="inq-course-checkbox"> IELTS</label>
                             <label style="display:flex; align-items:center; gap:0.4rem; font-size:0.88rem; cursor:pointer; color:var(--text-main);"><input type="checkbox" name="inq-courses" value="Other" class="inq-course-checkbox"> Other</label>
                         </div>
                     </div>
@@ -2722,8 +3098,8 @@
     </div>
 
     <!-- Script Entrypoint -->
-    <script src="Certificate/certificate_svg.js?v=11"></script>
-    <script src="database_backup.js?v=12" defer></script>
-    <script src="admin.js?v=12" defer></script>
+    <script src="exceljs.min.js?v=1" defer></script>
+    <script src="database_backup.js?v=17" defer></script>
+    <script src="admin.js?v=17" defer></script>
 </body>
 </html>

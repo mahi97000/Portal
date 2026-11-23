@@ -10,7 +10,8 @@ function getLocalDateString(date = new Date()) {
 const defaultFees = {
     "Graphic Design": 8000,
     "Basic Computer": 4000,
-    "Spoken English": 5000
+    "Spoken English": 5000,
+    "IELTS": 10000
 };
 
 const defaultBatches = [
@@ -19,7 +20,9 @@ const defaultBatches = [
     { course: "Basic Computer", name: "BC-01", fee: 4000, discount: 500, time: "11:00 AM - 12:30 PM", schedule: ["Sat", "Mon", "Wed"], startDate: "2026-06-01", endDate: "2026-07-31" },
     { course: "Basic Computer", name: "BC-02", fee: 4000, discount: 0, time: "02:30 PM - 04:00 PM", schedule: ["Sun", "Tue", "Thu"], startDate: "2026-06-01", endDate: "2026-07-31" },
     { course: "Spoken English", name: "SE-01", fee: 5000, discount: 800, time: "11:00 AM - 12:30 PM", schedule: ["Sat", "Mon", "Wed"], startDate: "2026-06-01", endDate: "2026-07-31" },
-    { course: "Spoken English", name: "SE-02", fee: 5000, discount: 0, time: "06:00 PM - 07:30 PM", schedule: ["Sun", "Tue", "Thu"], startDate: "2026-06-01", endDate: "2026-07-31" }
+    { course: "Spoken English", name: "SE-02", fee: 5000, discount: 0, time: "06:00 PM - 07:30 PM", schedule: ["Sun", "Tue", "Thu"], startDate: "2026-06-01", endDate: "2026-07-31" },
+    { course: "IELTS", name: "IELTS-01", fee: 10000, discount: 1500, time: "11:00 AM - 12:30 PM", schedule: ["Sat", "Mon", "Wed"], startDate: "2026-06-01", endDate: "2026-08-31" },
+    { course: "IELTS", name: "IELTS-02", fee: 10000, discount: 1000, time: "06:00 PM - 07:30 PM", schedule: ["Sun", "Tue", "Thu"], startDate: "2026-06-01", endDate: "2026-08-31" }
 ];
 
 let students = [];
@@ -39,9 +42,15 @@ let isEditBatchMode = false;
 let isInitialLoad = true;
 let inquiries = [];
 let tasks = [];
+let expenses = [];
 let inquiriesFilter = 'all';
 let currentTaskFilter = 'all';
 let currentTaskAssigneeFilter = 'all';
+let expensesCategoryFilter = 'all';
+let expensesDateRange = { type: 'all', start: null, end: null };
+let currentCalendarMonth = new Date().getMonth();
+let currentCalendarYear = new Date().getFullYear();
+let selectedCalendarDate = getLocalDateString();
 let activeBatchForEdit = null;
 let explorerSelectedMonth = '';
 let explorerSelectedBatchCourse = '';
@@ -135,6 +144,7 @@ const settingsAddress = document.getElementById('settings-address');
 const settingsPriceGraphic = document.getElementById('settings-price-graphic');
 const settingsPriceBasic = document.getElementById('settings-price-basic');
 const settingsPriceEnglish = document.getElementById('settings-price-english');
+const settingsPriceIelts = document.getElementById('settings-price-ielts');
 const settingsLogoLight = document.getElementById('settings-logo-light');
 const settingsLogoDark = document.getElementById('settings-logo-dark');
 
@@ -149,6 +159,7 @@ const settingsBatchesTbody = document.getElementById('settings-batches-tbody');
 const settingsPasswordForm = document.getElementById('settings-password-form');
 const settingsAdminEmail = document.getElementById('settings-admin-email');
 const settingsAdminRecoveryEmail = document.getElementById('settings-admin-recovery-email');
+const settingsAdminPhone = document.getElementById('settings-admin-phone');
 const settingsPwdCurrent = document.getElementById('settings-pwd-current');
 const settingsPwdNew = document.getElementById('settings-pwd-new');
 
@@ -190,71 +201,71 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
         // 1. Load Local Database first (initializes settings.users database)
         loadDatabase();
-    migrateLegacyStudentIds();
+        migrateLegacyStudentIds();
 
-    // 2. Check Session Token (user permissions only)
-    if (sessionStorage.getItem('ediz_admin_auth') === 'true') {
-        unlockDashboard();
-        const activeUser = JSON.parse(sessionStorage.getItem('ediz_active_user'));
-        if (activeUser) applyUserPermissions(activeUser);
-    }
+        // 2. Check Session Token (user permissions only)
+        if (sessionStorage.getItem('ediz_admin_auth') === 'true') {
+            unlockDashboard();
+            const activeUser = JSON.parse(sessionStorage.getItem('ediz_active_user'));
+            if (activeUser) applyUserPermissions(activeUser);
+        }
 
-    // 3. Setup Interface Theme
-    const savedTheme = localStorage.getItem('ediz_theme') || 'light';
-    applyTheme(savedTheme);
+        // 3. Setup Interface Theme
+        const savedTheme = localStorage.getItem('ediz_theme') || 'light';
+        applyTheme(savedTheme);
 
-    // 4. Register Event Listeners
-    setupAuthentication();
-    setupTabSwitching();
-    setupModals();
-    setupDataOperations();
-    setupSearchFilters();
-    setupBatchesView();
-    setupBatchModal();
-    setupSmsFeature();
-    setupEmailFeature();
-    setupDashboardFilters();
-    setupDueLookupFeature();
-    setupBooksFeature();
-    setupWhatsAppFeature();
-    setupExportFeatures();
-    setupDashboardSubTabs();
-    setupDashboardSearch();
-    setupStudentNotesFeature();
-    setupRegistrationPage();
-    defaultCollectorInputs();
-    setupHandoverBoardFeature();
-    setupDuesExplorerListeners();
-    setupTeacherPayoutsFeature();
+        // 4. Register Event Listeners
+        setupAuthentication();
+        setupTabSwitching();
+        setupModals();
+        setupDataOperations();
+        setupSearchFilters();
+        setupBatchesView();
+        setupBatchModal();
+        setupSmsFeature();
+        setupEmailFeature();
+        setupDashboardFilters();
+        setupDueLookupFeature();
+        setupBooksFeature();
+        setupWhatsAppFeature();
+        setupExportFeatures();
+        setupDashboardSubTabs();
+        setupDashboardSearch();
+        setupStudentNotesFeature();
+        setupRegistrationPage();
+        defaultCollectorInputs();
+        setupHandoverBoardFeature();
+        setupDuesExplorerListeners();
+        setupTeacherPayoutsFeature();
 
-    // 5. New Requirements Listeners & Renders
-    setupGlobalSearch();
-    setupPageDateFilters();
-    applyStudentIdAutoFormat(document.getElementById('student-id-field'));
-    renderDashboardAlerts();
-    setupMobileNav();
-    initTableResponsiveObserver();
-    setupBillingFormFeatures();
+        // 5. New Requirements Listeners & Renders
+        setupGlobalSearch();
+        setupPageDateFilters();
+        applyStudentIdAutoFormat(document.getElementById('student-id-field'));
+        renderDashboardAlerts();
+        setupMobileNav();
+        initTableResponsiveObserver();
+        setupBillingFormFeatures();
 
-    // 6. Restore active tab after event handlers have been registered
-    if (sessionStorage.getItem('ediz_admin_auth') === 'true') {
-        let savedTab = localStorage.getItem('ediz_active_tab') || 'dashboard';
-        const hash = window.location.hash.substring(1);
-        if (hash) {
-            const matchingTab = document.querySelector(`.sidebar-item[data-tab="${hash}"]`);
-            if (matchingTab) {
-                savedTab = hash;
+        // 6. Restore active tab after event handlers have been registered
+        if (sessionStorage.getItem('ediz_admin_auth') === 'true') {
+            let savedTab = localStorage.getItem('ediz_active_tab') || 'dashboard';
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                const matchingTab = document.querySelector(`.sidebar-item[data-tab="${hash}"]`);
+                if (matchingTab) {
+                    savedTab = hash;
+                }
+            }
+            if (!hasTabAccess(savedTab)) {
+                savedTab = 'dashboard';
+                window.location.hash = 'dashboard';
+            }
+            const tabBtn = document.querySelector(`.sidebar-item[data-tab="${savedTab}"]`);
+            if (tabBtn) {
+                tabBtn.click();
             }
         }
-        if (!hasTabAccess(savedTab)) {
-            savedTab = 'dashboard';
-            window.location.hash = 'dashboard';
-        }
-        const tabBtn = document.querySelector(`.sidebar-item[data-tab="${savedTab}"]`);
-        if (tabBtn) {
-            tabBtn.click();
-        }
-    }
     } catch (error) {
         console.error("Initialization Error:", error);
         alert("Portal load error: " + error.message + "\nStack: " + error.stack);
@@ -270,47 +281,152 @@ function setupAuthentication() {
     const otpPhoneMasked = document.getElementById('otp-phone-masked');
     const authVerifyBtn = document.getElementById('auth-verify-btn');
     const authBackBtn = document.getElementById('auth-back-btn');
+    const otpTimerEl = document.getElementById('otp-timer');
+    const otpResendBtn = document.getElementById('otp-resend-btn');
 
     let currentOtp = null;
     let pendingUser = null;
+    let otpCountdownInterval = null;
+
+    function startOtpCountdown() {
+        if (otpCountdownInterval) clearInterval(otpCountdownInterval);
+        let timeLeft = 180; // 3 minutes in seconds
+        if (otpTimerEl) otpTimerEl.innerText = "03:00";
+        if (otpResendBtn) {
+            otpResendBtn.disabled = true;
+            otpResendBtn.style.opacity = '0.5';
+            otpResendBtn.style.cursor = 'not-allowed';
+        }
+        
+        otpCountdownInterval = setInterval(() => {
+            timeLeft--;
+            if (timeLeft <= 0) {
+                clearInterval(otpCountdownInterval);
+                currentOtp = null; // OTP expires
+                if (otpTimerEl) otpTimerEl.innerText = "Expired (মেয়াদোত্তীর্ণ)";
+                if (otpResendBtn) {
+                    otpResendBtn.disabled = false;
+                    otpResendBtn.style.opacity = '1';
+                    otpResendBtn.style.cursor = 'pointer';
+                }
+                if (otpError) {
+                    otpError.innerText = "OTP has expired. Please request a new one (ওটিপি কোডের মেয়াদ শেষ হয়েছে, পুনরায় পাঠান)।";
+                    otpError.style.display = 'block';
+                }
+                return;
+            }
+            const minutes = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+            const seconds = (timeLeft % 60).toString().padStart(2, '0');
+            if (otpTimerEl) otpTimerEl.innerText = `${minutes}:${seconds}`;
+        }, 1000);
+    }
+
+    async function triggerSendOtp(matchedUser) {
+        const targetPhone = matchedUser.phone || settings.phone;
+        const hasSmsConfig = settings.smsConfig?.apiKey && settings.smsConfig?.senderId;
+
+        if (hasSmsConfig && targetPhone) {
+            const otpCode = Math.floor(100000 + Math.random() * 900000).toString();
+            currentOtp = otpCode;
+            pendingUser = matchedUser;
+
+            // Send OTP via SMS
+            const otpMsg = `EDIZ IT Portal verification code: ${otpCode}. Valid for 3 minutes.`;
+            sendGeneralSms(targetPhone, otpMsg, "Portal Login OTP Verification");
+
+            // Mask the phone
+            const maskPhone = (ph) => {
+                const s = String(ph || '').trim();
+                if (s.length < 6) return s;
+                return s.substring(0, 3) + '*****' + s.substring(s.length - 3);
+            };
+            if (otpPhoneMasked) {
+                otpPhoneMasked.innerText = maskPhone(targetPhone);
+            }
+
+            // Show OTP view
+            if (authCredentialsSection) authCredentialsSection.style.display = 'none';
+            if (authOtpSection) authOtpSection.style.display = 'block';
+            if (authOtpInput) {
+                authOtpInput.value = '';
+                authOtpInput.focus();
+            }
+            if (otpError) otpError.style.display = 'none';
+            
+            // Start countdown
+            startOtpCountdown();
+        } else {
+            // Bypass OTP if SMS configuration or phone is missing
+            completeLogin(matchedUser);
+        }
+    }
+
+    function verifyOtpAndLogin() {
+        const enteredOtp = authOtpInput ? authOtpInput.value.trim() : '';
+        if (enteredOtp && enteredOtp === currentOtp) {
+            if (otpCountdownInterval) clearInterval(otpCountdownInterval);
+            if (otpError) otpError.style.display = 'none';
+            completeLogin(pendingUser);
+        } else {
+            if (otpError) {
+                otpError.innerText = "Incorrect verification code (ওটিপি কোডটি সঠিক নয়।)";
+                otpError.style.display = 'block';
+            }
+            if (authOtpInput) {
+                authOtpInput.value = '';
+                authOtpInput.focus();
+            }
+        }
+    }
+
+    if (authOtpInput) {
+        authOtpInput.addEventListener('input', () => {
+            const val = authOtpInput.value.trim();
+            // Automatically verify when exactly 6 digits are typed
+            if (val.length === 6) {
+                verifyOtpAndLogin();
+            }
+        });
+    }
+
+    if (otpResendBtn) {
+        otpResendBtn.addEventListener('click', () => {
+            if (pendingUser) {
+                triggerSendOtp(pendingUser);
+            }
+        });
+    }
 
     authForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+        
+        // If OTP section is active, verify OTP instead of checking credentials!
+        if (authOtpSection && authOtpSection.style.display === 'block') {
+            verifyOtpAndLogin();
+            return;
+        }
+
         const emailEl = document.getElementById('auth-email');
-        const enteredEmail = emailEl ? emailEl.value.trim() : 'owner@ediz.com';
+        const enteredEmail = emailEl ? emailEl.value.trim() : '';
         const enteredPassword = authPassword.value;
 
         // Retrieve users from settings database
         let users = settings.users || [];
-        let matchedUser = users.find(u => u.email === enteredEmail && u.password === enteredPassword);
+        let matchedUser = users.find(u => u.email.toLowerCase() === enteredEmail.toLowerCase() && u.password === enteredPassword);
 
-        // Fallback check if credentials match owner@ediz.com and default adminPassword (or admin123)
         if (!matchedUser) {
-            const defaultOwnerPass = settings.adminPassword || "admin123";
-            if (enteredEmail === "owner@ediz.com" && enteredPassword === defaultOwnerPass) {
-                matchedUser = {
-                    id: "USER-1",
-                    email: "owner@ediz.com",
-                    password: defaultOwnerPass,
-                    role: "Owner",
-                    permissions: { canEdit: true, canDelete: true, canInvoice: true, canCert: true, canCreateBatch: true }
-                };
-            }
-        }
-
-        // If still not matched, fetch fresh database from server to update local storage
-        if (!matchedUser) {
+            // Load fresh settings from local JSON if possible to verify latest users
             try {
                 const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
                 const fetchUrl = isLocalhost ? 'database.json' : 'api.php';
-                const res = await fetch(fetchUrl);
+                const res = await fetch(fetchUrl, { cache: 'no-store' });
                 if (res.ok) {
                     const data = await res.json();
                     if (data && data.settings) {
                         settings = data.settings;
                         localStorage.setItem('ediz_settings', JSON.stringify(settings));
                         users = settings.users || [];
-                        matchedUser = users.find(u => u.email === enteredEmail && u.password === enteredPassword);
+                        matchedUser = users.find(u => u.email.toLowerCase() === enteredEmail.toLowerCase() && u.password === enteredPassword);
                     }
                 }
             } catch (err) {
@@ -320,52 +436,23 @@ function setupAuthentication() {
         
         // Auto initialize settings users if missing
         if ((!settings.users || settings.users.length === 0) && matchedUser) {
-            const defaultOwnerPass = settings.adminPassword || "admin123";
             settings.users = [
-                { id: "USER-1", email: "owner@ediz.com", password: defaultOwnerPass, role: "Owner", permissions: { canEdit: true, canDelete: true, canInvoice: true, canCert: true, canCreateBatch: true } },
-                { id: "USER-2", email: "staff@ediz.com", password: "staff123", role: "Staff", permissions: { canEdit: true, canDelete: false, canInvoice: true, canCert: false, canCreateBatch: false } }
+                { 
+                    id: "USER-1", 
+                    email: "mahibchowdury97@gmail.com", 
+                    password: "@#Mahi97", 
+                    role: "Owner", 
+                    permissions: { canEdit: true, canDelete: true, canInvoice: true, canCert: true, canCreateBatch: true },
+                    recoveryEmail: "mahibchowdury97@gmail.com",
+                    phone: "01798926897"
+                }
             ];
             localStorage.setItem('ediz_settings', JSON.stringify(settings));
         }
 
         if (matchedUser) {
             authError.style.display = 'none';
-            
-            const targetPhone = matchedUser.phone || settings.phone;
-            const hasSmsConfig = settings.smsConfig?.apiKey && settings.smsConfig?.senderId;
-
-            // If SMS is configured and user/institute has a phone number, trigger OTP
-            if (hasSmsConfig && targetPhone) {
-                const otpCode = Math.floor(100000 + Math.random() * 900000).toString();
-                currentOtp = otpCode;
-                pendingUser = matchedUser;
-
-                // Send OTP via SMS
-                const otpMsg = `EDIZ IT Portal verification code: ${otpCode}. Valid for 3 minutes.`;
-                sendGeneralSms(targetPhone, otpMsg, "Portal Login OTP Verification");
-
-                // Mask the phone
-                const maskPhone = (ph) => {
-                    const s = String(ph || '').trim();
-                    if (s.length < 6) return s;
-                    return s.substring(0, 3) + '*****' + s.substring(s.length - 3);
-                };
-                if (otpPhoneMasked) {
-                    otpPhoneMasked.innerText = maskPhone(targetPhone);
-                }
-
-                // Show OTP view
-                if (authCredentialsSection) authCredentialsSection.style.display = 'none';
-                if (authOtpSection) authOtpSection.style.display = 'block';
-                if (authOtpInput) {
-                    authOtpInput.value = '';
-                    authOtpInput.focus();
-                }
-                if (otpError) otpError.style.display = 'none';
-            } else {
-                // Bypass OTP if SMS configuration or phone is missing
-                completeLogin(matchedUser);
-            }
+            completeLogin(matchedUser);
         } else {
             authError.style.display = 'block';
             authPassword.value = '';
@@ -387,23 +474,12 @@ function setupAuthentication() {
     }
 
     if (authVerifyBtn) {
-        authVerifyBtn.addEventListener('click', () => {
-            const enteredOtp = authOtpInput ? authOtpInput.value.trim() : '';
-            if (enteredOtp && enteredOtp === currentOtp) {
-                if (otpError) otpError.style.display = 'none';
-                completeLogin(pendingUser);
-            } else {
-                if (otpError) otpError.style.display = 'block';
-                if (authOtpInput) {
-                    authOtpInput.value = '';
-                    authOtpInput.focus();
-                }
-            }
-        });
+        authVerifyBtn.addEventListener('click', verifyOtpAndLogin);
     }
 
     if (authBackBtn) {
         authBackBtn.addEventListener('click', () => {
+            if (otpCountdownInterval) clearInterval(otpCountdownInterval);
             currentOtp = null;
             pendingUser = null;
             if (authCredentialsSection) authCredentialsSection.style.display = 'block';
@@ -413,21 +489,6 @@ function setupAuthentication() {
         });
     }
 
-    const devBypassBtn = document.getElementById('dev-bypass-btn');
-    if (devBypassBtn && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
-        devBypassBtn.style.display = 'inline-flex';
-        devBypassBtn.addEventListener('click', () => {
-            const usersList = settings.users || [];
-            const ownerUser = usersList.find(u => u.role === 'Owner') || {
-                id: "USER-1",
-                email: "owner@ediz.com",
-                password: "admin123",
-                role: "Owner",
-                permissions: { canEdit: true, canDelete: true, canInvoice: true, canCert: true, canCreateBatch: true }
-            };
-            completeLogin(ownerUser);
-        });
-    }
 
     toggleAuthPwd.addEventListener('click', () => {
         const type = authPassword.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -749,6 +810,64 @@ if (adminThemeToggle) {
 }
 
 function migrateAndGenerateRegistrationIds() {
+    // 0. Merge split registration IDs for same student (same phone + similar name)
+    let mergeModified = false;
+    let phoneGroups = {};
+    students.forEach(s => {
+        const cleanPhone = (s.phone || '').replace(/\D/g, '');
+        if (!cleanPhone) return;
+        if (!phoneGroups[cleanPhone]) phoneGroups[cleanPhone] = [];
+        phoneGroups[cleanPhone].push(s);
+    });
+
+    Object.keys(phoneGroups).forEach(phoneKey => {
+        const group = phoneGroups[phoneKey];
+        if (group.length <= 1) return;
+        
+        let subgroups = [];
+        group.forEach(s => {
+            const sName = (s.name || '').toLowerCase().trim().replace(/\s+/g, '');
+            let matchedSubgroup = subgroups.find(sg => {
+                return sg.some(item => {
+                    const itemName = (item.name || '').toLowerCase().trim().replace(/\s+/g, '');
+                    return itemName.includes(sName) || sName.includes(itemName);
+                });
+            });
+            if (matchedSubgroup) {
+                matchedSubgroup.push(s);
+            } else {
+                subgroups.push([s]);
+            }
+        });
+
+        subgroups.forEach(sg => {
+            if (sg.length <= 1) return;
+            let bestRegId = null;
+            let lowestNum = Infinity;
+            sg.forEach(s => {
+                if (s.registrationId) {
+                    const match = s.registrationId.match(/^REG-(\d+)$/);
+                    if (match) {
+                        const val = parseInt(match[1], 10);
+                        if (val < lowestNum) {
+                            lowestNum = val;
+                            bestRegId = s.registrationId;
+                        }
+                    }
+                }
+            });
+
+            if (bestRegId) {
+                sg.forEach(s => {
+                    if (s.registrationId !== bestRegId) {
+                        s.registrationId = bestRegId;
+                        mergeModified = true;
+                    }
+                });
+            }
+        });
+    });
+
     let regMap = new Map();
     let nextRegNum = 1001;
 
@@ -782,7 +901,35 @@ function migrateAndGenerateRegistrationIds() {
         }
     });
     
-    if (modified) {
+    // Third pass: migrate gender
+    let genderModified = false;
+    const femaleKeywords = [
+        'akter', 'begum', 'khatun', 'jahan', 'sultana', 'amina', 'fatema', 'nusrat', 'mariam', 'sadia', 'tasnim', 'afsana', 
+        'mst', 'mst.', 'jasmine', 'farhana', 'nigar', 'sharmin', 'asha', 'tisha', 'rimi', 'keya', 'mim', 'liza', 'lima', 
+        'mimi', 'nadia', 'faria', 'tania', 'sonia', 'rina', 'salma', 'rupa', 'sumi', 'anika', 'sabrina', 'nabila', 'jannat', 
+        'jannatul', 'ishrat', 'umme', 'tanzina', 'sejuti', 'sedratul', 'montaha', 'mohsena', 'madiha', 'tabassum', 'sunjida', 
+        'mahiya', 'umma', 'habiba', 'jerin', 'samiha', 'nowshin', 'yeasmin', 'fariha', 'sumaiya', 'marzia', 'lamia', 'afroza', 
+        'suraiya', 'mariya', 'monira', 'lipi', 'lutfunnessa', 'lutfun', 'tanzila', 'sabiha', 'eshita', 'mou', 'mehnaz', 
+        'sanjida', 'meher', 'ruma', 'tahmina', 'sheuli', 'popi', 'mita', 'nazma', 'tara', 'mukta', 'koli', 'rima', 'rani', 
+        'sumiya', 'farzana', 'farzin', 'kaniz', 'shahnaz', 'jeba', 'rabeya', 'khadija', 'ayesha', 'rukayya', 'asma', 'bilkis', 
+        'khalida', 'sheila', 'jannatul'
+    ];
+    students.forEach(s => {
+        if (!s.gender) {
+            const name = (s.name || '').toLowerCase();
+            let isFemale = false;
+            for (const kw of femaleKeywords) {
+                if (name.split(/\s+/).includes(kw) || name.startsWith(kw + ' ')) {
+                    isFemale = true;
+                    break;
+                }
+            }
+            s.gender = isFemale ? 'Female' : 'Male';
+            genderModified = true;
+        }
+    });
+    
+    if (modified || genderModified || mergeModified) {
         saveDatabase();
     }
 }
@@ -813,6 +960,7 @@ function loadDatabase() {
     students = JSON.parse(localStorage.getItem('ediz_students')) || [];
     inquiries = JSON.parse(localStorage.getItem('ediz_inquiries')) || [];
     tasks = JSON.parse(localStorage.getItem('ediz_tasks')) || [];
+    expenses = JSON.parse(localStorage.getItem('ediz_expenses')) || [];
     migrateAndGenerateRegistrationIds();
     bookStock = parseInt(localStorage.getItem('ediz_book_stock')) || 0;
     settings = JSON.parse(localStorage.getItem('ediz_settings')) || {
@@ -862,6 +1010,9 @@ function loadDatabase() {
     if (settings.smsConfig.autoSendWelcome === undefined) {
         settings.smsConfig.autoSendWelcome = true;
     }
+    if (settings.smsConfig.autoSendReminders === undefined) {
+        settings.smsConfig.autoSendReminders = false;
+    }
 
     // Fill in missing properties for existing batches to ensure backward compatibility
     if (settings.batches) {
@@ -879,25 +1030,19 @@ function loadDatabase() {
         settings.users = [
             { 
                 id: "USER-1", 
-                email: "owner@ediz.com", 
-                password: (settings.adminPassword || "admin123"), 
+                email: "mahibchowdury97@gmail.com", 
+                password: "@#Mahi97", 
                 role: "Owner", 
                 permissions: { canEdit: true, canDelete: true, canInvoice: true, canCert: true, canCreateBatch: true },
-                recoveryEmail: "owner@ediz.com"
-            },
-            { 
-                id: "USER-2", 
-                email: "staff@ediz.com", 
-                password: "staff123", 
-                role: "Staff", 
-                permissions: { canEdit: true, canDelete: false, canInvoice: true, canCert: true, canCreateBatch: true } 
+                recoveryEmail: "mahibchowdury97@gmail.com",
+                phone: "01798926897"
             }
         ];
     } else {
         const owner = settings.users.find(u => u.role === 'Owner') || settings.users[0];
         if (owner) {
             if (owner.recoveryEmail === undefined) {
-                owner.recoveryEmail = owner.email || "owner@ediz.com";
+                owner.recoveryEmail = owner.email || "mahibchowdury97@gmail.com";
             }
         }
     }
@@ -918,9 +1063,10 @@ function loadDatabase() {
     // Set configuration inputs
     settingsPhone.value = settings.phone;
     settingsAddress.value = settings.address;
-    settingsPriceGraphic.value = settings.courseFees["Graphic Design"];
-    settingsPriceBasic.value = settings.courseFees["Basic Computer"];
-    settingsPriceEnglish.value = settings.courseFees["Spoken English"];
+    settingsPriceGraphic.value = settings.courseFees["Graphic Design"] || defaultFees["Graphic Design"];
+    settingsPriceBasic.value = settings.courseFees["Basic Computer"] || defaultFees["Basic Computer"];
+    settingsPriceEnglish.value = settings.courseFees["Spoken English"] || defaultFees["Spoken English"];
+    settingsPriceIelts.value = settings.courseFees["IELTS"] || defaultFees["IELTS"];
     settingsLogoLight.value = settings.lightLogo;
     settingsLogoDark.value = settings.darkLogo;
 
@@ -931,6 +1077,7 @@ function loadDatabase() {
 
         settingsAdminEmail.value = targetUser.email || '';
         if (settingsAdminRecoveryEmail) settingsAdminRecoveryEmail.value = targetUser.recoveryEmail || targetUser.email || '';
+        if (settingsAdminPhone) settingsAdminPhone.value = targetUser.phone || settings.phone || '';
     }
 
     if (settingsEmailProvider) {
@@ -944,10 +1091,12 @@ function loadDatabase() {
     const settingsSmsSenderId = document.getElementById('settings-sms-sender-id');
     const settingsSmsTemplate = document.getElementById('settings-sms-template');
     const settingsSmsAutoSend = document.getElementById('settings-sms-auto-send');
+    const settingsSmsAutoReminders = document.getElementById('settings-sms-auto-reminders');
     if (settingsSmsApiKey) settingsSmsApiKey.value = settings.smsConfig?.apiKey || '';
     if (settingsSmsSenderId) settingsSmsSenderId.value = settings.smsConfig?.senderId || '';
     if (settingsSmsTemplate) settingsSmsTemplate.value = settings.smsConfig?.welcomeTemplate || '';
     if (settingsSmsAutoSend) settingsSmsAutoSend.checked = settings.smsConfig?.autoSendWelcome !== false;
+    if (settingsSmsAutoReminders) settingsSmsAutoReminders.checked = settings.smsConfig?.autoSendReminders === true;
 
     // Refresh UI Components
     refreshStats();
@@ -979,14 +1128,19 @@ function syncWithServer() {
                 students = data.students || [];
                 migrateAndGenerateRegistrationIds();
                 bookStock = data.bookStock || 0;
-                settings = data.settings || settings;
                 inquiries = data.inquiries || [];
                 tasks = data.tasks || [];
+                expenses = data.expenses || [];
+                
+                if (data.settings) {
+                    settings = data.settings;
+                }
                 
                 // Cache server data locally
                 localStorage.setItem('ediz_students', JSON.stringify(students));
-    localStorage.setItem('ediz_inquiries', JSON.stringify(inquiries));
-    localStorage.setItem('ediz_tasks', JSON.stringify(tasks));
+                localStorage.setItem('ediz_inquiries', JSON.stringify(inquiries));
+                localStorage.setItem('ediz_tasks', JSON.stringify(tasks));
+                localStorage.setItem('ediz_expenses', JSON.stringify(expenses));
                 localStorage.setItem('ediz_book_stock', bookStock);
                 localStorage.setItem('ediz_settings', JSON.stringify(settings));
                 
@@ -1007,6 +1161,9 @@ function syncWithServer() {
                 renderInquiries();
                 renderTasks();
                 checkInquiryReminders();
+                if (typeof renderExpenses === 'function') {
+                    renderExpenses();
+                }
 
                 if (activeBatchForRoster) {
                     renderBatchRoster(selectedCourseForBatches, activeBatchForRoster);
@@ -1027,6 +1184,7 @@ function saveDatabase() {
     localStorage.setItem('ediz_book_stock', bookStock);
     localStorage.setItem('ediz_inquiries', JSON.stringify(inquiries));
     localStorage.setItem('ediz_tasks', JSON.stringify(tasks));
+    localStorage.setItem('ediz_expenses', JSON.stringify(expenses));
     
     if (typeof isInitialLoad !== 'undefined' && isInitialLoad) {
         console.log("Skipping server write during initial database load/migration.");
@@ -1040,6 +1198,9 @@ function saveDatabase() {
     renderSettingsTeachers();
     renderSmsHistory();
     renderBooksTab();
+    if (typeof renderExpenses === 'function') {
+        renderExpenses();
+    }
     
     if (activeBatchForRoster) {
         renderBatchRoster(selectedCourseForBatches, activeBatchForRoster);
@@ -1055,7 +1216,8 @@ function saveDatabase() {
         settings: settings,
         bookStock: bookStock,
         inquiries: inquiries,
-        tasks: tasks
+        tasks: tasks,
+        expenses: expenses
     };
     
     fetch('api.php', {
@@ -1094,6 +1256,9 @@ function generateNextStudentId(course, studentsList, newlyCreated = []) {
     } else if (course === "Spoken English") {
         prefix = "SE";
         prefixes = ["SE", "EDIZ-SE", "EDIZ-SP", "IP", "SP"];
+    } else if (course === "IELTS") {
+        prefix = "IELTS";
+        prefixes = ["IELTS", "EDIZ-IELTS", "IE", "EDIZ-IE"];
     }
 
     let maxNum = 0;
@@ -1163,6 +1328,17 @@ function refreshStats() {
     statEarnings.innerText = `৳${stats.earnings.toLocaleString()}`;
     statDues.innerText = `৳${stats.dues.toLocaleString()}`;
     statCerts.innerText = stats.certs;
+    
+    const statTotalExpenses = document.getElementById('stat-total-expenses');
+    if (statTotalExpenses) {
+        statTotalExpenses.innerText = `৳${stats.totalExpensesSum.toLocaleString()}`;
+    }
+    const statNetIncome = document.getElementById('stat-net-income');
+    if (statNetIncome) {
+        statNetIncome.innerText = `৳${stats.netIncomeSum.toLocaleString()}`;
+        statNetIncome.style.color = stats.netIncomeSum >= 0 ? '' : 'var(--danger)';
+    }
+    
     calculatePeriodEarnings();
 }
 
@@ -1261,6 +1437,14 @@ function setupTabSwitching() {
                 activeTabTitle.innerText = "Teacher Payouts Report";
                 activeTabSubtitle.innerText = "Track and calculate teacher earnings based on net batch incomes.";
                 renderTeacherPayouts();
+            } else if (tabName === 'expenses') {
+                activeTabTitle.innerText = "Expense Tracking";
+                activeTabSubtitle.innerText = "Log and track daily business expenses.";
+                const expenseDateInput = document.getElementById('expense-date');
+                if (expenseDateInput && !expenseDateInput.value) {
+                    expenseDateInput.value = getLocalDateString();
+                }
+                renderExpenses();
             }
         });
     });
@@ -1295,6 +1479,13 @@ function renderAllLists() {
     renderTasks();
     checkInquiryReminders();
     renderTeacherPayouts();
+
+    if (typeof renderDashboardTasks === 'function') {
+        renderDashboardTasks();
+    }
+    if (typeof renderHandoverTasks === 'function') {
+        renderHandoverTasks();
+    }
     
     // Sync dashboard quick search if active
     const dbSearchInput = document.getElementById('dashboard-student-search');
@@ -1846,20 +2037,179 @@ function renderInvoicesTable() {
     }).join('');
 }
 
+let currentCertStatsFilter = null; // Can be 'today', 'yesterday', 'month', 'year', or null
+
+function updateCertBatchFilter() {
+    const courseSelect = document.getElementById('cert-course-filter');
+    const batchSelect = document.getElementById('cert-batch-filter');
+    if (!courseSelect || !batchSelect) return;
+
+    const selectedCourse = courseSelect.value;
+    
+    // Save current selection to restore if it still exists
+    const currentSelection = batchSelect.value;
+
+    // Reset dropdown
+    batchSelect.innerHTML = '<option value="all">All Batches</option>';
+
+    const settings = JSON.parse(localStorage.getItem('ediz_settings')) || {};
+    const batches = settings.batches || defaultBatches;
+
+    if (selectedCourse === 'all') {
+        // Show all batches
+        const uniqueBatches = [...new Set(batches.map(b => b.name))].sort();
+        uniqueBatches.forEach(bName => {
+            batchSelect.innerHTML += `<option value="${bName}">${bName}</option>`;
+        });
+    } else {
+        // Show batches only for selected course
+        const filtered = batches.filter(b => b.course === selectedCourse);
+        filtered.forEach(b => {
+            batchSelect.innerHTML += `<option value="${b.name}">${b.name}</option>`;
+        });
+    }
+
+    // Restore selection if valid
+    const options = Array.from(batchSelect.options).map(o => o.value);
+    if (options.includes(currentSelection)) {
+        batchSelect.value = currentSelection;
+    } else {
+        batchSelect.value = 'all';
+    }
+}
+
 function renderCertificatesTable() {
     const sQuery = certSearch.value.toLowerCase();
 
     const curUser = JSON.parse(sessionStorage.getItem('ediz_active_user')) || { role: 'Owner' };
     const canCert = curUser.role === 'Owner' || (curUser.permissions && curUser.permissions.canCert);
 
+    // Get today and yesterday dates in YYYY-MM-DD
+    const today = new Date();
+    const todayStr = getLocalDateString();
+    
+    const yesterday = new Date(today);
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yesterdayStr = `${yesterday.getFullYear()}-${String(yesterday.getMonth()+1).padStart(2,'0')}-${String(yesterday.getDate()).padStart(2,'0')}`;
+    
+    const currentMonthPrefix = todayStr.substring(0, 7); // YYYY-MM
+    const currentYearPrefix = todayStr.substring(0, 4); // YYYY
+
+    // 1. Calculate stats dynamically based on ALL students
+    let countToday = 0;
+    let countYesterday = 0;
+    let countMonth = 0;
+    let countYear = 0;
+
+    students.forEach(st => {
+        if (st.certified && st.certificateDate) {
+            const cDate = st.certificateDate;
+            if (cDate === todayStr) countToday++;
+            if (cDate === yesterdayStr) countYesterday++;
+            if (cDate.substring(0, 7) === currentMonthPrefix) countMonth++;
+            if (cDate.substring(0, 4) === currentYearPrefix) countYear++;
+        }
+    });
+
+    // Update stats cards in UI
+    const elToday = document.getElementById('cert-stat-today');
+    const elYesterday = document.getElementById('cert-stat-yesterday');
+    const elMonth = document.getElementById('cert-stat-month');
+    const elYear = document.getElementById('cert-stat-year');
+    
+    if (elToday) elToday.textContent = countToday;
+    if (elYesterday) elYesterday.textContent = countYesterday;
+    if (elMonth) elMonth.textContent = countMonth;
+    if (elYear) elYear.textContent = countYear;
+
+    // Populate batch select options on first render if not populated
+    const certBatchSelect = document.getElementById('cert-batch-filter');
+    if (certBatchSelect && certBatchSelect.options.length <= 1) {
+        updateCertBatchFilter();
+    }
+
+    // Get selected filter values
+    const courseFilterVal = document.getElementById('cert-course-filter') ? document.getElementById('cert-course-filter').value : 'all';
+    const batchFilterVal = document.getElementById('cert-batch-filter') ? document.getElementById('cert-batch-filter').value : 'all';
+    const statusFilterVal = document.getElementById('cert-status-filter') ? document.getElementById('cert-status-filter').value : 'all';
+    const dateFilterVal = document.getElementById('cert-date-filter') ? document.getElementById('cert-date-filter').value : '';
+
+    // 2. Filter student records
     const filtered = students.filter(st => {
-        return st.name.toLowerCase().includes(sQuery) || st.id.toLowerCase().includes(sQuery);
+        // Text Search query filter
+        const matchesQuery = st.name.toLowerCase().includes(sQuery) || st.id.toLowerCase().includes(sQuery);
+        if (!matchesQuery) return false;
+
+        // Course filter
+        if (courseFilterVal !== 'all' && st.course !== courseFilterVal) return false;
+
+        // Batch filter
+        if (batchFilterVal !== 'all' && st.batch !== batchFilterVal) return false;
+
+        // Status Dropdown filter
+        if (statusFilterVal === 'issued' && !st.certified) return false;
+        if (statusFilterVal === 'in_progress' && st.certified) return false;
+
+        // Custom Date Input filter
+        if (dateFilterVal && st.certificateDate !== dateFilterVal) return false;
+
+        // Summary Stats Card filter
+        if (currentCertStatsFilter) {
+            if (!st.certified || !st.certificateDate) return false;
+            const cDate = st.certificateDate;
+            if (currentCertStatsFilter === 'today' && cDate !== todayStr) return false;
+            if (currentCertStatsFilter === 'yesterday' && cDate !== yesterdayStr) return false;
+            if (currentCertStatsFilter === 'month' && cDate.substring(0, 7) !== currentMonthPrefix) return false;
+            if (currentCertStatsFilter === 'year' && cDate.substring(0, 4) !== currentYearPrefix) return false;
+        }
+
+        return true;
+    });
+
+    // Show/hide bulk award button based on filters and permissions
+    const bulkAwardBtn = document.getElementById('cert-bulk-award');
+    if (bulkAwardBtn) {
+        if (canCert && courseFilterVal !== 'all' && batchFilterVal !== 'all') {
+            const uncertifiedCount = filtered.filter(st => !st.certified).length;
+            if (uncertifiedCount > 0) {
+                bulkAwardBtn.innerHTML = `<i class="fa-solid fa-graduation-cap"></i> Award ${uncertifiedCount} Certificates`;
+                bulkAwardBtn.style.display = 'inline-block';
+            } else {
+                bulkAwardBtn.style.display = 'none';
+            }
+        } else {
+            bulkAwardBtn.style.display = 'none';
+        }
+    }
+
+    // Update "Show All" / Reset button visibility
+    const resetBtn = document.getElementById('cert-reset-filters');
+    if (resetBtn) {
+        if (statusFilterVal !== 'all' || dateFilterVal || currentCertStatsFilter || sQuery || courseFilterVal !== 'all' || batchFilterVal !== 'all') {
+            resetBtn.style.display = 'inline-block';
+        } else {
+            resetBtn.style.display = 'none';
+        }
+    }
+
+    // Highlight active card
+    document.querySelectorAll('.cert-filter-card').forEach(card => {
+        const filterType = card.getAttribute('data-filter');
+        if (filterType === currentCertStatsFilter) {
+            card.style.background = 'var(--primary-glow)';
+            card.style.border = '1px solid var(--primary)';
+        } else {
+            card.style.background = '';
+            card.style.border = '';
+        }
     });
 
     if (filtered.length === 0) {
         certsTbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--text-muted);">No records found.</td></tr>`;
         return;
     }
+
+    const canEdit = curUser.role === 'Owner' || (curUser.permissions && curUser.permissions.canEdit);
 
     certsTbody.innerHTML = filtered.map(st => `
         <tr>
@@ -1879,6 +2229,7 @@ function renderCertificatesTable() {
                          ${canCert ? `<button class="btn btn-secondary btn-icon-only" style="color: var(--danger);" onclick="toggleCertificate('${st.id}', false)" title="Revoke Certificate"><i class="fa-solid fa-xmark"></i></button>` : ''}` :
                         `${canCert ? `<button class="btn btn-primary" onclick="toggleCertificate('${st.id}', true)"><i class="fa-solid fa-check"></i> Award</button>` : '---'}`
                     }
+                    ${canEdit ? `<button class="btn btn-secondary btn-icon-only" onclick="openEditStudentModal('${st.id}')" title="Edit Student Profile" style="color: var(--primary);"><i class="fa-solid fa-pen-to-square"></i></button>` : ''}
                 </div>
             </td>
         </tr>
@@ -2004,6 +2355,8 @@ function setupDataOperations() {
         const address = studentAddress.value;
         const course = studentCourse.value;
         const batchName = studentBatch.value;
+        const genderEl = document.getElementById('student-gender');
+        const gender = genderEl ? genderEl.value : 'Male';
 
         // Validation helpers
         function validateBDMobile(num) {
@@ -2051,6 +2404,7 @@ function setupDataOperations() {
                 if (first.motherName !== mother) changes.push(`Mother: '${first.motherName || 'N/A'}' -> '${mother}'`);
                 if (first.guardianPhone !== guardian) changes.push(`Guardian: '${first.guardianPhone || 'N/A'}' -> '${guardian}'`);
                 if (first.address !== address) changes.push(`Address: '${first.address || 'N/A'}' -> '${address}'`);
+                if (first.gender !== gender) changes.push(`Gender: '${first.gender || 'Male'}' -> '${gender}'`);
                 
                 // Check if batch changed (only for targetStudent since course is locked)
                 const oldBatch = targetStudent.batch || '';
@@ -2066,6 +2420,7 @@ function setupDataOperations() {
                 relatedRecords.forEach(s => {
                     s.name = name;
                     s.phone = phone;
+                    s.gender = gender;
                     s.fatherName = father;
                     s.motherName = mother;
                     s.guardianPhone = guardian;
@@ -2097,8 +2452,7 @@ function setupDataOperations() {
                     targetStudent.auditLogs.push(auditRecord);
                     
                     const adminMsg = `EDIZ IT Alert: Student ${targetStudent.name} (${targetStudent.id}) details edited by ${editorName}. Changes: ${changeLog}`;
-                    const adminPhone = "01798926897";
-                    sendGeneralSms(adminPhone, adminMsg, "Admin Edit Notification");
+                    sendSystemAlertToAdmins(adminMsg, "Admin Edit Notification");
                 }
             }
         } else {
@@ -2160,7 +2514,22 @@ function setupDataOperations() {
 
             // 1. Generate shared Invoice ID & Registration ID
             const invId = getNextInvoiceId();
-            const registrationId = getNextRegistrationId();
+            
+            // Find if student already has a Registration ID by matching phone number and similar name
+            const cleanPhone = phone.replace(/\D/g, '');
+            const cleanName = name.toLowerCase().trim().replace(/\s+/g, '');
+            const existingStudent = students.find(s => {
+                const sPhone = (s.phone || '').replace(/\D/g, '');
+                const sName = (s.name || '').toLowerCase().trim().replace(/\s+/g, '');
+                if (sPhone === cleanPhone && s.registrationId) {
+                    if (sName.includes(cleanName) || cleanName.includes(sName)) {
+                        return true;
+                    }
+                }
+                return false;
+            });
+
+            const registrationId = existingStudent ? existingStudent.registrationId : getNextRegistrationId();
 
             // 2. Create separate student records (one per course)
             let newlyCreatedStudents = [];
@@ -2267,7 +2636,6 @@ function setupDataOperations() {
             showRegistrationSuccessModal(newlyRegisteredStudentsArray);
 
             // Send Admin Admission Notification SMS
-            const adminPhone = "01798926897";
             const studentNames = newlyRegisteredStudentsArray[0].name;
             const courseInfos = newlyRegisteredStudentsArray.map(s => `${s.course} (${s.batch})`).join(', ');
             const totalNet = newlyRegisteredStudentsArray.reduce((sum, s) => sum + s.netFee, 0);
@@ -2283,7 +2651,7 @@ function setupDataOperations() {
                 const booksAvailable = Math.max(0, totalStock - booksSold);
                 adminMsg += ` (Book Included. Remaining books in stock: ${booksAvailable})`;
             }
-            sendGeneralSms(adminPhone, adminMsg, "Admin Admission Notification");
+            sendSystemAlertToAdmins(adminMsg, "Admin Admission Notification");
         } else {
             closeAllModals();
         }
@@ -2455,9 +2823,8 @@ function setupDataOperations() {
         const studentMsg = `Dear ${activeStudentForFees.name}, we have received your payment of ৳${amount.toLocaleString()} for: ${coursePaymentDetails}. Combined outstanding due is ৳${totalCombinedDue.toLocaleString()}. Thank you!`;
         sendGeneralSms(activeStudentForFees.phone, studentMsg, "Student Payment Receipt");
 
-        const adminPhone = "01798926897";
         const adminMsg = `Dear Admin, student ${activeStudentForFees.name} has paid a total of ৳${amount.toLocaleString()} for: ${coursePaymentDetails}. Combined Due: ৳${totalCombinedDue.toLocaleString()}.`;
-        sendGeneralSms(adminPhone, adminMsg, "Admin Payment Notification");
+        sendSystemAlertToAdmins(adminMsg, "Admin Payment Notification");
         } catch (error) {
             console.error("Payment Submission Error:", error);
             alert("Error saving bill: " + error.message);
@@ -2473,7 +2840,8 @@ function setupDataOperations() {
         settings.courseFees = {
             "Graphic Design": parseInt(settingsPriceGraphic.value),
             "Basic Computer": parseInt(settingsPriceBasic.value),
-            "Spoken English": parseInt(settingsPriceEnglish.value)
+            "Spoken English": parseInt(settingsPriceEnglish.value),
+            "IELTS": parseInt(settingsPriceIelts.value)
         };
         settings.lightLogo = settingsLogoLight.value;
         settings.darkLogo = settingsLogoDark.value;
@@ -2492,6 +2860,7 @@ function setupDataOperations() {
             e.preventDefault();
             const emailVal = settingsAdminEmail.value.trim().toLowerCase();
             const recoveryEmailVal = settingsAdminRecoveryEmail.value.trim().toLowerCase();
+            const phoneVal = settingsAdminPhone ? settingsAdminPhone.value.trim() : '';
             const newPwdVal = settingsPwdNew.value.trim();
 
             const activeUser = JSON.parse(sessionStorage.getItem('ediz_active_user'));
@@ -2516,6 +2885,9 @@ function setupDataOperations() {
             // Update user details
             dbUser.email = emailVal;
             dbUser.recoveryEmail = recoveryEmailVal;
+            if (phoneVal) {
+                dbUser.phone = phoneVal;
+            }
             if (newPwdVal) {
                 dbUser.password = newPwdVal;
                 // Update global settings.adminPassword for backward compatibility if it's the Owner/first user
@@ -2535,6 +2907,7 @@ function setupDataOperations() {
             // Re-populate the fields
             settingsAdminEmail.value = dbUser.email;
             settingsAdminRecoveryEmail.value = dbUser.recoveryEmail || dbUser.email;
+            if (settingsAdminPhone) settingsAdminPhone.value = dbUser.phone || settings.phone || '';
             
             // Refresh settings user directory
             renderSettingsStaff();
@@ -2708,6 +3081,10 @@ window.openEditStudentModal = function(id) {
     studentGuardianPhone.value = st.guardianPhone || '';
     studentAddress.value = st.address;
     studentCourse.value = st.course;
+    const studentGenderEl = document.getElementById('student-gender');
+    if (studentGenderEl) {
+        studentGenderEl.value = st.gender || 'Male';
+    }
 
     // Load and select batch
     updateStudentModalBatches(st.course, studentBatch);
@@ -2941,8 +3318,7 @@ window.toggleCertificate = function(id, status) {
         
         // Notify admin via SMS
         const adminMsg = `EDIZ IT Alert: Certificate issued for ${st.name} (${st.id}) by ${editorName} for course: ${st.course}`;
-        const adminPhone = "01798926897";
-        sendGeneralSms(adminPhone, adminMsg, "Admin Cert Notification");
+        sendSystemAlertToAdmins(adminMsg, "Admin Cert Notification");
     } else {
         // Clean up certificate audit logs that are not verified yet
         if (st.auditLogs) {
@@ -2951,6 +3327,70 @@ window.toggleCertificate = function(id, status) {
     }
     
     saveDatabase();
+};
+
+window.bulkAwardCertificates = function() {
+    const courseSelect = document.getElementById('cert-course-filter');
+    const batchSelect = document.getElementById('cert-batch-filter');
+    if (!courseSelect || !batchSelect) return;
+
+    const course = courseSelect.value;
+    const batch = batchSelect.value;
+
+    if (course === 'all' || batch === 'all') {
+        alert("Please select a specific Course and Batch first.");
+        return;
+    }
+
+    // Get uncertified students in this batch
+    const targetStudents = students.filter(st => st.course === course && st.batch === batch && !st.certified);
+    if (targetStudents.length === 0) {
+        alert("No uncertified students found in this batch.");
+        return;
+    }
+
+    // Check if any student has dues
+    const studentsWithDues = targetStudents.filter(st => st.dueFee > 0);
+    if (studentsWithDues.length > 0) {
+        const studentNames = studentsWithDues.map(st => `• ${st.name} (ID: ${st.id}, Dues: ৳${st.dueFee.toLocaleString()})`).join("\n");
+        alert(`Cannot bulk award certificates. The following students have outstanding dues:\n\n${studentNames}\n\nPlease clear their dues first.`);
+        return;
+    }
+
+    const confirmMsg = `Are you sure you want to award graduation certificates to all ${targetStudents.length} students in ${course} - ${batch}?`;
+    if (!confirm(confirmMsg)) return;
+
+    const activeUser = JSON.parse(sessionStorage.getItem('ediz_active_user')) || { username: 'System', name: 'System' };
+    const editorName = activeUser.name || activeUser.username || 'System';
+    const dateStr = getLocalDateString();
+
+    targetStudents.forEach(st => {
+        st.certified = true;
+        st.certificateDate = dateStr;
+
+        const auditLogId = "AUD-" + Date.now() + "-" + Math.floor(Math.random() * 1000);
+        const auditRecord = {
+            id: auditLogId,
+            type: 'Certificate Issued',
+            date: dateStr,
+            timestamp: Date.now(),
+            details: `Graduation certificate awarded for course: ${st.course} (Bulk)`,
+            collectedBy: editorName,
+            receivedByAdmin: false,
+            studentId: st.id,
+            studentName: st.name,
+            course: st.course
+        };
+        st.auditLogs = st.auditLogs || [];
+        st.auditLogs.push(auditRecord);
+
+        // Notify admin via SMS
+        const adminMsg = `EDIZ IT Alert: Certificate issued for ${st.name} (${st.id}) by ${editorName} (Bulk)`;
+        sendSystemAlertToAdmins(adminMsg, "Admin Cert Notification");
+    });
+
+    saveDatabase();
+    alert(`Successfully awarded ${targetStudents.length} certificates!`);
 };
 
 // --- PRINT RECEIPT ENGINE ---
@@ -3314,10 +3754,9 @@ window.printCertificate = function(id) {
     const origin = window.location.origin;
     let verifyURL = '';
     if (origin === 'null' || !origin || origin.startsWith('file')) {
-        verifyURL = 'verify/index.html?verify=' + st.id;
+        verifyURL = 'verify/index.html?verify=' + st.id + '&qr=true';
     } else {
-        const basePath = window.location.pathname.replace('index.html', '').replace('admin.html', '');
-        verifyURL = origin + (basePath.endsWith('/') ? basePath : basePath + '/') + 'verify/?verify=' + st.id;
+        verifyURL = 'https://verify.edizit.com/?verify=' + st.id + '&qr=true';
     }
 
     const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=${encodeURIComponent(verifyURL)}`;
@@ -3497,6 +3936,42 @@ function applyStudentIdAutoFormat(inputElem) {
     });
 }
 
+window.goToBatch = function(course, batchName) {
+    if (!course || !batchName) return;
+    
+    // Switch to batches tab
+    const sidebarItem = document.querySelector('.sidebar-item[data-tab="batches"]');
+    if (sidebarItem) {
+        sidebarItem.click();
+    } else {
+        // Fallback tab-toggle logic if sidebar is not active
+        document.querySelectorAll('.tab-view').forEach(view => {
+            view.style.display = 'none';
+        });
+        const tabEl = document.getElementById('tab-batches');
+        if (tabEl) tabEl.style.display = 'block';
+    }
+    
+    // Set selected course for batches
+    selectedCourseForBatches = course;
+    
+    // Find course button and click/activate it to render the batches list
+    const courseBtns = document.querySelectorAll('.batch-course-btn');
+    courseBtns.forEach(btn => {
+        if (btn.getAttribute('data-course') === course) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    
+    // Render the batches list for this course
+    renderBatchesList(course);
+    
+    // Select the specific batch
+    selectActiveBatch(course, batchName);
+};
+
 function setupGlobalSearch() {
     const globalSearchInput = document.getElementById('global-student-search');
     const clearBtn = document.getElementById('clear-global-search');
@@ -3506,6 +3981,24 @@ function setupGlobalSearch() {
     const globalCountBadge = document.getElementById('global-search-count');
 
     if (!globalSearchInput || !globalResultsView || !globalResultsTbody) return;
+
+    // Mobile search toggler
+    const mobileSearchToggle = document.getElementById('mobile-search-toggle');
+    const searchContainer = document.querySelector('.global-search-container');
+    if (mobileSearchToggle && searchContainer) {
+        mobileSearchToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            searchContainer.classList.toggle('active');
+            if (searchContainer.classList.contains('active')) {
+                globalSearchInput.focus();
+            }
+        });
+        document.addEventListener('click', (e) => {
+            if (!searchContainer.contains(e.target) && !mobileSearchToggle.contains(e.target)) {
+                searchContainer.classList.remove('active');
+            }
+        });
+    }
 
     applyStudentIdAutoFormat(globalSearchInput);
 
@@ -3555,14 +4048,15 @@ function setupGlobalSearch() {
         const canInvoice = curUser.role === 'Owner' || (curUser.permissions && curUser.permissions.canInvoice);
 
         const cleanQuery = query.replace(/\D/g, "");
+        const normQuery = query.replace(/[^a-z0-9]/gi, "").toLowerCase();
 
-        const exactIdMatch = students.find(st => st.id.toLowerCase() === query);
-        const filtered = exactIdMatch ? [exactIdMatch] : students.filter(st => {
+        const filtered = students.filter(st => {
+            const normId = st.id.replace(/[^a-z0-9]/gi, "").toLowerCase();
             const cleanPhone = st.phone ? st.phone.replace(/\D/g, "") : "";
             const cleanGuardian = st.guardianPhone ? st.guardianPhone.replace(/\D/g, "") : "";
             const hasLetters = /[a-z]/i.test(query);
 
-            return st.id.toLowerCase().includes(query) || 
+            return normId.includes(normQuery) || 
                    st.name.toLowerCase().includes(query) || 
                    (!hasLetters && cleanQuery && cleanPhone.includes(cleanQuery)) ||
                    (!hasLetters && cleanQuery && cleanGuardian.includes(cleanQuery)) ||
@@ -3591,11 +4085,15 @@ function setupGlobalSearch() {
             }
             const rowStyle = isOverdue ? 'background-color: rgba(239, 68, 68, 0.05); border-left: 4px solid var(--danger);' : '';
 
+            const batchLinkHtml = st.batch 
+                ? `<span style="font-size: 0.75rem; color: var(--primary); font-weight: 600; cursor: pointer; text-decoration: underline;" onclick="goToBatch('${st.course}', '${st.batch}')" title="Go to Batch Roster">Batch: ${st.batch}</span>` 
+                : `<span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Batch: N/A</span>`;
+
             return `
                 <tr style="${rowStyle}">
                     <td>
                         <strong>${st.id}</strong><br>
-                        <span style="font-size: 0.75rem; color: var(--primary); font-weight: 600;">Batch: ${st.batch || 'N/A'}</span>
+                        ${batchLinkHtml}
                     </td>
                     <td>
                         <div style="font-weight: 600;">${st.name}</div>
@@ -3623,6 +4121,7 @@ function setupGlobalSearch() {
                             ${canInvoice && st.dueFee > 0 ? `<button class="btn btn-danger btn-sm" onclick="openPaymentModal('${st.id}')" style="padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 600; white-space: nowrap; height: 32px; background-color: var(--danger); border-color: var(--danger); color: white; border-radius: var(--radius-sm); display: inline-flex; align-items: center; gap: 4px;"><i class="fa-solid fa-wallet"></i> Collect Due</button>` : ''}
                             <button class="btn btn-secondary btn-icon-only" onclick="openProfileModal('${st.id}')" title="View Profile" style="height: 32px; width: 32px;"><i class="fa-solid fa-eye"></i></button>
                             ${canInvoice && st.dueFee <= 0 ? `<button class="btn btn-secondary btn-icon-only" onclick="openPaymentModal('${st.id}')" title="Manage Fees" style="height: 32px; width: 32px;"><i class="fa-solid fa-wallet"></i></button>` : ''}
+                            ${st.batch ? `<button class="btn btn-secondary btn-icon-only" onclick="goToBatch('${st.course}', '${st.batch}')" title="Go to Batch Roster" style="height: 32px; width: 32px; color: var(--primary);"><i class="fa-solid fa-users"></i></button>` : ''}
                             ${canEdit ? `<button class="btn btn-secondary btn-icon-only" onclick="openEditStudentModal('${st.id}')" title="Edit Student" style="height: 32px; width: 32px;"><i class="fa-solid fa-edit"></i></button>` : ''}
                             <button class="btn btn-secondary btn-icon-only" style="color: var(--accent); height: 32px; width: 32px;" onclick="openStudentNotesModal('${st.id}')" title="Add/Edit Note & Next Payment"><i class="fa-solid fa-note-sticky"></i></button>
                             ${canDelete ? `<button class="btn btn-secondary btn-icon-only" style="color: var(--danger); height: 32px; width: 32px;" onclick="deleteStudent('${st.id}')" title="Delete Student"><i class="fa-solid fa-trash"></i></button>` : ''}
@@ -3829,6 +4328,71 @@ function setupSearchFilters() {
     certSearch.addEventListener('input', renderCertificatesTable);
     applyStudentIdAutoFormat(certSearch);
 
+    // Certificates Tab Filters
+    const certCourseFilter = document.getElementById('cert-course-filter');
+    const certBatchFilter = document.getElementById('cert-batch-filter');
+    const certStatusFilter = document.getElementById('cert-status-filter');
+    const certDateFilter = document.getElementById('cert-date-filter');
+    const certClearDateBtn = document.getElementById('cert-clear-date');
+    const certResetFiltersBtn = document.getElementById('cert-reset-filters');
+
+    if (certCourseFilter) {
+        certCourseFilter.addEventListener('change', () => {
+            updateCertBatchFilter();
+            renderCertificatesTable();
+        });
+    }
+    if (certBatchFilter) {
+        certBatchFilter.addEventListener('change', renderCertificatesTable);
+    }
+    if (certStatusFilter) {
+        certStatusFilter.addEventListener('change', renderCertificatesTable);
+    }
+    if (certDateFilter) {
+        certDateFilter.addEventListener('change', () => {
+            currentCertStatsFilter = null; // Clear stats card filter if they pick a custom date
+            renderCertificatesTable();
+        });
+    }
+    if (certClearDateBtn) {
+        certClearDateBtn.addEventListener('click', () => {
+            if (certDateFilter) certDateFilter.value = '';
+            renderCertificatesTable();
+        });
+    }
+    if (certResetFiltersBtn) {
+        certResetFiltersBtn.addEventListener('click', () => {
+            if (certCourseFilter) certCourseFilter.value = 'all';
+            updateCertBatchFilter(); // Reset batches dropdown options
+            if (certBatchFilter) certBatchFilter.value = 'all';
+            if (certStatusFilter) certStatusFilter.value = 'all';
+            if (certDateFilter) certDateFilter.value = '';
+            currentCertStatsFilter = null;
+            certSearch.value = '';
+            renderCertificatesTable();
+        });
+    }
+
+    const certBulkAwardBtn = document.getElementById('cert-bulk-award');
+    if (certBulkAwardBtn) {
+        certBulkAwardBtn.addEventListener('click', bulkAwardCertificates);
+    }
+
+    // Attach click handlers to stats cards
+    document.addEventListener('click', (e) => {
+        const card = e.target.closest('.cert-filter-card');
+        if (card) {
+            const filterType = card.getAttribute('data-filter');
+            if (currentCertStatsFilter === filterType) {
+                currentCertStatsFilter = null; // Toggle off if clicked again
+            } else {
+                currentCertStatsFilter = filterType;
+                if (certDateFilter) certDateFilter.value = ''; // Clear custom date if card clicked
+            }
+            renderCertificatesTable();
+        }
+    });
+
     const batchSearchInput = document.getElementById('batch-search-input');
     if (batchSearchInput) {
         batchSearchInput.addEventListener('input', () => {
@@ -3976,6 +4540,13 @@ function applyUserPermissions(user) {
     const booksGrid = document.querySelector('.books-grid');
     
     const canCreateBatch = user.role === 'Owner' || user.role === 'Admin' || (user.permissions && user.permissions.canCreateBatch);
+    const isOwnerOrAdmin = user.role === 'Owner' || user.role === 'Admin';
+
+    // Toggle Report Export Panels (Owner / Admin only)
+    const reportPanels = document.querySelectorAll('.report-export-panel');
+    reportPanels.forEach(p => {
+        p.style.display = isOwnerOrAdmin ? 'flex' : 'none';
+    });
     
     if (user.role === 'Owner' || user.role === 'Admin') {
         if (settingsTab) settingsTab.style.display = 'block';
@@ -4734,13 +5305,17 @@ function setupBatchModal() {
                 batchTimeField.value = "09:00 AM - 10:30 AM";
             } else if (course === "Basic Computer") {
                 batchTimeField.value = "11:00 AM - 12:30 PM";
+            } else if (course === "Spoken English") {
+                batchTimeField.value = "11:00 AM - 12:30 PM";
+            } else if (course === "IELTS") {
+                batchTimeField.value = "06:00 PM - 07:30 PM";
             } else {
                 batchTimeField.value = "11:00 AM - 12:30 PM";
             }
             
             // Dates
             const today = new Date();
-            const durationMonths = course === "Graphic Design" ? 3 : 2;
+            const durationMonths = (course === "Graphic Design" || course === "IELTS") ? 3 : 2;
             const endDate = new Date(today);
             endDate.setMonth(endDate.getMonth() + durationMonths);
             batchEndDate.value = getLocalDateString(endDate);
@@ -5028,12 +5603,14 @@ function setupSmsFeature() {
             const senderIdVal = document.getElementById('settings-sms-sender-id').value.trim();
             const templateVal = document.getElementById('settings-sms-template').value.trim();
             const autoSendVal = document.getElementById('settings-sms-auto-send').checked;
+            const autoRemindersVal = document.getElementById('settings-sms-auto-reminders')?.checked || false;
             
             settings.smsConfig = {
                 apiKey: apiKeyVal,
                 senderId: senderIdVal,
                 welcomeTemplate: templateVal,
-                autoSendWelcome: autoSendVal
+                autoSendWelcome: autoSendVal,
+                autoSendReminders: autoRemindersVal
             };
             saveDatabase();
             alert("SMS Gateway Configuration updated successfully!");
@@ -5170,8 +5747,7 @@ function setupSmsFeature() {
             if (smsSendSubmitBtn) smsSendSubmitBtn.disabled = true;
 
             try {
-                const encodedMessage = encodeURIComponent(message);
-                const apiUrl = `https://bulksmsbd.net/api/smsapi?api_key=${apiKey}&senderid=${senderId}&number=${numbers}&message=${encodedMessage}`;
+                const apiUrl = getSmsApiUrl(apiKey, senderId, numbers, message);
 
                 const res = await fetch(apiUrl);
                 const data = await res.json();
@@ -5327,8 +5903,7 @@ function setupSmsFeature() {
             if (submitBtn) submitBtn.disabled = true;
 
             try {
-                const encodedMessage = encodeURIComponent(message);
-                const apiUrl = `https://bulksmsbd.net/api/smsapi?api_key=${apiKey}&senderid=${senderId}&number=${formattedPhone}&message=${encodedMessage}`;
+                const apiUrl = getSmsApiUrl(apiKey, senderId, formattedPhone, message);
 
                 const res = await fetch(apiUrl);
                 const data = await res.json();
@@ -5931,8 +6506,7 @@ function setupWhatsAppFeature() {
             const numbers = recipients.join(',');
             const apiKey = settings.smsConfig.apiKey;
             const senderId = settings.smsConfig.senderId;
-            const encodedMessage = encodeURIComponent(message);
-            const apiUrl = `https://bulksmsbd.net/api/smsapi?api_key=${apiKey}&senderid=${senderId}&number=${numbers}&message=${encodedMessage}`;
+            const apiUrl = getSmsApiUrl(apiKey, senderId, numbers, message);
 
             waSendSmsBtn.disabled = true;
             waSendSmsBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending SMS...';
@@ -6020,6 +6594,7 @@ function parseDateString(dateStr) {
 
 function getFilteredStats() {
     let filteredStudents = [...students];
+    let filteredExpenses = [...expenses];
     
     // Flatten all invoices
     let filteredInvoices = [];
@@ -6055,6 +6630,7 @@ function getFilteredStats() {
         filteredStudents = students.filter(st => inRange(st.registrationDate));
         filteredInvoices = filteredInvoices.filter(inv => inRange(inv.date));
         filteredCerts = students.filter(st => st.certified && inRange(st.certificateDate));
+        filteredExpenses = expenses.filter(exp => inRange(exp.date));
     }
 
     const totalStudents = filteredStudents.length;
@@ -6067,11 +6643,18 @@ function getFilteredStats() {
 
     const certs = filteredCerts.length;
 
+    let totalExpensesSum = 0;
+    filteredExpenses.forEach(exp => totalExpensesSum += exp.amount || 0);
+
+    const netIncomeSum = earnings - totalExpensesSum;
+
     return {
         totalStudents,
         earnings,
         dues,
         certs,
+        totalExpensesSum,
+        netIncomeSum,
         studentsList: filteredStudents
     };
 }
@@ -6190,17 +6773,15 @@ function setupDashboardSearch() {
         const canInvoice = curUser.role === 'Owner' || (curUser.permissions && curUser.permissions.canInvoice);
 
         const cleanQuery = query.replace(/\D/g, "");
+        const normQuery = query.replace(/[^a-z0-9]/gi, "").toLowerCase();
 
-        // Prioritize exact ID match
-        const exactIdMatch = students.find(st => st.id.toLowerCase() === query);
-
-        const filtered = exactIdMatch ? [exactIdMatch] : students.filter(st => {
+        const filtered = students.filter(st => {
+            const normId = st.id.replace(/[^a-z0-9]/gi, "").toLowerCase();
             const cleanPhone = st.phone ? st.phone.replace(/\D/g, "") : "";
             const cleanGuardian = st.guardianPhone ? st.guardianPhone.replace(/\D/g, "") : "";
-
             const hasLetters = /[a-z]/i.test(query);
 
-            return st.id.toLowerCase().includes(query) || 
+            return normId.includes(normQuery) || 
                    st.name.toLowerCase().includes(query) || 
                    (!hasLetters && cleanQuery && cleanPhone.includes(cleanQuery)) ||
                    (!hasLetters && cleanQuery && cleanGuardian.includes(cleanQuery)) ||
@@ -6231,11 +6812,15 @@ function setupDashboardSearch() {
             const noteHtml = st.notes ? `<div style="font-size: 0.75rem; color: var(--accent); font-style: italic; margin-top: 3px;"><i class="fa-solid fa-sticky-note"></i> Note: ${st.notes}</div>` : '';
             const rowStyle = isOverdue ? 'background-color: rgba(239, 68, 68, 0.05); border-left: 4px solid var(--danger);' : '';
 
+            const batchLinkHtml = st.batch 
+                ? `<span style="font-size: 0.75rem; color: var(--primary); font-weight: 600; cursor: pointer; text-decoration: underline;" onclick="goToBatch('${st.course}', '${st.batch}')" title="Go to Batch Roster">Batch: ${st.batch}</span>` 
+                : `<span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Batch: N/A</span>`;
+
             return `
                 <tr style="${rowStyle}">
                     <td>
                         <strong>${st.id}</strong><br>
-                        <span style="font-size: 0.75rem; color: var(--primary); font-weight: 600;">Batch: ${st.batch || 'N/A'}</span>
+                        ${batchLinkHtml}
                     </td>
                     <td>
                         <div style="font-weight: 600;">${st.name}</div>
@@ -6267,6 +6852,7 @@ function setupDashboardSearch() {
                             ${canInvoice && st.dueFee > 0 ? `<button class="btn btn-danger btn-sm" onclick="openPaymentModal('${st.id}')" style="padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 600; white-space: nowrap; height: 32px; background-color: var(--danger); border-color: var(--danger); color: white; border-radius: var(--radius-sm); display: inline-flex; align-items: center; gap: 4px;"><i class="fa-solid fa-wallet"></i> Collect Due</button>` : ''}
                             <button class="btn btn-secondary btn-icon-only" onclick="openProfileModal('${st.id}')" title="View Full Profile" style="height: 32px; width: 32px;"><i class="fa-solid fa-eye"></i></button>
                             ${canInvoice && st.dueFee <= 0 ? `<button class="btn btn-secondary btn-icon-only" onclick="openPaymentModal('${st.id}')" title="Manage Fees" style="height: 32px; width: 32px;"><i class="fa-solid fa-wallet"></i></button>` : ''}
+                            ${st.batch ? `<button class="btn btn-secondary btn-icon-only" onclick="goToBatch('${st.course}', '${st.batch}')" title="Go to Batch Roster" style="height: 32px; width: 32px; color: var(--primary);"><i class="fa-solid fa-users"></i></button>` : ''}
                             ${canEdit ? `<button class="btn btn-secondary btn-icon-only" onclick="openEditStudentModal('${st.id}')" title="Edit Student" style="height: 32px; width: 32px;"><i class="fa-solid fa-edit"></i></button>` : ''}
                             <button class="btn btn-secondary btn-icon-only" style="color: var(--accent); height: 32px; width: 32px;" onclick="openStudentNotesModal('${st.id}')" title="Add/Edit Note & Next Payment"><i class="fa-solid fa-note-sticky"></i></button>
                             ${canDelete ? `<button class="btn btn-secondary btn-icon-only" style="color: var(--danger); height: 32px; width: 32px;" onclick="deleteStudent('${st.id}')" title="Delete Student"><i class="fa-solid fa-trash"></i></button>` : ''}
@@ -6324,8 +6910,7 @@ async function sendAutomatedWelcomeSms(studentObj) {
 
     try {
         console.log(`Auto-sending Welcome SMS to ${numbers}...`);
-        const encodedMessage = encodeURIComponent(compiled);
-        const apiUrl = `https://bulksmsbd.net/api/smsapi?api_key=${apiKey}&senderid=${senderId}&number=${numbers}&message=${encodedMessage}`;
+        const apiUrl = getSmsApiUrl(apiKey, senderId, numbers, compiled);
 
         const res = await fetch(apiUrl);
         const data = await res.json();
@@ -7025,8 +7610,7 @@ window.toggleBookAllocation = function(studentId, status) {
         
         // Notify admin via SMS
         const adminMsg = `EDIZ IT Alert: Book issued to student ${st.name} (${st.id}) by ${activeUser.username || 'System'}. Collection: ৳200.`;
-        const adminPhone = "01798926897";
-        sendGeneralSms(adminPhone, adminMsg, "Admin Book Notification");
+        sendSystemAlertToAdmins(adminMsg, "Admin Book Notification");
     } else {
         // Deduct book fee (৳200)
         st.totalFee = Math.max(0, st.totalFee - 200);
@@ -7066,11 +7650,10 @@ window.toggleBookAllocation = function(studentId, status) {
     sendGeneralSms(st.phone, studentMsg, "Student Book Notification");
 
     // Send SMS to Admin
-    const adminPhone = "01798926897";
     const adminMsg = status
         ? `Dear Admin, student ${st.name} (ID: ${st.id}) has taken a book. Total remaining books in stock: ${booksAvailable}.`
         : `Dear Admin, student ${st.name} (ID: ${st.id}) has returned the book. Total remaining books in stock: ${booksAvailable}.`;
-    sendGeneralSms(adminPhone, adminMsg, "Admin Book Notification");
+    sendSystemAlertToAdmins(adminMsg, "Admin Book Notification");
 
     renderAllLists();
     renderBooksTab();
@@ -7083,6 +7666,28 @@ window.toggleBookAllocation = function(studentId, status) {
 window.quickIssueBook = function(studentId) {
     window.toggleBookAllocation(studentId, true);
 };
+
+function getSmsApiUrl(apiKey, senderId, numbers, message) {
+    const encodedMessage = encodeURIComponent(message);
+    return `api.php?action=send_sms&api_key=${apiKey}&senderid=${senderId}&number=${numbers}&message=${encodedMessage}`;
+}
+
+// --- SYSTEM ALERT TO ADMINS & STOREKEEPER ---
+function sendSystemAlertToAdmins(message, tag) {
+    const targetUsers = settings.users || [];
+    let sent = false;
+    targetUsers.forEach(user => {
+        if (user.phone) {
+            sendGeneralSms(user.phone, message, tag);
+            sent = true;
+        }
+    });
+    if (!sent) {
+        // Fallback to hardcoded admin & storekeeper numbers
+        sendGeneralSms("01798926897", message, tag);
+        sendGeneralSms("01335530900", message, tag);
+    }
+}
 
 // --- REUSABLE SYSTEM SMS DISPATCHER ---
 async function sendGeneralSms(number, message, tag) {
@@ -7103,15 +7708,14 @@ async function sendGeneralSms(number, message, tag) {
 
     try {
         console.log(`Sending SMS (${tag}) to ${formattedPhone}...`);
-        const encodedMessage = encodeURIComponent(message);
-        const apiUrl = `https://bulksmsbd.net/api/smsapi?api_key=${apiKey}&senderid=${senderId}&number=${formattedPhone}&message=${encodedMessage}`;
+        const apiUrl = getSmsApiUrl(apiKey, senderId, formattedPhone, message);
 
         const res = await fetch(apiUrl);
         const data = await res.json();
 
         console.log(`SMS Gateway Response (${tag}):`, data);
 
-        if (data.response_code === 202) {
+        if (data.response_code === 202 || data.response_code == "202" || data.success === true || data.success == "true") {
             if (!settings.smsHistory) settings.smsHistory = [];
             settings.smsHistory.push({
                 date: new Date().toISOString(),
@@ -7199,35 +7803,67 @@ function setupStudentNotesFeature() {
     });
 }
 
+function getDaysDifference(dateStr1, dateStr2) {
+    if (!dateStr1 || !dateStr2) return null;
+    const d1 = new Date(dateStr1);
+    const d2 = new Date(dateStr2);
+    const utc1 = Date.UTC(d1.getFullYear(), d1.getMonth(), d1.getDate());
+    const utc2 = Date.UTC(d2.getFullYear(), d2.getMonth(), d2.getDate());
+    return Math.floor((utc1 - utc2) / (1000 * 60 * 60 * 24));
+}
+
 function checkAndSendNextPaymentReminders() {
+    if (settings.smsConfig?.autoSendReminders !== true) return;
     const todayStr = getLocalDateString();
     const adminPhone = settings.phone || "01335530900"; // Admin/Institute Mobile
     let databaseModified = false;
 
     students.forEach(st => {
-        if (st.nextPaymentDate && st.nextPaymentDate <= todayStr && st.dueFee > 0 && st.lastReminderSentDate !== todayStr) {
-            // 1. Send Student SMS
-            const studentMsg = `Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number ${adminPhone}`;
-            sendGeneralSms(st.phone, studentMsg, `Student Due Reminder (${st.id})`);
+        // Only run reminder checks if due fee is positive and reminder has not been sent today
+        if (st.nextPaymentDate && st.dueFee > 0 && st.lastReminderSentDate !== todayStr) {
+            const daysDiff = getDaysDifference(st.nextPaymentDate, todayStr);
+            if (daysDiff === 1) { // 1 day before due date (tomorrow)
+                // 1. Send Student SMS
+                const studentMsg = `Assalamu Alaikum, আগামীকাল আপনার কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন। ediz it institute, our mobile number ${adminPhone}`;
+                sendGeneralSms(st.phone, studentMsg, `Student Due Reminder (${st.id})`);
 
-            // 2. Send Guardian SMS
-            if (st.guardianPhone) {
-                const guardianMsg = `Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number ${adminPhone}`;
-                sendGeneralSms(st.guardianPhone, guardianMsg, `Guardian Due Reminder (${st.id})`);
+                // 2. Send Guardian SMS
+                if (st.guardianPhone) {
+                    const guardianMsg = `Assalamu Alaikum, আগামীকাল আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন। ediz it institute, our mobile number ${adminPhone}`;
+                    sendGeneralSms(st.guardianPhone, guardianMsg, `Guardian Due Reminder (${st.id})`);
+                }
+
+                // 3. Send Admin SMS
+                const adminMsg = `আগামীকাল ${st.name} (${st.id})-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।`;
+                sendSystemAlertToAdmins(adminMsg, `Admin Due Alert (${st.id})`);
+
+                // Mark as sent for today
+                st.lastReminderSentDate = todayStr;
+                databaseModified = true;
+            } else if (daysDiff === -1) { // 1 day after due date (yesterday)
+                // 1. Send Student SMS
+                const studentMsg = `Assalamu Alaikum, গতকাল আপনার কোর্স ফি পরিশোধের নির্ধারিত তারিখ ছিল। অনুগ্রহ করে বকেয়া পরিশোধ করুন। ediz it institute, our mobile number ${adminPhone}`;
+                sendGeneralSms(st.phone, studentMsg, `Student Due Reminder (${st.id})`);
+
+                // 2. Send Guardian SMS
+                if (st.guardianPhone) {
+                    const guardianMsg = `Assalamu Alaikum, গতকাল আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ ছিল। অনুগ্রহ করে বকেয়া পরিশোধ করুন। ediz it institute, our mobile number ${adminPhone}`;
+                    sendGeneralSms(st.guardianPhone, guardianMsg, `Guardian Due Reminder (${st.id})`);
+                }
+
+                // 3. Send Admin SMS
+                const adminMsg = `গতকাল ${st.name} (${st.id})-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ ছিল। এখনও পেমেন্ট বাকি রয়েছে।`;
+                sendSystemAlertToAdmins(adminMsg, `Admin Due Alert (${st.id})`);
+
+                // Mark as sent for today
+                st.lastReminderSentDate = todayStr;
+                databaseModified = true;
             }
-
-            // 3. Send Admin SMS
-            const adminMsg = `আজ ${st.name} (${st.id})-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।`;
-            sendGeneralSms(adminPhone, adminMsg, `Admin Due Alert (${st.id})`);
-
-            // Mark as sent for today
-            st.lastReminderSentDate = todayStr;
-            databaseModified = true;
         }
     });
 
     if (databaseModified) {
-        localStorage.setItem('ediz_students', JSON.stringify(students));
+        saveDatabase();
     }
 
     renderDashboardAlerts();
@@ -7302,6 +7938,8 @@ function setupRegistrationPage() {
         const mother = document.getElementById('reg-student-mother').value.trim();
         const guardian = document.getElementById('reg-student-guardian-phone').value.trim();
         const address = document.getElementById('reg-student-address').value.trim();
+        const genderEl = document.getElementById('reg-student-gender');
+        const gender = genderEl ? genderEl.value : 'Male';
 
         // Validation helpers
         function validateBDMobile(num) {
@@ -7388,7 +8026,22 @@ function setupRegistrationPage() {
 
         // 1. Generate shared Invoice ID & Registration ID
         const invId = getNextInvoiceId();
-        const registrationId = getNextRegistrationId();
+        
+        // Find if student already has a Registration ID by matching phone number and similar name
+        const cleanPhone = phone.replace(/\D/g, '');
+        const cleanName = name.toLowerCase().trim().replace(/\s+/g, '');
+        const existingStudent = students.find(s => {
+            const sPhone = (s.phone || '').replace(/\D/g, '');
+            const sName = (s.name || '').toLowerCase().trim().replace(/\s+/g, '');
+            if (sPhone === cleanPhone && s.registrationId) {
+                if (sName.includes(cleanName) || cleanName.includes(sName)) {
+                    return true;
+                }
+            }
+            return false;
+        });
+
+        const registrationId = existingStudent ? existingStudent.registrationId : getNextRegistrationId();
 
         // 2. Create separate student records (one per course)
         let newlyCreatedStudents = [];
@@ -7457,6 +8110,7 @@ function setupRegistrationPage() {
                 id: studentId,
                 name: name,
                 phone: phone,
+                gender: gender,
                 fatherName: father,
                 motherName: mother,
                 guardianPhone: guardian,
@@ -7492,7 +8146,6 @@ function setupRegistrationPage() {
             showRegistrationSuccessModal(newlyCreatedStudents);
 
             // Send Admin Admission Notification SMS
-            const adminPhone = "01798926897";
             const studentNames = newlyCreatedStudents[0].name;
             const courseInfos = newlyCreatedStudents.map(s => `${s.course} (${s.batch})`).join(', ');
             const totalNet = newlyCreatedStudents.reduce((sum, s) => sum + s.netFee, 0);
@@ -7508,7 +8161,7 @@ function setupRegistrationPage() {
                 const booksAvailable = Math.max(0, totalStock - booksSold);
                 adminMsg += ` (Book Included. Remaining books in stock: ${booksAvailable})`;
             }
-            sendGeneralSms(adminPhone, adminMsg, "Admin Admission Notification");
+            sendSystemAlertToAdmins(adminMsg, "Admin Admission Notification");
         }
         
         // Reset form and go back to students list
@@ -7978,7 +8631,7 @@ function renderCollectDueTable() {
                 <td>${st.fatherName || 'N/A'}</td>
                 <td>
                     <div style="font-weight: 600;">${st.course}</div>
-                    <div style="font-size: 0.75rem; color: var(--text-muted);">Batch: ${st.batch}</div>
+                    <div style="font-size: 0.75rem; color: var(--primary); font-weight: 600; cursor: pointer; text-decoration: underline;" onclick="goToBatch('${st.course.replace(/'/g, "\\'")}', '${st.batch.replace(/'/g, "\\'")}')" title="Go to Batch Roster">Batch: ${st.batch}</div>
                 </td>
                 <td>
                     <div><i class="fa-solid fa-mobile-screen-button"></i> Student: ${st.phone}</div>
@@ -9540,6 +10193,61 @@ document.addEventListener('DOMContentLoaded', () => {
         taskForm.addEventListener('submit', addTask);
     }
 
+    // Expense Form submission
+    const expenseForm = document.getElementById('expense-add-form');
+    if (expenseForm) {
+        expenseForm.addEventListener('submit', addExpense);
+        // Default expense date to today
+        const expenseDateInput = document.getElementById('expense-date');
+        if (expenseDateInput) {
+            expenseDateInput.value = getLocalDateString();
+        }
+    }
+    
+    // Expense search and date filter listeners
+    const expenseSearchInput = document.getElementById('expense-search-input');
+    if (expenseSearchInput) {
+        expenseSearchInput.addEventListener('input', renderExpenses);
+    }
+    const expenseFilterDate = document.getElementById('expense-filter-date');
+    if (expenseFilterDate) {
+        expenseFilterDate.addEventListener('input', renderExpenses);
+    }
+
+    // Expense clear filter listener
+    const expenseClearFilterBtn = document.getElementById('expense-clear-filter-btn');
+    if (expenseClearFilterBtn) {
+        expenseClearFilterBtn.addEventListener('click', () => {
+            if (expenseFilterDate) expenseFilterDate.value = '';
+            if (expenseSearchInput) expenseSearchInput.value = '';
+            renderExpenses();
+        });
+    }
+
+    // Expense Period Filter listener
+    const expensePeriodSelect = document.getElementById('expense-period-select');
+    const expenseCustomDates = document.getElementById('expense-custom-dates');
+    const expenseCustomStart = document.getElementById('expense-custom-start');
+    const expenseCustomEnd = document.getElementById('expense-custom-end');
+
+    if (expensePeriodSelect) {
+        expensePeriodSelect.addEventListener('change', () => {
+            if (expensePeriodSelect.value === 'custom') {
+                if (expenseCustomDates) expenseCustomDates.style.display = 'flex';
+            } else {
+                if (expenseCustomDates) expenseCustomDates.style.display = 'none';
+            }
+            renderExpenses();
+        });
+    }
+
+    if (expenseCustomStart) {
+        expenseCustomStart.addEventListener('input', renderExpenses);
+    }
+    if (expenseCustomEnd) {
+        expenseCustomEnd.addEventListener('input', renderExpenses);
+    }
+
     // Advanced Date Filters
     const dateFilterSelect = document.getElementById('inquiry-date-filter-select');
     const specificDateInput = document.getElementById('inquiry-specific-date-input');
@@ -10597,4 +11305,1111 @@ window.renderTeacherPayouts = function() {
         metricDue.style.color = dueSum > 0 ? 'var(--danger)' : 'var(--success)';
     }
 };
+
+
+// ==========================================
+// --- EXPENSES MANAGEMENT SYSTEM ---
+// ==========================================
+
+const escapeHtml = (str) => String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+function getPeriodDateBounds(period) {
+    const today = new Date();
+    const todayStr = getLocalDateString(today);
+    const currentYear = today.getFullYear();
+    const currentMonth = String(today.getMonth() + 1).padStart(2, '0');
+    
+    let start = null;
+    let end = null;
+    
+    if (period === 'today') {
+        start = todayStr;
+        end = todayStr;
+    } else if (period === 'this-month') {
+        start = `${currentYear}-${currentMonth}-01`;
+        // Get last day of current month
+        const lastDay = new Date(currentYear, today.getMonth() + 1, 0).getDate();
+        end = `${currentYear}-${currentMonth}-${String(lastDay).padStart(2, '0')}`;
+    } else if (period === 'this-year') {
+        start = `${currentYear}-01-01`;
+        end = `${currentYear}-12-31`;
+    } else if (period === 'custom') {
+        const startInput = document.getElementById('expense-custom-start');
+        const endInput = document.getElementById('expense-custom-end');
+        start = startInput ? startInput.value : null;
+        end = endInput ? endInput.value : null;
+    }
+    return { start, end };
+}
+
+window.addExpense = function(e) {
+    try {
+        e.preventDefault();
+        const dateInput = document.getElementById('expense-date');
+        const amountInput = document.getElementById('expense-amount');
+        const descInput = document.getElementById('expense-description');
+        
+        if (!dateInput || !amountInput || !descInput) {
+            alert("Error: Form inputs not found in DOM.");
+            return;
+        }
+        
+        const dateVal = dateInput.value;
+        const amountVal = parseInt(amountInput.value, 10);
+        const descVal = descInput.value.trim();
+        
+        if (!dateVal || isNaN(amountVal) || amountVal <= 0 || !descVal) {
+            alert("Please enter a valid date, amount, and description.");
+            return;
+        }
+        
+        let recordedBy = 'Staff';
+        try {
+            const activeUser = JSON.parse(sessionStorage.getItem('ediz_active_user'));
+            if (activeUser) {
+                recordedBy = activeUser.email || activeUser.username || 'Staff';
+            }
+        } catch (authErr) {
+            console.warn("Failed to parse active user:", authErr);
+        }
+        
+        const newExpense = {
+            id: 'EXP-' + Date.now(),
+            date: dateVal,
+            amount: amountVal,
+            description: descVal,
+            recordedBy: recordedBy
+        };
+        
+        if (!expenses) expenses = [];
+        expenses.push(newExpense);
+        
+        saveDatabase();
+        
+        // Reset form and default date
+        descInput.value = '';
+        amountInput.value = '';
+        dateInput.value = getLocalDateString();
+        
+        renderExpenses();
+        refreshStats();
+        alert("Expense recorded successfully!");
+    } catch (err) {
+        alert("Runtime Error in addExpense:\n" + err.message + "\nStack: " + err.stack);
+        console.error(err);
+    }
+};
+
+window.deleteExpense = function(id) {
+    try {
+        if (confirm("Are you sure you want to permanently delete this expense record?")) {
+            expenses = expenses.filter(exp => exp.id !== id);
+            saveDatabase();
+            renderExpenses();
+            refreshStats();
+        }
+    } catch (err) {
+        alert("Runtime Error in deleteExpense:\n" + err.message);
+        console.error(err);
+    }
+};
+
+window.renderExpenses = function() {
+    try {
+        const tbody = document.getElementById('expenses-table-tbody');
+        if (!tbody) return;
+
+        if (!expenses) expenses = [];
+
+        // 1. Get current date strings for breakdown badges
+        const todayStr = getLocalDateString();
+        const currentMonthStr = todayStr.substring(0, 7); // "YYYY-MM"
+        const currentYearStr = todayStr.substring(0, 4); // "YYYY"
+
+        // 2. Calculate global breakdowns (always active)
+        let breakdownToday = 0;
+        let breakdownMonth = 0;
+        let breakdownYear = 0;
+
+        expenses.forEach(exp => {
+            if (exp.date === todayStr) {
+                breakdownToday += exp.amount || 0;
+            }
+            if (exp.date && exp.date.substring(0, 7) === currentMonthStr) {
+                breakdownMonth += exp.amount || 0;
+            }
+            if (exp.date && exp.date.substring(0, 4) === currentYearStr) {
+                breakdownYear += exp.amount || 0;
+            }
+        });
+
+        // Update breakdown elements
+        const breakdownTodayEl = document.getElementById('breakdown-expense-today');
+        const breakdownMonthEl = document.getElementById('breakdown-expense-month');
+        const breakdownYearEl = document.getElementById('breakdown-expense-year');
+
+        if (breakdownTodayEl) breakdownTodayEl.innerText = `৳${breakdownToday.toLocaleString()}`;
+        if (breakdownMonthEl) breakdownMonthEl.innerText = `৳${breakdownMonth.toLocaleString()}`;
+        if (breakdownYearEl) breakdownYearEl.innerText = `৳${breakdownYear.toLocaleString()}`;
+
+        // 3. Resolve selected period bounds
+        const periodSelect = document.getElementById('expense-period-select');
+        const selectedPeriod = periodSelect ? periodSelect.value : 'this-month';
+        const bounds = getPeriodDateBounds(selectedPeriod);
+
+        // Helper to check date range
+        const inRange = (dVal) => {
+            if (!dVal) return false;
+            if (bounds.start && dVal < bounds.start) return false;
+            if (bounds.end && dVal > bounds.end) return false;
+            return true;
+        };
+
+        // 4. Filter expenses list by period and search query
+        const searchInput = document.getElementById('expense-search-input');
+        const filterDate = document.getElementById('expense-filter-date');
+        
+        const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
+        const specificDateFilter = filterDate ? filterDate.value : '';
+
+        let filtered = expenses.filter(exp => {
+            // If specific date is selected in ledger, override period bounds and show only that date
+            if (specificDateFilter) {
+                if (exp.date !== specificDateFilter) return false;
+            } else {
+                // Otherwise filter by period date bounds
+                if (!inRange(exp.date)) return false;
+            }
+
+            // Filter by text search query (description, amount, or recordedBy)
+            if (query) {
+                const desc = (exp.description || '').toLowerCase();
+                const date = (exp.date || '').toLowerCase();
+                const amount = String(exp.amount || '');
+                const user = (exp.recordedBy || '').toLowerCase();
+                
+                // Allow matching month names (e.g. 'july' -> '-07-')
+                let monthQuery = query;
+                const months = {
+                    'january': '-01-', 'february': '-02-', 'march': '-03-', 'april': '-04-',
+                    'may': '-05-', 'june': '-06-', 'july': '-07-', 'august': '-08-',
+                    'september': '-09-', 'october': '-10-', 'november': '-11-', 'december': '-12-',
+                    'jan': '-01-', 'feb': '-02-', 'mar': '-03-', 'apr': '-04-',
+                    'jun': '-06-', 'jul': '-07-', 'aug': '-08-', 'sep': '-09-',
+                    'oct': '-10-', 'nov': '-11-', 'dec': '-12-'
+                };
+                for (const key in months) {
+                    if (query.includes(key)) {
+                        monthQuery = monthQuery.replace(key, months[key]);
+                    }
+                }
+                
+                const matchDesc = desc.includes(query);
+                const matchDate = date.includes(query) || date.includes(monthQuery);
+                const matchAmount = amount.includes(query);
+                const matchUser = user.includes(query);
+                
+                if (!matchDesc && !matchDate && !matchAmount && !matchUser) {
+                    return false;
+                }
+            }
+            return true;
+        });
+
+        // Sort by date descending, then by id descending (newest first)
+        filtered.sort((a, b) => {
+            const dateA = new Date(a.date);
+            const dateB = new Date(b.date);
+            if (dateA.getTime() !== dateB.getTime()) {
+                return dateB - dateA;
+            }
+            return b.id.localeCompare(a.id);
+        });
+
+        // 5. Calculate Income (Fee Collections) for the selected period
+        let totalIncome = 0;
+        students.forEach(st => {
+            if (st.invoices) {
+                st.invoices.forEach(inv => {
+                    // Filter invoices by the same date range
+                    if (specificDateFilter) {
+                        if (inv.date === specificDateFilter) totalIncome += inv.amount || 0;
+                    } else {
+                        if (inRange(inv.date)) totalIncome += inv.amount || 0;
+                    }
+                });
+            }
+        });
+
+        // Calculate Period Expenses Sum
+        let periodExpenses = 0;
+        expenses.forEach(exp => {
+            if (specificDateFilter) {
+                if (exp.date === specificDateFilter) periodExpenses += exp.amount || 0;
+            } else {
+                if (inRange(exp.date)) periodExpenses += exp.amount || 0;
+            }
+        });
+
+        const netIncome = totalIncome - periodExpenses;
+
+        // 6. Update the Period Metrics Cards
+        const metricIncome = document.getElementById('metric-expenses-total-income');
+        const metricCost = document.getElementById('metric-expenses-total-cost');
+        const metricNet = document.getElementById('metric-expenses-net-income');
+
+        if (metricIncome) metricIncome.innerText = `৳${totalIncome.toLocaleString()}`;
+        if (metricCost) metricCost.innerText = `৳${periodExpenses.toLocaleString()}`;
+        if (metricNet) {
+            metricNet.innerText = `৳${netIncome.toLocaleString()}`;
+            metricNet.style.color = netIncome >= 0 ? '' : 'var(--danger)';
+        }
+
+        // 7. Render Ledger List Rows
+        if (filtered.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: var(--text-muted); padding: 2rem;">No expenses found matching the filters.</td></tr>`;
+            return;
+        }
+
+        tbody.innerHTML = filtered.map(exp => {
+            return `
+                <tr>
+                    <td data-label="Date"><strong>${exp.date}</strong></td>
+                    <td data-label="Description">${escapeHtml(exp.description)}</td>
+                    <td data-label="Amount (৳)"><strong>৳${(exp.amount || 0).toLocaleString()}</strong></td>
+                    <td data-label="Recorded By"><span class="badge badge-secondary">${exp.recordedBy || 'Staff'}</span></td>
+                    <td data-label="Action">
+                        <button class="btn btn-secondary btn-icon-only" style="color: var(--danger);" onclick="deleteExpense('${exp.id}')" title="Delete Expense"><i class="fa-solid fa-trash"></i></button>
+                    </td>
+                </tr>
+            `;
+        }).join('');
+    } catch (err) {
+        alert("Runtime Error in renderExpenses:\n" + err.message);
+        console.error(err);
+    }
+};
+
+// ============================================================================
+// ADMIN INSTITUTIONAL REPORT ENGINE (EXCEL & PDF EXPORT)
+// ============================================================================
+
+function parseReportDate(dateStr) {
+    if (!dateStr) return null;
+    if (dateStr instanceof Date) return dateStr;
+    const parts = String(dateStr).split('-');
+    if (parts.length === 3) {
+        const y = parseInt(parts[0], 10);
+        const m = parseInt(parts[1], 10) - 1;
+        const d = parseInt(parts[2], 10);
+        if (!isNaN(y) && !isNaN(m) && !isNaN(d)) {
+            return new Date(y, m, d, 12, 0, 0); // Noon prevents timezone shifting
+        }
+    }
+    const parsed = new Date(dateStr);
+    return isNaN(parsed.getTime()) ? null : parsed;
+}
+
+function getActiveReportFilters() {
+    const courseEl = document.querySelector('.report-course-filter');
+    const fromEl = document.querySelector('.report-from-date');
+    const toEl = document.querySelector('.report-to-date');
+    return {
+        course: courseEl ? courseEl.value : 'all',
+        fromDate: fromEl && fromEl.value ? fromEl.value : '',
+        toDate: toEl && toEl.value ? toEl.value : ''
+    };
+}
+
+function getFilteredStudentsForReport(filters) {
+    let list = Array.isArray(students) ? [...students] : [];
+    if (filters.course && filters.course !== 'all') {
+        list = list.filter(s => s.course === filters.course);
+    }
+    if (filters.fromDate) {
+        list = list.filter(s => s.registrationDate && s.registrationDate >= filters.fromDate);
+    }
+    if (filters.toDate) {
+        list = list.filter(s => s.registrationDate && s.registrationDate <= filters.toDate);
+    }
+
+    list.sort((a, b) => {
+        const dA = a.registrationDate || '';
+        const dB = b.registrationDate || '';
+        if (dA !== dB) return dA.localeCompare(dB);
+        return (a.id || '').localeCompare(b.id || '');
+    });
+
+    return list;
+}
+
+function updateReportExportVisibility() {
+    let curUser = null;
+    try {
+        curUser = JSON.parse(sessionStorage.getItem('ediz_active_user'));
+    } catch(e) {}
+    const isOwnerOrAdmin = curUser && (curUser.role === 'Owner' || curUser.role === 'Admin');
+    document.querySelectorAll('.report-export-panel').forEach(panel => {
+        panel.style.display = isOwnerOrAdmin ? 'flex' : 'none';
+    });
+}
+
+window.exportAdminReportExcel = async function(triggerBtn) {
+    try {
+        const curUser = JSON.parse(sessionStorage.getItem('ediz_active_user')) || {};
+        if (curUser.role !== 'Owner' && curUser.role !== 'Admin') {
+            alert("অনুমতি নেই: শুধুমাত্র Owner অথবা Admin রিপোর্ট ডাউনলোড করতে পারবেন।");
+            return;
+        }
+
+        if (typeof ExcelJS === 'undefined') {
+            alert("ExcelJS লাইব্রেরি এখনও লোড হচ্ছে, অনুগ্রহ করে কয়েক সেকেন্ড পর আবার চেষ্টা করুন।");
+            return;
+        }
+
+        const originalBtnText = triggerBtn ? triggerBtn.innerHTML : '';
+        if (triggerBtn) {
+            triggerBtn.disabled = true;
+            triggerBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> তৈরি হচ্ছে...';
+        }
+
+        const filters = getActiveReportFilters();
+        const filteredStudents = getFilteredStudentsForReport(filters);
+
+        // Gather payments for the filtered student cohort
+        const filteredPayments = [];
+        filteredStudents.forEach(st => {
+            if (st.invoices && Array.isArray(st.invoices)) {
+                st.invoices.forEach(inv => {
+                    filteredPayments.push({
+                        invId: inv.id || 'N/A',
+                        date: inv.date || '',
+                        studentId: st.id || '',
+                        studentName: st.name || '',
+                        course: st.course || '',
+                        amount: Number(inv.amount) || 0,
+                        paymentMethod: inv.paymentType || (inv.amount === 200 ? 'Book Payment' : 'Cash'),
+                        receivedBy: inv.collectedBy || ''
+                    });
+                });
+            }
+        });
+
+        filteredPayments.sort((a, b) => {
+            const dA = a.date || '';
+            const dB = b.date || '';
+            if (dA !== dB) return dA.localeCompare(dB);
+            return a.invId.localeCompare(b.invId);
+        });
+
+        // Initialize Excel Workbook
+        const workbook = new ExcelJS.Workbook();
+        workbook.creator = 'EDIZ IT Institute';
+        workbook.created = new Date();
+
+        // Styling definitions
+        const headerFill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF1E293B' } }; // Slate 800
+        const headerFont = { name: 'Segoe UI', size: 11, bold: true, color: { argb: 'FFFFFFFF' } };
+        const subHeaderFill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF334155' } }; // Slate 700
+        const totalRowFill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFF1F5F9' } }; // Slate 100
+        const borderThin = {
+            top: { style: 'thin', color: { argb: 'FFE2E8F0' } },
+            bottom: { style: 'thin', color: { argb: 'FFE2E8F0' } },
+            left: { style: 'thin', color: { argb: 'FFE2E8F0' } },
+            right: { style: 'thin', color: { argb: 'FFE2E8F0' } }
+        };
+        const totalBorder = {
+            top: { style: 'thin', color: { argb: 'FF94A3B8' } },
+            bottom: { style: 'double', color: { argb: 'FF475569' } },
+            left: { style: 'thin', color: { argb: 'FFE2E8F0' } },
+            right: { style: 'thin', color: { argb: 'FFE2E8F0' } }
+        };
+        const moneyFormat = '"৳"#,##0';
+        const dateFormat = 'DD-MM-YYYY';
+
+        // ----------------------------------------------------
+        // SHEET 1: SUMMARY
+        // ----------------------------------------------------
+        const wsSummary = workbook.addWorksheet('Summary', {
+            views: [{ showGridLines: true }]
+        });
+
+        wsSummary.mergeCells('A1:E1');
+        const titleCell = wsSummary.getCell('A1');
+        titleCell.value = 'EDIZ IT INSTITUTE — EXECUTIVE SUMMARY REPORT';
+        titleCell.font = { name: 'Segoe UI', size: 16, bold: true, color: { argb: 'FF0F172A' } };
+        titleCell.alignment = { vertical: 'middle', horizontal: 'center' };
+        wsSummary.getRow(1).height = 36;
+
+        const now = new Date();
+        const formattedNow = now.toLocaleString('en-GB', {
+            day: '2-digit', month: '2-digit', year: 'numeric',
+            hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true
+        });
+        const scopeText = `Generated: ${formattedNow} | Scope: ${filters.course && filters.course !== 'all' ? filters.course : 'All Courses'} | Range: ${filters.fromDate || 'Start'} to ${filters.toDate || 'Present'}`;
+        wsSummary.getCell('A2').value = scopeText;
+        wsSummary.getCell('A2').font = { name: 'Segoe UI', size: 9.5, italic: true, color: { argb: 'FF64748B' } };
+        wsSummary.mergeCells('A2:E2');
+        wsSummary.getRow(2).height = 20;
+
+        const totalStudentsCount = filteredStudents.length;
+        const totalCourseFees = filteredStudents.reduce((acc, s) => acc + (Number(s.netFee) || 0), 0);
+        const totalCollected = filteredStudents.reduce((acc, s) => acc + (Number(s.paidFee) || 0), 0);
+        const totalDue = filteredStudents.reduce((acc, s) => acc + (Number(s.dueFee) || 0), 0);
+        const totalInvoicedReceipts = filteredPayments.reduce((acc, p) => acc + p.amount, 0);
+
+        wsSummary.addRow([]); // Row 3 blank
+
+        const kpiHeaderRow = wsSummary.addRow(['Metric', 'Value']);
+        kpiHeaderRow.font = headerFont;
+        kpiHeaderRow.getCell(1).fill = headerFill;
+        kpiHeaderRow.getCell(2).fill = headerFill;
+        kpiHeaderRow.height = 24;
+
+        const kpiData = [
+            ['Report Generated Date & Time', formattedNow],
+            ['Total Students Admitted', totalStudentsCount],
+            ['Total Course Fees (Payable after Discount)', totalCourseFees],
+            ['Total Course Fees Collected', totalCollected],
+            ['Total Outstanding Due Amount', totalDue],
+            ['Total Invoiced Receipts (All Payments Received)', totalInvoicedReceipts]
+        ];
+
+        kpiData.forEach((item, idx) => {
+            const row = wsSummary.addRow(item);
+            row.getCell(1).font = { name: 'Segoe UI', size: 10, bold: idx > 0 };
+            row.getCell(2).font = { name: 'Segoe UI', size: 10, bold: true };
+            row.getCell(1).border = borderThin;
+            row.getCell(2).border = borderThin;
+            if (typeof item[1] === 'number') {
+                if (idx === 1) {
+                    row.getCell(2).numFmt = '#,##0';
+                } else {
+                    row.getCell(2).numFmt = moneyFormat;
+                }
+            }
+        });
+
+        // Course Breakdown
+        wsSummary.addRow([]);
+        const courseTitleRow = wsSummary.addRow(['Breakdown by Course']);
+        courseTitleRow.font = { name: 'Segoe UI', size: 12, bold: true, color: { argb: 'FF0F172A' } };
+
+        const courseHeaderRow = wsSummary.addRow(['Course Name', 'Number of Students', 'Total Course Fee', 'Total Collected', 'Total Due']);
+        courseHeaderRow.font = headerFont;
+        for (let c = 1; c <= 5; c++) {
+            courseHeaderRow.getCell(c).fill = subHeaderFill;
+            courseHeaderRow.getCell(c).border = borderThin;
+        }
+        courseHeaderRow.height = 24;
+
+        const courseMap = {};
+        filteredStudents.forEach(st => {
+            const cName = st.course || 'Unassigned';
+            if (!courseMap[cName]) {
+                courseMap[cName] = { count: 0, fee: 0, collected: 0, due: 0 };
+            }
+            courseMap[cName].count++;
+            courseMap[cName].fee += Number(st.netFee) || 0;
+            courseMap[cName].collected += Number(st.paidFee) || 0;
+            courseMap[cName].due += Number(st.dueFee) || 0;
+        });
+
+        const courseStartRow = wsSummary.rowCount + 1;
+        Object.keys(courseMap).sort().forEach(cName => {
+            const cData = courseMap[cName];
+            const row = wsSummary.addRow([cName, cData.count, cData.fee, cData.collected, cData.due]);
+            row.getCell(1).font = { name: 'Segoe UI', size: 10, bold: true };
+            row.getCell(2).font = { name: 'Segoe UI', size: 10 };
+            row.getCell(2).numFmt = '#,##0';
+            row.getCell(3).numFmt = moneyFormat;
+            row.getCell(4).numFmt = moneyFormat;
+            row.getCell(5).numFmt = moneyFormat;
+            for (let c = 1; c <= 5; c++) row.getCell(c).border = borderThin;
+        });
+        const courseEndRow = wsSummary.rowCount;
+
+        if (courseEndRow >= courseStartRow) {
+            const cTotalRow = wsSummary.addRow([
+                'Total',
+                { formula: `SUM(B${courseStartRow}:B${courseEndRow})` },
+                { formula: `SUM(C${courseStartRow}:C${courseEndRow})` },
+                { formula: `SUM(D${courseStartRow}:D${courseEndRow})` },
+                { formula: `SUM(E${courseStartRow}:E${courseEndRow})` }
+            ]);
+            cTotalRow.font = { name: 'Segoe UI', size: 10, bold: true };
+            cTotalRow.getCell(2).numFmt = '#,##0';
+            cTotalRow.getCell(3).numFmt = moneyFormat;
+            cTotalRow.getCell(4).numFmt = moneyFormat;
+            cTotalRow.getCell(5).numFmt = moneyFormat;
+            for (let c = 1; c <= 5; c++) {
+                cTotalRow.getCell(c).fill = totalRowFill;
+                cTotalRow.getCell(c).border = totalBorder;
+            }
+        }
+
+        // Monthly Breakdown
+        wsSummary.addRow([]);
+        const monthTitleRow = wsSummary.addRow(['Breakdown by Month (Admission Month)']);
+        monthTitleRow.font = { name: 'Segoe UI', size: 12, bold: true, color: { argb: 'FF0F172A' } };
+
+        const monthHeaderRow = wsSummary.addRow(['Admission Month', 'Number of Admissions', 'Collected Amount']);
+        monthHeaderRow.font = headerFont;
+        for (let c = 1; c <= 3; c++) {
+            monthHeaderRow.getCell(c).fill = subHeaderFill;
+            monthHeaderRow.getCell(c).border = borderThin;
+        }
+        monthHeaderRow.height = 24;
+
+        const monthMap = {};
+        filteredStudents.forEach(st => {
+            const rDate = st.registrationDate || '';
+            const mKey = rDate.length >= 7 ? rDate.substring(0, 7) : 'Unknown';
+            if (!monthMap[mKey]) {
+                monthMap[mKey] = { count: 0, collected: 0 };
+            }
+            monthMap[mKey].count++;
+            monthMap[mKey].collected += Number(st.paidFee) || 0;
+        });
+
+        const monthStartRow = wsSummary.rowCount + 1;
+        Object.keys(monthMap).sort().forEach(mKey => {
+            const mData = monthMap[mKey];
+            let displayMonth = mKey;
+            if (mKey !== 'Unknown' && mKey.includes('-')) {
+                const parts = mKey.split('-');
+                const dateObj = new Date(Number(parts[0]), Number(parts[1]) - 1, 1);
+                if (!isNaN(dateObj)) {
+                    displayMonth = dateObj.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+                }
+            }
+            const row = wsSummary.addRow([displayMonth, mData.count, mData.collected]);
+            row.getCell(1).font = { name: 'Segoe UI', size: 10 };
+            row.getCell(2).font = { name: 'Segoe UI', size: 10 };
+            row.getCell(2).numFmt = '#,##0';
+            row.getCell(3).numFmt = moneyFormat;
+            for (let c = 1; c <= 3; c++) row.getCell(c).border = borderThin;
+        });
+        const monthEndRow = wsSummary.rowCount;
+
+        if (monthEndRow >= monthStartRow) {
+            const mTotalRow = wsSummary.addRow([
+                'Total',
+                { formula: `SUM(B${monthStartRow}:B${monthEndRow})` },
+                { formula: `SUM(C${monthStartRow}:C${monthEndRow})` }
+            ]);
+            mTotalRow.font = { name: 'Segoe UI', size: 10, bold: true };
+            mTotalRow.getCell(2).numFmt = '#,##0';
+            mTotalRow.getCell(3).numFmt = moneyFormat;
+            for (let c = 1; c <= 3; c++) {
+                mTotalRow.getCell(c).fill = totalRowFill;
+                mTotalRow.getCell(c).border = totalBorder;
+            }
+        }
+
+        wsSummary.columns = [
+            { width: 42 },
+            { width: 24 },
+            { width: 22 },
+            { width: 22 },
+            { width: 22 }
+        ];
+
+        // ----------------------------------------------------
+        // SHEET 2: STUDENTS
+        // ----------------------------------------------------
+        const wsStudents = workbook.addWorksheet('Students', {
+            views: [{ state: 'frozen', ySplit: 1, showGridLines: true }]
+        });
+
+        const studentHeaders = [
+            'SL',
+            'Student ID',
+            'Name',
+            'Mobile Number',
+            'Guardian Mobile',
+            'Address',
+            'Course',
+            'Batch',
+            'Admission Date',
+            'Course End Date',
+            'Status',
+            'Course Fee',
+            'Discount',
+            'Payable',
+            'Paid',
+            'Due',
+            'Last Payment Date'
+        ];
+
+        const stHeaderRow = wsStudents.addRow(studentHeaders);
+        stHeaderRow.font = headerFont;
+        stHeaderRow.height = 26;
+        for (let c = 1; c <= studentHeaders.length; c++) {
+            stHeaderRow.getCell(c).fill = headerFill;
+            stHeaderRow.getCell(c).alignment = { vertical: 'middle', horizontal: 'center' };
+            stHeaderRow.getCell(c).border = borderThin;
+        }
+
+        wsStudents.autoFilter = {
+            from: { row: 1, column: 1 },
+            to: { row: 1, column: studentHeaders.length }
+        };
+
+        filteredStudents.forEach((st, idx) => {
+            let lastPaymentDate = '';
+            if (st.invoices && st.invoices.length > 0) {
+                const sortedInv = [...st.invoices].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+                lastPaymentDate = sortedInv[0].date || '';
+            } else if (st.registrationDate) {
+                lastPaymentDate = st.registrationDate;
+            }
+
+            const endDate = st.certificateDate || '';
+            let displayStatus = st.status || 'Active';
+            if (st.certified) {
+                displayStatus += ' (Certified)';
+            }
+
+            const admDateObj = parseReportDate(st.registrationDate);
+            const endDateObj = parseReportDate(endDate);
+            const lastPayObj = parseReportDate(lastPaymentDate);
+
+            const rowValues = [
+                idx + 1,
+                st.id || '',
+                st.name || '',
+                st.phone || '',
+                st.guardianPhone || '',
+                st.address || '',
+                st.course || '',
+                st.batch || '',
+                admDateObj || '',
+                endDateObj || '',
+                displayStatus,
+                Number(st.totalFee) || 0,
+                Number(st.discountFee) || 0,
+                Number(st.netFee) || 0,
+                Number(st.paidFee) || 0,
+                Number(st.dueFee) || 0,
+                lastPayObj || ''
+            ];
+
+            const row = wsStudents.addRow(rowValues);
+            row.height = 20;
+
+            row.getCell(1).alignment = { horizontal: 'center' };
+            row.getCell(2).alignment = { horizontal: 'center' };
+            row.getCell(4).alignment = { horizontal: 'center' };
+            row.getCell(5).alignment = { horizontal: 'center' };
+            row.getCell(7).alignment = { horizontal: 'left' };
+            row.getCell(8).alignment = { horizontal: 'center' };
+            row.getCell(9).alignment = { horizontal: 'center' };
+            row.getCell(10).alignment = { horizontal: 'center' };
+            row.getCell(11).alignment = { horizontal: 'center' };
+            row.getCell(17).alignment = { horizontal: 'center' };
+
+            if (admDateObj) row.getCell(9).numFmt = dateFormat;
+            if (endDateObj) row.getCell(10).numFmt = dateFormat;
+            if (lastPayObj) row.getCell(17).numFmt = dateFormat;
+
+            row.getCell(12).numFmt = moneyFormat;
+            row.getCell(13).numFmt = moneyFormat;
+            row.getCell(14).numFmt = moneyFormat;
+            row.getCell(15).numFmt = moneyFormat;
+            row.getCell(16).numFmt = moneyFormat;
+
+            for (let c = 1; c <= studentHeaders.length; c++) {
+                row.getCell(c).border = borderThin;
+                row.getCell(c).font = { name: 'Segoe UI', size: 9.5 };
+            }
+        });
+
+        const stLastDataRow = wsStudents.rowCount;
+        if (stLastDataRow > 1) {
+            const totalRowVals = new Array(studentHeaders.length).fill('');
+            totalRowVals[0] = 'TOTAL';
+            totalRowVals[11] = { formula: `SUM(L2:L${stLastDataRow})` };
+            totalRowVals[12] = { formula: `SUM(M2:M${stLastDataRow})` };
+            totalRowVals[13] = { formula: `SUM(N2:N${stLastDataRow})` };
+            totalRowVals[14] = { formula: `SUM(O2:O${stLastDataRow})` };
+            totalRowVals[15] = { formula: `SUM(P2:P${stLastDataRow})` };
+
+            const stTotalRow = wsStudents.addRow(totalRowVals);
+            stTotalRow.height = 24;
+            stTotalRow.font = { name: 'Segoe UI', size: 10, bold: true };
+            stTotalRow.getCell(1).alignment = { horizontal: 'center' };
+
+            stTotalRow.getCell(12).numFmt = moneyFormat;
+            stTotalRow.getCell(13).numFmt = moneyFormat;
+            stTotalRow.getCell(14).numFmt = moneyFormat;
+            stTotalRow.getCell(15).numFmt = moneyFormat;
+            stTotalRow.getCell(16).numFmt = moneyFormat;
+
+            for (let c = 1; c <= studentHeaders.length; c++) {
+                stTotalRow.getCell(c).fill = totalRowFill;
+                stTotalRow.getCell(c).border = totalBorder;
+            }
+        }
+
+        wsStudents.columns.forEach(col => {
+            let maxLen = 12;
+            col.eachCell({ includeEmpty: false }, cell => {
+                const val = cell.value ? cell.value.toString() : '';
+                if (val.length > maxLen) maxLen = val.length;
+            });
+            col.width = Math.min(Math.max(maxLen + 3, 10), 35);
+        });
+        wsStudents.getColumn(1).width = 6;
+        wsStudents.getColumn(2).width = 12;
+        wsStudents.getColumn(3).width = 25;
+
+        // ----------------------------------------------------
+        // SHEET 3: PAYMENTS
+        // ----------------------------------------------------
+        const wsPayments = workbook.addWorksheet('Payments', {
+            views: [{ state: 'frozen', ySplit: 1, showGridLines: true }]
+        });
+
+        const paymentHeaders = [
+            'Invoice No',
+            'Payment Date',
+            'Student ID',
+            'Student Name',
+            'Course',
+            'Amount Paid',
+            'Payment Method',
+            'Received By'
+        ];
+
+        const payHeaderRow = wsPayments.addRow(paymentHeaders);
+        payHeaderRow.font = headerFont;
+        payHeaderRow.height = 26;
+        for (let c = 1; c <= paymentHeaders.length; c++) {
+            payHeaderRow.getCell(c).fill = headerFill;
+            payHeaderRow.getCell(c).alignment = { vertical: 'middle', horizontal: 'center' };
+            payHeaderRow.getCell(c).border = borderThin;
+        }
+
+        wsPayments.autoFilter = {
+            from: { row: 1, column: 1 },
+            to: { row: 1, column: paymentHeaders.length }
+        };
+
+        filteredPayments.forEach(p => {
+            const payDateObj = parseReportDate(p.date);
+            const row = wsPayments.addRow([
+                p.invId,
+                payDateObj || '',
+                p.studentId,
+                p.studentName,
+                p.course,
+                p.amount,
+                p.paymentMethod,
+                p.receivedBy
+            ]);
+            row.height = 20;
+
+            row.getCell(1).alignment = { horizontal: 'center' };
+            row.getCell(2).alignment = { horizontal: 'center' };
+            row.getCell(3).alignment = { horizontal: 'center' };
+            row.getCell(7).alignment = { horizontal: 'center' };
+
+            if (payDateObj) row.getCell(2).numFmt = dateFormat;
+            row.getCell(6).numFmt = moneyFormat;
+
+            for (let c = 1; c <= paymentHeaders.length; c++) {
+                row.getCell(c).border = borderThin;
+                row.getCell(c).font = { name: 'Segoe UI', size: 9.5 };
+            }
+        });
+
+        const payLastDataRow = wsPayments.rowCount;
+        if (payLastDataRow > 1) {
+            const payTotalVals = new Array(paymentHeaders.length).fill('');
+            payTotalVals[0] = 'TOTAL';
+            payTotalVals[5] = { formula: `SUM(F2:F${payLastDataRow})` };
+
+            const payTotalRow = wsPayments.addRow(payTotalVals);
+            payTotalRow.height = 24;
+            payTotalRow.font = { name: 'Segoe UI', size: 10, bold: true };
+            payTotalRow.getCell(1).alignment = { horizontal: 'center' };
+            payTotalRow.getCell(6).numFmt = moneyFormat;
+
+            for (let c = 1; c <= paymentHeaders.length; c++) {
+                payTotalRow.getCell(c).fill = totalRowFill;
+                payTotalRow.getCell(c).border = totalBorder;
+            }
+        }
+
+        wsPayments.columns.forEach(col => {
+            let maxLen = 14;
+            col.eachCell({ includeEmpty: false }, cell => {
+                const val = cell.value ? cell.value.toString() : '';
+                if (val.length > maxLen) maxLen = val.length;
+            });
+            col.width = Math.min(Math.max(maxLen + 3, 12), 35);
+        });
+
+        // Generate binary and trigger download
+        const buffer = await workbook.xlsx.writeBuffer();
+        const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+        const downloadUrl = URL.createObjectURL(blob);
+        const downloadLink = document.createElement('a');
+        const todayStr = (typeof getLocalDateString === 'function') ? getLocalDateString() : new Date().toISOString().split('T')[0];
+        downloadLink.href = downloadUrl;
+        downloadLink.download = `EdizIT_Report_${todayStr}.xlsx`;
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+        setTimeout(() => URL.revokeObjectURL(downloadUrl), 1000);
+
+    } catch (err) {
+        console.error("Error generating Excel report:", err);
+        alert("Excel রিপোর্ট জেনারেট করতে ত্রুটি হয়েছে: " + err.message);
+    } finally {
+        if (triggerBtn) {
+            triggerBtn.disabled = false;
+            triggerBtn.innerHTML = originalBtnText;
+        }
+    }
+};
+
+window.exportAdminReportPDF = function() {
+    try {
+        const curUser = JSON.parse(sessionStorage.getItem('ediz_active_user')) || {};
+        if (curUser.role !== 'Owner' && curUser.role !== 'Admin') {
+            alert("অনুমতি নেই: শুধুমাত্র Owner অথবা Admin রিপোর্ট দেখতে পারবেন।");
+            return;
+        }
+
+        const filters = getActiveReportFilters();
+        const filteredStudents = getFilteredStudentsForReport(filters);
+
+        const totalStudentsCount = filteredStudents.length;
+        const totalCourseFees = filteredStudents.reduce((acc, s) => acc + (Number(s.netFee) || 0), 0);
+        const totalCollected = filteredStudents.reduce((acc, s) => acc + (Number(s.paidFee) || 0), 0);
+        const totalDue = filteredStudents.reduce((acc, s) => acc + (Number(s.dueFee) || 0), 0);
+
+        const courseMap = {};
+        filteredStudents.forEach(st => {
+            const cName = st.course || 'Unassigned';
+            if (!courseMap[cName]) {
+                courseMap[cName] = { count: 0, fee: 0, collected: 0, due: 0 };
+            }
+            courseMap[cName].count++;
+            courseMap[cName].fee += Number(st.netFee) || 0;
+            courseMap[cName].collected += Number(st.paidFee) || 0;
+            courseMap[cName].due += Number(st.dueFee) || 0;
+        });
+
+        const now = new Date();
+        const formattedNow = now.toLocaleString('en-GB', {
+            day: '2-digit', month: '2-digit', year: 'numeric',
+            hour: '2-digit', minute: '2-digit', hour12: true
+        });
+
+        const scopeLabel = `${filters.course && filters.course !== 'all' ? filters.course : 'All Courses'} | Date Range: ${filters.fromDate || 'Start'} to ${filters.toDate || 'Present'}`;
+
+        let courseRowsHtml = Object.keys(courseMap).sort().map(cName => {
+            const c = courseMap[cName];
+            return `
+                <tr>
+                    <td style="padding: 6px 10px; border: 1px solid #cbd5e1; font-weight: 600;">${cName}</td>
+                    <td style="padding: 6px 10px; border: 1px solid #cbd5e1; text-align: center;">${c.count}</td>
+                    <td style="padding: 6px 10px; border: 1px solid #cbd5e1; text-align: right;">৳${c.fee.toLocaleString()}</td>
+                    <td style="padding: 6px 10px; border: 1px solid #cbd5e1; text-align: right; color: #16a34a;">৳${c.collected.toLocaleString()}</td>
+                    <td style="padding: 6px 10px; border: 1px solid #cbd5e1; text-align: right; color: #dc2626;">৳${c.due.toLocaleString()}</td>
+                </tr>
+            `;
+        }).join('');
+
+        let studentRowsHtml = filteredStudents.map((st, idx) => {
+            return `
+                <tr>
+                    <td style="padding: 5px 8px; border: 1px solid #e2e8f0; text-align: center; font-size: 11px;">${idx + 1}</td>
+                    <td style="padding: 5px 8px; border: 1px solid #e2e8f0; text-align: center; font-weight: 600; font-size: 11px;">${st.id}</td>
+                    <td style="padding: 5px 8px; border: 1px solid #e2e8f0; font-weight: 600; font-size: 11px;">${escapeHtml(st.name)}</td>
+                    <td style="padding: 5px 8px; border: 1px solid #e2e8f0; text-align: center; font-size: 11px;">${st.phone}</td>
+                    <td style="padding: 5px 8px; border: 1px solid #e2e8f0; font-size: 11px;">${st.course}</td>
+                    <td style="padding: 5px 8px; border: 1px solid #e2e8f0; text-align: center; font-size: 11px;">${st.batch || '-'}</td>
+                    <td style="padding: 5px 8px; border: 1px solid #e2e8f0; text-align: center; font-size: 11px;">${st.registrationDate || '-'}</td>
+                    <td style="padding: 5px 8px; border: 1px solid #e2e8f0; text-align: right; font-size: 11px;">৳${(st.netFee || 0).toLocaleString()}</td>
+                    <td style="padding: 5px 8px; border: 1px solid #e2e8f0; text-align: right; font-size: 11px; color: #16a34a;">৳${(st.paidFee || 0).toLocaleString()}</td>
+                    <td style="padding: 5px 8px; border: 1px solid #e2e8f0; text-align: right; font-size: 11px; color: ${st.dueFee > 0 ? '#dc2626' : '#64748b'}; font-weight: ${st.dueFee > 0 ? '700' : 'normal'};">৳${(st.dueFee || 0).toLocaleString()}</td>
+                </tr>
+            `;
+        }).join('');
+
+        const printHTML = `
+            <div style="font-family: 'Segoe UI', Arial, sans-serif; color: #0f172a; padding: 20px; max-width: 1000px; margin: 0 auto; background: #ffffff;">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0f172a; padding-bottom: 12px; margin-bottom: 16px;">
+                    <div>
+                        <h1 style="margin: 0; font-size: 24px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px;">EDIZ IT INSTITUTE</h1>
+                        <p style="margin: 3px 0 0 0; font-size: 13px; color: #475569;">Institutional Executive Report (প্রতিষ্ঠানিক রিপোর্ট)</p>
+                    </div>
+                    <div style="text-align: right; font-size: 11px; color: #64748b;">
+                        <div><strong>Date:</strong> ${formattedNow}</div>
+                        <div><strong>Filter:</strong> ${escapeHtml(scopeLabel)}</div>
+                    </div>
+                </div>
+
+                <!-- KPI SUMMARY CARDS -->
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px;">
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 14px; border-left: 4px solid #3b82f6;">
+                        <div style="font-size: 11px; color: #64748b; font-weight: 600; text-transform: uppercase;">Total Students</div>
+                        <div style="font-size: 20px; font-weight: 700; color: #0f172a;">${totalStudentsCount.toLocaleString()}</div>
+                    </div>
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 14px; border-left: 4px solid #6366f1;">
+                        <div style="font-size: 11px; color: #64748b; font-weight: 600; text-transform: uppercase;">Total Fees (Payable)</div>
+                        <div style="font-size: 20px; font-weight: 700; color: #0f172a;">৳${totalCourseFees.toLocaleString()}</div>
+                    </div>
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 14px; border-left: 4px solid #10b981;">
+                        <div style="font-size: 11px; color: #64748b; font-weight: 600; text-transform: uppercase;">Total Collected</div>
+                        <div style="font-size: 20px; font-weight: 700; color: #16a34a;">৳${totalCollected.toLocaleString()}</div>
+                    </div>
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 14px; border-left: 4px solid #ef4444;">
+                        <div style="font-size: 11px; color: #64748b; font-weight: 600; text-transform: uppercase;">Total Outstanding Due</div>
+                        <div style="font-size: 20px; font-weight: 700; color: #dc2626;">৳${totalDue.toLocaleString()}</div>
+                    </div>
+                </div>
+
+                <!-- COURSE BREAKDOWN TABLE -->
+                <h3 style="font-size: 14px; font-weight: 700; margin: 0 0 8px 0; color: #1e293b;">Breakdown by Course</h3>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 12px;">
+                    <thead>
+                        <tr style="background: #1e293b; color: #ffffff;">
+                            <th style="padding: 6px 10px; border: 1px solid #1e293b; text-align: left;">Course Name</th>
+                            <th style="padding: 6px 10px; border: 1px solid #1e293b; text-align: center;">Students</th>
+                            <th style="padding: 6px 10px; border: 1px solid #1e293b; text-align: right;">Total Fee</th>
+                            <th style="padding: 6px 10px; border: 1px solid #1e293b; text-align: right;">Collected</th>
+                            <th style="padding: 6px 10px; border: 1px solid #1e293b; text-align: right;">Due</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${courseRowsHtml}
+                    </tbody>
+                    <tfoot>
+                        <tr style="background: #f1f5f9; font-weight: 700;">
+                            <td style="padding: 6px 10px; border: 1px solid #cbd5e1;">TOTAL</td>
+                            <td style="padding: 6px 10px; border: 1px solid #cbd5e1; text-align: center;">${totalStudentsCount}</td>
+                            <td style="padding: 6px 10px; border: 1px solid #cbd5e1; text-align: right;">৳${totalCourseFees.toLocaleString()}</td>
+                            <td style="padding: 6px 10px; border: 1px solid #cbd5e1; text-align: right; color: #16a34a;">৳${totalCollected.toLocaleString()}</td>
+                            <td style="padding: 6px 10px; border: 1px solid #cbd5e1; text-align: right; color: #dc2626;">৳${totalDue.toLocaleString()}</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <!-- STUDENTS TABLE -->
+                <h3 style="font-size: 14px; font-weight: 700; margin: 0 0 8px 0; color: #1e293b;">Students Roster (${filteredStudents.length} Students)</h3>
+                <table style="width: 100%; border-collapse: collapse; font-size: 11px;">
+                    <thead>
+                        <tr style="background: #334155; color: #ffffff;">
+                            <th style="padding: 6px 8px; border: 1px solid #334155; text-align: center; width: 35px;">SL</th>
+                            <th style="padding: 6px 8px; border: 1px solid #334155; text-align: center; width: 65px;">ID</th>
+                            <th style="padding: 6px 8px; border: 1px solid #334155; text-align: left;">Student Name</th>
+                            <th style="padding: 6px 8px; border: 1px solid #334155; text-align: center;">Mobile</th>
+                            <th style="padding: 6px 8px; border: 1px solid #334155; text-align: left;">Course</th>
+                            <th style="padding: 6px 8px; border: 1px solid #334155; text-align: center;">Batch</th>
+                            <th style="padding: 6px 8px; border: 1px solid #334155; text-align: center;">Adm Date</th>
+                            <th style="padding: 6px 8px; border: 1px solid #334155; text-align: right;">Payable</th>
+                            <th style="padding: 6px 8px; border: 1px solid #334155; text-align: right;">Paid</th>
+                            <th style="padding: 6px 8px; border: 1px solid #334155; text-align: right;">Due</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${studentRowsHtml}
+                    </tbody>
+                    <tfoot>
+                        <tr style="background: #f1f5f9; font-weight: 700; font-size: 11px;">
+                            <td colspan="7" style="padding: 6px 8px; border: 1px solid #cbd5e1; text-align: center;">TOTAL</td>
+                            <td style="padding: 6px 8px; border: 1px solid #cbd5e1; text-align: right;">৳${totalCourseFees.toLocaleString()}</td>
+                            <td style="padding: 6px 8px; border: 1px solid #cbd5e1; text-align: right; color: #16a34a;">৳${totalCollected.toLocaleString()}</td>
+                            <td style="padding: 6px 8px; border: 1px solid #cbd5e1; text-align: right; color: #dc2626;">৳${totalDue.toLocaleString()}</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div style="margin-top: 25px; border-top: 1px solid #cbd5e1; padding-top: 8px; display: flex; justify-content: space-between; font-size: 10px; color: #64748b;">
+                    <span>Ediz IT Management Portal — Official Institutional Record</span>
+                    <span>Printed: ${formattedNow}</span>
+                </div>
+            </div>
+        `;
+
+        const printZone = document.getElementById('print-zone');
+        if (!printZone) {
+            alert("Print zone element not found.");
+            return;
+        }
+
+        printZone.innerHTML = printHTML;
+        setTimeout(() => {
+            window.print();
+        }, 200);
+
+    } catch (err) {
+        console.error("Error generating PDF report:", err);
+        alert("PDF রিপোর্ট প্রস্তুত করতে ত্রুটি হয়েছে: " + err.message);
+    }
+};
+
+function initReportExportModule() {
+    // 1. Sync filter inputs across both panels (Dashboard & Invoices)
+    document.querySelectorAll('.report-course-filter').forEach(select => {
+        select.addEventListener('change', (e) => {
+            document.querySelectorAll('.report-course-filter').forEach(s => {
+                if (s !== e.target) s.value = e.target.value;
+            });
+        });
+    });
+
+    document.querySelectorAll('.report-from-date').forEach(input => {
+        input.addEventListener('change', (e) => {
+            document.querySelectorAll('.report-from-date').forEach(inp => {
+                if (inp !== e.target) inp.value = e.target.value;
+            });
+        });
+    });
+
+    document.querySelectorAll('.report-to-date').forEach(input => {
+        input.addEventListener('change', (e) => {
+            document.querySelectorAll('.report-to-date').forEach(inp => {
+                if (inp !== e.target) inp.value = e.target.value;
+            });
+        });
+    });
+
+    // 2. Reset buttons
+    document.querySelectorAll('.report-reset-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.report-course-filter').forEach(s => s.value = 'all');
+            document.querySelectorAll('.report-from-date').forEach(inp => inp.value = '');
+            document.querySelectorAll('.report-to-date').forEach(inp => inp.value = '');
+        });
+    });
+
+    // 3. Export buttons
+    document.querySelectorAll('.btn-export-excel').forEach(btn => {
+        btn.addEventListener('click', function() {
+            exportAdminReportExcel(this);
+        });
+    });
+
+    document.querySelectorAll('.btn-export-pdf').forEach(btn => {
+        btn.addEventListener('click', function() {
+            exportAdminReportPDF();
+        });
+    });
+
+    // 4. Initial visibility check
+    updateReportExportVisibility();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initReportExportModule);
+} else {
+    initReportExportModule();
+}
+
 

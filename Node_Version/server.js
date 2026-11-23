@@ -33,8 +33,77 @@ const server = http.createServer((req, res) => {
     // Normalize URL path and strip query parameters
     let urlPath = req.url.split('?')[0];
 
+    // Handle send-sms proxy endpoint
+    if (urlPath === '/api/send-sms') {
+        const queryParams = new URLSearchParams(req.url.split('?')[1] || '');
+        const apiKey = queryParams.get('api_key') || '';
+        const senderId = queryParams.get('senderid') || '';
+        const number = queryParams.get('number') || '';
+        const message = queryParams.get('message') || '';
+        
+        if (!apiKey || !senderId || !number || !message) {
+            res.writeHead(400, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+            res.end(JSON.stringify({ status: "error", message: "Missing SMS parameters" }));
+            return;
+        }
+        
+        const https = require('https');
+        const targetUrl = `https://bulksmsbd.net/api/smsapi?api_key=${encodeURIComponent(apiKey)}&senderid=${encodeURIComponent(senderId)}&number=${encodeURIComponent(number)}&message=${encodeURIComponent(message)}`;
+        
+        https.get(targetUrl, (apiRes) => {
+            let data = '';
+            apiRes.on('data', (chunk) => { data += chunk; });
+            apiRes.on('end', () => {
+                res.writeHead(200, { 
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                });
+                res.end(data);
+            });
+        }).on('error', (err) => {
+            res.writeHead(502, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+            res.end(JSON.stringify({ status: "error", message: "SMS gateway connection failed: " + err.message }));
+        });
+        return;
+    }
+
     // Handle mock API for database operations (matches PHP endpoint api.php)
     if (urlPath === '/api.php') {
+        const queryParams = new URLSearchParams(req.url.split('?')[1] || '');
+        const action = queryParams.get('action') || '';
+        
+        if (req.method === 'GET' && action === 'send_sms') {
+            const apiKey = queryParams.get('api_key') || '';
+            const senderId = queryParams.get('senderid') || '';
+            const number = queryParams.get('number') || '';
+            const message = queryParams.get('message') || '';
+            
+            if (!apiKey || !senderId || !number || !message) {
+                res.writeHead(400, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+                res.end(JSON.stringify({ status: "error", message: "Missing SMS parameters" }));
+                return;
+            }
+            
+            const https = require('https');
+            const targetUrl = `https://bulksmsbd.net/api/smsapi?api_key=${encodeURIComponent(apiKey)}&senderid=${encodeURIComponent(senderId)}&number=${encodeURIComponent(number)}&message=${encodeURIComponent(message)}`;
+            
+            https.get(targetUrl, (apiRes) => {
+                let data = '';
+                apiRes.on('data', (chunk) => { data += chunk; });
+                apiRes.on('end', () => {
+                    res.writeHead(200, { 
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*'
+                    });
+                    res.end(data);
+                });
+            }).on('error', (err) => {
+                res.writeHead(502, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+                res.end(JSON.stringify({ status: "error", message: "SMS gateway connection failed: " + err.message }));
+            });
+            return;
+        }
+
         const dbFile = path.join(__dirname, 'database.json');
         
         if (req.method === 'POST') {
@@ -107,6 +176,8 @@ const server = http.createServer((req, res) => {
         }
     }
     let filePath = path.join(__dirname, normalizedPath === '/' ? 'index.html' : normalizedPath);
+
+
 
     // Prevent directory traversal attacks
     if (!filePath.startsWith(__dirname)) {

@@ -4,6 +4,40 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Access-Control-Allow-Methods: GET, POST");
 
+// Handle send-sms proxy endpoint
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['action'] === 'send_sms') {
+    $apiKey = $_GET['api_key'] ?? '';
+    $senderId = $_GET['senderid'] ?? '';
+    $number = $_GET['number'] ?? '';
+    $message = $_GET['message'] ?? '';
+    
+    if (!$apiKey || !$senderId || !$number || !$message) {
+        http_response_code(400);
+        echo json_encode(["status" => "error", "message" => "Missing SMS parameters"]);
+        exit;
+    }
+    
+    // Call BulkSMSBD API via curl
+    $url = "https://bulksmsbd.net/api/smsapi?api_key=" . urlencode($apiKey) . "&senderid=" . urlencode($senderId) . "&number=" . urlencode($number) . "&message=" . urlencode($message);
+    
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+    
+    if ($httpCode !== 200 || !$response) {
+        http_response_code(502);
+        echo json_encode(["status" => "error", "message" => "SMS gateway connection failed"]);
+        exit;
+    }
+    
+    echo $response;
+    exit;
+}
+
 // Path to data file
 $dbFile = __DIR__ . '/database.json';
 

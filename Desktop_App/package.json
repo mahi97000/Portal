@@ -1,0 +1,26 @@
+{
+  "name": "ediz-it-portal-desktop",
+  "version": "1.0.0",
+  "description": "EDIZ IT Institute - Standalone Desktop Management Portal",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager . \"EDIZ IT Portal\" --platform=win32 --arch=x64 --out=dist --overwrite --prune=true",
+    "build": "npm run package"
+  },
+  "keywords": [
+    "ediz-it",
+    "management",
+    "portal",
+    "electron",
+    "desktop"
+  ],
+  "author": "EDIZ IT Institute",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@electron/packager": "^18.3.6",
+    "electron": "^31.0.2",
+    "electron-builder": "^24.13.3"
+  }
+}

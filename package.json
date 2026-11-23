@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/mahi97000/Portal#readme",
   "dependencies": {
-    "basic-ftp": "^6.0.1"
+    "basic-ftp": "^6.0.1",
+    "exceljs": "^4.4.0"
   }
 }

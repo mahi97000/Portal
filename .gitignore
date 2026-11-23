@@ -16,3 +16,10 @@ Desktop.ini
 # Node Dependencies
 node_modules/
 package-lock.json
+Desktop_App/dist/
+Desktop_App/node_modules/
+
+# Local Backups
+database_backups/
+*.json.bak
+ediz_it_backup_*.json
