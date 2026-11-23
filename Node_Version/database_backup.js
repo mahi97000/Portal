@@ -37,7 +37,9 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1490"
+            "registrationId": "REG-1490",
+            "gender": "Female",
+            "auditLogs": []
         },
         {
             "id": "BC-77",
@@ -71,7 +73,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1489"
+            "registrationId": "REG-1489",
+            "gender": "Male"
         },
         {
             "id": "BC-80",
@@ -115,7 +118,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1488"
+            "registrationId": "REG-1488",
+            "gender": "Male"
         },
         {
             "id": "BC-81",
@@ -154,7 +158,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1487"
+            "registrationId": "REG-1487",
+            "gender": "Female"
         },
         {
             "id": "BC-82",
@@ -193,7 +198,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1486"
+            "registrationId": "REG-1486",
+            "gender": "Female"
         },
         {
             "id": "BC-83",
@@ -232,7 +238,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1485"
+            "registrationId": "REG-1485",
+            "gender": "Female"
         },
         {
             "id": "BC-84",
@@ -271,7 +278,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1484"
+            "registrationId": "REG-1484",
+            "gender": "Female"
         },
         {
             "id": "BC-85",
@@ -310,7 +318,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1483"
+            "registrationId": "REG-1483",
+            "gender": "Female"
         },
         {
             "id": "GD-200",
@@ -344,7 +353,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1451"
+            "registrationId": "REG-1451",
+            "gender": "Male"
         },
         {
             "id": "GD-204",
@@ -373,7 +383,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1495"
+            "registrationId": "REG-1495",
+            "gender": "Female"
         },
         {
             "id": "GD-210",
@@ -402,7 +413,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1494"
+            "registrationId": "REG-1494",
+            "gender": "Male"
         },
         {
             "id": "GD-211",
@@ -431,7 +443,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1467"
+            "registrationId": "REG-1467",
+            "gender": "Female"
         },
         {
             "id": "GD-212",
@@ -460,7 +473,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1493"
+            "registrationId": "REG-1493",
+            "gender": "Male"
         },
         {
             "id": "GD-213",
@@ -489,7 +503,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1492"
+            "registrationId": "REG-1492",
+            "gender": "Male"
         },
         {
             "id": "GD-214",
@@ -523,7 +538,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1491"
+            "registrationId": "REG-1491",
+            "gender": "Male"
         },
         {
             "id": "BC-76",
@@ -557,7 +573,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1474"
+            "registrationId": "REG-1474",
+            "gender": "Male"
         },
         {
             "id": "BC-87",
@@ -591,7 +608,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1368"
+            "registrationId": "REG-1368",
+            "gender": "Female"
         },
         {
             "id": "GD-198",
@@ -625,7 +643,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1480"
+            "registrationId": "REG-1480",
+            "gender": "Female"
         },
         {
             "id": "GD-199",
@@ -654,7 +673,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1482"
+            "registrationId": "REG-1482",
+            "gender": "Male"
         },
         {
             "id": "GD-201",
@@ -683,7 +703,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1481"
+            "registrationId": "REG-1481",
+            "gender": "Male"
         },
         {
             "id": "GD-202",
@@ -712,7 +733,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1479"
+            "registrationId": "REG-1479",
+            "gender": "Male"
         },
         {
             "id": "GD-205",
@@ -741,7 +763,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1478"
+            "registrationId": "REG-1478",
+            "gender": "Female"
         },
         {
             "id": "GD-206",
@@ -770,7 +793,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1477"
+            "registrationId": "REG-1477",
+            "gender": "Male"
         },
         {
             "id": "GD-207",
@@ -809,7 +833,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1476"
+            "registrationId": "REG-1476",
+            "gender": "Male"
         },
         {
             "id": "GD-209",
@@ -838,7 +863,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1475"
+            "registrationId": "REG-1475",
+            "gender": "Male"
         },
         {
             "id": "BC-40",
@@ -867,7 +893,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1456"
+            "registrationId": "REG-1456",
+            "gender": "Male"
         },
         {
             "id": "BC-41",
@@ -896,7 +923,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1455"
+            "registrationId": "REG-1455",
+            "gender": "Male"
         },
         {
             "id": "BC-42",
@@ -925,7 +953,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1454"
+            "registrationId": "REG-1454",
+            "gender": "Male"
         },
         {
             "id": "BC-43",
@@ -954,7 +983,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1453"
+            "registrationId": "REG-1453",
+            "gender": "Male"
         },
         {
             "id": "BC-44",
@@ -983,7 +1013,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1452"
+            "registrationId": "REG-1452",
+            "gender": "Female"
         },
         {
             "id": "BC-52",
@@ -1017,7 +1048,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1461"
+            "registrationId": "REG-1461",
+            "gender": "Female"
         },
         {
             "id": "BC-54",
@@ -1051,7 +1083,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1463"
+            "registrationId": "REG-1463",
+            "gender": "Male"
         },
         {
             "id": "BC-55",
@@ -1085,7 +1118,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1462"
+            "registrationId": "REG-1462",
+            "gender": "Male"
         },
         {
             "id": "BC-60",
@@ -1119,7 +1153,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1460"
+            "registrationId": "REG-1460",
+            "gender": "Male"
         },
         {
             "id": "BC-61",
@@ -1153,7 +1188,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1459"
+            "registrationId": "REG-1459",
+            "gender": "Male"
         },
         {
             "id": "BC-62",
@@ -1187,7 +1223,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1458"
+            "registrationId": "REG-1458",
+            "gender": "Female"
         },
         {
             "id": "BC-63",
@@ -1221,7 +1258,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1473"
+            "registrationId": "REG-1473",
+            "gender": "Male"
         },
         {
             "id": "BC-64",
@@ -1255,7 +1293,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1457"
+            "registrationId": "REG-1457",
+            "gender": "Male"
         },
         {
             "id": "BC-65",
@@ -1289,7 +1328,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1472"
+            "registrationId": "REG-1472",
+            "gender": "Female"
         },
         {
             "id": "BC-67",
@@ -1328,7 +1368,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1471"
+            "registrationId": "REG-1471",
+            "gender": "Male"
         },
         {
             "id": "BC-68",
@@ -1367,7 +1408,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1470"
+            "registrationId": "REG-1470",
+            "gender": "Male"
         },
         {
             "id": "BC-70",
@@ -1396,7 +1438,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1469"
+            "registrationId": "REG-1469",
+            "gender": "Male"
         },
         {
             "id": "BC-71",
@@ -1430,7 +1473,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1468"
+            "registrationId": "REG-1468",
+            "gender": "Male"
         },
         {
             "id": "BC-72",
@@ -1464,7 +1508,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1467"
+            "registrationId": "REG-1467",
+            "gender": "Female"
         },
         {
             "id": "BC-73",
@@ -1498,7 +1543,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1466"
+            "registrationId": "REG-1466",
+            "gender": "Male"
         },
         {
             "id": "BC-74",
@@ -1532,7 +1578,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1465"
+            "registrationId": "REG-1465",
+            "gender": "Female"
         },
         {
             "id": "BC-75",
@@ -1571,7 +1618,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1464"
+            "registrationId": "REG-1464",
+            "gender": "Female"
         },
         {
             "id": "GD-208",
@@ -1605,7 +1653,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1457"
+            "registrationId": "REG-1457",
+            "gender": "Male"
         },
         {
             "id": "BC-45",
@@ -1634,7 +1683,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1451"
+            "registrationId": "REG-1451",
+            "gender": "Male"
         },
         {
             "id": "BC-56",
@@ -1673,7 +1723,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1450"
+            "registrationId": "REG-1450",
+            "gender": "Female"
         },
         {
             "id": "BC-21",
@@ -1702,7 +1753,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1438"
+            "registrationId": "REG-1438",
+            "gender": "Female"
         },
         {
             "id": "BC-24",
@@ -1731,7 +1783,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1437"
+            "registrationId": "REG-1437",
+            "gender": "Male"
         },
         {
             "id": "BC-25",
@@ -1760,7 +1813,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1436"
+            "registrationId": "REG-1436",
+            "gender": "Female"
         },
         {
             "id": "BC-26",
@@ -1789,7 +1843,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1435"
+            "registrationId": "REG-1435",
+            "gender": "Male"
         },
         {
             "id": "BC-27",
@@ -1818,7 +1873,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1434"
+            "registrationId": "REG-1434",
+            "gender": "Female"
         },
         {
             "id": "BC-28",
@@ -1847,7 +1903,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1433"
+            "registrationId": "REG-1433",
+            "gender": "Male"
         },
         {
             "id": "BC-32",
@@ -1876,7 +1933,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1432"
+            "registrationId": "REG-1432",
+            "gender": "Male"
         },
         {
             "id": "BC-34",
@@ -1905,7 +1963,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1443"
+            "registrationId": "REG-1443",
+            "gender": "Male"
         },
         {
             "id": "BC-35",
@@ -1934,7 +1993,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1442"
+            "registrationId": "REG-1442",
+            "gender": "Male"
         },
         {
             "id": "BC-36",
@@ -1963,7 +2023,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1441"
+            "registrationId": "REG-1441",
+            "gender": "Male"
         },
         {
             "id": "BC-37",
@@ -1992,7 +2053,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1440"
+            "registrationId": "REG-1440",
+            "gender": "Male"
         },
         {
             "id": "BC-38",
@@ -2021,7 +2083,10 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1439"
+            "registrationId": "REG-1439",
+            "gender": "Male",
+            "notes": "ok",
+            "nextPaymentDate": "2026-07-04"
         },
         {
             "id": "BC-46",
@@ -2050,7 +2115,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1449"
+            "registrationId": "REG-1449",
+            "gender": "Male"
         },
         {
             "id": "BC-47",
@@ -2079,7 +2145,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1325"
+            "registrationId": "REG-1325",
+            "gender": "Male"
         },
         {
             "id": "BC-48",
@@ -2108,7 +2175,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1448"
+            "registrationId": "REG-1289",
+            "gender": "Male"
         },
         {
             "id": "BC-49",
@@ -2137,7 +2205,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1447"
+            "registrationId": "REG-1447",
+            "gender": "Male"
         },
         {
             "id": "BC-50",
@@ -2166,7 +2235,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1446"
+            "registrationId": "REG-1446",
+            "gender": "Male"
         },
         {
             "id": "BC-51",
@@ -2200,7 +2270,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1445"
+            "registrationId": "REG-1445",
+            "gender": "Male"
         },
         {
             "id": "BC-53",
@@ -2229,7 +2300,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1444"
+            "registrationId": "REG-1444",
+            "gender": "Male"
         },
         {
             "id": "BC-88",
@@ -2268,7 +2340,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1431"
+            "registrationId": "REG-1431",
+            "gender": "Male"
         },
         {
             "id": "BC-58",
@@ -2302,7 +2375,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1430"
+            "registrationId": "REG-1430",
+            "gender": "Female"
         },
         {
             "id": "BC-89",
@@ -2341,7 +2415,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1429"
+            "registrationId": "REG-1429",
+            "gender": "Female"
         },
         {
             "id": "BC-1",
@@ -2370,7 +2445,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1395"
+            "registrationId": "REG-1395",
+            "gender": "Female"
         },
         {
             "id": "BC-16",
@@ -2399,7 +2475,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1428"
+            "registrationId": "REG-1428",
+            "gender": "Male"
         },
         {
             "id": "BC-18",
@@ -2428,7 +2505,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1427"
+            "registrationId": "REG-1427",
+            "gender": "Male"
         },
         {
             "id": "BC-19",
@@ -2457,7 +2535,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1426"
+            "registrationId": "REG-1417",
+            "gender": "Male"
         },
         {
             "id": "BC-2",
@@ -2486,7 +2565,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1396"
+            "registrationId": "REG-1396",
+            "gender": "Female"
         },
         {
             "id": "BC-20",
@@ -2515,7 +2595,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1425"
+            "registrationId": "REG-1425",
+            "gender": "Female"
         },
         {
             "id": "BC-22",
@@ -2544,7 +2625,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1424"
+            "registrationId": "REG-1424",
+            "gender": "Female"
         },
         {
             "id": "BC-23",
@@ -2573,7 +2655,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1423"
+            "registrationId": "REG-1423",
+            "gender": "Male"
         },
         {
             "id": "BC-29",
@@ -2602,7 +2685,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1421"
+            "registrationId": "REG-1421",
+            "gender": "Male"
         },
         {
             "id": "BC-3",
@@ -2631,7 +2715,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1414"
+            "registrationId": "REG-1414",
+            "gender": "Male"
         },
         {
             "id": "BC-30",
@@ -2660,7 +2745,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1422"
+            "registrationId": "REG-1422",
+            "gender": "Female"
         },
         {
             "id": "BC-31",
@@ -2689,7 +2775,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1420"
+            "registrationId": "REG-1420",
+            "gender": "Female"
         },
         {
             "id": "BC-33",
@@ -2718,7 +2805,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1415"
+            "registrationId": "REG-1415",
+            "gender": "Male"
         },
         {
             "id": "BC-4",
@@ -2747,7 +2835,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1413"
+            "registrationId": "REG-1413",
+            "gender": "Female"
         },
         {
             "id": "BC-5",
@@ -2776,7 +2865,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1412"
+            "registrationId": "REG-1412",
+            "gender": "Female"
         },
         {
             "id": "BC-6",
@@ -2805,7 +2895,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1411"
+            "registrationId": "REG-1411",
+            "gender": "Female"
         },
         {
             "id": "BC-7",
@@ -2834,7 +2925,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1410"
+            "registrationId": "REG-1410",
+            "gender": "Male"
         },
         {
             "id": "BC-8",
@@ -2863,7 +2955,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1409"
+            "registrationId": "REG-1409",
+            "gender": "Male"
         },
         {
             "id": "GD-194",
@@ -2892,7 +2985,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1419"
+            "registrationId": "REG-1419",
+            "gender": "Male"
         },
         {
             "id": "GD-195",
@@ -2921,7 +3015,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1418"
+            "registrationId": "REG-1418",
+            "gender": "Female"
         },
         {
             "id": "GD-196",
@@ -2950,7 +3045,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1417"
+            "registrationId": "REG-1417",
+            "gender": "Male"
         },
         {
             "id": "GD-197",
@@ -2979,7 +3075,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1416"
+            "registrationId": "REG-1416",
+            "gender": "Male"
         },
         {
             "id": "BC-10",
@@ -3008,7 +3105,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1405"
+            "registrationId": "REG-1405",
+            "gender": "Male"
         },
         {
             "id": "BC-11",
@@ -3037,7 +3135,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1404"
+            "registrationId": "REG-1404",
+            "gender": "Female"
         },
         {
             "id": "BC-12",
@@ -3066,7 +3165,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1403"
+            "registrationId": "REG-1403",
+            "gender": "Male"
         },
         {
             "id": "BC-13",
@@ -3095,7 +3195,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1402"
+            "registrationId": "REG-1402",
+            "gender": "Male"
         },
         {
             "id": "BC-14",
@@ -3124,7 +3225,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1401"
+            "registrationId": "REG-1401",
+            "gender": "Male"
         },
         {
             "id": "BC-15",
@@ -3153,7 +3255,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1400"
+            "registrationId": "REG-1400",
+            "gender": "Male"
         },
         {
             "id": "BC-17",
@@ -3182,7 +3285,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1399"
+            "registrationId": "REG-1399",
+            "gender": "Female"
         },
         {
             "id": "BC-78",
@@ -3216,7 +3320,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1408"
+            "registrationId": "REG-1408",
+            "gender": "Female"
         },
         {
             "id": "BC-86",
@@ -3250,7 +3355,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1407"
+            "registrationId": "REG-1407",
+            "gender": "Female"
         },
         {
             "id": "BC-9",
@@ -3279,7 +3385,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1406"
+            "registrationId": "REG-1406",
+            "gender": "Female"
         },
         {
             "id": "BC-90",
@@ -3318,7 +3425,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1398"
+            "registrationId": "REG-1398",
+            "gender": "Male"
         },
         {
             "id": "BC-91",
@@ -3357,7 +3465,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1397"
+            "registrationId": "REG-1397",
+            "gender": "Male"
         },
         {
             "id": "BC-92",
@@ -3391,7 +3500,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1367"
+            "registrationId": "REG-1367",
+            "gender": "Male"
         },
         {
             "id": "GD-175",
@@ -3420,7 +3530,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1388"
+            "registrationId": "REG-1388",
+            "gender": "Male"
         },
         {
             "id": "GD-176",
@@ -3449,7 +3560,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1387"
+            "registrationId": "REG-1387",
+            "gender": "Male"
         },
         {
             "id": "GD-178",
@@ -3478,7 +3590,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1386"
+            "registrationId": "REG-1386",
+            "gender": "Female"
         },
         {
             "id": "GD-179",
@@ -3507,7 +3620,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1385"
+            "registrationId": "REG-1385",
+            "gender": "Male"
         },
         {
             "id": "GD-180",
@@ -3536,7 +3650,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1384"
+            "registrationId": "REG-1384",
+            "gender": "Male"
         },
         {
             "id": "GD-182",
@@ -3565,7 +3680,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1396"
+            "registrationId": "REG-1396",
+            "gender": "Female"
         },
         {
             "id": "GD-183",
@@ -3594,7 +3710,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1383"
+            "registrationId": "REG-1383",
+            "gender": "Male"
         },
         {
             "id": "GD-185",
@@ -3623,7 +3740,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1395"
+            "registrationId": "REG-1395",
+            "gender": "Female"
         },
         {
             "id": "GD-188",
@@ -3652,7 +3770,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1394"
+            "registrationId": "REG-1394",
+            "gender": "Female"
         },
         {
             "id": "GD-189",
@@ -3681,7 +3800,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1393"
+            "registrationId": "REG-1393",
+            "gender": "Female"
         },
         {
             "id": "GD-190",
@@ -3710,7 +3830,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1392"
+            "registrationId": "REG-1392",
+            "gender": "Male"
         },
         {
             "id": "GD-191",
@@ -3739,7 +3860,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1391"
+            "registrationId": "REG-1391",
+            "gender": "Female"
         },
         {
             "id": "GD-192",
@@ -3768,7 +3890,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1390"
+            "registrationId": "REG-1390",
+            "gender": "Male"
         },
         {
             "id": "GD-193",
@@ -3797,7 +3920,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1389"
+            "registrationId": "REG-1389",
+            "gender": "Male"
         },
         {
             "id": "GD-165",
@@ -3826,7 +3950,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1378"
+            "registrationId": "REG-1378",
+            "gender": "Female"
         },
         {
             "id": "GD-166",
@@ -3855,7 +3980,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1377"
+            "registrationId": "REG-1377",
+            "gender": "Male"
         },
         {
             "id": "GD-167",
@@ -3884,7 +4010,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1376"
+            "registrationId": "REG-1376",
+            "gender": "Male"
         },
         {
             "id": "GD-168",
@@ -3913,7 +4040,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1375"
+            "registrationId": "REG-1375",
+            "gender": "Male"
         },
         {
             "id": "GD-169",
@@ -3942,7 +4070,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1374"
+            "registrationId": "REG-1374",
+            "gender": "Female"
         },
         {
             "id": "GD-170",
@@ -3971,7 +4100,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1369"
+            "registrationId": "REG-1369",
+            "gender": "Male"
         },
         {
             "id": "GD-171",
@@ -4000,7 +4130,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1373"
+            "registrationId": "REG-1373",
+            "gender": "Female"
         },
         {
             "id": "GD-172",
@@ -4029,7 +4160,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1372"
+            "registrationId": "REG-1372",
+            "gender": "Male"
         },
         {
             "id": "GD-173",
@@ -4058,7 +4190,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1371"
+            "registrationId": "REG-1371",
+            "gender": "Female"
         },
         {
             "id": "GD-177",
@@ -4087,7 +4220,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1370"
+            "registrationId": "REG-1370",
+            "gender": "Male"
         },
         {
             "id": "GD-181",
@@ -4116,7 +4250,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1379"
+            "registrationId": "REG-1379",
+            "gender": "Male"
         },
         {
             "id": "GD-184",
@@ -4145,7 +4280,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1382"
+            "registrationId": "REG-1382",
+            "gender": "Male"
         },
         {
             "id": "GD-186",
@@ -4174,7 +4310,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1381"
+            "registrationId": "REG-1183",
+            "gender": "Male"
         },
         {
             "id": "GD-187",
@@ -4203,7 +4340,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1380"
+            "registrationId": "REG-1380",
+            "gender": "Female"
         },
         {
             "id": "GD-155",
@@ -4232,7 +4370,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1366"
+            "registrationId": "REG-1366",
+            "gender": "Male"
         },
         {
             "id": "GD-156",
@@ -4261,7 +4400,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1365"
+            "registrationId": "REG-1365",
+            "gender": "Female"
         },
         {
             "id": "GD-157",
@@ -4295,7 +4435,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1364"
+            "registrationId": "REG-1364",
+            "gender": "Female"
         },
         {
             "id": "GD-158",
@@ -4324,7 +4465,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1363"
+            "registrationId": "REG-1363",
+            "gender": "Male"
         },
         {
             "id": "GD-159",
@@ -4358,7 +4500,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1362"
+            "registrationId": "REG-1362",
+            "gender": "Male"
         },
         {
             "id": "GD-160",
@@ -4387,7 +4530,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1361"
+            "registrationId": "REG-1361",
+            "gender": "Female"
         },
         {
             "id": "GD-216",
@@ -4426,7 +4570,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1368"
+            "registrationId": "REG-1368",
+            "gender": "Female"
         },
         {
             "id": "GD-217",
@@ -4460,7 +4605,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1367"
+            "registrationId": "REG-1367",
+            "gender": "Male"
         },
         {
             "id": "BC-93",
@@ -4494,7 +4640,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1360"
+            "registrationId": "REG-1360",
+            "gender": "Male"
         },
         {
             "id": "GD-125",
@@ -4523,7 +4670,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1357"
+            "registrationId": "REG-1357",
+            "gender": "Female"
         },
         {
             "id": "GD-126",
@@ -4552,7 +4700,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1356"
+            "registrationId": "REG-1356",
+            "gender": "Female"
         },
         {
             "id": "GD-138",
@@ -4581,7 +4730,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1355"
+            "registrationId": "REG-1355",
+            "gender": "Male"
         },
         {
             "id": "GD-146",
@@ -4610,7 +4760,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1354"
+            "registrationId": "REG-1354",
+            "gender": "Male"
         },
         {
             "id": "GD-203",
@@ -4649,12 +4800,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0751",
                     "date": "2026-02-16",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1358"
+            "registrationId": "REG-1358",
+            "gender": "Male"
         },
         {
             "id": "GD-215",
@@ -4688,7 +4841,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1359"
+            "registrationId": "REG-1359",
+            "gender": "Female"
         },
         {
             "id": "GD-147",
@@ -4717,7 +4871,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1353"
+            "registrationId": "REG-1353",
+            "gender": "Male"
         },
         {
             "id": "GD-148",
@@ -4746,7 +4901,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1352"
+            "registrationId": "REG-1352",
+            "gender": "Female"
         },
         {
             "id": "GD-149",
@@ -4775,7 +4931,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1351"
+            "registrationId": "REG-1351",
+            "gender": "Male"
         },
         {
             "id": "GD-150",
@@ -4804,7 +4961,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1350"
+            "registrationId": "REG-1350",
+            "gender": "Female"
         },
         {
             "id": "GD-151",
@@ -4833,7 +4991,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1349"
+            "registrationId": "REG-1349",
+            "gender": "Male"
         },
         {
             "id": "GD-152",
@@ -4862,7 +5021,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1348"
+            "registrationId": "REG-1348",
+            "gender": "Male"
         },
         {
             "id": "GD-153",
@@ -4891,7 +5051,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1347"
+            "registrationId": "REG-1347",
+            "gender": "Female"
         },
         {
             "id": "GD-154",
@@ -4920,7 +5081,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1346"
+            "registrationId": "REG-1346",
+            "gender": "Female"
         },
         {
             "id": "GD-218",
@@ -4954,7 +5116,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1345"
+            "registrationId": "REG-1345",
+            "gender": "Female"
         },
         {
             "id": "GD-100",
@@ -4983,7 +5146,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1302"
+            "registrationId": "REG-1302",
+            "gender": "Male"
         },
         {
             "id": "GD-101",
@@ -5017,7 +5181,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1301"
+            "registrationId": "REG-1301",
+            "gender": "Female"
         },
         {
             "id": "GD-102",
@@ -5051,7 +5216,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1299"
+            "registrationId": "REG-1299",
+            "gender": "Male"
         },
         {
             "id": "GD-104",
@@ -5085,7 +5251,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1326"
+            "registrationId": "REG-1326",
+            "gender": "Female"
         },
         {
             "id": "GD-105",
@@ -5114,7 +5281,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1315"
+            "registrationId": "REG-1315",
+            "gender": "Male"
         },
         {
             "id": "GD-106",
@@ -5143,7 +5311,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1322"
+            "registrationId": "REG-1322",
+            "gender": "Female"
         },
         {
             "id": "GD-107",
@@ -5177,7 +5346,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1298"
+            "registrationId": "REG-1298",
+            "gender": "Male"
         },
         {
             "id": "GD-108",
@@ -5211,7 +5381,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1313"
+            "registrationId": "REG-1313",
+            "gender": "Female"
         },
         {
             "id": "GD-109",
@@ -5240,7 +5411,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1314"
+            "registrationId": "REG-1314",
+            "gender": "Male"
         },
         {
             "id": "GD-110",
@@ -5274,7 +5446,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1324"
+            "registrationId": "REG-1324",
+            "gender": "Male"
         },
         {
             "id": "GD-111",
@@ -5303,7 +5476,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1312"
+            "registrationId": "REG-1312",
+            "gender": "Female"
         },
         {
             "id": "GD-112",
@@ -5337,7 +5511,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1338"
+            "registrationId": "REG-1338",
+            "gender": "Male"
         },
         {
             "id": "GD-113",
@@ -5371,7 +5546,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1311"
+            "registrationId": "REG-1311",
+            "gender": "Male"
         },
         {
             "id": "GD-114",
@@ -5405,7 +5581,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1310"
+            "registrationId": "REG-1310",
+            "gender": "Female"
         },
         {
             "id": "GD-115",
@@ -5439,7 +5616,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1309"
+            "registrationId": "REG-1309",
+            "gender": "Female"
         },
         {
             "id": "GD-116",
@@ -5473,7 +5651,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1308"
+            "registrationId": "REG-1308",
+            "gender": "Female"
         },
         {
             "id": "GD-117",
@@ -5507,7 +5686,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1307"
+            "registrationId": "REG-1307",
+            "gender": "Male"
         },
         {
             "id": "GD-118",
@@ -5541,7 +5721,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1323"
+            "registrationId": "REG-1323",
+            "gender": "Male"
         },
         {
             "id": "GD-119",
@@ -5575,7 +5756,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1321"
+            "registrationId": "REG-1321",
+            "gender": "Male"
         },
         {
             "id": "GD-120",
@@ -5604,7 +5786,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1327"
+            "registrationId": "REG-1327",
+            "gender": "Female"
         },
         {
             "id": "GD-121",
@@ -5638,7 +5821,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1319"
+            "registrationId": "REG-1319",
+            "gender": "Male"
         },
         {
             "id": "GD-122",
@@ -5672,7 +5856,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1318"
+            "registrationId": "REG-1318",
+            "gender": "Male"
         },
         {
             "id": "GD-123",
@@ -5706,7 +5891,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1317"
+            "registrationId": "REG-1317",
+            "gender": "Male"
         },
         {
             "id": "GD-124",
@@ -5740,7 +5926,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1316"
+            "registrationId": "REG-1316",
+            "gender": "Male"
         },
         {
             "id": "GD-127",
@@ -5774,7 +5961,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1329"
+            "registrationId": "REG-1329",
+            "gender": "Male"
         },
         {
             "id": "GD-128",
@@ -5808,7 +5996,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1328"
+            "registrationId": "REG-1328",
+            "gender": "Female"
         },
         {
             "id": "GD-129",
@@ -5842,7 +6031,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1320"
+            "registrationId": "REG-1320",
+            "gender": "Female"
         },
         {
             "id": "GD-130",
@@ -5871,7 +6061,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1335"
+            "registrationId": "REG-1335",
+            "gender": "Male"
         },
         {
             "id": "GD-131",
@@ -5900,7 +6091,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1334"
+            "registrationId": "REG-1334",
+            "gender": "Male"
         },
         {
             "id": "GD-132",
@@ -5929,7 +6121,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1333"
+            "registrationId": "REG-1333",
+            "gender": "Male"
         },
         {
             "id": "GD-133",
@@ -5958,7 +6151,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1332"
+            "registrationId": "REG-1332",
+            "gender": "Female"
         },
         {
             "id": "GD-134",
@@ -5987,7 +6181,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1331"
+            "registrationId": "REG-1331",
+            "gender": "Male"
         },
         {
             "id": "GD-135",
@@ -6016,7 +6211,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1330"
+            "registrationId": "REG-1330",
+            "gender": "Male"
         },
         {
             "id": "GD-136",
@@ -6045,7 +6241,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1337"
+            "registrationId": "REG-1337",
+            "gender": "Male"
         },
         {
             "id": "GD-137",
@@ -6074,7 +6271,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1336"
+            "registrationId": "REG-1336",
+            "gender": "Female"
         },
         {
             "id": "GD-140",
@@ -6108,7 +6306,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1339"
+            "registrationId": "REG-1339",
+            "gender": "Female"
         },
         {
             "id": "GD-141",
@@ -6137,7 +6336,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1344"
+            "registrationId": "REG-1344",
+            "gender": "Male"
         },
         {
             "id": "GD-142",
@@ -6166,7 +6366,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1343"
+            "registrationId": "REG-1343",
+            "gender": "Male"
         },
         {
             "id": "GD-143",
@@ -6195,7 +6396,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1342"
+            "registrationId": "REG-1342",
+            "gender": "Male"
         },
         {
             "id": "GD-144",
@@ -6224,7 +6426,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1341"
+            "registrationId": "REG-1341",
+            "gender": "Male"
         },
         {
             "id": "GD-145",
@@ -6253,7 +6456,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1340"
+            "registrationId": "REG-1340",
+            "gender": "Male"
         },
         {
             "id": "GD-219",
@@ -6302,7 +6506,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1325"
+            "registrationId": "REG-1325",
+            "gender": "Male"
         },
         {
             "id": "GD-78",
@@ -6336,7 +6541,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1300"
+            "registrationId": "REG-1300",
+            "gender": "Female"
         },
         {
             "id": "GD-96",
@@ -6370,7 +6576,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1306"
+            "registrationId": "REG-1306",
+            "gender": "Male"
         },
         {
             "id": "GD-97",
@@ -6404,7 +6611,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1305"
+            "registrationId": "REG-1305",
+            "gender": "Male"
         },
         {
             "id": "GD-98",
@@ -6433,7 +6641,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1304"
+            "registrationId": "REG-1304",
+            "gender": "Female"
         },
         {
             "id": "GD-99",
@@ -6467,7 +6676,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1303"
+            "registrationId": "REG-1303",
+            "gender": "Male"
         },
         {
             "id": "BC-79",
@@ -6501,7 +6711,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1290"
+            "registrationId": "REG-1290",
+            "gender": "Male"
         },
         {
             "id": "BC-94",
@@ -6535,7 +6746,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1297"
+            "registrationId": "REG-1297",
+            "gender": "Male"
         },
         {
             "id": "GD-220",
@@ -6564,7 +6776,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1291"
+            "registrationId": "REG-1291",
+            "gender": "Male"
         },
         {
             "id": "GD-88",
@@ -6593,7 +6806,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1296"
+            "registrationId": "REG-1296",
+            "gender": "Male"
         },
         {
             "id": "GD-89",
@@ -6622,7 +6836,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1295"
+            "registrationId": "REG-1295",
+            "gender": "Male"
         },
         {
             "id": "GD-90",
@@ -6651,7 +6866,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1294"
+            "registrationId": "REG-1294",
+            "gender": "Male"
         },
         {
             "id": "GD-91",
@@ -6685,7 +6901,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1293"
+            "registrationId": "REG-1293",
+            "gender": "Male"
         },
         {
             "id": "GD-92",
@@ -6714,7 +6931,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1292"
+            "registrationId": "REG-1292",
+            "gender": "Female"
         },
         {
             "id": "GD-1",
@@ -6743,7 +6961,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1277"
+            "registrationId": "REG-1277",
+            "gender": "Male"
         },
         {
             "id": "GD-221",
@@ -6777,7 +6996,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1289"
+            "registrationId": "REG-1289",
+            "gender": "Male"
         },
         {
             "id": "GD-80",
@@ -6806,7 +7026,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1278"
+            "registrationId": "REG-1278",
+            "gender": "Male"
         },
         {
             "id": "GD-81",
@@ -6835,7 +7056,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1279"
+            "registrationId": "REG-1279",
+            "gender": "Female"
         },
         {
             "id": "GD-82",
@@ -6864,7 +7086,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1280"
+            "registrationId": "REG-1280",
+            "gender": "Male"
         },
         {
             "id": "GD-83",
@@ -6893,7 +7116,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1281"
+            "registrationId": "REG-1281",
+            "gender": "Male"
         },
         {
             "id": "GD-84",
@@ -6922,7 +7146,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1282"
+            "registrationId": "REG-1282",
+            "gender": "Male"
         },
         {
             "id": "GD-85",
@@ -6951,7 +7176,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1283"
+            "registrationId": "REG-1283",
+            "gender": "Male"
         },
         {
             "id": "GD-86",
@@ -6985,7 +7211,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1284"
+            "registrationId": "REG-1284",
+            "gender": "Male"
         },
         {
             "id": "GD-87",
@@ -7014,7 +7241,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1285"
+            "registrationId": "REG-1285",
+            "gender": "Male"
         },
         {
             "id": "GD-93",
@@ -7043,7 +7271,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1288"
+            "registrationId": "REG-1288",
+            "gender": "Male"
         },
         {
             "id": "GD-94",
@@ -7072,7 +7301,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1287"
+            "registrationId": "REG-1287",
+            "gender": "Male"
         },
         {
             "id": "GD-95",
@@ -7101,7 +7331,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1286"
+            "registrationId": "REG-1286",
+            "gender": "Male"
         },
         {
             "id": "GD-222",
@@ -7135,7 +7366,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1276"
+            "registrationId": "REG-1276",
+            "gender": "Male"
         },
         {
             "id": "GD-223",
@@ -7169,7 +7401,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1275"
+            "registrationId": "REG-1275",
+            "gender": "Male"
         },
         {
             "id": "GD-63",
@@ -7198,7 +7431,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1268"
+            "registrationId": "REG-1268",
+            "gender": "Male"
         },
         {
             "id": "GD-65",
@@ -7227,7 +7461,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1267"
+            "registrationId": "REG-1267",
+            "gender": "Male"
         },
         {
             "id": "GD-66",
@@ -7256,7 +7491,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1266"
+            "registrationId": "REG-1266",
+            "gender": "Male"
         },
         {
             "id": "GD-67",
@@ -7285,7 +7521,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1265"
+            "registrationId": "REG-1265",
+            "gender": "Female"
         },
         {
             "id": "GD-68",
@@ -7314,7 +7551,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1264"
+            "registrationId": "REG-1264",
+            "gender": "Female"
         },
         {
             "id": "GD-72",
@@ -7343,7 +7581,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1274"
+            "registrationId": "REG-1274",
+            "gender": "Male"
         },
         {
             "id": "GD-73",
@@ -7372,7 +7611,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1273"
+            "registrationId": "REG-1273",
+            "gender": "Male"
         },
         {
             "id": "GD-74",
@@ -7401,7 +7641,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1272"
+            "registrationId": "REG-1272",
+            "gender": "Male"
         },
         {
             "id": "GD-76",
@@ -7430,7 +7671,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1271"
+            "registrationId": "REG-1271",
+            "gender": "Male"
         },
         {
             "id": "GD-77",
@@ -7459,7 +7701,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1270"
+            "registrationId": "REG-1270",
+            "gender": "Male"
         },
         {
             "id": "GD-79",
@@ -7488,7 +7731,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1269"
+            "registrationId": "REG-1269",
+            "gender": "Male"
         },
         {
             "id": "BC-95",
@@ -7522,7 +7766,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1263"
+            "registrationId": "REG-1263",
+            "gender": "Female"
         },
         {
             "id": "GD-18",
@@ -7551,7 +7796,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1225"
+            "registrationId": "REG-1225",
+            "gender": "Female"
         },
         {
             "id": "GD-19",
@@ -7580,7 +7826,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1224"
+            "registrationId": "REG-1224",
+            "gender": "Male"
         },
         {
             "id": "GD-27",
@@ -7609,7 +7856,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1232"
+            "registrationId": "REG-1232",
+            "gender": "Male"
         },
         {
             "id": "GD-28",
@@ -7638,7 +7886,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1231"
+            "registrationId": "REG-1231",
+            "gender": "Male"
         },
         {
             "id": "GD-30",
@@ -7667,7 +7916,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1230"
+            "registrationId": "REG-1230",
+            "gender": "Male"
         },
         {
             "id": "GD-31",
@@ -7696,7 +7946,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1229"
+            "registrationId": "REG-1229",
+            "gender": "Male"
         },
         {
             "id": "GD-32",
@@ -7725,7 +7976,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1228"
+            "registrationId": "REG-1228",
+            "gender": "Male"
         },
         {
             "id": "GD-33",
@@ -7754,7 +8006,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1227"
+            "registrationId": "REG-1227",
+            "gender": "Female"
         },
         {
             "id": "GD-34",
@@ -7783,7 +8036,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1226"
+            "registrationId": "REG-1226",
+            "gender": "Male"
         },
         {
             "id": "GD-35",
@@ -7812,7 +8066,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1241"
+            "registrationId": "REG-1241",
+            "gender": "Female"
         },
         {
             "id": "GD-36",
@@ -7841,7 +8096,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1240"
+            "registrationId": "REG-1240",
+            "gender": "Female"
         },
         {
             "id": "GD-37",
@@ -7870,7 +8126,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1239"
+            "registrationId": "REG-1239",
+            "gender": "Female"
         },
         {
             "id": "GD-38",
@@ -7899,7 +8156,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1238"
+            "registrationId": "REG-1238",
+            "gender": "Male"
         },
         {
             "id": "GD-40",
@@ -7928,7 +8186,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1237"
+            "registrationId": "REG-1237",
+            "gender": "Male"
         },
         {
             "id": "GD-41",
@@ -7957,7 +8216,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1236"
+            "registrationId": "REG-1236",
+            "gender": "Male"
         },
         {
             "id": "GD-42",
@@ -7986,7 +8246,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1235"
+            "registrationId": "REG-1235",
+            "gender": "Male"
         },
         {
             "id": "GD-43",
@@ -8020,7 +8281,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1248"
+            "registrationId": "REG-1248",
+            "gender": "Male"
         },
         {
             "id": "GD-44",
@@ -8049,7 +8311,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1234"
+            "registrationId": "REG-1234",
+            "gender": "Male"
         },
         {
             "id": "GD-45",
@@ -8078,7 +8341,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1233"
+            "registrationId": "REG-1233",
+            "gender": "Female"
         },
         {
             "id": "GD-46",
@@ -8107,7 +8371,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1247"
+            "registrationId": "REG-1247",
+            "gender": "Male"
         },
         {
             "id": "GD-47",
@@ -8136,7 +8401,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1246"
+            "registrationId": "REG-1246",
+            "gender": "Male"
         },
         {
             "id": "GD-48",
@@ -8165,7 +8431,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1245"
+            "registrationId": "REG-1245",
+            "gender": "Male"
         },
         {
             "id": "GD-49",
@@ -8194,7 +8461,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1121"
+            "registrationId": "REG-1121",
+            "gender": "Male"
         },
         {
             "id": "GD-50",
@@ -8223,7 +8491,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1249"
+            "registrationId": "REG-1249",
+            "gender": "Female"
         },
         {
             "id": "GD-51",
@@ -8252,7 +8521,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1244"
+            "registrationId": "REG-1244",
+            "gender": "Female"
         },
         {
             "id": "GD-52",
@@ -8281,7 +8551,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1243"
+            "registrationId": "REG-1243",
+            "gender": "Female"
         },
         {
             "id": "GD-53",
@@ -8310,7 +8581,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1242"
+            "registrationId": "REG-1242",
+            "gender": "Female"
         },
         {
             "id": "GD-54",
@@ -8339,7 +8611,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1259"
+            "registrationId": "REG-1259",
+            "gender": "Male"
         },
         {
             "id": "GD-55",
@@ -8368,7 +8641,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1258"
+            "registrationId": "REG-1258",
+            "gender": "Male"
         },
         {
             "id": "GD-56",
@@ -8397,7 +8671,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1257"
+            "registrationId": "REG-1257",
+            "gender": "Male"
         },
         {
             "id": "GD-57",
@@ -8426,7 +8701,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1256"
+            "registrationId": "REG-1256",
+            "gender": "Male"
         },
         {
             "id": "GD-58",
@@ -8455,7 +8731,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1255"
+            "registrationId": "REG-1255",
+            "gender": "Male"
         },
         {
             "id": "GD-59",
@@ -8484,7 +8761,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1254"
+            "registrationId": "REG-1254",
+            "gender": "Male"
         },
         {
             "id": "GD-60",
@@ -8513,7 +8791,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1253"
+            "registrationId": "REG-1253",
+            "gender": "Male"
         },
         {
             "id": "GD-61",
@@ -8547,7 +8826,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1252"
+            "registrationId": "REG-1252",
+            "gender": "Male"
         },
         {
             "id": "GD-62",
@@ -8576,7 +8856,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1251"
+            "registrationId": "REG-1251",
+            "gender": "Male"
         },
         {
             "id": "GD-64",
@@ -8605,7 +8886,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1250"
+            "registrationId": "REG-1250",
+            "gender": "Male"
         },
         {
             "id": "GD-69",
@@ -8634,7 +8916,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1262"
+            "registrationId": "REG-1262",
+            "gender": "Male"
         },
         {
             "id": "GD-70",
@@ -8663,7 +8946,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1261"
+            "registrationId": "REG-1261",
+            "gender": "Male"
         },
         {
             "id": "GD-71",
@@ -8692,7 +8976,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1260"
+            "registrationId": "REG-1260",
+            "gender": "Male"
         },
         {
             "id": "GD-10",
@@ -8721,7 +9006,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1214"
+            "registrationId": "REG-1214",
+            "gender": "Male"
         },
         {
             "id": "GD-11",
@@ -8750,7 +9036,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1213"
+            "registrationId": "REG-1213",
+            "gender": "Male"
         },
         {
             "id": "GD-12",
@@ -8779,7 +9066,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1212"
+            "registrationId": "REG-1212",
+            "gender": "Male"
         },
         {
             "id": "GD-13",
@@ -8808,7 +9096,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1211"
+            "registrationId": "REG-1211",
+            "gender": "Male"
         },
         {
             "id": "GD-14",
@@ -8837,7 +9126,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1210"
+            "registrationId": "REG-1210",
+            "gender": "Male"
         },
         {
             "id": "GD-15",
@@ -8866,7 +9156,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1209"
+            "registrationId": "REG-1209",
+            "gender": "Male"
         },
         {
             "id": "GD-17",
@@ -8900,7 +9191,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1208"
+            "registrationId": "REG-1208",
+            "gender": "Male"
         },
         {
             "id": "GD-2",
@@ -8934,7 +9226,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1202"
+            "registrationId": "REG-1202",
+            "gender": "Female"
         },
         {
             "id": "GD-20",
@@ -8963,7 +9256,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1223"
+            "registrationId": "REG-1223",
+            "gender": "Male"
         },
         {
             "id": "GD-21",
@@ -8992,7 +9286,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1222"
+            "registrationId": "REG-1222",
+            "gender": "Male"
         },
         {
             "id": "GD-22",
@@ -9026,7 +9321,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1221"
+            "registrationId": "REG-1221",
+            "gender": "Male"
         },
         {
             "id": "GD-23",
@@ -9055,7 +9351,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1220"
+            "registrationId": "REG-1220",
+            "gender": "Male"
         },
         {
             "id": "GD-24",
@@ -9089,7 +9386,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1219"
+            "registrationId": "REG-1219",
+            "gender": "Male"
         },
         {
             "id": "GD-25",
@@ -9123,7 +9421,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1218"
+            "registrationId": "REG-1218",
+            "gender": "Male"
         },
         {
             "id": "GD-26",
@@ -9152,7 +9451,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1217"
+            "registrationId": "REG-1217",
+            "gender": "Male"
         },
         {
             "id": "GD-3",
@@ -9181,7 +9481,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1203"
+            "registrationId": "REG-1203",
+            "gender": "Male"
         },
         {
             "id": "GD-4",
@@ -9210,7 +9511,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1204"
+            "registrationId": "REG-1204",
+            "gender": "Male"
         },
         {
             "id": "GD-5",
@@ -9239,7 +9541,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1205"
+            "registrationId": "REG-1205",
+            "gender": "Male"
         },
         {
             "id": "GD-6",
@@ -9268,7 +9571,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1206"
+            "registrationId": "REG-1206",
+            "gender": "Male"
         },
         {
             "id": "GD-7",
@@ -9297,7 +9601,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1207"
+            "registrationId": "REG-1207",
+            "gender": "Female"
         },
         {
             "id": "GD-8",
@@ -9326,7 +9631,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1216"
+            "registrationId": "REG-1216",
+            "gender": "Male"
         },
         {
             "id": "GD-9",
@@ -9355,7 +9661,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1215"
+            "registrationId": "REG-1215",
+            "gender": "Male"
         },
         {
             "id": "BC-97",
@@ -9389,7 +9696,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1201"
+            "registrationId": "REG-1201",
+            "gender": "Male"
         },
         {
             "id": "BC-96",
@@ -9418,7 +9726,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1200"
+            "registrationId": "REG-1200",
+            "gender": "Male"
         },
         {
             "id": "GD-224",
@@ -9447,7 +9756,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1200"
+            "registrationId": "REG-1200",
+            "gender": "Male"
         },
         {
             "id": "BC-101",
@@ -9486,7 +9796,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1199"
+            "registrationId": "REG-1199",
+            "gender": "Male"
         },
         {
             "id": "BC-102",
@@ -9520,7 +9831,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1198"
+            "registrationId": "REG-1167",
+            "gender": "Female"
         },
         {
             "id": "GD-225",
@@ -9552,9 +9864,24 @@ window.migratedDatabase = {
                     "amount": 7500
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1197"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1197",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794488883955",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488883955,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-225",
+                    "studentName": "Bijoy Sarker",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "BC-103",
@@ -9593,7 +9920,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1196"
+            "registrationId": "REG-1196",
+            "gender": "Female"
         },
         {
             "id": "GD-226",
@@ -9630,9 +9958,24 @@ window.migratedDatabase = {
                     "amount": 5000
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1195"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1195",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794488884555",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488884555,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-226",
+                    "studentName": "Nazmus Sakib",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "BC-104",
@@ -9666,7 +10009,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1194"
+            "registrationId": "REG-1194",
+            "gender": "Male"
         },
         {
             "id": "GD-227",
@@ -9698,9 +10042,24 @@ window.migratedDatabase = {
                     "amount": 6000
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1193"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1193",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794488885123",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488885123,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-227",
+                    "studentName": "AFRIN KHANDOKER NIHA",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "BC-105",
@@ -9734,7 +10093,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1192"
+            "registrationId": "REG-1192",
+            "gender": "Male"
         },
         {
             "id": "GD-228",
@@ -9763,7 +10123,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1192"
+            "registrationId": "REG-1192",
+            "gender": "Male"
         },
         {
             "id": "GD-229",
@@ -9792,7 +10153,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1191"
+            "registrationId": "REG-1191",
+            "gender": "Male"
         },
         {
             "id": "BC-106",
@@ -9826,7 +10188,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1190"
+            "registrationId": "REG-1190",
+            "gender": "Female"
         },
         {
             "id": "BC-107",
@@ -9865,7 +10228,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1189"
+            "registrationId": "REG-1189",
+            "gender": "Male"
         },
         {
             "id": "BC-108",
@@ -9904,7 +10268,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1188"
+            "registrationId": "REG-1188",
+            "gender": "Male"
         },
         {
             "id": "BC-109",
@@ -9938,7 +10303,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1187"
+            "registrationId": "REG-1187",
+            "gender": "Female"
         },
         {
             "id": "BC-110",
@@ -9977,7 +10343,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1186"
+            "registrationId": "REG-1186",
+            "gender": "Male"
         },
         {
             "id": "BC-111",
@@ -10011,7 +10378,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1185"
+            "registrationId": "REG-1185",
+            "gender": "Male"
         },
         {
             "id": "BC-112",
@@ -10050,7 +10418,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1184"
+            "registrationId": "REG-1184",
+            "gender": "Female"
         },
         {
             "id": "BC-100",
@@ -10084,7 +10453,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1182"
+            "registrationId": "REG-1182",
+            "gender": "Female"
         },
         {
             "id": "BC-99",
@@ -10118,7 +10488,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1183"
+            "registrationId": "REG-1183",
+            "gender": "Male"
         },
         {
             "id": "BC-113",
@@ -10152,7 +10523,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1181"
+            "registrationId": "REG-1181",
+            "gender": "Male"
         },
         {
             "id": "BC-114",
@@ -10160,7 +10532,7 @@ window.migratedDatabase = {
             "phone": "01607198925",
             "fatherName": "MD JOSHIM UDDIN",
             "motherName": "",
-            "guardianPhone": "01607706537",
+            "guardianPhone": "01828094691",
             "address": "Comilla",
             "course": "Basic Computer",
             "batch": "Batch 36",
@@ -10186,7 +10558,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1157"
+            "registrationId": "REG-1157",
+            "gender": "Male"
         },
         {
             "id": "BC-115",
@@ -10220,7 +10593,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1180"
+            "registrationId": "REG-1180",
+            "gender": "Male"
         },
         {
             "id": "BC-116",
@@ -10254,7 +10628,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1155"
+            "registrationId": "REG-1155",
+            "gender": "Male"
         },
         {
             "id": "BC-117",
@@ -10288,7 +10663,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1179"
+            "registrationId": "REG-1179",
+            "gender": "Male"
         },
         {
             "id": "BC-118",
@@ -10327,7 +10703,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1178"
+            "registrationId": "REG-1178",
+            "gender": "Male"
         },
         {
             "id": "GD-230",
@@ -10359,9 +10736,24 @@ window.migratedDatabase = {
                     "amount": 4000
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1177"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1177",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794488851293",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488851293,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-230",
+                    "studentName": "FARHAN SADIQUE",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "BC-119",
@@ -10400,7 +10792,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1176"
+            "registrationId": "REG-1176",
+            "gender": "Male"
         },
         {
             "id": "BC-120",
@@ -10434,7 +10827,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1175"
+            "registrationId": "REG-1175",
+            "gender": "Female"
         },
         {
             "id": "GD-231",
@@ -10461,9 +10855,24 @@ window.migratedDatabase = {
                     "amount": 12900
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1174"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1174",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794488851893",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488851893,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-231",
+                    "studentName": "Mohammad zayed bin rashid",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "BC-121",
@@ -10497,7 +10906,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1173"
+            "registrationId": "REG-1173",
+            "gender": "Male"
         },
         {
             "id": "BC-122",
@@ -10531,7 +10941,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1172"
+            "registrationId": "REG-1172",
+            "gender": "Female"
         },
         {
             "id": "BC-123",
@@ -10560,7 +10971,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1171"
+            "registrationId": "REG-1171",
+            "gender": "Male"
         },
         {
             "id": "BC-124",
@@ -10599,7 +11011,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1170"
+            "registrationId": "REG-1170",
+            "gender": "Male"
         },
         {
             "id": "BC-125",
@@ -10628,7 +11041,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1169"
+            "registrationId": "REG-1169",
+            "gender": "Male"
         },
         {
             "id": "GD-232",
@@ -10657,7 +11071,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1168"
+            "registrationId": "REG-1168",
+            "gender": "Female"
         },
         {
             "id": "BC-126",
@@ -10686,7 +11101,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1167"
+            "registrationId": "REG-1167",
+            "gender": "Female"
         },
         {
             "id": "BC-127",
@@ -10720,7 +11136,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1166"
+            "registrationId": "REG-1166",
+            "gender": "Female"
         },
         {
             "id": "BC-128",
@@ -10759,7 +11176,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1163"
+            "registrationId": "REG-1163",
+            "gender": "Female"
         },
         {
             "id": "BC-129",
@@ -10803,7 +11221,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1162"
+            "registrationId": "REG-1162",
+            "gender": "Male"
         },
         {
             "id": "GD-233",
@@ -10840,9 +11259,24 @@ window.migratedDatabase = {
                     "amount": 2500
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1165"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1165",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794488852435",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488852435,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-233",
+                    "studentName": "REDOANUN ISLAM TANVIR",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "GD-234",
@@ -10876,17 +11310,34 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0747",
                     "date": "2026-02-08",
-                    "amount": 2500
+                    "amount": 2500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0748",
                     "date": "2026-02-10",
-                    "amount": 1500
+                    "amount": 1500,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1164"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1164",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794488853067",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488853067,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-234",
+                    "studentName": "AZIZUL ISLAM SABBIR",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "BC-130",
@@ -10930,7 +11381,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1161"
+            "registrationId": "REG-1161",
+            "gender": "Male"
         },
         {
             "id": "GD-235",
@@ -10964,12 +11416,28 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0736",
                     "date": "2026-01-26",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1160"
+            "certified": true,
+            "certificateDate": "2026-07-16",
+            "registrationId": "REG-1160",
+            "auditLogs": [
+                {
+                    "id": "AUD-1784191077096",
+                    "type": "Certificate Issued",
+                    "date": "2026-07-16",
+                    "timestamp": 1784191077096,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-235",
+                    "studentName": "MD ARFAN",
+                    "course": "Graphic Design"
+                }
+            ],
+            "gender": "Male"
         },
         {
             "id": "BC-131",
@@ -11008,13 +11476,14 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1159"
+            "registrationId": "REG-1159",
+            "gender": "Male"
         },
         {
             "id": "GD-236",
-            "name": "SIYAM AHMED",
+            "name": "MD RAKIB UDDIN SIYAM",
             "phone": "01627194522",
-            "fatherName": "ANYET ULLAH",
+            "fatherName": "MD ANYET ULLAH",
             "motherName": "",
             "guardianPhone": "01952351477",
             "address": "Comilla",
@@ -11045,9 +11514,36 @@ window.migratedDatabase = {
                     "amount": 1000
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1088"
+            "certified": true,
+            "certificateDate": "2026-07-16",
+            "registrationId": "REG-1088",
+            "auditLogs": [
+                {
+                    "id": "AUD-1784190586634",
+                    "type": "Profile Edit",
+                    "date": "2026-07-16",
+                    "timestamp": 1784190586634,
+                    "details": "Name: 'SIYAM AHMED' -> 'MD RAKIB UDDIN SIYAM', Father: 'ANYET ULLAH' -> 'MD ANYET ULLAH'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-236",
+                    "studentName": "MD RAKIB UDDIN SIYAM",
+                    "course": "Graphic Design"
+                },
+                {
+                    "id": "AUD-1784190671865",
+                    "type": "Certificate Issued",
+                    "date": "2026-07-16",
+                    "timestamp": 1784190671866,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-236",
+                    "studentName": "MD RAKIB UDDIN SIYAM",
+                    "course": "Graphic Design"
+                }
+            ],
+            "gender": "Male"
         },
         {
             "id": "BC-98",
@@ -11076,13 +11572,14 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1158"
+            "registrationId": "REG-1158",
+            "gender": "Male"
         },
         {
             "id": "GD-237",
             "name": "MD RIDWANUL HASAN",
             "phone": "01607198925",
-            "fatherName": "MD JASHIM UDDIN",
+            "fatherName": "MD JOSHIM UDDIN",
             "motherName": "",
             "guardianPhone": "01828094691",
             "address": "Comilla",
@@ -11125,12 +11622,40 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0760",
                     "date": "2026-02-25",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1157"
+            "certified": true,
+            "certificateDate": "2026-07-16",
+            "registrationId": "REG-1157",
+            "auditLogs": [
+                {
+                    "id": "AUD-1784190442384",
+                    "type": "Profile Edit",
+                    "date": "2026-07-16",
+                    "timestamp": 1784190442384,
+                    "details": "Father: 'MD JASHIM UDDIN' -> 'MD JOSHIM UDDIN'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-237",
+                    "studentName": "MD RIDWANUL HASAN",
+                    "course": "Graphic Design"
+                },
+                {
+                    "id": "AUD-1784190696101",
+                    "type": "Certificate Issued",
+                    "date": "2026-07-16",
+                    "timestamp": 1784190696101,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-237",
+                    "studentName": "MD RIDWANUL HASAN",
+                    "course": "Graphic Design"
+                }
+            ],
+            "gender": "Male"
         },
         {
             "id": "BC-132",
@@ -11164,7 +11689,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1156"
+            "registrationId": "REG-1156",
+            "gender": "Male"
         },
         {
             "id": "GD-238",
@@ -11196,9 +11722,24 @@ window.migratedDatabase = {
                     "amount": 13000
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1148"
+            "certified": true,
+            "certificateDate": "2026-07-16",
+            "registrationId": "REG-1148",
+            "auditLogs": [
+                {
+                    "id": "AUD-1784189710487",
+                    "type": "Certificate Issued",
+                    "date": "2026-07-16",
+                    "timestamp": 1784189710487,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-238",
+                    "studentName": "NAFISA TABASSUM TANHA",
+                    "course": "Graphic Design"
+                }
+            ],
+            "gender": "Female"
         },
         {
             "id": "GD-239",
@@ -11237,12 +11778,28 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0752",
                     "date": "2026-02-16",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1155"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1155",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794488874865",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488874865,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-239",
+                    "studentName": "REDWAN AHMED",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "BC-133",
@@ -11276,7 +11833,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1154"
+            "registrationId": "REG-1154",
+            "gender": "Female"
         },
         {
             "id": "GD-240",
@@ -11303,9 +11861,24 @@ window.migratedDatabase = {
                     "amount": 12500
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1153"
+            "certified": true,
+            "certificateDate": "2026-09-15",
+            "registrationId": "REG-1153",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1789468113096",
+                    "type": "Certificate Issued",
+                    "date": "2026-09-15",
+                    "timestamp": 1789468113096,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-240",
+                    "studentName": "sadia akter rikto",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "BC-134",
@@ -11339,12 +11912,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0744",
                     "date": "2026-01-31",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1152"
+            "registrationId": "REG-1152",
+            "gender": "Female"
         },
         {
             "id": "BC-135",
@@ -11383,7 +11958,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1151"
+            "registrationId": "REG-1151",
+            "gender": "Female"
         },
         {
             "id": "BC-136",
@@ -11410,9 +11986,24 @@ window.migratedDatabase = {
                     "amount": 2400
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1149"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1149",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786518038984",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786518038984,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-136",
+                    "studentName": "Md Yeasin Ahammad",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "BC-137",
@@ -11446,7 +12037,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1138"
+            "registrationId": "REG-1138",
+            "gender": "Male"
         },
         {
             "id": "GD-241",
@@ -11475,12 +12067,28 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0756",
                     "date": "2026-02-22",
-                    "amount": 3500
+                    "amount": 3500,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1150"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1150",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794488841393",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488841393,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-241",
+                    "studentName": "Akhi Alamgir",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "BC-138",
@@ -11514,7 +12122,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1148"
+            "registrationId": "REG-1148",
+            "gender": "Female"
         },
         {
             "id": "GD-242",
@@ -11541,9 +12150,36 @@ window.migratedDatabase = {
                     "amount": 12500
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1147"
+            "certified": true,
+            "certificateDate": "2026-07-16",
+            "registrationId": "REG-1147",
+            "auditLogs": [
+                {
+                    "id": "AUD-1784190795716",
+                    "type": "Certificate Issued",
+                    "date": "2026-07-16",
+                    "timestamp": 1784190795716,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-242",
+                    "studentName": "NALIKA ISLAM",
+                    "course": "Graphic Design"
+                },
+                {
+                    "id": "AUD-1784239118878",
+                    "type": "Profile Edit",
+                    "date": "2026-07-17",
+                    "timestamp": 1784239118878,
+                    "details": "Gender: 'Male' -> 'Female'",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-242",
+                    "studentName": "NALIKA ISLAM",
+                    "course": "Graphic Design"
+                }
+            ],
+            "gender": "Female"
         },
         {
             "id": "BC-139",
@@ -11577,12 +12213,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0746",
                     "date": "2026-02-08",
-                    "amount": 2500
+                    "amount": 2500,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1146"
+            "registrationId": "REG-1146",
+            "gender": "Female"
         },
         {
             "id": "BC-140",
@@ -11611,7 +12249,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1145"
+            "registrationId": "REG-1145",
+            "gender": "Male"
         },
         {
             "id": "BC-39",
@@ -11640,7 +12279,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1144"
+            "registrationId": "REG-1144",
+            "gender": "Female"
         },
         {
             "id": "BC-141",
@@ -11664,17 +12304,22 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0714",
                     "date": "2026-01-03",
-                    "amount": 3200
+                    "amount": 3200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0715",
                     "date": "2026-01-03",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1143"
+            "registrationId": "REG-1076",
+            "gender": "Male",
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-142",
@@ -11698,17 +12343,20 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0716",
                     "date": "2026-01-03",
-                    "amount": 1500
+                    "amount": 1500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0719",
                     "date": "2026-01-04",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1142"
+            "registrationId": "REG-1142",
+            "gender": "Male"
         },
         {
             "id": "BC-143",
@@ -11732,17 +12380,20 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0718",
                     "date": "2026-01-04",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0717",
                     "date": "2026-01-04",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1141"
+            "registrationId": "REG-1141",
+            "gender": "Male"
         },
         {
             "id": "BC-144",
@@ -11766,12 +12417,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0720",
                     "date": "2026-01-05",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1140"
+            "registrationId": "REG-1140",
+            "gender": "Male"
         },
         {
             "id": "BC-145",
@@ -11795,17 +12448,20 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0721",
                     "date": "2026-01-08",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0728",
                     "date": "2026-01-25",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1139"
+            "registrationId": "REG-1139",
+            "gender": "Male"
         },
         {
             "id": "GD-243",
@@ -11829,22 +12485,40 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0722",
                     "date": "2026-01-19",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0754",
                     "date": "2026-02-17",
-                    "amount": 8000
+                    "amount": 8000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0762",
                     "date": "2026-03-03",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1138"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1138",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794488858523",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488858523,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-243",
+                    "studentName": "Md Sana Ulla",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "GD-244",
@@ -11868,23 +12542,26 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0723",
                     "date": "2026-01-22",
-                    "amount": 500
+                    "amount": 500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0737",
                     "date": "2026-01-26",
-                    "amount": 10000
+                    "amount": 10000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1137"
+            "registrationId": "REG-1137",
+            "gender": "Female"
         },
         {
             "id": "GD-245",
             "name": "Afrin Jahan sumaiya",
             "phone": "01645122763",
-            "fatherName": "Belayet Hossain",
+            "fatherName": "Md Balayet Hossain",
             "motherName": "",
             "guardianPhone": "01830078884",
             "address": "Comilla",
@@ -11902,17 +12579,46 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0724",
                     "date": "2026-01-22",
-                    "amount": 6000
+                    "amount": 6000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0755",
                     "date": "2026-02-18",
-                    "amount": 6000
+                    "amount": 6000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1136"
+            "certified": true,
+            "certificateDate": "2026-07-16",
+            "registrationId": "REG-1136",
+            "auditLogs": [
+                {
+                    "id": "AUD-1784190865498",
+                    "type": "Profile Edit",
+                    "date": "2026-07-16",
+                    "timestamp": 1784190865498,
+                    "details": "Father: 'Belayet Hossain' -> 'Md Balayet Hossain'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-245",
+                    "studentName": "Afrin Jahan sumaiya",
+                    "course": "Graphic Design"
+                },
+                {
+                    "id": "AUD-1784190889650",
+                    "type": "Certificate Issued",
+                    "date": "2026-07-16",
+                    "timestamp": 1784190889650,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-245",
+                    "studentName": "Afrin Jahan sumaiya",
+                    "course": "Graphic Design"
+                }
+            ],
+            "gender": "Female"
         },
         {
             "id": "BC-146",
@@ -11936,17 +12642,20 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0725",
                     "date": "2026-01-24",
-                    "amount": 500
+                    "amount": 500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0743",
                     "date": "2026-01-29",
-                    "amount": 2500
+                    "amount": 2500,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1135"
+            "registrationId": "REG-1135",
+            "gender": "Male"
         },
         {
             "id": "BC-147",
@@ -11970,22 +12679,26 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0726",
                     "date": "2026-01-24",
-                    "amount": 500
+                    "amount": 500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0735",
                     "date": "2026-01-26",
-                    "amount": 2700
+                    "amount": 2700,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0738",
                     "date": "2026-01-27",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1134"
+            "registrationId": "REG-1134",
+            "gender": "Female"
         },
         {
             "id": "BC-148",
@@ -12009,17 +12722,20 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0727",
                     "date": "2026-01-24",
-                    "amount": 500
+                    "amount": 500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0731",
                     "date": "2026-01-25",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1133"
+            "registrationId": "REG-1133",
+            "gender": "Male"
         },
         {
             "id": "BC-149",
@@ -12043,17 +12759,20 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0730",
                     "date": "2026-01-25",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0729",
                     "date": "2026-01-25",
-                    "amount": 3200
+                    "amount": 3200,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1132"
+            "registrationId": "REG-1132",
+            "gender": "Female"
         },
         {
             "id": "BC-150",
@@ -12077,17 +12796,20 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0733",
                     "date": "2026-01-25",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0734",
                     "date": "2026-01-25",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1131"
+            "registrationId": "REG-1131",
+            "gender": "Male"
         },
         {
             "id": "GD-246",
@@ -12111,17 +12833,20 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0732",
                     "date": "2026-01-25",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0757",
                     "date": "2026-02-24",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1131"
+            "registrationId": "REG-1131",
+            "gender": "Male"
         },
         {
             "id": "BC-151",
@@ -12145,17 +12870,20 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0739",
                     "date": "2026-01-27",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0740",
                     "date": "2026-01-27",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1130"
+            "registrationId": "REG-1130",
+            "gender": "Male"
         },
         {
             "id": "BC-152",
@@ -12179,17 +12907,20 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0741",
                     "date": "2026-01-27",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0742",
                     "date": "2026-01-27",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1129"
+            "registrationId": "REG-1129",
+            "gender": "Male"
         },
         {
             "id": "GD-247",
@@ -12213,12 +12944,28 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0749",
                     "date": "2026-02-10",
-                    "amount": 1
+                    "amount": 1,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1128"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1128",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794488853505",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488853505,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-247",
+                    "studentName": "Jannatun Nayim Supti",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "BC-154",
@@ -12242,16 +12989,32 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0750",
                     "date": "2026-02-14",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1127"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1127",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786517989290",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786517989290,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-154",
+                    "studentName": "Siam Ahmed",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "GD-248",
-            "name": "MD HASIBUL KABIR",
+            "name": "MOHAMMAD HASIBUL KABIR",
             "phone": "01818889906",
             "fatherName": "SYED MOZAHERUL KABIR",
             "motherName": "",
@@ -12271,12 +13034,40 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0753",
                     "date": "2026-02-17",
-                    "amount": 11000
+                    "amount": 11000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1126"
+            "certified": true,
+            "certificateDate": "2026-07-16",
+            "registrationId": "REG-1126",
+            "auditLogs": [
+                {
+                    "id": "AUD-1784191164884",
+                    "type": "Profile Edit",
+                    "date": "2026-07-16",
+                    "timestamp": 1784191164884,
+                    "details": "Name: 'MD HASIBUL KABIR' -> 'MOHAMMAD HASIBUL KABIR'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-248",
+                    "studentName": "MOHAMMAD HASIBUL KABIR",
+                    "course": "Graphic Design"
+                },
+                {
+                    "id": "AUD-1784191189672",
+                    "type": "Certificate Issued",
+                    "date": "2026-07-16",
+                    "timestamp": 1784191189672,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-248",
+                    "studentName": "MOHAMMAD HASIBUL KABIR",
+                    "course": "Graphic Design"
+                }
+            ],
+            "gender": "Male"
         },
         {
             "id": "BC-155",
@@ -12300,24 +13091,53 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0758",
                     "date": "2026-02-24",
-                    "amount": 3600
+                    "amount": 3600,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0759",
                     "date": "2026-02-24",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1125"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1125",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786517811960",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786517811960,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-155",
+                    "studentName": "bumika debnath",
+                    "course": "Basic Computer"
+                },
+                {
+                    "id": "AUD-1786517832502",
+                    "type": "Profile Edit",
+                    "date": "2026-08-12",
+                    "timestamp": 1786517832502,
+                    "details": "Gender: 'Male' -> 'Female'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-155",
+                    "studentName": "bumika debnath",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "BC-157",
-            "name": "Samia Akter Srabon",
+            "name": "MST. Samiya Akter Srabon",
             "phone": "01980103876",
             "fatherName": "Mostafa",
-            "motherName": "Salma",
+            "motherName": "",
             "guardianPhone": "01934431804",
             "address": "Comilla",
             "course": "Basic Computer",
@@ -12334,27 +13154,70 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0763",
                     "date": "2026-03-03",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0784",
                     "date": "2026-03-30",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0799",
                     "date": "2026-04-04",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0817",
                     "date": "2026-04-12",
-                    "amount": 500
+                    "amount": 500,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1124"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1124",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786517781451",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786517781451,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-157",
+                    "studentName": "Samia Akter Srabon",
+                    "course": "Basic Computer"
+                },
+                {
+                    "id": "AUD-1788005175848",
+                    "type": "Profile Edit",
+                    "date": "2026-08-29",
+                    "timestamp": 1788005175848,
+                    "details": "Name: 'Samia Akter Srabon' -> 'Samiya Akter Srabon', Mother: 'Salma' -> ''",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-157",
+                    "studentName": "Samiya Akter Srabon",
+                    "course": "Basic Computer"
+                },
+                {
+                    "id": "AUD-1788005204336",
+                    "type": "Profile Edit",
+                    "date": "2026-08-29",
+                    "timestamp": 1788005204336,
+                    "details": "Name: 'Samiya Akter Srabon' -> 'MST. Samiya Akter Srabon'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-157",
+                    "studentName": "MST. Samiya Akter Srabon",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "BC-158",
@@ -12378,17 +13241,36 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0766",
                     "date": "2026-03-07",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0783",
                     "date": "2026-03-30",
-                    "amount": 500
+                    "amount": 500,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1122"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1122",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786517739814",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786517739814,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-158",
+                    "studentName": "Khadija Akter Mim",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "GD-249",
@@ -12412,12 +13294,28 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0764",
                     "date": "2026-03-07",
-                    "amount": 12000
+                    "amount": 12000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1123"
+            "certified": true,
+            "certificateDate": "2026-07-16",
+            "registrationId": "REG-1123",
+            "auditLogs": [
+                {
+                    "id": "AUD-1784190942985",
+                    "type": "Certificate Issued",
+                    "date": "2026-07-16",
+                    "timestamp": 1784190942985,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-249",
+                    "studentName": "Mehedi Hasan Tusar",
+                    "course": "Graphic Design"
+                }
+            ],
+            "gender": "Male"
         },
         {
             "id": "GD-250",
@@ -12430,22 +13328,39 @@ window.migratedDatabase = {
             "course": "Graphic Design",
             "batch": "Batch 32",
             "registrationDate": "2026-03-07",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 15000,
             "discountFee": 4500,
             "netFee": 10500,
-            "paidFee": 1500,
-            "dueFee": 9000,
+            "paidFee": 10500,
+            "dueFee": 0,
             "takenBook": false,
             "invoices": [
                 {
                     "id": "INV-2026-0765",
                     "date": "2026-03-07",
-                    "amount": 1500
+                    "amount": 1500,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1112",
+                    "date": "2026-07-16",
+                    "amount": 5000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1116",
+                    "date": "2026-07-23",
+                    "amount": 4000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
+            "certified": true,
+            "certificateDate": "2026-11-12",
             "registrationId": "REG-1122",
             "auditLogs": [
                 {
@@ -12459,8 +13374,23 @@ window.migratedDatabase = {
                     "studentId": "GD-250",
                     "studentName": "Khadija Akter Mim",
                     "course": "Graphic Design"
+                },
+                {
+                    "id": "AUD-1794488514204-765",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488514204,
+                    "details": "Graduation certificate awarded for course: Graphic Design (Bulk)",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-250",
+                    "studentName": "Khadija Akter Mim",
+                    "course": "Graphic Design"
                 }
-            ]
+            ],
+            "gender": "Female",
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "IP-1",
@@ -12489,7 +13419,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1121"
+            "registrationId": "REG-1121",
+            "gender": "Male"
         },
         {
             "id": "IP-10",
@@ -12513,12 +13444,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0776",
                     "date": "2026-03-12",
-                    "amount": 12000
+                    "amount": 12000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1115"
+            "registrationId": "REG-1115",
+            "gender": "Male"
         },
         {
             "id": "IP-11",
@@ -12542,12 +13475,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0777",
                     "date": "2026-03-12",
-                    "amount": 10000
+                    "amount": 10000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1114"
+            "registrationId": "REG-1114",
+            "gender": "Male"
         },
         {
             "id": "IP-12",
@@ -12571,12 +13506,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0778",
                     "date": "2026-03-12",
-                    "amount": 14000
+                    "amount": 14000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1087"
+            "registrationId": "REG-1087",
+            "gender": "Male"
         },
         {
             "id": "IP-3",
@@ -12600,12 +13537,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0770",
                     "date": "2026-03-12",
-                    "amount": 10000
+                    "amount": 10000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1120"
+            "registrationId": "REG-1120",
+            "gender": "Male"
         },
         {
             "id": "IP-4",
@@ -12629,12 +13568,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0771",
                     "date": "2026-03-12",
-                    "amount": 14000
+                    "amount": 14000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1119"
+            "registrationId": "REG-1119",
+            "gender": "Male"
         },
         {
             "id": "IP-5",
@@ -12658,12 +13599,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0772",
                     "date": "2026-03-12",
-                    "amount": 9000
+                    "amount": 9000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1092"
+            "registrationId": "REG-1092",
+            "gender": "Male"
         },
         {
             "id": "IP-7",
@@ -12687,12 +13630,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0773",
                     "date": "2026-03-12",
-                    "amount": 8000
+                    "amount": 8000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1118"
+            "registrationId": "REG-1118",
+            "gender": "Male"
         },
         {
             "id": "IP-8",
@@ -12716,12 +13661,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0774",
                     "date": "2026-03-12",
-                    "amount": 9000
+                    "amount": 9000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1117"
+            "registrationId": "REG-1117",
+            "gender": "Female"
         },
         {
             "id": "IP-9",
@@ -12745,12 +13692,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0775",
                     "date": "2026-03-12",
-                    "amount": 15000
+                    "amount": 15000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1116"
+            "registrationId": "REG-1116",
+            "gender": "Male"
         },
         {
             "id": "GD-251",
@@ -12774,18 +13723,34 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0779",
                     "date": "2026-03-16",
-                    "amount": 11000
+                    "amount": 11000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1113"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1113",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794488842741",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488842741,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-251",
+                    "studentName": "Saimon Islam",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "GD-253",
             "name": "Tanvir Bin Rafiq",
             "phone": "01603894923",
-            "fatherName": "Rafiqul Islam",
+            "fatherName": "Md Rafiqul Islam",
             "motherName": "",
             "guardianPhone": "01710801976",
             "address": "Comilla",
@@ -12803,12 +13768,40 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0782",
                     "date": "2026-03-29",
-                    "amount": 10000
+                    "amount": 10000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1110"
+            "certified": true,
+            "certificateDate": "2026-07-16",
+            "registrationId": "REG-1110",
+            "auditLogs": [
+                {
+                    "id": "AUD-1784191003417",
+                    "type": "Profile Edit",
+                    "date": "2026-07-16",
+                    "timestamp": 1784191003417,
+                    "details": "Father: 'Rafiqul Islam' -> 'Md Rafiqul Islam'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-253",
+                    "studentName": "Tanvir Bin Rafiq",
+                    "course": "Graphic Design"
+                },
+                {
+                    "id": "AUD-1784191018879",
+                    "type": "Certificate Issued",
+                    "date": "2026-07-16",
+                    "timestamp": 1784191018879,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-253",
+                    "studentName": "Tanvir Bin Rafiq",
+                    "course": "Graphic Design"
+                }
+            ],
+            "gender": "Male"
         },
         {
             "id": "SE-32",
@@ -12832,12 +13825,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0780",
                     "date": "2026-03-29",
-                    "amount": 250
+                    "amount": 250,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1112"
+            "registrationId": "REG-1112",
+            "gender": "Male"
         },
         {
             "id": "SE-33",
@@ -12861,12 +13856,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0781",
                     "date": "2026-03-29",
-                    "amount": 250
+                    "amount": 250,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1111"
+            "registrationId": "REG-1111",
+            "gender": "Male"
         },
         {
             "id": "IP-13",
@@ -12895,7 +13892,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1109"
+            "registrationId": "REG-1109",
+            "gender": "Male"
         },
         {
             "id": "IP-14",
@@ -12919,12 +13917,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0787",
                     "date": "2026-04-02",
-                    "amount": 9000
+                    "amount": 9000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1108"
+            "registrationId": "REG-1108",
+            "gender": "Male"
         },
         {
             "id": "IP-15",
@@ -12948,12 +13948,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0788",
                     "date": "2026-04-02",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1107"
+            "registrationId": "REG-1107",
+            "gender": "Female"
         },
         {
             "id": "IP-17",
@@ -12982,7 +13984,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1106"
+            "registrationId": "REG-1106",
+            "gender": "Male"
         },
         {
             "id": "IP-18",
@@ -13006,12 +14009,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0791",
                     "date": "2026-04-02",
-                    "amount": 15000
+                    "amount": 15000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1105"
+            "registrationId": "REG-1105",
+            "gender": "Female"
         },
         {
             "id": "IP-19",
@@ -13035,12 +14040,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0792",
                     "date": "2026-01-03",
-                    "amount": 15000
+                    "amount": 15000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1104"
+            "registrationId": "REG-1104",
+            "gender": "Male"
         },
         {
             "id": "IP-20",
@@ -13064,12 +14071,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0793",
                     "date": "2026-04-02",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1103"
+            "registrationId": "REG-1103",
+            "gender": "Male"
         },
         {
             "id": "IP-21",
@@ -13093,12 +14102,16 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0794",
                     "date": "2026-01-07",
-                    "amount": 15000
+                    "amount": 15000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1075"
+            "registrationId": "REG-1075",
+            "gender": "Female",
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "IP-22",
@@ -13122,12 +14135,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0795",
                     "date": "2026-01-31",
-                    "amount": 12000
+                    "amount": 12000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1102"
+            "registrationId": "REG-1102",
+            "gender": "Male"
         },
         {
             "id": "IP-23",
@@ -13151,17 +14166,20 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0796",
                     "date": "2026-01-14",
-                    "amount": 10000
+                    "amount": 10000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0816",
                     "date": "2026-04-11",
-                    "amount": 5000
+                    "amount": 5000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1101"
+            "registrationId": "REG-1101",
+            "gender": "Female"
         },
         {
             "id": "IP-24",
@@ -13185,12 +14203,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0797",
                     "date": "2026-02-03",
-                    "amount": 15000
+                    "amount": 15000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1100"
+            "registrationId": "REG-1100",
+            "gender": "Male"
         },
         {
             "id": "IP-25",
@@ -13214,12 +14234,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0798",
                     "date": "2026-03-28",
-                    "amount": 10000
+                    "amount": 10000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1099"
+            "registrationId": "REG-1099",
+            "gender": "Male"
         },
         {
             "id": "SE-01",
@@ -13248,7 +14270,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1098"
+            "registrationId": "REG-1098",
+            "gender": "Male"
         },
         {
             "id": "SE-02",
@@ -13277,7 +14300,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1097"
+            "registrationId": "REG-1097",
+            "gender": "Male"
         },
         {
             "id": "SE-04",
@@ -13306,7 +14330,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1094"
+            "registrationId": "REG-1094",
+            "gender": "Male"
         },
         {
             "id": "SE-05",
@@ -13335,7 +14360,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1093"
+            "registrationId": "REG-1093",
+            "gender": "Female"
         },
         {
             "id": "SE-06",
@@ -13364,7 +14390,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1092"
+            "registrationId": "REG-1092",
+            "gender": "Male"
         },
         {
             "id": "SE-07",
@@ -13393,7 +14420,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1091"
+            "registrationId": "REG-1091",
+            "gender": "Male"
         },
         {
             "id": "SE-08",
@@ -13422,7 +14450,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1090"
+            "registrationId": "REG-1090",
+            "gender": "Female"
         },
         {
             "id": "SE-09",
@@ -13451,7 +14480,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1089"
+            "registrationId": "REG-1089",
+            "gender": "Female"
         },
         {
             "id": "SE-1",
@@ -13480,15 +14510,16 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1096"
+            "registrationId": "REG-1096",
+            "gender": "Male"
         },
         {
             "id": "SE-10",
-            "name": "Siyam Ahmed",
+            "name": "MD RAKIB UDDIN SIYAM",
             "phone": "01627194522",
-            "fatherName": "Anayet Ullah",
+            "fatherName": "MD ANYET ULLAH",
             "motherName": "",
-            "guardianPhone": "01778558901",
+            "guardianPhone": "01952351477",
             "address": "Comilla",
             "course": "Spoken English",
             "batch": "Batch 1",
@@ -13509,7 +14540,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1088"
+            "registrationId": "REG-1088",
+            "gender": "Male"
         },
         {
             "id": "SE-11",
@@ -13538,7 +14570,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1087"
+            "registrationId": "REG-1087",
+            "gender": "Male"
         },
         {
             "id": "SE-3",
@@ -13567,7 +14600,8 @@ window.migratedDatabase = {
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1095"
+            "registrationId": "REG-1095",
+            "gender": "Male"
         },
         {
             "id": "SE-4",
@@ -13591,12 +14625,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0805",
                     "date": "2026-04-04",
-                    "amount": 3800
+                    "amount": 3800,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1094"
+            "registrationId": "REG-1094",
+            "gender": "Male"
         },
         {
             "id": "BC-159",
@@ -13620,12 +14656,40 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0815",
                     "date": "2026-03-28",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1086"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1086",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786517720111",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786517720111,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-159",
+                    "studentName": "Mohona Nasrin Munni",
+                    "course": "Basic Computer"
+                },
+                {
+                    "id": "AUD-1786517881481",
+                    "type": "Profile Edit",
+                    "date": "2026-08-12",
+                    "timestamp": 1786517881481,
+                    "details": "Gender: 'Male' -> 'Female'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-159",
+                    "studentName": "Mohona Nasrin Munni",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "BC-160",
@@ -13649,22 +14713,42 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0818",
                     "date": "2026-04-13",
-                    "amount": 1499
+                    "amount": 1499,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0820",
                     "date": "2026-04-19",
-                    "amount": 2501
+                    "amount": 2501,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0842",
                     "date": "2026-05-11",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1085"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1085",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786513112126",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786513112126,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-160",
+                    "studentName": "Md Talha Mahi",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "GD-254",
@@ -13681,19 +14765,31 @@ window.migratedDatabase = {
             "totalFee": 12000,
             "discountFee": 0,
             "netFee": 12000,
-            "paidFee": 4000,
-            "dueFee": 8000,
+            "paidFee": 10000,
+            "dueFee": 2000,
             "takenBook": false,
             "invoices": [
                 {
                     "id": "INV-2026-0819",
                     "date": "2026-04-15",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1077",
+                    "date": "2026-07-01",
+                    "amount": 6000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1084"
+            "registrationId": "REG-1084",
+            "nextPaymentDate": "2026-07-27",
+            "gender": "Male",
+            "notes": "NOT REACH"
         },
         {
             "id": "BC-161",
@@ -13717,32 +14813,54 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0822",
                     "date": "2026-04-20",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0821",
                     "date": "2026-04-20",
-                    "amount": 800
+                    "amount": 800,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0827",
                     "date": "2026-05-02",
-                    "amount": 1200
+                    "amount": 1200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0866",
                     "date": "2026-05-23",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0948",
                     "date": "2026-06-13",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1083"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1083",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786513074166",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786513074166,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-161",
+                    "studentName": "Naimur Rahman",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "GD-252",
@@ -13766,17 +14884,34 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0823",
                     "date": "2026-03-28",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0824",
                     "date": "2026-04-26",
-                    "amount": 6000
+                    "amount": 6000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1082"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1082",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794488843958",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488843958,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-252",
+                    "studentName": "Khoshi Akter",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "GD-255",
@@ -13789,28 +14924,52 @@ window.migratedDatabase = {
             "course": "Graphic Design",
             "batch": "Batch 31",
             "registrationDate": "2026-04-28",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 12000,
-            "discountFee": 0,
-            "netFee": 12000,
+            "discountFee": 2000,
+            "netFee": 10000,
             "paidFee": 10000,
-            "dueFee": 2000,
+            "dueFee": 0,
             "takenBook": false,
             "invoices": [
                 {
                     "id": "INV-2026-0825",
                     "date": "2026-04-28",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0828",
                     "date": "2026-05-02",
-                    "amount": 9000
+                    "amount": 9000,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1073",
+                    "date": "2026-06-30",
+                    "amount": 0,
+                    "waivedAmount": 2000,
+                    "paymentType": "Dues Waived"
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1081"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1081",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794488549624",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488549624,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-255",
+                    "studentName": "Eklas Uddin",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "GD-256",
@@ -13834,12 +14993,28 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0826",
                     "date": "2026-04-30",
-                    "amount": 11000
+                    "amount": 11000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1080"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1080",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794488550337",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488550337,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-256",
+                    "studentName": "Shahriar Hossain Shihab",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "GD-257",
@@ -13863,17 +15038,34 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0829",
                     "date": "2026-05-02",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0840",
                     "date": "2026-05-06",
-                    "amount": 9000
+                    "amount": 9000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1079"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1079",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794488550925",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488550925,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-257",
+                    "studentName": "Md. Arafat Amin Jesan",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "BC-162",
@@ -13897,7 +15089,8 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0831",
                     "date": "2026-05-03",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0831",
@@ -13907,12 +15100,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0841",
                     "date": "2026-05-11",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1078"
+            "registrationId": "REG-1078",
+            "gender": "Male"
         },
         {
             "id": "BC-163",
@@ -13936,22 +15131,42 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0832",
                     "date": "2026-05-04",
-                    "amount": 2800
+                    "amount": 2800,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0833",
                     "date": "2026-05-04",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0837",
                     "date": "2026-05-06",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1077"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1077",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786513014799",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786513014799,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-163",
+                    "studentName": "Md. Humayun Kabir",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-164",
@@ -13975,12 +15190,30 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0834",
                     "date": "2026-05-05",
-                    "amount": 3500
+                    "amount": 3500,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1076"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1076",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786512979500",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786512979500,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-164",
+                    "studentName": "Mahafujur Rahman Alvee",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-165",
@@ -13993,28 +15226,55 @@ window.migratedDatabase = {
             "course": "Basic Computer",
             "batch": "Batch 43",
             "registrationDate": "2026-05-05",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 4000,
             "discountFee": 500,
             "netFee": 3500,
-            "paidFee": 3499,
-            "dueFee": 1,
+            "paidFee": 3500,
+            "dueFee": 0,
             "takenBook": true,
             "invoices": [
                 {
                     "id": "INV-2026-0835",
                     "date": "2026-05-05",
-                    "amount": 3499
+                    "amount": 3499,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0836",
                     "date": "2026-05-05",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1122",
+                    "date": "2026-08-12",
+                    "amount": 1,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1075"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1075",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786512935551",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786512935551,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-165",
+                    "studentName": "Faujia Sultana",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-166",
@@ -14038,12 +15298,30 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0838",
                     "date": "2026-05-06",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1074"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1074",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786512696532",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786512696532,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-166",
+                    "studentName": "Akteroj Jaman",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "GD-258",
@@ -14067,19 +15345,35 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0839",
                     "date": "2026-05-06",
-                    "amount": 12000
+                    "amount": 12000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1073"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1073",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794488551461",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488551461,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-258",
+                    "studentName": "Ahsan Tamzid",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "BC-167",
-            "name": "Kazi Ayej Hossain Rakib",
+            "name": "Kazi Ayej Hossen Rakib",
             "phone": "01612876336",
-            "fatherName": "Kazi Robel",
-            "motherName": "Mst. Konika",
+            "fatherName": "Kazi Eshakur Rahman",
+            "motherName": "Mst. Kanika Akter",
             "guardianPhone": "01863650434",
             "address": "Comilla",
             "course": "Basic Computer",
@@ -14096,22 +15390,54 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0844",
                     "date": "2026-05-12",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0843",
                     "date": "2026-05-12",
-                    "amount": 300
+                    "amount": 300,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0931",
                     "date": "2026-06-10",
-                    "amount": 2700
+                    "amount": 2700,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1072"
+            "certified": true,
+            "certificateDate": "2026-08-03",
+            "registrationId": "REG-1072",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1785755137411",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-03",
+                    "timestamp": 1785755137411,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-167",
+                    "studentName": "Kazi Ayej Hossain Rakib",
+                    "course": "Basic Computer"
+                },
+                {
+                    "id": "AUD-1786949395782",
+                    "type": "Profile Edit",
+                    "date": "2026-08-17",
+                    "timestamp": 1786949395782,
+                    "details": "Name: 'Kazi Ayej Hossain Rakib' -> 'Kazi Ayej Hossen Rakib', Father: 'Kazi Robel' -> 'Kazi Eshakur Rahman', Mother: 'Mst. Konika' -> 'Mst. Kanika Akter'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-167",
+                    "studentName": "Kazi Ayej Hossen Rakib",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-168",
@@ -14135,22 +15461,42 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0846",
                     "date": "2026-05-12",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0845",
                     "date": "2026-05-12",
-                    "amount": 2800
+                    "amount": 2800,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1026",
                     "date": "2026-06-21",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1071"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1071",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786520251540",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786520251540,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-168",
+                    "studentName": "Nadia Tasnim Mim",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "SE-34",
@@ -14174,17 +15520,36 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0848",
                     "date": "2026-05-12",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1009",
                     "date": "2026-06-18",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1071"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1071",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786534539592",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786534539592,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-34",
+                    "studentName": "Nadia Tasnim Mim",
+                    "course": "Spoken English"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "GD-259",
@@ -14208,12 +15573,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0849",
                     "date": "2026-05-13",
-                    "amount": 10000
+                    "amount": 10000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1070"
+            "registrationId": "REG-1070",
+            "gender": "Male"
         },
         {
             "id": "BC-169",
@@ -14237,27 +15604,60 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0851",
                     "date": "2026-05-16",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0850",
                     "date": "2026-05-16",
-                    "amount": 800
+                    "amount": 800,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0937",
                     "date": "2026-06-11",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1051",
                     "date": "2026-06-23",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1069"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1069",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786520199097",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786520199097,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-169",
+                    "studentName": "KAZI SHADIA MOKARROM",
+                    "course": "Basic Computer"
+                },
+                {
+                    "id": "AUD-1786520223084",
+                    "type": "Profile Edit",
+                    "date": "2026-08-12",
+                    "timestamp": 1786520223084,
+                    "details": "Gender: 'Male' -> 'Female'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-169",
+                    "studentName": "KAZI SHADIA MOKARROM",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "SE-35",
@@ -14281,22 +15681,42 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0852",
                     "date": "2026-05-16",
-                    "amount": 500
+                    "amount": 500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0963",
                     "date": "2026-06-14",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1052",
                     "date": "2026-06-23",
-                    "amount": 500
+                    "amount": 500,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1069"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1069",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786534522295",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786534522295,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-35",
+                    "studentName": "KAZI SHADIA MOKARROM",
+                    "course": "Spoken English"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-170",
@@ -14320,17 +15740,22 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0853",
                     "date": "2026-05-17",
-                    "amount": 300
+                    "amount": 300,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0854",
                     "date": "2026-05-17",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1068"
+            "registrationId": "REG-1068",
+            "notes": "Terminate Student",
+            "nextPaymentDate": "",
+            "gender": "Male"
         },
         {
             "id": "BC-171",
@@ -14354,22 +15779,40 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0858",
                     "date": "2026-05-18",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0857",
                     "date": "2026-05-18",
-                    "amount": 800
+                    "amount": 800,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1024",
                     "date": "2026-06-20",
-                    "amount": 3200
+                    "amount": 3200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1067"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1067",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786522857434",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786522857434,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-171",
+                    "studentName": "Md. Jihad",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "BC-172",
@@ -14393,12 +15836,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0860",
                     "date": "2026-05-19",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0861",
                     "date": "2026-05-19",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1070",
@@ -14409,9 +15854,26 @@ window.migratedDatabase = {
                     "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1066"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1066",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786520180367",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786520180367,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-172",
+                    "studentName": "Jannatul Faiza",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "SE-36",
@@ -14435,12 +15897,30 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0859",
                     "date": "2026-05-19",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1066"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1066",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786534503590",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786534503590,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-36",
+                    "studentName": "Jannatul Faiza",
+                    "course": "Spoken English"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-174",
@@ -14464,22 +15944,42 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0862",
                     "date": "2026-05-21",
-                    "amount": 2800
+                    "amount": 2800,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0863",
                     "date": "2026-05-21",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1042",
                     "date": "2026-06-22",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1065"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1065",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786520146151",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786520146151,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-174",
+                    "studentName": "Farhan Fuad Sarin",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "SE-24",
@@ -14503,12 +16003,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0865",
                     "date": "2026-05-21",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1063"
+            "registrationId": "REG-1063",
+            "gender": "Male"
         },
         {
             "id": "SE-25",
@@ -14532,12 +16034,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0864",
                     "date": "2026-01-11",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1064"
+            "registrationId": "REG-1064",
+            "gender": "Male"
         },
         {
             "id": "BC-173",
@@ -14561,22 +16065,42 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0867",
                     "date": "2026-05-23",
-                    "amount": 800
+                    "amount": 800,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0868",
                     "date": "2026-05-23",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0943",
                     "date": "2026-06-13",
-                    "amount": 3200
+                    "amount": 3200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1062"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1062",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786522133688",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786522133688,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-173",
+                    "studentName": "Daiyan Ibrahim",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-175",
@@ -14600,27 +16124,48 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0870",
                     "date": "2026-05-23",
-                    "amount": 800
+                    "amount": 800,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0871",
                     "date": "2026-05-23",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0944",
                     "date": "2026-06-13",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0960",
                     "date": "2026-06-14",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1061"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1061",
+            "gender": "Male",
+            "notes": "ok",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786522116585",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786522116585,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-175",
+                    "studentName": "Bijoy Kumar Sarker Srijan",
+                    "course": "Basic Computer"
+                }
+            ],
+            "nextPaymentDate": ""
         },
         {
             "id": "GD-260",
@@ -14633,23 +16178,57 @@ window.migratedDatabase = {
             "course": "Graphic Design",
             "batch": "Batch 32",
             "registrationDate": "2026-05-23",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 15000,
             "discountFee": 3000,
             "netFee": 12000,
-            "paidFee": 3000,
-            "dueFee": 9000,
+            "paidFee": 12000,
+            "dueFee": 0,
             "takenBook": false,
             "invoices": [
                 {
                     "id": "INV-2026-0873",
                     "date": "2026-05-23",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1117",
+                    "date": "2026-07-25",
+                    "amount": 3000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1123",
+                    "date": "2026-08-13",
+                    "amount": 6000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Rohan",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1061"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1061",
+            "gender": "Male",
+            "notes": "ok",
+            "nextPaymentDate": "",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794488514205-916",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488514205,
+                    "details": "Graduation certificate awarded for course: Graphic Design (Bulk)",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-260",
+                    "studentName": "Bijoy Kumar Sarker Srijan",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "SE-37",
@@ -14673,17 +16252,36 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0869",
                     "date": "2026-05-23",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0989",
                     "date": "2026-06-17",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1062"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1062",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786535247956",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786535247956,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-37",
+                    "studentName": "Daiyan Ibrahim",
+                    "course": "Spoken English"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "SE-38",
@@ -14696,28 +16294,55 @@ window.migratedDatabase = {
             "course": "Spoken English",
             "batch": "Batch 6",
             "registrationDate": "2026-05-23",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 7000,
             "discountFee": 3000,
             "netFee": 4000,
-            "paidFee": 2000,
-            "dueFee": 2000,
+            "paidFee": 4000,
+            "dueFee": 0,
             "takenBook": false,
             "invoices": [
                 {
                     "id": "INV-2026-0872",
                     "date": "2026-05-23",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0945",
                     "date": "2026-06-13",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1117",
+                    "date": "2026-07-25",
+                    "amount": 2000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1061"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1061",
+            "gender": "Male",
+            "notes": "ok",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786535190432",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786535190432,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-38",
+                    "studentName": "Bijoy Kumar Sarker Srijan",
+                    "course": "Spoken English"
+                }
+            ],
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-176",
@@ -14741,22 +16366,42 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0874",
                     "date": "2026-05-24",
-                    "amount": 1800
+                    "amount": 1800,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0875",
                     "date": "2026-05-24",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0955",
                     "date": "2026-06-13",
-                    "amount": 2200
+                    "amount": 2200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1060"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1060",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786522088162",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786522088162,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-176",
+                    "studentName": "Khan Md Ashraful",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-177",
@@ -14780,22 +16425,42 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0878",
                     "date": "2026-05-24",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0877",
                     "date": "2026-05-24",
-                    "amount": 1800
+                    "amount": 1800,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0999",
                     "date": "2026-06-17",
-                    "amount": 2200
+                    "amount": 2200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1059"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1059",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786521931805",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786521931805,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-177",
+                    "studentName": "Md. Fahim Sharier Nafis",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "SE-39",
@@ -14819,17 +16484,36 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0876",
                     "date": "2026-05-24",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0956",
                     "date": "2026-06-13",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1060"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1060",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786535121731",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786535121731,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-39",
+                    "studentName": "Khan Md Ashraful",
+                    "course": "Spoken English"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "SE-40",
@@ -14853,17 +16537,36 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0879",
                     "date": "2026-05-24",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1000",
                     "date": "2026-06-17",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1059"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1059",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786535015908",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786535015908,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-40",
+                    "studentName": "Md. Fahim Sharier Nafis",
+                    "course": "Spoken English"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-178",
@@ -14887,22 +16590,42 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0882",
                     "date": "2026-05-25",
-                    "amount": 300
+                    "amount": 300,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0883",
                     "date": "2026-05-25",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0990",
                     "date": "2026-06-17",
-                    "amount": 2700
+                    "amount": 2700,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1057"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1057",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786520033857",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786520033857,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-178",
+                    "studentName": "Mahamudul Hasan",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-179",
@@ -14926,28 +16649,33 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0885",
                     "date": "2026-05-25",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0884",
                     "date": "2026-05-25",
-                    "amount": 300
+                    "amount": 300,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0947",
                     "date": "2026-06-13",
-                    "amount": 2700
+                    "amount": 2700,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1056"
+            "registrationId": "REG-1056",
+            "gender": "Male",
+            "auditLogs": []
         },
         {
             "id": "SE-41",
-            "name": "Ariyan Mahamud",
+            "name": "Ariyan Mahmud",
             "phone": "01724308081",
-            "fatherName": "Jalis Mahamud Khan",
+            "fatherName": "Jalis Mahmud Khan",
             "motherName": "",
             "guardianPhone": "01715203080",
             "address": "Comilla",
@@ -14965,17 +16693,46 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0880",
                     "date": "2026-05-25",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0922",
                     "date": "2026-06-08",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1058"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1058",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786534479872",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786534479872,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-41",
+                    "studentName": "Ariyan Mahamud",
+                    "course": "Spoken English"
+                },
+                {
+                    "id": "AUD-1787223931424",
+                    "type": "Profile Edit",
+                    "date": "2026-08-20",
+                    "timestamp": 1787223931424,
+                    "details": "Name: 'Ariyan Mahamud' -> 'Ariyan Mahmud', Father: 'Jalis Mahamud Khan' -> 'Jalis Mahmud Khan'",
+                    "collectedBy": "Rohan",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-41",
+                    "studentName": "Ariyan Mahmud",
+                    "course": "Spoken English"
+                }
+            ]
         },
         {
             "id": "SE-42",
@@ -14999,17 +16756,36 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0881",
                     "date": "2026-05-25",
-                    "amount": 500
+                    "amount": 500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0991",
                     "date": "2026-06-17",
-                    "amount": 3500
+                    "amount": 3500,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1057"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1057",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786534286962",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786534286962,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-42",
+                    "studentName": "Mahamudul Hasan",
+                    "course": "Spoken English"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "SE-43",
@@ -15033,23 +16809,26 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0886",
                     "date": "2026-05-25",
-                    "amount": 500
+                    "amount": 500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0946",
                     "date": "2026-06-13",
-                    "amount": 3500
+                    "amount": 3500,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1056"
+            "registrationId": "REG-1056",
+            "gender": "Male"
         },
         {
             "id": "SE-44",
-            "name": "Tasmia Mahmud",
+            "name": "Tasmia Mahmud Taiba",
             "phone": "01715737625",
-            "fatherName": "Hasan Mahmud",
+            "fatherName": "Md. Hasan Mahmud Khan",
             "motherName": "",
             "guardianPhone": "01716573070",
             "address": "Comilla",
@@ -15067,23 +16846,76 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0887",
                     "date": "2026-05-25",
-                    "amount": 500
+                    "amount": 500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0921",
                     "date": "2026-06-08",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1055"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1055",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786534182133",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786534182133,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-44",
+                    "studentName": "Tasmia Mahmud",
+                    "course": "Spoken English"
+                },
+                {
+                    "id": "AUD-1786534198751",
+                    "type": "Profile Edit",
+                    "date": "2026-08-12",
+                    "timestamp": 1786534198751,
+                    "details": "Gender: 'Male' -> 'Female'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-44",
+                    "studentName": "Tasmia Mahmud",
+                    "course": "Spoken English"
+                },
+                {
+                    "id": "AUD-1787224313389",
+                    "type": "Profile Edit",
+                    "date": "2026-08-20",
+                    "timestamp": 1787224313389,
+                    "details": "Name: 'Tasmia Mahmud' -> 'Tasmia Mahmud Taiba', Father: 'Hasan Mahmud' -> 'Hasan Mahmud Khan'",
+                    "collectedBy": "Rohan",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-44",
+                    "studentName": "Tasmia Mahmud Taiba",
+                    "course": "Spoken English"
+                },
+                {
+                    "id": "AUD-1787224430268",
+                    "type": "Profile Edit",
+                    "date": "2026-08-20",
+                    "timestamp": 1787224430268,
+                    "details": "Father: 'Hasan Mahmud Khan' -> 'Md. Hasan Mahmud Khan'",
+                    "collectedBy": "Rohan",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-44",
+                    "studentName": "Tasmia Mahmud Taiba",
+                    "course": "Spoken English"
+                }
+            ]
         },
         {
             "id": "BC-153",
-            "name": "SIMLA AKTER PRINTI",
+            "name": "SHIMLA AKHTER PRINTI",
             "phone": "01770122821",
-            "fatherName": "MD AYED ALI",
+            "fatherName": "MD AYET ALI",
             "motherName": "",
             "guardianPhone": "01703341161",
             "address": "Comilla",
@@ -15101,17 +16933,58 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0890",
                     "date": "2026-01-31",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0891",
                     "date": "2026-01-31",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1053"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1053",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786517685662",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786517685662,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-153",
+                    "studentName": "SIMLA AKTER PRINTI",
+                    "course": "Basic Computer"
+                },
+                {
+                    "id": "AUD-1788005581925",
+                    "type": "Profile Edit",
+                    "date": "2026-08-29",
+                    "timestamp": 1788005581925,
+                    "details": "Name: 'SIMLA AKTER PRINTI' -> 'SHIMLA AKTHER PRINTI', Father: 'MD AYED ALI' -> 'MD AYET ALI'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-153",
+                    "studentName": "SHIMLA AKTHER PRINTI",
+                    "course": "Basic Computer"
+                },
+                {
+                    "id": "AUD-1788005636342",
+                    "type": "Profile Edit",
+                    "date": "2026-08-29",
+                    "timestamp": 1788005636342,
+                    "details": "Name: 'SHIMLA AKTHER PRINTI' -> 'SHIMLA AKHTER PRINTI'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-153",
+                    "studentName": "SHIMLA AKHTER PRINTI",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "BC-156",
@@ -15135,17 +17008,34 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0888",
                     "date": "2026-02-26",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0889",
                     "date": "2026-02-26",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1054"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1054",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786517425843",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786517425843,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-156",
+                    "studentName": "ABDULLAH AL NOMAN",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "BC-180",
@@ -15169,17 +17059,36 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0892",
                     "date": "2026-06-02",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0893",
                     "date": "2026-06-02",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1052"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1052",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786521714078",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786521714078,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-180",
+                    "studentName": "Shaharuk Jamin Siam",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "call dhore nai",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-181",
@@ -15203,17 +17112,36 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0894",
                     "date": "2026-06-02",
-                    "amount": 2800
+                    "amount": 2800,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0895",
                     "date": "2026-06-02",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1051"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1051",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786521659216",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786521659216,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-181",
+                    "studentName": "Mst. Nusrat Tasnim",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "SE-45",
@@ -15237,12 +17165,30 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0896",
                     "date": "2026-06-02",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1051"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1051",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786534999443",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786534999443,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-45",
+                    "studentName": "Mst. Nusrat Tasnim",
+                    "course": "Spoken English"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-182",
@@ -15255,28 +17201,55 @@ window.migratedDatabase = {
             "course": "Basic Computer",
             "batch": "Batch 44",
             "registrationDate": "2026-06-04",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 6000,
             "discountFee": 2000,
             "netFee": 4000,
-            "paidFee": 3800,
-            "dueFee": 200,
+            "paidFee": 4000,
+            "dueFee": 0,
             "takenBook": true,
             "invoices": [
                 {
                     "id": "INV-2026-0898",
                     "date": "2026-06-04",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0897",
                     "date": "2026-06-04",
-                    "amount": 3800
+                    "amount": 3800,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1095",
+                    "date": "2026-07-05",
+                    "amount": 200,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Rohan",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1050"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1050",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786520015275",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786520015275,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-182",
+                    "studentName": "Musfiqur Rahman",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-183",
@@ -15289,28 +17262,64 @@ window.migratedDatabase = {
             "course": "Basic Computer",
             "batch": "Batch 45",
             "registrationDate": "2026-06-04",
-            "status": "Partial",
-            "totalFee": 6000,
+            "status": "Paid",
+            "totalFee": 6200,
             "discountFee": 2000,
-            "netFee": 4000,
-            "paidFee": 2000,
-            "dueFee": 2000,
-            "takenBook": false,
+            "netFee": 4200,
+            "paidFee": 4200,
+            "dueFee": 0,
+            "takenBook": true,
             "invoices": [
                 {
                     "id": "INV-2026-0900",
                     "date": "2026-06-04",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0998",
                     "date": "2026-06-17",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1072",
+                    "date": "2026-06-29",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1103",
+                    "date": "2026-07-09",
+                    "amount": 2000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1049"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1049",
+            "bookIssueDate": "2026-06-29",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786521615432",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786521615432,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-183",
+                    "studentName": "Samia Akter Ushmita",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-184",
@@ -15334,25 +17343,44 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0902",
                     "date": "2026-06-04",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1008",
                     "date": "2026-06-18",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1047"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1047",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786519998313",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786519998313,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-184",
+                    "studentName": "Sojid Mahmud",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "NR",
+            "nextPaymentDate": ""
         },
         {
             "id": "GD-261",
             "name": "Towsif Zaman Bhuiyan Rahee",
-            "phone": "01816840047",
+            "phone": "01940108693",
             "fatherName": "Mohammad Kamruzzaman Bhuiyan",
             "motherName": "Mst. Nasrin Akter",
-            "guardianPhone": "01816840048",
+            "guardianPhone": "01816840047",
             "address": "Comilla",
             "course": "Graphic Design",
             "batch": "Batch 32",
@@ -15368,12 +17396,42 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0901",
                     "date": "2026-06-04",
-                    "amount": 10000
+                    "amount": 10000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1048"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1048",
+            "auditLogs": [
+                {
+                    "id": "AUD-1782816815833",
+                    "type": "Profile Edit",
+                    "date": "2026-06-30",
+                    "timestamp": 1782816815833,
+                    "details": "Phone: '01816840047' -> '01940108693', Guardian: '01816840048' -> '01816840047'",
+                    "collectedBy": "sishir",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-261",
+                    "studentName": "Towsif Zaman Bhuiyan Rahee",
+                    "course": "Graphic Design"
+                },
+                {
+                    "id": "AUD-1794488514205-847",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488514205,
+                    "details": "Graduation certificate awarded for course: Graphic Design (Bulk)",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-261",
+                    "studentName": "Towsif Zaman Bhuiyan Rahee",
+                    "course": "Graphic Design"
+                }
+            ],
+            "gender": "Male",
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "GD-262",
@@ -15397,17 +17455,36 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0903",
                     "date": "2026-06-04",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0907",
                     "date": "2026-06-06",
-                    "amount": 6000
+                    "amount": 6000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1047"
+            "certified": true,
+            "certificateDate": "2026-09-28",
+            "registrationId": "REG-1047",
+            "gender": "Male",
+            "notes": "NR",
+            "nextPaymentDate": "",
+            "auditLogs": [
+                {
+                    "id": "AUD-1790593682941",
+                    "type": "Certificate Issued",
+                    "date": "2026-09-28",
+                    "timestamp": 1790593682941,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "GD-262",
+                    "studentName": "Sojid Mahmud",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "SE-46",
@@ -15431,12 +17508,30 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0899",
                     "date": "2026-06-04",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1050"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1050",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786534162108",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786534162108,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-46",
+                    "studentName": "Musfiqur Rahman",
+                    "course": "Spoken English"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-185",
@@ -15460,27 +17555,48 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0905",
                     "date": "2026-06-06",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0904",
                     "date": "2026-06-06",
-                    "amount": 300
+                    "amount": 300,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0941",
                     "date": "2026-06-13",
-                    "amount": 3500
+                    "amount": 3500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0942",
                     "date": "2026-06-13",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1046"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1046",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786521589088",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786521589088,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-185",
+                    "studentName": "Md. Rafiqul Islam Tasin",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "SE-47",
@@ -15504,17 +17620,36 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0906",
                     "date": "2026-06-06",
-                    "amount": 500
+                    "amount": 500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0940",
                     "date": "2026-06-13",
-                    "amount": 3500
+                    "amount": 3500,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1046"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1046",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786534985262",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786534985262,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-47",
+                    "studentName": "Md. Rafiqul Islam Tasin",
+                    "course": "Spoken English"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-186",
@@ -15522,7 +17657,7 @@ window.migratedDatabase = {
             "phone": "01337692252",
             "fatherName": "Md. Fakhrul Islam Faruk",
             "motherName": "Mst. Aklema Akter",
-            "guardianPhone": "01741264011",
+            "guardianPhone": "01768301459",
             "address": "Comilla",
             "course": "Basic Computer",
             "batch": "Batch 47",
@@ -15538,27 +17673,60 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0909",
                     "date": "2026-06-07",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0908",
                     "date": "2026-06-07",
-                    "amount": 1800
+                    "amount": 1800,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0993",
                     "date": "2026-06-17",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1011",
                     "date": "2026-06-18",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1045"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1045",
+            "auditLogs": [
+                {
+                    "id": "AUD-1784182877647",
+                    "type": "Profile Edit",
+                    "date": "2026-07-16",
+                    "timestamp": 1784182877647,
+                    "details": "Guardian: '01741264011' -> '01768301459'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-186",
+                    "studentName": "Nayim Ahmed Alvi",
+                    "course": "Basic Computer"
+                },
+                {
+                    "id": "AUD-1786533341557",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786533341557,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-186",
+                    "studentName": "Nayim Ahmed Alvi",
+                    "course": "Basic Computer"
+                }
+            ],
+            "gender": "Male",
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "GD-263",
@@ -15566,7 +17734,7 @@ window.migratedDatabase = {
             "phone": "01337692252",
             "fatherName": "Md. Fakhrul Islam Faruk",
             "motherName": "Mst. Aklema Akter",
-            "guardianPhone": "01741264011",
+            "guardianPhone": "01768301459",
             "address": "Comilla",
             "course": "Graphic Design",
             "batch": "Batch 32",
@@ -15582,17 +17750,36 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0910",
                     "date": "2026-06-07",
-                    "amount": 6000
+                    "amount": 6000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0992",
                     "date": "2026-06-17",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1045"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1045",
+            "gender": "Male",
+            "notes": "ok",
+            "nextPaymentDate": "",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794488514205-693",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488514205,
+                    "details": "Graduation certificate awarded for course: Graphic Design (Bulk)",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-263",
+                    "studentName": "Nayim Ahmed Alvi",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "SE-48",
@@ -15600,7 +17787,7 @@ window.migratedDatabase = {
             "phone": "01337692252",
             "fatherName": "Md. Fakhrul Islam Faruk",
             "motherName": "Mst. Aklema Akter",
-            "guardianPhone": "01741264011",
+            "guardianPhone": "01768301459",
             "address": "Comilla",
             "course": "Spoken English",
             "batch": "Batch 5",
@@ -15616,17 +17803,36 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0911",
                     "date": "2026-06-07",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0994",
                     "date": "2026-06-17",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1045"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1045",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786534141546",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786534141546,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-48",
+                    "studentName": "Nayim Ahmed Alvi",
+                    "course": "Spoken English"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-187",
@@ -15650,26 +17856,57 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0912",
                     "date": "2026-06-08",
-                    "amount": 3500
+                    "amount": 3500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1027",
                     "date": "2026-06-21",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1044"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1044",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786519962872",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786519962872,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-187",
+                    "studentName": "Taifa Noor Inti",
+                    "course": "Basic Computer"
+                },
+                {
+                    "id": "AUD-1786520110025",
+                    "type": "Profile Edit",
+                    "date": "2026-08-12",
+                    "timestamp": 1786520110025,
+                    "details": "Gender: 'Male' -> 'Female'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-187",
+                    "studentName": "Taifa Noor Inti",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-188",
             "name": "Md Anas Gazi",
-            "phone": "01600900457",
+            "phone": "01805931067",
             "fatherName": "Md Shah Alam",
             "motherName": "",
-            "guardianPhone": "01319070327",
-            "address": "Comilla",
+            "guardianPhone": "01790434797",
+            "address": "ComillaAA",
             "course": "Basic Computer",
             "batch": "Batch 47",
             "registrationDate": "2026-06-08",
@@ -15684,22 +17921,40 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0917",
                     "date": "2026-06-08",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0918",
                     "date": "2026-06-08",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0966",
                     "date": "2026-06-15",
-                    "amount": 500
+                    "amount": 500,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1042"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1042",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786533290642",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786533290642,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-188",
+                    "studentName": "Md Anas Gazi",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "BC-189",
@@ -15723,22 +17978,42 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0923",
                     "date": "2026-06-08",
-                    "amount": 500
+                    "amount": 500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0949",
                     "date": "2026-06-13",
-                    "amount": 3500
+                    "amount": 3500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1017",
                     "date": "2026-06-20",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1040"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1040",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786519942654",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786519942654,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-189",
+                    "studentName": "Israfil Ahammed Eshan",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-190",
@@ -15762,17 +18037,34 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0920",
                     "date": "2026-06-08",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1010",
                     "date": "2026-06-18",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1041"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1041",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786533221311",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786533221311,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-190",
+                    "studentName": "Jawad Affan",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "GD-264",
@@ -15796,26 +18088,45 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0914",
                     "date": "2026-06-08",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1001",
                     "date": "2026-06-17",
-                    "amount": 10000
+                    "amount": 10000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1043"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1043",
+            "gender": "Male",
+            "notes": "ok",
+            "nextPaymentDate": "",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794488514205-404",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488514205,
+                    "details": "Graduation certificate awarded for course: Graphic Design (Bulk)",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-264",
+                    "studentName": "Obaidul Haque",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "GD-265",
             "name": "Md Anas Gazi",
-            "phone": "01600900457",
+            "phone": "01805931067",
             "fatherName": "Md Shah Alam",
             "motherName": "",
-            "guardianPhone": "01319070327",
-            "address": "Comilla",
+            "guardianPhone": "01790434797",
+            "address": "ComillaAA",
             "course": "Graphic Design",
             "batch": "Batch 33",
             "registrationDate": "2026-06-08",
@@ -15830,16 +18141,18 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0915",
                     "date": "2026-06-08",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0968",
                     "date": "2026-06-15",
-                    "amount": 11000
+                    "amount": 11000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
+            "certified": true,
+            "certificateDate": "2026-11-12",
             "registrationId": "REG-1042",
             "auditLogs": [
                 {
@@ -15853,8 +18166,57 @@ window.migratedDatabase = {
                     "studentId": "GD-265",
                     "studentName": "Md Anas Gazi",
                     "course": "Graphic Design"
+                },
+                {
+                    "id": "AUD-1782911073985",
+                    "type": "Profile Edit",
+                    "date": "2026-07-01",
+                    "timestamp": 1782911073985,
+                    "details": "Guardian: '01319070327' -> '01790434797'",
+                    "collectedBy": "sishir",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-265",
+                    "studentName": "Md Anas Gazi",
+                    "course": "Graphic Design"
+                },
+                {
+                    "id": "AUD-1782976593067",
+                    "type": "Profile Edit",
+                    "date": "2026-07-02",
+                    "timestamp": 1782976593067,
+                    "details": "Phone: '01600900457' -> '01805931067'",
+                    "collectedBy": "sishir",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-265",
+                    "studentName": "Md Anas Gazi",
+                    "course": "Graphic Design"
+                },
+                {
+                    "id": "AUD-1784200248312",
+                    "type": "Profile Edit",
+                    "date": "2026-07-16",
+                    "timestamp": 1784200248313,
+                    "details": "Address: 'Comilla' -> 'ComillaAA'",
+                    "collectedBy": "bIJOY",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-265",
+                    "studentName": "Md Anas Gazi",
+                    "course": "Graphic Design"
+                },
+                {
+                    "id": "AUD-1794489040201-854",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794489040201,
+                    "details": "Graduation certificate awarded for course: Graphic Design (Bulk)",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-265",
+                    "studentName": "Md Anas Gazi",
+                    "course": "Graphic Design"
                 }
-            ]
+            ],
+            "gender": "Male"
         },
         {
             "id": "SE-49",
@@ -15878,21 +18240,39 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0913",
                     "date": "2026-06-08",
-                    "amount": 4500
+                    "amount": 4500,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1044"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1044",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786534080039",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786534080039,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-49",
+                    "studentName": "Taifa Noor Inti",
+                    "course": "Spoken English"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "SE-50",
             "name": "Md Anas Gazi",
-            "phone": "01600900457",
+            "phone": "01805931067",
             "fatherName": "Md Shah Alam",
             "motherName": "",
-            "guardianPhone": "01319070327",
-            "address": "Comilla",
+            "guardianPhone": "01790434797",
+            "address": "ComillaAA",
             "course": "Spoken English",
             "batch": "Batch 5",
             "registrationDate": "2026-06-08",
@@ -15907,17 +18287,34 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0916",
                     "date": "2026-06-08",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0967",
                     "date": "2026-06-15",
-                    "amount": 500
+                    "amount": 500,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1042"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1042",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786534045024",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786534045024,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-50",
+                    "studentName": "Md Anas Gazi",
+                    "course": "Spoken English"
+                }
+            ]
         },
         {
             "id": "SE-51",
@@ -15941,17 +18338,36 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0924",
                     "date": "2026-06-08",
-                    "amount": 500
+                    "amount": 500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0950",
                     "date": "2026-06-13",
-                    "amount": 3500
+                    "amount": 3500,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1040"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1040",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786534016585",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786534016585,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-51",
+                    "studentName": "Israfil Ahammed Eshan",
+                    "course": "Spoken English"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "SE-52",
@@ -15975,17 +18391,34 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0925",
                     "date": "2026-06-08",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0939",
                     "date": "2026-06-13",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1039"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1039",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786534966388",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786534966388,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-52",
+                    "studentName": "JANNATUL AFRIN",
+                    "course": "Spoken English"
+                }
+            ]
         },
         {
             "id": "BC-191",
@@ -16009,17 +18442,34 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0926",
                     "date": "2026-06-09",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1031",
                     "date": "2026-06-21",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1038"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1038",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786533180119",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786533180119,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-191",
+                    "studentName": "Sajjad Hossain",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "BC-192",
@@ -16043,17 +18493,34 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0932",
                     "date": "2026-06-10",
-                    "amount": 3500
+                    "amount": 3500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1041",
                     "date": "2026-06-22",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1036"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1036",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786533134046",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786533134046,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-192",
+                    "studentName": "MOHAMMOD ARMAN HOSSAIN SIAM",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "BC-193",
@@ -16077,22 +18544,40 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0930",
                     "date": "2026-06-10",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1016",
                     "date": "2026-06-20",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1032",
                     "date": "2026-06-21",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1037"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1037",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786533084249",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786533084249,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-193",
+                    "studentName": "Tousif",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "BC-194",
@@ -16109,24 +18594,36 @@ window.migratedDatabase = {
             "totalFee": 6000,
             "discountFee": 3000,
             "netFee": 3000,
-            "paidFee": 499,
-            "dueFee": 2501,
+            "paidFee": 2499,
+            "dueFee": 501,
             "takenBook": true,
             "invoices": [
                 {
                     "id": "INV-2026-0934",
                     "date": "2026-06-10",
-                    "amount": 499
+                    "amount": 499,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1053",
                     "date": "2026-06-23",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1120",
+                    "date": "2026-08-04",
+                    "amount": 2000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1035"
+            "registrationId": "REG-1035",
+            "gender": "Male",
+            "nextPaymentDate": "2026-08-11"
         },
         {
             "id": "SE-53",
@@ -16150,12 +18647,28 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0933",
                     "date": "2026-06-10",
-                    "amount": 4500
+                    "amount": 4500,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1036"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1036",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786533931582",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786533931582,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-53",
+                    "studentName": "MOHAMMOD ARMAN HOSSAIN SIAM",
+                    "course": "Spoken English"
+                }
+            ]
         },
         {
             "id": "SE-54",
@@ -16179,12 +18692,15 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0935",
                     "date": "2026-06-10",
-                    "amount": 501
+                    "amount": 501,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1035"
+            "registrationId": "REG-1035",
+            "gender": "Male",
+            "nextPaymentDate": "2026-08-11"
         },
         {
             "id": "BC-195",
@@ -16208,17 +18724,34 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0936",
                     "date": "2026-06-11",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1025",
                     "date": "2026-06-20",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1034"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1034",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786522822520",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786522822520,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-195",
+                    "studentName": "Pronoy Chandra Bhowmik",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "BC-196",
@@ -16229,7 +18762,7 @@ window.migratedDatabase = {
             "guardianPhone": "01827928765",
             "address": "Comilla",
             "course": "Basic Computer",
-            "batch": "Batch 47",
+            "batch": "Batch 45",
             "registrationDate": "2026-06-11",
             "status": "Paid",
             "totalFee": 6000,
@@ -16242,17 +18775,48 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0938",
                     "date": "2026-06-11",
-                    "amount": 3500
+                    "amount": 3500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0971",
                     "date": "2026-06-16",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1033"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1033",
+            "auditLogs": [
+                {
+                    "id": "AUD-1783152125926",
+                    "type": "Batch Transfer",
+                    "date": "2026-07-04",
+                    "timestamp": 1783152125926,
+                    "details": "Batch: 'Batch 47' -> 'Batch 45'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-196",
+                    "studentName": "Rahat Mahmud",
+                    "course": "Basic Computer"
+                },
+                {
+                    "id": "AUD-1786520819623",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786520819623,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-196",
+                    "studentName": "Rahat Mahmud",
+                    "course": "Basic Computer"
+                }
+            ],
+            "gender": "Male",
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-197",
@@ -16265,33 +18829,59 @@ window.migratedDatabase = {
             "course": "Basic Computer",
             "batch": "Batch 47",
             "registrationDate": "2026-06-13",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 6000,
             "discountFee": 2000,
             "netFee": 4000,
-            "paidFee": 2000,
-            "dueFee": 2000,
+            "paidFee": 4000,
+            "dueFee": 0,
             "takenBook": true,
             "invoices": [
                 {
                     "id": "INV-2026-0952",
                     "date": "2026-06-13",
-                    "amount": 1800
+                    "amount": 1800,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0953",
                     "date": "2026-06-13",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0954",
                     "date": "2026-06-13",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1096",
+                    "date": "2026-07-05",
+                    "amount": 2000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1032"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1032",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786533041358",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786533041358,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-197",
+                    "studentName": "Jannatul Mawya Maisha",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "BC-198",
@@ -16315,17 +18905,34 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0957",
                     "date": "2026-06-13",
-                    "amount": 3500
+                    "amount": 3500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0959",
                     "date": "2026-06-13",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1031"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1031",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786532608948",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786532608948,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-198",
+                    "studentName": "Md. Kamor Hossain",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "SE-55",
@@ -16338,23 +18945,55 @@ window.migratedDatabase = {
             "course": "Spoken English",
             "batch": "Batch 5",
             "registrationDate": "2026-06-13",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 7000,
             "discountFee": 3000,
             "netFee": 4000,
-            "paidFee": 2000,
-            "dueFee": 2000,
+            "paidFee": 4000,
+            "dueFee": 0,
             "takenBook": false,
             "invoices": [
                 {
                     "id": "INV-2026-0951",
                     "date": "2026-06-13",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1096",
+                    "date": "2026-07-05",
+                    "amount": 1500,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1099",
+                    "date": "2026-07-08",
+                    "amount": 500,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1032"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1032",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786533913834",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786533913834,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-55",
+                    "studentName": "Jannatul Mawya Maisha",
+                    "course": "Spoken English"
+                }
+            ]
         },
         {
             "id": "SE-56",
@@ -16378,12 +19017,28 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0958",
                     "date": "2026-06-13",
-                    "amount": 3500
+                    "amount": 3500,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1031"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1031",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786533874455",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786533874455,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-56",
+                    "studentName": "Md. Kamor Hossain",
+                    "course": "Spoken English"
+                }
+            ]
         },
         {
             "id": "BC-199",
@@ -16396,28 +19051,55 @@ window.migratedDatabase = {
             "course": "Basic Computer",
             "batch": "Batch 46",
             "registrationDate": "2026-06-14",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 6000,
             "discountFee": 2000,
             "netFee": 4000,
-            "paidFee": 1500,
-            "dueFee": 2500,
+            "paidFee": 4000,
+            "dueFee": 0,
             "takenBook": true,
             "invoices": [
                 {
                     "id": "INV-2026-0962",
                     "date": "2026-06-14",
-                    "amount": 1500
+                    "amount": 1500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1056",
                     "date": "2026-06-24",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1100",
+                    "date": "2026-07-08",
+                    "amount": 2500,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1030"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1030",
+            "notes": "Class valo hoyeche. Class Korbe 09-08 theke",
+            "gender": "Male",
+            "nextPaymentDate": "2026-08-08",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786522807001",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786522807001,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-199",
+                    "studentName": "Zisan Ahammed",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "SE-57",
@@ -16430,23 +19112,49 @@ window.migratedDatabase = {
             "course": "Spoken English",
             "batch": "Batch 7",
             "registrationDate": "2026-06-14",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 7000,
             "discountFee": 3000,
             "netFee": 4000,
-            "paidFee": 1500,
-            "dueFee": 2500,
+            "paidFee": 4000,
+            "dueFee": 0,
             "takenBook": false,
             "invoices": [
                 {
                     "id": "INV-2026-0961",
                     "date": "2026-06-14",
-                    "amount": 1500
+                    "amount": 1500,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1092",
+                    "date": "2026-07-04",
+                    "amount": 2500,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Rohan",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1030"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1030",
+            "notes": "Class valo hoyeche. Class Korbe 09-08 theke",
+            "gender": "Male",
+            "nextPaymentDate": "2026-08-08",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786535683649",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786535683649,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-57",
+                    "studentName": "Zisan Ahammed",
+                    "course": "Spoken English"
+                }
+            ]
         },
         {
             "id": "BC-200",
@@ -16470,17 +19178,34 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0969",
                     "date": "2026-06-14",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1023",
                     "date": "2026-06-20",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1028"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1028",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786522785979",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786522785979,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-200",
+                    "studentName": "Irfanul Islam",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "BC-201",
@@ -16504,17 +19229,36 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0964",
                     "date": "2026-06-15",
-                    "amount": 3500
+                    "amount": 3500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1033",
                     "date": "2026-06-21",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1029"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1029",
+            "gender": "Male",
+            "notes": "Class valo hoyeche. Class Korbe 09-08 theke",
+            "nextPaymentDate": "2026-08-08",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786522764476",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786522764476,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-201",
+                    "studentName": "Adnan Safi",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "BC-202",
@@ -16538,17 +19282,46 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0970",
                     "date": "2026-06-15",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1022",
                     "date": "2026-06-20",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1027"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1027",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786522713469",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786522713469,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-202",
+                    "studentName": "Popy Khanom Choya",
+                    "course": "Basic Computer"
+                },
+                {
+                    "id": "AUD-1786522720858",
+                    "type": "Profile Edit",
+                    "date": "2026-08-12",
+                    "timestamp": 1786522720858,
+                    "details": "Gender: 'Male' -> 'Female'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-202",
+                    "studentName": "Popy Khanom Choya",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "SE-58",
@@ -16572,12 +19345,30 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0965",
                     "date": "2026-06-15",
-                    "amount": 4500
+                    "amount": 4500,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1029"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1029",
+            "gender": "Male",
+            "notes": "Class valo hoyeche. Class Korbe 09-08 theke",
+            "nextPaymentDate": "2026-08-08",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786535666413",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786535666413,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-58",
+                    "studentName": "Adnan Safi",
+                    "course": "Spoken English"
+                }
+            ]
         },
         {
             "id": "BC-203",
@@ -16601,22 +19392,42 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0972",
                     "date": "2026-06-16",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1021",
                     "date": "2026-06-20",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1057",
                     "date": "2026-06-24",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1026"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1026",
+            "gender": "Male",
+            "notes": "Class valo hoyeche. Nanur bashay berate geche class korbe na ar",
+            "nextPaymentDate": "2026-08-08",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786522683721",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786522683721,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-203",
+                    "studentName": "IBRAHIM KHOLIL ROBAYET",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "BC-204",
@@ -16640,22 +19451,42 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0974",
                     "date": "2026-06-16",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1040",
                     "date": "2026-06-21",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1044",
                     "date": "2026-06-22",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1025"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1025",
+            "gender": "Male",
+            "notes": "Class valo hoyeche. Class Korbe 09-08 theke",
+            "nextPaymentDate": "2026-08-08",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786522651352",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786522651352,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-204",
+                    "studentName": "SHOWKAT AZAD",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "BC-206",
@@ -16669,27 +19500,55 @@ window.migratedDatabase = {
             "batch": "Batch 46",
             "registrationDate": "2026-06-16",
             "status": "Paid",
-            "totalFee": 6000,
+            "totalFee": 6200,
             "discountFee": 2000,
-            "netFee": 4000,
-            "paidFee": 4000,
+            "netFee": 4200,
+            "paidFee": 4200,
             "dueFee": 0,
-            "takenBook": false,
+            "takenBook": true,
             "invoices": [
                 {
                     "id": "INV-2026-0978",
                     "date": "2026-06-16",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1037",
                     "date": "2026-06-21",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1107",
+                    "date": "2026-07-11",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1023"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1023",
+            "notes": "Class valo hoyeche. Exam chole ashte parbe na class e",
+            "bookIssueDate": "2026-07-11",
+            "gender": "Female",
+            "nextPaymentDate": "2026-08-08",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786522628798",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786522628798,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-206",
+                    "studentName": "Tasfia akter",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "BC-207",
@@ -16713,17 +19572,47 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0986",
                     "date": "2026-06-16",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1034",
                     "date": "2026-06-21",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1021"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1021",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786522556874",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786522556874,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-207",
+                    "studentName": "Antika Islam Rimy",
+                    "course": "Basic Computer"
+                },
+                {
+                    "id": "AUD-1786522610222",
+                    "type": "Profile Edit",
+                    "date": "2026-08-12",
+                    "timestamp": 1786522610222,
+                    "details": "Gender: 'Male' -> 'Female'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-207",
+                    "studentName": "Antika Islam Rimy",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok"
         },
         {
             "id": "GD-267",
@@ -16747,17 +19636,36 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0981",
                     "date": "2026-06-16",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0995",
                     "date": "2026-06-17",
-                    "amount": 10000
+                    "amount": 10000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1022"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1022",
+            "gender": "Male",
+            "notes": "ok",
+            "nextPaymentDate": "",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794488514205-430",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488514205,
+                    "details": "Graduation certificate awarded for course: Graphic Design (Bulk)",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-267",
+                    "studentName": "Sazzatul Islam tonmoy",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "GD-268",
@@ -16770,28 +19678,54 @@ window.migratedDatabase = {
             "course": "Graphic Design",
             "batch": "Batch 32",
             "registrationDate": "2026-06-16",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 15000,
             "discountFee": 3000,
             "netFee": 12000,
-            "paidFee": 10000,
-            "dueFee": 2000,
+            "paidFee": 12000,
+            "dueFee": 0,
             "takenBook": false,
             "invoices": [
                 {
                     "id": "INV-2026-0985",
                     "date": "2026-06-16",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1039",
                     "date": "2026-06-21",
-                    "amount": 8000
+                    "amount": 8000,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1184",
+                    "date": "2026-09-28",
+                    "amount": 2000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": false
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1021"
+            "certified": true,
+            "certificateDate": "2026-09-28",
+            "registrationId": "REG-1021",
+            "gender": "Female",
+            "notes": "ok",
+            "auditLogs": [
+                {
+                    "id": "AUD-1790591342222",
+                    "type": "Certificate Issued",
+                    "date": "2026-09-28",
+                    "timestamp": 1790591342222,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "GD-268",
+                    "studentName": "Antika Islam Rimy",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "SE-28",
@@ -16815,12 +19749,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0976",
                     "date": "2026-06-16",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1024"
+            "registrationId": "REG-1024",
+            "gender": "Male"
         },
         {
             "id": "SE-59",
@@ -16844,17 +19780,36 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0973",
                     "date": "2026-06-16",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1020",
                     "date": "2026-06-20",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1026"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1026",
+            "gender": "Male",
+            "notes": "Class valo hoyeche. Nanur bashay berate geche class korbe na ar",
+            "nextPaymentDate": "2026-08-08",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786535645012",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786535645012,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-59",
+                    "studentName": "IBRAHIM KHOLIL ROBAYET",
+                    "course": "Spoken English"
+                }
+            ]
         },
         {
             "id": "SE-60",
@@ -16878,17 +19833,36 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0975",
                     "date": "2026-06-16",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1045",
                     "date": "2026-06-22",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1025"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1025",
+            "gender": "Male",
+            "notes": "Class valo hoyeche. Class Korbe 09-08 theke",
+            "nextPaymentDate": "2026-08-08",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786535617700",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786535617700,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-60",
+                    "studentName": "SHOWKAT AZAD",
+                    "course": "Spoken English"
+                }
+            ]
         },
         {
             "id": "SE-61",
@@ -16901,23 +19875,49 @@ window.migratedDatabase = {
             "course": "Spoken English",
             "batch": "Batch 7",
             "registrationDate": "2026-06-16",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 7000,
             "discountFee": 3000,
             "netFee": 4000,
-            "paidFee": 1000,
-            "dueFee": 3000,
+            "paidFee": 4000,
+            "dueFee": 0,
             "takenBook": false,
             "invoices": [
                 {
                     "id": "INV-2026-0977",
                     "date": "2026-06-16",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1106",
+                    "date": "2026-07-11",
+                    "amount": 3000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1023"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1023",
+            "notes": "Class valo hoyeche. Exam chole ashte parbe na class e",
+            "gender": "Female",
+            "nextPaymentDate": "2026-08-08",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786535574030",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786535574030,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-61",
+                    "studentName": "Tasfia akter",
+                    "course": "Spoken English"
+                }
+            ]
         },
         {
             "id": "SE-62",
@@ -16941,17 +19941,34 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0979",
                     "date": "2026-06-16",
-                    "amount": 250
+                    "amount": 250,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-0996",
                     "date": "2026-06-17",
-                    "amount": 3750
+                    "amount": 3750,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1018"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1018",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786534955935",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786534955935,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-62",
+                    "studentName": "Mehedi Hasan",
+                    "course": "Spoken English"
+                }
+            ]
         },
         {
             "id": "SE-63",
@@ -16975,12 +19992,30 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0982",
                     "date": "2026-06-16",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1022"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1022",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786534932219",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786534932219,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-63",
+                    "studentName": "Sazzatul Islam tonmoy",
+                    "course": "Spoken English"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "SE-64",
@@ -17004,12 +20039,28 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0987",
                     "date": "2026-06-16",
-                    "amount": 4500
+                    "amount": 4500,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1020"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1020",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786534877635",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786534877635,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-64",
+                    "studentName": "MAHMUDUL HASAN TAMIM",
+                    "course": "Spoken English"
+                }
+            ]
         },
         {
             "id": "SE-65",
@@ -17033,12 +20084,28 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-0988",
                     "date": "2026-06-16",
-                    "amount": 1
+                    "amount": 1,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1019"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1019",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786534841246",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786534841246,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-65",
+                    "studentName": "AKASH RUDRA",
+                    "course": "Spoken English"
+                }
+            ]
         },
         {
             "id": "BC-208",
@@ -17052,22 +20119,47 @@ window.migratedDatabase = {
             "batch": "Batch 48",
             "registrationDate": "2026-06-17",
             "status": "Paid",
-            "totalFee": 6000,
+            "totalFee": 6200,
             "discountFee": 2000,
-            "netFee": 4000,
-            "paidFee": 4000,
+            "netFee": 4200,
+            "paidFee": 4200,
             "dueFee": 0,
-            "takenBook": false,
+            "takenBook": true,
             "invoices": [
                 {
                     "id": "INV-2026-0997",
                     "date": "2026-06-17",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1114",
+                    "date": "2026-07-19",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1018"
+            "certified": true,
+            "certificateDate": "2026-08-13",
+            "registrationId": "REG-1018",
+            "gender": "Male",
+            "bookIssueDate": "2026-07-19",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786603818058",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-13",
+                    "timestamp": 1786603818058,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-208",
+                    "studentName": "Mehedi Hasan",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "BC-209",
@@ -17091,17 +20183,36 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-1003",
                     "date": "2026-06-17",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1004",
                     "date": "2026-06-17",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1017"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1017",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786522530135",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786522530135,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-209",
+                    "studentName": "MUSHFIQUL HOQUE LABIB",
+                    "course": "Basic Computer"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-210",
@@ -17125,22 +20236,42 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-1005",
                     "date": "2026-06-17",
-                    "amount": 500
+                    "amount": 500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1012",
                     "date": "2026-06-18",
-                    "amount": 3500
+                    "amount": 3500,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1013",
                     "date": "2026-06-18",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1016"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1016",
+            "notes": "N.R",
+            "gender": "Male",
+            "nextPaymentDate": "2026-08-08",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786532545932",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786532545932,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-210",
+                    "studentName": "Emtiaz Mahmud Mahi",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "BC-211",
@@ -17164,12 +20295,14 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-1007",
                     "date": "2026-06-17",
-                    "amount": 10
+                    "amount": 10,
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": "",
-            "registrationId": "REG-1015"
+            "registrationId": "REG-1015",
+            "gender": "Male"
         },
         {
             "id": "GD-269",
@@ -17193,12 +20326,30 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-1002",
                     "date": "2026-06-17",
-                    "amount": 12000
+                    "amount": 12000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1017"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1017",
+            "gender": "Male",
+            "notes": "ok",
+            "nextPaymentDate": "",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794488514206-304",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488514206,
+                    "details": "Graduation certificate awarded for course: Graphic Design (Bulk)",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-269",
+                    "studentName": "MUSHFIQUL HOQUE LABIB",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "SE-66",
@@ -17211,23 +20362,49 @@ window.migratedDatabase = {
             "course": "Spoken English",
             "batch": "Batch 7",
             "registrationDate": "2026-06-17",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 7000,
             "discountFee": 3000,
             "netFee": 4000,
-            "paidFee": 500,
-            "dueFee": 3500,
+            "paidFee": 4000,
+            "dueFee": 0,
             "takenBook": false,
             "invoices": [
                 {
                     "id": "INV-2026-1006",
                     "date": "2026-06-17",
-                    "amount": 500
+                    "amount": 500,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1091",
+                    "date": "2026-07-04",
+                    "amount": 3500,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Rohan",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1016"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1016",
+            "notes": "N.R",
+            "gender": "Male",
+            "nextPaymentDate": "2026-08-08",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786535509526",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786535509526,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-66",
+                    "studentName": "Emtiaz Mahmud Mahi",
+                    "course": "Spoken English"
+                }
+            ]
         },
         {
             "id": "BC-212",
@@ -17235,30 +20412,75 @@ window.migratedDatabase = {
             "phone": "01795952112",
             "fatherName": "Mohammed Abdul Hai",
             "motherName": "",
-            "guardianPhone": "01795952111",
+            "guardianPhone": "01511952112",
             "address": "Comilla",
             "course": "Basic Computer",
             "batch": "Batch 48",
             "registrationDate": "2026-06-18",
-            "status": "Partial",
-            "totalFee": 6000,
+            "status": "Paid",
+            "totalFee": 6200,
             "discountFee": 1000,
-            "netFee": 5000,
-            "paidFee": 500,
-            "dueFee": 4500,
-            "takenBook": false,
+            "netFee": 5200,
+            "paidFee": 5200,
+            "dueFee": 0,
+            "takenBook": true,
             "invoices": [
                 {
                     "id": "INV-2026-1014",
                     "date": "2026-06-18",
-                    "amount": 500
+                    "amount": 500,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1079",
+                    "date": "2026-07-02",
+                    "amount": 4500,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1084",
+                    "date": "2026-07-02",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
+            "certified": true,
+            "certificateDate": "2026-08-13",
             "registrationId": "REG-1014",
-            "notes": "1 trkh beton peye taka debe",
-            "nextPaymentDate": "2026-07-01"
+            "notes": "Class valo hoyeche. Class Korbe 09-08 theke",
+            "nextPaymentDate": "2026-07-04",
+            "auditLogs": [
+                {
+                    "id": "AUD-1782978523841",
+                    "type": "Profile Edit",
+                    "date": "2026-07-02",
+                    "timestamp": 1782978523841,
+                    "details": "Guardian: '01795952111' -> '01511952112'",
+                    "collectedBy": "sishir",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-212",
+                    "studentName": "Mohammed Kamal Hossain Nafiz",
+                    "course": "Basic Computer"
+                },
+                {
+                    "id": "AUD-1786603792541",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-13",
+                    "timestamp": 1786603792541,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-212",
+                    "studentName": "Mohammed Kamal Hossain Nafiz",
+                    "course": "Basic Computer"
+                }
+            ],
+            "bookIssueDate": "2026-07-02",
+            "gender": "Male"
         },
         {
             "id": "SE-67",
@@ -17266,30 +20488,61 @@ window.migratedDatabase = {
             "phone": "01795952112",
             "fatherName": "Mohammed Abdul Hai",
             "motherName": "",
-            "guardianPhone": "01795952111",
+            "guardianPhone": "01511952112",
             "address": "Comilla",
             "course": "Spoken English",
             "batch": "Batch 7",
             "registrationDate": "2026-06-18",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 7000,
-            "discountFee": 2000,
-            "netFee": 5000,
-            "paidFee": 500,
-            "dueFee": 4500,
+            "discountFee": 3000,
+            "netFee": 4000,
+            "paidFee": 4000,
+            "dueFee": 0,
             "takenBook": false,
             "invoices": [
                 {
                     "id": "INV-2026-1015",
                     "date": "2026-06-18",
-                    "amount": 500
+                    "amount": 500,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1079",
+                    "date": "2026-07-02",
+                    "amount": 3500,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1086",
+                    "date": "2026-07-02",
+                    "amount": 0,
+                    "waivedAmount": 1000,
+                    "paymentType": "Dues Waived"
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
+            "certified": true,
+            "certificateDate": "2026-08-12",
             "registrationId": "REG-1014",
-            "notes": "1 trkh beton peye taka debe",
-            "nextPaymentDate": "2026-07-01"
+            "notes": "Class valo hoyeche. Class Korbe 09-08 theke",
+            "nextPaymentDate": "2026-07-04",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786535485345",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786535485345,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-67",
+                    "studentName": "Mohammed Kamal Hossain Nafiz",
+                    "course": "Spoken English"
+                }
+            ]
         },
         {
             "id": "BC-213",
@@ -17302,23 +20555,58 @@ window.migratedDatabase = {
             "course": "Basic Computer",
             "batch": "Batch 48",
             "registrationDate": "2026-06-20",
-            "status": "Partial",
-            "totalFee": 6000,
+            "status": "Paid",
+            "totalFee": 6200,
             "discountFee": 2000,
-            "netFee": 4000,
-            "paidFee": 1000,
-            "dueFee": 3000,
-            "takenBook": false,
+            "netFee": 4200,
+            "paidFee": 4200,
+            "dueFee": 0,
+            "takenBook": true,
             "invoices": [
                 {
                     "id": "INV-2026-1018",
                     "date": "2026-06-20",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1109",
+                    "date": "2026-07-12",
+                    "amount": 3000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Rohan",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1110",
+                    "date": "2026-07-12",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1013"
+            "certified": true,
+            "certificateDate": "2026-08-13",
+            "registrationId": "REG-1013",
+            "bookIssueDate": "2026-07-12",
+            "gender": "Male",
+            "notes": "ok",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786603781423",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-13",
+                    "timestamp": 1786603781423,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-213",
+                    "studentName": "Krishon Dey",
+                    "course": "Basic Computer"
+                }
+            ],
+            "nextPaymentDate": ""
         },
         {
             "id": "GD-270",
@@ -17331,22 +20619,31 @@ window.migratedDatabase = {
             "course": "Graphic Design",
             "batch": "Batch 32",
             "registrationDate": "2026-06-20",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 15000,
             "discountFee": 4000,
             "netFee": 11000,
-            "paidFee": 4000,
-            "dueFee": 7000,
+            "paidFee": 11000,
+            "dueFee": 0,
             "takenBook": false,
             "invoices": [
                 {
                     "id": "INV-2026-1019",
                     "date": "2026-06-20",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1124",
+                    "date": "2026-08-13",
+                    "amount": 7000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
+            "certified": true,
+            "certificateDate": "2026-11-12",
             "registrationId": "REG-1013",
             "auditLogs": [
                 {
@@ -17360,8 +20657,23 @@ window.migratedDatabase = {
                     "studentId": "GD-270",
                     "studentName": "Krishon Dey",
                     "course": "Graphic Design"
+                },
+                {
+                    "id": "AUD-1794488514206-415",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794488514206,
+                    "details": "Graduation certificate awarded for course: Graphic Design (Bulk)",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-270",
+                    "studentName": "Krishon Dey",
+                    "course": "Graphic Design"
                 }
-            ]
+            ],
+            "gender": "Male",
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-214",
@@ -17385,17 +20697,36 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-1029",
                     "date": "2026-06-21",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1028",
                     "date": "2026-06-21",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1012"
+            "certified": true,
+            "certificateDate": "2026-08-13",
+            "registrationId": "REG-1012",
+            "gender": "Female",
+            "notes": "Class valo hoyeche. Class Korbe 09-08 theke",
+            "nextPaymentDate": "2026-08-08",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786603756884",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-13",
+                    "timestamp": 1786603756884,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-214",
+                    "studentName": "Riddhima Datta",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "SE-68",
@@ -17419,12 +20750,42 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-1030",
                     "date": "2026-06-21",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1012"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1012",
+            "gender": "Female",
+            "notes": "Class valo hoyeche. Class Korbe 09-08 theke",
+            "nextPaymentDate": "2026-08-08",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786535454884",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786535454884,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-68",
+                    "studentName": "Riddhima Datta",
+                    "course": "Spoken English"
+                },
+                {
+                    "id": "AUD-1786535465259",
+                    "type": "Profile Edit",
+                    "date": "2026-08-12",
+                    "timestamp": 1786535465259,
+                    "details": "Gender: 'Male' -> 'Female'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-68",
+                    "studentName": "Riddhima Datta",
+                    "course": "Spoken English"
+                }
+            ]
         },
         {
             "id": "SE-69",
@@ -17448,12 +20809,30 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-1035",
                     "date": "2026-06-21",
-                    "amount": 5000
+                    "amount": 5000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1011"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1011",
+            "gender": "Male",
+            "notes": "Class valo hoyeche. Class Korbe 09-08 theke",
+            "nextPaymentDate": "2026-08-08",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786535440131",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786535440131,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-69",
+                    "studentName": "Md. Rifat Hossain",
+                    "course": "Spoken English"
+                }
+            ]
         },
         {
             "id": "SE-70",
@@ -17477,18 +20856,36 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-1036",
                     "date": "2026-06-21",
-                    "amount": 5000
+                    "amount": 5000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1010"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1010",
+            "gender": "Male",
+            "notes": "Class valo hoyeche. Class Korbe 09-08 theke",
+            "nextPaymentDate": "2026-08-08",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786535423481",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786535423481,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-70",
+                    "studentName": "Fahad khan",
+                    "course": "Spoken English"
+                }
+            ]
         },
         {
             "id": "SE-71",
             "name": "Tanisha Akter Bandhan",
             "phone": "01726814982",
-            "fatherName": "01726814982",
+            "fatherName": "Shahdat Hossain khoshru",
             "motherName": "",
             "guardianPhone": "01726031060",
             "address": "Comilla",
@@ -17506,12 +20903,42 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-1038",
                     "date": "2026-06-21",
-                    "amount": 5000
+                    "amount": 5000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1009"
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "registrationId": "REG-1009",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786168341684",
+                    "type": "Profile Edit",
+                    "date": "2026-08-08",
+                    "timestamp": 1786168341684,
+                    "details": "Father: '01726814982' -> 'Shahdat Hossain khoshru'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-71",
+                    "studentName": "Tanisha Akter Bandhan",
+                    "course": "Spoken English"
+                },
+                {
+                    "id": "AUD-1786535408197",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786535408197,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-71",
+                    "studentName": "Tanisha Akter Bandhan",
+                    "course": "Spoken English"
+                }
+            ],
+            "notes": "Class valo hoyeche. Class Korbe 09-08 theke",
+            "nextPaymentDate": "2026-08-08"
         },
         {
             "id": "BC-215",
@@ -17525,17 +20952,18 @@ window.migratedDatabase = {
             "batch": "Batch 48",
             "registrationDate": "2026-06-22",
             "status": "Paid",
-            "totalFee": 6000,
+            "totalFee": 6200,
             "discountFee": 1000,
-            "netFee": 5000,
-            "paidFee": 5000,
+            "netFee": 5200,
+            "paidFee": 5200,
             "dueFee": 0,
-            "takenBook": false,
+            "takenBook": true,
             "invoices": [
                 {
                     "id": "INV-2026-1043",
                     "date": "2026-06-22",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1069",
@@ -17543,13 +20971,37 @@ window.migratedDatabase = {
                     "amount": 3000,
                     "paymentType": "Due Collection",
                     "collectedBy": "Mahi",
-                    "receivedByAdmin": false
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1104",
+                    "date": "2026-07-09",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
+            "certified": true,
+            "certificateDate": "2026-08-13",
             "registrationId": "REG-1008",
-            "notes": "Aktu taka er problem ase 2 trkh er age dea debe"
+            "notes": "Aktu taka er problem ase 2 trkh er age dea debe",
+            "bookIssueDate": "2026-07-09",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786603738731",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-13",
+                    "timestamp": 1786603738731,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-215",
+                    "studentName": "Wasif Rahman",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "BC-216",
@@ -17562,25 +21014,58 @@ window.migratedDatabase = {
             "course": "Basic Computer",
             "batch": "Batch 48",
             "registrationDate": "2026-06-23",
-            "status": "Partial",
-            "totalFee": 6000,
+            "status": "Paid",
+            "totalFee": 6200,
             "discountFee": 1000,
-            "netFee": 5000,
-            "paidFee": 2000,
-            "dueFee": 3000,
-            "takenBook": false,
+            "netFee": 5200,
+            "paidFee": 5200,
+            "dueFee": 0,
+            "takenBook": true,
             "invoices": [
                 {
                     "id": "INV-2026-1046",
                     "date": "2026-06-23",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1082",
+                    "date": "2026-07-02",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1083",
+                    "date": "2026-07-02",
+                    "amount": 3000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
+            "certified": true,
+            "certificateDate": "2026-08-13",
             "registrationId": "REG-1007",
-            "notes": "Ai week er modhe taka dea debe",
-            "nextPaymentDate": "2026-07-03"
+            "notes": "ok",
+            "nextPaymentDate": "2026-07-02",
+            "bookIssueDate": "2026-07-02",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786603723128",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-13",
+                    "timestamp": 1786603723128,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-216",
+                    "studentName": "Ahnaf Tahmida Tanisha",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "BC-217",
@@ -17593,30 +21078,66 @@ window.migratedDatabase = {
             "course": "Basic Computer",
             "batch": "Batch 48",
             "registrationDate": "2026-06-23",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 6000,
             "discountFee": 2000,
             "netFee": 4000,
-            "paidFee": 1000,
-            "dueFee": 3000,
+            "paidFee": 4000,
+            "dueFee": 0,
             "takenBook": true,
             "invoices": [
                 {
                     "id": "INV-2026-1048",
                     "date": "2026-06-23",
-                    "amount": 1000
+                    "amount": 1000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1049",
                     "date": "2026-06-23",
-                    "amount": 200
+                    "amount": 200,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1113",
+                    "date": "2026-07-18",
+                    "amount": 3000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Bijoy",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
+            "certified": true,
+            "certificateDate": "2026-08-13",
             "registrationId": "REG-1006",
-            "notes": "10 trkh due dea debe",
-            "nextPaymentDate": "2026-07-10"
+            "notes": "15 trkh due dea debe",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786603687224",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-13",
+                    "timestamp": 1786603687224,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-217",
+                    "studentName": "Mahmuda Akther",
+                    "course": "Basic Computer"
+                },
+                {
+                    "id": "AUD-1786603698657",
+                    "type": "Profile Edit",
+                    "date": "2026-08-13",
+                    "timestamp": 1786603698657,
+                    "details": "Gender: 'Male' -> 'Female'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-217",
+                    "studentName": "Mahmuda Akther",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "GD-271",
@@ -17629,30 +21150,74 @@ window.migratedDatabase = {
             "course": "Graphic Design",
             "batch": "Batch 33",
             "registrationDate": "2026-06-23",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 15000,
-            "discountFee": 3000,
-            "netFee": 12000,
-            "paidFee": 8000,
-            "dueFee": 4000,
+            "discountFee": 4000,
+            "netFee": 11000,
+            "paidFee": 11000,
+            "dueFee": 0,
             "takenBook": false,
             "invoices": [
                 {
                     "id": "INV-2026-1047",
                     "date": "2026-06-23",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1060",
                     "date": "2026-06-25",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1083",
+                    "date": "2026-07-02",
+                    "amount": 3000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1087",
+                    "date": "2026-07-02",
+                    "amount": 0,
+                    "waivedAmount": 1000,
+                    "paymentType": "Dues Waived"
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
+            "certified": true,
+            "certificateDate": "2026-11-12",
             "registrationId": "REG-1007",
-            "notes": "Ai week er modhe taka dea debe",
-            "nextPaymentDate": "2026-07-03"
+            "notes": "ok",
+            "nextPaymentDate": "2026-07-02",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1784239042436",
+                    "type": "Profile Edit",
+                    "date": "2026-07-17",
+                    "timestamp": 1784239042436,
+                    "details": "Gender: 'Male' -> 'Female'",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-271",
+                    "studentName": "Ahnaf Tahmida Tanisha",
+                    "course": "Graphic Design"
+                },
+                {
+                    "id": "AUD-1794489040202-351",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794489040202,
+                    "details": "Graduation certificate awarded for course: Graphic Design (Bulk)",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-271",
+                    "studentName": "Ahnaf Tahmida Tanisha",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "SE-72",
@@ -17665,25 +21230,48 @@ window.migratedDatabase = {
             "course": "Spoken English",
             "batch": "Batch 8",
             "registrationDate": "2026-06-23",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 7000,
             "discountFee": 2000,
             "netFee": 5000,
-            "paidFee": 2000,
-            "dueFee": 3000,
+            "paidFee": 5000,
+            "dueFee": 0,
             "takenBook": false,
             "invoices": [
                 {
                     "id": "INV-2026-1050",
                     "date": "2026-06-23",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1113",
+                    "date": "2026-07-18",
+                    "amount": 3000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Bijoy",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
+            "certified": true,
+            "certificateDate": "2026-08-13",
             "registrationId": "REG-1006",
-            "notes": "10 trkh due dea debe",
-            "nextPaymentDate": "2026-07-10"
+            "notes": "15 trkh due dea debe",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786604679700",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-13",
+                    "timestamp": 1786604679700,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-72",
+                    "studentName": "Mahmuda Akther",
+                    "course": "Spoken English"
+                }
+            ]
         },
         {
             "id": "BC-218",
@@ -17707,7 +21295,8 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-1059",
                     "date": "2026-06-24",
-                    "amount": 6000
+                    "amount": 6000,
+                    "receivedByAdmin": true
                 },
                 {
                     "id": "INV-2026-1068",
@@ -17718,10 +21307,25 @@ window.migratedDatabase = {
                     "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
+            "certified": true,
+            "certificateDate": "2026-08-13",
             "registrationId": "REG-1003",
-            "bookIssueDate": "2026-06-27"
+            "bookIssueDate": "2026-06-27",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786603671631",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-13",
+                    "timestamp": 1786603671631,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-218",
+                    "studentName": "MD Sabbir",
+                    "course": "Basic Computer"
+                }
+            ]
         },
         {
             "id": "GD-272",
@@ -17734,23 +21338,49 @@ window.migratedDatabase = {
             "course": "Graphic Design",
             "batch": "Batch 33",
             "registrationDate": "2026-06-24",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 15000,
             "discountFee": 2000,
             "netFee": 13000,
-            "paidFee": 6000,
-            "dueFee": 7000,
+            "paidFee": 13000,
+            "dueFee": 0,
             "takenBook": false,
             "invoices": [
                 {
                     "id": "INV-2026-1054",
                     "date": "2026-06-24",
-                    "amount": 6000
+                    "amount": 6000,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1080",
+                    "date": "2026-07-02",
+                    "amount": 7000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Rohan",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1005"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1005",
+            "gender": "Male",
+            "notes": "ok",
+            "nextPaymentDate": "",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794489040202-315",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794489040202,
+                    "details": "Graduation certificate awarded for course: Graphic Design (Bulk)",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-272",
+                    "studentName": "SHARIFUL ISLAM AYON",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "GD-273",
@@ -17774,12 +21404,30 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-1058",
                     "date": "2026-06-24",
-                    "amount": 12000
+                    "amount": 12000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1004"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1004",
+            "gender": "Male",
+            "notes": "ok",
+            "nextPaymentDate": "",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794489040202-209",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794489040202,
+                    "details": "Graduation certificate awarded for course: Graphic Design (Bulk)",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-273",
+                    "studentName": "ARGHA BANIK",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "SE-73",
@@ -17792,23 +21440,49 @@ window.migratedDatabase = {
             "course": "Spoken English",
             "batch": "Batch 8",
             "registrationDate": "2026-06-24",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 7000,
             "discountFee": 2000,
             "netFee": 5000,
-            "paidFee": 4000,
-            "dueFee": 1000,
+            "paidFee": 5000,
+            "dueFee": 0,
             "takenBook": false,
             "invoices": [
                 {
                     "id": "INV-2026-1055",
                     "date": "2026-06-24",
-                    "amount": 4000
+                    "amount": 4000,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1080",
+                    "date": "2026-07-02",
+                    "amount": 1000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Rohan",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1005"
+            "certified": true,
+            "certificateDate": "2026-08-13",
+            "registrationId": "REG-1005",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786604656702",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-13",
+                    "timestamp": 1786604656702,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-73",
+                    "studentName": "SHARIFUL ISLAM AYON",
+                    "course": "Spoken English"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "id": "BC-219",
@@ -17821,25 +21495,58 @@ window.migratedDatabase = {
             "course": "Basic Computer",
             "batch": "Batch 48",
             "registrationDate": "2026-06-25",
-            "status": "Partial",
-            "totalFee": 6000,
+            "status": "Paid",
+            "totalFee": 6200,
             "discountFee": 2000,
-            "netFee": 4000,
-            "paidFee": 2000,
-            "dueFee": 2000,
-            "takenBook": false,
+            "netFee": 4200,
+            "paidFee": 4200,
+            "dueFee": 0,
+            "takenBook": true,
             "invoices": [
                 {
                     "id": "INV-2026-1063",
                     "date": "2026-06-25",
-                    "amount": 2000
+                    "amount": 2000,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1085",
+                    "date": "2026-07-02",
+                    "amount": 2000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1105",
+                    "date": "2026-07-09",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
+            "certified": true,
+            "certificateDate": "2026-08-13",
             "registrationId": "REG-1001",
-            "notes": "2 trkh paymen korbe, Full payment",
-            "nextPaymentDate": "2026-07-02"
+            "notes": "ok",
+            "bookIssueDate": "2026-07-09",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786603638095",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-13",
+                    "timestamp": 1786603638095,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-219",
+                    "studentName": "Arif Fuad",
+                    "course": "Basic Computer"
+                }
+            ],
+            "nextPaymentDate": ""
         },
         {
             "id": "GD-274",
@@ -17863,12 +21570,30 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-1061",
                     "date": "2026-06-25",
-                    "amount": 13000
+                    "amount": 13000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1002"
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "registrationId": "REG-1002",
+            "gender": "Male",
+            "notes": "ok",
+            "nextPaymentDate": "",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794489040202-696",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794489040202,
+                    "details": "Graduation certificate awarded for course: Graphic Design (Bulk)",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-274",
+                    "studentName": "Morsalin Shad",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "GD-275",
@@ -17881,25 +21606,49 @@ window.migratedDatabase = {
             "course": "Graphic Design",
             "batch": "Batch 33",
             "registrationDate": "2026-06-25",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 15000,
             "discountFee": 2000,
             "netFee": 13000,
-            "paidFee": 3000,
-            "dueFee": 10000,
+            "paidFee": 13000,
+            "dueFee": 0,
             "takenBook": false,
             "invoices": [
                 {
                     "id": "INV-2026-1064",
                     "date": "2026-06-25",
-                    "amount": 3000
+                    "amount": 3000,
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1085",
+                    "date": "2026-07-02",
+                    "amount": 10000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
+            "certified": true,
+            "certificateDate": "2026-11-12",
             "registrationId": "REG-1001",
-            "notes": "2 trkh paymen korbe, Full payment",
-            "nextPaymentDate": "2026-07-02"
+            "notes": "ok",
+            "gender": "Male",
+            "nextPaymentDate": "",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794489040202-182",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794489040202,
+                    "details": "Graduation certificate awarded for course: Graphic Design (Bulk)",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-275",
+                    "studentName": "Arif Fuad",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
             "id": "SE-74",
@@ -17923,12 +21672,30 @@ window.migratedDatabase = {
                 {
                     "id": "INV-2026-1062",
                     "date": "2026-06-25",
-                    "amount": 5000
+                    "amount": 5000,
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": "",
-            "registrationId": "REG-1002"
+            "certified": true,
+            "certificateDate": "2026-08-13",
+            "registrationId": "REG-1002",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786604613190",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-13",
+                    "timestamp": 1786604613190,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-74",
+                    "studentName": "Morsalin Shad",
+                    "course": "Spoken English"
+                }
+            ],
+            "notes": "ok",
+            "nextPaymentDate": ""
         },
         {
             "registrationId": "REG-1496",
@@ -17942,14 +21709,13 @@ window.migratedDatabase = {
             "course": "Graphic Design",
             "batch": "Batch 33",
             "registrationDate": "2026-06-27",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 15000,
             "discountFee": 1000,
             "netFee": 14000,
-            "paidFee": 5000,
-            "dueFee": 9000,
+            "paidFee": 14000,
+            "dueFee": 0,
             "takenBook": false,
-            "nextPaymentDate": "2026-07-02",
             "invoices": [
                 {
                     "id": "INV-2026-1065",
@@ -17965,13 +21731,38 @@ window.migratedDatabase = {
                     "amount": 0,
                     "waivedAmount": 1000,
                     "paymentType": "Dues Waived"
+                },
+                {
+                    "id": "INV-2026-1081",
+                    "date": "2026-07-02",
+                    "amount": 9000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Rohan",
+                    "receivedByAdmin": true
                 }
             ],
-            "certified": false,
-            "certificateDate": ""
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "gender": "Female",
+            "notes": "ok",
+            "nextPaymentDate": "",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794489040202-491",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794489040202,
+                    "details": "Graduation certificate awarded for course: Graphic Design (Bulk)",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-276",
+                    "studentName": "Sadia Akter",
+                    "course": "Graphic Design"
+                }
+            ]
         },
         {
-            "registrationId": "REG-1497",
+            "registrationId": "REG-1439",
             "id": "GD-277",
             "name": "Ishrak Farhan Sarker",
             "phone": "01816368908",
@@ -17982,14 +21773,14 @@ window.migratedDatabase = {
             "course": "Graphic Design",
             "batch": "Batch 33",
             "registrationDate": "2026-06-27",
-            "status": "Partial",
+            "status": "Paid",
             "totalFee": 15000,
-            "discountFee": 0,
-            "netFee": 15000,
-            "paidFee": 6000,
-            "dueFee": 9000,
+            "discountFee": 1000,
+            "netFee": 14000,
+            "paidFee": 14000,
+            "dueFee": 0,
             "takenBook": false,
-            "nextPaymentDate": "2026-07-02",
+            "nextPaymentDate": "2026-07-04",
             "invoices": [
                 {
                     "id": "INV-2026-1067",
@@ -17998,10 +21789,2679 @@ window.migratedDatabase = {
                     "paymentType": "New Registration",
                     "collectedBy": "Sishir",
                     "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1090",
+                    "date": "2026-07-04",
+                    "amount": 8000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Rohan",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1094",
+                    "date": "2026-07-04",
+                    "amount": 0,
+                    "waivedAmount": 1000,
+                    "paymentType": "Dues Waived"
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "gender": "Male",
+            "notes": "ok",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794489040202-569",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794489040202,
+                    "details": "Graduation certificate awarded for course: Graphic Design (Bulk)",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-277",
+                    "studentName": "Ishrak Farhan Sarker",
+                    "course": "Graphic Design"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1498",
+            "id": "BC-220",
+            "name": "Somiya Binta Quyum",
+            "phone": "01673533928",
+            "fatherName": "Abdul Quyum",
+            "motherName": "",
+            "guardianPhone": "01798571519",
+            "address": "Jhawtola, Comilla",
+            "course": "Basic Computer",
+            "batch": "Batch 48",
+            "registrationDate": "2026-06-29",
+            "status": "Paid",
+            "totalFee": 6200,
+            "discountFee": 2000,
+            "netFee": 4200,
+            "paidFee": 4200,
+            "dueFee": 0,
+            "takenBook": true,
+            "nextPaymentDate": "",
+            "invoices": [
+                {
+                    "id": "INV-2026-1071-B",
+                    "date": "2026-06-29",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1071",
+                    "date": "2026-06-29",
+                    "amount": 4000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-08-13",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786603618109",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-13",
+                    "timestamp": 1786603618109,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-220",
+                    "studentName": "Somiya Binta Quyum",
+                    "course": "Basic Computer"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1498",
+            "id": "SE-75",
+            "name": "Somiya Binta Quyum",
+            "phone": "01673533928",
+            "fatherName": "Abdul Quyum",
+            "motherName": "",
+            "guardianPhone": "01798571519",
+            "address": "Jhawtola, Comilla",
+            "course": "Spoken English",
+            "batch": "Batch 8",
+            "registrationDate": "2026-06-29",
+            "status": "Paid",
+            "totalFee": 7000,
+            "discountFee": 1500,
+            "netFee": 5500,
+            "paidFee": 5500,
+            "dueFee": 0,
+            "takenBook": false,
+            "nextPaymentDate": "",
+            "invoices": [
+                {
+                    "id": "INV-2026-1071",
+                    "date": "2026-06-29",
+                    "amount": 5500,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-08-13",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786604570204",
+                    "type": "Profile Edit",
+                    "date": "2026-08-13",
+                    "timestamp": 1786604570204,
+                    "details": "Gender: 'Male' -> 'Female'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-75",
+                    "studentName": "Somiya Binta Quyum",
+                    "course": "Spoken English"
+                },
+                {
+                    "id": "AUD-1786604574258",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-13",
+                    "timestamp": 1786604574258,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-75",
+                    "studentName": "Somiya Binta Quyum",
+                    "course": "Spoken English"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1499",
+            "id": "GD-278",
+            "name": "Ujan Devnath",
+            "phone": "01931311957",
+            "fatherName": "Uttam Devnath",
+            "motherName": "",
+            "guardianPhone": "01956115710",
+            "address": "Cantonmant, Comilla",
+            "course": "Graphic Design",
+            "batch": "Batch 33",
+            "registrationDate": "2026-06-30",
+            "status": "Paid",
+            "totalFee": 15000,
+            "discountFee": 0,
+            "netFee": 15000,
+            "paidFee": 15000,
+            "dueFee": 0,
+            "takenBook": false,
+            "invoices": [
+                {
+                    "id": "INV-2026-1074",
+                    "date": "2026-06-30",
+                    "amount": 5000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1093",
+                    "date": "2026-07-04",
+                    "amount": 10000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "gender": "Male",
+            "notes": "ok",
+            "nextPaymentDate": "",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794489040202-340",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794489040202,
+                    "details": "Graduation certificate awarded for course: Graphic Design (Bulk)",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-278",
+                    "studentName": "Ujan Devnath",
+                    "course": "Graphic Design"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1500",
+            "id": "SE-76",
+            "name": "MD. JISAN CHOWDHURY RAHAT",
+            "phone": "01633716801",
+            "fatherName": "MD QUADIR CHAWDHURY",
+            "motherName": "",
+            "guardianPhone": "01928105088",
+            "address": "",
+            "course": "Spoken English",
+            "batch": "Batch 8",
+            "registrationDate": "2026-07-01",
+            "status": "Paid",
+            "totalFee": 7000,
+            "discountFee": 1500,
+            "netFee": 5500,
+            "paidFee": 5500,
+            "dueFee": 0,
+            "takenBook": false,
+            "nextPaymentDate": "",
+            "invoices": [
+                {
+                    "id": "INV-2026-1075",
+                    "date": "2026-07-01",
+                    "amount": 5500,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-08-13",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786604506176",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-13",
+                    "timestamp": 1786604506176,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-76",
+                    "studentName": "MD. JISAN CHOWDHURY RAHAT",
+                    "course": "Spoken English"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1501",
+            "id": "GD-279",
+            "name": "Hamid Khan",
+            "phone": "01805930830",
+            "fatherName": "Abdur Rahman",
+            "motherName": "",
+            "guardianPhone": "01895479323",
+            "address": "Jagorjoli, Comilla",
+            "course": "Graphic Design",
+            "batch": "Batch 33",
+            "registrationDate": "2026-07-01",
+            "status": "Paid",
+            "totalFee": 15000,
+            "discountFee": 3000,
+            "netFee": 12000,
+            "paidFee": 12000,
+            "dueFee": 0,
+            "takenBook": false,
+            "nextPaymentDate": "2026-08-27",
+            "invoices": [
+                {
+                    "id": "INV-2026-1076",
+                    "date": "2026-07-01",
+                    "amount": 5000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1150",
+                    "date": "2026-08-26",
+                    "amount": 7000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Bijoy",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-11-12",
+            "gender": "Male",
+            "notes": "ok",
+            "auditLogs": [
+                {
+                    "id": "AUD-1794489040202-820",
+                    "type": "Certificate Issued",
+                    "date": "2026-11-12",
+                    "timestamp": 1794489040202,
+                    "details": "Graduation certificate awarded for course: Graphic Design (Bulk)",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "GD-279",
+                    "studentName": "Hamid Khan",
+                    "course": "Graphic Design"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1502",
+            "id": "BC-221",
+            "name": "JUNAYED RAJ SIYAM",
+            "phone": "01621019196",
+            "fatherName": "ABDUR RAZZAK",
+            "motherName": "FATEHA TABACHUM NIPA",
+            "guardianPhone": "01712526685",
+            "address": "",
+            "course": "Basic Computer",
+            "batch": "Batch 47",
+            "registrationDate": "2026-07-02",
+            "status": "Paid",
+            "totalFee": 6200,
+            "discountFee": 1000,
+            "netFee": 5200,
+            "paidFee": 5200,
+            "dueFee": 0,
+            "takenBook": true,
+            "invoices": [
+                {
+                    "id": "INV-2026-1078",
+                    "date": "2026-07-02",
+                    "amount": 3000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1089",
+                    "date": "2026-07-04",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1102",
+                    "date": "2026-07-09",
+                    "amount": 2000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-08-12",
+            "bookIssueDate": "2026-07-04",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786532512997",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-12",
+                    "timestamp": 1786532512997,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-221",
+                    "studentName": "JUNAYED RAJ SIYAM",
+                    "course": "Basic Computer"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1503",
+            "id": "SE-77",
+            "name": "Labiba Ayman Tuba",
+            "phone": "01909852645",
+            "fatherName": "MD Kamal Uddin",
+            "motherName": "Salma Akter",
+            "guardianPhone": "01819979282",
+            "address": "Thakurpara, Cumilla",
+            "course": "Spoken English",
+            "batch": "Batch 8",
+            "registrationDate": "2026-07-02",
+            "status": "Paid",
+            "totalFee": 7000,
+            "discountFee": 2000,
+            "netFee": 5000,
+            "paidFee": 5000,
+            "dueFee": 0,
+            "takenBook": false,
+            "nextPaymentDate": "",
+            "invoices": [
+                {
+                    "id": "INV-2026-1088",
+                    "date": "2026-07-02",
+                    "amount": 5000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Rohan",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-08-13",
+            "gender": "Female",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786603999323",
+                    "type": "Profile Edit",
+                    "date": "2026-08-13",
+                    "timestamp": 1786603999323,
+                    "details": "Gender: 'Male' -> 'Female'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-77",
+                    "studentName": "Labiba Ayman Tuba",
+                    "course": "Spoken English"
+                },
+                {
+                    "id": "AUD-1786604001927",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-13",
+                    "timestamp": 1786604001927,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-77",
+                    "studentName": "Labiba Ayman Tuba",
+                    "course": "Spoken English"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1504",
+            "id": "BC-222",
+            "name": "Mim Akter",
+            "phone": "01766726519",
+            "fatherName": "Bosir Ahmed",
+            "motherName": "",
+            "guardianPhone": "01877494835",
+            "address": "jhangalia",
+            "course": "Basic Computer",
+            "batch": "Batch 49",
+            "registrationDate": "2026-07-05",
+            "status": "Paid",
+            "totalFee": 6200,
+            "discountFee": 1000,
+            "netFee": 5200,
+            "paidFee": 5200,
+            "dueFee": 0,
+            "takenBook": true,
+            "invoices": [
+                {
+                    "id": "INV-2026-1097",
+                    "date": "2026-07-05",
+                    "amount": 2000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1141",
+                    "date": "2026-08-22",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1180",
+                    "date": "2026-09-13",
+                    "amount": 2000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1183",
+                    "date": "2026-09-26",
+                    "amount": 1000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": false
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-10-08",
+            "gender": "Female",
+            "bookIssueDate": "2026-08-22",
+            "auditLogs": [
+                {
+                    "id": "AUD-1791456440372",
+                    "type": "Certificate Issued",
+                    "date": "2026-10-08",
+                    "timestamp": 1791456440372,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "BC-222",
+                    "studentName": "Mim Akter",
+                    "course": "Basic Computer"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1505",
+            "id": "SE-78",
+            "name": "Farhan Tanvir",
+            "phone": "01890179567",
+            "fatherName": "Abul Kalam",
+            "motherName": "Taslima Akter",
+            "guardianPhone": "01769249736",
+            "address": "SHAHEB NAGAR",
+            "course": "Spoken English",
+            "batch": "Batch 8",
+            "registrationDate": "2026-07-07",
+            "status": "Paid",
+            "totalFee": 7000,
+            "discountFee": 2000,
+            "netFee": 5000,
+            "paidFee": 5000,
+            "dueFee": 0,
+            "takenBook": false,
+            "nextPaymentDate": "",
+            "invoices": [
+                {
+                    "id": "INV-2026-1098",
+                    "date": "2026-07-07",
+                    "amount": 5000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Rohan",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-08-13",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786603965789",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-13",
+                    "timestamp": 1786603965789,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-78",
+                    "studentName": "Farhan Tanvir",
+                    "course": "Spoken English"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1501",
+            "id": "BC-223",
+            "name": "Hamid Khan",
+            "phone": "01805930830",
+            "fatherName": "Abdur Rahman",
+            "motherName": "",
+            "guardianPhone": "01895479323",
+            "address": "jagorjoli",
+            "course": "Basic Computer",
+            "batch": "Batch 48",
+            "registrationDate": "2026-07-08",
+            "status": "Partial",
+            "totalFee": 6200,
+            "discountFee": 2000,
+            "netFee": 4200,
+            "paidFee": 3700,
+            "dueFee": 500,
+            "takenBook": true,
+            "nextPaymentDate": "2026-08-27",
+            "invoices": [
+                {
+                    "id": "INV-2026-1101-B",
+                    "date": "2026-07-08",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1101",
+                    "date": "2026-07-08",
+                    "amount": 1000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1150",
+                    "date": "2026-08-26",
+                    "amount": 2500,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Bijoy",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": false,
+            "certificateDate": "",
+            "gender": "Male",
+            "notes": "ok"
+        },
+        {
+            "registrationId": "REG-1501",
+            "id": "SE-79",
+            "name": "Hamid Khan",
+            "phone": "01805930830",
+            "fatherName": "Abdur Rahman",
+            "motherName": "",
+            "guardianPhone": "01895479323",
+            "address": "jagorjoli",
+            "course": "Spoken English",
+            "batch": "Batch 8",
+            "registrationDate": "2026-07-08",
+            "status": "Paid",
+            "totalFee": 7000,
+            "discountFee": 2000,
+            "netFee": 5000,
+            "paidFee": 5000,
+            "dueFee": 0,
+            "takenBook": false,
+            "nextPaymentDate": "2026-08-27",
+            "invoices": [
+                {
+                    "id": "INV-2026-1101",
+                    "date": "2026-07-08",
+                    "amount": 1000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1150",
+                    "date": "2026-08-26",
+                    "amount": 4000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Bijoy",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-09-05",
+            "gender": "Male",
+            "notes": "ok",
+            "auditLogs": [
+                {
+                    "id": "AUD-1788606137662",
+                    "type": "Certificate Issued",
+                    "date": "2026-09-05",
+                    "timestamp": 1788606137662,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-79",
+                    "studentName": "Hamid Khan",
+                    "course": "Spoken English"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1507",
+            "id": "SE-80",
+            "name": "Rifat Ahmed",
+            "phone": "01719921941",
+            "fatherName": "Faruk Ahmed",
+            "motherName": "",
+            "guardianPhone": "01872561430",
+            "address": "Cantonment, Comilla",
+            "course": "Spoken English",
+            "batch": "Batch 8",
+            "registrationDate": "2026-07-11",
+            "status": "Paid",
+            "totalFee": 7000,
+            "discountFee": 1500,
+            "netFee": 5500,
+            "paidFee": 5500,
+            "dueFee": 0,
+            "takenBook": false,
+            "nextPaymentDate": "",
+            "invoices": [
+                {
+                    "id": "INV-2026-1108",
+                    "date": "2026-07-11",
+                    "amount": 5500,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-08-13",
+            "gender": "Male",
+            "auditLogs": [
+                {
+                    "id": "AUD-1786603924970",
+                    "type": "Certificate Issued",
+                    "date": "2026-08-13",
+                    "timestamp": 1786603924970,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-80",
+                    "studentName": "Rifat Ahmed",
+                    "course": "Spoken English"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1508",
+            "id": "BC-224",
+            "name": "Alamin Hossain Tushar",
+            "phone": "01888277199",
+            "fatherName": "Kabir Ahmed",
+            "motherName": "Lkahi Begum",
+            "guardianPhone": "01747897637",
+            "address": "MOGBARI, COMILLA",
+            "course": "Basic Computer",
+            "batch": "Batch 49",
+            "registrationDate": "2026-07-13",
+            "status": "Paid",
+            "totalFee": 6200,
+            "discountFee": 0,
+            "netFee": 6200,
+            "paidFee": 6200,
+            "dueFee": 0,
+            "takenBook": true,
+            "nextPaymentDate": "",
+            "invoices": [
+                {
+                    "id": "INV-2026-1111",
+                    "date": "2026-07-13",
+                    "amount": 6000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Rohan",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1175",
+                    "date": "2026-09-10",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-10-08",
+            "gender": "Male",
+            "bookIssueDate": "2026-09-10",
+            "auditLogs": [
+                {
+                    "id": "AUD-1791456465153",
+                    "type": "Certificate Issued",
+                    "date": "2026-10-08",
+                    "timestamp": 1791456465153,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "BC-224",
+                    "studentName": "Alamin Hossain Tushar",
+                    "course": "Basic Computer"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1509",
+            "id": "SE-81",
+            "name": "Fahim Mahmud",
+            "phone": "01300490591",
+            "gender": "Male",
+            "fatherName": "Md. Nasir Uddin",
+            "motherName": "",
+            "guardianPhone": "01861087926",
+            "address": "",
+            "course": "Spoken English",
+            "batch": "Batch 10",
+            "registrationDate": "2026-07-21",
+            "status": "Paid",
+            "totalFee": 7000,
+            "discountFee": 2000,
+            "netFee": 5000,
+            "paidFee": 5000,
+            "dueFee": 0,
+            "takenBook": false,
+            "nextPaymentDate": "",
+            "invoices": [
+                {
+                    "id": "INV-2026-1115",
+                    "date": "2026-07-21",
+                    "amount": 5000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Sishir",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-09-30",
+            "auditLogs": [
+                {
+                    "id": "AUD-1787053170148",
+                    "type": "Batch Transfer",
+                    "date": "2026-08-18",
+                    "timestamp": 1787053170148,
+                    "details": "Batch: 'Batch 09' -> 'Batch 10'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-81",
+                    "studentName": "Fahim Mahmud",
+                    "course": "Spoken English"
+                },
+                {
+                    "id": "AUD-1790766179441",
+                    "type": "Certificate Issued",
+                    "date": "2026-09-30",
+                    "timestamp": 1790766179441,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "SE-81",
+                    "studentName": "Fahim Mahmud",
+                    "course": "Spoken English"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1511",
+            "id": "GD-281",
+            "name": "MD.Kamrul Hasan Shuvo",
+            "phone": "01603074566",
+            "gender": "Male",
+            "fatherName": "MD.Billal Hossain",
+            "motherName": "Kamrul Nahar",
+            "guardianPhone": "01608272398",
+            "address": "Brahmonpara, Soshidol",
+            "course": "Graphic Design",
+            "batch": "Batch 34",
+            "registrationDate": "2026-08-02",
+            "status": "Paid",
+            "totalFee": 15000,
+            "discountFee": 2000,
+            "netFee": 13000,
+            "paidFee": 13000,
+            "dueFee": 0,
+            "takenBook": false,
+            "invoices": [
+                {
+                    "id": "INV-2026-1119",
+                    "date": "2026-08-02",
+                    "amount": 7000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "BIJOY ",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1137",
+                    "date": "2026-08-20",
+                    "amount": 6000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Bijoy",
+                    "receivedByAdmin": true
                 }
             ],
             "certified": false,
             "certificateDate": ""
+        },
+        {
+            "registrationId": "REG-1512",
+            "id": "BC-225",
+            "name": "Tahsin Ahmed",
+            "phone": "01852488331",
+            "gender": "Male",
+            "fatherName": "Faruk Ahmed",
+            "motherName": "",
+            "guardianPhone": "01966317920",
+            "address": "Comilla Mugultoli",
+            "course": "Basic Computer",
+            "batch": "Batch 47",
+            "registrationDate": "2026-08-04",
+            "status": "Paid",
+            "totalFee": 8000,
+            "discountFee": 0,
+            "netFee": 8000,
+            "paidFee": 8000,
+            "dueFee": 0,
+            "takenBook": true,
+            "nextPaymentDate": "",
+            "invoices": [
+                {
+                    "id": "INV-2026-1121-B",
+                    "date": "2026-08-04",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1121",
+                    "date": "2026-08-04",
+                    "amount": 7800,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": false,
+            "certificateDate": "",
+            "auditLogs": [
+                {
+                    "id": "AUD-1787808061172",
+                    "type": "Profile Edit",
+                    "date": "2026-08-27",
+                    "timestamp": 1787808061172,
+                    "details": "Phone: '01985415122' -> '01852488331'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-225",
+                    "studentName": "Tahsin Ahmed",
+                    "course": "Basic Computer"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1513",
+            "id": "BC-226",
+            "name": "MD. Shoriful Islam Sakib",
+            "phone": "01832251310",
+            "gender": "Male",
+            "fatherName": "Md. Shahin Hossain",
+            "motherName": "",
+            "guardianPhone": "01851248367",
+            "address": "",
+            "course": "Basic Computer",
+            "batch": "Batch 49",
+            "registrationDate": "2026-08-15",
+            "status": "Paid",
+            "totalFee": 6200,
+            "discountFee": 2000,
+            "netFee": 4200,
+            "paidFee": 4200,
+            "dueFee": 0,
+            "takenBook": true,
+            "nextPaymentDate": "",
+            "invoices": [
+                {
+                    "id": "INV-2026-1125",
+                    "date": "2026-08-15",
+                    "amount": 4000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1139",
+                    "date": "2026-08-22",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-10-08",
+            "bookIssueDate": "2026-08-22",
+            "auditLogs": [
+                {
+                    "id": "AUD-1791456492682",
+                    "type": "Certificate Issued",
+                    "date": "2026-10-08",
+                    "timestamp": 1791456492682,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "BC-226",
+                    "studentName": "MD. Shoriful Islam Sakib",
+                    "course": "Basic Computer"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1514",
+            "id": "BC-227",
+            "name": "Tasnia Jannat",
+            "phone": "01805512199",
+            "gender": "Female",
+            "fatherName": "Mohammed Ali",
+            "motherName": "",
+            "guardianPhone": "01849916248",
+            "address": "Badurtola,Cumilla",
+            "course": "Basic Computer",
+            "batch": "Batch 50",
+            "registrationDate": "2026-08-15",
+            "status": "Paid",
+            "totalFee": 6200,
+            "discountFee": 3000,
+            "netFee": 3200,
+            "paidFee": 3200,
+            "dueFee": 0,
+            "takenBook": true,
+            "nextPaymentDate": "",
+            "invoices": [
+                {
+                    "id": "INV-2026-1126",
+                    "date": "2026-08-15",
+                    "amount": 3000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "BIJOY ",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1167",
+                    "date": "2026-09-03",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-10-08",
+            "bookIssueDate": "2026-09-03",
+            "auditLogs": [
+                {
+                    "id": "AUD-1791454357837",
+                    "type": "Certificate Issued",
+                    "date": "2026-10-08",
+                    "timestamp": 1791454357837,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "BC-227",
+                    "studentName": "Tasnia Jannat",
+                    "course": "Basic Computer"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1515",
+            "id": "BC-228",
+            "name": "Kayes Mazumder",
+            "phone": "01736279639",
+            "gender": "Male",
+            "fatherName": "Abu Kawser",
+            "motherName": "",
+            "guardianPhone": "01605713902",
+            "address": "muradpur, comilla",
+            "course": "Basic Computer",
+            "batch": "Batch 49",
+            "registrationDate": "2026-08-17",
+            "status": "Paid",
+            "totalFee": 6200,
+            "discountFee": 2000,
+            "netFee": 4200,
+            "paidFee": 4200,
+            "dueFee": 0,
+            "takenBook": true,
+            "nextPaymentDate": "2026-09-13",
+            "invoices": [
+                {
+                    "id": "INV-2026-1127",
+                    "date": "2026-08-17",
+                    "amount": 1500,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Sishir",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1155",
+                    "date": "2026-09-02",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1177",
+                    "date": "2026-09-12",
+                    "amount": 2500,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-10-08",
+            "bookIssueDate": "2026-09-02",
+            "notes": "Spoken English Class ekta o kore ni tai 1500/- payment adjust kore deya hoyeche basic er shathe.",
+            "auditLogs": [
+                {
+                    "id": "AUD-1791456524093",
+                    "type": "Certificate Issued",
+                    "date": "2026-10-08",
+                    "timestamp": 1791456524093,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "BC-228",
+                    "studentName": "Kayes Mazumder",
+                    "course": "Basic Computer"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1515",
+            "id": "SE-82",
+            "name": "Kayes Mazumder",
+            "phone": "01736279639",
+            "gender": "Male",
+            "fatherName": "Abu Kawser",
+            "motherName": "",
+            "guardianPhone": "01605713902",
+            "address": "muradpur, comilla",
+            "course": "Spoken English",
+            "batch": "Batch 10",
+            "registrationDate": "2026-08-17",
+            "status": "Partial",
+            "totalFee": 7000,
+            "discountFee": 3000,
+            "netFee": 4000,
+            "paidFee": 1500,
+            "dueFee": 2500,
+            "takenBook": false,
+            "nextPaymentDate": "2026-09-13",
+            "invoices": [
+                {
+                    "id": "INV-2026-1127",
+                    "date": "2026-08-17",
+                    "amount": 1500,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Sishir",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": false,
+            "certificateDate": "",
+            "auditLogs": [
+                {
+                    "id": "AUD-1787052937764",
+                    "type": "Batch Transfer",
+                    "date": "2026-08-18",
+                    "timestamp": 1787052937765,
+                    "details": "Batch: 'Batch 09' -> 'Batch 10'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "SE-82",
+                    "studentName": "Kayes Mazumder",
+                    "course": "Spoken English"
+                }
+            ],
+            "notes": "Spoken English Class ekta o kore ni tai 1500/- payment adjust kore deya hoyeche basic er shathe."
+        },
+        {
+            "registrationId": "REG-1516",
+            "id": "GD-282",
+            "name": "Rudra Saha",
+            "phone": "01856986600",
+            "gender": "Male",
+            "fatherName": "Gowtam Chandra Saha",
+            "motherName": "",
+            "guardianPhone": "01712343029",
+            "address": "",
+            "course": "Graphic Design",
+            "batch": "Batch 34",
+            "registrationDate": "2026-08-17",
+            "status": "Partial",
+            "totalFee": 15000,
+            "discountFee": 4000,
+            "netFee": 11000,
+            "paidFee": 3000,
+            "dueFee": 8000,
+            "takenBook": false,
+            "nextPaymentDate": "2026-10-01",
+            "invoices": [
+                {
+                    "id": "INV-2026-1128",
+                    "date": "2026-08-17",
+                    "amount": 3000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": false,
+            "certificateDate": ""
+        },
+        {
+            "registrationId": "REG-1516",
+            "id": "BC-229",
+            "name": "Rudra Saha",
+            "phone": "01856986600",
+            "gender": "Male",
+            "fatherName": "Gowtam Chandra Saha",
+            "motherName": "",
+            "guardianPhone": "01712343029",
+            "address": "",
+            "course": "Basic Computer",
+            "batch": "Batch 50",
+            "registrationDate": "2026-08-17",
+            "status": "Paid",
+            "totalFee": 6200,
+            "discountFee": 2000,
+            "netFee": 4200,
+            "paidFee": 4200,
+            "dueFee": 0,
+            "takenBook": true,
+            "nextPaymentDate": "2026-10-01",
+            "invoices": [
+                {
+                    "id": "INV-2026-1128-B",
+                    "date": "2026-08-17",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1128",
+                    "date": "2026-08-17",
+                    "amount": 1800,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1182",
+                    "date": "2026-09-20",
+                    "amount": 1500,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": false
+                },
+                {
+                    "id": "INV-2026-1185",
+                    "date": "2026-10-08",
+                    "amount": 700,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": false
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-10-08",
+            "auditLogs": [
+                {
+                    "id": "AUD-1788837929257",
+                    "type": "Batch Transfer",
+                    "date": "2026-09-08",
+                    "timestamp": 1788837929257,
+                    "details": "Batch: 'Batch 49' -> 'Batch 50'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-229",
+                    "studentName": "Rudra Saha",
+                    "course": "Basic Computer"
+                },
+                {
+                    "id": "AUD-1791454454822",
+                    "type": "Certificate Issued",
+                    "date": "2026-10-08",
+                    "timestamp": 1791454454822,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "BC-229",
+                    "studentName": "Rudra Saha",
+                    "course": "Basic Computer"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1517",
+            "id": "BC-230",
+            "name": "MD.Arfan Khan Erfan",
+            "phone": "01606215549",
+            "gender": "Male",
+            "fatherName": "MD.Jalil",
+            "motherName": "",
+            "guardianPhone": "01734509566",
+            "address": "Comilla",
+            "course": "Basic Computer",
+            "batch": "Batch 49",
+            "registrationDate": "2026-08-18",
+            "status": "Paid",
+            "totalFee": 6200,
+            "discountFee": 2000,
+            "netFee": 4200,
+            "paidFee": 4200,
+            "dueFee": 0,
+            "takenBook": true,
+            "invoices": [
+                {
+                    "id": "INV-2026-1129",
+                    "date": "2026-08-18",
+                    "amount": 2000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "BIJOY ",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1138",
+                    "date": "2026-08-22",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1168",
+                    "date": "2026-09-05",
+                    "amount": 2000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Rohan",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-10-08",
+            "bookIssueDate": "2026-08-22",
+            "auditLogs": [
+                {
+                    "id": "AUD-1791456556152",
+                    "type": "Certificate Issued",
+                    "date": "2026-10-08",
+                    "timestamp": 1791456556152,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "BC-230",
+                    "studentName": "MD.Arfan Khan Erfan",
+                    "course": "Basic Computer"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1518",
+            "id": "GD-283",
+            "name": "MD. Emran Hasan Emo",
+            "phone": "01409529896",
+            "gender": "Male",
+            "fatherName": "Abdul Gofur",
+            "motherName": "Shajeda Begum",
+            "guardianPhone": "01956212228",
+            "address": "Telicona ,Comilla",
+            "course": "Graphic Design",
+            "batch": "Batch 34",
+            "registrationDate": "2026-08-18",
+            "status": "Partial",
+            "totalFee": 15000,
+            "discountFee": 2000,
+            "netFee": 13000,
+            "paidFee": 5000,
+            "dueFee": 8000,
+            "takenBook": false,
+            "nextPaymentDate": "2026-09-12",
+            "invoices": [
+                {
+                    "id": "INV-2026-1130",
+                    "date": "2026-08-18",
+                    "amount": 5000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "BIJOY ",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": false,
+            "certificateDate": ""
+        },
+        {
+            "registrationId": "REG-1519",
+            "id": "IELTS-1",
+            "name": "Ramim Arefin Mahi",
+            "phone": "01821254830",
+            "gender": "Female",
+            "fatherName": "Md. Kabir",
+            "motherName": "Amena Akter",
+            "guardianPhone": "01719411528",
+            "address": "Araiora",
+            "course": "IELTS",
+            "batch": "Batch 01",
+            "registrationDate": "2026-08-18",
+            "status": "Paid",
+            "totalFee": 15000,
+            "discountFee": 5000,
+            "netFee": 10000,
+            "paidFee": 10000,
+            "dueFee": 0,
+            "takenBook": false,
+            "nextPaymentDate": "",
+            "invoices": [
+                {
+                    "id": "INV-2026-1131",
+                    "date": "2026-08-18",
+                    "amount": 10000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": false,
+            "certificateDate": ""
+        },
+        {
+            "registrationId": "REG-1520",
+            "id": "SE-83",
+            "name": "Nabila Akter",
+            "phone": "01619809434",
+            "gender": "Female",
+            "fatherName": "MD Shafiqul Islam",
+            "motherName": "",
+            "guardianPhone": "01859118802",
+            "address": "Shashongacha",
+            "course": "Spoken English",
+            "batch": "Batch 10",
+            "registrationDate": "2026-08-18",
+            "status": "Partial",
+            "totalFee": 7000,
+            "discountFee": 2000,
+            "netFee": 5000,
+            "paidFee": 500,
+            "dueFee": 4500,
+            "takenBook": false,
+            "nextPaymentDate": "2026-08-25",
+            "invoices": [
+                {
+                    "id": "INV-2026-1132",
+                    "date": "2026-08-18",
+                    "amount": 500,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": false,
+            "certificateDate": ""
+        },
+        {
+            "registrationId": "REG-1500",
+            "id": "IELTS-2",
+            "name": "Md. Jisan Chowdhury Rahat",
+            "phone": "01633716801",
+            "gender": "Male",
+            "fatherName": "Md. Quadir Chowdhury",
+            "motherName": "",
+            "guardianPhone": "01928105088",
+            "address": "",
+            "course": "IELTS",
+            "batch": "Batch 01",
+            "registrationDate": "2026-08-18",
+            "status": "Partial",
+            "totalFee": 15000,
+            "discountFee": 0,
+            "netFee": 15000,
+            "paidFee": 5000,
+            "dueFee": 10000,
+            "takenBook": false,
+            "nextPaymentDate": "2026-08-25",
+            "invoices": [
+                {
+                    "id": "INV-2026-1133",
+                    "date": "2026-08-18",
+                    "amount": 5000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": false,
+            "certificateDate": ""
+        },
+        {
+            "registrationId": "REG-1521",
+            "id": "BC-231",
+            "name": "Arzina Akrter Sumi",
+            "phone": "01301427493",
+            "gender": "Female",
+            "fatherName": "MD. Mostafa",
+            "motherName": "",
+            "guardianPhone": "01812382043",
+            "address": "Choddogram",
+            "course": "Basic Computer",
+            "batch": "Batch 49",
+            "registrationDate": "2026-08-19",
+            "status": "Paid",
+            "totalFee": 6200,
+            "discountFee": 2000,
+            "netFee": 4200,
+            "paidFee": 4200,
+            "dueFee": 0,
+            "takenBook": true,
+            "nextPaymentDate": "",
+            "invoices": [
+                {
+                    "id": "INV-2026-1134",
+                    "date": "2026-08-19",
+                    "amount": 4000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "BIJOY ",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1143",
+                    "date": "2026-08-24",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": false,
+            "certificateDate": "",
+            "bookIssueDate": "2026-08-24"
+        },
+        {
+            "registrationId": "REG-1522",
+            "id": "BC-232",
+            "name": "Jannatul Ferdaus Ariba",
+            "phone": "01684229171",
+            "gender": "Female",
+            "fatherName": "MD.Jashim Uddin",
+            "motherName": "",
+            "guardianPhone": "01715560120",
+            "address": "Comilla",
+            "course": "Basic Computer",
+            "batch": "Batch 49",
+            "registrationDate": "2026-08-19",
+            "status": "Paid",
+            "totalFee": 6200,
+            "discountFee": 2000,
+            "netFee": 4200,
+            "paidFee": 4200,
+            "dueFee": 0,
+            "takenBook": true,
+            "nextPaymentDate": "",
+            "invoices": [
+                {
+                    "id": "INV-2026-1135",
+                    "date": "2026-08-19",
+                    "amount": 4000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "BIJOY ",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1156",
+                    "date": "2026-09-02",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": false,
+            "certificateDate": "",
+            "bookIssueDate": "2026-09-02"
+        },
+        {
+            "registrationId": "REG-1523",
+            "id": "BC-233",
+            "name": "Ifran Ahmed",
+            "phone": "01962657107",
+            "gender": "Male",
+            "fatherName": "Jalal Ahmed",
+            "motherName": "",
+            "guardianPhone": "01843200426",
+            "address": "Kaptan Bajar",
+            "course": "Basic Computer",
+            "batch": "Batch 49",
+            "registrationDate": "2026-08-20",
+            "status": "Paid",
+            "totalFee": 6200,
+            "discountFee": 2000,
+            "netFee": 4200,
+            "paidFee": 4200,
+            "dueFee": 0,
+            "takenBook": true,
+            "nextPaymentDate": "",
+            "invoices": [
+                {
+                    "id": "INV-2026-1136",
+                    "date": "2026-08-20",
+                    "amount": 4000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "BIJOY ",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1140",
+                    "date": "2026-08-22",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-10-08",
+            "bookIssueDate": "2026-08-22",
+            "auditLogs": [
+                {
+                    "id": "AUD-1791456607189",
+                    "type": "Certificate Issued",
+                    "date": "2026-10-08",
+                    "timestamp": 1791456607189,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "BC-233",
+                    "studentName": "Ifran Ahmed",
+                    "course": "Basic Computer"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1524",
+            "id": "BC-234",
+            "name": "Sajjatul Islam",
+            "phone": "01960228865",
+            "gender": "Male",
+            "fatherName": "MD.Sadek Mia",
+            "motherName": "",
+            "guardianPhone": "01882434943",
+            "address": "Chokbazar,Comilla",
+            "course": "Basic Computer",
+            "batch": "Batch 50",
+            "registrationDate": "2026-08-24",
+            "status": "Paid",
+            "totalFee": 6200,
+            "discountFee": 2000,
+            "netFee": 4200,
+            "paidFee": 4200,
+            "dueFee": 0,
+            "takenBook": true,
+            "invoices": [
+                {
+                    "id": "INV-2026-1142",
+                    "date": "2026-08-24",
+                    "amount": 2000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "BIJOY ",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1169",
+                    "date": "2026-09-05",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1176",
+                    "date": "2026-09-10",
+                    "amount": 2000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-10-08",
+            "bookIssueDate": "2026-09-05",
+            "auditLogs": [
+                {
+                    "id": "AUD-1791454553573",
+                    "type": "Certificate Issued",
+                    "date": "2026-10-08",
+                    "timestamp": 1791454553573,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "BC-234",
+                    "studentName": "Sajjatul Islam",
+                    "course": "Basic Computer"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1525",
+            "id": "GD-284",
+            "name": "Mazharul Islam Rayhan Bhuiyan",
+            "phone": "01624895353",
+            "gender": "Male",
+            "fatherName": "Jahirul Kaiyum Bhuiyan",
+            "motherName": "",
+            "guardianPhone": "01823180900",
+            "address": "Rampur, Kotbari, Comilla",
+            "course": "Graphic Design",
+            "batch": "Batch 34",
+            "registrationDate": "2026-08-24",
+            "status": "Partial",
+            "totalFee": 15000,
+            "discountFee": 2000,
+            "netFee": 13000,
+            "paidFee": 6500,
+            "dueFee": 6500,
+            "takenBook": false,
+            "nextPaymentDate": "2026-09-05",
+            "invoices": [
+                {
+                    "id": "INV-2026-1144",
+                    "date": "2026-08-24",
+                    "amount": 6500,
+                    "paymentType": "New Registration",
+                    "collectedBy": "BIJOY ",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": false,
+            "certificateDate": ""
+        },
+        {
+            "registrationId": "REG-1526",
+            "id": "BC-235",
+            "name": "MAHARUN NESSA",
+            "phone": "01606244535",
+            "gender": "Female",
+            "fatherName": "MD. MOHIN UDDIN",
+            "motherName": "",
+            "guardianPhone": "01871075570",
+            "address": "TOMSOMBRIDGE",
+            "course": "Basic Computer",
+            "batch": "Batch 45",
+            "registrationDate": "2026-08-24",
+            "status": "Paid",
+            "totalFee": 6200,
+            "discountFee": 2000,
+            "netFee": 4200,
+            "paidFee": 4200,
+            "dueFee": 0,
+            "takenBook": true,
+            "invoices": [
+                {
+                    "id": "INV-2026-1145",
+                    "date": "2026-08-24",
+                    "amount": 500,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1154",
+                    "date": "2026-09-01",
+                    "amount": 2500,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Bijoy",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1164",
+                    "date": "2026-09-02",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1178",
+                    "date": "2026-09-12",
+                    "amount": 1000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Rohan",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-10-08",
+            "bookIssueDate": "2026-09-02",
+            "auditLogs": [
+                {
+                    "id": "AUD-1791454618521",
+                    "type": "Certificate Issued",
+                    "date": "2026-10-08",
+                    "timestamp": 1791454618521,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "BC-235",
+                    "studentName": "MAHARUN NESSA",
+                    "course": "Basic Computer"
+                },
+                {
+                    "id": "AUD-1792061359460",
+                    "type": "Batch Transfer",
+                    "date": "2026-10-15",
+                    "timestamp": 1792061359460,
+                    "details": "Batch: 'Batch 50' -> 'Batch 45'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": false,
+                    "studentId": "BC-235",
+                    "studentName": "MAHARUN NESSA",
+                    "course": "Basic Computer"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1526",
+            "id": "SE-84",
+            "name": "MAHARUN NESSA",
+            "phone": "01606244535",
+            "gender": "Female",
+            "fatherName": "MD. MOHIN UDDIN",
+            "motherName": "",
+            "guardianPhone": "01871075570",
+            "address": "TOMSOMBRIDGE",
+            "course": "Spoken English",
+            "batch": "Batch 7",
+            "registrationDate": "2026-08-24",
+            "status": "Paid",
+            "totalFee": 7000,
+            "discountFee": 3000,
+            "netFee": 4000,
+            "paidFee": 4000,
+            "dueFee": 0,
+            "takenBook": false,
+            "invoices": [
+                {
+                    "id": "INV-2026-1145",
+                    "date": "2026-08-24",
+                    "amount": 500,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1154",
+                    "date": "2026-09-01",
+                    "amount": 3500,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Bijoy",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-09-30",
+            "auditLogs": [
+                {
+                    "id": "AUD-1790771732337",
+                    "type": "Certificate Issued",
+                    "date": "2026-09-30",
+                    "timestamp": 1790771732337,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "SE-84",
+                    "studentName": "MAHARUN NESSA",
+                    "course": "Spoken English"
+                },
+                {
+                    "id": "AUD-1790771771450",
+                    "type": "Profile Edit",
+                    "date": "2026-09-30",
+                    "timestamp": 1790771771450,
+                    "details": "Father: 'MOHIN UDDIN' -> 'MD. MOHIN UDDIN'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": false,
+                    "studentId": "SE-84",
+                    "studentName": "MAHARUN NESSA",
+                    "course": "Spoken English"
+                },
+                {
+                    "id": "AUD-1792213215089",
+                    "type": "Batch Transfer",
+                    "date": "2026-10-17",
+                    "timestamp": 1792213215090,
+                    "details": "Batch: 'Batch 10' -> 'Batch 7'",
+                    "collectedBy": "Shisir ",
+                    "receivedByAdmin": false,
+                    "studentId": "SE-84",
+                    "studentName": "MAHARUN NESSA",
+                    "course": "Spoken English"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1527",
+            "id": "BC-236",
+            "name": "JANNATUL FARDOUS SADIA",
+            "phone": "01871075570",
+            "gender": "Female",
+            "fatherName": "KAMRUL ISLAM",
+            "motherName": "",
+            "guardianPhone": "01727040204",
+            "address": "TOMSOMEBRIDGE",
+            "course": "Basic Computer",
+            "batch": "Batch 50",
+            "registrationDate": "2026-08-24",
+            "status": "Paid",
+            "totalFee": 6200,
+            "discountFee": 2000,
+            "netFee": 4200,
+            "paidFee": 4200,
+            "dueFee": 0,
+            "takenBook": true,
+            "invoices": [
+                {
+                    "id": "INV-2026-1146",
+                    "date": "2026-08-24",
+                    "amount": 500,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1162",
+                    "date": "2026-09-02",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1172",
+                    "date": "2026-09-07",
+                    "amount": 500,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1179",
+                    "date": "2026-09-12",
+                    "amount": 3000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Rohan",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-10-08",
+            "bookIssueDate": "2026-09-02",
+            "auditLogs": [
+                {
+                    "id": "AUD-1791454676357",
+                    "type": "Certificate Issued",
+                    "date": "2026-10-08",
+                    "timestamp": 1791454676357,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "BC-236",
+                    "studentName": "JANNATUL FARDOUS SADIA",
+                    "course": "Basic Computer"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1527",
+            "id": "SE-85",
+            "name": "JANNATUL FARDOUS SADIA",
+            "phone": "01871075570",
+            "gender": "Female",
+            "fatherName": "KAMRUL ISLAM",
+            "motherName": "",
+            "guardianPhone": "01727040204",
+            "address": "TOMSOMEBRIDGE",
+            "course": "Spoken English",
+            "batch": "Batch 10",
+            "registrationDate": "2026-08-24",
+            "status": "Paid",
+            "totalFee": 7000,
+            "discountFee": 3000,
+            "netFee": 4000,
+            "paidFee": 4000,
+            "dueFee": 0,
+            "takenBook": false,
+            "invoices": [
+                {
+                    "id": "INV-2026-1146",
+                    "date": "2026-08-24",
+                    "amount": 500,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1172",
+                    "date": "2026-09-07",
+                    "amount": 3500,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-09-30",
+            "auditLogs": [
+                {
+                    "id": "AUD-1790771820169",
+                    "type": "Certificate Issued",
+                    "date": "2026-09-30",
+                    "timestamp": 1790771820169,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "SE-85",
+                    "studentName": "JANNATUL FARDOUS SADIA",
+                    "course": "Spoken English"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1528",
+            "id": "BC-237",
+            "name": "MD. Kazi Tahmid",
+            "phone": "01621019225",
+            "gender": "Male",
+            "fatherName": "Kazi Rafiqual Islam",
+            "motherName": "Rena Begum",
+            "guardianPhone": "01746454087",
+            "address": "Comilla",
+            "course": "Basic Computer",
+            "batch": "Batch 50",
+            "registrationDate": "2026-08-25",
+            "status": "Paid",
+            "totalFee": 6200,
+            "discountFee": 2000,
+            "netFee": 4200,
+            "paidFee": 4200,
+            "dueFee": 0,
+            "takenBook": true,
+            "invoices": [
+                {
+                    "id": "INV-2026-1147",
+                    "date": "2026-08-25",
+                    "amount": 2000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1159",
+                    "date": "2026-09-02",
+                    "amount": 2000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1160",
+                    "date": "2026-09-02",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-10-08",
+            "bookIssueDate": "2026-09-02",
+            "auditLogs": [
+                {
+                    "id": "AUD-1791454756023",
+                    "type": "Certificate Issued",
+                    "date": "2026-10-08",
+                    "timestamp": 1791454756023,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "BC-237",
+                    "studentName": "MD. Kazi Tahmid",
+                    "course": "Basic Computer"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1529",
+            "id": "BC-238",
+            "name": "SREE KOUSHIK BARMAN DIP",
+            "phone": "01634236096",
+            "gender": "Male",
+            "fatherName": "SREE MRITTUNJOY BARMAN",
+            "motherName": "",
+            "guardianPhone": "01644646425",
+            "address": "",
+            "course": "Basic Computer",
+            "batch": "Batch 49",
+            "registrationDate": "2026-08-26",
+            "status": "Paid",
+            "totalFee": 6200,
+            "discountFee": 3000,
+            "netFee": 3200,
+            "paidFee": 3200,
+            "dueFee": 0,
+            "takenBook": true,
+            "invoices": [
+                {
+                    "id": "INV-2026-1148-B",
+                    "date": "2026-08-26",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1148",
+                    "date": "2026-08-26",
+                    "amount": 2800,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1149",
+                    "date": "2026-08-26",
+                    "amount": 200,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-10-08",
+            "auditLogs": [
+                {
+                    "id": "AUD-1791456632207",
+                    "type": "Certificate Issued",
+                    "date": "2026-10-08",
+                    "timestamp": 1791456632207,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "BC-238",
+                    "studentName": "SREE KOUSHIK BARMAN DIP",
+                    "course": "Basic Computer"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1530",
+            "id": "GD-285",
+            "name": "Fatema tuj johara",
+            "phone": "01319259960",
+            "gender": "Female",
+            "fatherName": "Mohammad humayun kabir",
+            "motherName": "",
+            "guardianPhone": "01673186933",
+            "address": "Cumilla",
+            "course": "Graphic Design",
+            "batch": "Batch 34",
+            "registrationDate": "2026-08-29",
+            "status": "Partial",
+            "totalFee": 15000,
+            "discountFee": 2000,
+            "netFee": 13000,
+            "paidFee": 500,
+            "dueFee": 12500,
+            "takenBook": false,
+            "nextPaymentDate": "2026-09-07",
+            "invoices": [
+                {
+                    "id": "INV-2026-1151",
+                    "date": "2026-08-29",
+                    "amount": 500,
+                    "paymentType": "New Registration",
+                    "collectedBy": "BIJOY ",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": false,
+            "certificateDate": "",
+            "notes": "5/9 7k Taka Dibe"
+        },
+        {
+            "registrationId": "REG-1530",
+            "id": "BC-239",
+            "name": "Fatema tuj johara",
+            "phone": "01319259960",
+            "gender": "Female",
+            "fatherName": "Mohammad humayun kabir",
+            "motherName": "",
+            "guardianPhone": "01673186933",
+            "address": "Cumilla",
+            "course": "Basic Computer",
+            "batch": "Batch 50",
+            "registrationDate": "2026-08-29",
+            "status": "Paid",
+            "totalFee": 6200,
+            "discountFee": 3000,
+            "netFee": 3200,
+            "paidFee": 3200,
+            "dueFee": 0,
+            "takenBook": true,
+            "nextPaymentDate": "2026-09-07",
+            "invoices": [
+                {
+                    "id": "INV-2026-1152",
+                    "date": "2026-08-29",
+                    "amount": 500,
+                    "paymentType": "New Registration",
+                    "collectedBy": "BIJOY ",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1173",
+                    "date": "2026-09-07",
+                    "amount": 2500,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1174",
+                    "date": "2026-09-07",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-10-08",
+            "notes": "5/9 7k Taka Dibe",
+            "bookIssueDate": "2026-09-07",
+            "auditLogs": [
+                {
+                    "id": "AUD-1791454843411",
+                    "type": "Certificate Issued",
+                    "date": "2026-10-08",
+                    "timestamp": 1791454843411,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "BC-239",
+                    "studentName": "Fatema Tuj Zohora",
+                    "course": "Basic Computer"
+                },
+                {
+                    "id": "AUD-1791547059213",
+                    "type": "Profile Edit",
+                    "date": "2026-10-09",
+                    "timestamp": 1791547059213,
+                    "details": "Father: 'Mohammed Fahim Ibne Roshid' -> 'Mohammad humayun kabir'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": false,
+                    "studentId": "BC-239",
+                    "studentName": "Fatema Tuj Zohora",
+                    "course": "Basic Computer"
+                },
+                {
+                    "id": "AUD-1791547573604",
+                    "type": "Profile Edit",
+                    "date": "2026-10-09",
+                    "timestamp": 1791547573604,
+                    "details": "Name: 'Fatema Tuj Zohora' -> 'Fatema tuj johara'",
+                    "collectedBy": "Shisir ",
+                    "receivedByAdmin": false,
+                    "studentId": "BC-239",
+                    "studentName": "Fatema tuj johara",
+                    "course": "Basic Computer"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1531",
+            "id": "BC-240",
+            "name": "Mahjabin Samiya",
+            "phone": "01337879738",
+            "gender": "Female",
+            "fatherName": "MD. Kamal Reza",
+            "motherName": "Aysha Begum",
+            "guardianPhone": "01894703814",
+            "address": "Jhawtola, Comilla",
+            "course": "Basic Computer",
+            "batch": "Batch 50",
+            "registrationDate": "2026-08-30",
+            "status": "Paid",
+            "totalFee": 6200,
+            "discountFee": 2000,
+            "netFee": 4200,
+            "paidFee": 4200,
+            "dueFee": 0,
+            "takenBook": true,
+            "invoices": [
+                {
+                    "id": "INV-2026-1153",
+                    "date": "2026-08-30",
+                    "amount": 2000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Rohan",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1170",
+                    "date": "2026-09-05",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1171",
+                    "date": "2026-09-06",
+                    "amount": 2000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-10-08",
+            "notes": "",
+            "bookIssueDate": "2026-09-05",
+            "auditLogs": [
+                {
+                    "id": "AUD-1788697928503",
+                    "type": "Profile Edit",
+                    "date": "2026-09-06",
+                    "timestamp": 1788697928503,
+                    "details": "Guardian: '01348186915' -> '01894703814'",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true,
+                    "studentId": "BC-240",
+                    "studentName": "Mahjabin Samiya",
+                    "course": "Basic Computer"
+                },
+                {
+                    "id": "AUD-1791454892877",
+                    "type": "Certificate Issued",
+                    "date": "2026-10-08",
+                    "timestamp": 1791454892877,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "BC-240",
+                    "studentName": "Mahjabin Samiya",
+                    "course": "Basic Computer"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1532",
+            "id": "GD-286",
+            "name": "Bijoy Hasan",
+            "phone": "01970105478",
+            "gender": "Male",
+            "fatherName": "Bosir Ahmed",
+            "motherName": "",
+            "guardianPhone": "01328230327",
+            "address": "Jhawtala",
+            "course": "Graphic Design",
+            "batch": "Batch 34",
+            "registrationDate": "2026-09-02",
+            "status": "Partial",
+            "totalFee": 15000,
+            "discountFee": 2000,
+            "netFee": 13000,
+            "paidFee": 5000,
+            "dueFee": 8000,
+            "takenBook": false,
+            "nextPaymentDate": "2026-09-24",
+            "invoices": [
+                {
+                    "id": "INV-2026-1157",
+                    "date": "2026-09-02",
+                    "amount": 5000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "BIJOY ",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": false,
+            "certificateDate": ""
+        },
+        {
+            "registrationId": "REG-1197",
+            "id": "GD-287",
+            "name": "bijoy",
+            "phone": "01318804658",
+            "gender": "Male",
+            "fatherName": "MD. Abul Kalam",
+            "motherName": "",
+            "guardianPhone": "01798926897",
+            "address": "Jhawtala",
+            "course": "Graphic Design",
+            "batch": "Batch 34",
+            "registrationDate": "2026-09-02",
+            "status": "Partial",
+            "totalFee": 15000,
+            "discountFee": 2000,
+            "netFee": 13000,
+            "paidFee": 5000,
+            "dueFee": 8000,
+            "takenBook": false,
+            "nextPaymentDate": "2026-09-18",
+            "invoices": [
+                {
+                    "id": "INV-2026-1158",
+                    "date": "2026-09-02",
+                    "amount": 5000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "BIJOY ",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": false,
+            "certificateDate": ""
+        },
+        {
+            "registrationId": "REG-1533",
+            "id": "BC-241",
+            "name": "Tasnim Jahan Nadia",
+            "phone": "01871075570",
+            "gender": "Female",
+            "fatherName": "Kamrul Islam",
+            "motherName": "",
+            "guardianPhone": "01727040204",
+            "address": "Tomsomebridge",
+            "course": "Basic Computer",
+            "batch": "Batch 50",
+            "registrationDate": "2026-09-02",
+            "status": "Paid",
+            "totalFee": 6200,
+            "discountFee": 2000,
+            "netFee": 4200,
+            "paidFee": 4200,
+            "dueFee": 0,
+            "takenBook": true,
+            "invoices": [
+                {
+                    "id": "INV-2026-1161",
+                    "date": "2026-09-02",
+                    "amount": 1000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1163",
+                    "date": "2026-09-02",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "frontdesk@edizit.com",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1181",
+                    "date": "2026-09-15",
+                    "amount": 3000,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-10-08",
+            "bookIssueDate": "2026-09-02",
+            "auditLogs": [
+                {
+                    "id": "AUD-1791454941135",
+                    "type": "Certificate Issued",
+                    "date": "2026-10-08",
+                    "timestamp": 1791454941135,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "BC-241",
+                    "studentName": "Tasnim Jahan Nadia",
+                    "course": "Basic Computer"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1534",
+            "id": "BC-242",
+            "name": "Joy Sarker Badhon",
+            "phone": "01890758878",
+            "gender": "Male",
+            "fatherName": "Krishna Sarker",
+            "motherName": "",
+            "guardianPhone": "01317644488",
+            "address": "comilla",
+            "course": "Basic Computer",
+            "batch": "Batch 50",
+            "registrationDate": "2026-09-02",
+            "status": "Paid",
+            "totalFee": 6200,
+            "discountFee": 3000,
+            "netFee": 3200,
+            "paidFee": 3200,
+            "dueFee": 0,
+            "takenBook": true,
+            "invoices": [
+                {
+                    "id": "INV-2026-1165-B",
+                    "date": "2026-09-02",
+                    "amount": 200,
+                    "paymentType": "Book Payment",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1165",
+                    "date": "2026-09-02",
+                    "amount": 2800,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
+                },
+                {
+                    "id": "INV-2026-1166",
+                    "date": "2026-09-02",
+                    "amount": 200,
+                    "paymentType": "Due Collection",
+                    "collectedBy": "Mahi",
+                    "receivedByAdmin": true
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-10-08",
+            "auditLogs": [
+                {
+                    "id": "AUD-1791457092183",
+                    "type": "Certificate Issued",
+                    "date": "2026-10-08",
+                    "timestamp": 1791457092183,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "BC-242",
+                    "studentName": "Joy Sarker Badhon",
+                    "course": "Basic Computer"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1535",
+            "id": "GD-288",
+            "name": "Shariar Imrose Sudad",
+            "phone": "01613139990",
+            "gender": "Male",
+            "fatherName": "Md Safiqur Rahman",
+            "motherName": "",
+            "guardianPhone": "01686687290",
+            "address": "Comilla",
+            "course": "Graphic Design",
+            "batch": "Batch 32",
+            "registrationDate": "2026-10-08",
+            "status": "Paid",
+            "totalFee": 15000,
+            "discountFee": 3000,
+            "netFee": 12000,
+            "paidFee": 12000,
+            "dueFee": 0,
+            "takenBook": false,
+            "nextPaymentDate": "",
+            "invoices": [
+                {
+                    "id": "INV-2026-1186",
+                    "date": "2026-10-08",
+                    "amount": 12000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": false
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-10-08",
+            "auditLogs": [
+                {
+                    "id": "AUD-1791463567199",
+                    "type": "Certificate Issued",
+                    "date": "2026-10-08",
+                    "timestamp": 1791463567199,
+                    "details": "Graduation certificate awarded for course: Graphic Design",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "GD-288",
+                    "studentName": "Shariar Imrose Sudad",
+                    "course": "Graphic Design"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1535",
+            "id": "BC-243",
+            "name": "Shariar Imrose Sudad",
+            "phone": "01613139990",
+            "gender": "Male",
+            "fatherName": "Md Safiqur Rahman",
+            "motherName": "",
+            "guardianPhone": "01686687290",
+            "address": "Comilla",
+            "course": "Basic Computer",
+            "batch": "Batch 48",
+            "registrationDate": "2026-10-08",
+            "status": "Paid",
+            "totalFee": 6000,
+            "discountFee": 2000,
+            "netFee": 4000,
+            "paidFee": 4000,
+            "dueFee": 0,
+            "takenBook": false,
+            "nextPaymentDate": "",
+            "invoices": [
+                {
+                    "id": "INV-2026-1186",
+                    "date": "2026-10-08",
+                    "amount": 4000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": false
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-10-08",
+            "auditLogs": [
+                {
+                    "id": "AUD-1791463709067",
+                    "type": "Certificate Issued",
+                    "date": "2026-10-08",
+                    "timestamp": 1791463709067,
+                    "details": "Graduation certificate awarded for course: Basic Computer",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "BC-243",
+                    "studentName": "Shariar Imrose Sudad",
+                    "course": "Basic Computer"
+                }
+            ]
+        },
+        {
+            "registrationId": "REG-1535",
+            "id": "SE-86",
+            "name": "Shariar Imrose Sudad",
+            "phone": "01613139990",
+            "gender": "Male",
+            "fatherName": "Md Safiqur Rahman",
+            "motherName": "",
+            "guardianPhone": "01686687290",
+            "address": "Comilla",
+            "course": "Spoken English",
+            "batch": "Batch 8",
+            "registrationDate": "2026-10-08",
+            "status": "Paid",
+            "totalFee": 7000,
+            "discountFee": 2000,
+            "netFee": 5000,
+            "paidFee": 5000,
+            "dueFee": 0,
+            "takenBook": false,
+            "nextPaymentDate": "",
+            "invoices": [
+                {
+                    "id": "INV-2026-1186",
+                    "date": "2026-10-08",
+                    "amount": 5000,
+                    "paymentType": "New Registration",
+                    "collectedBy": "Shisir",
+                    "receivedByAdmin": false
+                }
+            ],
+            "certified": true,
+            "certificateDate": "2026-10-08",
+            "auditLogs": [
+                {
+                    "id": "AUD-1791463719420",
+                    "type": "Certificate Issued",
+                    "date": "2026-10-08",
+                    "timestamp": 1791463719420,
+                    "details": "Graduation certificate awarded for course: Spoken English",
+                    "collectedBy": "System",
+                    "receivedByAdmin": false,
+                    "studentId": "SE-86",
+                    "studentName": "Shariar Imrose Sudad",
+                    "course": "Spoken English"
+                }
+            ]
         }
     ],
     "settings": {
@@ -18045,7 +24505,9 @@ window.migratedDatabase = {
                 ],
                 "time": "06:30 PM - 08:00 PM",
                 "startDate": "2026-06-25",
-                "endDate": "2026-09-25"
+                "endDate": "2026-09-25",
+                "teacher": "Sumon",
+                "teacherPercentage": 30
             },
             {
                 "name": "Batch 8",
@@ -18061,8 +24523,10 @@ window.migratedDatabase = {
                     "Thu"
                 ],
                 "time": "05:00 PM - 06:30 PM",
-                "startDate": "2026-06-27",
-                "endDate": "2026-08-27"
+                "startDate": "2026-07-01",
+                "endDate": "2026-08-15",
+                "teacher": "",
+                "teacherPercentage": 0
             },
             {
                 "name": "Batch 7",
@@ -18113,7 +24577,9 @@ window.migratedDatabase = {
                 ],
                 "time": "12:00 PM - 01:30 PM",
                 "startDate": "2026-06-17",
-                "endDate": "2026-09-17"
+                "endDate": "2026-09-17",
+                "teacher": "Sishir",
+                "teacherPercentage": 30
             },
             {
                 "name": "Batch 46",
@@ -18121,13 +24587,18 @@ window.migratedDatabase = {
                 "fee": 6000,
                 "discount": 3000,
                 "schedule": [
+                    "Sat",
                     "Sun",
+                    "Mon",
                     "Tue",
+                    "Wed",
                     "Thu"
                 ],
                 "time": "05:00 PM - 06:30 PM",
                 "startDate": "2026-06-20",
-                "endDate": "2026-08-20"
+                "endDate": "2026-08-20",
+                "teacher": "Sishir",
+                "teacherPercentage": 30
             },
             {
                 "name": "Batch 32",
@@ -18206,7 +24677,9 @@ window.migratedDatabase = {
                 ],
                 "time": "09:00 AM - 10:30 AM",
                 "startDate": "2026-06-17",
-                "endDate": "2026-08-12"
+                "endDate": "2026-08-12",
+                "teacher": "Sumon",
+                "teacherPercentage": 30
             },
             {
                 "name": "Batch 45",
@@ -18223,7 +24696,9 @@ window.migratedDatabase = {
                 ],
                 "time": "10:30 AM - 12:00 PM",
                 "startDate": "2026-06-13",
-                "endDate": "2026-09-05"
+                "endDate": "2026-09-05",
+                "teacher": "Sishir",
+                "teacherPercentage": 30
             },
             {
                 "name": "Batch 40",
@@ -18237,7 +24712,9 @@ window.migratedDatabase = {
                 ],
                 "time": "06:00 PM - 07:30 PM",
                 "startDate": "2026-01-15",
-                "endDate": "2026-04-15"
+                "endDate": "2026-04-15",
+                "teacher": "Sumon",
+                "teacherPercentage": 30
             },
             {
                 "name": "Batch 31",
@@ -18268,7 +24745,9 @@ window.migratedDatabase = {
                 ],
                 "time": "09:00 AM - 10:30 AM",
                 "startDate": "2026-04-20",
-                "endDate": "2026-07-20"
+                "endDate": "2026-07-20",
+                "teacher": "Sumon",
+                "teacherPercentage": 30
             },
             {
                 "name": "Batch 30",
@@ -18355,7 +24834,9 @@ window.migratedDatabase = {
                 ],
                 "time": "09:30 AM - 11:00 AM",
                 "startDate": "2026-01-10",
-                "endDate": "2026-03-31"
+                "endDate": "2026-03-31",
+                "teacher": "",
+                "teacherPercentage": 0
             },
             {
                 "name": "Batch 29",
@@ -19019,13 +25500,119 @@ window.migratedDatabase = {
                 "time": "03:00 PM - 05:00 PM",
                 "startDate": "2025-06-15",
                 "endDate": "2025-09-15"
+            },
+            {
+                "course": "Basic Computer",
+                "name": "Batch 49",
+                "fee": 6000,
+                "discount": 5000,
+                "time": "9:00 AM - 10:30 PM",
+                "schedule": [
+                    "Sat",
+                    "Sun",
+                    "Mon",
+                    "Tue",
+                    "Wed",
+                    "Thu"
+                ],
+                "startDate": "2026-08-26",
+                "endDate": "2026-09-30",
+                "teacher": "Sishir",
+                "teacherPercentage": 30
+            },
+            {
+                "course": "Graphic Design",
+                "name": "Batch 34",
+                "fee": 15000,
+                "discount": 2000,
+                "time": "01:30 PM - 3:30 PM",
+                "schedule": [
+                    "Sat",
+                    "Mon",
+                    "Wed"
+                ],
+                "startDate": "2026-08-01",
+                "endDate": "2026-11-01",
+                "teacher": "",
+                "teacherPercentage": 0
+            },
+            {
+                "course": "Spoken English",
+                "name": "Batch 09",
+                "fee": 7000,
+                "discount": 0,
+                "time": "12:30 PM - 02:00 PM",
+                "schedule": [
+                    "Sat",
+                    "Mon",
+                    "Wed"
+                ],
+                "startDate": "2026-08-20",
+                "endDate": "2026-11-20",
+                "teacher": "Jaber",
+                "teacherPercentage": 0
+            },
+            {
+                "course": "Basic Computer",
+                "name": "Batch 50",
+                "fee": 6000,
+                "discount": 0,
+                "time": "05:00 PM - 06:30 PM",
+                "schedule": [
+                    "Sat",
+                    "Sun",
+                    "Mon",
+                    "Tue",
+                    "Wed",
+                    "Thu"
+                ],
+                "startDate": "2026-09-02",
+                "endDate": "2026-12-02",
+                "teacher": "Sishir",
+                "teacherPercentage": 30
+            },
+            {
+                "course": "IELTS",
+                "name": "Batch 01",
+                "fee": 15000,
+                "discount": 0,
+                "time": "10:30 PM - 12:30 PM",
+                "schedule": [
+                    "Sat",
+                    "Mon",
+                    "Wed"
+                ],
+                "startDate": "2026-08-20",
+                "endDate": "2026-11-20",
+                "teacher": "Jaber",
+                "teacherPercentage": 0
+            },
+            {
+                "course": "Spoken English",
+                "name": "Batch 10",
+                "fee": 7000,
+                "discount": 0,
+                "time": "09:00 AM - 10:30 AM",
+                "schedule": [
+                    "Sat",
+                    "Sun",
+                    "Mon",
+                    "Tue",
+                    "Wed",
+                    "Thu"
+                ],
+                "startDate": "2026-08-25",
+                "endDate": "2026-10-25",
+                "teacher": "Jaber",
+                "teacherPercentage": 0
             }
         ],
         "smsConfig": {
             "apiKey": "ulrt6uAxw1487sVzIYc6",
             "senderId": "Ediz It",
             "welcomeTemplate": "Dear {student_name},\n\nCongratulations! Your admission to {course_name} (Batch: {batch_name}) has been confirmed.\n\nStudent ID: {student_id}\nClass Start: {start_date}\nTime: {class_time}\n\nEDIZ IT Institute\n📞 01335530900",
-            "autoSendWelcome": true
+            "autoSendWelcome": true,
+            "autoSendReminders": false
         },
         "smsHistory": [
             {
@@ -19125,6 +25712,5718 @@ window.migratedDatabase = {
                 "recipientCount": 1,
                 "status": "Failed",
                 "message": "[Due Reminder SMS (GD-250) Failed] Assalamu Alaikum, আপনার EDIZ IT Institute-এর কোর্স ফি-এর ৳9,000 টাকা বকেয়া (Due) রয়েছে। অনুগ্রহ করে নির্ধারিত সময়ের মধ্যে পরিশোধ করুন। ধন্যবাদ। EDIZ IT Institute, mobile: 01335530900"
+            },
+            {
+                "date": "2026-06-29T08:13:08.180Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Portal Login OTP Verification] EDIZ IT Portal verification code: 120812. Valid for 3 minutes."
+            },
+            {
+                "date": "2026-06-29T11:08:56.646Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Somiya Binta Quyum has enrolled in Basic Computer (Batch 48), Spoken English (Batch 8). Net Fee: ৳9700, Paid: ৳9700, Due: ৳0. (Book Included. Remaining books in stock: 0)"
+            },
+            {
+                "date": "2026-06-29T11:08:56.793Z",
+                "batch": "Batch 8",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Somiya Binta Quyum,\n\nCongratulations! Your admission to Spoken English (Batch: Batch 8) has been confirmed.\n\nStudent ID: SE-75\nClass Start: 2026-06-27\nTime: 05:00 PM - 06:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-06-29T11:09:33.853Z",
+                "batch": "Batch 48",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Somiya Binta Quyum,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 48) has been confirmed.\n\nStudent ID: BC-220\nClass Start: 2026-06-25\nTime: 06:30 PM - 08:00 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-06-29T11:09:34.512Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Somiya Binta Quyum has enrolled in Basic Computer (Batch 48), Spoken English (Batch 8). Net Fee: ৳9700, Paid: ৳9700, Due: ৳0. (Book Included. Remaining books in stock: 0)"
+            },
+            {
+                "date": "2026-06-29T11:13:46.127Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Portal Login OTP Verification] EDIZ IT Portal verification code: 304398. Valid for 3 minutes."
+            },
+            {
+                "date": "2026-06-30T10:25:26.288Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Portal Login OTP Verification] EDIZ IT Portal verification code: 344857. Valid for 3 minutes."
+            },
+            {
+                "date": "2026-06-30T10:53:36.841Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Towsif Zaman Bhuiyan Rahee (GD-261) details edited by sishir. Changes: Phone: '01816840047' -> '01940108693', Guardian: '01816840048' -> '01816840047'"
+            },
+            {
+                "date": "2026-06-30T10:54:14.944Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Towsif Zaman Bhuiyan Rahee (GD-261) details edited by sishir. Changes: Phone: '01816840047' -> '01940108693', Guardian: '01816840048' -> '01816840047'"
+            },
+            {
+                "date": "2026-06-30T11:05:45.640Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Ujan Devnath has enrolled in Graphic Design (Batch 33). Net Fee: ৳15000, Paid: ৳5000, Due: ৳10000."
+            },
+            {
+                "date": "2026-06-30T11:05:45.674Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Ujan Devnath has enrolled in Graphic Design (Batch 33). Net Fee: ৳15000, Paid: ৳5000, Due: ৳10000."
+            },
+            {
+                "date": "2026-06-30T11:05:45.871Z",
+                "batch": "Batch 33",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Ujan Devnath,\n\nCongratulations! Your admission to Graphic Design (Batch: Batch 33) has been confirmed.\n\nStudent ID: GD-278\nClass Start: 2026-06-25\nTime: 03:00 PM - 05:00 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-07-01T05:46:16.162Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (BC-212)] আজ Mohammed Kamal Hossain Nafiz (BC-212)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-01T05:46:16.181Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (SE-67)] আজ Mohammed Kamal Hossain Nafiz (SE-67)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-01T05:46:16.215Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (BC-212)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-01T05:46:16.234Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (SE-67)] আজ Mohammed Kamal Hossain Nafiz (SE-67)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-01T05:46:16.255Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (BC-212)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-01T05:46:16.271Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (BC-212)] আজ Mohammed Kamal Hossain Nafiz (BC-212)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-01T05:46:16.766Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (SE-67)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-01T05:46:16.773Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (SE-67)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-01T05:48:41.505Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Portal Login OTP Verification] EDIZ IT Portal verification code: 945677. Valid for 3 minutes."
+            },
+            {
+                "date": "2026-07-01T06:22:10.206Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student MD. JISAN CHOWDHURY RAHAT has enrolled in Spoken English (Batch 8). Net Fee: ৳5500, Paid: ৳5500, Due: ৳0."
+            },
+            {
+                "date": "2026-07-01T06:22:10.291Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student MD. JISAN CHOWDHURY RAHAT has enrolled in Spoken English (Batch 8). Net Fee: ৳5500, Paid: ৳5500, Due: ৳0."
+            },
+            {
+                "date": "2026-07-01T06:22:10.355Z",
+                "batch": "Batch 8",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear MD. JISAN CHOWDHURY RAHAT,\n\nCongratulations! Your admission to Spoken English (Batch: Batch 8) has been confirmed.\n\nStudent ID: SE-76\nClass Start: 2026-07-01\nTime: 05:00 PM - 06:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-07-01T09:32:09.726Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (SE-67)] আজ Mohammed Kamal Hossain Nafiz (SE-67)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-01T09:32:09.733Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (SE-67)] আজ Mohammed Kamal Hossain Nafiz (SE-67)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-01T09:32:09.755Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (BC-212)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-01T09:32:09.762Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (BC-212)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-01T09:32:09.773Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (BC-212)] আজ Mohammed Kamal Hossain Nafiz (BC-212)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-01T09:32:09.803Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (BC-212)] আজ Mohammed Kamal Hossain Nafiz (BC-212)-এর পেমেন্ট দেওয়ার ন���র্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-01T09:32:10.264Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (SE-67)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-01T09:32:10.276Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (SE-67)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-01T09:32:23.225Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Portal Login OTP Verification] EDIZ IT Portal verification code: 880714. Valid for 3 minutes."
+            },
+            {
+                "date": "2026-07-01T09:48:48.717Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Hamid Khan has enrolled in Graphic Design (Batch 33). Net Fee: ৳12000, Paid: ৳5000, Due: ৳7000."
+            },
+            {
+                "date": "2026-07-01T09:48:48.738Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Hamid Khan has enrolled in Graphic Design (Batch 33). Net Fee: ৳12000, Paid: ৳5000, Due: ৳7000."
+            },
+            {
+                "date": "2026-07-01T09:48:49.035Z",
+                "batch": "Batch 33",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Hamid Khan,\n\nCongratulations! Your admission to Graphic Design (Batch: Batch 33) has been confirmed.\n\nStudent ID: GD-279\nClass Start: 2026-06-25\nTime: 03:00 PM - 05:00 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-07-01T09:52:23.470Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Faiza Rahman has paid a total of ৳6,000 for: Graphic Design (Paid: ৳6,000, Due: ৳2,000). Combined Due: ৳2,000."
+            },
+            {
+                "date": "2026-07-01T09:52:23.507Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear Faiza Rahman, we have received your payment of ৳6,000 for: Graphic Design (Paid: ৳6,000, Due: ৳2,000). Combined outstanding due is ��2,000. Thank you!"
+            },
+            {
+                "date": "2026-07-01T09:52:23.582Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Faiza Rahman has paid a total of ৳6,000 for: Graphic Design (Paid: ৳6,000, Due: ৳2,000). Combined Due: ৳2,000."
+            },
+            {
+                "date": "2026-07-01T11:10:23.249Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Portal Login OTP Verification] EDIZ IT Portal verification code: 670148. Valid for 3 minutes."
+            },
+            {
+                "date": "2026-07-01T12:49:24.245Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Portal Login OTP Verification] EDIZ IT Portal verification code: 504500. Valid for 3 minutes."
+            },
+            {
+                "date": "2026-07-01T14:53:45.970Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (BC-212)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-01T14:53:45.974Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (SE-67)] আজ Mohammed Kamal Hossain Nafiz (SE-67)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-01T14:53:45.978Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (BC-212)] আজ Mohammed Kamal Hossain Nafiz (BC-212)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-01T14:53:45.982Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (BC-212)] আজ Mohammed Kamal Hossain Nafiz (BC-212)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-01T14:53:45.986Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (BC-212)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-01T14:53:45.991Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (SE-67)] আজ Mohammed Kamal Hossain Nafiz (SE-67)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-01T14:53:45.995Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (SE-67)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-01T14:53:46.000Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (SE-67)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-01T14:53:54.723Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Portal Login OTP Verification] EDIZ IT Portal verification code: 575633. Valid for 3 minutes."
+            },
+            {
+                "date": "2026-07-02T05:59:35.701Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (BC-219)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T05:59:35.726Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (BC-219)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T05:59:35.737Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (BC-212)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T05:59:35.758Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (BC-212)] আজ Mohammed Kamal Hossain Nafiz (BC-212)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T05:59:35.767Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-275)] আজ Arif Fuad (GD-275)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T05:59:35.784Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (SE-66)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T05:59:35.845Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (BC-212)] আজ Mohammed Kamal Hossain Nafiz (BC-212)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T05:59:35.860Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (SE-66)] আজ Emtiaz Mahmud Mahi (SE-66)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T05:59:35.874Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (BC-219)] আজ Arif Fuad (BC-219)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T05:59:35.893Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (SE-66)] আজ Emtiaz Mahmud Mahi (SE-66)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T05:59:35.920Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (SE-66)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T05:59:35.935Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-276)] আজ Sadia Akter (GD-276)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T05:59:36.293Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (SE-67)] আজ Mohammed Kamal Hossain Nafiz (SE-67)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T05:59:36.311Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (BC-219)] আজ Arif Fuad (BC-219)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T05:59:36.319Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (GD-277)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T05:59:36.376Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-275)] আজ Arif Fuad (GD-275)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T05:59:36.387Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (GD-276)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T05:59:36.404Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-276)] আজ Sadia Akter (GD-276)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T05:59:36.419Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-278)] আজ Ujan Devnath (GD-278)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T05:59:36.439Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (BC-212)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T05:59:36.450Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (GD-276)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T05:59:36.463Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (SE-67)] আজ Mohammed Kamal Hossain Nafiz (SE-67)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T05:59:36.500Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (GD-277)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T05:59:36.624Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-278)] আজ Ujan Devnath (GD-278)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T05:59:36.804Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (GD-275)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T05:59:36.816Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (GD-278)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T05:59:36.858Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-277)] আজ Ishrak Farhan Sarker (GD-277)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T05:59:36.892Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (GD-275)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T05:59:36.934Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-277)] আজ Ishrak Farhan Sarker (GD-277)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T05:59:36.952Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (GD-278)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T05:59:36.967Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (SE-67)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T05:59:37.011Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (SE-67)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T05:59:44.074Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Portal Login OTP Verification] EDIZ IT Portal verification code: 337547. Valid for 3 minutes."
+            },
+            {
+                "date": "2026-07-02T06:07:32.631Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student JUNAYED RAJ SIYAM has enrolled in Basic Computer (Batch 47). Net Fee: ৳5000, Paid: ৳3000, Due: ৳2000."
+            },
+            {
+                "date": "2026-07-02T06:07:32.652Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student JUNAYED RAJ SIYAM has enrolled in Basic Computer (Batch 47). Net Fee: ৳5000, Paid: ৳3000, Due: ৳2000."
+            },
+            {
+                "date": "2026-07-02T06:07:32.664Z",
+                "batch": "Batch 47",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear JUNAYED RAJ SIYAM,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 47) has been confirmed.\n\nStudent ID: BC-221\nClass Start: 2026-06-17\nTime: 12:00 PM - 01:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-07-02T07:16:34.100Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Md Anas Gazi (GD-265) details edited by sishir. Changes: Phone: '01600900457' -> '01805931067'"
+            },
+            {
+                "date": "2026-07-02T07:17:03.995Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Md Anas Gazi (GD-265) details edited by sishir. Changes: Phone: '01600900457' -> '01805931067'"
+            },
+            {
+                "date": "2026-07-02T07:46:07.308Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Error",
+                "message": "[Student Payment Receipt Error] Dear Mohammed Kamal Hossain Nafiz, we have received your payment of ৳8,000 for: Basic Computer (Paid: ৳4,500, Due: ৳0), Spoken English (Paid: ৳3,500, Due: ৳1,000). Combined outstanding due is ৳1,000. Thank you!: Failed to fetch"
+            },
+            {
+                "date": "2026-07-02T07:46:07.331Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Error",
+                "message": "[Admin Payment Notification Error] Dear Admin, student Mohammed Kamal Hossain Nafiz has paid a total of ৳8,000 for: Basic Computer (Paid: ৳4,500, Due: ৳0), Spoken English (Paid: ৳3,500, Due: ৳1,000). Combined Due: ৳1,000.: Failed to fetch"
+            },
+            {
+                "date": "2026-07-02T07:46:07.355Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Error",
+                "message": "[Admin Payment Notification Error] Dear Admin, student Mohammed Kamal Hossain Nafiz has paid a total of ৳8,000 for: Basic Computer (Paid: ৳4,500, Due: ৳0), Spoken English (Paid: ৳3,500, Due: ৳1,000). Combined Due: ৳1,000.: Failed to fetch"
+            },
+            {
+                "date": "2026-07-02T07:48:44.081Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Error",
+                "message": "[Admin Edit Notification Error] EDIZ IT Alert: Student Mohammed Kamal Hossain Nafiz (BC-212) details edited by sishir. Changes: Guardian: '01795952111' -> '01511952112': Failed to fetch"
+            },
+            {
+                "date": "2026-07-02T07:48:44.097Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Error",
+                "message": "[Admin Edit Notification Error] EDIZ IT Alert: Student Mohammed Kamal Hossain Nafiz (BC-212) details edited by sishir. Changes: Guardian: '01795952111' -> '01511952112': Failed to fetch"
+            },
+            {
+                "date": "2026-07-02T09:02:09.919Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear SHARIFUL ISLAM AYON, we have received your payment of ৳8,000 for: Graphic Design (Paid: ৳7,000, Due: ৳0), Spoken English (Paid: ৳1,000, Due: ৳0). Combined outstanding due is ৳0. Thank you!"
+            },
+            {
+                "date": "2026-07-02T09:02:39.899Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student SHARIFUL ISLAM AYON has paid a total of ৳8,000 for: Graphic Design (Paid: ৳7,000, Due: ৳0), Spoken English (Paid: ৳1,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-07-02T09:02:39.944Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student SHARIFUL ISLAM AYON has paid a total of ৳8,000 for: Graphic Design (Paid: ৳7,000, Due: ৳0), Spoken English (Paid: ৳1,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-07-02T09:06:00.808Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear Sadia Akter, we have received your payment of ৳9,000 for: Graphic Design (Paid: ৳9,000, Due: ৳0). Combined outstanding due is ৳0. Thank you!"
+            },
+            {
+                "date": "2026-07-02T09:06:00.822Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Sadia Akter has paid a total of ৳9,000 for: Graphic Design (Paid: ৳9,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-07-02T09:06:00.897Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Sadia Akter has paid a total of ৳9,000 for: Graphic Design (Paid: ৳9,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-07-02T09:07:03.756Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student Ahnaf Tahmida Tanisha (BC-216) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-07-02T09:07:03.770Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student Ahnaf Tahmida Tanisha (BC-216) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-07-02T09:07:03.856Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student Ahnaf Tahmida Tanisha (ID: BC-216) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-07-02T09:07:03.881Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Book Notification] Dear Ahnaf Tahmida Tanisha, you have been issued a book for your Basic Computer class. Thank you!"
+            },
+            {
+                "date": "2026-07-02T09:07:03.895Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student Ahnaf Tahmida Tanisha (ID: BC-216) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-07-02T09:11:42.829Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Ahnaf Tahmida Tanisha has paid a total of ৳6,000 for: Basic Computer (Paid: ৳3,000, Due: ৳0), Graphic Design (Paid: ৳3,000, Due: ৳1,000). Combined Due: ৳1,000."
+            },
+            {
+                "date": "2026-07-02T09:11:42.840Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Ahnaf Tahmida Tanisha has paid a total of ৳6,000 for: Basic Computer (Paid: ৳3,000, Due: ৳0), Graphic Design (Paid: ৳3,000, Due: ৳1,000). Combined Due: ৳1,000."
+            },
+            {
+                "date": "2026-07-02T09:11:42.860Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear Ahnaf Tahmida Tanisha, we have received your payment of ৳6,000 for: Basic Computer (Paid: ৳3,000, Due: ৳0), Graphic Design (Paid: ৳3,000, Due: ৳1,000). Combined outstanding due is ৳1,000. Thank you!"
+            },
+            {
+                "date": "2026-07-02T09:19:28.759Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (BC-219)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T09:19:28.775Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (BC-219)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T09:19:28.796Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-278)] আজ Ujan Devnath (GD-278)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T09:19:28.872Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (GD-278)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T09:19:28.901Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-278)] আজ Ujan Devnath (GD-278)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T09:19:29.207Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (GD-275)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T09:19:29.228Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (GD-275)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T09:21:35.631Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Arif Fuad has paid a total of ৳12,000 for: Graphic Design (Paid: ৳10,000, Due: ৳0), Basic Computer (Paid: ৳2,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-07-02T09:21:35.648Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear Arif Fuad, we have received your payment of ৳12,000 for: Graphic Design (Paid: ৳10,000, Due: ৳0), Basic Computer (Paid: ৳2,000, Due: ৳0). Combined outstanding due is ৳0. Thank you!"
+            },
+            {
+                "date": "2026-07-02T09:21:35.665Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Arif Fuad has paid a total of ৳12,000 for: Graphic Design (Paid: ৳10,000, Due: ৳0), Basic Computer (Paid: ৳2,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-07-02T10:45:01.654Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-271)] আজ Ahnaf Tahmida Tanisha (GD-271)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T10:45:01.752Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (SE-66)] আজ Emtiaz Mahmud Mahi (SE-66)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T10:45:01.765Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-278)] আজ Ujan Devnath (GD-278)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T10:45:01.773Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (GD-278)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T10:45:01.780Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (BC-219)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T10:45:01.859Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (SE-66)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T10:45:01.947Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (BC-219)] আজ Arif Fuad (BC-219)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T10:45:01.953Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-271)] আজ Ahnaf Tahmida Tanisha (GD-271)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T10:45:01.958Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-277)] আজ Ishrak Farhan Sarker (GD-277)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T10:45:01.963Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (GD-278)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T10:45:01.968Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (GD-271)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T10:45:01.973Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (GD-277)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T10:45:02.294Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-277)] আজ Ishrak Farhan Sarker (GD-277)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T10:45:02.313Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (BC-219)] আজ Arif Fuad (BC-219)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T10:45:02.548Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-278)] আজ Ujan Devnath (GD-278)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T10:45:02.563Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-275)] আজ Arif Fuad (GD-275)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T10:45:02.576Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (SE-66)] আজ Emtiaz Mahmud Mahi (SE-66)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T10:45:02.586Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (SE-66)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T10:45:02.876Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-275)] আজ Arif Fuad (GD-275)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T10:45:02.894Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (GD-271)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T10:45:02.908Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (GD-275)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T10:45:02.918Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (BC-219)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T10:45:02.926Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (GD-277)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T10:45:03.415Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (GD-275)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T10:45:21.828Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Portal Login OTP Verification] EDIZ IT Portal verification code: 202274. Valid for 3 minutes."
+            },
+            {
+                "date": "2026-07-02T10:55:08.306Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-277)] আজ Ishrak Farhan Sarker (GD-277)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T10:55:08.320Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (SE-66)] আজ Emtiaz Mahmud Mahi (SE-66)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T10:55:08.506Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (GD-278)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T10:55:31.409Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Portal Login OTP Verification] EDIZ IT Portal verification code: 968839. Valid for 3 minutes."
+            },
+            {
+                "date": "2026-07-02T10:56:11.924Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (SE-66)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T10:56:11.941Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (GD-277)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T10:56:11.960Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (GD-278)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T10:56:12.038Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (SE-66)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T10:56:12.056Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Guardian Due Reminder (GD-278)] Assalamu Alaikum,আজ আপনার শিক্ষার্থীর কোর্স ফি পরিশোধের নির্ধারিত তারিখ। অনুগ্রহ করে বকেয়া পরিশোধ করুন।ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T10:56:12.075Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (SE-66)] আজ Emtiaz Mahmud Mahi (SE-66)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T10:56:12.095Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Due Reminder (GD-277)] Assalamu Alaikum, আজ আপনার পেমেন্ট দেওয়ার নির্ধারিত তারিখ। আপনার বকেয়া (Due) পরিশোধ করুন। ediz it isntitute, our mobile number 01335530900"
+            },
+            {
+                "date": "2026-07-02T10:56:12.115Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (SE-66)] আজ Emtiaz Mahmud Mahi (SE-66)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T10:56:12.135Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-277)] আজ Ishrak Farhan Sarker (GD-277)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T10:56:12.303Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-278)] আজ Ujan Devnath (GD-278)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T10:56:12.344Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-277)] আজ Ishrak Farhan Sarker (GD-277)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T10:56:12.363Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Due Alert (GD-278)] আজ Ujan Devnath (GD-278)-এর পেমেন্ট দেওয়ার নির্ধারিত তারিখ। এখনও পেমেন্ট বাকি রয়েছে।"
+            },
+            {
+                "date": "2026-07-02T11:25:35.889Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Labiba Ayman Tuba has enrolled in Spoken English (Batch 8). Net Fee: ৳5000, Paid: ৳5000, Due: ৳0."
+            },
+            {
+                "date": "2026-07-02T11:25:35.923Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Labiba Ayman Tuba has enrolled in Spoken English (Batch 8). Net Fee: ৳5000, Paid: ৳5000, Due: ৳0."
+            },
+            {
+                "date": "2026-07-02T11:25:36.117Z",
+                "batch": "Batch 8",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Labiba Ayman Tuba,\n\nCongratulations! Your admission to Spoken English (Batch: Batch 8) has been confirmed.\n\nStudent ID: SE-77\nClass Start: 2026-07-01\nTime: 05:00 PM - 06:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-07-04T07:59:21.418Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student JUNAYED RAJ SIYAM (BC-221) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-07-04T07:59:21.439Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student JUNAYED RAJ SIYAM (ID: BC-221) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-07-04T07:59:21.459Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student JUNAYED RAJ SIYAM (BC-221) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-07-04T07:59:21.479Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student JUNAYED RAJ SIYAM (ID: BC-221) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-07-04T07:59:21.517Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Book Notification] Dear JUNAYED RAJ SIYAM, you have been issued a book for your Basic Computer class. Thank you!"
+            },
+            {
+                "date": "2026-07-04T08:02:07.518Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Rahat Mahmud (BC-196) details edited by Shisir. Changes: Batch: 'Batch 47' -> 'Batch 45'"
+            },
+            {
+                "date": "2026-07-04T08:02:07.613Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Rahat Mahmud (BC-196) details edited by Shisir. Changes: Batch: 'Batch 47' -> 'Batch 45'"
+            },
+            {
+                "date": "2026-07-04T09:08:07.226Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Ishrak Farhan Sarker has paid a total of ৳8,000 for: Graphic Design (Paid: ৳8,000, Due: ৳1,000). Combined Due: ৳1,000."
+            },
+            {
+                "date": "2026-07-04T09:08:07.250Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear Ishrak Farhan Sarker, we have received your payment of ৳8,000 for: Graphic Design (Paid: ৳8,000, Due: ৳1,000). Combined outstanding due is ৳1,000. Thank you!"
+            },
+            {
+                "date": "2026-07-04T09:08:07.274Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Ishrak Farhan Sarker has paid a total of ৳8,000 for: Graphic Design (Paid: ৳8,000, Due: ৳1,000). Combined Due: ৳1,000."
+            },
+            {
+                "date": "2026-07-04T09:12:49.800Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear Emtiaz Mahmud Mahi, we have received your payment of ৳3,500 for: Spoken English (Paid: ৳3,500, Due: ৳0). Combined outstanding due is ৳0. Thank you!"
+            },
+            {
+                "date": "2026-07-04T09:12:49.848Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Emtiaz Mahmud Mahi has paid a total of ৳3,500 for: Spoken English (Paid: ৳3,500, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-07-04T09:12:49.890Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Emtiaz Mahmud Mahi has paid a total of ৳3,500 for: Spoken English (Paid: ৳3,500, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-07-04T09:28:50.572Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear Zisan Ahammed, we have received your payment of ৳2,500 for: Spoken English (Paid: ৳2,500, Due: ৳0). Combined outstanding due is ৳2,500. Thank you!"
+            },
+            {
+                "date": "2026-07-04T09:28:50.591Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Zisan Ahammed has paid a total of ৳2,500 for: Spoken English (Paid: ৳2,500, Due: ৳0). Combined Due: ৳2,500."
+            },
+            {
+                "date": "2026-07-04T09:28:50.665Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Zisan Ahammed has paid a total of ৳2,500 for: Spoken English (Paid: ৳2,500, Due: ৳0). Combined Due: ৳2,500."
+            },
+            {
+                "date": "2026-07-04T09:35:30.141Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Ujan Devnath has paid a total of ৳10,000 for: Graphic Design (Paid: ৳10,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-07-04T09:35:30.233Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear Ujan Devnath, we have received your payment of ৳10,000 for: Graphic Design (Paid: ৳10,000, Due: ৳0). Combined outstanding due is ৳0. Thank you!"
+            },
+            {
+                "date": "2026-07-04T09:35:30.264Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Ujan Devnath has paid a total of ৳10,000 for: Graphic Design (Paid: ৳10,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-07-05T09:50:35.999Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Mim Akter has enrolled in Basic Computer (Batch 49). Net Fee: ৳1000, Paid: ৳5000, Due: ৳-4000."
+            },
+            {
+                "date": "2026-07-05T09:50:36.028Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Mim Akter has enrolled in Basic Computer (Batch 49). Net Fee: ৳1000, Paid: ৳5000, Due: ৳-4000."
+            },
+            {
+                "date": "2026-07-05T09:50:36.271Z",
+                "batch": "Batch 49",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Mim Akter,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 49) has been confirmed.\n\nStudent ID: BC-222\nClass Start: 2026-08-01\nTime: 9:00 AM - 10:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-07-05T09:53:30.623Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Mim Akter has enrolled in Basic Computer (Batch 49). Net Fee: ৳5000, Paid: ৳2000, Due: ৳3000."
+            },
+            {
+                "date": "2026-07-05T09:53:30.683Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Mim Akter has enrolled in Basic Computer (Batch 49). Net Fee: ৳5000, Paid: ৳2000, Due: ৳3000."
+            },
+            {
+                "date": "2026-07-05T09:53:31.095Z",
+                "batch": "Batch 49",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Mim Akter,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 49) has been confirmed.\n\nStudent ID: BC-223\nClass Start: 2026-08-01\nTime: 9:00 AM - 10:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-07-05T10:37:12.961Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Mim Akter has enrolled in Basic Computer (Batch 49). Net Fee: ৳5000, Paid: ৳2000, Due: ৳3000."
+            },
+            {
+                "date": "2026-07-05T10:37:12.987Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Mim Akter has enrolled in Basic Computer (Batch 49). Net Fee: ৳5000, Paid: ৳2000, Due: ৳3000."
+            },
+            {
+                "date": "2026-07-05T10:37:13.215Z",
+                "batch": "Batch 49",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Mim Akter,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 49) has been confirmed.\n\nStudent ID: BC-222\nClass Start: 2026-08-01\nTime: 9:00 AM - 10:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-07-07T07:36:46.577Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Due Reminder SMS (BC-213)] Assalamu Alaikum, আপনার EDIZ IT Institute-এর কোর্স ফি-এর ৳3,000 টাকা বকেয়া (Due) রয়েছে। অনুগ্রহ করে নির্ধারিত সময়ের মধ্যে পরিশোধ করুন। ধন্যবাদ। EDIZ IT Institute, mobile: 01335530900"
+            },
+            {
+                "date": "2026-07-07T07:36:48.077Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Due Reminder SMS (GD-270)] Assalamu Alaikum, আপনার EDIZ IT Institute-এর কোর্স ফি-এর ৳7,000 টাকা বকেয়া (Due) রয়েছে। অনুগ্রহ করে নির্ধারিত সময়ের মধ্যে পরিশোধ করুন। ধন্যবাদ। EDIZ IT Institute, mobile: 01335530900"
+            },
+            {
+                "date": "2026-07-07T07:36:54.267Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Due Reminder SMS (GD-268)] Assalamu Alaikum, আপনার EDIZ IT Institute-এর কোর্স ফি-এর ৳2,000 টাকা বকেয়া (Due) রয়েছে। অনুগ্রহ করে নির্ধারিত সময়ের মধ্যে পরিশোধ করুন। ধন্যবাদ। EDIZ IT Institute, mobile: 01335530900"
+            },
+            {
+                "date": "2026-07-07T07:37:35.437Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Due Reminder SMS (BC-199)] Assalamu Alaikum, আপনার EDIZ IT Institute-এর কোর্স ফি-এর ৳2,500 টাকা বকেয়া (Due) রয়েছে। অনুগ্রহ করে নির্ধারিত সময়ের মধ্যে পরিশোধ করুন। ধন্যবাদ। EDIZ IT Institute, mobile: 01335530900"
+            },
+            {
+                "date": "2026-07-07T07:38:56.917Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Due Reminder SMS (SE-61)] Assalamu Alaikum, আপনার EDIZ IT Institute-এর কোর্স ফি-এর ৳3,000 টাকা বকেয়া (Due) রয়েছে। অনুগ্রহ করে নির্ধারিত সময়ের মধ্যে পরিশোধ করুন। ধন্যবাদ। EDIZ IT Institute, mobile: 01335530900"
+            },
+            {
+                "date": "2026-07-07T09:16:54.113Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Farhan Tanvir has enrolled in Spoken English (Batch 8). Net Fee: ৳5000, Paid: ৳5000, Due: ৳0."
+            },
+            {
+                "date": "2026-07-07T09:16:54.136Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Farhan Tanvir has enrolled in Spoken English (Batch 8). Net Fee: ৳5000, Paid: ৳5000, Due: ৳0."
+            },
+            {
+                "date": "2026-07-07T09:16:54.316Z",
+                "batch": "Batch 8",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Farhan Tanvir,\n\nCongratulations! Your admission to Spoken English (Batch: Batch 8) has been confirmed.\n\nStudent ID: SE-78\nClass Start: 2026-07-01\nTime: 05:00 PM - 06:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-07-08T10:58:41.427Z",
+                "batch": "Batch 8",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Hamid Khan,\n\nCongratulations! Your admission to Spoken English (Batch: Batch 8) has been confirmed.\n\nStudent ID: SE-79\nClass Start: 2026-07-01\nTime: 05:00 PM - 06:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-07-08T10:58:42.130Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Hamid Khan has enrolled in Basic Computer (Batch 48), Spoken English (Batch 8). Net Fee: ৳9200, Paid: ৳2200, Due: ৳7000. (Book Included. Remaining books in stock: 0)"
+            },
+            {
+                "date": "2026-07-08T10:58:52.519Z",
+                "batch": "Batch 48",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Hamid Khan,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 48) has been confirmed.\n\nStudent ID: BC-223\nClass Start: 2026-06-25\nTime: 06:30 PM - 08:00 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-07-09T06:11:41.866Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student JUNAYED RAJ SIYAM has paid a total of ৳2,000 for: Basic Computer (Paid: ৳2,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-07-09T06:11:41.908Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student JUNAYED RAJ SIYAM has paid a total of ৳2,000 for: Basic Computer (Paid: ৳2,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-07-09T06:11:41.946Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear JUNAYED RAJ SIYAM, we have received your payment of ৳2,000 for: Basic Computer (Paid: ৳2,000, Due: ৳0). Combined outstanding due is ৳0. Thank you!"
+            },
+            {
+                "date": "2026-07-09T06:19:08.679Z",
+                "batch": "Individual (Wasif Rahman)",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "আজকের মধ্যেই আপনার বইটি সংগ্রহ করার জন্য বিশেষভাবে দৃষ্টি আকর্ষণ করছি।"
+            },
+            {
+                "date": "2026-07-09T06:19:32.151Z",
+                "batch": "Individual (Wasif Rahman)",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "আজকের মধ্যেই আপনার বইটি সংগ্রহ করার জন্য বিশেষভাবে দৃষ্টি আকর্ষণ করছি।"
+            },
+            {
+                "date": "2026-07-09T06:19:52.886Z",
+                "batch": "Individual (Krishon Dey)",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "আজকের মধ্যেই আপনার বইটি সংগ্রহ করার জন্য বিশেষভাবে দৃষ্টি আকর্ষণ করছি।"
+            },
+            {
+                "date": "2026-07-09T06:20:02.213Z",
+                "batch": "Individual (Krishon Dey)",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "আজকের মধ্যেই আপনার বইটি সংগ্রহ করার জন্য বিশেষভাবে দৃষ্টি আকর্ষণ করছি।"
+            },
+            {
+                "date": "2026-07-09T06:20:20.798Z",
+                "batch": "Individual (Mehedi Hasan)",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "আজকের মধ্যেই আপনার বইটি সংগ্রহ করার জন্য বিশেষভাবে দৃষ্টি আকর্ষণ করছি।"
+            },
+            {
+                "date": "2026-07-09T06:20:33.861Z",
+                "batch": "Individual (Mehedi Hasan)",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "আজকের মধ্যেই আপনার বইটি সংগ্রহ করার জন্য বিশেষভাবে দৃষ্টি আকর্ষণ করছি।"
+            },
+            {
+                "date": "2026-07-09T06:20:44.702Z",
+                "batch": "Individual (Arif Fuad)",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "আজকের মধ্যেই আপনার বইটি সংগ্রহ করার জন্য বিশেষভাবে দৃষ্টি আকর্ষণ করছি।"
+            },
+            {
+                "date": "2026-07-09T06:20:53.677Z",
+                "batch": "Individual (Arif Fuad)",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "আজকের মধ্যেই আপনার বইটি সংগ্রহ করার জন্য বিশেষভাবে দৃষ্টি আকর্ষণ করছি।"
+            },
+            {
+                "date": "2026-07-09T06:42:45.171Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Samia Akter Ushmita has paid a total of ৳2,000 for: Basic Computer (Paid: ৳2,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-07-09T06:43:18.447Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear Samia Akter Ushmita, we have received your payment of ৳2,000 for: Basic Computer (Paid: ৳2,000, Due: ৳0). Combined outstanding due is ৳0. Thank you!"
+            },
+            {
+                "date": "2026-07-09T06:43:18.473Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Samia Akter Ushmita has paid a total of ৳2,000 for: Basic Computer (Paid: ৳2,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-07-09T12:27:05.354Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student Wasif Rahman (ID: BC-215) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-07-09T12:27:05.375Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student Wasif Rahman (ID: BC-215) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-07-09T12:27:05.393Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student Wasif Rahman (BC-215) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-07-09T12:27:05.403Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Book Notification] Dear Wasif Rahman, you have been issued a book for your Basic Computer class. Thank you!"
+            },
+            {
+                "date": "2026-07-09T12:27:05.412Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student Wasif Rahman (BC-215) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-07-11T10:51:50.639Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Tasfia akter has paid a total of ৳3,000 for: Spoken English (Paid: ৳3,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-07-11T10:51:50.669Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Tasfia akter has paid a total of ৳3,000 for: Spoken English (Paid: ৳3,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-07-11T10:51:50.714Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear Tasfia akter, we have received your payment of ৳3,000 for: Spoken English (Paid: ৳3,000, Due: ৳0). Combined outstanding due is ৳0. Thank you!"
+            },
+            {
+                "date": "2026-07-11T10:52:33.563Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student Tasfia akter (BC-206) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-07-11T10:52:33.591Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student Tasfia akter (BC-206) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-07-11T10:52:33.873Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student Tasfia akter (ID: BC-206) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-07-11T10:52:33.904Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student Tasfia akter (ID: BC-206) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-07-11T10:52:33.930Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Book Notification] Dear Tasfia akter, you have been issued a book for your Basic Computer class. Thank you!"
+            },
+            {
+                "date": "2026-07-11T11:01:28.141Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Rifat Ahmed has enrolled in Spoken English (Batch 8). Net Fee: ৳5500, Paid: ৳5500, Due: ৳0."
+            },
+            {
+                "date": "2026-07-11T11:01:28.169Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Rifat Ahmed has enrolled in Spoken English (Batch 8). Net Fee: ৳5500, Paid: ৳5500, Due: ৳0."
+            },
+            {
+                "date": "2026-07-11T11:01:28.268Z",
+                "batch": "Batch 8",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Rifat Ahmed,\n\nCongratulations! Your admission to Spoken English (Batch: Batch 8) has been confirmed.\n\nStudent ID: SE-80\nClass Start: 2026-07-01\nTime: 05:00 PM - 06:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-07-12T09:10:02.359Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear Krishon Dey, we have received your payment of ৳3,000 for: Basic Computer (Paid: ৳3,000, Due: ৳0). Combined outstanding due is ৳7,000. Thank you!"
+            },
+            {
+                "date": "2026-07-12T09:10:02.412Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Krishon Dey has paid a total of ৳3,000 for: Basic Computer (Paid: ৳3,000, Due: ৳0). Combined Due: ৳7,000."
+            },
+            {
+                "date": "2026-07-12T09:10:02.452Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Krishon Dey has paid a total of ৳3,000 for: Basic Computer (Paid: ৳3,000, Due: ৳0). Combined Due: ৳7,000."
+            },
+            {
+                "date": "2026-07-12T09:11:52.715Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student Krishon Dey (BC-213) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-07-12T09:11:52.805Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student Krishon Dey (BC-213) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-07-12T09:11:52.835Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student Krishon Dey (ID: BC-213) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-07-12T09:11:52.873Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student Krishon Dey (ID: BC-213) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-07-12T09:11:52.903Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Book Notification] Dear Krishon Dey, you have been issued a book for your Basic Computer class. Thank you!"
+            },
+            {
+                "date": "2026-07-13T06:19:48.993Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Alamin Hossain Tushar has enrolled in Basic Computer (Batch 49). Net Fee: ৳6000, Paid: ৳6000, Due: ৳0."
+            },
+            {
+                "date": "2026-07-13T06:19:49.026Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Alamin Hossain Tushar has enrolled in Basic Computer (Batch 49). Net Fee: ৳6000, Paid: ৳6000, Due: ৳0."
+            },
+            {
+                "date": "2026-07-13T06:19:49.266Z",
+                "batch": "Batch 49",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Alamin Hossain Tushar,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 49) has been confirmed.\n\nStudent ID: BC-224\nClass Start: 2026-08-01\nTime: 9:00 AM - 10:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-07-16T08:27:38.097Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student MD RIDWANUL HASAN (GD-237) details edited by Shisir. Changes: Father: 'MD JASHIM UDDIN' -> 'MD JOSHIM UDDIN'"
+            },
+            {
+                "date": "2026-07-16T08:27:38.129Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student MD RIDWANUL HASAN (GD-237) details edited by Shisir. Changes: Father: 'MD JASHIM UDDIN' -> 'MD JOSHIM UDDIN'"
+            },
+            {
+                "date": "2026-07-16T08:29:47.389Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student MD RAKIB UDDIN SIYAM (GD-236) details edited by Shisir. Changes: Name: 'SIYAM AHMED' -> 'MD RAKIB UDDIN SIYAM', Father: 'ANYET ULLAH' -> 'MD ANYET ULLAH'"
+            },
+            {
+                "date": "2026-07-16T08:29:47.446Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student MD RAKIB UDDIN SIYAM (GD-236) details edited by Shisir. Changes: Name: 'SIYAM AHMED' -> 'MD RAKIB UDDIN SIYAM', Father: 'ANYET ULLAH' -> 'MD ANYET ULLAH'"
+            },
+            {
+                "date": "2026-07-16T08:31:12.492Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MD RAKIB UDDIN SIYAM (GD-236) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-07-16T08:31:12.519Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MD RAKIB UDDIN SIYAM (GD-236) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-07-16T08:31:36.706Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MD RIDWANUL HASAN (GD-237) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-07-16T08:31:36.762Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MD RIDWANUL HASAN (GD-237) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-07-16T08:33:16.484Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for NALIKA ISLAM (GD-242) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-07-16T08:33:16.573Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for NALIKA ISLAM (GD-242) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-07-16T08:34:26.293Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Afrin Jahan sumaiya (GD-245) details edited by Shisir. Changes: Father: 'Belayet Hossain' -> 'Md Balayet Hossain'"
+            },
+            {
+                "date": "2026-07-16T08:34:26.343Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Afrin Jahan sumaiya (GD-245) details edited by Shisir. Changes: Father: 'Belayet Hossain' -> 'Md Balayet Hossain'"
+            },
+            {
+                "date": "2026-07-16T08:34:50.096Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Failed",
+                "message": "[Admin Cert Notification Failed] EDIZ IT Alert: Certificate issued for Afrin Jahan sumaiya (GD-245) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-07-16T08:34:50.140Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Failed",
+                "message": "[Admin Cert Notification Failed] EDIZ IT Alert: Certificate issued for Afrin Jahan sumaiya (GD-245) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-07-16T08:35:43.459Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Failed",
+                "message": "[Admin Cert Notification Failed] EDIZ IT Alert: Certificate issued for Mehedi Hasan Tusar (GD-249) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-07-16T08:35:43.500Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Failed",
+                "message": "[Admin Cert Notification Failed] EDIZ IT Alert: Certificate issued for Mehedi Hasan Tusar (GD-249) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-07-16T08:36:43.841Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Failed",
+                "message": "[Admin Edit Notification Failed] EDIZ IT Alert: Student Tanvir Bin Rafiq (GD-253) details edited by Shisir. Changes: Father: 'Rafiqul Islam' -> 'Md Rafiqul Islam'"
+            },
+            {
+                "date": "2026-07-16T08:36:43.889Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Failed",
+                "message": "[Admin Edit Notification Failed] EDIZ IT Alert: Student Tanvir Bin Rafiq (GD-253) details edited by Shisir. Changes: Father: 'Rafiqul Islam' -> 'Md Rafiqul Islam'"
+            },
+            {
+                "date": "2026-07-16T08:36:59.317Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Failed",
+                "message": "[Admin Cert Notification Failed] EDIZ IT Alert: Certificate issued for Tanvir Bin Rafiq (GD-253) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-07-16T08:36:59.344Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Failed",
+                "message": "[Admin Cert Notification Failed] EDIZ IT Alert: Certificate issued for Tanvir Bin Rafiq (GD-253) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-07-16T08:37:57.834Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Failed",
+                "message": "[Admin Cert Notification Failed] EDIZ IT Alert: Certificate issued for MD ARFAN (GD-235) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-07-16T08:37:57.862Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Failed",
+                "message": "[Admin Cert Notification Failed] EDIZ IT Alert: Certificate issued for MD ARFAN (GD-235) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-07-16T08:39:25.568Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Failed",
+                "message": "[Admin Edit Notification Failed] EDIZ IT Alert: Student MOHAMMAD HASIBUL KABIR (GD-248) details edited by Shisir. Changes: Name: 'MD HASIBUL KABIR' -> 'MOHAMMAD HASIBUL KABIR'"
+            },
+            {
+                "date": "2026-07-16T08:39:25.652Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Failed",
+                "message": "[Admin Edit Notification Failed] EDIZ IT Alert: Student MOHAMMAD HASIBUL KABIR (GD-248) details edited by Shisir. Changes: Name: 'MD HASIBUL KABIR' -> 'MOHAMMAD HASIBUL KABIR'"
+            },
+            {
+                "date": "2026-07-16T08:39:50.095Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Failed",
+                "message": "[Admin Cert Notification Failed] EDIZ IT Alert: Certificate issued for MOHAMMAD HASIBUL KABIR (GD-248) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-07-16T08:39:50.126Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Failed",
+                "message": "[Admin Cert Notification Failed] EDIZ IT Alert: Certificate issued for MOHAMMAD HASIBUL KABIR (GD-248) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-07-16T11:10:48.767Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Failed",
+                "message": "[Admin Edit Notification Failed] EDIZ IT Alert: Student Md Anas Gazi (GD-265) details edited by bIJOY. Changes: Address: 'Comilla' -> 'ComillaAA'"
+            },
+            {
+                "date": "2026-07-16T11:10:48.868Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Failed",
+                "message": "[Admin Edit Notification Failed] EDIZ IT Alert: Student Md Anas Gazi (GD-265) details edited by bIJOY. Changes: Address: 'Comilla' -> 'ComillaAA'"
+            },
+            {
+                "date": "2026-07-16T21:57:22.858Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Failed",
+                "message": "[Admin Edit Notification Failed] EDIZ IT Alert: Student Ahnaf Tahmida Tanisha (GD-271) details edited by Mahi. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-07-16T21:57:22.918Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Failed",
+                "message": "[Admin Edit Notification Failed] EDIZ IT Alert: Student Ahnaf Tahmida Tanisha (GD-271) details edited by Mahi. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-07-18T11:24:38.066Z",
+                "batch": "Individual (MUSHFIQUL HOQUE LABIB)",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "আসসালামু আলাইকুম।\n\nআপনার সন্তান আজ বেসিক কম্পিউটার ক্লাসে উপস্থিত ছিল না। অনুগ্রহ করে অনুপস্থিতির কারণ জানাবেন এবং পরবর্তী ক্লাসে নিয়মিত উপস্থিত থাকার বিষয়টি নিশ্চিত করবেন।\n\nধন্যবাদ।\nEDIZ IT Institute"
+            },
+            {
+                "date": "2026-07-19T08:13:39.954Z",
+                "batch": "Batch 32",
+                "recipientCount": 20,
+                "status": "Success",
+                "message": "প্রিয় শিক্ষার্থীরা,\n\nভারী বৃষ্টির কারণে আজকের গ্রাফিক ডিজাইন ব্যাচের ক্লাস স্থগিত করা হয়েছে। আপনাদের নিরাপত্তার কথা বিবেচনা করেই এই সিদ্ধান্ত নেওয়া হয়েছে।\n\nপরবর্তী ক্লাসের সময় ও তারিখ খুব শিগগিরই জানিয়ে দেওয়া হবে।\n\n– EDIZ IT Institute"
+            },
+            {
+                "date": "2026-07-21T05:20:19.348Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Fahim Mahmud has enrolled in Spoken English (Batch 09). Net Fee: ৳5000, Paid: ৳5000, Due: ৳0."
+            },
+            {
+                "date": "2026-07-21T05:20:19.397Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Fahim Mahmud has enrolled in Spoken English (Batch 09). Net Fee: ৳5000, Paid: ৳5000, Due: ৳0."
+            },
+            {
+                "date": "2026-07-21T05:20:19.645Z",
+                "batch": "Batch 09",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Fahim Mahmud,\n\nCongratulations! Your admission to Spoken English (Batch: Batch 09) has been confirmed.\n\nStudent ID: SE-81\nClass Start: 2026-08-20\nTime: 12:30 AM - 02:00 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-07-25T04:45:26.065Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Bijoy Kumar Sarker Srijan has paid a total of ৳5,000 for: Graphic Design (Paid: ৳3,000, Due: ৳6,000), Spoken English (Paid: ৳2,000, Due: ৳0). Combined Due: ৳6,000."
+            },
+            {
+                "date": "2026-07-25T04:45:26.103Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear Bijoy Kumar Sarker Srijan, we have received your payment of ৳5,000 for: Graphic Design (Paid: ৳3,000, Due: ৳6,000), Spoken English (Paid: ৳2,000, Due: ৳0). Combined outstanding due is ৳6,000. Thank you!"
+            },
+            {
+                "date": "2026-07-25T04:45:26.137Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Bijoy Kumar Sarker Srijan has paid a total of ৳5,000 for: Graphic Design (Paid: ৳3,000, Due: ৳6,000), Spoken English (Paid: ৳2,000, Due: ৳0). Combined Due: ৳6,000."
+            },
+            {
+                "date": "2026-08-01T12:23:56.528Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Arif has enrolled in Graphic Design (Batch 34). Net Fee: ৳13000, Paid: ৳5999, Due: ৳7001."
+            },
+            {
+                "date": "2026-08-01T12:23:56.568Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Arif has enrolled in Graphic Design (Batch 34). Net Fee: ৳13000, Paid: ৳5999, Due: ৳7001."
+            },
+            {
+                "date": "2026-08-01T12:23:56.807Z",
+                "batch": "Batch 34",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Arif,\n\nCongratulations! Your admission to Graphic Design (Batch: Batch 34) has been confirmed.\n\nStudent ID: GD-280\nClass Start: 2026-08-01\nTime: 01:30 PM - 3:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-02T10:07:04.581Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student MD.Kamrul Hasan Shuvo has enrolled in Graphic Design (Batch 34). Net Fee: ৳13000, Paid: ৳7000, Due: ৳6000."
+            },
+            {
+                "date": "2026-08-02T10:07:04.650Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student MD.Kamrul Hasan Shuvo has enrolled in Graphic Design (Batch 34). Net Fee: ৳13000, Paid: ৳7000, Due: ৳6000."
+            },
+            {
+                "date": "2026-08-02T10:07:04.689Z",
+                "batch": "Batch 34",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear MD.Kamrul Hasan Shuvo,\n\nCongratulations! Your admission to Graphic Design (Batch: Batch 34) has been confirmed.\n\nStudent ID: GD-281\nClass Start: 2026-08-01\nTime: 01:30 PM - 3:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-02T23:43:18.522Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Staff Verification Alert] EDIZ IT: Sir/Admin has received the collected amount of ৳7,000 for student MD.Kamrul Hasan Shuvo (Invoice: #INV-2026-1119). Verification confirmed."
+            },
+            {
+                "date": "2026-08-02T23:44:19.783Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Staff Verification Alert] EDIZ IT: Sir/Admin has received the collected amount of ৳3,000 for student Bijoy Kumar Sarker Srijan (Invoice: #INV-2026-1117). Verification confirmed."
+            },
+            {
+                "date": "2026-08-04T11:47:27.176Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student MD. Abdullah Jahid has paid a total of ৳2,000 for: Basic Computer (Paid: ৳2,000, Due: ৳501). Combined Due: ৳3,000."
+            },
+            {
+                "date": "2026-08-04T11:47:27.213Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear MD. Abdullah Jahid, we have received your payment of ৳2,000 for: Basic Computer (Paid: ৳2,000, Due: ৳501). Combined outstanding due is ৳3,000. Thank you!"
+            },
+            {
+                "date": "2026-08-04T11:47:27.249Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student MD. Abdullah Jahid has paid a total of ৳2,000 for: Basic Computer (Paid: ৳2,000, Due: ৳501). Combined Due: ৳3,000."
+            },
+            {
+                "date": "2026-08-04T11:53:31.338Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Tahsin Ahmed has enrolled in Basic Computer (Batch 47). Net Fee: ৳8000, Paid: ৳8000, Due: ৳0. (Book Included. Remaining books in stock: 0)"
+            },
+            {
+                "date": "2026-08-04T11:53:31.417Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Tahsin Ahmed has enrolled in Basic Computer (Batch 47). Net Fee: ৳8000, Paid: ৳8000, Due: ৳0. (Book Included. Remaining books in stock: 0)"
+            },
+            {
+                "date": "2026-08-04T11:53:31.579Z",
+                "batch": "Batch 47",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Tahsin Ahmed,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 47) has been confirmed.\n\nStudent ID: BC-225\nClass Start: 2026-06-17\nTime: 12:00 PM - 01:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-08T05:52:22.510Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Tanisha Akter Bandhan (SE-71) details edited by Shisir. Changes: Father: '01726814982' -> 'Shahdat Hossain khoshru'"
+            },
+            {
+                "date": "2026-08-08T05:52:22.528Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Tanisha Akter Bandhan (SE-71) details edited by Shisir. Changes: Father: '01726814982' -> 'Shahdat Hossain khoshru'"
+            },
+            {
+                "date": "2026-08-12T05:31:37.184Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Akteroj Jaman (BC-166) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T05:31:37.219Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Akteroj Jaman (BC-166) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T05:35:20.882Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Faujia Sultana has paid a total of ৳1 for: Basic Computer (Paid: ৳1, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-08-12T05:35:20.915Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear Faujia Sultana, we have received your payment of ৳1 for: Basic Computer (Paid: ৳1, Due: ৳0). Combined outstanding due is ৳0. Thank you!"
+            },
+            {
+                "date": "2026-08-12T05:35:20.957Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Faujia Sultana has paid a total of ৳1 for: Basic Computer (Paid: ৳1, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-08-12T05:35:44.918Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Faujia Sultana (BC-165) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T05:35:44.998Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Faujia Sultana (BC-165) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T05:36:20.118Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mahafujur Rahman Alvee (BC-164) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T05:36:20.153Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mahafujur Rahman Alvee (BC-164) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T05:36:55.412Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md. Humayun Kabir (BC-163) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T05:36:55.445Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md. Humayun Kabir (BC-163) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T05:37:54.779Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Naimur Rahman (BC-161) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T05:37:54.822Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Naimur Rahman (BC-161) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T06:50:26.888Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for ABDULLAH AL NOMAN (BC-156) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T06:50:26.926Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for ABDULLAH AL NOMAN (BC-156) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T06:54:46.469Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for SIMLA AKTER PRINTI (BC-153) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T06:54:46.504Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for SIMLA AKTER PRINTI (BC-153) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T06:55:20.713Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mohona Nasrin Munni (BC-159) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T06:55:20.742Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mohona Nasrin Munni (BC-159) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T06:55:40.441Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Khadija Akter Mim (BC-158) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T06:55:40.472Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Khadija Akter Mim (BC-158) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T06:56:22.821Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Samia Akter Srabon (BC-157) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T06:56:22.887Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Samia Akter Srabon (BC-157) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T06:56:52.570Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for bumika debnath (BC-155) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T06:56:52.619Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for bumika debnath (BC-155) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T06:57:13.109Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student bumika debnath (BC-155) details edited by Shisir. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-08-12T06:57:13.207Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student bumika debnath (BC-155) details edited by Shisir. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-08-12T06:58:02.082Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Mohona Nasrin Munni (BC-159) details edited by Shisir. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-08-12T06:58:02.154Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Mohona Nasrin Munni (BC-159) details edited by Shisir. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-08-12T06:59:50.038Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Siam Ahmed (BC-154) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T06:59:50.070Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Siam Ahmed (BC-154) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:00:39.570Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md Yeasin Ahammad (BC-136) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:00:39.612Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md Yeasin Ahammad (BC-136) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:32:23.733Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Israfil Ahammed Eshan (BC-189) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:32:43.522Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Taifa Noor Inti (BC-187) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:32:43.568Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Taifa Noor Inti (BC-187) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:33:18.915Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Sojid Mahmud (BC-184) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:33:18.989Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Sojid Mahmud (BC-184) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:33:26.116Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Israfil Ahammed Eshan (BC-189) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:33:35.888Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Musfiqur Rahman (BC-182) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:33:35.946Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Musfiqur Rahman (BC-182) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:33:54.445Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mahamudul Hasan (BC-178) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:33:54.784Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mahamudul Hasan (BC-178) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:35:10.668Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Taifa Noor Inti (BC-187) details edited by Shisir. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-08-12T07:35:46.758Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Farhan Fuad Sarin (BC-174) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:36:10.078Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Error",
+                "message": "[Admin Edit Notification Error] EDIZ IT Alert: Student Taifa Noor Inti (BC-187) details edited by Shisir. Changes: Gender: 'Male' -> 'Female': Unexpected token '<', \"<html>\r\n<h\"... is not valid JSON"
+            },
+            {
+                "date": "2026-08-12T07:36:20.977Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Jannatul Faiza (BC-172) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:36:21.015Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Jannatul Faiza (BC-172) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:36:39.732Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for KAZI SHADIA MOKARROM (BC-169) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:36:39.771Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for KAZI SHADIA MOKARROM (BC-169) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:36:55.514Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Error",
+                "message": "[Admin Cert Notification Error] EDIZ IT Alert: Certificate issued for Farhan Fuad Sarin (BC-174) by System for course: Basic Computer: Unexpected token '<', \"<html>\r\n<h\"... is not valid JSON"
+            },
+            {
+                "date": "2026-08-12T07:37:03.714Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student KAZI SHADIA MOKARROM (BC-169) details edited by Shisir. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-08-12T07:37:03.787Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student KAZI SHADIA MOKARROM (BC-169) details edited by Shisir. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-08-12T07:37:32.143Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Nadia Tasnim Mim (BC-168) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:37:32.223Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Nadia Tasnim Mim (BC-168) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:47:00.388Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Rahat Mahmud (BC-196) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:47:00.422Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Rahat Mahmud (BC-196) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:59:50.165Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md. Rafiqul Islam Tasin (BC-185) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T07:59:50.230Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md. Rafiqul Islam Tasin (BC-185) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:00:16.056Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Samia Akter Ushmita (BC-183) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:00:59.820Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mst. Nusrat Tasnim (BC-181) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:00:59.854Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mst. Nusrat Tasnim (BC-181) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:01:16.081Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Samia Akter Ushmita (BC-183) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:01:54.719Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Shaharuk Jamin Siam (BC-180) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:01:54.754Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Shaharuk Jamin Siam (BC-180) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:02:41.714Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Shahriar Tuhin (BC-179) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:02:41.767Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Shahriar Tuhin (BC-179) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:05:32.714Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md. Fahim Sharier Nafis (BC-177) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:05:32.830Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md. Fahim Sharier Nafis (BC-177) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:08:08.762Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Khan Md Ashraful (BC-176) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:08:09.203Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Khan Md Ashraful (BC-176) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:08:37.200Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Bijoy Kumar Sarker Srijan (BC-175) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:08:37.246Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Bijoy Kumar Sarker Srijan (BC-175) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:08:54.747Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Daiyan Ibrahim (BC-173) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:08:55.096Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Daiyan Ibrahim (BC-173) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:15:31.182Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MUSHFIQUL HOQUE LABIB (BC-209) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:15:31.255Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MUSHFIQUL HOQUE LABIB (BC-209) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:15:57.477Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Antika Islam Rimy (BC-207) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:15:58.077Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Antika Islam Rimy (BC-207) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:16:50.997Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Antika Islam Rimy (BC-207) details edited by Shisir. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-08-12T08:16:51.156Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Antika Islam Rimy (BC-207) details edited by Shisir. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-08-12T08:17:09.404Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Tasfia akter (BC-206) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:17:09.451Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Tasfia akter (BC-206) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:17:32.536Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for SHOWKAT AZAD (BC-204) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:17:32.680Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for SHOWKAT AZAD (BC-204) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:18:04.388Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for IBRAHIM KHOLIL ROBAYET (BC-203) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:18:04.601Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for IBRAHIM KHOLIL ROBAYET (BC-203) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:18:34.047Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Popy Khanom Choya (BC-202) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:18:41.494Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Popy Khanom Choya (BC-202) details edited by Shisir. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-08-12T08:18:41.650Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Popy Khanom Choya (BC-202) details edited by Shisir. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-08-12T08:19:25.073Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Adnan Safi (BC-201) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:19:25.125Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Adnan Safi (BC-201) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:19:34.300Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Popy Khanom Choya (BC-202) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:19:46.571Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Irfanul Islam (BC-200) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:19:46.612Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Irfanul Islam (BC-200) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:20:07.614Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Zisan Ahammed (BC-199) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:20:07.668Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Zisan Ahammed (BC-199) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:20:23.199Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Pronoy Chandra Bhowmik (BC-195) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T08:20:23.637Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Pronoy Chandra Bhowmik (BC-195) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:01:23.883Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Tahsin Ahmed (BC-225) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:01:23.948Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Tahsin Ahmed (BC-225) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:01:53.611Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for JUNAYED RAJ SIYAM (BC-221) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:01:53.654Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for JUNAYED RAJ SIYAM (BC-221) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:02:26.581Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Emtiaz Mahmud Mahi (BC-210) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:02:26.634Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Emtiaz Mahmud Mahi (BC-210) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:03:29.707Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md. Kamor Hossain (BC-198) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:03:29.759Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md. Kamor Hossain (BC-198) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:10:42.117Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Jannatul Mawya Maisha (BC-197) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:11:24.872Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Tousif (BC-193) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:11:42.130Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Jannatul Mawya Maisha (BC-197) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:12:14.614Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MOHAMMOD ARMAN HOSSAIN SIAM (BC-192) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:12:14.709Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MOHAMMOD ARMAN HOSSAIN SIAM (BC-192) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:12:25.511Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Tousif (BC-193) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:13:00.692Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Sajjad Hossain (BC-191) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:13:00.744Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Sajjad Hossain (BC-191) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:13:41.904Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Jawad Affan (BC-190) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:13:41.969Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Jawad Affan (BC-190) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:14:51.288Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md Anas Gazi (BC-188) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:14:51.349Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md Anas Gazi (BC-188) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:15:42.166Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Nayim Ahmed Alvi (BC-186) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:15:42.227Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Nayim Ahmed Alvi (BC-186) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-12T11:24:35.303Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md. Kamor Hossain (SE-56) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:24:35.345Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md. Kamor Hossain (SE-56) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:25:14.477Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Jannatul Mawya Maisha (SE-55) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:25:14.537Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Jannatul Mawya Maisha (SE-55) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:25:32.171Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MOHAMMOD ARMAN HOSSAIN SIAM (SE-53) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:25:32.314Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MOHAMMOD ARMAN HOSSAIN SIAM (SE-53) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:26:57.344Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Israfil Ahammed Eshan (SE-51) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:26:57.392Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Israfil Ahammed Eshan (SE-51) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:27:25.654Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md Anas Gazi (SE-50) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:27:25.709Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md Anas Gazi (SE-50) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:28:00.696Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Taifa Noor Inti (SE-49) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:28:00.759Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Taifa Noor Inti (SE-49) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:29:02.138Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Nayim Ahmed Alvi (SE-48) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:29:02.257Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Nayim Ahmed Alvi (SE-48) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:29:22.678Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Musfiqur Rahman (SE-46) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:29:22.722Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Musfiqur Rahman (SE-46) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:29:42.721Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Tasmia Mahmud (SE-44) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:29:42.770Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Tasmia Mahmud (SE-44) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:29:59.390Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Tasmia Mahmud (SE-44) details edited by Shisir. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-08-12T11:29:59.487Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Tasmia Mahmud (SE-44) details edited by Shisir. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-08-12T11:31:27.710Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mahamudul Hasan (SE-42) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:31:27.769Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mahamudul Hasan (SE-42) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:34:40.687Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Ariyan Mahamud (SE-41) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:34:40.739Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Ariyan Mahamud (SE-41) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:35:04.532Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Jannatul Faiza (SE-36) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:35:04.603Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Jannatul Faiza (SE-36) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:35:22.926Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for KAZI SHADIA MOKARROM (SE-35) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:35:40.269Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Nadia Tasnim Mim (SE-34) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:35:40.320Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Nadia Tasnim Mim (SE-34) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:36:23.041Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for KAZI SHADIA MOKARROM (SE-35) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:40:42.001Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for AKASH RUDRA (SE-65) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:40:42.059Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for AKASH RUDRA (SE-65) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:41:18.253Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MAHMUDUL HASAN TAMIM (SE-64) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:41:18.312Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MAHMUDUL HASAN TAMIM (SE-64) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:42:12.830Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Sazzatul Islam tonmoy (SE-63) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:42:12.893Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Sazzatul Islam tonmoy (SE-63) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:42:36.569Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mehedi Hasan (SE-62) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:42:36.612Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mehedi Hasan (SE-62) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:42:46.974Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for JANNATUL AFRIN (SE-52) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:42:47.066Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for JANNATUL AFRIN (SE-52) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:43:05.828Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md. Rafiqul Islam Tasin (SE-47) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:43:05.902Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md. Rafiqul Islam Tasin (SE-47) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:43:20.104Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mst. Nusrat Tasnim (SE-45) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:43:36.593Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md. Fahim Sharier Nafis (SE-40) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:43:36.645Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md. Fahim Sharier Nafis (SE-40) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:43:42.173Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Error",
+                "message": "[Admin Cert Notification Error] EDIZ IT Alert: Certificate issued for Mst. Nusrat Tasnim (SE-45) by System for course: Spoken English: Unexpected token '<', \"<html>\r\n<h\"... is not valid JSON"
+            },
+            {
+                "date": "2026-08-12T11:45:22.639Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Khan Md Ashraful (SE-39) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:45:22.699Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Khan Md Ashraful (SE-39) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:46:31.273Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Bijoy Kumar Sarker Srijan (SE-38) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:46:31.332Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Bijoy Kumar Sarker Srijan (SE-38) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:47:28.568Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Daiyan Ibrahim (SE-37) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:47:28.647Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Daiyan Ibrahim (SE-37) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:50:08.956Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Tanisha Akter Bandhan (SE-71) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:50:09.002Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Tanisha Akter Bandhan (SE-71) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:50:24.123Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Fahad khan (SE-70) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:50:24.206Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Fahad khan (SE-70) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:50:41.036Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md. Rifat Hossain (SE-69) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:50:41.128Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md. Rifat Hossain (SE-69) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:50:55.520Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Riddhima Datta (SE-68) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:50:55.592Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Riddhima Datta (SE-68) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:51:05.845Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Riddhima Datta (SE-68) details edited by Shisir. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-08-12T11:51:05.942Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Riddhima Datta (SE-68) details edited by Shisir. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-08-12T11:51:25.945Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mohammed Kamal Hossain Nafiz (SE-67) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:51:50.281Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Emtiaz Mahmud Mahi (SE-66) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:52:26.178Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mohammed Kamal Hossain Nafiz (SE-67) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:52:50.227Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Emtiaz Mahmud Mahi (SE-66) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:52:54.625Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Tasfia akter (SE-61) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:52:54.691Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Tasfia akter (SE-61) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:53:38.346Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for SHOWKAT AZAD (SE-60) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:53:38.395Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for SHOWKAT AZAD (SE-60) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:54:05.618Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for IBRAHIM KHOLIL ROBAYET (SE-59) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:54:26.980Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Adnan Safi (SE-58) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-12T11:54:27.051Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Adnan Safi (SE-58) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-13T06:46:58.841Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Somiya Binta Quyum (BC-220) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-13T06:46:58.904Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Somiya Binta Quyum (BC-220) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-13T06:47:18.754Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Arif Fuad (BC-219) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-13T06:47:18.804Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Arif Fuad (BC-219) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-13T06:47:52.247Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MD Sabbir (BC-218) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-13T06:47:52.333Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MD Sabbir (BC-218) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-13T06:48:07.851Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mahmuda Akther (BC-217) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-13T06:48:07.916Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mahmuda Akther (BC-217) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-13T06:48:19.278Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Mahmuda Akther (BC-217) details edited by Shisir. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-08-13T06:48:19.404Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Mahmuda Akther (BC-217) details edited by Shisir. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-08-13T06:48:43.819Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Ahnaf Tahmida Tanisha (BC-216) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-13T06:48:43.883Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Ahnaf Tahmida Tanisha (BC-216) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-13T06:48:59.387Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Wasif Rahman (BC-215) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-13T06:48:59.451Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Wasif Rahman (BC-215) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-13T06:49:17.523Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Riddhima Datta (BC-214) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-13T06:49:17.601Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Riddhima Datta (BC-214) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-13T06:49:42.058Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Krishon Dey (BC-213) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-13T06:49:42.127Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Krishon Dey (BC-213) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-13T06:49:53.152Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mohammed Kamal Hossain Nafiz (BC-212) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-13T06:49:53.240Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mohammed Kamal Hossain Nafiz (BC-212) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-13T06:50:18.695Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mehedi Hasan (BC-208) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-13T06:50:18.759Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mehedi Hasan (BC-208) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-08-13T06:52:06.013Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Rifat Ahmed (SE-80) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-13T06:52:06.243Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Rifat Ahmed (SE-80) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-13T06:52:46.422Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Farhan Tanvir (SE-78) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-13T06:52:46.467Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Farhan Tanvir (SE-78) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-13T06:53:19.961Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Labiba Ayman Tuba (SE-77) details edited by Shisir. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-08-13T06:53:20.107Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Labiba Ayman Tuba (SE-77) details edited by Shisir. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-08-13T06:53:22.557Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Labiba Ayman Tuba (SE-77) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-13T06:53:22.615Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Labiba Ayman Tuba (SE-77) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-13T07:01:47.043Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MD. JISAN CHOWDHURY RAHAT (SE-76) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-13T07:01:47.113Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MD. JISAN CHOWDHURY RAHAT (SE-76) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-13T07:02:50.979Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Somiya Binta Quyum (SE-75) details edited by Shisir. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-08-13T07:02:51.046Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Somiya Binta Quyum (SE-75) details edited by Shisir. Changes: Gender: 'Male' -> 'Female'"
+            },
+            {
+                "date": "2026-08-13T07:02:54.904Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Somiya Binta Quyum (SE-75) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-13T07:02:54.957Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Somiya Binta Quyum (SE-75) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-13T07:03:33.811Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Morsalin Shad (SE-74) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-13T07:03:33.861Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Morsalin Shad (SE-74) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-13T07:04:17.332Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for SHARIFUL ISLAM AYON (SE-73) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-13T07:04:17.389Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for SHARIFUL ISLAM AYON (SE-73) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-08-13T10:59:14.934Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Krishon Dey has paid a total of ৳7,000 for: Graphic Design (Paid: ৳7,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-08-13T10:59:15.005Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear Krishon Dey, we have received your payment of ৳7,000 for: Graphic Design (Paid: ৳7,000, Due: ৳0). Combined outstanding due is ৳0. Thank you!"
+            },
+            {
+                "date": "2026-08-13T11:00:14.920Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Krishon Dey has paid a total of ৳7,000 for: Graphic Design (Paid: ৳7,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-08-15T05:22:40.692Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student MD. Shoriful Islam Sakib has enrolled in Basic Computer (Batch 49). Net Fee: ৳4000, Paid: ৳4000, Due: ৳0."
+            },
+            {
+                "date": "2026-08-15T05:22:40.772Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student MD. Shoriful Islam Sakib has enrolled in Basic Computer (Batch 49). Net Fee: ৳4000, Paid: ৳4000, Due: ৳0."
+            },
+            {
+                "date": "2026-08-15T05:22:40.978Z",
+                "batch": "Batch 49",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear MD. Shoriful Islam Sakib,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 49) has been confirmed.\n\nStudent ID: BC-226\nClass Start: 2026-08-01\nTime: 9:00 AM - 10:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-15T10:49:22.227Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Tasnia Jannat has enrolled in Basic Computer (Batch 50). Net Fee: ৳3000, Paid: ৳3000, Due: ৳0."
+            },
+            {
+                "date": "2026-08-15T10:49:22.337Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Tasnia Jannat has enrolled in Basic Computer (Batch 50). Net Fee: ৳3000, Paid: ৳3000, Due: ৳0."
+            },
+            {
+                "date": "2026-08-15T10:49:22.475Z",
+                "batch": "Batch 50",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Tasnia Jannat,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 50) has been confirmed.\n\nStudent ID: BC-227\nClass Start: 2026-08-20\nTime: 05:00 PM - 06:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-17T06:49:56.725Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Kazi Ayej Hossen Rakib (BC-167) details edited by Shisir. Changes: Name: 'Kazi Ayej Hossain Rakib' -> 'Kazi Ayej Hossen Rakib', Father: 'Kazi Robel' -> 'Kazi Eshakur Rahman', Mother: 'Mst. Konika' -> 'Mst. Kanika Akter'"
+            },
+            {
+                "date": "2026-08-17T06:49:56.804Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Kazi Ayej Hossen Rakib (BC-167) details edited by Shisir. Changes: Name: 'Kazi Ayej Hossain Rakib' -> 'Kazi Ayej Hossen Rakib', Father: 'Kazi Robel' -> 'Kazi Eshakur Rahman', Mother: 'Mst. Konika' -> 'Mst. Kanika Akter'"
+            },
+            {
+                "date": "2026-08-17T07:45:33.973Z",
+                "batch": "Batch 33",
+                "recipientCount": 10,
+                "status": "Success",
+                "message": "📢 ক্লাস বন্ধের নোটিশ\n\nসম্মানিত শিক্ষার্থীবৃন্দ,\nঅনিবার্য কারণে আজকের সকল ক্লাস বন্ধ থাকবে। পরবর্তী ক্লাস নির্ধারিত সময় অনুযায়ী অনুষ্ঠিত হবে।\n\nধন্যবাদ।\nEDIZ IT Institute"
+            },
+            {
+                "date": "2026-08-17T09:24:15.836Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Kayes Mazumder has enrolled in Basic Computer (Batch 49), Spoken English (Batch 09). Net Fee: ৳8000, Paid: ৳3000, Due: ৳5000."
+            },
+            {
+                "date": "2026-08-17T09:24:15.903Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Kayes Mazumder has enrolled in Basic Computer (Batch 49), Spoken English (Batch 09). Net Fee: ৳8000, Paid: ৳3000, Due: ৳5000."
+            },
+            {
+                "date": "2026-08-17T09:24:16.147Z",
+                "batch": "Batch 49",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Kayes Mazumder,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 49) has been confirmed.\n\nStudent ID: BC-228\nClass Start: 2026-08-01\nTime: 9:00 AM - 10:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-17T09:24:16.743Z",
+                "batch": "Batch 09",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Kayes Mazumder,\n\nCongratulations! Your admission to Spoken English (Batch: Batch 09) has been confirmed.\n\nStudent ID: SE-82\nClass Start: 2026-08-20\nTime: 12:30 PM - 02:00 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-17T11:39:33.215Z",
+                "batch": "Batch 34",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Rudra Saha,\n\nCongratulations! Your admission to Graphic Design (Batch: Batch 34) has been confirmed.\n\nStudent ID: GD-282\nClass Start: 2026-08-01\nTime: 01:30 PM - 3:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-17T11:39:33.780Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Rudra Saha has enrolled in Graphic Design (Batch 34), Basic Computer (Batch 49). Net Fee: ৳15200, Paid: ৳5000, Due: ৳10200. (Book Included. Remaining books in stock: 0)"
+            },
+            {
+                "date": "2026-08-17T11:40:59.102Z",
+                "batch": "Batch 49",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Rudra Saha,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 49) has been confirmed.\n\nStudent ID: BC-229\nClass Start: 2026-08-01\nTime: 9:00 AM - 10:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-17T11:40:59.813Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Rudra Saha has enrolled in Graphic Design (Batch 34), Basic Computer (Batch 49). Net Fee: ৳15200, Paid: ৳5000, Due: ৳10200. (Book Included. Remaining books in stock: 0)"
+            },
+            {
+                "date": "2026-08-18T05:59:11.573Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student MD.Arfan Khan Erfan has enrolled in Basic Computer (Batch 49). Net Fee: ৳4000, Paid: ৳2000, Due: ৳2000."
+            },
+            {
+                "date": "2026-08-18T05:59:11.641Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student MD.Arfan Khan Erfan has enrolled in Basic Computer (Batch 49). Net Fee: ৳4000, Paid: ৳2000, Due: ৳2000."
+            },
+            {
+                "date": "2026-08-18T05:59:11.712Z",
+                "batch": "Batch 49",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear MD.Arfan Khan Erfan,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 49) has been confirmed.\n\nStudent ID: BC-230\nClass Start: 2026-08-01\nTime: 9:00 AM - 10:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-18T09:50:26.372Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Ramim Arefin Mahi has enrolled in IELTS (Batch 01). Net Fee: ৳10000, Paid: ৳10000, Due: ৳0."
+            },
+            {
+                "date": "2026-08-18T09:50:26.666Z",
+                "batch": "Batch 01",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Ramim Arefin Mahi,\n\nCongratulations! Your admission to IELTS (Batch: Batch 01) has been confirmed.\n\nStudent ID: IELTS-1\nClass Start: 2026-08-20\nTime: 10:30 PM - 12:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-18T09:50:58.589Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Ramim Arefin Mahi has enrolled in IELTS (Batch 01). Net Fee: ৳10000, Paid: ৳10000, Due: ৳0."
+            },
+            {
+                "date": "2026-08-18T10:13:49.279Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Nabila Akter has enrolled in Spoken English (Batch 10). Net Fee: ৳5000, Paid: ৳500, Due: ৳4500."
+            },
+            {
+                "date": "2026-08-18T10:13:49.464Z",
+                "batch": "Batch 10",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Nabila Akter,\n\nCongratulations! Your admission to Spoken English (Batch: Batch 10) has been confirmed.\n\nStudent ID: SE-83\nClass Start: 2026-08-25\nTime: 09:00 AM - 10:30 AM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-18T10:14:23.407Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Nabila Akter has enrolled in Spoken English (Batch 10). Net Fee: ৳5000, Paid: ৳500, Due: ৳4500."
+            },
+            {
+                "date": "2026-08-18T11:29:10.112Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Md. Jisan Chowdhury Rahat has enrolled in IELTS (Batch 01). Net Fee: ৳15000, Paid: ৳5000, Due: ৳10000."
+            },
+            {
+                "date": "2026-08-18T11:29:10.179Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Md. Jisan Chowdhury Rahat has enrolled in IELTS (Batch 01). Net Fee: ৳15000, Paid: ৳5000, Due: ৳10000."
+            },
+            {
+                "date": "2026-08-18T11:29:10.291Z",
+                "batch": "Batch 01",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Md. Jisan Chowdhury Rahat,\n\nCongratulations! Your admission to IELTS (Batch: Batch 01) has been confirmed.\n\nStudent ID: IELTS-2\nClass Start: 2026-08-20\nTime: 10:30 PM - 12:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-18T11:35:38.577Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Kayes Mazumder (SE-82) details edited by Shisir. Changes: Batch: 'Batch 09' -> 'Batch 10'"
+            },
+            {
+                "date": "2026-08-18T11:36:13.454Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Kayes Mazumder (SE-82) details edited by Shisir. Changes: Batch: 'Batch 09' -> 'Batch 10'"
+            },
+            {
+                "date": "2026-08-19T06:32:10.138Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Arzina Akrter Sumi has enrolled in Basic Computer (Batch 49). Net Fee: ৳4000, Paid: ৳4000, Due: ৳0."
+            },
+            {
+                "date": "2026-08-19T06:32:43.851Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Arzina Akrter Sumi has enrolled in Basic Computer (Batch 49). Net Fee: ৳4000, Paid: ৳4000, Due: ৳0."
+            },
+            {
+                "date": "2026-08-19T06:32:43.922Z",
+                "batch": "Batch 49",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Arzina Akrter Sumi,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 49) has been confirmed.\n\nStudent ID: BC-231\nClass Start: 2026-08-01\nTime: 9:00 AM - 10:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-19T06:35:17.628Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Jannatul Ferdaus Ariba has enrolled in Basic Computer (Batch 49). Net Fee: ৳4000, Paid: ৳4000, Due: ৳0."
+            },
+            {
+                "date": "2026-08-19T06:35:17.709Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Jannatul Ferdaus Ariba has enrolled in Basic Computer (Batch 49). Net Fee: ৳4000, Paid: ৳4000, Due: ৳0."
+            },
+            {
+                "date": "2026-08-19T06:35:17.949Z",
+                "batch": "Batch 49",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Jannatul Ferdaus Ariba,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 49) has been confirmed.\n\nStudent ID: BC-232\nClass Start: 2026-08-01\nTime: 9:00 AM - 10:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-20T04:14:52.665Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Ifran Ahmed has enrolled in Basic Computer (Batch 49). Net Fee: ৳4000, Paid: ৳4000, Due: ৳0."
+            },
+            {
+                "date": "2026-08-20T04:14:52.773Z",
+                "batch": "Batch 49",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Ifran Ahmed,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 49) has been confirmed.\n\nStudent ID: BC-233\nClass Start: 2026-08-01\nTime: 9:00 AM - 10:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-20T07:43:28.301Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear MD.Kamrul Hasan Shuvo, we have received your payment of ৳6,000 for: Graphic Design (Paid: ৳6,000, Due: ৳0). Combined outstanding due is ৳0. Thank you!"
+            },
+            {
+                "date": "2026-08-20T07:43:28.371Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student MD.Kamrul Hasan Shuvo has paid a total of ৳6,000 for: Graphic Design (Paid: ৳6,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-08-20T07:43:28.592Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student MD.Kamrul Hasan Shuvo has paid a total of ৳6,000 for: Graphic Design (Paid: ৳6,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-08-20T11:05:32.357Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Ariyan Mahmud (SE-41) details edited by Rohan. Changes: Name: 'Ariyan Mahamud' -> 'Ariyan Mahmud', Father: 'Jalis Mahamud Khan' -> 'Jalis Mahmud Khan'"
+            },
+            {
+                "date": "2026-08-20T11:06:08.938Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Error",
+                "message": "[Admin Edit Notification Error] EDIZ IT Alert: Student Ariyan Mahmud (SE-41) details edited by Rohan. Changes: Name: 'Ariyan Mahamud' -> 'Ariyan Mahmud', Father: 'Jalis Mahamud Khan' -> 'Jalis Mahmud Khan': Failed to fetch"
+            },
+            {
+                "date": "2026-08-20T11:11:54.435Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Tasmia Mahmud Taiba (SE-44) details edited by Rohan. Changes: Name: 'Tasmia Mahmud' -> 'Tasmia Mahmud Taiba', Father: 'Hasan Mahmud' -> 'Hasan Mahmud Khan'"
+            },
+            {
+                "date": "2026-08-20T11:12:29.484Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Tasmia Mahmud Taiba (SE-44) details edited by Rohan. Changes: Name: 'Tasmia Mahmud' -> 'Tasmia Mahmud Taiba', Father: 'Hasan Mahmud' -> 'Hasan Mahmud Khan'"
+            },
+            {
+                "date": "2026-08-22T04:20:22.144Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student MD.Arfan Khan Erfan (BC-230) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-08-22T04:20:22.217Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Book Notification] Dear MD.Arfan Khan Erfan, you have been issued a book for your Basic Computer class. Thank you!"
+            },
+            {
+                "date": "2026-08-22T04:20:22.286Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student MD.Arfan Khan Erfan (ID: BC-230) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-08-22T04:20:22.355Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student MD.Arfan Khan Erfan (ID: BC-230) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-08-22T04:20:22.426Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student MD.Arfan Khan Erfan (BC-230) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-08-22T04:20:51.529Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student MD. Shoriful Islam Sakib (BC-226) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-08-22T04:20:51.598Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student MD. Shoriful Islam Sakib (BC-226) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-08-22T04:20:51.705Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student MD. Shoriful Islam Sakib (ID: BC-226) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-08-22T04:20:51.770Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student MD. Shoriful Islam Sakib (ID: BC-226) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-08-22T04:20:51.836Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Book Notification] Dear MD. Shoriful Islam Sakib, you have been issued a book for your Basic Computer class. Thank you!"
+            },
+            {
+                "date": "2026-08-22T04:21:20.594Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student Ifran Ahmed (BC-233) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-08-22T04:21:20.667Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student Ifran Ahmed (BC-233) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-08-22T04:21:20.933Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student Ifran Ahmed (ID: BC-233) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-08-22T04:21:21.003Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student Ifran Ahmed (ID: BC-233) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-08-22T04:21:21.072Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Book Notification] Dear Ifran Ahmed, you have been issued a book for your Basic Computer class. Thank you!"
+            },
+            {
+                "date": "2026-08-22T07:33:56.725Z",
+                "batch": "Batch 33",
+                "recipientCount": 10,
+                "status": "Success",
+                "message": "📢 জরুরি নোটিশ\n\nঅনাকাঙ্ক্ষিত কারণে আজ EDIZ IT Institute-এর Graphic Design ক্লাস বন্ধ থাকবে।\n\nপরবর্তী ক্লাস যথারীতি নির্ধারিত সময়ে অনুষ্ঠিত হবে।\n\nসাময়িক অসুবিধার জন্য দুঃখিত। সবাই ভালো থাকবেন। 💙"
+            },
+            {
+                "date": "2026-08-24T04:49:32.637Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Sajjatul Islam has enrolled in Basic Computer (Batch 50). Net Fee: ৳4000, Paid: ৳2000, Due: ৳2000."
+            },
+            {
+                "date": "2026-08-24T04:49:33.009Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Sajjatul Islam has enrolled in Basic Computer (Batch 50). Net Fee: ৳4000, Paid: ৳2000, Due: ৳2000."
+            },
+            {
+                "date": "2026-08-24T04:49:33.099Z",
+                "batch": "Batch 50",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Sajjatul Islam,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 50) has been confirmed.\n\nStudent ID: BC-234\nClass Start: 2026-09-02\nTime: 05:00 PM - 06:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-24T06:45:41.152Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Mazharul Islam Rayhan Bhuiyan has enrolled in Graphic Design (Batch 34). Net Fee: ৳13000, Paid: ৳6500, Due: ৳6500."
+            },
+            {
+                "date": "2026-08-24T06:45:41.233Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Mazharul Islam Rayhan Bhuiyan has enrolled in Graphic Design (Batch 34). Net Fee: ৳13000, Paid: ৳6500, Due: ৳6500."
+            },
+            {
+                "date": "2026-08-24T06:45:41.424Z",
+                "batch": "Batch 34",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Mazharul Islam Rayhan Bhuiyan,\n\nCongratulations! Your admission to Graphic Design (Batch: Batch 34) has been confirmed.\n\nStudent ID: GD-284\nClass Start: 2026-08-01\nTime: 01:30 PM - 3:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-24T14:10:32.659Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student MAHARUN NESSA has enrolled in Basic Computer (Batch 50), Spoken English (Batch 10). Net Fee: ৳8000, Paid: ৳1000, Due: ৳7000."
+            },
+            {
+                "date": "2026-08-24T14:10:32.775Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student MAHARUN NESSA has enrolled in Basic Computer (Batch 50), Spoken English (Batch 10). Net Fee: ৳8000, Paid: ৳1000, Due: ৳7000."
+            },
+            {
+                "date": "2026-08-24T14:10:32.954Z",
+                "batch": "Batch 50",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear MAHARUN NESSA,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 50) has been confirmed.\n\nStudent ID: BC-235\nClass Start: 2026-09-02\nTime: 05:00 PM - 06:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-24T14:10:33.678Z",
+                "batch": "Batch 10",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear MAHARUN NESSA,\n\nCongratulations! Your admission to Spoken English (Batch: Batch 10) has been confirmed.\n\nStudent ID: SE-84\nClass Start: 2026-08-25\nTime: 09:00 AM - 10:30 AM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-24T14:14:03.448Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student JANNATUL FARDOUS SADIA has enrolled in Basic Computer (Batch 50), Spoken English (Batch 10). Net Fee: ৳8000, Paid: ৳1000, Due: ৳7000."
+            },
+            {
+                "date": "2026-08-24T14:14:03.541Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student JANNATUL FARDOUS SADIA has enrolled in Basic Computer (Batch 50), Spoken English (Batch 10). Net Fee: ৳8000, Paid: ৳1000, Due: ৳7000."
+            },
+            {
+                "date": "2026-08-24T14:14:03.777Z",
+                "batch": "Batch 50",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear JANNATUL FARDOUS SADIA,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 50) has been confirmed.\n\nStudent ID: BC-236\nClass Start: 2026-09-02\nTime: 05:00 PM - 06:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-24T14:14:04.481Z",
+                "batch": "Batch 10",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear JANNATUL FARDOUS SADIA,\n\nCongratulations! Your admission to Spoken English (Batch: Batch 10) has been confirmed.\n\nStudent ID: SE-85\nClass Start: 2026-08-25\nTime: 09:00 AM - 10:30 AM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-25T06:50:42.567Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student MD. Kazi Tahmid has enrolled in Basic Computer (Batch 50). Net Fee: ৳4000, Paid: ৳2000, Due: ৳2000."
+            },
+            {
+                "date": "2026-08-25T06:50:42.670Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student MD. Kazi Tahmid has enrolled in Basic Computer (Batch 50). Net Fee: ৳4000, Paid: ৳2000, Due: ৳2000."
+            },
+            {
+                "date": "2026-08-25T06:50:42.770Z",
+                "batch": "Batch 50",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear MD. Kazi Tahmid,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 50) has been confirmed.\n\nStudent ID: BC-237\nClass Start: 2026-09-02\nTime: 05:00 PM - 06:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-26T03:18:00.980Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student SREE KOUSHIK BARMAN DIP has enrolled in Basic Computer (Batch 49). Net Fee: ৳3200, Paid: ৳3000, Due: ৳200. (Book Included. Remaining books in stock: 0)"
+            },
+            {
+                "date": "2026-08-26T03:18:01.165Z",
+                "batch": "Batch 49",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear SREE KOUSHIK BARMAN DIP,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 49) has been confirmed.\n\nStudent ID: BC-238\nClass Start: 2026-08-01\nTime: 9:00 AM - 10:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-26T03:18:34.973Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student SREE KOUSHIK BARMAN DIP has enrolled in Basic Computer (Batch 49). Net Fee: ৳3200, Paid: ৳3000, Due: ৳200. (Book Included. Remaining books in stock: 0)"
+            },
+            {
+                "date": "2026-08-29T10:03:34.560Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Fatema Tuj Zohora has enrolled in Graphic Design (Batch 34). Net Fee: ৳13000, Paid: ৳500, Due: ৳12500."
+            },
+            {
+                "date": "2026-08-29T10:03:34.635Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Fatema Tuj Zohora has enrolled in Graphic Design (Batch 34). Net Fee: ৳13000, Paid: ৳500, Due: ৳12500."
+            },
+            {
+                "date": "2026-08-29T10:03:34.760Z",
+                "batch": "Batch 34",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Fatema Tuj Zohora,\n\nCongratulations! Your admission to Graphic Design (Batch: Batch 34) has been confirmed.\n\nStudent ID: GD-285\nClass Start: 2026-08-01\nTime: 01:30 PM - 3:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-29T10:05:50.618Z",
+                "batch": "Batch 50",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Fatema Tuj Zohora,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 50) has been confirmed.\n\nStudent ID: BC-239\nClass Start: 2026-09-02\nTime: 05:00 PM - 06:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-29T12:06:16.575Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Samiya Akter Srabon (BC-157) details edited by Shisir. Changes: Name: 'Samia Akter Srabon' -> 'Samiya Akter Srabon', Mother: 'Salma' -> ''"
+            },
+            {
+                "date": "2026-08-29T12:06:16.695Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Samiya Akter Srabon (BC-157) details edited by Shisir. Changes: Name: 'Samia Akter Srabon' -> 'Samiya Akter Srabon', Mother: 'Salma' -> ''"
+            },
+            {
+                "date": "2026-08-29T12:06:44.961Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student MST. Samiya Akter Srabon (BC-157) details edited by Shisir. Changes: Name: 'Samiya Akter Srabon' -> 'MST. Samiya Akter Srabon'"
+            },
+            {
+                "date": "2026-08-29T12:06:45.041Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student MST. Samiya Akter Srabon (BC-157) details edited by Shisir. Changes: Name: 'Samiya Akter Srabon' -> 'MST. Samiya Akter Srabon'"
+            },
+            {
+                "date": "2026-08-29T12:13:02.932Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student SHIMLA AKTHER PRINTI (BC-153) details edited by Shisir. Changes: Name: 'SIMLA AKTER PRINTI' -> 'SHIMLA AKTHER PRINTI', Father: 'MD AYED ALI' -> 'MD AYET ALI'"
+            },
+            {
+                "date": "2026-08-29T12:13:36.578Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student SHIMLA AKTHER PRINTI (BC-153) details edited by Shisir. Changes: Name: 'SIMLA AKTER PRINTI' -> 'SHIMLA AKTHER PRINTI', Father: 'MD AYED ALI' -> 'MD AYET ALI'"
+            },
+            {
+                "date": "2026-08-29T12:13:56.935Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student SHIMLA AKHTER PRINTI (BC-153) details edited by Shisir. Changes: Name: 'SHIMLA AKTHER PRINTI' -> 'SHIMLA AKHTER PRINTI'"
+            },
+            {
+                "date": "2026-08-29T12:13:57.057Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student SHIMLA AKHTER PRINTI (BC-153) details edited by Shisir. Changes: Name: 'SHIMLA AKTHER PRINTI' -> 'SHIMLA AKHTER PRINTI'"
+            },
+            {
+                "date": "2026-08-30T09:08:37.141Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Mahjabin Samiya has enrolled in Basic Computer (Batch 50). Net Fee: ৳4000, Paid: ৳2000, Due: ৳2000."
+            },
+            {
+                "date": "2026-08-30T09:08:37.240Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Mahjabin Samiya has enrolled in Basic Computer (Batch 50). Net Fee: ৳4000, Paid: ৳2000, Due: ৳2000."
+            },
+            {
+                "date": "2026-08-30T09:08:37.359Z",
+                "batch": "Batch 50",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Mahjabin Samiya,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 50) has been confirmed.\n\nStudent ID: BC-240\nClass Start: 2026-09-02\nTime: 05:00 PM - 06:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-08-31T11:21:06.153Z",
+                "batch": "Individual (MD.Kamrul Hasan Shuvo)",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "📢 Graphic Design Class Update\n\nআগামী ২ সেপ্টেম্বর থেকে আমাদের Graphic Design with AI কোর্সের ক্লাস শুরু হচ্ছে।\n\n📅 তারিখ: ২ সেপ্টেম্বর\n⏰ সময়: দুপুর ১:০০টা – ৩:০০টা\n\nসকল শিক্ষার্থীকে নির্ধারিত সময়ের আগে উপস্থিত থাকার অনুরোধ করা হচ্ছে।\n\nEDIZ IT Institute"
+            },
+            {
+                "date": "2026-09-02T04:08:26.515Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student Kayes Mazumder (BC-228) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-09-02T04:08:26.599Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student Kayes Mazumder (BC-228) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-09-02T04:08:27.031Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student Kayes Mazumder (ID: BC-228) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-09-02T04:08:27.104Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student Kayes Mazumder (ID: BC-228) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-09-02T04:08:27.175Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Book Notification] Dear Kayes Mazumder, you have been issued a book for your Basic Computer class. Thank you!"
+            },
+            {
+                "date": "2026-09-02T08:44:12.484Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Bijoy has enrolled in Spoken English (Batch 10). Net Fee: ৳7000, Paid: ৳2000, Due: ৳5000."
+            },
+            {
+                "date": "2026-09-02T08:44:12.560Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Bijoy has enrolled in Spoken English (Batch 10). Net Fee: ৳7000, Paid: ৳2000, Due: ৳5000."
+            },
+            {
+                "date": "2026-09-02T08:44:13.882Z",
+                "batch": "Batch 10",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Bijoy,\n\nCongratulations! Your admission to Spoken English (Batch: Batch 10) has been confirmed.\n\nStudent ID: SE-86\nClass Start: 2026-08-25\nTime: 09:00 AM - 10:30 AM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-09-02T08:45:53.969Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Bijoy has enrolled in Graphic Design (Batch 34). Net Fee: ৳13000, Paid: ৳5000, Due: ৳8000."
+            },
+            {
+                "date": "2026-09-02T08:45:54.056Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Bijoy has enrolled in Graphic Design (Batch 34). Net Fee: ৳13000, Paid: ৳5000, Due: ৳8000."
+            },
+            {
+                "date": "2026-09-02T08:45:54.245Z",
+                "batch": "Batch 34",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Bijoy,\n\nCongratulations! Your admission to Graphic Design (Batch: Batch 34) has been confirmed.\n\nStudent ID: GD-286\nClass Start: 2026-08-01\nTime: 01:30 PM - 3:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-09-02T08:47:43.568Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student bijoy has enrolled in IELTS (Batch 01). Net Fee: ৳15000, Paid: ৳4000, Due: ৳11000."
+            },
+            {
+                "date": "2026-09-02T08:47:43.662Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student bijoy has enrolled in IELTS (Batch 01). Net Fee: ৳15000, Paid: ৳4000, Due: ৳11000."
+            },
+            {
+                "date": "2026-09-02T08:47:44.000Z",
+                "batch": "Batch 01",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear bijoy,\n\nCongratulations! Your admission to IELTS (Batch: Batch 01) has been confirmed.\n\nStudent ID: IELTS-3\nClass Start: 2026-08-20\nTime: 10:30 PM - 12:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-09-02T08:54:00.117Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Bijoy Hasan has enrolled in Graphic Design (Batch 34). Net Fee: ৳13000, Paid: ৳5000, Due: ৳8000."
+            },
+            {
+                "date": "2026-09-02T08:54:00.199Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Bijoy Hasan has enrolled in Graphic Design (Batch 34). Net Fee: ৳13000, Paid: ৳5000, Due: ৳8000."
+            },
+            {
+                "date": "2026-09-02T08:54:00.282Z",
+                "batch": "Batch 34",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Bijoy Hasan,\n\nCongratulations! Your admission to Graphic Design (Batch: Batch 34) has been confirmed.\n\nStudent ID: GD-286\nClass Start: 2026-08-01\nTime: 01:30 PM - 3:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-09-02T08:55:25.797Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student bijoy has enrolled in Graphic Design (Batch 34). Net Fee: ৳13000, Paid: ৳5000, Due: ৳8000."
+            },
+            {
+                "date": "2026-09-02T08:55:25.863Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student bijoy has enrolled in Graphic Design (Batch 34). Net Fee: ৳13000, Paid: ৳5000, Due: ৳8000."
+            },
+            {
+                "date": "2026-09-02T08:55:26.170Z",
+                "batch": "Batch 34",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear bijoy,\n\nCongratulations! Your admission to Graphic Design (Batch: Batch 34) has been confirmed.\n\nStudent ID: GD-287\nClass Start: 2026-08-01\nTime: 01:30 PM - 3:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-09-02T11:01:59.387Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student MD. Kazi Tahmid has paid a total of ৳2,000 for: Basic Computer (Paid: ৳2,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-09-02T11:02:36.328Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear MD. Kazi Tahmid, we have received your payment of ৳2,000 for: Basic Computer (Paid: ৳2,000, Due: ৳0). Combined outstanding due is ৳0. Thank you!"
+            },
+            {
+                "date": "2026-09-02T11:02:36.403Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student MD. Kazi Tahmid has paid a total of ৳2,000 for: Basic Computer (Paid: ৳2,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-09-02T11:02:44.736Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student MD. Kazi Tahmid (BC-237) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-09-02T11:02:44.813Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student MD. Kazi Tahmid (BC-237) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-09-02T11:02:45.327Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Book Notification] Dear MD. Kazi Tahmid, you have been issued a book for your Basic Computer class. Thank you!"
+            },
+            {
+                "date": "2026-09-02T11:02:45.383Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student MD. Kazi Tahmid (ID: BC-237) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-09-02T11:02:45.456Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student MD. Kazi Tahmid (ID: BC-237) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-09-02T11:27:22.503Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Tasnim Jahan Nadia has enrolled in Basic Computer (Batch 50). Net Fee: ৳4000, Paid: ৳1000, Due: ৳3000."
+            },
+            {
+                "date": "2026-09-02T11:27:22.591Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Tasnim Jahan Nadia has enrolled in Basic Computer (Batch 50). Net Fee: ৳4000, Paid: ৳1000, Due: ৳3000."
+            },
+            {
+                "date": "2026-09-02T11:27:22.840Z",
+                "batch": "Batch 50",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Tasnim Jahan Nadia,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 50) has been confirmed.\n\nStudent ID: BC-241\nClass Start: 2026-09-02\nTime: 05:00 PM - 06:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-09-02T11:28:19.973Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student JANNATUL FARDOUS SADIA (BC-236) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-09-02T11:28:20.038Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student JANNATUL FARDOUS SADIA (BC-236) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-09-02T11:28:20.112Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student JANNATUL FARDOUS SADIA (ID: BC-236) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-09-02T11:28:20.206Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Book Notification] Dear JANNATUL FARDOUS SADIA, you have been issued a book for your Basic Computer class. Thank you!"
+            },
+            {
+                "date": "2026-09-02T11:28:20.270Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student JANNATUL FARDOUS SADIA (ID: BC-236) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-09-02T11:28:24.201Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student Tasnim Jahan Nadia (BC-241) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-09-02T11:28:24.280Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student Tasnim Jahan Nadia (BC-241) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-09-02T11:28:24.517Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Book Notification] Dear Tasnim Jahan Nadia, you have been issued a book for your Basic Computer class. Thank you!"
+            },
+            {
+                "date": "2026-09-02T11:28:24.596Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student Tasnim Jahan Nadia (ID: BC-241) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-09-02T11:28:24.677Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student Tasnim Jahan Nadia (ID: BC-241) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-09-02T11:28:27.939Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student MAHARUN NESSA (BC-235) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-09-02T11:28:28.006Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student MAHARUN NESSA (BC-235) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-09-02T11:28:28.389Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student MAHARUN NESSA (ID: BC-235) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-09-02T11:28:28.467Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Book Notification] Dear MAHARUN NESSA, you have been issued a book for your Basic Computer class. Thank you!"
+            },
+            {
+                "date": "2026-09-02T11:28:28.615Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student MAHARUN NESSA (ID: BC-235) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-09-02T11:30:10.420Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Joy Sarker Badhon has enrolled in Basic Computer (Batch 50). Net Fee: ৳3200, Paid: ৳3000, Due: ৳200. (Book Included. Remaining books in stock: 0)"
+            },
+            {
+                "date": "2026-09-02T11:30:10.550Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Joy Sarker Badhon has enrolled in Basic Computer (Batch 50). Net Fee: ৳3200, Paid: ৳3000, Due: ৳200. (Book Included. Remaining books in stock: 0)"
+            },
+            {
+                "date": "2026-09-02T11:30:11.088Z",
+                "batch": "Batch 50",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Joy Sarker Badhon,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 50) has been confirmed.\n\nStudent ID: BC-242\nClass Start: 2026-09-02\nTime: 05:00 PM - 06:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-09-02T11:35:39.647Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear Joy Sarker Badhon, we have received your payment of ৳200 for: Basic Computer (Paid: ৳200, Due: ৳0). Combined outstanding due is ৳0. Thank you!"
+            },
+            {
+                "date": "2026-09-02T11:36:14.309Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Joy Sarker Badhon has paid a total of ৳200 for: Basic Computer (Paid: ৳200, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-09-02T11:36:14.389Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Joy Sarker Badhon has paid a total of ৳200 for: Basic Computer (Paid: ৳200, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-09-03T08:13:21.702Z",
+                "batch": "Batch 32",
+                "recipientCount": 10,
+                "status": "Success",
+                "message": "বৈদ্যুতিক সমসস্যার কারনে আজকে ক্লাস বন্ধ থাকবে।"
+            },
+            {
+                "date": "2026-09-05T10:53:27.537Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student Sajjatul Islam (BC-234) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-09-05T10:53:27.638Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] EDIZ IT Alert: Book issued to student Sajjatul Islam (BC-234) by System. Collection: ৳200."
+            },
+            {
+                "date": "2026-09-05T10:53:27.782Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Book Notification] Dear Sajjatul Islam, you have been issued a book for your Basic Computer class. Thank you!"
+            },
+            {
+                "date": "2026-09-05T10:53:27.865Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student Sajjatul Islam (ID: BC-234) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-09-05T10:53:27.949Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Book Notification] Dear Admin, student Sajjatul Islam (ID: BC-234) has taken a book. Total remaining books in stock: 0."
+            },
+            {
+                "date": "2026-09-05T11:02:18.508Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Hamid Khan (SE-79) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-09-05T11:02:18.589Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Hamid Khan (SE-79) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-09-06T12:31:04.328Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear Mahjabin Samiya, we have received your payment of ৳2,000 for: Basic Computer (Paid: ৳2,000, Due: ৳0). Combined outstanding due is ৳0. Thank you!"
+            },
+            {
+                "date": "2026-09-06T12:31:38.533Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Mahjabin Samiya has paid a total of ৳2,000 for: Basic Computer (Paid: ৳2,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-09-06T12:31:38.614Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Mahjabin Samiya has paid a total of ৳2,000 for: Basic Computer (Paid: ৳2,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-09-07T09:23:17.392Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student JANNATUL FARDOUS SADIA has paid a total of ৳4,000 for: Spoken English (Paid: ৳3,500, Due: ৳0), Basic Computer (Paid: ৳500, Due: ৳3,000). Combined Due: ৳3,000."
+            },
+            {
+                "date": "2026-09-07T09:23:17.525Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student JANNATUL FARDOUS SADIA has paid a total of ৳4,000 for: Spoken English (Paid: ৳3,500, Due: ৳0), Basic Computer (Paid: ৳500, Due: ৳3,000). Combined Due: ৳3,000."
+            },
+            {
+                "date": "2026-09-07T09:23:17.614Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear JANNATUL FARDOUS SADIA, we have received your payment of ৳4,000 for: Spoken English (Paid: ৳3,500, Due: ৳0), Basic Computer (Paid: ৳500, Due: ৳3,000). Combined outstanding due is ৳3,000. Thank you!"
+            },
+            {
+                "date": "2026-09-07T13:02:41.017Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Fatema Tuj Zohora has paid a total of ৳2,500 for: Basic Computer (Paid: ৳2,500, Due: ৳0). Combined Due: ৳12,500."
+            },
+            {
+                "date": "2026-09-10T08:05:41.585Z",
+                "batch": "Batch 32",
+                "recipientCount": 10,
+                "status": "Success",
+                "message": "📢 বিশেষ বিজ্ঞপ্তি\n\nঅনিবার্য কারণে আজকের সকল ক্লাস বন্ধ থাকবে।\nপরবর্তী ক্লাস যথারীতি নির্ধারিত সময়ে অনুষ্ঠিত হবে।\n\n— EDIZ IT Institute"
+            },
+            {
+                "date": "2026-09-12T03:50:36.206Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Kayes Mazumder has paid a total of ৳2,500 for: Basic Computer (Paid: ৳2,500, Due: ৳0). Combined Due: ৳2,500."
+            },
+            {
+                "date": "2026-09-12T03:51:13.593Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Kayes Mazumder has paid a total of ৳2,500 for: Basic Computer (Paid: ৳2,500, Due: ৳0). Combined Due: ৳2,500."
+            },
+            {
+                "date": "2026-09-12T03:51:13.680Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear Kayes Mazumder, we have received your payment of ৳2,500 for: Basic Computer (Paid: ৳2,500, Due: ৳0). Combined outstanding due is ৳2,500. Thank you!"
+            },
+            {
+                "date": "2026-09-12T10:26:25.007Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student MAHARUN NESSA has paid a total of ৳1,000 for: Basic Computer (Paid: ৳1,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-09-12T10:26:25.100Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student MAHARUN NESSA has paid a total of ৳1,000 for: Basic Computer (Paid: ৳1,000, Due: ৳0). Combined Due: ৳0."
+            },
+            {
+                "date": "2026-09-12T10:26:25.185Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear MAHARUN NESSA, we have received your payment of ৳1,000 for: Basic Computer (Paid: ৳1,000, Due: ৳0). Combined outstanding due is ৳0. Thank you!"
+            },
+            {
+                "date": "2026-09-15T10:28:33.749Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for sadia akter rikto (GD-240) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-09-15T10:28:33.833Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for sadia akter rikto (GD-240) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-09-28T10:29:02.915Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Antika Islam Rimy (GD-268) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-09-28T10:29:02.978Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Antika Islam Rimy (GD-268) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-09-28T11:08:03.882Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Sojid Mahmud (GD-262) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-09-28T11:08:03.966Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Sojid Mahmud (GD-262) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-09-30T11:03:01.588Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Fahim Mahmud (SE-81) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-09-30T11:03:01.675Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Fahim Mahmud (SE-81) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-09-30T12:35:33.303Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MAHARUN NESSA (SE-84) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-09-30T12:35:33.393Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MAHARUN NESSA (SE-84) by System for course: Spoken English"
+            },
+            {
+                "date": "2026-09-30T12:36:12.249Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student MAHARUN NESSA (SE-84) details edited by Shisir. Changes: Father: 'MOHIN UDDIN' -> 'MD. MOHIN UDDIN'"
+            },
+            {
+                "date": "2026-09-30T12:36:12.423Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student MAHARUN NESSA (SE-84) details edited by Shisir. Changes: Father: 'MOHIN UDDIN' -> 'MD. MOHIN UDDIN'"
+            },
+            {
+                "date": "2026-10-08T10:12:07.883Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Rudra Saha has paid a total of ৳700 for: Basic Computer (Paid: ৳700, Due: ৳0). Combined Due: ৳8,000."
+            },
+            {
+                "date": "2026-10-08T10:12:08.111Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Payment Notification] Dear Admin, student Rudra Saha has paid a total of ৳700 for: Basic Computer (Paid: ৳700, Due: ৳0). Combined Due: ৳8,000."
+            },
+            {
+                "date": "2026-10-08T10:12:08.282Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Student Payment Receipt] Dear Rudra Saha, we have received your payment of ৳700 for: Basic Computer (Paid: ৳700, Due: ৳0). Combined outstanding due is ৳8,000. Thank you!"
+            },
+            {
+                "date": "2026-10-08T10:12:38.958Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Tasnia Jannat (BC-227) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:12:39.148Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Tasnia Jannat (BC-227) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:14:15.632Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Rudra Saha (BC-229) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:14:15.845Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Rudra Saha (BC-229) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:15:54.378Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Sajjatul Islam (BC-234) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:15:54.562Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Sajjatul Islam (BC-234) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:16:59.312Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MAHARUN NESSA (BC-235) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:16:59.524Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MAHARUN NESSA (BC-235) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:17:57.185Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for JANNATUL FARDOUS SADIA (BC-236) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:17:57.381Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for JANNATUL FARDOUS SADIA (BC-236) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:19:17.191Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MD. Kazi Tahmid (BC-237) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:19:17.390Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MD. Kazi Tahmid (BC-237) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:20:44.694Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Fatema Tuj Zohora (BC-239) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:20:44.899Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Fatema Tuj Zohora (BC-239) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:21:33.697Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mahjabin Samiya (BC-240) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:21:33.881Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mahjabin Samiya (BC-240) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:47:21.283Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mim Akter (BC-222) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:47:21.389Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mim Akter (BC-222) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:47:45.770Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Alamin Hossain Tushar (BC-224) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:47:45.854Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Alamin Hossain Tushar (BC-224) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:48:13.304Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MD. Shoriful Islam Sakib (BC-226) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:48:13.390Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MD. Shoriful Islam Sakib (BC-226) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:48:44.728Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Kayes Mazumder (BC-228) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:48:44.816Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Kayes Mazumder (BC-228) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:49:16.841Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MD.Arfan Khan Erfan (BC-230) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:49:16.929Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MD.Arfan Khan Erfan (BC-230) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:50:08.042Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Ifran Ahmed (BC-233) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:50:08.138Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Ifran Ahmed (BC-233) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:50:32.874Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for SREE KOUSHIK BARMAN DIP (BC-238) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T10:50:32.954Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for SREE KOUSHIK BARMAN DIP (BC-238) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T12:45:28.977Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Shariar Imrose Sudad has enrolled in Graphic Design (Batch 32), Basic Computer (Batch 48), Spoken English (Batch 8). Net Fee: ৳21000, Paid: ৳21000, Due: ৳0."
+            },
+            {
+                "date": "2026-10-08T12:45:29.087Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Admission Notification] Dear Admin, student Shariar Imrose Sudad has enrolled in Graphic Design (Batch 32), Basic Computer (Batch 48), Spoken English (Batch 8). Net Fee: ৳21000, Paid: ৳21000, Due: ৳0."
+            },
+            {
+                "date": "2026-10-08T12:45:29.176Z",
+                "batch": "Batch 32",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Shariar Imrose Sudad,\n\nCongratulations! Your admission to Graphic Design (Batch: Batch 32) has been confirmed.\n\nStudent ID: GD-288\nClass Start: 2026-06-17\nTime: 03:00 PM - 05:00 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-10-08T12:45:29.990Z",
+                "batch": "Batch 48",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Shariar Imrose Sudad,\n\nCongratulations! Your admission to Basic Computer (Batch: Batch 48) has been confirmed.\n\nStudent ID: BC-243\nClass Start: 2026-06-25\nTime: 06:30 PM - 08:00 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-10-08T12:45:30.808Z",
+                "batch": "Batch 8",
+                "recipientCount": 2,
+                "status": "Success",
+                "message": "[Auto-Welcome] Dear Shariar Imrose Sudad,\n\nCongratulations! Your admission to Spoken English (Batch: Batch 8) has been confirmed.\n\nStudent ID: SE-86\nClass Start: 2026-07-01\nTime: 05:00 PM - 06:30 PM\n\nEDIZ IT Institute\n📞 01335530900"
+            },
+            {
+                "date": "2026-10-08T12:46:07.919Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Shariar Imrose Sudad (GD-288) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-10-08T12:46:08.016Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Shariar Imrose Sudad (GD-288) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-10-08T12:48:37.168Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Shariar Imrose Sudad (BC-243) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-08T12:48:37.392Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Shariar Imrose Sudad (BC-243) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-10-09T11:57:40.482Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Fatema Tuj Zohora (BC-239) details edited by Shisir. Changes: Father: 'Mohammed Fahim Ibne Roshid' -> 'Mohammad humayun kabir'"
+            },
+            {
+                "date": "2026-10-09T11:57:40.724Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Edit Notification] EDIZ IT Alert: Student Fatema Tuj Zohora (BC-239) details edited by Shisir. Changes: Father: 'Mohammed Fahim Ibne Roshid' -> 'Mohammad humayun kabir'"
+            },
+            {
+                "date": "2026-11-02T07:23:31.199Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MAHAMUDA Akter (BC-66) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-11-02T07:23:31.245Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MAHAMUDA Akter (BC-66) by System for course: Basic Computer"
+            },
+            {
+                "date": "2026-11-12T13:01:57.029Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Obaidul Haque (GD-264) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:01:57.452Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Bijoy Kumar Sarker Srijan (GD-260) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:01:57.953Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Krishon Dey (GD-270) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:01:58.011Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Sazzatul Islam tonmoy (GD-267) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:01:58.380Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Towsif Zaman Bhuiyan Rahee (GD-261) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:01:58.453Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Obaidul Haque (GD-264) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:01:58.523Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MUSHFIQUL HOQUE LABIB (GD-269) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:01:58.591Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Sazzatul Islam tonmoy (GD-267) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:01:58.876Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Towsif Zaman Bhuiyan Rahee (GD-261) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:01:58.925Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Khadija Akter Mim (GD-250) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:01:58.980Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Nayim Ahmed Alvi (GD-263) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:01:59.046Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Khadija Akter Mim (GD-250) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:01:59.116Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Bijoy Kumar Sarker Srijan (GD-260) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:01:59.184Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Nayim Ahmed Alvi (GD-263) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:01:59.266Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Krishon Dey (GD-270) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:01:59.349Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for MUSHFIQUL HOQUE LABIB (GD-269) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:02:31.121Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Eklas Uddin (GD-255) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:02:31.406Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Eklas Uddin (GD-255) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:02:32.092Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Shahriar Hossain Shihab (GD-256) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:02:32.143Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Shahriar Hossain Shihab (GD-256) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:02:32.615Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md. Arafat Amin Jesan (GD-257) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:02:32.722Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Ahsan Tamzid (GD-258) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:02:32.910Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md. Arafat Amin Jesan (GD-257) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:02:33.102Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Ahsan Tamzid (GD-258) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:07:22.645Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Akhi Alamgir (GD-241) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:07:22.693Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Akhi Alamgir (GD-241) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:07:23.847Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Saimon Islam (GD-251) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:07:23.913Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Saimon Islam (GD-251) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:07:25.173Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Khoshi Akter (GD-252) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:07:25.239Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Khoshi Akter (GD-252) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:07:32.615Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for FARHAN SADIQUE (GD-230) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:07:32.659Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for FARHAN SADIQUE (GD-230) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:07:33.022Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mohammad zayed bin rashid (GD-231) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:07:33.263Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Mohammad zayed bin rashid (GD-231) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:07:33.708Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for REDOANUN ISLAM TANVIR (GD-233) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:07:33.848Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for REDOANUN ISLAM TANVIR (GD-233) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:07:34.361Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for AZIZUL ISLAM SABBIR (GD-234) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:07:34.909Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for AZIZUL ISLAM SABBIR (GD-234) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:07:35.135Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Jannatun Nayim Supti (GD-247) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:07:35.195Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Jannatun Nayim Supti (GD-247) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:07:43.204Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md Sana Ulla (GD-243) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:07:43.252Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md Sana Ulla (GD-243) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:07:55.803Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for REDWAN AHMED (GD-239) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:07:55.853Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for REDWAN AHMED (GD-239) by System for course: Graphic Design"
+            },
+            {
+                "date": "2026-11-12T13:10:42.009Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Ujan Devnath (GD-278) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:10:42.405Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Ishrak Farhan Sarker (GD-277) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:10:42.648Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for SHARIFUL ISLAM AYON (GD-272) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:10:42.756Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Arif Fuad (GD-275) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:10:42.806Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Md Anas Gazi (GD-265) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:10:43.321Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Sadia Akter (GD-276) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:10:43.365Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Morsalin Shad (GD-274) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:10:43.471Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Ahnaf Tahmida Tanisha (GD-271) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:10:43.521Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for Hamid Khan (GD-279) by System (Bulk)"
+            },
+            {
+                "date": "2026-11-12T13:10:43.806Z",
+                "batch": "System",
+                "recipientCount": 1,
+                "status": "Success",
+                "message": "[Admin Cert Notification] EDIZ IT Alert: Certificate issued for ARGHA BANIK (GD-273) by System (Bulk)"
             }
         ],
         "emailConfig": {
@@ -19148,26 +31447,1291 @@ window.migratedDatabase = {
                 },
                 "recoveryEmail": "mahibchowdury97@gmail.com",
                 "phone": "01798926897"
+            }
+        ],
+        "teachers": [
+            {
+                "id": "TCH-1782731954515",
+                "name": "Sishir",
+                "phone": "01767108828",
+                "email": ""
             },
             {
-                "id": "USER-2",
-                "email": "frontdesk@edizit.com",
-                "password": "s8S*d8&#",
-                "role": "Staff",
-                "permissions": {
-                    "canEdit": true,
-                    "canDelete": false,
-                    "canInvoice": true,
-                    "canCert": true,
-                    "canCreateBatch": true
-                },
-                "phone": "01335530900",
-                "securityQuestion": "What is your birth city?",
-                "securityAnswer": "comilla"
+                "id": "TCH-1782732225656",
+                "name": "Jaber",
+                "phone": "01784548751",
+                "email": ""
+            },
+            {
+                "id": "TCH-1782732311577",
+                "name": "Sumon",
+                "phone": "01616951959",
+                "email": ""
+            }
+        ],
+        "auditLogs": [
+            {
+                "id": "AUD-BATCH-1782731566530",
+                "date": "2026-06-29",
+                "type": "Batch Edit Verification",
+                "collectedBy": "Staff",
+                "receivedByAdmin": true,
+                "course": "Spoken English",
+                "batch": "Batch 8",
+                "details": "Edited batch Batch 8 (Days: Sat, Sun, Mon, Tue, Wed, Thu -> Sat, Sun, Mon, Tue, Wed, Thu, Time: 05:00 PM - 06:30 PM -> 05:00 PM - 06:30 PM, Dates: 2026-06-27/2026-08-27 -> 2026-07-01/2026-08-15, Fee: ৳7000 -> ৳7000)"
+            },
+            {
+                "id": "AUD-BATCH-1782910253175",
+                "date": "2026-07-01",
+                "type": "Batch Edit Verification",
+                "collectedBy": "Staff",
+                "receivedByAdmin": true,
+                "course": "Basic Computer",
+                "batch": "Batch 48",
+                "details": "Edited batch Batch 48 (Days: Sat, Sun, Mon, Tue, Wed, Thu -> Sat, Sun, Mon, Tue, Wed, Thu, Time: 06:30 PM - 08:00 PM -> 06:30 PM - 08:00 PM, Dates: 2026-06-25/2026-09-25 -> 2026-06-25/2026-09-25, Fee: ৳6000 -> ৳6000)"
+            },
+            {
+                "id": "AUD-BATCH-1782910332683",
+                "date": "2026-07-01",
+                "type": "Batch Edit Verification",
+                "collectedBy": "Staff",
+                "receivedByAdmin": true,
+                "course": "Basic Computer",
+                "batch": "Batch 47",
+                "details": "Edited batch Batch 47 (Days: Sat, Sun, Mon, Tue, Wed, Thu -> Sat, Sun, Mon, Tue, Wed, Thu, Time: 12:00 PM - 01:30 PM -> 12:00 PM - 01:30 PM, Dates: 2026-06-17/2026-09-17 -> 2026-06-17/2026-09-17, Fee: ৳6000 -> ৳6000)"
+            },
+            {
+                "id": "AUD-BATCH-1782910367298",
+                "date": "2026-07-01",
+                "type": "Batch Edit Verification",
+                "collectedBy": "Staff",
+                "receivedByAdmin": true,
+                "course": "Basic Computer",
+                "batch": "Batch 46",
+                "details": "Edited batch Batch 46 (Days: Sun, Tue, Thu -> Sun, Tue, Thu, Time: 05:00 PM - 06:30 PM -> 05:00 PM - 06:30 PM, Dates: 2026-06-20/2026-08-20 -> 2026-06-20/2026-08-20, Fee: ৳6000 -> ৳6000)"
+            },
+            {
+                "id": "AUD-BATCH-1782910390079",
+                "date": "2026-07-01",
+                "type": "Batch Edit Verification",
+                "collectedBy": "Staff",
+                "receivedByAdmin": true,
+                "course": "Basic Computer",
+                "batch": "Batch 45",
+                "details": "Edited batch Batch 45 (Days: Sat, Sun, Mon, Tue, Wed, Thu -> Sat, Sun, Mon, Tue, Wed, Thu, Time: 10:30 AM - 12:00 PM -> 10:30 AM - 12:00 PM, Dates: 2026-06-13/2026-09-05 -> 2026-06-13/2026-09-05, Fee: ৳6000 -> ৳6000)"
+            },
+            {
+                "id": "AUD-BATCH-1782910411800",
+                "date": "2026-07-01",
+                "type": "Batch Edit Verification",
+                "collectedBy": "Staff",
+                "receivedByAdmin": true,
+                "course": "Basic Computer",
+                "batch": "Batch 44",
+                "details": "Edited batch Batch 44 (Days: Sat, Sun, Mon, Tue, Wed, Thu -> Sat, Sun, Mon, Tue, Wed, Thu, Time: 09:00 AM - 10:30 AM -> 09:00 AM - 10:30 AM, Dates: 2026-06-17/2026-08-12 -> 2026-06-17/2026-08-12, Fee: ৳6000 -> ৳6000)"
+            },
+            {
+                "id": "AUD-BATCH-1782910421437",
+                "date": "2026-07-01",
+                "type": "Batch Edit Verification",
+                "collectedBy": "Staff",
+                "receivedByAdmin": true,
+                "course": "Basic Computer",
+                "batch": "Batch 44",
+                "details": "Edited batch Batch 44 (Days: Sat, Sun, Mon, Tue, Wed, Thu -> Sat, Sun, Mon, Tue, Wed, Thu, Time: 09:00 AM - 10:30 AM -> 09:00 AM - 10:30 AM, Dates: 2026-06-17/2026-08-12 -> 2026-06-17/2026-08-12, Fee: ৳6000 -> ৳6000)"
+            },
+            {
+                "id": "AUD-BATCH-1782910433507",
+                "date": "2026-07-01",
+                "type": "Batch Edit Verification",
+                "collectedBy": "Staff",
+                "receivedByAdmin": true,
+                "course": "Basic Computer",
+                "batch": "Batch 44",
+                "details": "Edited batch Batch 44 (Days: Sat, Sun, Mon, Tue, Wed, Thu -> Sat, Sun, Mon, Tue, Wed, Thu, Time: 09:00 AM - 10:30 AM -> 09:00 AM - 10:30 AM, Dates: 2026-06-17/2026-08-12 -> 2026-06-17/2026-08-12, Fee: ৳6000 -> ৳6000)"
+            },
+            {
+                "id": "AUD-BATCH-1783511358152",
+                "date": "2026-07-08",
+                "type": "Batch Edit Verification",
+                "collectedBy": "Staff",
+                "receivedByAdmin": true,
+                "course": "Basic Computer",
+                "batch": "Batch 46",
+                "details": "Edited batch Batch 46 (Days: Sun, Tue, Thu -> Sat, Sun, Mon, Tue, Wed, Thu, Time: 05:00 PM - 06:30 PM -> 05:00 PM - 06:30 PM, Dates: 2026-06-20/2026-08-20 -> 2026-06-20/2026-08-20, Fee: ৳6000 -> ৳6000)"
+            },
+            {
+                "id": "AUD-BATCH-1784037861001",
+                "date": "2026-07-14",
+                "type": "Batch Edit Verification",
+                "collectedBy": "Staff",
+                "receivedByAdmin": true,
+                "course": "Basic Computer",
+                "batch": "Batch 43",
+                "details": "Edited batch Batch 43 (Days: Sat, Sun, Mon, Tue, Wed, Thu -> Sat, Sun, Mon, Tue, Wed, Thu, Time: 09:00 AM - 10:30 AM -> 09:00 AM - 10:30 AM, Dates: 2026-04-20/2026-07-20 -> 2026-04-20/2026-07-20, Fee: ৳4000 -> ৳4000)"
+            },
+            {
+                "id": "AUD-BATCH-1784379743915",
+                "date": "2026-07-18",
+                "type": "Batch Edit Verification",
+                "collectedBy": "Staff",
+                "receivedByAdmin": true,
+                "course": "Graphic Design",
+                "batch": "Batch 34",
+                "details": "Edited batch Batch 34 (Days: Sat, Mon, Wed -> Sat, Mon, Wed, Time: 09:00 AM - 10:30 AM -> 01:30 PM - 3:30 PM, Dates: 2026-08-01/2026-11-01 -> 2026-08-01/2026-11-01, Fee: ৳15000 -> ৳15000)"
+            },
+            {
+                "id": "AUD-BATCH-1786945128159",
+                "date": "2026-08-17",
+                "type": "Batch Edit Verification",
+                "collectedBy": "Staff",
+                "receivedByAdmin": true,
+                "course": "Spoken English",
+                "batch": "Batch 09",
+                "details": "Edited batch Batch 09 (Days: Sat, Mon, Wed -> Sat, Mon, Wed, Time: 12:30 AM - 02:00 PM -> 12:30 PM - 02:00 PM, Dates: 2026-08-20/2026-11-20 -> 2026-08-20/2026-11-20, Fee: ৳7000 -> ৳7000)"
+            },
+            {
+                "id": "AUD-BATCH-1786967615029",
+                "date": "2026-08-17",
+                "type": "Batch Edit Verification",
+                "collectedBy": "Staff",
+                "receivedByAdmin": true,
+                "course": "Basic Computer",
+                "batch": "Batch 50",
+                "details": "Edited batch Batch 50 (Days: Sat, Mon, Wed -> Sat, Mon, Wed, Time: 05:00 PM - 06:30 PM -> 05:00 PM - 06:30 PM, Dates: 2026-08-20/2026-11-21 -> 2026-08-20/2026-11-21, Fee: ৳6000 -> ৳6000)"
+            },
+            {
+                "id": "AUD-BATCH-1786967635287",
+                "date": "2026-08-17",
+                "type": "Batch Edit Verification",
+                "collectedBy": "Staff",
+                "receivedByAdmin": true,
+                "course": "Basic Computer",
+                "batch": "Batch 49",
+                "details": "Edited batch Batch 49 (Days: Sat, Sun, Mon, Tue, Wed, Thu -> Sat, Mon, Wed, Time: 9:00 AM - 10:30 PM -> 9:00 AM - 10:30 PM, Dates: 2026-08-01/2026-09-05 -> 2026-08-01/2026-09-05, Fee: ৳6000 -> ৳6000)"
+            },
+            {
+                "id": "AUD-BATCH-1788415365623",
+                "date": "2026-09-03",
+                "type": "Batch Edit Verification",
+                "collectedBy": "Staff",
+                "receivedByAdmin": true,
+                "course": "Basic Computer",
+                "batch": "Batch 50",
+                "details": "Edited batch Batch 50 (Days: Sat, Mon, Wed -> Sat, Mon, Wed, Time: 05:00 PM - 06:30 PM -> 05:00 PM - 06:30 PM, Dates: 2026-09-02/2026-12-02 -> 2026-09-02/2026-12-02, Fee: ৳6000 -> ৳6000)"
+            },
+            {
+                "id": "AUD-BATCH-1788750980496",
+                "date": "2026-09-07",
+                "type": "Batch Edit Verification",
+                "collectedBy": "Staff",
+                "receivedByAdmin": true,
+                "course": "Basic Computer",
+                "batch": "Batch 49",
+                "details": "Edited batch Batch 49 (Days: Sat, Mon, Wed -> Sat, Sun, Mon, Tue, Wed, Thu, Time: 9:00 AM - 10:30 PM -> 9:00 AM - 10:30 PM, Dates: 2026-08-01/2026-09-05 -> 2026-08-01/2026-09-05, Fee: ৳6000 -> ৳6000)"
+            },
+            {
+                "id": "AUD-BATCH-1788754167787",
+                "date": "2026-09-07",
+                "type": "Batch Edit Verification",
+                "collectedBy": "Staff",
+                "receivedByAdmin": true,
+                "course": "Basic Computer",
+                "batch": "Batch 50",
+                "details": "Edited batch Batch 50 (Days: Sat, Mon, Wed -> Sat, Sun, Mon, Tue, Wed, Thu, Time: 05:00 PM - 06:30 PM -> 05:00 PM - 06:30 PM, Dates: 2026-09-02/2026-12-02 -> 2026-09-02/2026-12-02, Fee: ৳6000 -> ৳6000)"
+            },
+            {
+                "id": "AUD-BATCH-1788754216972",
+                "date": "2026-09-07",
+                "type": "Batch Edit Verification",
+                "collectedBy": "Staff",
+                "receivedByAdmin": true,
+                "course": "Basic Computer",
+                "batch": "Batch 49",
+                "details": "Edited batch Batch 49 (Days: Sat, Sun, Mon, Tue, Wed, Thu -> Sat, Sun, Mon, Tue, Wed, Thu, Time: 9:00 AM - 10:30 PM -> 9:00 AM - 10:30 PM, Dates: 2026-08-01/2026-09-05 -> 2026-08-26/2026-09-30, Fee: ৳6000 -> ৳6000)"
+            },
+            {
+                "id": "AUD-BATCH-1790495136332",
+                "date": "2026-09-27",
+                "type": "Batch Edit Verification",
+                "collectedBy": "Staff",
+                "receivedByAdmin": false,
+                "course": "Basic Computer",
+                "batch": "Batch 42",
+                "details": "Edited batch Batch 42 (Days: Sat, Sun, Mon, Tue, Wed, Thu -> Sat, Sun, Mon, Tue, Wed, Thu, Time: 09:30 AM - 11:00 AM -> 09:30 AM - 11:00 AM, Dates: 2026-01-10/2026-03-31 -> 2026-01-10/2026-03-31, Fee: ৳3200 -> ৳3200)"
+            },
+            {
+                "id": "AUD-BATCH-1790495392287",
+                "date": "2026-09-27",
+                "type": "Batch Edit Verification",
+                "collectedBy": "Staff",
+                "receivedByAdmin": false,
+                "course": "Basic Computer",
+                "batch": "Batch 40",
+                "details": "Edited batch Batch 40 (Days: Sun, Tue, Thu -> Sun, Tue, Thu, Time: 06:00 PM - 07:30 PM -> 06:00 PM - 07:30 PM, Dates: 2026-01-15/2026-04-15 -> 2026-01-15/2026-04-15, Fee: ৳4000 -> ৳4000)"
+            },
+            {
+                "id": "AUD-BATCH-1790495407493",
+                "date": "2026-09-27",
+                "type": "Batch Edit Verification",
+                "collectedBy": "Staff",
+                "receivedByAdmin": false,
+                "course": "Basic Computer",
+                "batch": "Batch 42",
+                "details": "Edited batch Batch 42 (Days: Sat, Sun, Mon, Tue, Wed, Thu -> Sat, Sun, Mon, Tue, Wed, Thu, Time: 09:30 AM - 11:00 AM -> 09:30 AM - 11:00 AM, Dates: 2026-01-10/2026-03-31 -> 2026-01-10/2026-03-31, Fee: ৳3200 -> ৳3200)"
+            }
+        ],
+        "teacherPayouts": [
+            {
+                "id": "PAYOUT-1001",
+                "date": "2026-06-15",
+                "teacherId": "TCH-1782731954515",
+                "teacherName": "Sishir",
+                "amount": 10000,
+                "paymentMethod": "Cash",
+                "recordedBy": "frontdesk@edizit.com",
+                "receivedByAdmin": true,
+                "remarks": ""
+            },
+            {
+                "id": "PAYOUT-1002",
+                "date": "2026-06-23",
+                "teacherId": "TCH-1782731954515",
+                "teacherName": "Sishir",
+                "amount": 5000,
+                "paymentMethod": "Cash",
+                "recordedBy": "frontdesk@edizit.com",
+                "receivedByAdmin": true,
+                "remarks": ""
+            },
+            {
+                "id": "PAYOUT-1003",
+                "date": "2026-07-04",
+                "teacherId": "TCH-1782731954515",
+                "teacherName": "Sishir",
+                "amount": 5000,
+                "paymentMethod": "Cash",
+                "recordedBy": "frontdesk@edizit.com",
+                "receivedByAdmin": true,
+                "remarks": ""
+            },
+            {
+                "id": "PAYOUT-1004",
+                "date": "2026-07-16",
+                "teacherId": "TCH-1782731954515",
+                "teacherName": "Sishir",
+                "amount": 3000,
+                "paymentMethod": "Cash",
+                "recordedBy": "frontdesk@edizit.com",
+                "receivedByAdmin": true,
+                "remarks": ""
+            },
+            {
+                "id": "PAYOUT-1005",
+                "date": "2026-07-25",
+                "teacherId": "TCH-1782731954515",
+                "teacherName": "Sishir",
+                "amount": 4000,
+                "paymentMethod": "Cash",
+                "recordedBy": "frontdesk@edizit.com",
+                "receivedByAdmin": true,
+                "remarks": ""
+            },
+            {
+                "id": "PAYOUT-1006",
+                "date": "2026-06-02",
+                "teacherId": "TCH-1782732311577",
+                "teacherName": "Sumon",
+                "amount": 10000,
+                "paymentMethod": "Cash",
+                "recordedBy": "frontdesk@edizit.com",
+                "receivedByAdmin": true,
+                "remarks": ""
+            },
+            {
+                "id": "PAYOUT-1007",
+                "date": "2026-08-02",
+                "teacherId": "TCH-1782732311577",
+                "teacherName": "Sumon",
+                "amount": 10000,
+                "paymentMethod": "Cash",
+                "recordedBy": "frontdesk@edizit.com",
+                "receivedByAdmin": true,
+                "remarks": ""
+            },
+            {
+                "id": "PAYOUT-1008",
+                "date": "2026-08-15",
+                "teacherId": "TCH-1782732311577",
+                "teacherName": "Sumon",
+                "amount": 20000,
+                "paymentMethod": "Cash",
+                "recordedBy": "frontdesk@edizit.com",
+                "receivedByAdmin": true,
+                "remarks": "Basic computer payment"
+            },
+            {
+                "id": "PAYOUT-1009",
+                "date": "2026-08-17",
+                "teacherId": "TCH-1782731954515",
+                "teacherName": "Sishir",
+                "amount": 10000,
+                "paymentMethod": "Cash",
+                "recordedBy": "frontdesk@edizit.com",
+                "receivedByAdmin": true,
+                "remarks": "Basic Computer Class Payment"
+            },
+            {
+                "id": "PAYOUT-1010",
+                "date": "2026-09-07",
+                "teacherId": "TCH-1782731954515",
+                "teacherName": "Sishir",
+                "amount": 5000,
+                "paymentMethod": "Cash",
+                "recordedBy": "frontdesk@edizit.com",
+                "receivedByAdmin": true,
+                "remarks": "Sishir teacher Payment"
+            },
+            {
+                "id": "PAYOUT-1011",
+                "date": "2026-09-20",
+                "teacherId": "TCH-1782731954515",
+                "teacherName": "Sishir",
+                "amount": 1500,
+                "paymentMethod": "Cash",
+                "recordedBy": "frontdesk@edizit.com",
+                "receivedByAdmin": false,
+                "remarks": "Basic Computer Class Payment"
+            },
+            {
+                "id": "PAYOUT-1012",
+                "date": "2026-09-26",
+                "teacherId": "TCH-1782731954515",
+                "teacherName": "Sishir",
+                "amount": 1000,
+                "paymentMethod": "Cash",
+                "recordedBy": "frontdesk@edizit.com",
+                "receivedByAdmin": false,
+                "remarks": "Basic Computer Class Payment"
+            },
+            {
+                "id": "PAYOUT-1013",
+                "date": "2026-09-28",
+                "teacherId": "TCH-1782731954515",
+                "teacherName": "Sishir",
+                "amount": 700,
+                "paymentMethod": "Cash",
+                "recordedBy": "frontdesk@edizit.com",
+                "receivedByAdmin": false,
+                "remarks": "Basic Computer Class Payment"
             }
         ]
     },
     "bookStock": 0,
-    "inquiries": [],
-    "tasks": []
+    "inquiries": [
+        {
+            "id": "INQ-1788085205911",
+            "date": "2026-08-30",
+            "name": "Sumaiya",
+            "phone": "01831382027",
+            "guardianPhone": "",
+            "address": "Racecourse",
+            "courses": [
+                "Spoken English"
+            ],
+            "course": "Spoken English",
+            "ignoreAutoAdmit": false,
+            "quotedFee": 5000,
+            "offeredFee": 5000,
+            "nextFollowUp": "2026-09-02",
+            "comments": "Kalke vorti hobe",
+            "status": "Called",
+            "autoAdmitted": null
+        },
+        {
+            "id": "INQ-1787828664545",
+            "date": "2026-08-27",
+            "name": "Samiya",
+            "phone": "01337879738",
+            "guardianPhone": "",
+            "address": "Jhawtala",
+            "courses": [
+                "Basic Computer"
+            ],
+            "course": "Basic Computer",
+            "ignoreAutoAdmit": false,
+            "quotedFee": 4000,
+            "offeredFee": 4000,
+            "nextFollowUp": "2026-08-29",
+            "comments": "ok",
+            "status": "Called",
+            "autoAdmitted": {
+                "registrationId": "REG-1531",
+                "id": "BC-240",
+                "name": "Mahjabin Samiya",
+                "phone": "01337879738",
+                "gender": "Female",
+                "fatherName": "MD. Kamal Reza",
+                "motherName": "Aysha Begum",
+                "guardianPhone": "01894703814",
+                "address": "Jhawtola, Comilla",
+                "course": "Basic Computer",
+                "batch": "Batch 50",
+                "registrationDate": "2026-08-30",
+                "status": "Paid",
+                "totalFee": 6200,
+                "discountFee": 2000,
+                "netFee": 4200,
+                "paidFee": 4200,
+                "dueFee": 0,
+                "takenBook": true,
+                "invoices": [
+                    {
+                        "id": "INV-2026-1153",
+                        "date": "2026-08-30",
+                        "amount": 2000,
+                        "paymentType": "New Registration",
+                        "collectedBy": "Rohan",
+                        "receivedByAdmin": true
+                    },
+                    {
+                        "id": "INV-2026-1170",
+                        "date": "2026-09-05",
+                        "amount": 200,
+                        "paymentType": "Book Payment",
+                        "collectedBy": "frontdesk@edizit.com",
+                        "receivedByAdmin": true
+                    },
+                    {
+                        "id": "INV-2026-1171",
+                        "date": "2026-09-06",
+                        "amount": 2000,
+                        "paymentType": "Due Collection",
+                        "collectedBy": "Shisir",
+                        "receivedByAdmin": true
+                    }
+                ],
+                "certified": true,
+                "certificateDate": "2026-10-08",
+                "notes": "",
+                "bookIssueDate": "2026-09-05",
+                "auditLogs": [
+                    {
+                        "id": "AUD-1788697928503",
+                        "type": "Profile Edit",
+                        "date": "2026-09-06",
+                        "timestamp": 1788697928503,
+                        "details": "Guardian: '01348186915' -> '01894703814'",
+                        "collectedBy": "Shisir",
+                        "receivedByAdmin": true,
+                        "studentId": "BC-240",
+                        "studentName": "Mahjabin Samiya",
+                        "course": "Basic Computer"
+                    },
+                    {
+                        "id": "AUD-1791454892877",
+                        "type": "Certificate Issued",
+                        "date": "2026-10-08",
+                        "timestamp": 1791454892877,
+                        "details": "Graduation certificate awarded for course: Basic Computer",
+                        "collectedBy": "System",
+                        "receivedByAdmin": false,
+                        "studentId": "BC-240",
+                        "studentName": "Mahjabin Samiya",
+                        "course": "Basic Computer"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "INQ-1787558877268",
+            "date": "2026-08-24",
+            "name": "Rayhan",
+            "phone": "01791272710",
+            "guardianPhone": "",
+            "address": "Laksam",
+            "courses": [
+                "Graphic Design",
+                "Basic Computer"
+            ],
+            "course": "Graphic Design, Basic Computer",
+            "ignoreAutoAdmit": false,
+            "quotedFee": 16000,
+            "offeredFee": 16000,
+            "nextFollowUp": "2026-08-29",
+            "comments": "Mahi vai er frnd Foysal er choto vai . Jante ashchilo vorti hobe boleche",
+            "status": "Called",
+            "autoAdmitted": null
+        },
+        {
+            "id": "INQ-1787044384769",
+            "date": "2026-08-18",
+            "name": "Tahmid",
+            "phone": "01621019225",
+            "guardianPhone": "",
+            "address": "shatora",
+            "courses": [
+                "Basic Computer",
+                "Spoken English"
+            ],
+            "course": "Basic Computer, Spoken English",
+            "ignoreAutoAdmit": false,
+            "quotedFee": 4000,
+            "offeredFee": 4000,
+            "nextFollowUp": "2026-08-20",
+            "comments": "ok",
+            "status": "Pending",
+            "autoAdmitted": {
+                "registrationId": "REG-1528",
+                "id": "BC-237",
+                "name": "MD. Kazi Tahmid",
+                "phone": "01621019225",
+                "gender": "Male",
+                "fatherName": "Kazi Rafiqual Islam",
+                "motherName": "Rena Begum",
+                "guardianPhone": "01746454087",
+                "address": "Comilla",
+                "course": "Basic Computer",
+                "batch": "Batch 50",
+                "registrationDate": "2026-08-25",
+                "status": "Paid",
+                "totalFee": 6200,
+                "discountFee": 2000,
+                "netFee": 4200,
+                "paidFee": 4200,
+                "dueFee": 0,
+                "takenBook": true,
+                "invoices": [
+                    {
+                        "id": "INV-2026-1147",
+                        "date": "2026-08-25",
+                        "amount": 2000,
+                        "paymentType": "New Registration",
+                        "collectedBy": "Shisir",
+                        "receivedByAdmin": true
+                    },
+                    {
+                        "id": "INV-2026-1159",
+                        "date": "2026-09-02",
+                        "amount": 2000,
+                        "paymentType": "Due Collection",
+                        "collectedBy": "Mahi",
+                        "receivedByAdmin": true
+                    },
+                    {
+                        "id": "INV-2026-1160",
+                        "date": "2026-09-02",
+                        "amount": 200,
+                        "paymentType": "Book Payment",
+                        "collectedBy": "frontdesk@edizit.com",
+                        "receivedByAdmin": true
+                    }
+                ],
+                "certified": true,
+                "certificateDate": "2026-10-08",
+                "bookIssueDate": "2026-09-02",
+                "auditLogs": [
+                    {
+                        "id": "AUD-1791454756023",
+                        "type": "Certificate Issued",
+                        "date": "2026-10-08",
+                        "timestamp": 1791454756023,
+                        "details": "Graduation certificate awarded for course: Basic Computer",
+                        "collectedBy": "System",
+                        "receivedByAdmin": false,
+                        "studentId": "BC-237",
+                        "studentName": "MD. Kazi Tahmid",
+                        "course": "Basic Computer"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "INQ-1786877258696",
+            "date": "2026-08-16",
+            "name": "Rifat Islam Nirob",
+            "phone": "01769335194",
+            "guardianPhone": "",
+            "address": "Cantonment",
+            "courses": [
+                "Spoken English"
+            ],
+            "course": "Spoken English",
+            "ignoreAutoAdmit": true,
+            "quotedFee": 5000,
+            "offeredFee": 5000,
+            "nextFollowUp": "2026-08-24",
+            "comments": "Course r age asben/babar shathe kotha bolbe ajke shondhay call dite hobe",
+            "status": "Pending",
+            "autoAdmitted": null
+        },
+        {
+            "id": "INQ-1786877949646",
+            "date": "2026-08-16",
+            "name": "Irfan Ahmed Nayeem",
+            "phone": "01962657107",
+            "guardianPhone": "01887467222",
+            "address": "comilla",
+            "courses": [
+                "Basic Computer"
+            ],
+            "course": "Basic Computer",
+            "ignoreAutoAdmit": false,
+            "quotedFee": 6000,
+            "offeredFee": 4000,
+            "nextFollowUp": "2026-08-19",
+            "comments": "ok",
+            "status": "Pending",
+            "autoAdmitted": {
+                "registrationId": "REG-1523",
+                "id": "BC-233",
+                "name": "Ifran Ahmed",
+                "phone": "01962657107",
+                "gender": "Male",
+                "fatherName": "Jalal Ahmed",
+                "motherName": "",
+                "guardianPhone": "01843200426",
+                "address": "Kaptan Bajar",
+                "course": "Basic Computer",
+                "batch": "Batch 49",
+                "registrationDate": "2026-08-20",
+                "status": "Paid",
+                "totalFee": 6200,
+                "discountFee": 2000,
+                "netFee": 4200,
+                "paidFee": 4200,
+                "dueFee": 0,
+                "takenBook": true,
+                "nextPaymentDate": "",
+                "invoices": [
+                    {
+                        "id": "INV-2026-1136",
+                        "date": "2026-08-20",
+                        "amount": 4000,
+                        "paymentType": "New Registration",
+                        "collectedBy": "BIJOY ",
+                        "receivedByAdmin": true
+                    },
+                    {
+                        "id": "INV-2026-1140",
+                        "date": "2026-08-22",
+                        "amount": 200,
+                        "paymentType": "Book Payment",
+                        "collectedBy": "frontdesk@edizit.com",
+                        "receivedByAdmin": true
+                    }
+                ],
+                "certified": true,
+                "certificateDate": "2026-10-08",
+                "bookIssueDate": "2026-08-22",
+                "auditLogs": [
+                    {
+                        "id": "AUD-1791456607189",
+                        "type": "Certificate Issued",
+                        "date": "2026-10-08",
+                        "timestamp": 1791456607189,
+                        "details": "Graduation certificate awarded for course: Basic Computer",
+                        "collectedBy": "System",
+                        "receivedByAdmin": false,
+                        "studentId": "BC-233",
+                        "studentName": "Ifran Ahmed",
+                        "course": "Basic Computer"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "INQ-1786880204848",
+            "date": "2026-08-16",
+            "name": "Abdur Rahman",
+            "phone": "01916897545",
+            "guardianPhone": "",
+            "address": "Lalmai",
+            "courses": [
+                "Other"
+            ],
+            "course": "Other",
+            "ignoreAutoAdmit": false,
+            "quotedFee": 13000,
+            "offeredFee": 13000,
+            "nextFollowUp": "2026-08-19",
+            "comments": "IELTS/number off",
+            "status": "Pending",
+            "autoAdmitted": null
+        },
+        {
+            "id": "INQ-1786880257320",
+            "date": "2026-08-16",
+            "name": "Khadiza Akter",
+            "phone": "01987513464",
+            "guardianPhone": "",
+            "address": "Lalmai",
+            "courses": [
+                "Other"
+            ],
+            "course": "Other",
+            "ignoreAutoAdmit": false,
+            "quotedFee": 13000,
+            "offeredFee": 13000,
+            "nextFollowUp": "2026-08-19",
+            "comments": "IELTS/number off",
+            "status": "Pending",
+            "autoAdmitted": null
+        },
+        {
+            "id": "INQ-1786797045505",
+            "date": "2026-08-15",
+            "name": "Imran",
+            "phone": "01409529896",
+            "guardianPhone": "",
+            "address": "Telikona",
+            "courses": [
+                "Graphic Design"
+            ],
+            "course": "Graphic Design",
+            "ignoreAutoAdmit": false,
+            "quotedFee": 13000,
+            "offeredFee": 13000,
+            "nextFollowUp": "2026-08-18",
+            "comments": "ok",
+            "status": "Pending",
+            "autoAdmitted": {
+                "registrationId": "REG-1518",
+                "id": "GD-283",
+                "name": "MD. Emran Hasan Emo",
+                "phone": "01409529896",
+                "gender": "Male",
+                "fatherName": "Abdul Gofur",
+                "motherName": "Shajeda Begum",
+                "guardianPhone": "01956212228",
+                "address": "Telicona ,Comilla",
+                "course": "Graphic Design",
+                "batch": "Batch 34",
+                "registrationDate": "2026-08-18",
+                "status": "Partial",
+                "totalFee": 15000,
+                "discountFee": 2000,
+                "netFee": 13000,
+                "paidFee": 5000,
+                "dueFee": 8000,
+                "takenBook": false,
+                "nextPaymentDate": "2026-09-12",
+                "invoices": [
+                    {
+                        "id": "INV-2026-1130",
+                        "date": "2026-08-18",
+                        "amount": 5000,
+                        "paymentType": "New Registration",
+                        "collectedBy": "BIJOY ",
+                        "receivedByAdmin": true
+                    }
+                ],
+                "certified": false,
+                "certificateDate": ""
+            }
+        },
+        {
+            "id": "INQ-1786512623007",
+            "date": "2026-08-12",
+            "name": "sakib",
+            "phone": "01832251310",
+            "guardianPhone": "",
+            "address": "comilla",
+            "courses": [
+                "Basic Computer",
+                "Spoken English"
+            ],
+            "course": "Basic Computer, Spoken English",
+            "ignoreAutoAdmit": false,
+            "quotedFee": 8000,
+            "offeredFee": 8000,
+            "nextFollowUp": "2026-08-13",
+            "comments": "ok",
+            "status": "Called",
+            "autoAdmitted": {
+                "registrationId": "REG-1513",
+                "id": "BC-226",
+                "name": "MD. Shoriful Islam Sakib",
+                "phone": "01832251310",
+                "gender": "Male",
+                "fatherName": "Md. Shahin Hossain",
+                "motherName": "",
+                "guardianPhone": "01851248367",
+                "address": "",
+                "course": "Basic Computer",
+                "batch": "Batch 49",
+                "registrationDate": "2026-08-15",
+                "status": "Paid",
+                "totalFee": 6200,
+                "discountFee": 2000,
+                "netFee": 4200,
+                "paidFee": 4200,
+                "dueFee": 0,
+                "takenBook": true,
+                "nextPaymentDate": "",
+                "invoices": [
+                    {
+                        "id": "INV-2026-1125",
+                        "date": "2026-08-15",
+                        "amount": 4000,
+                        "paymentType": "New Registration",
+                        "collectedBy": "Shisir",
+                        "receivedByAdmin": true
+                    },
+                    {
+                        "id": "INV-2026-1139",
+                        "date": "2026-08-22",
+                        "amount": 200,
+                        "paymentType": "Book Payment",
+                        "collectedBy": "frontdesk@edizit.com",
+                        "receivedByAdmin": true
+                    }
+                ],
+                "certified": true,
+                "certificateDate": "2026-10-08",
+                "bookIssueDate": "2026-08-22",
+                "auditLogs": [
+                    {
+                        "id": "AUD-1791456492682",
+                        "type": "Certificate Issued",
+                        "date": "2026-10-08",
+                        "timestamp": 1791456492682,
+                        "details": "Graduation certificate awarded for course: Basic Computer",
+                        "collectedBy": "System",
+                        "receivedByAdmin": false,
+                        "studentId": "BC-226",
+                        "studentName": "MD. Shoriful Islam Sakib",
+                        "course": "Basic Computer"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "INQ-1785743963276",
+            "date": "2026-08-03",
+            "name": "Nahid",
+            "phone": "01690214330",
+            "guardianPhone": "",
+            "address": "Cumilla",
+            "courses": [
+                "Basic Computer"
+            ],
+            "course": "Basic Computer",
+            "ignoreAutoAdmit": false,
+            "quotedFee": 4000,
+            "offeredFee": 4000,
+            "nextFollowUp": "2026-08-26",
+            "comments": "Student 2nd year e pore residencial college e bikal 5 tar batch e vorti hobe.19/8 ashbe/bikaler batch er jonno bolechi ashbe",
+            "status": "Called",
+            "autoAdmitted": null
+        },
+        {
+            "id": "INQ-1785738446556",
+            "date": "2026-07-29",
+            "name": "Nabila",
+            "phone": "01619809434",
+            "guardianPhone": "",
+            "address": "Cumilla",
+            "courses": [
+                "Spoken English"
+            ],
+            "course": "Spoken English",
+            "ignoreAutoAdmit": false,
+            "quotedFee": 5000,
+            "offeredFee": 5000,
+            "nextFollowUp": "2026-08-18",
+            "comments": "vorti ok",
+            "status": "Called",
+            "autoAdmitted": {
+                "registrationId": "REG-1520",
+                "id": "SE-83",
+                "name": "Nabila Akter",
+                "phone": "01619809434",
+                "gender": "Female",
+                "fatherName": "MD Shafiqul Islam",
+                "motherName": "",
+                "guardianPhone": "01859118802",
+                "address": "Shashongacha",
+                "course": "Spoken English",
+                "batch": "Batch 10",
+                "registrationDate": "2026-08-18",
+                "status": "Partial",
+                "totalFee": 7000,
+                "discountFee": 2000,
+                "netFee": 5000,
+                "paidFee": 500,
+                "dueFee": 4500,
+                "takenBook": false,
+                "nextPaymentDate": "2026-08-25",
+                "invoices": [
+                    {
+                        "id": "INV-2026-1132",
+                        "date": "2026-08-18",
+                        "amount": 500,
+                        "paymentType": "New Registration",
+                        "collectedBy": "Shisir",
+                        "receivedByAdmin": true
+                    }
+                ],
+                "certified": false,
+                "certificateDate": ""
+            }
+        },
+        {
+            "id": "INQ-1785738300480",
+            "date": "2026-07-28",
+            "name": "Kayes Mazumder",
+            "phone": "01736279639",
+            "guardianPhone": "",
+            "address": "Cumilla",
+            "courses": [
+                "Basic Computer",
+                "Spoken English"
+            ],
+            "course": "Basic Computer, Spoken English",
+            "ignoreAutoAdmit": false,
+            "quotedFee": 8000,
+            "offeredFee": 8000,
+            "nextFollowUp": "2026-08-06",
+            "comments": "vorti ok",
+            "status": "Called",
+            "autoAdmitted": {
+                "registrationId": "REG-1515",
+                "id": "BC-228",
+                "name": "Kayes Mazumder",
+                "phone": "01736279639",
+                "gender": "Male",
+                "fatherName": "Abu Kawser",
+                "motherName": "",
+                "guardianPhone": "01605713902",
+                "address": "muradpur, comilla",
+                "course": "Basic Computer",
+                "batch": "Batch 49",
+                "registrationDate": "2026-08-17",
+                "status": "Paid",
+                "totalFee": 6200,
+                "discountFee": 2000,
+                "netFee": 4200,
+                "paidFee": 4200,
+                "dueFee": 0,
+                "takenBook": true,
+                "nextPaymentDate": "2026-09-13",
+                "invoices": [
+                    {
+                        "id": "INV-2026-1127",
+                        "date": "2026-08-17",
+                        "amount": 1500,
+                        "paymentType": "New Registration",
+                        "collectedBy": "Sishir",
+                        "receivedByAdmin": true
+                    },
+                    {
+                        "id": "INV-2026-1155",
+                        "date": "2026-09-02",
+                        "amount": 200,
+                        "paymentType": "Book Payment",
+                        "collectedBy": "frontdesk@edizit.com",
+                        "receivedByAdmin": true
+                    },
+                    {
+                        "id": "INV-2026-1177",
+                        "date": "2026-09-12",
+                        "amount": 2500,
+                        "paymentType": "Due Collection",
+                        "collectedBy": "Shisir",
+                        "receivedByAdmin": true
+                    }
+                ],
+                "certified": true,
+                "certificateDate": "2026-10-08",
+                "bookIssueDate": "2026-09-02",
+                "notes": "Spoken English Class ekta o kore ni tai 1500/- payment adjust kore deya hoyeche basic er shathe.",
+                "auditLogs": [
+                    {
+                        "id": "AUD-1791456524093",
+                        "type": "Certificate Issued",
+                        "date": "2026-10-08",
+                        "timestamp": 1791456524093,
+                        "details": "Graduation certificate awarded for course: Basic Computer",
+                        "collectedBy": "System",
+                        "receivedByAdmin": false,
+                        "studentId": "BC-228",
+                        "studentName": "Kayes Mazumder",
+                        "course": "Basic Computer"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "INQ-1784469588005",
+            "date": "2026-07-19",
+            "name": "Siam Mahmud",
+            "phone": "‪+880 1861‑087926‬",
+            "guardianPhone": "",
+            "address": "Comilla",
+            "courses": [
+                "Spoken English"
+            ],
+            "course": "Spoken English",
+            "ignoreAutoAdmit": false,
+            "quotedFee": 7000,
+            "offeredFee": 5000,
+            "nextFollowUp": "2026-07-22",
+            "comments": "vorti ok",
+            "status": "Admitted",
+            "autoAdmitted": null
+        },
+        {
+            "id": "INQ-1783854912879",
+            "date": "2026-07-12",
+            "name": "Koushik",
+            "phone": "01644646425",
+            "guardianPhone": "01816123700",
+            "address": "Chotora",
+            "courses": [
+                "Basic Computer"
+            ],
+            "course": "Basic Computer",
+            "ignoreAutoAdmit": false,
+            "quotedFee": 6000,
+            "offeredFee": 6000,
+            "nextFollowUp": "2026-08-24",
+            "comments": "Baba boleche chinta kore janabe/kottha bole janabe ajke 24/8",
+            "status": "Called",
+            "autoAdmitted": {
+                "registrationId": "REG-1529",
+                "id": "BC-238",
+                "name": "SREE KOUSHIK BARMAN DIP",
+                "phone": "01634236096",
+                "gender": "Male",
+                "fatherName": "SREE MRITTUNJOY BARMAN",
+                "motherName": "",
+                "guardianPhone": "01644646425",
+                "address": "",
+                "course": "Basic Computer",
+                "batch": "Batch 49",
+                "registrationDate": "2026-08-26",
+                "status": "Paid",
+                "totalFee": 6200,
+                "discountFee": 3000,
+                "netFee": 3200,
+                "paidFee": 3200,
+                "dueFee": 0,
+                "takenBook": true,
+                "invoices": [
+                    {
+                        "id": "INV-2026-1148-B",
+                        "date": "2026-08-26",
+                        "amount": 200,
+                        "paymentType": "Book Payment",
+                        "collectedBy": "Shisir",
+                        "receivedByAdmin": true
+                    },
+                    {
+                        "id": "INV-2026-1148",
+                        "date": "2026-08-26",
+                        "amount": 2800,
+                        "paymentType": "New Registration",
+                        "collectedBy": "Shisir",
+                        "receivedByAdmin": true
+                    },
+                    {
+                        "id": "INV-2026-1149",
+                        "date": "2026-08-26",
+                        "amount": 200,
+                        "paymentType": "Due Collection",
+                        "collectedBy": "Shisir",
+                        "receivedByAdmin": true
+                    }
+                ],
+                "certified": true,
+                "certificateDate": "2026-10-08",
+                "auditLogs": [
+                    {
+                        "id": "AUD-1791456632207",
+                        "type": "Certificate Issued",
+                        "date": "2026-10-08",
+                        "timestamp": 1791456632207,
+                        "details": "Graduation certificate awarded for course: Basic Computer",
+                        "collectedBy": "System",
+                        "receivedByAdmin": false,
+                        "studentId": "BC-238",
+                        "studentName": "SREE KOUSHIK BARMAN DIP",
+                        "course": "Basic Computer"
+                    }
+                ]
+            }
+        }
+    ],
+    "tasks": [],
+    "expenses": [
+        {
+            "id": "EXP-1783163819369",
+            "date": "2026-07-04",
+            "amount": 21000,
+            "description": "Rent",
+            "recordedBy": "frontdesk@edizit.com"
+        },
+        {
+            "id": "EXP-1783164163676",
+            "date": "2026-07-04",
+            "amount": 5000,
+            "description": "teacher payment",
+            "recordedBy": "frontdesk@edizit.com"
+        },
+        {
+            "id": "EXP-1783164288976",
+            "date": "2026-07-04",
+            "amount": 15000,
+            "description": "Jaber Sellary",
+            "recordedBy": "frontdesk@edizit.com"
+        },
+        {
+            "id": "EXP-1783164405691",
+            "date": "2026-07-02",
+            "amount": 15000,
+            "description": "Sishir Sellary",
+            "recordedBy": "frontdesk@edizit.com"
+        },
+        {
+            "id": "EXP-1783247172006",
+            "date": "2026-07-05",
+            "amount": 120,
+            "description": "100 pis envelope for money receipt",
+            "recordedBy": "frontdesk@edizit.com"
+        },
+        {
+            "id": "EXP-1783317195982",
+            "date": "2026-07-06",
+            "amount": 100,
+            "description": "Moyla Bill . The bill Paid for the month of July .",
+            "recordedBy": "frontdesk@edizit.com"
+        },
+        {
+            "id": "EXP-1783409373333",
+            "date": "2026-07-06",
+            "amount": 100,
+            "description": "Bathroom sitkari  kinar  khoroch+vara",
+            "recordedBy": "frontdesk@edizit.com"
+        },
+        {
+            "id": "EXP-1783583046251",
+            "date": "2026-07-08",
+            "amount": 750,
+            "description": "2 rim A4 paper + vara babod",
+            "recordedBy": "frontdesk@edizit.com"
+        },
+        {
+            "id": "EXP-1784036828091",
+            "date": "2026-07-14",
+            "amount": 140,
+            "description": "Hizra chada 50 + tissue 90",
+            "recordedBy": "frontdesk@edizit.com"
+        },
+        {
+            "id": "EXP-1784191887342",
+            "date": "2026-07-16",
+            "amount": 100,
+            "description": "WATER BILL",
+            "recordedBy": "mahibchowdury97@gmail.com"
+        },
+        {
+            "id": "EXP-1784242209976",
+            "date": "2026-07-16",
+            "amount": 3000,
+            "description": "Sishir Basic computer sellary",
+            "recordedBy": "mahibchowdury97@gmail.com"
+        },
+        {
+            "id": "EXP-1785844169343",
+            "date": "2026-08-04",
+            "amount": 30000,
+            "description": "Jber sellary",
+            "recordedBy": "frontdesk@edizit.com"
+        },
+        {
+            "id": "EXP-1785844184612",
+            "date": "2026-08-04",
+            "amount": 15000,
+            "description": "Sishir Sellary",
+            "recordedBy": "frontdesk@edizit.com"
+        },
+        {
+            "id": "EXP-1785844198090",
+            "date": "2026-08-04",
+            "amount": 5000,
+            "description": "Bijoy Sellary",
+            "recordedBy": "frontdesk@edizit.com"
+        },
+        {
+            "id": "EXP-1786254415413",
+            "date": "2026-08-08",
+            "amount": 550,
+            "description": "Certificate paper 25 pis",
+            "recordedBy": "frontdesk@edizit.com"
+        },
+        {
+            "id": "EXP-1786254446467",
+            "date": "2026-08-08",
+            "amount": 70,
+            "description": "HSC Exam marketing Ajit guha college",
+            "recordedBy": "frontdesk@edizit.com"
+        },
+        {
+            "id": "EXP-1786254495090",
+            "date": "2026-08-04",
+            "amount": 140,
+            "description": "HSC Exam marketing Can't Board College",
+            "recordedBy": "frontdesk@edizit.com"
+        },
+        {
+            "id": "EXP-1786851528807",
+            "date": "2026-08-15",
+            "amount": 4000,
+            "description": "Bijoy Advance salary",
+            "recordedBy": "frontdesk@edizit.com"
+        },
+        {
+            "id": "EXP-1786967543296",
+            "date": "2026-08-16",
+            "amount": 4500,
+            "description": "IELTS er Poster laganor bill babod amir k deya hoyeche",
+            "recordedBy": "frontdesk@edizit.com"
+        },
+        {
+            "id": "EXP-1787832964974",
+            "date": "2026-08-27",
+            "amount": 15000,
+            "description": "Shisir Advance Salary for the month August",
+            "recordedBy": "frontdesk@edizit.com"
+        },
+        {
+            "id": "EXP-1787833014147",
+            "date": "2026-08-20",
+            "amount": 10000,
+            "description": "Jaber advance Salary for the month August",
+            "recordedBy": "frontdesk@edizit.com"
+        },
+        {
+            "id": "EXP-1788009129963",
+            "date": "2026-08-29",
+            "amount": 1720,
+            "description": "Printer ink (m,c)",
+            "recordedBy": "frontdesk@edizit.com"
+        },
+        {
+            "id": "EXP-1789198968730",
+            "date": "2026-09-10",
+            "amount": 50,
+            "description": "hizra chada",
+            "recordedBy": "frontdesk@edizit.com"
+        },
+        {
+            "id": "EXP-1789198982652",
+            "date": "2026-09-12",
+            "amount": 100,
+            "description": "moyla bill",
+            "recordedBy": "frontdesk@edizit.com"
+        }
+    ]
 };

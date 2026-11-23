@@ -11610,29 +11610,83 @@ function parseReportDate(dateStr) {
     return isNaN(parsed.getTime()) ? null : parsed;
 }
 
-function getActiveReportFilters() {
-    const courseEl = document.querySelector('.report-course-filter');
-    const fromEl = document.querySelector('.report-from-date');
-    const toEl = document.querySelector('.report-to-date');
-    return {
-        course: courseEl ? courseEl.value : 'all',
-        fromDate: fromEl && fromEl.value ? fromEl.value : '',
-        toDate: toEl && toEl.value ? toEl.value : ''
-    };
+// Always fetch authoritative, complete live data from server for report exports
+async function getAuthoritativeStudentsData() {
+    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const fetchUrl = (isLocalhost ? 'database.json' : 'api.php') + '?t=' + Date.now();
+    try {
+        const response = await fetch(fetchUrl, {
+            cache: 'no-store',
+            headers: { 'Pragma': 'no-cache', 'Cache-Control': 'no-cache' }
+        });
+        if (response.ok) {
+            const data = await response.json();
+            if (data && Array.isArray(data.students) && data.students.length > 0) {
+                students = data.students;
+                try {
+                    localStorage.setItem('ediz_students', JSON.stringify(students));
+                } catch(e) {}
+                return data.students;
+            }
+        }
+    } catch (err) {
+        console.warn("Direct fetch from server failed, falling back to local memory:", err);
+    }
+
+    if (Array.isArray(students) && students.length > 0) return students;
+    try {
+        const local = JSON.parse(localStorage.getItem('ediz_students'));
+        if (Array.isArray(local) && local.length > 0) return local;
+    } catch(e) {}
+    return [];
 }
 
-function getFilteredStudentsForReport(filters) {
-    let list = Array.isArray(students) ? [...students] : [];
-    if (filters.course && filters.course !== 'all') {
-        list = list.filter(s => s.course === filters.course);
+function getActiveReportFilters(triggerBtn) {
+    let panel = triggerBtn ? triggerBtn.closest('.report-export-panel') : null;
+    if (!panel) {
+        const allPanels = Array.from(document.querySelectorAll('.report-export-panel'));
+        panel = allPanels.find(p => p.offsetParent !== null) || allPanels[0];
     }
+
+    let course = 'all';
+    let fromDate = '';
+    let toDate = '';
+
+    if (panel) {
+        const courseEl = panel.querySelector('.report-course-filter');
+        const fromEl = panel.querySelector('.report-from-date');
+        const toEl = panel.querySelector('.report-to-date');
+        if (courseEl && courseEl.value) course = courseEl.value;
+        if (fromEl && fromEl.value) fromDate = fromEl.value.trim();
+        if (toEl && toEl.value) toDate = toEl.value.trim();
+    }
+
+    return { course, fromDate, toDate };
+}
+
+function filterStudentsForReport(rawStudentsList, filters) {
+    let list = Array.isArray(rawStudentsList) ? [...rawStudentsList] : [];
+
+    // Filter by Course only if an explicit course was selected
+    if (filters.course && filters.course !== 'all') {
+        const targetCourse = filters.course.trim().toLowerCase();
+        list = list.filter(s => {
+            const sc = (s.course || '').trim().toLowerCase();
+            return sc === targetCourse;
+        });
+    }
+
+    // Filter by Registration Date From
     if (filters.fromDate) {
         list = list.filter(s => s.registrationDate && s.registrationDate >= filters.fromDate);
     }
+
+    // Filter by Registration Date To
     if (filters.toDate) {
         list = list.filter(s => s.registrationDate && s.registrationDate <= filters.toDate);
     }
 
+    // Sort by Admission Date ascending, then ID ascending
     list.sort((a, b) => {
         const dA = a.registrationDate || '';
         const dB = b.registrationDate || '';
@@ -11655,6 +11709,7 @@ function updateReportExportVisibility() {
 }
 
 window.exportAdminReportExcel = async function(triggerBtn) {
+    const originalBtnText = triggerBtn ? triggerBtn.innerHTML : '';
     try {
         const curUser = JSON.parse(sessionStorage.getItem('ediz_active_user')) || {};
         if (curUser.role !== 'Owner' && curUser.role !== 'Admin') {
@@ -11667,14 +11722,24 @@ window.exportAdminReportExcel = async function(triggerBtn) {
             return;
         }
 
-        const originalBtnText = triggerBtn ? triggerBtn.innerHTML : '';
         if (triggerBtn) {
             triggerBtn.disabled = true;
-            triggerBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> তৈরি হচ্ছে...';
+            triggerBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ডাটা লোড হচ্ছে...';
         }
 
-        const filters = getActiveReportFilters();
-        const filteredStudents = getFilteredStudentsForReport(filters);
+        // Fetch full authoritative dataset directly from live database
+        const allStudents = await getAuthoritativeStudentsData();
+        const filters = getActiveReportFilters(triggerBtn);
+        const filteredStudents = filterStudentsForReport(allStudents, filters);
+
+        if (filteredStudents.length === 0) {
+            alert("নির্বাচিত ফিল্টারে কোন স্টুডেন্ট ডাটা পাওয়া যায়নি।");
+            return;
+        }
+
+        if (triggerBtn) {
+            triggerBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> এক্সেল ফাইল তৈরি হচ্ছে...';
+        }
 
         // Gather payments for the filtered student cohort
         const filteredPayments = [];
@@ -11746,7 +11811,7 @@ window.exportAdminReportExcel = async function(triggerBtn) {
             day: '2-digit', month: '2-digit', year: 'numeric',
             hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true
         });
-        const scopeText = `Generated: ${formattedNow} | Scope: ${filters.course && filters.course !== 'all' ? filters.course : 'All Courses'} | Range: ${filters.fromDate || 'Start'} to ${filters.toDate || 'Present'}`;
+        const scopeText = `Generated: ${formattedNow} | Scope: ${filters.course && filters.course !== 'all' ? filters.course : 'All Courses (' + filteredStudents.length + ' Students)'} | Range: ${filters.fromDate || 'Start'} to ${filters.toDate || 'Present'}`;
         wsSummary.getCell('A2').value = scopeText;
         wsSummary.getCell('A2').font = { name: 'Segoe UI', size: 9.5, italic: true, color: { argb: 'FF64748B' } };
         wsSummary.mergeCells('A2:E2');
@@ -11758,7 +11823,7 @@ window.exportAdminReportExcel = async function(triggerBtn) {
         const totalDue = filteredStudents.reduce((acc, s) => acc + (Number(s.dueFee) || 0), 0);
         const totalInvoicedReceipts = filteredPayments.reduce((acc, p) => acc + p.amount, 0);
 
-        wsSummary.addRow([]); // Row 3 blank
+        wsSummary.addRow([]); // Blank row 3
 
         const kpiHeaderRow = wsSummary.addRow(['Metric', 'Value']);
         kpiHeaderRow.font = headerFont;
@@ -12175,7 +12240,8 @@ window.exportAdminReportExcel = async function(triggerBtn) {
     }
 };
 
-window.exportAdminReportPDF = function() {
+window.exportAdminReportPDF = async function(triggerBtn) {
+    const originalBtnText = triggerBtn ? triggerBtn.innerHTML : '';
     try {
         const curUser = JSON.parse(sessionStorage.getItem('ediz_active_user')) || {};
         if (curUser.role !== 'Owner' && curUser.role !== 'Admin') {
@@ -12183,8 +12249,20 @@ window.exportAdminReportPDF = function() {
             return;
         }
 
-        const filters = getActiveReportFilters();
-        const filteredStudents = getFilteredStudentsForReport(filters);
+        if (triggerBtn) {
+            triggerBtn.disabled = true;
+            triggerBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ডাটা লোড হচ্ছে...';
+        }
+
+        // Fetch full authoritative dataset directly from live database
+        const allStudents = await getAuthoritativeStudentsData();
+        const filters = getActiveReportFilters(triggerBtn);
+        const filteredStudents = filterStudentsForReport(allStudents, filters);
+
+        if (filteredStudents.length === 0) {
+            alert("নির্বাচিত ফিল্টারে কোন স্টুডেন্ট ডাটা পাওয়া যায়নি।");
+            return;
+        }
 
         const totalStudentsCount = filteredStudents.length;
         const totalCourseFees = filteredStudents.reduce((acc, s) => acc + (Number(s.netFee) || 0), 0);
@@ -12209,48 +12287,49 @@ window.exportAdminReportPDF = function() {
             hour: '2-digit', minute: '2-digit', hour12: true
         });
 
-        const scopeLabel = `${filters.course && filters.course !== 'all' ? filters.course : 'All Courses'} | Date Range: ${filters.fromDate || 'Start'} to ${filters.toDate || 'Present'}`;
+        const scopeLabel = `${filters.course && filters.course !== 'all' ? filters.course : 'All Courses (' + totalStudentsCount + ' Students)'} | Date Range: ${filters.fromDate || 'Start'} to ${filters.toDate || 'Present'}`;
 
         let courseRowsHtml = Object.keys(courseMap).sort().map(cName => {
             const c = courseMap[cName];
             return `
                 <tr>
                     <td style="padding: 6px 10px; border: 1px solid #cbd5e1; font-weight: 600;">${cName}</td>
-                    <td style="padding: 6px 10px; border: 1px solid #cbd5e1; text-align: center;">${c.count}</td>
+                    <td style="padding: 6px 10px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">${c.count}</td>
                     <td style="padding: 6px 10px; border: 1px solid #cbd5e1; text-align: right;">৳${c.fee.toLocaleString()}</td>
-                    <td style="padding: 6px 10px; border: 1px solid #cbd5e1; text-align: right; color: #16a34a;">৳${c.collected.toLocaleString()}</td>
-                    <td style="padding: 6px 10px; border: 1px solid #cbd5e1; text-align: right; color: #dc2626;">৳${c.due.toLocaleString()}</td>
+                    <td style="padding: 6px 10px; border: 1px solid #cbd5e1; text-align: right; color: #16a34a; font-weight: 600;">৳${c.collected.toLocaleString()}</td>
+                    <td style="padding: 6px 10px; border: 1px solid #cbd5e1; text-align: right; color: #dc2626; font-weight: 600;">৳${c.due.toLocaleString()}</td>
                 </tr>
             `;
         }).join('');
 
         let studentRowsHtml = filteredStudents.map((st, idx) => {
             return `
-                <tr>
-                    <td style="padding: 5px 8px; border: 1px solid #e2e8f0; text-align: center; font-size: 11px;">${idx + 1}</td>
-                    <td style="padding: 5px 8px; border: 1px solid #e2e8f0; text-align: center; font-weight: 600; font-size: 11px;">${st.id}</td>
-                    <td style="padding: 5px 8px; border: 1px solid #e2e8f0; font-weight: 600; font-size: 11px;">${escapeHtml(st.name)}</td>
-                    <td style="padding: 5px 8px; border: 1px solid #e2e8f0; text-align: center; font-size: 11px;">${st.phone}</td>
-                    <td style="padding: 5px 8px; border: 1px solid #e2e8f0; font-size: 11px;">${st.course}</td>
-                    <td style="padding: 5px 8px; border: 1px solid #e2e8f0; text-align: center; font-size: 11px;">${st.batch || '-'}</td>
-                    <td style="padding: 5px 8px; border: 1px solid #e2e8f0; text-align: center; font-size: 11px;">${st.registrationDate || '-'}</td>
-                    <td style="padding: 5px 8px; border: 1px solid #e2e8f0; text-align: right; font-size: 11px;">৳${(st.netFee || 0).toLocaleString()}</td>
-                    <td style="padding: 5px 8px; border: 1px solid #e2e8f0; text-align: right; font-size: 11px; color: #16a34a;">৳${(st.paidFee || 0).toLocaleString()}</td>
-                    <td style="padding: 5px 8px; border: 1px solid #e2e8f0; text-align: right; font-size: 11px; color: ${st.dueFee > 0 ? '#dc2626' : '#64748b'}; font-weight: ${st.dueFee > 0 ? '700' : 'normal'};">৳${(st.dueFee || 0).toLocaleString()}</td>
+                <tr style="page-break-inside: avoid;">
+                    <td style="padding: 5px 6px; border: 1px solid #e2e8f0; text-align: center; font-size: 11px;">${idx + 1}</td>
+                    <td style="padding: 5px 6px; border: 1px solid #e2e8f0; text-align: center; font-weight: 700; font-size: 11px;">${st.id}</td>
+                    <td style="padding: 5px 8px; border: 1px solid #e2e8f0; font-weight: 600; font-size: 11px;">${escapeHtml(st.name || '')}</td>
+                    <td style="padding: 5px 6px; border: 1px solid #e2e8f0; text-align: center; font-size: 11px;">${st.phone || '-'}</td>
+                    <td style="padding: 5px 6px; border: 1px solid #e2e8f0; text-align: center; font-size: 11px;">${st.guardianPhone || '-'}</td>
+                    <td style="padding: 5px 8px; border: 1px solid #e2e8f0; font-size: 11px; font-weight: 500;">${st.course || '-'}</td>
+                    <td style="padding: 5px 6px; border: 1px solid #e2e8f0; text-align: center; font-size: 11px;">${st.batch || '-'}</td>
+                    <td style="padding: 5px 6px; border: 1px solid #e2e8f0; text-align: center; font-size: 11px;">${st.registrationDate || '-'}</td>
+                    <td style="padding: 5px 6px; border: 1px solid #e2e8f0; text-align: right; font-size: 11px;">৳${(st.netFee || 0).toLocaleString()}</td>
+                    <td style="padding: 5px 6px; border: 1px solid #e2e8f0; text-align: right; font-size: 11px; color: #16a34a; font-weight: 600;">৳${(st.paidFee || 0).toLocaleString()}</td>
+                    <td style="padding: 5px 6px; border: 1px solid #e2e8f0; text-align: right; font-size: 11px; color: ${st.dueFee > 0 ? '#dc2626' : '#64748b'}; font-weight: ${st.dueFee > 0 ? '700' : 'normal'};">৳${(st.dueFee || 0).toLocaleString()}</td>
                 </tr>
             `;
         }).join('');
 
         const printHTML = `
-            <div style="font-family: 'Segoe UI', Arial, sans-serif; color: #0f172a; padding: 20px; max-width: 1000px; margin: 0 auto; background: #ffffff;">
+            <div style="font-family: 'Segoe UI', Arial, sans-serif; color: #0f172a; padding: 15px; max-width: 1100px; margin: 0 auto; background: #ffffff;">
                 <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0f172a; padding-bottom: 12px; margin-bottom: 16px;">
                     <div>
-                        <h1 style="margin: 0; font-size: 24px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px;">EDIZ IT INSTITUTE</h1>
-                        <p style="margin: 3px 0 0 0; font-size: 13px; color: #475569;">Institutional Executive Report (প্রতিষ্ঠানিক রিপোর্ট)</p>
+                        <h1 style="margin: 0; font-size: 22px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px;">EDIZ IT INSTITUTE</h1>
+                        <p style="margin: 3px 0 0 0; font-size: 13px; color: #475569;">Institutional Executive Report (প্রতিষ্ঠানিক সম্পূর্ণ রিপোর্ট)</p>
                     </div>
                     <div style="text-align: right; font-size: 11px; color: #64748b;">
-                        <div><strong>Date:</strong> ${formattedNow}</div>
-                        <div><strong>Filter:</strong> ${escapeHtml(scopeLabel)}</div>
+                        <div><strong>Generated:</strong> ${formattedNow}</div>
+                        <div><strong>Scope:</strong> ${escapeHtml(scopeLabel)}</div>
                     </div>
                 </div>
 
@@ -12258,24 +12337,24 @@ window.exportAdminReportPDF = function() {
                 <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px;">
                     <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 14px; border-left: 4px solid #3b82f6;">
                         <div style="font-size: 11px; color: #64748b; font-weight: 600; text-transform: uppercase;">Total Students</div>
-                        <div style="font-size: 20px; font-weight: 700; color: #0f172a;">${totalStudentsCount.toLocaleString()}</div>
+                        <div style="font-size: 22px; font-weight: 800; color: #0f172a;">${totalStudentsCount.toLocaleString()}</div>
                     </div>
                     <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 14px; border-left: 4px solid #6366f1;">
                         <div style="font-size: 11px; color: #64748b; font-weight: 600; text-transform: uppercase;">Total Fees (Payable)</div>
-                        <div style="font-size: 20px; font-weight: 700; color: #0f172a;">৳${totalCourseFees.toLocaleString()}</div>
+                        <div style="font-size: 22px; font-weight: 800; color: #0f172a;">৳${totalCourseFees.toLocaleString()}</div>
                     </div>
                     <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 14px; border-left: 4px solid #10b981;">
                         <div style="font-size: 11px; color: #64748b; font-weight: 600; text-transform: uppercase;">Total Collected</div>
-                        <div style="font-size: 20px; font-weight: 700; color: #16a34a;">৳${totalCollected.toLocaleString()}</div>
+                        <div style="font-size: 22px; font-weight: 800; color: #16a34a;">৳${totalCollected.toLocaleString()}</div>
                     </div>
                     <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 14px; border-left: 4px solid #ef4444;">
                         <div style="font-size: 11px; color: #64748b; font-weight: 600; text-transform: uppercase;">Total Outstanding Due</div>
-                        <div style="font-size: 20px; font-weight: 700; color: #dc2626;">৳${totalDue.toLocaleString()}</div>
+                        <div style="font-size: 22px; font-weight: 800; color: #dc2626;">৳${totalDue.toLocaleString()}</div>
                     </div>
                 </div>
 
                 <!-- COURSE BREAKDOWN TABLE -->
-                <h3 style="font-size: 14px; font-weight: 700; margin: 0 0 8px 0; color: #1e293b;">Breakdown by Course</h3>
+                <h3 style="font-size: 13px; font-weight: 700; margin: 0 0 8px 0; color: #1e293b; text-transform: uppercase; letter-spacing: 0.5px;">Breakdown by Course</h3>
                 <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 12px;">
                     <thead>
                         <tr style="background: #1e293b; color: #ffffff;">
@@ -12301,20 +12380,24 @@ window.exportAdminReportPDF = function() {
                 </table>
 
                 <!-- STUDENTS TABLE -->
-                <h3 style="font-size: 14px; font-weight: 700; margin: 0 0 8px 0; color: #1e293b;">Students Roster (${filteredStudents.length} Students)</h3>
-                <table style="width: 100%; border-collapse: collapse; font-size: 11px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <h3 style="font-size: 13px; font-weight: 700; margin: 0; color: #1e293b; text-transform: uppercase; letter-spacing: 0.5px;">Students Complete Roster (${filteredStudents.length} Students)</h3>
+                    <span style="font-size: 11px; color: #64748b;">Showing all matching records</span>
+                </div>
+                <table style="width: 100%; border-collapse: collapse; font-size: 10.5px;">
                     <thead>
                         <tr style="background: #334155; color: #ffffff;">
-                            <th style="padding: 6px 8px; border: 1px solid #334155; text-align: center; width: 35px;">SL</th>
-                            <th style="padding: 6px 8px; border: 1px solid #334155; text-align: center; width: 65px;">ID</th>
+                            <th style="padding: 6px 4px; border: 1px solid #334155; text-align: center; width: 32px;">SL</th>
+                            <th style="padding: 6px 6px; border: 1px solid #334155; text-align: center; width: 65px;">ID</th>
                             <th style="padding: 6px 8px; border: 1px solid #334155; text-align: left;">Student Name</th>
-                            <th style="padding: 6px 8px; border: 1px solid #334155; text-align: center;">Mobile</th>
-                            <th style="padding: 6px 8px; border: 1px solid #334155; text-align: left;">Course</th>
-                            <th style="padding: 6px 8px; border: 1px solid #334155; text-align: center;">Batch</th>
-                            <th style="padding: 6px 8px; border: 1px solid #334155; text-align: center;">Adm Date</th>
-                            <th style="padding: 6px 8px; border: 1px solid #334155; text-align: right;">Payable</th>
-                            <th style="padding: 6px 8px; border: 1px solid #334155; text-align: right;">Paid</th>
-                            <th style="padding: 6px 8px; border: 1px solid #334155; text-align: right;">Due</th>
+                            <th style="padding: 6px 6px; border: 1px solid #334155; text-align: center;">Mobile</th>
+                            <th style="padding: 6px 6px; border: 1px solid #334155; text-align: center;">Guardian Mobile</th>
+                            <th style="padding: 6px 6px; border: 1px solid #334155; text-align: left;">Course</th>
+                            <th style="padding: 6px 6px; border: 1px solid #334155; text-align: center;">Batch</th>
+                            <th style="padding: 6px 6px; border: 1px solid #334155; text-align: center;">Adm Date</th>
+                            <th style="padding: 6px 6px; border: 1px solid #334155; text-align: right;">Payable</th>
+                            <th style="padding: 6px 6px; border: 1px solid #334155; text-align: right;">Paid</th>
+                            <th style="padding: 6px 6px; border: 1px solid #334155; text-align: right;">Due</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -12322,35 +12405,39 @@ window.exportAdminReportPDF = function() {
                     </tbody>
                     <tfoot>
                         <tr style="background: #f1f5f9; font-weight: 700; font-size: 11px;">
-                            <td colspan="7" style="padding: 6px 8px; border: 1px solid #cbd5e1; text-align: center;">TOTAL</td>
-                            <td style="padding: 6px 8px; border: 1px solid #cbd5e1; text-align: right;">৳${totalCourseFees.toLocaleString()}</td>
-                            <td style="padding: 6px 8px; border: 1px solid #cbd5e1; text-align: right; color: #16a34a;">৳${totalCollected.toLocaleString()}</td>
-                            <td style="padding: 6px 8px; border: 1px solid #cbd5e1; text-align: right; color: #dc2626;">৳${totalDue.toLocaleString()}</td>
+                            <td colspan="8" style="padding: 6px 8px; border: 1px solid #cbd5e1; text-align: center;">TOTAL (${totalStudentsCount} Students)</td>
+                            <td style="padding: 6px 6px; border: 1px solid #cbd5e1; text-align: right;">৳${totalCourseFees.toLocaleString()}</td>
+                            <td style="padding: 6px 6px; border: 1px solid #cbd5e1; text-align: right; color: #16a34a;">৳${totalCollected.toLocaleString()}</td>
+                            <td style="padding: 6px 6px; border: 1px solid #cbd5e1; text-align: right; color: #dc2626;">৳${totalDue.toLocaleString()}</td>
                         </tr>
                     </tfoot>
                 </table>
 
                 <div style="margin-top: 25px; border-top: 1px solid #cbd5e1; padding-top: 8px; display: flex; justify-content: space-between; font-size: 10px; color: #64748b;">
                     <span>Ediz IT Management Portal — Official Institutional Record</span>
-                    <span>Printed: ${formattedNow}</span>
+                    <span>Printed: ${formattedNow} | Total Records: ${totalStudentsCount}</span>
                 </div>
             </div>
         `;
 
         const printZone = document.getElementById('print-zone');
-        if (!printZone) {
-            alert("Print zone element not found.");
-            return;
+        if (printZone) {
+            printZone.innerHTML = printHTML;
         }
 
-        printZone.innerHTML = printHTML;
+        // Trigger print dialog
         setTimeout(() => {
             window.print();
-        }, 200);
+        }, 250);
 
     } catch (err) {
         console.error("Error generating PDF report:", err);
         alert("PDF রিপোর্ট প্রস্তুত করতে ত্রুটি হয়েছে: " + err.message);
+    } finally {
+        if (triggerBtn) {
+            triggerBtn.disabled = false;
+            triggerBtn.innerHTML = originalBtnText;
+        }
     }
 };
 
@@ -12398,7 +12485,7 @@ function initReportExportModule() {
 
     document.querySelectorAll('.btn-export-pdf').forEach(btn => {
         btn.addEventListener('click', function() {
-            exportAdminReportPDF();
+            exportAdminReportPDF(this);
         });
     });
 
